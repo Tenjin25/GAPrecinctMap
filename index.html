@@ -2681,7 +2681,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const u = p.toUpperCase();
         if (u.includes('ABSENTEE') || u.includes('PROVISIONAL') || u.includes('ONE STOP') || u.includes('CURBSIDE') || u.startsWith('OS ') || u.startsWith('OS-')) return u;
         // Replace underscores so name-based joins don't collapse tokens.
-        return u.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+        let s = u.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+        // Drop trailing parenthetical precinct codes, e.g. "DUNWOODY (DUN)".
+        s = s.replace(/\s*\([^)]*\)\s*$/g, '').trim();
+        // Normalize common words so CSV keys match VTD-derived geometry labels.
+        const rep = [
+          [/\\bROAD\\b/g, 'RD'],
+          [/\\bSTREET\\b/g, 'ST'],
+          [/\\bAVENUE\\b/g, 'AVE'],
+          [/\\bDRIVE\\b/g, 'DR'],
+          [/\\bBOULEVARD\\b/g, 'BLVD'],
+          [/\\bHIGHWAY\\b/g, 'HWY'],
+          [/\\bMOUNTAIN\\b/g, 'MTN'],
+          [/\\bELEMENTARY\\b/g, 'ELEM'],
+          [/\\bMIDDLE\\b/g, 'MID'],
+          [/\\bCOMMUNITY\\s+CENTER\\b/g, 'COMM CENTER'],
+        ];
+        rep.forEach(([re, to]) => { try { s = s.replace(re, to); } catch (_) {} });
+        s = s.replace(/\\s+/g, ' ').trim();
+        return s;
       }
 
       async function loadPrecinctSliceFromOpenElectionsCSV(contestType, year) {
@@ -7437,7 +7455,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	              const suffix = cCompact.slice(baseCompact.length);
 	              if (!suffix || suffix.length > 2) return;
 	              if (!/^[A-Z0-9]{1,2}$/.test(suffix)) return;
-	              if (!/[A-Z]/.test(suffix)) return;
+                // Allow compact suffixes that are either alpha (e.g. "03S" -> "03SE")
+                // or numeric (e.g. "DUNWOODY" -> "DUNWOODY1"/"DUNWOODY2").
+	              if (!(/[A-Z]/.test(suffix) || /^\d{1,2}$/.test(suffix))) return;
 	              const altFull = normalizeCountyName(`${countyOnly} - ${c}`);
 	              if (altFull) out.add(altFull);
 	            });

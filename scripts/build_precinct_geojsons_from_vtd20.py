@@ -45,6 +45,52 @@ def _title_county(county_norm: str) -> str:
     parts = (county_norm or "").strip().split()
     return " ".join(p[:1].upper() + p[1:].lower() for p in parts if p)
 
+def _clean_precinct_label(name: str) -> str:
+    """
+    Try to make TIGER VTD NAME20 align better with election results precinct labels.
+
+    This is intentionally conservative: mostly strips trailing parenthetical codes
+    and normalizes common street-type words.
+    """
+    s = (name or "").strip()
+    if not s:
+        return ""
+
+    # Drop trailing parenthetical suffixes like "(DUN)".
+    s = re.sub(r"\s*\([^)]*\)\s*$", "", s).strip()
+
+    # Normalize common street-type words to common abbreviations seen in results exports.
+    # Operate in uppercase so joins are stable; display uses original-ish casing after.
+    u = s.upper()
+    rep: list[tuple[str, str]] = [
+        (r"\bROAD\b", "RD"),
+        (r"\bSTREET\b", "ST"),
+        (r"\bAVENUE\b", "AVE"),
+        (r"\bDRIVE\b", "DR"),
+        (r"\bBOULEVARD\b", "BLVD"),
+        (r"\bHIGHWAY\b", "HWY"),
+        (r"\bMOUNTAIN\b", "MTN"),
+        (r"\bELEMENTARY\b", "ELEM"),
+        (r"\bMIDDLE\b", "MID"),
+        (r"\bCOMMUNITY\s+CENTER\b", "COMM CENTER"),
+    ]
+    for pat, repl in rep:
+        u = re.sub(pat, repl, u)
+    u = re.sub(r"\s+", " ", u).strip()
+
+    # Title-case for nicer display while keeping abbreviations legible.
+    out_parts = []
+    for token in u.split(" "):
+        if token in {"RD", "ST", "AVE", "DR", "BLVD", "HWY", "MTN", "ELEM", "MID"}:
+            out_parts.append(token.title())  # Rd, St...
+        elif token in {"COMM", "CENTER"}:
+            out_parts.append(token.title())
+        elif re.fullmatch(r"\d{1,4}", token):
+            out_parts.append(token)
+        else:
+            out_parts.append(token[:1].upper() + token[1:].lower() if token else token)
+    return " ".join(out_parts).strip()
+
 
 def main() -> None:
     ap = argparse.ArgumentParser()
@@ -96,7 +142,7 @@ def main() -> None:
     def build_row(row) -> dict[str, object]:
         county_norm = _norm_token(str(row.get("county_norm") or ""))
         prec_id_raw = str(row.get("NAME20") or "").strip()
-        prec_id = re.sub(r"\s+", " ", prec_id_raw).strip()
+        prec_id = _clean_precinct_label(prec_id_raw) or re.sub(r"\s+", " ", prec_id_raw).strip()
         county_nam = _title_county(county_norm)
         precinct_name = f"{county_nam} - {prec_id}" if (county_nam and prec_id) else (county_nam or prec_id)
         precinct_norm = _norm_token(f"{county_nam} - {prec_id}") if (county_nam and prec_id) else _norm_token(precinct_name)

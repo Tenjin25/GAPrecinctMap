@@ -84,6 +84,20 @@ def normalize_party(raw: str) -> str:
 def normalize_county(raw: str) -> str:
     return (raw or "").strip().upper()
 
+def decorate_candidate_label(candidate: str, party_short: str) -> str:
+    """
+    Adjust candidate display labels for the UI.
+
+    OpenElections GA files sometimes mark incumbents as "(I)" in the candidate name.
+    For the map UI, convert Republican incumbents "(I)" -> "(R*)".
+    """
+    name = (candidate or "").strip()
+    if not name:
+        return ""
+    if party_short == "R" and "(I)" in name:
+        return name.replace("(I)", "(R*)")
+    return name
+
 
 def votes_col(df: pd.DataFrame) -> str:
     """Return the votes column name (handles 'votes' vs 'total_votes')."""
@@ -239,8 +253,8 @@ def build_contest_rows(county_agg):
         total = dem_votes + rep_votes + oth_votes
         if total == 0:
             continue
-        dem_cand = parties.get("D", [0, ""])[1]
-        rep_cand = parties.get("R", [0, ""])[1]
+        dem_cand = decorate_candidate_label(parties.get("D", [0, ""])[1], "D")
+        rep_cand = decorate_candidate_label(parties.get("R", [0, ""])[1], "R")
         signed = (dem_votes - rep_votes) / total * 100 if total else 0
         winner = "DEM" if signed > 0 else ("REP" if signed < 0 else "TIE")
         margin_pct = signed  # signed: negative = R leads
