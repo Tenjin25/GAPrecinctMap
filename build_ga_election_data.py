@@ -180,12 +180,34 @@ def aggregate_county_votes(df: pd.DataFrame):
     df = df.copy()
     df["_office"] = df.get("office", pd.Series(dtype=str)).fillna("").str.strip()
     df["_county"] = df.get("county", pd.Series(dtype=str)).fillna("").str.strip().str.upper()
-    df["_party"]  = df.get("party",  pd.Series(dtype=str)).fillna("").apply(normalize_party)
+    df["_party_raw"] = df.get("party", pd.Series(dtype=str)).fillna("").astype(str).str.strip()
+    df["_party"]  = df["_party_raw"].apply(normalize_party)
     df["_cand"]   = df.get("candidate", pd.Series(dtype=str)).fillna("").str.strip()
     df["_votes"] = compute_votes(df).astype(int)
 
     # Drop rows with no office or county
     df = df[df["_office"].ne("") & df["_county"].ne("")]
+
+    # -----------------------------------------------------------------------
+    # Fill missing party labels by candidate lookup (older OpenElections files
+    # sometimes have blank 'party' for many counties but are consistent within
+    # an office for candidate -> party elsewhere in the file).
+    # -----------------------------------------------------------------------
+    try:
+        known = df[df["_party"].isin(["D", "R"]) & df["_cand"].ne("")][["_office", "_cand", "_party"]].copy()
+        if not known.empty:
+            known = known.drop_duplicates(subset=["_office", "_cand"], keep="first")
+            df = df.merge(
+                known.rename(columns={"_party": "_party_infer"}),
+                on=["_office", "_cand"],
+                how="left",
+            )
+            needs = df["_party_raw"].eq("") & df["_party"].eq("O") & df["_party_infer"].isin(["D", "R"])
+            df.loc[needs, "_party"] = df.loc[needs, "_party_infer"]
+            df = df.drop(columns=["_party_infer"])
+    except Exception:
+        # If anything goes sideways, keep original party classification.
+        pass
 
     result = {}
     for office, grp in df.groupby("_office"):

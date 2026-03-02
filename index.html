@@ -2640,6 +2640,155 @@ document.addEventListener('DOMContentLoaded', function() {
 	      2024: withBase('./Data/20241105__ga__general__precinct-level.csv')
 	    };
 
+      const OPEN_ELECTIONS_PRECINCT_CSV_BY_YEAR = {
+        2014: withBase('./Data/20141104__ga__general__precinct.csv'),
+        2016: withBase('./Data/20161108__ga__general__precinct.csv'),
+        2018: withBase('./Data/20181106__ga__general__precinct.csv'),
+        2020: withBase('./Data/20201103__ga__general__precinct.csv'),
+        2022: withBase('./Data/20221108__ga__general__precinct.csv'),
+        2024: withBase('./Data/20241105__ga__general__precinct-level.csv')
+      };
+
+      function normalizePartyShort(partyRaw) {
+        const p = (partyRaw || '').toString().trim().toUpperCase();
+        if (!p) return '';
+        if (p === 'DEM' || p === 'D' || p.includes('DEMOCRAT')) return 'DEM';
+        if (p === 'REP' || p === 'R' || p.includes('REPUBLICAN')) return 'REP';
+        return 'OTH';
+      }
+
+      function officeMatchesContestType(contestType, officeRaw) {
+        const o = (officeRaw || '').toString().trim().toUpperCase();
+        if (!o) return false;
+        if (contestType === 'president') return o.includes('PRESIDENT');
+        if (contestType === 'us_senate') return (o.includes('SENATE') && !o.includes('SPECIAL'));
+        if (contestType === 'us_senate_special') return o.includes('SENATE') && o.includes('SPECIAL');
+        if (contestType === 'governor') return o === 'GOVERNOR';
+        if (contestType === 'lieutenant_governor') return o.includes('LIEUTENANT') && o.includes('GOVERNOR');
+        if (contestType === 'attorney_general') return o.includes('ATTORNEY') && o.includes('GENERAL');
+        if (contestType === 'secretary_of_state') return o.includes('SECRETARY') && o.includes('STATE');
+        if (contestType === 'agriculture_commissioner') return o.includes('AGRICULTURE');
+        if (contestType === 'insurance_commissioner') return o.includes('INSURANCE');
+        if (contestType === 'labor_commissioner') return o.includes('LABOR');
+        if (contestType === 'superintendent') return o.includes('SUPERINTENDENT');
+        return false;
+      }
+
+      function normalizePrecinctNameForJoin(precinctRaw) {
+        const p = (precinctRaw || '').toString().trim();
+        if (!p) return '';
+        // Keep non-geographic buckets as-is (they won't match geometry, but keep totals sane).
+        const u = p.toUpperCase();
+        if (u.includes('ABSENTEE') || u.includes('PROVISIONAL') || u.includes('ONE STOP') || u.includes('CURBSIDE') || u.startsWith('OS ') || u.startsWith('OS-')) return u;
+        // Replace underscores so name-based joins don't collapse tokens.
+        return u.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+      }
+
+      async function loadPrecinctSliceFromOpenElectionsCSV(contestType, year) {
+        const y = Number(year);
+        const path = OPEN_ELECTIONS_PRECINCT_CSV_BY_YEAR[y];
+        if (!path) return null;
+
+        const downloadUrl = toAbsoluteUrl(path);
+        const byPrecinctCandidate = new Map(); // key -> Map<candidate, votes>
+        const candParty = new Map(); // candidate -> 'DEM'|'REP'|'OTH'
+
+        const officeOk = (s) => officeMatchesContestType(contestType, s);
+        const addVote = (key, cand, votes) => {
+          if (!key || !cand) return;
+          if (!byPrecinctCandidate.has(key)) byPrecinctCandidate.set(key, new Map());
+          const m = byPrecinctCandidate.get(key);
+          m.set(cand, (m.get(cand) || 0) + votes);
+        };
+
+        const observeParty = (cand, partyRaw) => {
+          if (!cand) return;
+          const norm = normalizePartyShort(partyRaw);
+          if (norm !== 'DEM' && norm !== 'REP') return;
+          if (!candParty.has(cand)) candParty.set(cand, norm);
+        };
+
+        if (typeof Papa !== 'undefined' && Papa && typeof Papa.parse === 'function') {
+          await new Promise((resolve, reject) => {
+            Papa.parse(downloadUrl, {
+              download: true,
+              header: true,
+              dynamicTyping: true,
+              skipEmptyLines: true,
+              worker: true,
+              chunkSize: 1024 * 256,
+              chunk: (result) => {
+                (result?.data || []).forEach(r => {
+                  const office = (r.office || '').toString();
+                  if (!officeOk(office)) return;
+                  const county = (r.county || '').toString().trim().toUpperCase();
+                  const precinct = normalizePrecinctNameForJoin(r.precinct);
+                  if (!county || !precinct) return;
+                  const key = `${county} - ${precinct}`.replace(/\s+/g, ' ').trim();
+                  const cand = (r.candidate || '').toString().trim();
+                  const votes = Number(r.votes != null ? r.votes : r.total_votes) || 0;
+                  if (!cand || !votes) return;
+                  addVote(key, cand, votes);
+                  observeParty(cand, r.party);
+                });
+              },
+              error: (err) => reject(err),
+              complete: () => resolve()
+            });
+          });
+        } else {
+          const csvText = await loadCSV(path);
+          const rows = parseCSV(csvText);
+          rows.forEach(r => {
+            const office = (r.office || '').toString();
+            if (!officeOk(office)) return;
+            const county = (r.county || '').toString().trim().toUpperCase();
+            const precinct = normalizePrecinctNameForJoin(r.precinct);
+            if (!county || !precinct) return;
+            const key = `${county} - ${precinct}`.replace(/\s+/g, ' ').trim();
+            const cand = (r.candidate || '').toString().trim();
+            const votes = Number(r.votes != null ? r.votes : r.total_votes) || 0;
+            if (!cand || !votes) return;
+            addVote(key, cand, votes);
+            observeParty(cand, r.party);
+          });
+        }
+
+        if (!byPrecinctCandidate.size) return [];
+
+        const out = [];
+        for (const [key, m] of byPrecinctCandidate.entries()) {
+          let dem = 0, rep = 0, oth = 0;
+          let demCand = '', repCand = '';
+          let demBest = -1, repBest = -1;
+          for (const [cand, votes] of m.entries()) {
+            const p = candParty.get(cand) || 'OTH';
+            if (p === 'DEM') {
+              dem += votes;
+              if (votes > demBest) { demBest = votes; demCand = cand; }
+            } else if (p === 'REP') {
+              rep += votes;
+              if (votes > repBest) { repBest = votes; repCand = cand; }
+            } else {
+              oth += votes;
+            }
+          }
+          const total = dem + rep + oth;
+          if (!total) continue;
+          out.push({
+            year: y,
+            county: key,
+            [`${contestType}_dem`]: dem,
+            [`${contestType}_rep`]: rep,
+            [`${contestType}_other`]: oth,
+            [`${contestType}_total`]: total,
+            [`${contestType}_dem_candidate`]: demCand,
+            [`${contestType}_rep_candidate`]: repCand
+          });
+        }
+        return out;
+      }
+
 	    async function loadPresidentSliceFromOpenElectionsCSV(year) {
 	      const y = Number(year);
 	      const path = PRESIDENT_OPEN_ELECTIONS_CSV[y];
@@ -2736,11 +2885,25 @@ document.addEventListener('DOMContentLoaded', function() {
 	    }
 
 	    async function loadContestSlice(contestType, year) {
-	      const key = `${contestType}_${year}`;
-	      if (contestSliceCache.has(key)) return contestSliceCache.get(key);
+	      const cacheKey = `${contestType}_${year}_${precinctsEnabled ? 'precinct' : 'county'}`;
+        const jsonKey = `${contestType}_${year}`;
+	      if (contestSliceCache.has(cacheKey)) return contestSliceCache.get(cacheKey);
 
 	      try {
-	        const payload = await loadJSON(`${CONFIG.paths.contests_dir}/${key}.json`);
+          // If precinct overlay is enabled, prefer precinct-level slices from the OpenElections CSV.
+          // applyCountyContest() will roll those up to county totals for county shading.
+          if (precinctsEnabled) {
+            try {
+              const rows = await loadPrecinctSliceFromOpenElectionsCSV(contestType, year);
+              if (rows && rows.length) {
+                contestSliceCache.set(cacheKey, rows);
+                return rows;
+              }
+            } catch (err) {
+              console.warn('Failed to load precinct CSV slice for', contestType, year, err?.message || err);
+            }
+          }
+	        const payload = await loadJSON(`${CONFIG.paths.contests_dir}/${jsonKey}.json`);
 	        const rows = (payload.rows || []).map(r => ({
 	          year: Number(year),
 	          county: r.county,
@@ -2755,21 +2918,21 @@ document.addEventListener('DOMContentLoaded', function() {
           [`${contestType}_winner`]: r.winner || '',
           [`${contestType}_color`]: r.color || ''
         }));
-	        contestSliceCache.set(key, rows);
+	        contestSliceCache.set(cacheKey, rows);
 	        return rows;
 	      } catch (_) {
 	        // CSV-backed presidential history (pre-2016) from OpenElections precinct files.
 	        if (contestType === 'president' && PRESIDENT_OPEN_ELECTIONS_CSV[Number(year)]) {
 	          try {
 	            const rows = await loadPresidentSliceFromOpenElectionsCSV(Number(year));
-	            contestSliceCache.set(key, rows);
+	            contestSliceCache.set(cacheKey, rows);
 	            return rows;
 	          } catch (err) {
 	            console.warn('Failed to load OpenElections presidential CSV for', year, err?.message || err);
 	          }
 	        }
 	        const fallback = (electionData || []).filter(row => row.year == year);
-	        contestSliceCache.set(key, fallback);
+	        contestSliceCache.set(cacheKey, fallback);
 	        return fallback;
 	      }
 	    }
