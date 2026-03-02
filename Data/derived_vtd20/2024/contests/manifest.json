@@ -1,0 +1,19 @@
+{
+  "csv": "Data\\20241105__ga__general__precinct-level.csv",
+  "levels": [
+    "vtd20"
+  ],
+  "contests": [
+    {
+      "office": "President",
+      "district": "",
+      "slug": "President",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2024\\contests\\vtd20\\President.json",
+          "rows": 2700
+        }
+      }
+    }
+  ]
+}

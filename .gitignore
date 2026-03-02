@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Large/raw GIS downloads (rebuild from scripts as needed)
+Data/**/*.zip
+
+# Scratch / notes
+Data/2021 Missing counties/

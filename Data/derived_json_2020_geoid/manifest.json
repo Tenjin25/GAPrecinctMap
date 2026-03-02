@@ -1,0 +1,41 @@
+{
+  "csv": "Data\\20201103__ga__general__precinct.csv",
+  "levels": [
+    "vtd20"
+  ],
+  "contests": [
+    {
+      "office": "President",
+      "district": "",
+      "slug": "President",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_json_2020_geoid\\vtd20\\President.json",
+          "rows": 2656
+        }
+      }
+    },
+    {
+      "office": "U.S. Senate",
+      "district": "",
+      "slug": "U.S._Senate",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_json_2020_geoid\\vtd20\\U.S._Senate.json",
+          "rows": 2656
+        }
+      }
+    },
+    {
+      "office": "U.S. Senate (Special)",
+      "district": "",
+      "slug": "U.S._Senate_Special",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_json_2020_geoid\\vtd20\\U.S._Senate_Special.json",
+          "rows": 2656
+        }
+      }
+    }
+  ]
+}

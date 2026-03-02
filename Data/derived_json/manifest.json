@@ -1,0 +1,19 @@
+{
+  "csv": "Data\\20201103__ga__general__precinct.csv",
+  "levels": [
+    "county"
+  ],
+  "contests": [
+    {
+      "office": "President",
+      "district": "",
+      "slug": "President",
+      "outputs": {
+        "county": {
+          "path": "Data\\derived_json\\county\\President.json",
+          "rows": 159
+        }
+      }
+    }
+  ]
+}
