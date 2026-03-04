@@ -2245,7 +2245,8 @@ document.addEventListener('DOMContentLoaded', function() {
         state_house_info: withBase('./Data/ga_state_house_districts.csv'),
         state_senate_info: withBase('./Data/ga_state_senate_districts.csv'),
         district_descriptions: withBase('./Data/ga_district_descriptions.json'),
-        contests_dir: withBase('./Data/contests')
+        contests_dir: withBase('./Data/contests'),
+        derived_vtd20_base: withBase('./Data/derived_vtd20')
       },
       center: [-83.5, 32.9],
       zoom: 6.5,
@@ -2329,6 +2330,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let congressionalData = []; // Optional legacy district-level table
     let candidateNameCache = new Map();
     let contestSliceCache = new Map();
+    let derivedPrecinctSliceCache = new Map(); // key `${contestType}_${year}` -> rows from Data/derived_vtd20 (if available)
     let districtSliceCache = new Map();
     let districtsInfo = null;
     let stateHouseInfo = null;
@@ -2645,7 +2647,7 @@ document.addEventListener('DOMContentLoaded', function() {
         2016: withBase('./Data/20161108__ga__general__precinct.csv'),
         2018: withBase('./Data/20181106__ga__general__precinct.csv'),
         2020: withBase('./Data/20201103__ga__general__precinct.csv'),
-        2022: withBase('./Data/20221108__ga__general__precinct.csv'),
+        2022: withBase('./Data/20221108__ga__general__precinct-total.csv'),
         2024: withBase('./Data/20241105__ga__general__precinct-level.csv')
       };
 
@@ -2807,6 +2809,140 @@ document.addEventListener('DOMContentLoaded', function() {
         return out;
       }
 
+      function derivedVtd20SlugCandidates(contestType) {
+        switch ((contestType || '').toString()) {
+          case 'president':
+            return ['President'];
+          case 'us_senate':
+            return ['U.S._Senate', 'United_States_Senator'];
+          case 'us_senate_special':
+            return ['U.S._Senate_Special', 'United_States_Senator_Special'];
+          case 'governor':
+            return ['Governor'];
+          case 'lieutenant_governor':
+            return ['Lieutenant_Governor'];
+          case 'attorney_general':
+            return ['Attorney_General'];
+          case 'secretary_of_state':
+            return ['Secretary_Of_State', 'Secretary_of_State'];
+          case 'agriculture_commissioner':
+            return ['Commissioner_Of_Agriculture', 'Commissioner_of_Agriculture'];
+          case 'insurance_commissioner':
+            return ['Commissioner_Of_Insurance', 'Commissioner_of_Insurance'];
+          case 'labor_commissioner':
+            return ['Commissioner_Of_Labor', 'Commissioner_of_Labor'];
+          case 'superintendent':
+            return ['State_School_Superintendent', 'STATE_SCHOOL_SUPERINTENDENT', 'Superintendent'];
+          default:
+            return [];
+        }
+      }
+
+      async function getPrecinctNormByGeoid20() {
+        await ensurePrecinctCentroidsLoaded();
+        const out = new Map();
+        const feats = (precinctCentroidsData && precinctCentroidsData.features) ? precinctCentroidsData.features : [];
+        feats.forEach(f => {
+          const p = (f && f.properties) ? f.properties : {};
+          const geoid = (p.id || p.GEOID20 || p.geoid20 || '').toString().trim();
+          const norm = (p.precinct_norm || '').toString().trim().toUpperCase();
+          if (geoid && norm && !out.has(geoid)) out.set(geoid, norm);
+        });
+        return out;
+      }
+
+      async function loadPrecinctSliceFromDerivedVtd20(contestType, year) {
+        const y = Number(year);
+        if (!Number.isFinite(y)) return null;
+
+        const cacheKey = `${contestType}_${y}`;
+        if (derivedPrecinctSliceCache.has(cacheKey)) return derivedPrecinctSliceCache.get(cacheKey);
+
+        const slugs = derivedVtd20SlugCandidates(contestType);
+        if (!slugs.length) {
+          derivedPrecinctSliceCache.set(cacheKey, null);
+          return null;
+        }
+
+        const geoidToPrecNorm = await getPrecinctNormByGeoid20();
+        if (!geoidToPrecNorm || !geoidToPrecNorm.size) {
+          derivedPrecinctSliceCache.set(cacheKey, null);
+          return null;
+        }
+
+        const base = `${CONFIG.paths.derived_vtd20_base}/${y}/contests/vtd20`;
+        for (const slug of slugs) {
+          const path = `${base}/${slug}.json`;
+          try {
+            const payload = await loadJSON(path);
+            const results = (payload && payload.results) ? payload.results : null;
+            if (!results || typeof results !== 'object') continue;
+
+            const rows = [];
+            Object.entries(results).forEach(([geoid20, node]) => {
+              const geoid = (geoid20 || '').toString().trim();
+              const precinctNorm = geoidToPrecNorm.get(geoid);
+              if (!precinctNorm || !node || typeof node !== 'object') return;
+
+              const dem = Number(node.dem_votes) || 0;
+              const rep = Number(node.rep_votes) || 0;
+              const oth = Number(node.other_votes) || 0;
+              const total = Number(node.total_votes) || (dem + rep + oth);
+              if (!total) return;
+
+              const winnerPartyRaw = (node.winner_party || '').toString().trim().toUpperCase();
+              const winner = winnerPartyRaw.startsWith('DEM')
+                ? 'DEM'
+                : (winnerPartyRaw.startsWith('REP') ? 'REP' : '');
+
+              const marginVotes = Number(node.margin_votes) || 0;
+              const marginPct = total ? (marginVotes / total * 100.0) : 0.0;
+
+              rows.push({
+                year: y,
+                county: precinctNorm,
+                [`${contestType}_dem`]: dem,
+                [`${contestType}_rep`]: rep,
+                [`${contestType}_other`]: oth,
+                [`${contestType}_total`]: total,
+                [`${contestType}_dem_candidate`]: '',
+                [`${contestType}_rep_candidate`]: '',
+                [`${contestType}_margin`]: marginVotes,
+                [`${contestType}_margin_pct`]: marginPct,
+                [`${contestType}_winner`]: winner,
+                [`${contestType}_color`]: ''
+              });
+            });
+
+            if (rows.length) {
+              derivedPrecinctSliceCache.set(cacheKey, rows);
+              return rows;
+            }
+          } catch (_) {
+            // Try next slug candidate.
+          }
+        }
+
+        derivedPrecinctSliceCache.set(cacheKey, null);
+        return null;
+      }
+
+      async function loadBestPrecinctSlice(contestType, year) {
+        try {
+          const derivedRows = await loadPrecinctSliceFromDerivedVtd20(contestType, year);
+          if (derivedRows && derivedRows.length) return derivedRows;
+        } catch (err) {
+          console.warn('Failed to load derived precinct slice for', contestType, year, err?.message || err);
+        }
+        try {
+          const csvRows = await loadPrecinctSliceFromOpenElectionsCSV(contestType, year);
+          if (csvRows && csvRows.length) return csvRows;
+        } catch (err) {
+          console.warn('Failed to load precinct CSV slice for', contestType, year, err?.message || err);
+        }
+        return null;
+      }
+
 	    async function loadPresidentSliceFromOpenElectionsCSV(year) {
 	      const y = Number(year);
 	      const path = PRESIDENT_OPEN_ELECTIONS_CSV[y];
@@ -2908,17 +3044,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	      if (contestSliceCache.has(cacheKey)) return contestSliceCache.get(cacheKey);
 
 	      try {
-          // If precinct overlay is enabled, prefer precinct-level slices from the OpenElections CSV.
+          // If precinct overlay is enabled, prefer precinct-level slices.
           // applyCountyContest() will roll those up to county totals for county shading.
           if (precinctsEnabled) {
-            try {
-              const rows = await loadPrecinctSliceFromOpenElectionsCSV(contestType, year);
-              if (rows && rows.length) {
-                contestSliceCache.set(cacheKey, rows);
-                return rows;
-              }
-            } catch (err) {
-              console.warn('Failed to load precinct CSV slice for', contestType, year, err?.message || err);
+            const rows = await loadBestPrecinctSlice(contestType, year);
+            if (rows && rows.length) {
+              contestSliceCache.set(cacheKey, rows);
+              return rows;
             }
           }
 	        const payload = await loadJSON(`${CONFIG.paths.contests_dir}/${jsonKey}.json`);
@@ -7099,6 +7231,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	          [`${contestType}_color`]: r.color || ''
 	        }));
 	      } catch (_) {
+	        try {
+	          const rows = await loadBestPrecinctSlice(contestType, Number(year));
+	          if (rows && rows.length) return rows;
+	        } catch (_) {}
 	        if (contestType === 'president' && PRESIDENT_OPEN_ELECTIONS_CSV[Number(year)]) {
 	          try {
 	            return await loadPresidentSliceFromOpenElectionsCSV(Number(year));

@@ -49,18 +49,38 @@ STATEWIDE_OFFICE_MAP = {
     "superintendent":                  "superintendent",
 }
 
+INVALID_COUNTY_TOKENS = {
+    "NOT AVAILABLE",
+    "UNKNOWN",
+    "N/A",
+    "NA",
+    "STATEWIDE",
+    "STATE OF GEORGIA",
+    "GEORGIA",
+    "TOTAL",
+}
+
 # Files: (year, csv_path)
 ELECTION_FILES = [
     (2014, DATA_DIR / "20141104__ga__general__precinct.csv"),
     (2016, DATA_DIR / "20161108__ga__general__precinct.csv"),
     (2018, DATA_DIR / "20181106__ga__general__precinct.csv"),
     (2020, DATA_DIR / "20201103__ga__general__precinct.csv"),
-    (2022, DATA_DIR / "20221108__ga__general__precinct.csv"),
+    (2022, DATA_DIR / "20221108__ga__general__precinct-total.csv"),
     (2024, DATA_DIR / "20241105__ga__general__precinct-level.csv"),
 ]
 
 # County aggregates also from county-level files when available (more complete)
 COUNTY_FILES = [
+    (2000, DATA_DIR / "20001107__ga__general.csv"),
+    (2002, DATA_DIR / "20021105__ga__general.csv"),
+    (2004, DATA_DIR / "20041102__ga__general.csv"),
+    (2006, DATA_DIR / "20061107__ga__general.csv"),
+    (2008, DATA_DIR / "20081104__ga__general.csv"),
+    (2010, DATA_DIR / "20101102__ga__general.csv"),
+    (2012, DATA_DIR / "20121106__ga__general.csv"),
+    (2014, DATA_DIR / "20141104__ga__general.csv"),
+    (2016, DATA_DIR / "20161108__ga__general.csv"),
     (2022, DATA_DIR / "20221108__ga__general__county.csv"),
     (2024, DATA_DIR / "20241105__ga__general__county.csv"),
 ]
@@ -177,7 +197,11 @@ def load_csv(path: Path) -> pd.DataFrame | None:
     if not path.exists():
         print(f"  SKIP (not found): {path}")
         return None
-    df = pd.read_csv(path, dtype=str, low_memory=False)
+    try:
+        df = pd.read_csv(path, dtype=str, low_memory=False)
+    except Exception as err:
+        print(f"  WARN (strict parse failed for {path.name}: {err}; retrying with tolerant parser)")
+        df = pd.read_csv(path, dtype=str, engine="python", on_bad_lines="skip")
     df.columns = [c.strip().lower() for c in df.columns]
     return df
 
@@ -199,8 +223,9 @@ def aggregate_county_votes(df: pd.DataFrame):
     df["_cand"]   = df.get("candidate", pd.Series(dtype=str)).fillna("").str.strip()
     df["_votes"] = compute_votes(df).astype(int)
 
-    # Drop rows with no office or county
+    # Drop rows with no office/county or non-county rollups.
     df = df[df["_office"].ne("") & df["_county"].ne("")]
+    df = df[~df["_county"].isin(INVALID_COUNTY_TOKENS)]
 
     # -----------------------------------------------------------------------
     # Fill missing party labels by candidate lookup (older OpenElections files

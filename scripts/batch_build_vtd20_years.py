@@ -10,7 +10,11 @@ Usage:
   py scripts/batch_build_vtd20_years.py --offices "Governor,Lieutenant Governor,Secretary of State" --years 2014,2018,2022
 
 Defaults:
-  - Scans Data/ for '*__ga__general__precinct*.csv' and '*__ga__general__precinct-level.csv'
+  - Scans Data/ for '*__ga__general__precinct*.csv'
+  - If multiple precinct files exist for a year, prefers:
+      1) *__precinct-total.csv
+      2) *__precinct-level.csv
+      3) *__precinct.csv
   - Output under Data/derived_vtd20/<year>/
 """
 
@@ -44,15 +48,31 @@ def _find_year_from_filename(name: str) -> str | None:
 
 
 def _default_csvs(data_dir: Path) -> list[Path]:
-    pats = [
-        "*__ga__general__precinct.csv",
-        "*__ga__general__precinct-level.csv",
-    ]
-    out: list[Path] = []
-    for pat in pats:
-        out.extend(sorted(data_dir.glob(pat)))
-    # Keep deterministic order by filename
-    return sorted(out, key=lambda p: p.name)
+    def _priority(p: Path) -> int:
+        n = p.name.lower()
+        if n.endswith("__precinct-total.csv"):
+            return 3
+        if n.endswith("__precinct-level.csv"):
+            return 2
+        if n.endswith("__precinct.csv"):
+            return 1
+        return 0
+
+    candidates = sorted(data_dir.glob("*__ga__general__precinct*.csv"), key=lambda p: p.name.lower())
+    best_by_year: dict[str, Path] = {}
+    for p in candidates:
+        y = _find_year_from_filename(p.name)
+        if not y:
+            continue
+        prev = best_by_year.get(y)
+        if prev is None:
+            best_by_year[y] = p
+            continue
+        prev_rank = (_priority(prev), prev.name.lower())
+        curr_rank = (_priority(p), p.name.lower())
+        if curr_rank > prev_rank:
+            best_by_year[y] = p
+    return [best_by_year[y] for y in sorted(best_by_year.keys())]
 
 
 def main() -> None:
