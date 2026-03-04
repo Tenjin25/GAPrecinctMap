@@ -290,17 +290,36 @@ def _rekey_results_to_vtd20_geoid(
     vtd20_geojson: Path,
     vtd20_join_prop: str,
     crosswalk_path: Path | None,
+    supplemental_keymap_path: Path | None,
 ) -> dict[str, dict[str, object]]:
     props = _load_geojson_props(vtd20_geojson)
     crosswalk: dict[str, dict[str, object]] = {}
     if crosswalk_path and crosswalk_path.exists():
         crosswalk = json.loads(crosswalk_path.read_text(encoding="utf-8"))
+    supplemental_keymap: dict[str, str] = {}
+    if supplemental_keymap_path and supplemental_keymap_path.exists():
+        raw = json.loads(supplemental_keymap_path.read_text(encoding="utf-8"))
+        if isinstance(raw, dict):
+            for k, v in raw.items():
+                key = str(k or "").strip()
+                if not key:
+                    continue
+                geoid = ""
+                if isinstance(v, str):
+                    geoid = v
+                elif isinstance(v, dict):
+                    geoid = str(v.get("vtd20_geoid") or v.get("to_vtd20_geoid") or "")
+                geoid = str(geoid or "").strip()
+                if geoid:
+                    supplemental_keymap[key] = geoid
 
     out: dict[str, dict[str, object]] = {}
+    valid_geoids: set[str] = set()
     for p in props:
         geoid20 = str(p.get("GEOID20") or "").strip()
         if not geoid20:
             continue
+        valid_geoids.add(geoid20)
         join_key = str(p.get(vtd20_join_prop) or "").strip()
         if not join_key:
             continue
@@ -311,6 +330,14 @@ def _rekey_results_to_vtd20_geoid(
             if to_key:
                 row = results_by_key.get(to_key)
         if row is not None:
+            out[geoid20] = row
+
+    # Optional fallback: map result keys directly to VTD20 GEOID20 (e.g., via VTD10->VTD20 bridge).
+    if supplemental_keymap:
+        for result_key, row in results_by_key.items():
+            geoid20 = str(supplemental_keymap.get(str(result_key), "")).strip()
+            if not geoid20 or geoid20 not in valid_geoids or geoid20 in out:
+                continue
             out[geoid20] = row
     return out
 
@@ -342,6 +369,12 @@ def main() -> None:
         type=Path,
         default=Path("Data/vtd20_crosswalk_2020.json"),
         help="Optional JSON mapping from VTD20 join_key -> results join_key (built by scripts/build_vtd20_crosswalk.py)",
+    )
+    ap.add_argument(
+        "--vtd20-supplemental-keymap",
+        type=Path,
+        default=None,
+        help="Optional JSON mapping from result key '<COUNTY_NORM> - <PRECINCT_PART>' -> VTD20 GEOID20.",
     )
     ap.add_argument("--dry-run", action="store_true", help="Do not write files; just report what would be built")
     ap.add_argument("--only-office", default=None, help="Only build contests for this office (exact match)")
@@ -404,7 +437,7 @@ def main() -> None:
     join_hints: dict[Level, str] = {
         "county": "Join on normalized county name (uppercased; punctuation stripped except '.' and '-').",
         "vtd": "Join on '<COUNTY_NORM> - <PRECINCT_NAME_NORM>' (default) or '<COUNTY_NORM> - <PRECINCT_CODE>' if --vtd-join code.",
-        "vtd20": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk.",
+        "vtd20": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
         "congressional": "Join on 2-digit district code (CD118FP-style). Only built for office 'U.S. House'.",
         "state_house": "Join on 3-digit district code (SLDLST-style). Only built for office 'State House'.",
         "state_senate": "Join on 3-digit district code (SLDUST-style). Only built for office 'State Senate'.",
@@ -462,6 +495,11 @@ def main() -> None:
                     vtd20_geojson=args.vtd20_geojson,
                     vtd20_join_prop=args.vtd20_join_prop,
                     crosswalk_path=args.vtd20_crosswalk if args.vtd20_crosswalk and args.vtd20_crosswalk.exists() else None,
+                    supplemental_keymap_path=(
+                        args.vtd20_supplemental_keymap
+                        if args.vtd20_supplemental_keymap and args.vtd20_supplemental_keymap.exists()
+                        else None
+                    ),
                 )
 
             payload = {

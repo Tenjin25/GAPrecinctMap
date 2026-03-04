@@ -3,6 +3,7 @@ Batch-build VTD20 (GEOID20)-keyed contest JSONs for multiple election CSVs/years
 
 This glues together:
   - scripts/build_vtd20_crosswalk.py (name-fuzzy crosswalk, year-specific)
+  - scripts/build_vtd10_key_to_vtd20_keymap.py (pre-2020 supplemental key map via VTD10->VTD20)
   - scripts/build_contest_jsons.py   (writes vtd20 results keyed by GEOID20)
 
 Usage:
@@ -67,6 +68,11 @@ def main() -> None:
     ap.add_argument("--vtd20-geojson", type=Path, default=Path("Data/tl_2020_13_vtd20.geojson"))
     ap.add_argument("--vtd20-join-prop", default="join_key_name")
     ap.add_argument("--threshold", type=float, default=0.9, help="Crosswalk fuzzy threshold")
+    ap.add_argument("--vtd10-zip", type=Path, default=Path("Data/tl_2012_13_vtd10.zip"))
+    ap.add_argument("--county-geojson", type=Path, default=Path("Data/tl_2020_13_county20.geojson"))
+    ap.add_argument("--vtd10-to-vtd20-best", type=Path, default=Path("Data/vtd10_to_vtd20_best.json"))
+    ap.add_argument("--vtd10-keymap", type=Path, default=Path("Data/vtd10_keys_to_vtd20_geoid.json"))
+    ap.add_argument("--rebuild-vtd10-keymap", action="store_true")
     ap.add_argument("--out-base", type=Path, default=Path("Data/derived_vtd20"))
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -91,6 +97,24 @@ def main() -> None:
 
     if not selected:
         raise SystemExit("No matching CSVs found for the requested years.")
+
+    selected_pre2020 = [(y, p) for y, p in selected if y.isdigit() and int(y) < 2020]
+    if selected_pre2020 and (args.rebuild_vtd10_keymap or not args.vtd10_keymap.exists()):
+        cmd0 = [
+            sys.executable,
+            "scripts/build_vtd10_key_to_vtd20_keymap.py",
+            "--vtd10-zip",
+            str(args.vtd10_zip),
+            "--county-geojson",
+            str(args.county_geojson),
+            "--best",
+            str(args.vtd10_to_vtd20_best),
+            "--out",
+            str(args.vtd10_keymap),
+        ]
+        print("\nPre-2020 supplemental keymap:", " ".join(cmd0))
+        if not args.dry_run:
+            subprocess.check_call(cmd0)
 
     for year, csv_path in selected:
         try:
@@ -139,6 +163,8 @@ def main() -> None:
         ]
         if args.dry_run:
             cmd2.append("--dry-run")
+        if year.isdigit() and int(year) < 2020:
+            cmd2.extend(["--vtd20-supplemental-keymap", str(args.vtd10_keymap)])
 
         print(f"\n=== {year} ({csv_path}) ===")
         print("Crosswalk:", " ".join(cmd1))
