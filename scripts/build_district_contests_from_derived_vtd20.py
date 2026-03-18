@@ -185,7 +185,6 @@ class GroupEntry:
     district: str
     slug: str
     path: Path
-    district_specific: bool
 
 
 def load_json(path: Path) -> Any:
@@ -291,8 +290,6 @@ def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list
         if not isinstance(results, dict):
             continue
 
-        fixed_district = normalize_district_number(e.district) if e.district_specific else ""
-
         for geoid, row in results.items():
             geoid_key = normalize_precinct_key(str(geoid))
             if not geoid_key or not isinstance(row, dict):
@@ -304,10 +301,9 @@ def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list
             other_votes = parse_vote_int(row.get("other_votes"))
             total_input_votes += total_votes
 
-            if fixed_district:
-                assignments = [(fixed_district, 1.0)]
-            else:
-                assignments = geoid_to_district.get(geoid_key, [])
+            # Always reallocate through the target crosswalk so all years/offices
+            # are expressed on the configured baseline district lines.
+            assignments = geoid_to_district.get(geoid_key, [])
             if not assignments:
                 continue
 
@@ -429,7 +425,6 @@ def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path
                     district=district,
                     slug=slug,
                     path=path,
-                    district_specific=True,
                 )
             )
         else:
@@ -443,7 +438,6 @@ def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path
                         district=district,
                         slug=slug,
                         path=path,
-                        district_specific=False,
                     )
                 )
     return out

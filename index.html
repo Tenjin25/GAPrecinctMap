@@ -14304,9 +14304,12 @@ document.addEventListener('DOMContentLoaded', function() {
           const coverageText = (coveragePct !== undefined && coveragePct !== null)
             ? ` | match coverage ${Number(coveragePct).toFixed(2)}%`
             : '';
-          setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - Reallocated to court-ordered 2022 lines${coverageText}`);
+          const baselineLabel = districtScope === 'congressional'
+            ? 'Reallocated to 2022 congressional (CD118) lines'
+            : 'Reallocated to 2024 legislative lines';
+          setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${baselineLabel}${coverageText}`);
           setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}`);
-          setVoteCounterBaselineState('Statewide', `${formatContestName(contestType, year)} ${year} (2022 lines)`, totalDem, totalRep, totalOther, { kind: 'statewide', contestType, year: Number(year) });
+          setVoteCounterBaselineState('Statewide', `${formatContestName(contestType, year)} ${year} (${districtScope === 'congressional' ? 'CD118 lines' : '2024 legislative lines'})`, totalDem, totalRep, totalOther, { kind: 'statewide', contestType, year: Number(year) });
           return;
         }
       }

@@ -1,12 +1,13 @@
 """
-Build precinct(VTD20)-to-district weighted crosswalk CSVs from Census BlockAssign.
+Build precinct(VTD20)-to-district weighted crosswalk CSVs.
 
 Reads:
   - Data/BlockAssign_ST13_GA.zip
     - BlockAssign_ST13_GA_VTD.txt   (BLOCKID, COUNTYFP, DISTRICT)
-    - BlockAssign_ST13_GA_CD.txt    (BLOCKID, DISTRICT)
     - BlockAssign_ST13_GA_SLDL.txt  (BLOCKID, DISTRICT)
     - BlockAssign_ST13_GA_SLDU.txt  (BLOCKID, DISTRICT)
+  - Data/tl_2020_13_vtd20.geojson
+  - Data/tl_2022_13_cd118.geojson
 
 Writes:
   - Data/crosswalks/precinct_to_cd118.csv
@@ -15,8 +16,9 @@ Writes:
   - Data/crosswalks/precinct_to_2022_state_senate.csv
   - Data/crosswalks/precinct_to_2024_state_senate.csv
 
-The weight is block-count share within each precinct key:
-  area_weight = blocks_in_(precinct,district) / total_blocks_in_precinct
+By default:
+  - Congressional (CD118) uses polygon area overlap between VTD20 and CD118.
+  - State house/senate use block-count shares from BlockAssign.
 """
 
 from __future__ import annotations
@@ -29,6 +31,11 @@ import zipfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
+
+try:
+    import geopandas as gpd
+except Exception:  # pragma: no cover - optional fallback dependency
+    gpd = None
 
 
 STATE_FIPS = "13"
@@ -128,6 +135,89 @@ def build_weight_rows(
     return rows, stats
 
 
+def build_cd_weight_rows_from_geometry(
+    *,
+    vtd20_geojson: Path,
+    cd_geojson: Path,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    if gpd is None:
+        raise SystemExit(
+            "geopandas is required to build CD118 crosswalk from geometry. "
+            "Install geopandas or use --cd-from-blockassign."
+        )
+
+    vtd = gpd.read_file(vtd20_geojson)
+    cd = gpd.read_file(cd_geojson)
+    if "GEOID20" not in vtd.columns:
+        raise SystemExit(f"Missing GEOID20 in {vtd20_geojson}")
+    if "CD118FP" not in cd.columns:
+        raise SystemExit(f"Missing CD118FP in {cd_geojson}")
+
+    vtd = vtd[["GEOID20", "geometry"]].copy()
+    vtd["precinct_key"] = vtd["GEOID20"].astype(str).str.strip().str.upper()
+    vtd = vtd[(vtd["precinct_key"] != "") & vtd.geometry.notnull()].copy()
+
+    cd = cd[["CD118FP", "geometry"]].copy()
+    cd["district_num"] = cd["CD118FP"].astype(str).map(normalize_district_number)
+    cd = cd[(cd["district_num"] != "") & cd.geometry.notnull()].copy()
+
+    # Equal-area projection for stable area weights.
+    vtd = vtd.to_crs("EPSG:5070")
+    cd = cd.to_crs("EPSG:5070")
+
+    invalid_vtd = ~vtd.is_valid
+    if invalid_vtd.any():
+        vtd.loc[invalid_vtd, "geometry"] = vtd.loc[invalid_vtd, "geometry"].buffer(0)
+    invalid_cd = ~cd.is_valid
+    if invalid_cd.any():
+        cd.loc[invalid_cd, "geometry"] = cd.loc[invalid_cd, "geometry"].buffer(0)
+
+    inter = gpd.overlay(
+        vtd[["precinct_key", "geometry"]],
+        cd[["district_num", "geometry"]],
+        how="intersection",
+        keep_geom_type=False,
+    )
+    if inter.empty:
+        raise SystemExit("CD geometry intersection returned no rows.")
+
+    inter["piece_area"] = inter.geometry.area
+    inter = inter[inter["piece_area"] > 0].copy()
+    if inter.empty:
+        raise SystemExit("CD geometry intersection produced zero-area rows only.")
+
+    totals = inter.groupby("precinct_key")["piece_area"].sum().to_dict()
+    rows: list[dict[str, Any]] = []
+    for _, row in inter.iterrows():
+        precinct_key = str(row.get("precinct_key") or "").strip().upper()
+        district_num = normalize_district_number(str(row.get("district_num") or ""))
+        piece_area = float(row.get("piece_area") or 0.0)
+        total_area = float(totals.get(precinct_key, 0.0))
+        if not precinct_key or not district_num or piece_area <= 0 or total_area <= 0:
+            continue
+        area_weight = piece_area / total_area
+        if not math.isfinite(area_weight) or area_weight <= 0:
+            continue
+        rows.append(
+            {
+                "precinct_key": precinct_key,
+                "district_num": district_num,
+                "area_weight": f"{area_weight:.10f}",
+                "block_count": "",
+                "precinct_block_count": "",
+            }
+        )
+
+    rows.sort(key=lambda r: (str(r["precinct_key"]), sort_district_key(str(r["district_num"]))))
+    stats = {
+        "precincts": len(totals),
+        "rows": len(rows),
+        "matched_blocks": 0,
+        "skipped_blocks": 0,
+    }
+    return rows, stats
+
+
 def write_crosswalk_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = ["precinct_key", "district_num", "area_weight", "block_count", "precinct_block_count"]
@@ -144,7 +234,14 @@ def main() -> None:
     ap.add_argument("--cd-member", default="BlockAssign_ST13_GA_CD.txt")
     ap.add_argument("--sldl-member", default="BlockAssign_ST13_GA_SLDL.txt")
     ap.add_argument("--sldu-member", default="BlockAssign_ST13_GA_SLDU.txt")
+    ap.add_argument("--vtd20-geojson", type=Path, default=Path("Data/tl_2020_13_vtd20.geojson"))
+    ap.add_argument("--cd118-geojson", type=Path, default=Path("Data/tl_2022_13_cd118.geojson"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/crosswalks"))
+    ap.add_argument(
+        "--cd-from-blockassign",
+        action="store_true",
+        help="Build congressional crosswalk from BlockAssign CD file instead of CD118 geometry.",
+    )
     ap.add_argument(
         "--copy-2022-to-2024",
         action="store_true",
@@ -159,17 +256,30 @@ def main() -> None:
     block_to_precinct = build_block_to_precinct_map(args.blockassign_zip, args.vtd_member)
     print(f"Loaded block->precinct map: {len(block_to_precinct)} blocks")
 
-    cd_rows, cd_stats = build_weight_rows(
-        args.blockassign_zip,
-        block_to_precinct=block_to_precinct,
-        district_member=args.cd_member,
-    )
+    if args.cd_from_blockassign:
+        cd_rows, cd_stats = build_weight_rows(
+            args.blockassign_zip,
+            block_to_precinct=block_to_precinct,
+            district_member=args.cd_member,
+        )
+        cd_mode = "blockassign"
+    else:
+        cd_rows, cd_stats = build_cd_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            cd_geojson=args.cd118_geojson,
+        )
+        cd_mode = "geometry"
     cd_path = args.out_dir / "precinct_to_cd118.csv"
     write_crosswalk_csv(cd_path, cd_rows)
-    print(
-        f"Wrote {cd_path} ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts, "
-        f"{cd_stats['matched_blocks']} matched blocks)"
-    )
+    if cd_mode == "blockassign":
+        print(
+            f"Wrote {cd_path} from blockassign ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts, "
+            f"{cd_stats['matched_blocks']} matched blocks)"
+        )
+    else:
+        print(
+            f"Wrote {cd_path} from geometry ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts)"
+        )
 
     sldl_rows, sldl_stats = build_weight_rows(
         args.blockassign_zip,
