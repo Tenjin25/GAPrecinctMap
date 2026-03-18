@@ -5759,7 +5759,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="map-topbar-badge">Georgia Election Atlas</div>
       <div class="map-topbar-copy">
         <strong>Fly to a county, district, or precinct</strong>
-        <span>Try Wake, CD 13, HD 73, SD 18, or Wake 01-14.</span>
+        <span>Try Fulton, CD 5, HD 57, SD 37, or Fulton 03A.</span>
       </div>
     </div>
     <form class="fly-search-bar" id="fly-search-form" role="search">
@@ -5771,7 +5771,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <path d="M16 16L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
           </svg>
         </span>
-        <input type="search" id="county-search" placeholder="Fly to Wake, CD 13, HD 73..." autocomplete="off" spellcheck="false" />
+        <input type="search" id="county-search" placeholder="Fly to Fulton, CD 5, HD 57..." autocomplete="off" spellcheck="false" />
         <button type="button" class="fly-search-clear" id="fly-search-clear" aria-label="Clear search">x</button>
       </div>
       <button type="submit" class="fly-search-submit">Fly to</button>
@@ -5779,11 +5779,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <button type="button" class="mobile-topbar-toggle" id="mobile-topbar-toggle" aria-controls="map-topbar-details" aria-expanded="false">Show details</button>
     <div class="map-topbar-details" id="map-topbar-details">
       <div class="map-topbar-hints" aria-label="Search examples">
-        <button type="button" class="fly-search-chip" data-search-example="Wake">Wake</button>
-        <button type="button" class="fly-search-chip" data-search-example="CD 13">CD 13</button>
-        <button type="button" class="fly-search-chip" data-search-example="HD 73">HD 73</button>
-        <button type="button" class="fly-search-chip" data-search-example="SD 18">SD 18</button>
-        <button type="button" class="fly-search-chip" data-search-example="Wake 01-14">Wake 01-14</button>
+        <button type="button" class="fly-search-chip" data-search-example="Fulton">Fulton</button>
+        <button type="button" class="fly-search-chip" data-search-example="CD 5">CD 5</button>
+        <button type="button" class="fly-search-chip" data-search-example="HD 57">HD 57</button>
+        <button type="button" class="fly-search-chip" data-search-example="SD 37">SD 37</button>
+        <button type="button" class="fly-search-chip" data-search-example="Fulton 03A">Fulton 03A</button>
       </div>
       <div class="context-banner" id="context-banner" aria-label="Current map state">
         <div class="context-banner-item">
@@ -5827,7 +5827,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <summary>Search</summary>
           <div style="margin-top: 10px;">
             <label for="sidebar-county-search" style="font-weight:600;">Find</label>
-            <input type="text" id="sidebar-county-search" placeholder="Wake, CD 13, HD 73, SD 18, Wake 01-14" autocomplete="off" spellcheck="false" />
+            <input type="text" id="sidebar-county-search" placeholder="Fulton, CD 5, HD 57, SD 37, Fulton 03A" autocomplete="off" spellcheck="false" />
             <div style="margin-top:6px;font-size:12px;color:#64748b;">
               Tips: use <span style="font-weight:700;">CD</span> for Congress, <span style="font-weight:700;">HD</span> for House, <span style="font-weight:700;">SD</span> for Senate.
             </div>
@@ -5879,17 +5879,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label class="control-section-label" for="desktop-fly-search">Fly to</label>
                 <div class="desktop-fly-search-wrap">
                   <div class="desktop-fly-search-field fly-search-field">
-                    <input id="desktop-fly-search" type="search" placeholder="Wake County, CD 13, HD 73, SD 18, Wake 01-14" autocomplete="off" spellcheck="false" inputmode="search" />
+                    <input id="desktop-fly-search" type="search" placeholder="Fulton County, CD 5, HD 57, SD 37, Fulton 03A" autocomplete="off" spellcheck="false" inputmode="search" />
                   </div>
                   <button id="desktop-fly-submit" class="desktop-fly-submit" type="button">Go</button>
                 </div>
                 <div class="desktop-fly-helper">Jump to counties, districts, or precincts without changing the selected contest.</div>
                 <div class="desktop-fly-chip-row" aria-label="Fly-to examples">
-                  <button class="desktop-fly-chip" type="button" data-search-example="Wake">Wake</button>
-                  <button class="desktop-fly-chip" type="button" data-search-example="CD 13">CD 13</button>
-                  <button class="desktop-fly-chip" type="button" data-search-example="HD 73">HD 73</button>
-                  <button class="desktop-fly-chip" type="button" data-search-example="SD 18">SD 18</button>
-                  <button class="desktop-fly-chip" type="button" data-search-example="Wake 01-14">Wake 01-14</button>
+                  <button class="desktop-fly-chip" type="button" data-search-example="Fulton">Fulton</button>
+                  <button class="desktop-fly-chip" type="button" data-search-example="CD 5">CD 5</button>
+                  <button class="desktop-fly-chip" type="button" data-search-example="HD 57">HD 57</button>
+                  <button class="desktop-fly-chip" type="button" data-search-example="SD 37">SD 37</button>
+                  <button class="desktop-fly-chip" type="button" data-search-example="Fulton 03A">Fulton 03A</button>
                 </div>
             </div>
             <div class="control-summary" id="control-summary">
@@ -6632,7 +6632,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (/^(ABSENTEE|PROVISIONAL|CURBSIDE)$/i.test(c)) return true;
       if (c.includes('ONE STOP') || c.includes('MAIL ABSENTEE') || c.includes('VOTE CENTER') || c.includes('VOTECENTER') || c.includes('EARLY VOT')) return true;
       if (c.startsWith('OS ') || c.startsWith('OS-') || c.startsWith('OS_')) return true;
-      // Wake (and others) sometimes use compact one-stop bucket codes like "OSAB 1-40" or "OSNB81-91".
+      // Some counties use compact one-stop bucket codes like "OSAB 1-40" or "OSNB81-91".
       if (/^OS[A-Z0-9]/.test(c)) return true;
       return false;
     }
@@ -13548,7 +13548,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        // include the bare code as a matching variant.
 	        try {
 	          if (baseToken) {
-	            // Decimal codes like Buncombe "08.1".
+	            // Decimal precinct codes like "08.1".
 	            const md = baseToken.match(/^0*([0-9]{1,3})\.([0-9]{1,3})$/);
 	            if (md) {
 	              const a = String(parseInt(md[1], 10)).padStart(2, '0');
@@ -13774,7 +13774,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   addKey(`${String(n).padStart(4, '0')}${suf}`);
                 }
               }
-              // Decimal codes like Buncombe "08.1".
+              // Decimal precinct codes like "08.1".
               const md = token.match(/^0*([0-9]{1,3})\.([0-9]{1,3})$/);
               if (md) {
                 const a = String(parseInt(md[1], 10)).padStart(2, '0');

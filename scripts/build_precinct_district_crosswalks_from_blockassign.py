@@ -18,7 +18,13 @@ Writes:
 
 By default:
   - Congressional (CD118) uses polygon area overlap between VTD20 and CD118.
-  - State house/senate use block-count shares from BlockAssign.
+  - State house/senate use polygon area overlap between VTD20 and SLDL/SLDU.
+
+Optional:
+  - You can switch any chamber to BlockAssign source with:
+      --cd-from-blockassign
+      --house-from-blockassign
+      --senate-from-blockassign
 """
 
 from __future__ import annotations
@@ -135,10 +141,11 @@ def build_weight_rows(
     return rows, stats
 
 
-def build_cd_weight_rows_from_geometry(
+def build_weight_rows_from_geometry(
     *,
     vtd20_geojson: Path,
-    cd_geojson: Path,
+    district_geojson: Path,
+    district_field: str,
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
     if gpd is None:
         raise SystemExit(
@@ -147,44 +154,44 @@ def build_cd_weight_rows_from_geometry(
         )
 
     vtd = gpd.read_file(vtd20_geojson)
-    cd = gpd.read_file(cd_geojson)
+    districts = gpd.read_file(district_geojson)
     if "GEOID20" not in vtd.columns:
         raise SystemExit(f"Missing GEOID20 in {vtd20_geojson}")
-    if "CD118FP" not in cd.columns:
-        raise SystemExit(f"Missing CD118FP in {cd_geojson}")
+    if district_field not in districts.columns:
+        raise SystemExit(f"Missing {district_field} in {district_geojson}")
 
     vtd = vtd[["GEOID20", "geometry"]].copy()
     vtd["precinct_key"] = vtd["GEOID20"].astype(str).str.strip().str.upper()
     vtd = vtd[(vtd["precinct_key"] != "") & vtd.geometry.notnull()].copy()
 
-    cd = cd[["CD118FP", "geometry"]].copy()
-    cd["district_num"] = cd["CD118FP"].astype(str).map(normalize_district_number)
-    cd = cd[(cd["district_num"] != "") & cd.geometry.notnull()].copy()
+    districts = districts[[district_field, "geometry"]].copy()
+    districts["district_num"] = districts[district_field].astype(str).map(normalize_district_number)
+    districts = districts[(districts["district_num"] != "") & districts.geometry.notnull()].copy()
 
     # Equal-area projection for stable area weights.
     vtd = vtd.to_crs("EPSG:5070")
-    cd = cd.to_crs("EPSG:5070")
+    districts = districts.to_crs("EPSG:5070")
 
     invalid_vtd = ~vtd.is_valid
     if invalid_vtd.any():
         vtd.loc[invalid_vtd, "geometry"] = vtd.loc[invalid_vtd, "geometry"].buffer(0)
-    invalid_cd = ~cd.is_valid
-    if invalid_cd.any():
-        cd.loc[invalid_cd, "geometry"] = cd.loc[invalid_cd, "geometry"].buffer(0)
+    invalid_d = ~districts.is_valid
+    if invalid_d.any():
+        districts.loc[invalid_d, "geometry"] = districts.loc[invalid_d, "geometry"].buffer(0)
 
     inter = gpd.overlay(
         vtd[["precinct_key", "geometry"]],
-        cd[["district_num", "geometry"]],
+        districts[["district_num", "geometry"]],
         how="intersection",
         keep_geom_type=False,
     )
     if inter.empty:
-        raise SystemExit("CD geometry intersection returned no rows.")
+        raise SystemExit(f"Geometry intersection returned no rows for {district_geojson}.")
 
     inter["piece_area"] = inter.geometry.area
     inter = inter[inter["piece_area"] > 0].copy()
     if inter.empty:
-        raise SystemExit("CD geometry intersection produced zero-area rows only.")
+        raise SystemExit(f"Geometry intersection produced zero-area rows only for {district_geojson}.")
 
     totals = inter.groupby("precinct_key")["piece_area"].sum().to_dict()
     rows: list[dict[str, Any]] = []
@@ -236,11 +243,23 @@ def main() -> None:
     ap.add_argument("--sldu-member", default="BlockAssign_ST13_GA_SLDU.txt")
     ap.add_argument("--vtd20-geojson", type=Path, default=Path("Data/tl_2020_13_vtd20.geojson"))
     ap.add_argument("--cd118-geojson", type=Path, default=Path("Data/tl_2022_13_cd118.geojson"))
+    ap.add_argument("--sldl-geojson", type=Path, default=Path("Data/tl_2022_13_sldl.geojson"))
+    ap.add_argument("--sldu-geojson", type=Path, default=Path("Data/tl_2022_13_sldu.geojson"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/crosswalks"))
     ap.add_argument(
         "--cd-from-blockassign",
         action="store_true",
         help="Build congressional crosswalk from BlockAssign CD file instead of CD118 geometry.",
+    )
+    ap.add_argument(
+        "--house-from-blockassign",
+        action="store_true",
+        help="Build state house crosswalk from BlockAssign SLDL instead of SLDL geometry.",
+    )
+    ap.add_argument(
+        "--senate-from-blockassign",
+        action="store_true",
+        help="Build state senate crosswalk from BlockAssign SLDU instead of SLDU geometry.",
     )
     ap.add_argument(
         "--copy-2022-to-2024",
@@ -250,13 +269,17 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    if not args.blockassign_zip.exists():
-        raise SystemExit(f"Missing block assignment zip: {args.blockassign_zip}")
-
-    block_to_precinct = build_block_to_precinct_map(args.blockassign_zip, args.vtd_member)
-    print(f"Loaded block->precinct map: {len(block_to_precinct)} blocks")
+    needs_blockassign = args.cd_from_blockassign or args.house_from_blockassign or args.senate_from_blockassign
+    block_to_precinct: dict[str, str] | None = None
+    if needs_blockassign:
+        if not args.blockassign_zip.exists():
+            raise SystemExit(f"Missing block assignment zip: {args.blockassign_zip}")
+        block_to_precinct = build_block_to_precinct_map(args.blockassign_zip, args.vtd_member)
+        print(f"Loaded block->precinct map: {len(block_to_precinct)} blocks")
 
     if args.cd_from_blockassign:
+        if block_to_precinct is None:
+            raise SystemExit("Internal error: blockassign map was not initialized.")
         cd_rows, cd_stats = build_weight_rows(
             args.blockassign_zip,
             block_to_precinct=block_to_precinct,
@@ -264,9 +287,10 @@ def main() -> None:
         )
         cd_mode = "blockassign"
     else:
-        cd_rows, cd_stats = build_cd_weight_rows_from_geometry(
+        cd_rows, cd_stats = build_weight_rows_from_geometry(
             vtd20_geojson=args.vtd20_geojson,
-            cd_geojson=args.cd118_geojson,
+            district_geojson=args.cd118_geojson,
+            district_field="CD118FP",
         )
         cd_mode = "geometry"
     cd_path = args.out_dir / "precinct_to_cd118.csv"
@@ -281,11 +305,22 @@ def main() -> None:
             f"Wrote {cd_path} from geometry ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts)"
         )
 
-    sldl_rows, sldl_stats = build_weight_rows(
-        args.blockassign_zip,
-        block_to_precinct=block_to_precinct,
-        district_member=args.sldl_member,
-    )
+    if args.house_from_blockassign:
+        if block_to_precinct is None:
+            raise SystemExit("Internal error: blockassign map was not initialized.")
+        sldl_rows, sldl_stats = build_weight_rows(
+            args.blockassign_zip,
+            block_to_precinct=block_to_precinct,
+            district_member=args.sldl_member,
+        )
+        house_mode = "blockassign"
+    else:
+        sldl_rows, sldl_stats = build_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            district_geojson=args.sldl_geojson,
+            district_field="SLDLST",
+        )
+        house_mode = "geometry"
     sldl_2022_path = args.out_dir / "precinct_to_2022_state_house.csv"
     sldl_2024_path = args.out_dir / "precinct_to_2024_state_house.csv"
     write_crosswalk_csv(sldl_2022_path, sldl_rows)
@@ -294,21 +329,38 @@ def main() -> None:
         write_crosswalk_csv(sldl_2024_path, sldl_rows)
         wrote_house_2024 = True
     if wrote_house_2024:
-        print(
-            f"Wrote {sldl_2022_path} and {sldl_2024_path} ({sldl_stats['rows']} rows, "
-            f"{sldl_stats['precincts']} precincts, {sldl_stats['matched_blocks']} matched blocks)"
-        )
+        if house_mode == "blockassign":
+            print(
+                f"Wrote {sldl_2022_path} and {sldl_2024_path} from blockassign ({sldl_stats['rows']} rows, "
+                f"{sldl_stats['precincts']} precincts, {sldl_stats['matched_blocks']} matched blocks)"
+            )
+        else:
+            print(
+                f"Wrote {sldl_2022_path} and {sldl_2024_path} from geometry ({sldl_stats['rows']} rows, "
+                f"{sldl_stats['precincts']} precincts)"
+            )
     else:
         print(
             f"Wrote {sldl_2022_path} ({sldl_stats['rows']} rows, {sldl_stats['precincts']} precincts, "
             f"{sldl_stats['matched_blocks']} matched blocks); preserved existing {sldl_2024_path}"
         )
 
-    sldu_rows, sldu_stats = build_weight_rows(
-        args.blockassign_zip,
-        block_to_precinct=block_to_precinct,
-        district_member=args.sldu_member,
-    )
+    if args.senate_from_blockassign:
+        if block_to_precinct is None:
+            raise SystemExit("Internal error: blockassign map was not initialized.")
+        sldu_rows, sldu_stats = build_weight_rows(
+            args.blockassign_zip,
+            block_to_precinct=block_to_precinct,
+            district_member=args.sldu_member,
+        )
+        senate_mode = "blockassign"
+    else:
+        sldu_rows, sldu_stats = build_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            district_geojson=args.sldu_geojson,
+            district_field="SLDUST",
+        )
+        senate_mode = "geometry"
     sldu_2022_path = args.out_dir / "precinct_to_2022_state_senate.csv"
     sldu_2024_path = args.out_dir / "precinct_to_2024_state_senate.csv"
     write_crosswalk_csv(sldu_2022_path, sldu_rows)
@@ -317,10 +369,16 @@ def main() -> None:
         write_crosswalk_csv(sldu_2024_path, sldu_rows)
         wrote_senate_2024 = True
     if wrote_senate_2024:
-        print(
-            f"Wrote {sldu_2022_path} and {sldu_2024_path} ({sldu_stats['rows']} rows, "
-            f"{sldu_stats['precincts']} precincts, {sldu_stats['matched_blocks']} matched blocks)"
-        )
+        if senate_mode == "blockassign":
+            print(
+                f"Wrote {sldu_2022_path} and {sldu_2024_path} from blockassign ({sldu_stats['rows']} rows, "
+                f"{sldu_stats['precincts']} precincts, {sldu_stats['matched_blocks']} matched blocks)"
+            )
+        else:
+            print(
+                f"Wrote {sldu_2022_path} and {sldu_2024_path} from geometry ({sldu_stats['rows']} rows, "
+                f"{sldu_stats['precincts']} precincts)"
+            )
     else:
         print(
             f"Wrote {sldu_2022_path} ({sldu_stats['rows']} rows, {sldu_stats['precincts']} precincts, "
