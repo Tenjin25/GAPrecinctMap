@@ -6082,7 +6082,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Floating Status Panel -->
   <div class="status-panel" id="status-panel" style="display:none;position:fixed;top:20px;right:90px;z-index:10002;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);padding:18px 24px 18px 18px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);border:1px solid #e5e7eb;max-width:340px;min-width:200px;font-size:15px;color:#34495e;">
     <span id="status-message"></span>
-    <button id="status-exit" title="Close" style="position:absolute;top:10px;right:10px;padding:4px 10px;border-radius:6px;border:none;background:#eee;cursor:pointer;font-weight:bold;font-size:18px;">Ã—</button>
+    <button id="status-exit" title="Close" style="position:absolute;top:10px;right:10px;padding:4px 10px;border-radius:6px;border:none;background:#eee;cursor:pointer;font-weight:bold;font-size:18px;">&times;</button>
   </div>
     
 
@@ -6385,28 +6385,28 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="modal-body">
           <h3>Modes</h3>
-          <p><strong>Margins</strong>: colors show the <strong>two-party margin</strong> (absolute value of Rep% âˆ’ Dem%). Darker = less competitive.</p>
+          <p><strong>Margins</strong>: colors show the <strong>two-party margin</strong> (absolute value of Rep% - Dem%). Darker = less competitive.</p>
           <p><strong>Winners</strong>: solid color by winner (D/R), regardless of margin size.</p>
-          <p><strong>Shift</strong>: change in <strong>signed</strong> margin vs the nearest available prior election for that contest (e.g. 2020â†’2024). Positive = more Republican; negative = more Democratic.</p>
+          <p><strong>Shift</strong>: change in <strong>signed</strong> margin vs the nearest available prior election for that contest (e.g. 2020->2024). Positive = more Republican; negative = more Democratic.</p>
 
           <h3>Political Categories</h3>
           <p>Category names are just shorthand for margin ranges:</p>
           <ul>
             <li><strong>Annihilation</strong>: &ge;40%</li>
-            <li><strong>Dominant</strong>: 30â€“39.99%</li>
-            <li><strong>Stronghold</strong>: 20â€“29.99%</li>
-            <li><strong>Safe</strong>: 10â€“19.99%</li>
-            <li><strong>Likely</strong>: 5.50â€“9.99%</li>
-            <li><strong>Lean</strong>: 1.00â€“5.49%</li>
-            <li><strong>Tilt</strong>: 0.50â€“0.99%</li>
+            <li><strong>Dominant</strong>: 30-39.99%</li>
+            <li><strong>Stronghold</strong>: 20-29.99%</li>
+            <li><strong>Safe</strong>: 10-19.99%</li>
+            <li><strong>Likely</strong>: 5.50-9.99%</li>
+            <li><strong>Lean</strong>: 1.00-5.49%</li>
+            <li><strong>Tilt</strong>: 0.50-0.99%</li>
             <li><strong>Tossup</strong>: &lt;0.50%</li>
           </ul>
-          <p class="meta-subtle">Example: â€œSafe Republican (10â€“19.99%)â€ means the Republican candidate leads by 10â€“19.99 percentage points (two-party margin).</p>
+          <p class="meta-subtle">Example: "Safe Republican (10-19.99%)" means the Republican candidate leads by 10-19.99 percentage points (two-party margin).</p>
 
           <h3>Hover + Pin</h3>
           <ul>
             <li>Hover a shape to see a quick result card.</li>
-            <li>Click <strong>Pin</strong> in the tooltip to freeze it (so it wonâ€™t change while you move the mouse).</li>
+            <li>Click <strong>Pin</strong> in the tooltip to freeze it (so it won't change while you move the mouse).</li>
             <li>Use <strong>Close</strong> to dismiss a pinned tooltip.</li>
           </ul>
 
@@ -6414,12 +6414,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <ul>
             <li><span class="kbd">P</span> toggles precinct overlay (dots at statewide zoom; polygons when zoomed in).</li>
             <li><span class="kbd">L</span> toggles county labels.</li>
-            <li><strong>â™¿</strong> toggles colorblind-friendly colors.</li>
+            <li><strong>Colorblind</strong> toggles colorblind-friendly colors.</li>
             <li><strong>Clear</strong> (in the vote counter) unpins a selected area.</li>
           </ul>
 
           <h3>Notes</h3>
-          <p class="meta-subtle">If Shift canâ€™t find a prior year for the selected contest, it falls back to Margins.</p>
+          <p class="meta-subtle">If Shift can't find a prior year for the selected contest, it falls back to Margins.</p>
         </div>
       </div>
     </div>
@@ -6765,7 +6765,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let districtsInfo = null;
     let stateHouseInfo = null;
     let stateSenateInfo = null;
-    let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concordâ€“Harrisburg"
+    let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concord-Harrisburg"
     let countyDemographics = null; // County-level VAP (18+) + total-pop race/ethnicity from DP1
     let countyNameMap = {};
     let currentView = 'counties'; // 'counties', 'districts', 'state_house', 'state_senate'
@@ -6984,7 +6984,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="legend-item"><div class="legend-color" style="background: ${colorForFlipMode('T')}; border: 1px solid rgba(15,23,42,0.20);"></div>No flip / No prior</div>
         `;
       } else if (mode === 'shift') {
-        const a = meta?.fromYear ? `${meta.fromYear} â†’ ${meta.toYear || ''}`.trim() : 'Shift';
+        const a = meta?.fromYear ? `${meta.fromYear} -> ${meta.toYear || ''}`.trim() : 'Shift';
         if (header) header.textContent = meta?.fromYear ? `Shift (${a})` : 'Shift';
         content.innerHTML = `
           <div class="legend-item"><div class="legend-color" style="background: ${colorForShiftMode(-15)};"></div>D +15%</div>
@@ -7893,6 +7893,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      async function resolveContestCandidatePair(contestType, year, seed = null) {
+        let demCandidate = (seed?.demCandidate || seed?.dem || '').toString().trim();
+        let repCandidate = (seed?.repCandidate || seed?.rep || '').toString().trim();
+
+        if (contestType !== 'us_house' && (!(demCandidate && repCandidate))) {
+          try {
+            const cand = await getContestCandidates(contestType, year);
+            if (!demCandidate) demCandidate = (cand?.dem || '').toString().trim();
+            if (!repCandidate) repCandidate = (cand?.rep || '').toString().trim();
+          } catch (_) {}
+        }
+
+        if (!demCandidate || !repCandidate) {
+          const officeName = formatContestName(contestType, year);
+          if (!demCandidate) demCandidate = getCandidateName(year, officeName, 'Democrat');
+          if (!repCandidate) repCandidate = getCandidateName(year, officeName, 'Republican');
+        }
+
+        demCandidate = stripRunningMateName(demCandidate);
+        repCandidate = stripRunningMateName(repCandidate);
+
+        if (contestType === 'us_house' && !demCandidate && !repCandidate) return null;
+        return { demCandidate, repCandidate };
+      }
+
     function normalizeManifestJsonPath(rawPath) {
       const raw = (rawPath || '').toString().trim();
       if (!raw) return '';
@@ -8287,41 +8312,81 @@ document.addEventListener('DOMContentLoaded', function() {
       return Object.values(recordsMap);
     }
 
+    function normalizeOfficeToken(raw) {
+      return (raw || '')
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '');
+    }
+
+    function officeNameToContestType(office) {
+      const token = normalizeOfficeToken(office);
+      const officeMap = {
+        president_of_the_united_states: 'president',
+        presidential: 'president',
+        governor: 'governor',
+        lieutenant_governor: 'lieutenant_governor',
+        united_states_senator: 'us_senate',
+        united_states_senator_special: 'us_senate_special',
+        us_senate: 'us_senate',
+        attorney_general: 'attorney_general',
+        commissioner_of_agriculture: 'agriculture_commissioner',
+        agriculture_commissioner: 'agriculture_commissioner',
+        secretary_of_state: 'secretary_of_state',
+        treasurer: 'treasurer',
+        state_auditor: 'auditor',
+        auditor: 'auditor',
+        commissioner_of_labor: 'labor_commissioner',
+        labor_commissioner: 'labor_commissioner',
+        commissioner_of_insurance: 'insurance_commissioner',
+        insurance_commissioner: 'insurance_commissioner',
+        superintendent_of_public_instruction: 'superintendent',
+        state_school_superintendent: 'superintendent',
+        superintendent: 'superintendent'
+      };
+      return officeMap[token] || token;
+    }
+
     // Get candidate name from the JSON data (already includes first/last names)
     function getCandidateName(year, office, party) {
-      if (!electionData || electionData.length === 0) return party === 'Democrat' ? 'D' : 'R';
-      
-      // Map office name to office type key (matching flattened data field names)
-      const officeMap = {
-        'President of the United States': 'president',
-        'Governor': 'governor',
-        'United States Senator': 'us_senate',
-        'Attorney General': 'attorney_general',
-        'Commissioner of Agriculture': 'agriculture_commissioner',
-        'Secretary of State': 'secretary_of_state',
-        'Treasurer': 'treasurer'
-      };
-      
-      const officeType = officeMap[office] || office.toLowerCase().replace(/ /g, '_');
+      const fallback = party === 'Democrat' ? 'Democratic' : 'Republican';
+      if (!electionData || electionData.length === 0) return fallback;
+
       const partyKey = party === 'Democrat' ? 'dem' : 'rep';
-      const candidateField = `${officeType}_${partyKey}_candidate`;
-      
-      // Find any county record for this year/office and get the candidate name
-      const record = electionData.find(r => r.year == year && r[candidateField]);
-      
-      const cacheKey = `${year}|${officeType}|${partyKey}`;
-      if (candidateNameCache.has(cacheKey)) {
-        return candidateNameCache.get(cacheKey);
+      const officeType = officeNameToContestType(office);
+      const aliases = new Set([officeType]);
+
+      // Handle historical naming variants in flattened election rows.
+      if (officeType.startsWith('commissioner_of_')) {
+        aliases.add(`${officeType.replace('commissioner_of_', '')}_commissioner`);
       }
-      
-      if (record && record[candidateField]) {
-        candidateNameCache.set(cacheKey, record[candidateField]);
-        return record[candidateField];
+      if (officeType.endsWith('_commissioner')) {
+        aliases.add(`commissioner_of_${officeType.replace(/_commissioner$/, '')}`);
       }
-      
-      const fallback = party === 'Democrat' ? 'D' : 'R';
-      candidateNameCache.set(cacheKey, fallback);
-      return fallback;
+      if (officeType === 'president') aliases.add('presidential');
+      if (officeType === 'presidential') aliases.add('president');
+      if (officeType === 'auditor') aliases.add('state_auditor');
+      if (officeType === 'superintendent') aliases.add('state_school_superintendent');
+
+      const cacheBase = Array.from(aliases).sort().join('|');
+      const cacheKey = `${year}|${cacheBase}|${partyKey}`;
+      if (candidateNameCache.has(cacheKey)) return candidateNameCache.get(cacheKey);
+
+      let candidate = '';
+      for (const alias of aliases) {
+        const candidateField = `${alias}_${partyKey}_candidate`;
+        const record = electionData.find(r => r.year == year && r[candidateField]);
+        if (record && record[candidateField]) {
+          candidate = record[candidateField];
+          break;
+        }
+      }
+
+      if (!candidate) candidate = fallback;
+      candidateNameCache.set(cacheKey, candidate);
+      return candidate;
     }
 // Merge JSONs (e.g., boundaries + election results)
     function mergeGeoElectionData(boundaryGeoJSON, electionData, countyKey='County', countyNameKey='county') {
@@ -9324,20 +9389,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function stripRunningMateName(name) {
       const raw = (name || '').toString().trim();
       if (!raw) return '';
+      const normalized = raw.replace(/[\u2013\u2014]/g, '-');
       // Common presidential ticket separators.
-      const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', ' â€“ ', ' â€” '];
+      const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', '--'];
       for (const sep of seps) {
-        if (raw.includes(sep)) {
-          const left = raw.split(sep, 1)[0].trim();
-          return left || raw;
+        if (normalized.includes(sep)) {
+          const left = normalized.split(sep, 1)[0].trim();
+          return left || normalized;
         }
       }
       // Legacy "GORE-LIEBERMAN" style.
-      if (raw.includes('-')) {
-        const [left, right] = raw.split('-', 2).map(s => (s || '').trim());
+      if (normalized.includes('-')) {
+        const [left, right] = normalized.split('-', 2).map(s => (s || '').trim());
         if (left && right && (right.includes('.') || right.includes(' '))) return left;
       }
-      return raw;
+      return normalized;
     }
 
     function marginPctValue(repVotes, demVotes, totalVotes) {
@@ -9383,10 +9449,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const margin = Number(repVotes || 0) - Number(demVotes || 0);
       const pctLabel = `${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
       if (margin > 0) {
-        return `${shortCandidateLabel(repCandidate, 'R')} +${pctLabel}`;
+        return `${shortCandidateLabel(repCandidate, 'Republican')} +${pctLabel}`;
       }
       if (margin < 0) {
-        return `${shortCandidateLabel(demCandidate, 'D')} +${pctLabel}`;
+        return `${shortCandidateLabel(demCandidate, 'Democratic')} +${pctLabel}`;
       }
       return 'Tie';
     }
@@ -10010,7 +10076,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const abs = Math.abs(s);
       const label = abs < 0.01 ? 'No change' : `${dir} + ${abs.toFixed(2)}%`;
       const dotColor = colorForShiftMode(s);
-      const years = (prevYear && year) ? `${prevYear}â†’${year}` : '';
+      const years = (prevYear && year) ? `${prevYear}->${year}` : '';
       return `<span class="meta-chip shift"><span class="dot" style="background:${dotColor};"></span>Shift: ${label}${years ? ` <span style="color:#64748b;font-weight:800;">(${years})</span>` : ''}</span>`;
     }
 
@@ -10409,8 +10475,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const demVotes = Number(row[`${contestType}_dem`] || 0);
       const repVotes = Number(row[`${contestType}_rep`] || 0);
       const otherVotes = Number(row[`${contestType}_other`] || 0);
-      const demCandidate = row[`${contestType}_dem_candidate`] || '';
-      const repCandidate = row[`${contestType}_rep_candidate`] || '';
+      const demCandidate = (row[`${contestType}_dem_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Democrat')).toString().trim();
+      const repCandidate = (row[`${contestType}_rep_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Republican')).toString().trim();
       const subtitle = `${formatContestName(contestType, year)} ${year}`;
 
       const signedMarginPct = Number(row[`${contestType}_margin_pct`]);
@@ -11337,7 +11403,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (buckets.size) {
         sidebarContent += `<div class="margin-section">`;
         sidebarContent += '<h3 class="sidebar-section-title">Non-geographic votes</h3>';
-        sidebarContent += `<p class="sidebar-margin-details" style="margin-top:0;">Included in totals; not shown as precincts (e.g., Early Vote â€œEVâ€).</p>`;
+        sidebarContent += `<p class="sidebar-margin-details" style="margin-top:0;">Included in totals; not shown as precincts (e.g., Early Vote "EV").</p>`;
         Array.from(buckets.entries())
           .sort((a, b) => (b[1].total || 0) - (a[1].total || 0))
           .slice(0, 10)
@@ -11857,8 +11923,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const demVotes = Number(row[`${contestType}_dem`] || 0);
             const repVotes = Number(row[`${contestType}_rep`] || 0);
             const otherVotes = Number(row[`${contestType}_other`] || 0);
-            const demCandidate = row[`${contestType}_dem_candidate`] || '';
-            const repCandidate = row[`${contestType}_rep_candidate`] || '';
+            const demCandidate = (row[`${contestType}_dem_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Democrat')).toString().trim();
+            const repCandidate = (row[`${contestType}_rep_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Republican')).toString().trim();
             const subtitle = `${formatContestName(contestType, year)} ${year}`;
             const inner = buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate);
             showHoverTooltip(evt.point.x, evt.point.y, buildTooltipShell(title, inner));
@@ -12975,7 +13041,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
               trends.push({
                 year: year,
-                display: `${year}: ${winner}+${marginAbs.toFixed(2)}`,
+                display: `${year}: ${winner === 'D' ? 'Democratic' : (winner === 'R' ? 'Republican' : 'Tie')} +${marginAbs.toFixed(2)}`,
                 margin: margin,
                 type: 'house'
               });
@@ -13076,7 +13142,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
               trends.push({
                 year: year,
-                display: `${year}: ${winner}+${marginAbs.toFixed(2)} (House)`,
+                display: `${year}: ${winner === 'D' ? 'Democratic' : (winner === 'R' ? 'Republican' : 'Tie')} +${marginAbs.toFixed(2)} (House)`,
                 margin: margin,
                 type: 'state_house'
               });
@@ -13214,7 +13280,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (districtInfo) {
         demographicInfo = `
           <div style="margin-bottom: 16px;">
-            <h5>ðŸ‘¥ Demographics (VAP)</h5>
+            <h5>Demographics (VAP)</h5>
             <p><strong>Total Population:</strong> ${districtInfo.total_population.toLocaleString()}</p>
             <p><strong>White:</strong> ${districtInfo.white_vap_pct}%</p>
             <p><strong>Black:</strong> ${districtInfo.black_vap_pct}%</p>
@@ -13329,7 +13395,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (districtInfo) {
         demographicInfo = `
           <div style="margin-bottom: 16px;">
-            <h5>ðŸ‘¥ Demographics (VAP)</h5>
+            <h5>Demographics (VAP)</h5>
             <p><strong>Total Population:</strong> ${districtInfo.total_population.toLocaleString()}</p>
             <p><strong>White:</strong> ${districtInfo.white_vap_pct}%</p>
             <p><strong>Black:</strong> ${districtInfo.black_vap_pct}%</p>
@@ -13678,7 +13744,9 @@ document.addEventListener('DOMContentLoaded', function() {
           ? 'D'
           : (Number(recent.president_rep || 0) > Number(recent.president_dem || 0) ? 'R' : 'T');
         const marginAbs = Math.abs(margin);
-        const winnerLabel = winner === 'T' ? 'Tie' : `${winner}+${marginAbs.toFixed(2)}%`;
+        const winnerLabel = winner === 'T'
+          ? 'Tie'
+          : `${winner === 'D' ? 'Democratic' : 'Republican'} +${marginAbs.toFixed(2)}%`;
         
         return `<div class="quick-tooltip">
           <strong>${countyName} County</strong><br>
@@ -13763,7 +13831,9 @@ document.addEventListener('DOMContentLoaded', function() {
             ? 'D'
             : (Number(recent.us_house_rep || 0) > Number(recent.us_house_dem || 0) ? 'R' : 'T');
           const marginAbs = Math.abs(margin);
-          const winnerLabel = winner === 'T' ? 'Tie' : `${winner}+${marginAbs.toFixed(2)}%`;
+          const winnerLabel = winner === 'T'
+            ? 'Tie'
+            : `${winner === 'D' ? 'Democratic' : 'Republican'} +${marginAbs.toFixed(2)}%`;
           
           return `<div class="quick-tooltip">
             <strong>${displayName}</strong><br>
@@ -15229,7 +15299,16 @@ document.addEventListener('DOMContentLoaded', function() {
           await applyDerivedPrecinctOverlayForContest(contestType, year);
           setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${baselineLabel}${coverageText}`);
           setStatus(`Applied district crosswalk results: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)${coverageText}`);
-          setVoteCounterBaselineState('Statewide', `${formatContestName(contestType, year)} ${year} (${districtScope === 'congressional' ? 'CD118 lines' : '2024 legislative lines'})`, totalDem, totalRep, totalOther, { kind: 'statewide', contestType, year: Number(year) });
+          const baselineCandidates = await resolveContestCandidatePair(contestType, year);
+          setVoteCounterBaselineState(
+            'Statewide',
+            `${formatContestName(contestType, year)} ${year} (${districtScope === 'congressional' ? 'CD118 lines' : '2024 legislative lines'})`,
+            totalDem,
+            totalRep,
+            totalOther,
+            { kind: 'statewide', contestType, year: Number(year) },
+            baselineCandidates
+          );
           return;
         }
       }
@@ -15284,7 +15363,16 @@ document.addEventListener('DOMContentLoaded', function() {
   await applyDerivedPrecinctOverlayForContest(contestType, year);
   setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - Statewide Result`);
       setStatus(`Applied statewide contest: ${formatContestName(contestType, year)} ${year} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O)`);
-      setVoteCounterBaselineState('Statewide', `${formatContestName(contestType, year)} ${year}`, totalDem, totalRep, totalOther, { kind: 'statewide', contestType, year: Number(year) });
+      const fallbackCandidates = await resolveContestCandidatePair(contestType, year);
+      setVoteCounterBaselineState(
+        'Statewide',
+        `${formatContestName(contestType, year)} ${year}`,
+        totalDem,
+        totalRep,
+        totalOther,
+        { kind: 'statewide', contestType, year: Number(year) },
+        fallbackCandidates
+      );
     }
 
     window.onload = init;
