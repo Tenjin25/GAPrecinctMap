@@ -121,6 +121,37 @@ def normalize_name_loose(name: str) -> str:
     return re.sub(r"\s+", " ", base).strip()
 
 
+def normalize_precinct_code_loose(code_raw: str) -> str:
+    code = (code_raw or "").strip().upper()
+    if not code:
+        return ""
+    code = re.sub(r"\s+", "", code)
+
+    def _strip_zeros(m: re.Match[str]) -> str:
+        return str(int(m.group(0)))
+
+    return re.sub(r"\d+", _strip_zeros, code)
+
+
+def normalize_join_key_loose(join_key: str) -> str:
+    base = (join_key or "").strip().upper()
+    return re.sub(r"\s+", " ", base).strip()
+
+
+def normalize_join_key_code_loose(join_key: str) -> str:
+    raw = normalize_join_key_loose(join_key)
+    if not raw:
+        return ""
+    m = re.match(r"^(.*?)\s*-\s*(.+)$", raw)
+    if not m:
+        return raw
+    county = normalize_county_loose(m.group(1))
+    code = normalize_precinct_code_loose(m.group(2))
+    if not county or not code:
+        return raw
+    return f"{county} - {code}"
+
+
 def extract_precinct_name(precinct_raw: str) -> str:
     if precinct_raw is None:
         return ""
@@ -313,6 +344,29 @@ def _rekey_results_to_vtd20_geoid(
                 if geoid:
                     supplemental_keymap[key] = geoid
 
+    results_by_key_norm: dict[str, dict[str, object]] = {}
+    results_by_key_code_norm: dict[str, dict[str, object]] = {}
+    for raw_key, row in results_by_key.items():
+        k_norm = normalize_join_key_loose(str(raw_key))
+        if k_norm and k_norm not in results_by_key_norm:
+            results_by_key_norm[k_norm] = row
+        k_code_norm = normalize_join_key_code_loose(str(raw_key))
+        if k_code_norm and k_code_norm not in results_by_key_code_norm:
+            results_by_key_code_norm[k_code_norm] = row
+
+    crosswalk_norm: dict[str, dict[str, object]] = {}
+    crosswalk_code_norm: dict[str, dict[str, object]] = {}
+    if isinstance(crosswalk, dict):
+        for raw_key, payload in crosswalk.items():
+            if not isinstance(payload, dict):
+                continue
+            k_norm = normalize_join_key_loose(str(raw_key))
+            if k_norm and k_norm not in crosswalk_norm:
+                crosswalk_norm[k_norm] = payload
+            k_code_norm = normalize_join_key_code_loose(str(raw_key))
+            if k_code_norm and k_code_norm not in crosswalk_code_norm:
+                crosswalk_code_norm[k_code_norm] = payload
+
     out: dict[str, dict[str, object]] = {}
     valid_geoids: set[str] = set()
     for p in props:
@@ -320,15 +374,44 @@ def _rekey_results_to_vtd20_geoid(
         if not geoid20:
             continue
         valid_geoids.add(geoid20)
-        join_key = str(p.get(vtd20_join_prop) or "").strip()
-        if not join_key:
+        candidate_keys: list[str] = []
+        for prop_name in (vtd20_join_prop, "join_key_name", "join_key_code"):
+            key = str(p.get(prop_name) or "").strip()
+            if key and key not in candidate_keys:
+                candidate_keys.append(key)
+        if not candidate_keys:
             continue
-        row = results_by_key.get(join_key)
+
+        row = None
+        for key in candidate_keys:
+            row = results_by_key.get(key)
+            if row is None:
+                row = results_by_key_norm.get(normalize_join_key_loose(key))
+            if row is None:
+                row = results_by_key_code_norm.get(normalize_join_key_code_loose(key))
+            if row is not None:
+                break
+
         if row is None:
-            m = crosswalk.get(join_key) if crosswalk else None
-            to_key = str(m.get("to") or "").strip() if isinstance(m, dict) else ""
-            if to_key:
+            for key in candidate_keys:
+                m = None
+                if isinstance(crosswalk, dict):
+                    m = crosswalk.get(key)
+                if not isinstance(m, dict):
+                    m = crosswalk_norm.get(normalize_join_key_loose(key))
+                if not isinstance(m, dict):
+                    m = crosswalk_code_norm.get(normalize_join_key_code_loose(key))
+                to_key = str(m.get("to") or "").strip() if isinstance(m, dict) else ""
+                if not to_key:
+                    continue
                 row = results_by_key.get(to_key)
+                if row is None:
+                    row = results_by_key_norm.get(normalize_join_key_loose(to_key))
+                if row is None:
+                    row = results_by_key_code_norm.get(normalize_join_key_code_loose(to_key))
+                if row is not None:
+                    break
+
         if row is not None:
             out[geoid20] = row
 
