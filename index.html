@@ -5645,25 +5645,25 @@ body { height: var(--app-height); }
 
   /* Final theme pass: Peach State UI palette */
   :root {
-    --psp-navy: #0b2748;
-    --psp-red: #b13a2e;
-    --psp-peach: #f7c28b;
-    --psp-gold: #d3a34a;
-    --psp-pine: #1f5b4d;
-    --psp-ink: #1f2a37;
-    --psp-muted: #5f6b7a;
-    --psp-surface: rgba(255, 250, 241, 0.95);
-    --psp-border: rgba(98, 63, 34, 0.26);
-    --psp-shadow: 0 16px 34px rgba(53, 31, 14, 0.2);
+    --psp-navy: #12385d;
+    --psp-red: #c24c3d;
+    --psp-peach: #f2bf8f;
+    --psp-gold: #e2b25a;
+    --psp-pine: #1e6a5a;
+    --psp-ink: #172535;
+    --psp-muted: #556476;
+    --psp-surface: rgba(255, 251, 245, 0.94);
+    --psp-border: rgba(18, 56, 93, 0.18);
+    --psp-shadow: 0 18px 38px rgba(17, 35, 59, 0.18);
   }
 
   body {
-    background: radial-gradient(circle at 16% 8%, #ffe8cc 0%, #fff3e2 42%, #f8f3ed 100%);
+    background: radial-gradient(circle at 15% 10%, #ffe8d2 0%, #fff4e6 40%, #edf3fa 100%);
     color: var(--psp-ink);
   }
 
   #map {
-    background: linear-gradient(180deg, #fff7eb 0%, #f4efe8 100%);
+    background: linear-gradient(180deg, #fbf3e7 0%, #eaf1fa 100%);
   }
 
   .map-topbar,
@@ -5679,8 +5679,8 @@ body { height: var(--app-height); }
   }
 
   .map-topbar {
-    background: linear-gradient(145deg, rgba(11, 39, 72, 0.92) 0%, rgba(42, 67, 106, 0.90) 56%, rgba(177, 58, 46, 0.86) 100%) !important;
-    border-color: rgba(247, 194, 139, 0.35) !important;
+    background: linear-gradient(145deg, rgba(18, 56, 93, 0.94) 0%, rgba(31, 73, 114, 0.90) 58%, rgba(194, 76, 61, 0.84) 100%) !important;
+    border-color: rgba(242, 191, 143, 0.42) !important;
   }
 
   .map-topbar-copy strong,
@@ -5691,10 +5691,10 @@ body { height: var(--app-height); }
   .map-topbar-badge,
   .controls-title-pill,
   .controls-collapsed-label {
-    background: linear-gradient(120deg, var(--psp-red), var(--psp-navy)) !important;
+    background: linear-gradient(120deg, var(--psp-navy), var(--psp-red)) !important;
     color: #ffffff !important;
-    border-color: rgba(247, 194, 139, 0.6) !important;
-    box-shadow: 0 10px 22px rgba(11, 39, 72, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+    border-color: rgba(242, 191, 143, 0.66) !important;
+    box-shadow: 0 10px 22px rgba(18, 56, 93, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.24) !important;
     font-weight: 900 !important;
   }
@@ -5723,8 +5723,8 @@ body { height: var(--app-height); }
 
   .controls-header,
   .legend-header {
-    background: linear-gradient(180deg, rgba(255, 248, 236, 0.94) 0%, rgba(255, 241, 220, 0.90) 100%) !important;
-    border-color: rgba(98, 63, 34, 0.18) !important;
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.95) 0%, rgba(244, 249, 255, 0.90) 100%) !important;
+    border-color: rgba(18, 56, 93, 0.16) !important;
   }
 
   .controls-kicker,
@@ -5742,6 +5742,32 @@ body { height: var(--app-height); }
     color: var(--psp-muted) !important;
   }
 
+  .control-summary {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(247, 251, 255, 0.94) 100%) !important;
+    border: 1px solid var(--psp-border) !important;
+    box-shadow: var(--psp-shadow) !important;
+  }
+
+  .control-summary-kicker {
+    background: rgba(194, 76, 61, 0.14) !important;
+    color: #8f2f25 !important;
+  }
+
+  .control-summary-mode {
+    background: rgba(18, 56, 93, 0.12) !important;
+    color: var(--psp-navy) !important;
+  }
+
+  .control-summary-pill {
+    background: rgba(18, 56, 93, 0.10) !important;
+    color: var(--psp-navy) !important;
+  }
+
+  .control-summary-pill-muted {
+    background: rgba(85, 100, 118, 0.16) !important;
+    color: #445468 !important;
+  }
+
   .context-banner-value,
   .control-summary-title,
   .desktop-statewide-title,
@@ -5750,29 +5776,34 @@ body { height: var(--app-height); }
     color: var(--psp-ink) !important;
   }
 
+  #contestSelect {
+    color: var(--psp-ink) !important;
+    font-weight: 700 !important;
+  }
+
   .view-toggle-btn.active,
   .viz-mode-btn.active,
   .mode-toggle.active {
-    background: linear-gradient(180deg, var(--psp-navy) 0%, #143866 100%) !important;
+    background: linear-gradient(180deg, var(--psp-navy) 0%, #1b4a75 100%) !important;
     border-color: var(--psp-gold) !important;
     color: #ffffff !important;
-    box-shadow: 0 8px 18px rgba(11, 39, 72, 0.34) !important;
+    box-shadow: 0 8px 18px rgba(18, 56, 93, 0.34) !important;
   }
 
   .region-jump-btn {
-    border-color: rgba(177, 58, 46, 0.28) !important;
-    background: rgba(255, 252, 247, 0.88) !important;
+    border-color: rgba(194, 76, 61, 0.34) !important;
+    background: rgba(255, 255, 255, 0.86) !important;
   }
 
   .region-jump-btn:hover {
-    background: rgba(177, 58, 46, 0.12) !important;
+    background: rgba(194, 76, 61, 0.12) !important;
     color: var(--psp-red) !important;
-    border-color: rgba(177, 58, 46, 0.52) !important;
+    border-color: rgba(194, 76, 61, 0.58) !important;
   }
 
   .hover-tooltip {
-    background: rgba(11, 39, 72, 0.94) !important;
-    border-color: rgba(247, 194, 139, 0.30) !important;
+    background: rgba(18, 56, 93, 0.95) !important;
+    border-color: rgba(242, 191, 143, 0.34) !important;
   }
 
   .fly-search-submit,
@@ -5785,7 +5816,7 @@ body { height: var(--app-height); }
   #legend-minimize-btn,
   #sidebar-minimize-btn,
   #sidebar-float-toggle {
-    background: var(--psp-navy) !important;
+    background: linear-gradient(180deg, var(--psp-navy) 0%, #1b4a75 100%) !important;
     border-color: var(--psp-gold) !important;
     color: #ffffff !important;
   }
@@ -5800,34 +5831,34 @@ body { height: var(--app-height); }
   #legend-minimize-btn:hover,
   #sidebar-minimize-btn:hover,
   #sidebar-float-toggle:hover {
-    background: #143866 !important;
+    background: linear-gradient(180deg, #102f4e 0%, #184061 100%) !important;
   }
 
   .precinct-source-badge[data-tone="derived"] {
-    background: rgba(31, 91, 77, 0.14) !important;
+    background: rgba(30, 106, 90, 0.14) !important;
     color: var(--psp-pine) !important;
-    border-color: rgba(31, 91, 77, 0.38) !important;
+    border-color: rgba(30, 106, 90, 0.36) !important;
   }
 
   .precinct-source-badge[data-tone="fallback"] {
-    background: rgba(247, 194, 139, 0.24) !important;
-    color: #8b4513 !important;
-    border-color: rgba(139, 69, 19, 0.30) !important;
+    background: rgba(242, 191, 143, 0.28) !important;
+    color: #8f4a1f !important;
+    border-color: rgba(143, 74, 31, 0.34) !important;
   }
 
   .mobile-dock {
-    background: rgba(255, 248, 236, 0.96) !important;
+    background: rgba(255, 250, 243, 0.96) !important;
     border-color: var(--psp-border) !important;
   }
 
   .mobile-dock-btn {
-    background: rgba(255, 252, 247, 0.92) !important;
-    border-color: rgba(98, 63, 34, 0.20) !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(18, 56, 93, 0.18) !important;
     color: var(--psp-ink) !important;
   }
 
   .mobile-dock-btn.active {
-    background: var(--psp-navy) !important;
+    background: linear-gradient(180deg, var(--psp-navy) 0%, #1b4a75 100%) !important;
     color: #ffffff !important;
   }
     </style>
