@@ -479,9 +479,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <meta charset='utf-8'>
-    <title>Georgia Election Atlas (2000-2024)</title>
+    <title>Peach State Pulse (2000-2024)</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover'>
-    <meta property="og:title" content="GA Election Atlas (2000-2024)">
+    <meta property="og:title" content="Peach State Pulse (2000-2024)">
     <meta property="og:description" content="Interactive visualization of Georgia election trends from 2000 to 2024, with county, precinct, and district views.">
     <meta property="og:image" content="preview.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -5642,6 +5642,169 @@ body { height: var(--app-height); }
     margin-right: 0 !important;
     scrollbar-gutter: auto !important;
   }
+
+  /* Final theme pass: Peach State UI palette */
+  :root {
+    --psp-navy: #0b2748;
+    --psp-red: #b13a2e;
+    --psp-peach: #f7c28b;
+    --psp-gold: #d3a34a;
+    --psp-pine: #1f5b4d;
+    --psp-ink: #1f2a37;
+    --psp-muted: #5f6b7a;
+    --psp-surface: rgba(255, 250, 241, 0.95);
+    --psp-border: rgba(98, 63, 34, 0.26);
+    --psp-shadow: 0 16px 34px rgba(53, 31, 14, 0.2);
+  }
+
+  body {
+    background: radial-gradient(circle at 16% 8%, #ffe8cc 0%, #fff3e2 42%, #f8f3ed 100%);
+    color: var(--psp-ink);
+  }
+
+  #map {
+    background: linear-gradient(180deg, #fff7eb 0%, #f4efe8 100%);
+  }
+
+  .map-topbar,
+  .main-controls,
+  .legend,
+  .vote-counter,
+  .viz-modes,
+  .desktop-statewide-panel,
+  #status-panel {
+    background: var(--psp-surface) !important;
+    border: 1px solid var(--psp-border) !important;
+    box-shadow: var(--psp-shadow) !important;
+  }
+
+  .map-topbar {
+    background: linear-gradient(145deg, rgba(11, 39, 72, 0.92) 0%, rgba(42, 67, 106, 0.90) 56%, rgba(177, 58, 46, 0.86) 100%) !important;
+    border-color: rgba(247, 194, 139, 0.35) !important;
+  }
+
+  .map-topbar-copy strong,
+  .map-topbar-copy span {
+    color: #f8fafc !important;
+  }
+
+  .map-topbar-badge,
+  .controls-title-pill,
+  .controls-collapsed-label {
+    background: linear-gradient(120deg, var(--psp-red), var(--psp-navy)) !important;
+    color: #ffffff !important;
+    border-color: rgba(247, 194, 139, 0.38) !important;
+  }
+
+  .controls-header,
+  .legend-header {
+    background: linear-gradient(180deg, rgba(255, 248, 236, 0.94) 0%, rgba(255, 241, 220, 0.90) 100%) !important;
+    border-color: rgba(98, 63, 34, 0.18) !important;
+  }
+
+  .controls-kicker,
+  .section-kicker,
+  .control-summary-kicker,
+  .desktop-statewide-kicker {
+    color: var(--psp-red) !important;
+  }
+
+  .controls-subtitle,
+  .desktop-statewide-sub,
+  .control-summary-pill,
+  .control-summary-pill-muted,
+  .context-banner-label {
+    color: var(--psp-muted) !important;
+  }
+
+  .context-banner-value,
+  .control-summary-title,
+  .desktop-statewide-title,
+  .legend-header h4,
+  .controls-header h3 {
+    color: var(--psp-ink) !important;
+  }
+
+  .view-toggle-btn.active,
+  .viz-mode-btn.active,
+  .mode-toggle.active {
+    background: linear-gradient(180deg, var(--psp-navy) 0%, #143866 100%) !important;
+    border-color: var(--psp-gold) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(11, 39, 72, 0.34) !important;
+  }
+
+  .region-jump-btn {
+    border-color: rgba(177, 58, 46, 0.28) !important;
+    background: rgba(255, 252, 247, 0.88) !important;
+  }
+
+  .region-jump-btn:hover {
+    background: rgba(177, 58, 46, 0.12) !important;
+    color: var(--psp-red) !important;
+    border-color: rgba(177, 58, 46, 0.52) !important;
+  }
+
+  .hover-tooltip {
+    background: rgba(11, 39, 72, 0.94) !important;
+    border-color: rgba(247, 194, 139, 0.30) !important;
+  }
+
+  .fly-search-submit,
+  .desktop-fly-submit,
+  #help-btn,
+  #accessibility-toggle,
+  #label-toggle,
+  #precinct-toggle,
+  #controls-minimize-btn,
+  #legend-minimize-btn,
+  #sidebar-minimize-btn,
+  #sidebar-float-toggle {
+    background: var(--psp-navy) !important;
+    border-color: var(--psp-gold) !important;
+    color: #ffffff !important;
+  }
+
+  .fly-search-submit:hover,
+  .desktop-fly-submit:hover,
+  #help-btn:hover,
+  #accessibility-toggle:hover,
+  #label-toggle:hover,
+  #precinct-toggle:hover,
+  #controls-minimize-btn:hover,
+  #legend-minimize-btn:hover,
+  #sidebar-minimize-btn:hover,
+  #sidebar-float-toggle:hover {
+    background: #143866 !important;
+  }
+
+  .precinct-source-badge[data-tone="derived"] {
+    background: rgba(31, 91, 77, 0.14) !important;
+    color: var(--psp-pine) !important;
+    border-color: rgba(31, 91, 77, 0.38) !important;
+  }
+
+  .precinct-source-badge[data-tone="fallback"] {
+    background: rgba(247, 194, 139, 0.24) !important;
+    color: #8b4513 !important;
+    border-color: rgba(139, 69, 19, 0.30) !important;
+  }
+
+  .mobile-dock {
+    background: rgba(255, 248, 236, 0.96) !important;
+    border-color: var(--psp-border) !important;
+  }
+
+  .mobile-dock-btn {
+    background: rgba(255, 252, 247, 0.92) !important;
+    border-color: rgba(98, 63, 34, 0.20) !important;
+    color: var(--psp-ink) !important;
+  }
+
+  .mobile-dock-btn.active {
+    background: var(--psp-navy) !important;
+    color: #ffffff !important;
+  }
     </style>
 </head>
 <body>
@@ -5795,7 +5958,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="desktop-ui-left">
   <div class="map-topbar" id="map-topbar">
     <div class="map-topbar-meta">
-      <div class="map-topbar-badge">Georgia Election Atlas</div>
+      <div class="map-topbar-badge">Peach State Pulse</div>
       <div class="map-topbar-copy">
         <strong>Fly to a county, district, or precinct</strong>
         <span>Try Fulton, CD 5, HD 57, SD 37, or Fulton 03A.</span>
@@ -5904,11 +6067,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="controls-header">
             <div class="controls-heading">
               <span class="controls-kicker">Atlas controls</span>
-              <h3 class="controls-title-pill">Georgia Election Atlas</h3>
+              <h3 class="controls-title-pill">Peach State Pulse</h3>
               <p class="controls-subtitle">Switch layers, jump to major regions, and compare contests without leaving the map.</p>
             </div>
             <div class="controls-actions">
-              <span class="controls-collapsed-label">Georgia Election Atlas</span>
+              <span class="controls-collapsed-label">Peach State Pulse</span>
               <button id="help-btn" title="Help" type="button">?</button>
               <button class="minimize-btn" onclick="toggleMainControls()" id="controls-minimize-btn" title="Minimize controls">-</button>
             </div>
@@ -6997,7 +7160,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const demPct = (d / total) * 100;
       const repPct = (r / total) * 100;
       const otherPct = (o / total) * 100;
-      const winnerParty = repPct > demPct ? 'rep' : (demPct > repPct ? 'dem' : 'tie');
+      const demPctDisplay = roundedVoteSharePct(d, total);
+      const repPctDisplay = roundedVoteSharePct(r, total);
+      const winnerParty = r > d ? 'rep' : (d > r ? 'dem' : 'tie');
       const winnerLabel = winnerParty === 'rep'
         ? formatVoteCounterWinnerLabel(resolvedCandidates.repCandidate, 'R', 'Republican')
         : (winnerParty === 'dem'
@@ -7020,9 +7185,9 @@ document.addEventListener('DOMContentLoaded', function() {
       barDem.style.width = `${demPct.toFixed(4)}%`;
       barOther.style.width = `${otherPct.toFixed(4)}%`;
       barRep.style.width = `${repPct.toFixed(4)}%`;
-      barDemLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.demCandidate, demPct, 'Dem');
+      barDemLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.demCandidate, demPctDisplay, 'Dem');
       barMidLabelEl.textContent = '50%';
-      barRepLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.repCandidate, repPct, 'Rep');
+      barRepLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.repCandidate, repPctDisplay, 'Rep');
     }
 
     function updateVoteCounter(demVotes, repVotes, otherVotes = 0, candidates = null, meta = null) {
@@ -7041,9 +7206,9 @@ document.addEventListener('DOMContentLoaded', function() {
       animateCounter('rep-count', repVotes);
       animateCounter('other-count', otherVotes);
       
-      document.getElementById('dem-percent').textContent = demPct.toFixed(2) + '%';
-      document.getElementById('rep-percent').textContent = repPct.toFixed(2) + '%';
-      document.getElementById('other-percent').textContent = otherPct.toFixed(2) + '%';
+      document.getElementById('dem-percent').textContent = roundedVoteSharePct(demVotes, totalVotes).toFixed(2) + '%';
+      document.getElementById('rep-percent').textContent = roundedVoteSharePct(repVotes, totalVotes).toFixed(2) + '%';
+      document.getElementById('other-percent').textContent = roundedVoteSharePct(otherVotes, totalVotes).toFixed(2) + '%';
       updateVoteCounterSummary(demVotes, repVotes, otherVotes, candidates, meta);
       
       showVoteCounter();
@@ -7137,11 +7302,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const demPct = totalVotes > 0 ? (demVotes / totalVotes) * 100 : 0;
         const repPct = totalVotes > 0 ? (repVotes / totalVotes) * 100 : 0;
         const otherPct = totalVotes > 0 ? (otherVotes / totalVotes) * 100 : 0;
-        const signedPct = Number(item.margin_pct || 0);
+        const demPctDisplay = roundedVoteSharePct(demVotes, totalVotes);
+        const repPctDisplay = roundedVoteSharePct(repVotes, totalVotes);
+        const otherPctDisplay = roundedVoteSharePct(otherVotes, totalVotes);
+        const signedPct = roundedSignedMarginPctValue(repVotes, demVotes, totalVotes);
+        const prevSignedPct = prev
+          ? roundedSignedMarginPctValue(
+            Number(prev.rep_votes || 0),
+            Number(prev.dem_votes || 0),
+            Number(prev.total_votes || 0)
+          )
+          : NaN;
         const winnerMeta = getTrendWinnerMeta(item);
         const leadLabel = leadMarginPctLabel(repVotes, demVotes, totalVotes);
-        const shiftMeta = describeTrendShift(signedPct, prev ? prev.margin_pct : NaN, prev ? prev.year : '');
-        const flip = prev ? flipInfo(prev.margin_pct, signedPct) : { flipped: false, from: 'T', to: 'T' };
+        const shiftMeta = describeTrendShift(signedPct, prevSignedPct, prev ? prev.year : '');
+        const flip = prev ? flipInfo(prevSignedPct, signedPct) : { flipped: false, from: 'T', to: 'T' };
         return {
           item,
           prev,
@@ -7152,6 +7327,9 @@ document.addEventListener('DOMContentLoaded', function() {
           demPct,
           repPct,
           otherPct,
+          demPctDisplay,
+          repPctDisplay,
+          otherPctDisplay,
           signedPct,
           winnerMeta,
           leadLabel,
@@ -7207,8 +7385,8 @@ document.addEventListener('DOMContentLoaded', function() {
             ? `<span class="focus-trend-chip flip">${escapeHtml(`Flip ${entry.flip.from}->${entry.flip.to}`)}</span>`
             : '';
           const leadSummary = entry.leadLabel === 'Tie' ? 'Even race' : entry.leadLabel;
-          const otherChip = entry.otherPct >= 0.05
-            ? `<span class="focus-trend-chip">Other ${escapeHtml(entry.otherPct.toFixed(2))}%</span>`
+          const otherChip = entry.otherPctDisplay >= 0.05
+            ? `<span class="focus-trend-chip">Other ${escapeHtml(entry.otherPctDisplay.toFixed(2))}%</span>`
             : '';
           return `
             <div class="focus-trend-entry">
@@ -7222,8 +7400,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   <span class="focus-trend-entry-margin">${escapeHtml(leadSummary)}</span>
                 </div>
                 <div class="focus-trend-entry-scale">
-                  <span class="dem">${escapeHtml(`${shortCandidateLabel(entry.item.dem_candidate, 'Dem')} ${entry.demPct.toFixed(2)}%`)}</span>
-                  <span class="rep">${escapeHtml(`${shortCandidateLabel(entry.item.rep_candidate, 'Rep')} ${entry.repPct.toFixed(2)}%`)}</span>
+                  <span class="dem">${escapeHtml(`${shortCandidateLabel(entry.item.dem_candidate, 'Dem')} ${entry.demPctDisplay.toFixed(2)}%`)}</span>
+                  <span class="rep">${escapeHtml(`${shortCandidateLabel(entry.item.rep_candidate, 'Rep')} ${entry.repPctDisplay.toFixed(2)}%`)}</span>
                 </div>
                 <div class="focus-trend-entry-bar" aria-hidden="true">
                   <span style="width:${entry.demPct.toFixed(4)}%;background:#2563eb;"></span>
@@ -9143,10 +9321,24 @@ document.addEventListener('DOMContentLoaded', function() {
       return Math.abs(margin) / Number(totalVotes || 0) * 100.0;
     }
 
-    function roundedMarginPctValue(repVotes, demVotes, totalVotes, decimals = 2) {
-      const pct = marginPctValue(repVotes, demVotes, totalVotes);
+    function roundedVoteSharePct(votes, totalVotes, decimals = 2) {
+      const total = Number(totalVotes || 0);
+      if (total <= 0) return 0;
+      const pct = (Number(votes || 0) / total) * 100.0;
       const factor = 10 ** Number(decimals || 0);
       return Math.round((pct + Number.EPSILON) * factor) / factor;
+    }
+
+    function roundedSignedMarginPctValue(repVotes, demVotes, totalVotes, decimals = 2) {
+      const repRounded = roundedVoteSharePct(repVotes, totalVotes, decimals);
+      const demRounded = roundedVoteSharePct(demVotes, totalVotes, decimals);
+      const signed = repRounded - demRounded;
+      const factor = 10 ** Number(decimals || 0);
+      return Math.round((signed + Number.EPSILON) * factor) / factor;
+    }
+
+    function roundedMarginPctValue(repVotes, demVotes, totalVotes, decimals = 2) {
+      return Math.abs(roundedSignedMarginPctValue(repVotes, demVotes, totalVotes, decimals));
     }
 
     function leadMarginPctLabel(repVotes, demVotes, totalVotes) {
@@ -9438,7 +9630,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const demPct = (d / total) * 100;
       const repPct = (r / total) * 100;
       const otherPct = (o / total) * 100;
-      const winnerParty = repPct > demPct ? 'rep' : (demPct > repPct ? 'dem' : 'tie');
+      const demPctDisplay = roundedVoteSharePct(d, total);
+      const repPctDisplay = roundedVoteSharePct(r, total);
+      const otherPctDisplay = roundedVoteSharePct(o, total);
+      const winnerParty = r > d ? 'rep' : (d > r ? 'dem' : 'tie');
       const winnerLabel = winnerParty === 'rep'
         ? formatVoteCounterWinnerLabel(resolvedCandidates.repCandidate, 'R', 'Republican')
         : (winnerParty === 'dem'
@@ -9461,9 +9656,9 @@ document.addEventListener('DOMContentLoaded', function() {
       barDem.style.width = `${demPct.toFixed(4)}%`;
       barOther.style.width = `${otherPct.toFixed(4)}%`;
       barRep.style.width = `${repPct.toFixed(4)}%`;
-      barDemLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.demCandidate, demPct, 'Dem');
+      barDemLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.demCandidate, demPctDisplay, 'Dem');
       barMidLabelEl.textContent = '50%';
-      barRepLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.repCandidate, repPct, 'Rep');
+      barRepLabelEl.textContent = formatFocusBarLabel(resolvedCandidates.repCandidate, repPctDisplay, 'Rep');
       if (totalMetaEl) totalMetaEl.textContent = `${total.toLocaleString()} total votes`;
       if (leadMetaEl) {
         leadMetaEl.textContent = winnerParty === 'tie'
@@ -9471,9 +9666,9 @@ document.addEventListener('DOMContentLoaded', function() {
           : compactWinnerMarginLabel(r, d, total, resolvedCandidates.repCandidate, resolvedCandidates.demCandidate);
         leadMetaEl.dataset.party = winnerParty;
       }
-      if (demShareFill) demShareFill.style.width = `${demPct.toFixed(2)}%`;
-      if (repShareFill) repShareFill.style.width = `${repPct.toFixed(2)}%`;
-      if (otherShareFill) otherShareFill.style.width = `${otherPct.toFixed(2)}%`;
+      if (demShareFill) demShareFill.style.width = `${demPctDisplay.toFixed(2)}%`;
+      if (repShareFill) repShareFill.style.width = `${repPctDisplay.toFixed(2)}%`;
+      if (otherShareFill) otherShareFill.style.width = `${otherPctDisplay.toFixed(2)}%`;
     }
 
     function updateStatewideResults(contestType, year, demVotes, repVotes, totalVotes, opts = {}) {
@@ -9489,6 +9684,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const demPct = (demVotes / totalVotes) * 100;
         const repPct = (repVotes / totalVotes) * 100;
         const otherPct = (otherVotes / totalVotes) * 100;
+        const demPctDisplay = roundedVoteSharePct(demVotes, totalVotes);
+        const repPctDisplay = roundedVoteSharePct(repVotes, totalVotes);
+        const otherPctDisplay = roundedVoteSharePct(otherVotes, totalVotes);
         const marginPct = roundedMarginPctValue(repVotes, demVotes, totalVotes);
         const officeName = formatContestName(contestType, year);
         let demCandidate = (opts?.demCandidate || '').toString().trim() || getCandidateName(year, officeName, 'Democrat');
@@ -9532,7 +9730,7 @@ document.addEventListener('DOMContentLoaded', function() {
             candidate: fullCandidateLabel(demCandidate, 'Democratic'),
             color: '#2563eb',
             votes: demVotes,
-            pct: demPct
+            pct: demPctDisplay
           },
           {
             key: 'rep',
@@ -9540,7 +9738,7 @@ document.addEventListener('DOMContentLoaded', function() {
             candidate: fullCandidateLabel(repCandidate, 'Republican'),
             color: '#dc2626',
             votes: repVotes,
-            pct: repPct
+            pct: repPctDisplay
           }
         ];
         if (otherVotes > 0) {
@@ -9550,7 +9748,7 @@ document.addEventListener('DOMContentLoaded', function() {
             candidate: 'Other',
             color: '#6b7280',
             votes: otherVotes,
-            pct: otherPct
+            pct: otherPctDisplay
           });
         }
 
@@ -9629,6 +9827,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const demPct = (d / total) * 100.0;
       const repPct = (r / total) * 100.0;
       const otherPct = (o / total) * 100.0;
+      const demPctDisplay = roundedVoteSharePct(d, total);
+      const repPctDisplay = roundedVoteSharePct(r, total);
+      const otherPctDisplay = roundedVoteSharePct(o, total);
 
       const marginLabel = winnerMarginLabel(r, d, total, repCandidate || '', demCandidate || '');
       const demFull = fullCandidateLabel(demCandidate, 'Democratic');
@@ -9658,15 +9859,15 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="rc-row">
             <div class="rc-chip">
               <div class="k">D: ${demFull}</div>
-              <div class="v" style="color:#1d4ed8;">${d.toLocaleString()} (${demPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#1d4ed8;">${d.toLocaleString()} (${demPctDisplay.toFixed(2)}%)</div>
             </div>
             <div class="rc-chip">
               <div class="k">OTHER</div>
-              <div class="v" style="color:#475569;">${o.toLocaleString()} (${otherPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#475569;">${o.toLocaleString()} (${otherPctDisplay.toFixed(2)}%)</div>
             </div>
             <div class="rc-chip">
               <div class="k">R: ${repFull}</div>
-              <div class="v" style="color:#b91c1c;">${r.toLocaleString()} (${repPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#b91c1c;">${r.toLocaleString()} (${repPctDisplay.toFixed(2)}%)</div>
             </div>
           </div>
           <div style="margin-top:10px;font-size:12px;color:#64748b;">
@@ -10968,8 +11169,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return;
       }
-      const demPct = (demVotes / totalVotes * 100);
-      const repPct = (repVotes / totalVotes * 100);
+      const demPctDisplay = roundedVoteSharePct(demVotes, totalVotes);
+      const repPctDisplay = roundedVoteSharePct(repVotes, totalVotes);
       // Candidate names
   let demCandidate = (countyData[`${contestType}_dem_candidate`] || '').toString().trim() || getCandidateName(year, formatContestName(contestType, year), 'Democrat');
   let repCandidate = (countyData[`${contestType}_rep_candidate`] || '').toString().trim() || getCandidateName(year, formatContestName(contestType, year), 'Republican');
@@ -11076,13 +11277,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Non-accessibility mode: always use regular blue for Democratic vote breakdown
     demColor = '#2563eb';
   }
-  sidebarContent += `<p class="sidebar-breakdown"><span style="color: ${demColor}; font-weight: bold;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span> : ${demPct.toFixed(2)}% (${demVotes.toLocaleString()})</p>`;
-  sidebarContent += `<p class="sidebar-breakdown"><span style="color: ${repColor}; font-weight: bold;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span> : ${repPct.toFixed(2)}% (${repVotes.toLocaleString()})</p>`;
+  sidebarContent += `<p class="sidebar-breakdown"><span style="color: ${demColor}; font-weight: bold;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span> : ${demPctDisplay.toFixed(2)}% (${demVotes.toLocaleString()})</p>`;
+  sidebarContent += `<p class="sidebar-breakdown"><span style="color: ${repColor}; font-weight: bold;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span> : ${repPctDisplay.toFixed(2)}% (${repVotes.toLocaleString()})</p>`;
   
   // Add Other votes if they exist
   if (otherVotes > 0) {
-    const otherPct = (otherVotes / totalVotes * 100);
-    sidebarContent += `<p class="sidebar-breakdown"><span style="color: #6b7280; font-weight: bold;">Other Candidates</span> : ${otherPct.toFixed(2)}% (${otherVotes.toLocaleString()})</p>`;
+    const otherPctDisplay = roundedVoteSharePct(otherVotes, totalVotes);
+    sidebarContent += `<p class="sidebar-breakdown"><span style="color: #6b7280; font-weight: bold;">Other Candidates</span> : ${otherPctDisplay.toFixed(2)}% (${otherVotes.toLocaleString()})</p>`;
   }
   
   sidebarContent += `</div>`;
@@ -12742,10 +12943,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const totalVotes = data.us_house_total || 0;
             
             if (totalVotes > 0) {
-              const demPct = (demVotes / totalVotes) * 100;
-              const repPct = (repVotes / totalVotes) * 100;
+              const demPct = roundedVoteSharePct(demVotes, totalVotes);
+              const repPct = roundedVoteSharePct(repVotes, totalVotes);
               const margin = demPct - repPct;
-              const winner = margin > 0 ? 'D' : 'R';
+              const winner = demVotes > repVotes ? 'D' : (repVotes > demVotes ? 'R' : 'T');
               const marginAbs = Math.abs(margin);
               
               trends.push({
@@ -12773,19 +12974,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const totalVotes = data.president_total || 0;
             
             if (totalVotes > 0) {
-              const demPct = (demVotes / totalVotes) * 100;
-              const repPct = (repVotes / totalVotes) * 100;
+              const demPct = roundedVoteSharePct(demVotes, totalVotes);
+              const repPct = roundedVoteSharePct(repVotes, totalVotes);
               const margin = demPct - repPct;
-              const winner = margin > 0 ? 'D' : 'R';
+              const winner = demVotes > repVotes ? 'D' : (repVotes > demVotes ? 'R' : 'T');
               const marginAbs = Math.abs(margin);
               
               // Get candidate names for recent years
               let candidateInfo = '';
-              if (year === 2024) candidateInfo = margin > 0 ? getCandidateName(year, 'President of the United States', 'Democrat') : getCandidateName(year, 'President of the United States', 'Republican');
-              else if (year === 2020) candidateInfo = margin > 0 ? getCandidateName(year, 'President of the United States', 'Democrat') : getCandidateName(year, 'President of the United States', 'Republican');
-              else if (year === 2016) candidateInfo = margin > 0 ? getCandidateName(year, 'President of the United States', 'Democrat') : getCandidateName(year, 'President of the United States', 'Republican');
-              else if (year === 2012) candidateInfo = margin > 0 ? getCandidateName(year, 'President of the United States', 'Democrat') : getCandidateName(year, 'President of the United States', 'Republican');
-              else if (year === 2008) candidateInfo = margin > 0 ? getCandidateName(year, 'President of the United States', 'Democrat') : getCandidateName(year, 'President of the United States', 'Republican');
+              if (year === 2024) candidateInfo = winner === 'D' ? getCandidateName(year, 'President of the United States', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'President of the United States', 'Republican') : 'Tie');
+              else if (year === 2020) candidateInfo = winner === 'D' ? getCandidateName(year, 'President of the United States', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'President of the United States', 'Republican') : 'Tie');
+              else if (year === 2016) candidateInfo = winner === 'D' ? getCandidateName(year, 'President of the United States', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'President of the United States', 'Republican') : 'Tie');
+              else if (year === 2012) candidateInfo = winner === 'D' ? getCandidateName(year, 'President of the United States', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'President of the United States', 'Republican') : 'Tie');
+              else if (year === 2008) candidateInfo = winner === 'D' ? getCandidateName(year, 'President of the United States', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'President of the United States', 'Republican') : 'Tie');
               
               trends.push({
                 year: year,
@@ -12817,13 +13018,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const demVotes = data.governor_dem || 0;
             const repVotes = data.governor_rep || 0;
             const totalVotes = data.governor_total || 0;
-            const demPct = (demVotes / totalVotes) * 100;
-            const repPct = (repVotes / totalVotes) * 100;
+            const demPct = roundedVoteSharePct(demVotes, totalVotes);
+            const repPct = roundedVoteSharePct(repVotes, totalVotes);
             const margin = demPct - repPct;
-            const winner = margin > 0 ? 'D' : 'R';
+            const winner = demVotes > repVotes ? 'D' : (repVotes > demVotes ? 'R' : 'T');
             const marginAbs = Math.abs(margin);
             let candidateInfo = '';
-            candidateInfo = margin > 0 ? getCandidateName(year, 'Governor', 'Democrat') : getCandidateName(year, 'Governor', 'Republican');
+            candidateInfo = winner === 'D' ? getCandidateName(year, 'Governor', 'Democrat') : (winner === 'R' ? getCandidateName(year, 'Governor', 'Republican') : 'Tie');
             trends.push({
               year: year,
               display: `${year}: ${candidateInfo}+${marginAbs.toFixed(2)}`,
@@ -12843,10 +13044,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const totalVotes = data.state_house_total || 0;
             
             if (totalVotes > 0) {
-              const demPct = (demVotes / totalVotes) * 100;
-              const repPct = (repVotes / totalVotes) * 100;
+              const demPct = roundedVoteSharePct(demVotes, totalVotes);
+              const repPct = roundedVoteSharePct(repVotes, totalVotes);
               const margin = demPct - repPct;
-              const winner = margin > 0 ? 'D' : 'R';
+              const winner = demVotes > repVotes ? 'D' : (repVotes > demVotes ? 'R' : 'T');
               const marginAbs = Math.abs(margin);
               
               trends.push({
@@ -13200,11 +13401,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!demCandidate) demCandidate = 'D';
       if (!repCandidate) repCandidate = 'R';
 
-      const demPct = (demVotes / totalVotes) * 100.0;
-      const repPct = (repVotes / totalVotes) * 100.0;
-      const othPct = (otherVotes / totalVotes) * 100.0;
+      const demPctDisplay = roundedVoteSharePct(demVotes, totalVotes);
+      const repPctDisplay = roundedVoteSharePct(repVotes, totalVotes);
+      const othPctDisplay = roundedVoteSharePct(otherVotes, totalVotes);
       const marginPct = roundedMarginPctValue(repVotes, demVotes, totalVotes);
-      const winnerParty = repPct > demPct ? 'R' : (demPct > repPct ? 'D' : 'TIE');
+      const winnerParty = repVotes > demVotes ? 'R' : (demVotes > repVotes ? 'D' : 'TIE');
 
       let compLabel = '';
       let compColor = '#6b7280';
@@ -13247,9 +13448,9 @@ document.addEventListener('DOMContentLoaded', function() {
             Margin: ${winnerMarginLabel(repVotes, demVotes, totalVotes, repCandidate, demCandidate)} <span style="color:#64748b;font-weight:600;">(${Math.abs(repVotes - demVotes).toLocaleString()} votes)</span>
           </div>
           <div style="margin-top:8px;font-size:14px;">
-            <div><span style="color:#2563eb;font-weight:800;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span>: ${demPct.toFixed(2)}% (${demVotes.toLocaleString()})</div>
-            <div><span style="color:#dc2626;font-weight:800;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span>: ${repPct.toFixed(2)}% (${repVotes.toLocaleString()})</div>
-            ${otherVotes > 0 ? `<div><span style="color:#6b7280;font-weight:800;">Other</span>: ${othPct.toFixed(2)}% (${otherVotes.toLocaleString()})</div>` : ''}
+            <div><span style="color:#2563eb;font-weight:800;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span>: ${demPctDisplay.toFixed(2)}% (${demVotes.toLocaleString()})</div>
+            <div><span style="color:#dc2626;font-weight:800;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span>: ${repPctDisplay.toFixed(2)}% (${repVotes.toLocaleString()})</div>
+            ${otherVotes > 0 ? `<div><span style="color:#6b7280;font-weight:800;">Other</span>: ${othPctDisplay.toFixed(2)}% (${otherVotes.toLocaleString()})</div>` : ''}
             <div style="margin-top:6px;color:#374151;font-weight:700;">Total Votes: ${totalVotes.toLocaleString()}</div>
           </div>
           <div style="margin-top:8px;font-size:14px;font-weight:800;color:${compColor};">Competitiveness: ${compLabel}</div>
@@ -13446,15 +13647,18 @@ document.addEventListener('DOMContentLoaded', function() {
         .sort((a, b) => b.year - a.year)[0];
       
       if (recent) {
-        const demPct = (recent.president_dem / recent.president_total) * 100;
-        const repPct = (recent.president_rep / recent.president_total) * 100;
+        const demPct = roundedVoteSharePct(recent.president_dem, recent.president_total);
+        const repPct = roundedVoteSharePct(recent.president_rep, recent.president_total);
         const margin = demPct - repPct;
-        const winner = margin > 0 ? 'D' : 'R';
+        const winner = Number(recent.president_dem || 0) > Number(recent.president_rep || 0)
+          ? 'D'
+          : (Number(recent.president_rep || 0) > Number(recent.president_dem || 0) ? 'R' : 'T');
         const marginAbs = Math.abs(margin);
+        const winnerLabel = winner === 'T' ? 'Tie' : `${winner}+${marginAbs.toFixed(2)}%`;
         
         return `<div class="quick-tooltip">
           <strong>${countyName} County</strong><br>
-          ${recent.year}: ${winner}+${marginAbs.toFixed(2)}%<br>
+          ${recent.year}: ${winnerLabel}<br>
           <em>Click for full trends</em>
         </div>`;
       }
@@ -13528,16 +13732,19 @@ document.addEventListener('DOMContentLoaded', function() {
           .sort((a, b) => b.year - a.year)[0];
           
         if (recent) {
-          const demPct = (recent.us_house_dem / recent.us_house_total) * 100;
-          const repPct = (recent.us_house_rep / recent.us_house_total) * 100;
+          const demPct = roundedVoteSharePct(recent.us_house_dem, recent.us_house_total);
+          const repPct = roundedVoteSharePct(recent.us_house_rep, recent.us_house_total);
           const margin = demPct - repPct;
-          const winner = margin > 0 ? 'D' : 'R';
+          const winner = Number(recent.us_house_dem || 0) > Number(recent.us_house_rep || 0)
+            ? 'D'
+            : (Number(recent.us_house_rep || 0) > Number(recent.us_house_dem || 0) ? 'R' : 'T');
           const marginAbs = Math.abs(margin);
+          const winnerLabel = winner === 'T' ? 'Tie' : `${winner}+${marginAbs.toFixed(2)}%`;
           
           return `<div class="quick-tooltip">
             <strong>${displayName}</strong><br>
             ${desc ? `<span style="color:#64748b;font-weight:700;">${desc}</span><br>` : ''}
-            ${recent.year}: ${winner}+${marginAbs.toFixed(2)}%<br>
+            ${recent.year}: ${winnerLabel}<br>
             <em>Click for full trends</em>
           </div>`;
         }
@@ -13917,12 +14124,35 @@ document.addEventListener('DOMContentLoaded', function() {
 	          if (altFull) out.add(altFull);
 	        };
 
-	        // Try to extract a compact base token for later split/alias expansion.
+	        // Try to extract a compact base token for split/alias expansion.
 	        let baseToken = '';
 	        try {
-	          const firstToken = precRaw.split(/\s+/, 1)[0].trim();
-	          const token0 = (firstToken.includes('_') ? firstToken.split('_', 1)[0] : firstToken).trim().toUpperCase();
-	          baseToken = (token0 || '').toString().replace(/[^A-Z0-9.\-]/g, '').trim();
+	          const stopWords = new Set(['PRECINCT', 'PCT', 'DISTRICT', 'DIST', 'WARD', 'WD', 'VTD', 'ZONE', 'BOX']);
+	          const tokenCandidates = [];
+	          const parts = precRaw
+	            .replace(/[()]/g, ' ')
+	            .replace(/[#:,;]+/g, ' ')
+	            .split(/[\s_]+/)
+	            .map(s => (s || '').trim().toUpperCase())
+	            .filter(Boolean);
+	          parts.forEach(part => {
+	            let cleaned = part
+	              .replace(/^[^A-Z0-9]+|[^A-Z0-9./-]+$/g, '')
+	              .replace(/\.+$/, '')
+	              .trim();
+	            if (!cleaned || stopWords.has(cleaned)) return;
+	            cleaned = cleaned.replace(/^((?:PRECINCT|PCT|DISTRICT|DIST|WARD|WD|VTD))[-]?/i, '');
+	            if (!cleaned) return;
+	            tokenCandidates.push(cleaned);
+	            if (cleaned.includes('/')) {
+	              cleaned.split('/').forEach(seg => {
+	                const s = (seg || '').replace(/[^A-Z0-9.\-]/g, '').trim();
+	                if (s) tokenCandidates.push(s);
+	              });
+	            }
+	          });
+	          const firstUseful = tokenCandidates.find(t => /\d/.test(t)) || tokenCandidates[0] || '';
+	          baseToken = (firstUseful || '').replace(/[^A-Z0-9.\-]/g, '').trim();
 	        } catch (_) { baseToken = ''; }
 	        if (baseToken) addKey(baseToken);
 
@@ -13930,19 +14160,26 @@ document.addEventListener('DOMContentLoaded', function() {
 	        if (m) {
 	          const baseInt = String(parseInt(m[1], 10));
 	          if (baseInt && baseInt !== 'NaN') {
-	            const altPrec = `${baseInt}A`;
-	            const altFull = normalize(`${countyOnly} - ${altPrec}`);
-	            if (altFull) out.add(altFull);
+	            const addAlt = (code) => {
+	              const altFull = normalize(`${countyOnly} - ${code}`);
+	              if (altFull) out.add(altFull);
+	            };
+	            addAlt(`${baseInt}A`);
+	            if (m[2]) {
+	              const idx = Number(m[2]);
+	              const map = { 1: 'A', 2: 'B', 3: 'C', 4: 'D' };
+	              if (map[idx]) addAlt(`${baseInt}${map[idx]}`);
+	            }
 	          }
 	        }
 	        try {
 	          const codes = precinctIdx && countyNorm ? precinctIdx.get(countyNorm) : null;
-	          const baseCompact = (baseToken || precRaw).replace(/\s+/g, '');
+	          const baseCompact = (baseToken || precRaw).replace(/[^A-Z0-9]/g, '');
 	          if (codes && baseCompact) {
 	            const baseNum = baseCompact.match(/^0*([0-9]+)$/);
 	            codes.forEach(code => {
 	              const c = (code || '').toString().trim().toUpperCase();
-	              const cCompact = c.replace(/\s+/g, '');
+	              const cCompact = c.replace(/[^A-Z0-9]/g, '');
 	              if (!cCompact || cCompact === baseCompact) return;
 
 	              // Numeric-only bases should only match the exact numeric portion + a short alpha suffix (e.g. "10" -> "10A").
@@ -14166,33 +14403,67 @@ document.addEventListener('DOMContentLoaded', function() {
 	        if (!countyOnly || !precRaw) return Array.from(out);
 	        if (isNonGeographicPrecinctCode(precRaw, countyNorm)) return [];
 
-	        // Extract a compact code token (if present) so we can handle split precinct IDs
-	        // like "03S" -> "03SE"/"03SM" and "10" -> "10A"/"10B" using the centroid index.
+	        // Extract a compact code token so fallback matching can handle labels such as
+	        // "PCT 04A NORTH", "PRECINCT-12", "06_WOLF PIT", and slash variants.
 	        let baseToken = '';
+	        const tokenCandidates = [];
 	        try {
-	          const firstToken = precRaw.split(/\s+/, 1)[0].trim();
-	          const token0 = (firstToken.includes('_') ? firstToken.split('_', 1)[0] : firstToken).trim();
-	          baseToken = (token0 || '').toString().trim().toUpperCase().replace(/[^A-Z0-9.\-]/g, '').trim();
-	        } catch (_) { baseToken = ''; }
+	          const stopWords = new Set(['PRECINCT', 'PCT', 'DISTRICT', 'DIST', 'WARD', 'WD', 'VTD', 'ZONE', 'BOX']);
+	          const parts = precRaw
+	            .replace(/[()]/g, ' ')
+	            .replace(/[#:,;]+/g, ' ')
+	            .split(/[\s_]+/)
+	            .map(s => (s || '').trim().toUpperCase())
+	            .filter(Boolean);
+	          parts.forEach(part => {
+	            let cleaned = part
+	              .replace(/^[^A-Z0-9]+|[^A-Z0-9./-]+$/g, '')
+	              .replace(/\.+$/, '')
+	              .trim();
+	            if (!cleaned || stopWords.has(cleaned)) return;
+	            cleaned = cleaned.replace(/^((?:PRECINCT|PCT|DISTRICT|DIST|WARD|WD|VTD))[-]?/i, '');
+	            if (!cleaned) return;
+	            tokenCandidates.push(cleaned);
+	            if (cleaned.includes('/')) {
+	              cleaned.split('/').forEach(seg => {
+	                const s = (seg || '').replace(/[^A-Z0-9.\-]/g, '').trim();
+	                if (s) tokenCandidates.push(s);
+	              });
+	            }
+	          });
+	          const firstUseful = tokenCandidates.find(t => /\d/.test(t)) || tokenCandidates[0] || '';
+	          baseToken = firstUseful.replace(/[^A-Z0-9.\-]/g, '').trim();
+	        } catch (_) {
+	          baseToken = '';
+	        }
 
-          // Many older exports use "CODE NAME" or "CODE_NAME ..." where the geometry key
-          // is just the code token (e.g., "HARNETT - PR01 ANDERSON CREEK" => "HARNETT - PR01",
-          // "RICHMOND - 06_WOLF PIT #3" => "RICHMOND - 06"). Add those variants.
+          // Many exports use "CODE NAME" where geometry keys only store CODE.
+          // Add code variants so county+precinct fallback can still match.
           try {
-            const tokenRaw = (baseToken || '').toString().trim().toUpperCase();
-            const token = tokenRaw.replace(/[^A-Z0-9.\-]/g, '').trim();
-            const tokenOk = token && (
-              /^[A-Z]{0,3}\d{1,4}(?:-\d{1,4})?[A-Z]{0,2}$/.test(token) ||
-              /^0*\d{1,3}\.\d{1,3}$/.test(token)
-            );
-            if (tokenOk) {
-              const addKey = (t) => {
-                const altFull = normalizeCountyName(`${countyOnly} - ${t}`);
-                if (altFull) out.add(altFull);
-              };
+            const addKey = (t) => {
+              const token = (t || '').toString().trim().toUpperCase().replace(/[^A-Z0-9.\-]/g, '').trim();
+              if (!token) return;
+              const altFull = normalizeCountyName(`${countyOnly} - ${token}`);
+              if (altFull) out.add(altFull);
+            };
+
+            const seeds = new Set();
+            if (baseToken) seeds.add(baseToken);
+            tokenCandidates.forEach(t => {
+              const token = (t || '').toString().trim().toUpperCase().replace(/[^A-Z0-9.\-]/g, '').trim();
+              if (token) seeds.add(token);
+            });
+
+            seeds.forEach(token => {
+              const tokenOk = token && (
+                /^[A-Z]{0,3}\d{1,4}(?:-\d{1,4})?[A-Z]{0,2}$/.test(token) ||
+                /^0*\d{1,3}\.\d{1,3}$/.test(token)
+              );
+              if (!tokenOk) return;
 
               addKey(token);
-              // Numeric codes: include both trimmed and zero-padded forms.
+
+              // Numeric codes: include trimmed and zero-padded forms.
               if (/^\d{1,5}$/.test(token)) {
                 const n = parseInt(token, 10);
                 if (!isNaN(n)) {
@@ -14202,7 +14473,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   addKey(String(n).padStart(4, '0'));
                 }
               }
-              // Alphanumeric codes with leading zeros like UNION "0020B" or "0044".
+              // Alphanumeric codes with leading zeros (e.g. "0020B").
               const mu = token.match(/^0*([0-9]{1,4})([A-Z]{1,2})$/);
               if (mu) {
                 const n = parseInt(mu[1], 10);
@@ -14220,8 +14491,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const a = String(parseInt(md[1], 10)).padStart(2, '0');
                 const b = String(parseInt(md[2], 10));
                 addKey(`${a}.${b}`);
+                addKey(`${parseInt(md[1], 10)}.${b}`);
               }
-              // PRxx codes (Harnett): include both padded/unpadded variants.
+              // PRxx codes: include padded/unpadded forms.
               const mpr = token.match(/^PR(\d{1,3})$/);
               if (mpr) {
                 const n = parseInt(mpr[1], 10);
@@ -14230,7 +14502,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   addKey(`PR${String(n).padStart(2, '0')}`);
                 }
               }
-            }
+            });
           } catch (_) {}
 
 	        // Some precinct boundary datasets key precincts as "1A", "14A", etc, while official
@@ -14241,9 +14513,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	          const base = m[1];
 	          const baseInt = String(parseInt(base, 10)); // strips leading zeros
 	          if (baseInt && baseInt !== 'NaN') {
-	            const altPrec = `${baseInt}A`;
-	            const altFull = normalizeCountyName(`${countyOnly} - ${altPrec}`);
-	            if (altFull) out.add(altFull);
+	            const addAlt = (code) => {
+	              const altFull = normalizeCountyName(`${countyOnly} - ${code}`);
+	              if (altFull) out.add(altFull);
+	            };
+	            addAlt(`${baseInt}A`);
+	            if (m[2]) {
+	              const idx = Number(m[2]);
+	              const map = { 1: 'A', 2: 'B', 3: 'C', 4: 'D' };
+	              if (map[idx]) addAlt(`${baseInt}${map[idx]}`);
+	            }
 	          }
 	        }
 
@@ -14252,12 +14531,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	        // base to any known precinct IDs that extend it by a short suffix.
 	        try {
 	          const codes = precinctIdx && countyNorm ? precinctIdx.get(countyNorm) : null;
-	          const baseCompact = (baseToken || precRaw).replace(/\s+/g, '');
+	          const baseCompact = (baseToken || precRaw).replace(/[^A-Z0-9]/g, '');
 	          if (codes && baseCompact) {
 	            const baseNum = baseCompact.match(/^0*([0-9]+)$/);
 	            codes.forEach(code => {
 	              const c = (code || '').toString().trim().toUpperCase();
-	              const cCompact = c.replace(/\s+/g, '');
+	              const cCompact = c.replace(/[^A-Z0-9]/g, '');
 	              if (!cCompact || cCompact === baseCompact) return;
 
 	              // Numeric-only bases should only match the exact numeric portion + a short alpha suffix (e.g. "10" -> "10A").
@@ -14452,9 +14731,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const repVotes = row[`${contestType}_rep`] || 0;
         const totalVotes = row[`${contestType}_total`] || 0;
         if (totalVotes === 0) return;
-        const demPct = (demVotes / totalVotes) * 100;
-        const repPct = (repVotes / totalVotes) * 100;
-        const winner = repPct > demPct ? 'R' : (demPct > repPct ? 'D' : 'T');
+        const winner = repVotes > demVotes ? 'R' : (demVotes > repVotes ? 'D' : 'T');
         const signedMarginPct = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
         const marginPctAbs = Math.abs(signedMarginPct);
         let color = '#e0e0e0';
@@ -14781,11 +15058,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (totalVotes === 0) return;
         
-        const demPct = (demVotes / totalVotes) * 100;
-        const repPct = (repVotes / totalVotes) * 100;
-        const winner = repPct > demPct ? 'R' : 'D';
+        const demPct = roundedVoteSharePct(demVotes, totalVotes);
+        const repPct = roundedVoteSharePct(repVotes, totalVotes);
+        const winner = repVotes > demVotes ? 'R' : (demVotes > repVotes ? 'D' : 'T');
         const marginPct = Math.abs(repPct - demPct);
-        const color = categoryColorForMargin(marginPct, winner);
+        const color = categoryColorForMargin(marginPct, winner === 'T' ? 'R' : winner);
         
         expr.push([
           '==',
@@ -14915,10 +15192,10 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (_) {}
           }
 
-          const demPct = totalVotes ? (totalDem / totalVotes) * 100 : 0;
-          const repPct = totalVotes ? (totalRep / totalVotes) * 100 : 0;
           const totalOther = Math.max(0, totalVotes - totalDem - totalRep);
-          const otherPct = totalVotes ? ((totalVotes - totalDem - totalRep) / totalVotes) * 100 : 0;
+          const demPct = roundedVoteSharePct(totalDem, totalVotes);
+          const repPct = roundedVoteSharePct(totalRep, totalVotes);
+          const otherPct = roundedVoteSharePct(totalOther, totalVotes);
           const coverageText = (coveragePct !== undefined && coveragePct !== null)
             ? ` | match coverage ${Number(coveragePct).toFixed(2)}%`
             : '';
@@ -14962,13 +15239,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return setStatus(`No data found for ${contestType} in ${year}`);
       }
 
-      const demPct = (totalDem / totalVotes) * 100;
-      const repPct = (totalRep / totalVotes) * 100;
       const totalOther = Math.max(0, totalVotes - totalDem - totalRep);
-      const otherPct = ((totalVotes - totalDem - totalRep) / totalVotes) * 100;
-      const winner = repPct > demPct ? 'R' : 'D';
+      const demPct = roundedVoteSharePct(totalDem, totalVotes);
+      const repPct = roundedVoteSharePct(totalRep, totalVotes);
+      const otherPct = roundedVoteSharePct(totalOther, totalVotes);
+      const winner = totalRep > totalDem ? 'R' : (totalDem > totalRep ? 'D' : 'T');
       const marginPct = Math.abs(repPct - demPct);
-      const color = categoryColorForMargin(marginPct, winner);
+      const color = categoryColorForMargin(marginPct, winner === 'T' ? 'R' : winner);
 
       // Apply uniform color to all districts (showing statewide result)
       const layerName = currentView === 'districts' ? 'district-fill' : 

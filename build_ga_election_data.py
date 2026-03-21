@@ -94,15 +94,42 @@ def normalize_office(raw: str) -> str | None:
 
 def normalize_party(raw: str) -> str:
     p = (raw or "").strip().upper()
-    if p in ("DEMOCRAT", "DEM", "D"):
+    if not p:
+        return "O"  # other / unknown
+    token = re.sub(r"[^A-Z]", "", p)
+    if not token:
+        return "O"
+
+    # Some OpenElections exports encode incumbents as IR/ID (or RI/DI).
+    if token.startswith("I") and len(token) > 1:
+        token = token[1:]
+    if token.endswith("I") and len(token) > 1:
+        token = token[:-1]
+
+    if token in ("DEMOCRAT", "DEMOCRATIC", "DEM", "D") or token.startswith("DEM") or "DEMOCRAT" in token:
         return "D"
-    if p in ("REPUBLICAN", "REP", "R"):
+    if token in ("REPUBLICAN", "REP", "R") or token.startswith("REP") or "REPUBLICAN" in token:
         return "R"
     return "O"  # other
 
 
 def normalize_county(raw: str) -> str:
     return (raw or "").strip().upper()
+
+def normalize_candidate_case(raw: str) -> str:
+    name = re.sub(r"\s+", " ", (raw or "").strip())
+    if not name:
+        return ""
+    # Preserve already mixed-case names; normalize legacy ALL-CAPS exports.
+    if not any(ch.islower() for ch in name):
+        name = name.title()
+    # Keep common surname/suffix patterns readable after title-casing.
+    name = re.sub(r"(?<=')([a-z])", lambda m: m.group(1).upper(), name)
+    name = re.sub(r"\bMc([a-z])", lambda m: f"Mc{m.group(1).upper()}", name)
+    name = re.sub(r"\b(Ii|Iii|Iv|Vi|Vii|Viii|Ix|Xi|Xii|Xiii|Xiv|Xv)\b", lambda m: m.group(1).upper(), name)
+    name = re.sub(r"\bJr\.?\b", "Jr.", name)
+    name = re.sub(r"\bSr\.?\b", "Sr.", name)
+    return name
 
 def decorate_candidate_label(candidate: str, party_short: str) -> str:
     """
@@ -111,11 +138,11 @@ def decorate_candidate_label(candidate: str, party_short: str) -> str:
     OpenElections GA files sometimes mark incumbents as "(I)" in the candidate name.
     For the map UI, convert Republican incumbents "(I)" -> "(R*)".
     """
-    name = (candidate or "").strip()
+    name = normalize_candidate_case(candidate)
     if not name:
         return ""
-    if party_short == "R" and "(I)" in name:
-        return name.replace("(I)", "(R*)")
+    if party_short == "R":
+        return re.sub(r"\(\s*I\s*\)", "(R*)", name, flags=re.IGNORECASE)
     return name
 
 
@@ -220,7 +247,12 @@ def aggregate_county_votes(df: pd.DataFrame):
     df["_county"] = df.get("county", pd.Series(dtype=str)).fillna("").str.strip().str.upper()
     df["_party_raw"] = df.get("party", pd.Series(dtype=str)).fillna("").astype(str).str.strip()
     df["_party"]  = df["_party_raw"].apply(normalize_party)
-    df["_cand"]   = df.get("candidate", pd.Series(dtype=str)).fillna("").str.strip()
+    df["_cand"]   = (
+        df.get("candidate", pd.Series(dtype=str))
+        .fillna("")
+        .astype(str)
+        .map(normalize_candidate_case)
+    )
     df["_votes"] = compute_votes(df).astype(int)
 
     # Drop rows with no office/county or non-county rollups.

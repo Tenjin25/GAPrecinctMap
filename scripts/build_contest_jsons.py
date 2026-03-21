@@ -59,11 +59,46 @@ def normalize_party(party: str) -> str:
     p = (party or "").strip().upper()
     if not p:
         return "UNK"
-    if p.startswith("DEM") or "DEMOCRAT" in p:
+    token = re.sub(r"[^A-Z]", "", p)
+    if not token:
+        return "UNK"
+
+    # Some exports encode incumbents in the party field (IR/ID or RI/DI).
+    if token.startswith("I") and len(token) > 1:
+        token = token[1:]
+    if token.endswith("I") and len(token) > 1:
+        token = token[:-1]
+
+    if token in {"D", "DEM", "DEMOCRAT", "DEMOCRATIC"} or token.startswith("DEM") or "DEMOCRAT" in token:
         return "DEM"
-    if p.startswith("REP") or "REPUBLICAN" in p:
+    if token in {"R", "REP", "REPUBLICAN"} or token.startswith("REP") or "REPUBLICAN" in token:
         return "REP"
     return "OTH"
+
+
+def normalize_candidate_case(raw: str) -> str:
+    name = re.sub(r"\s+", " ", (raw or "").strip())
+    if not name:
+        return ""
+    # Preserve already mixed-case names; normalize legacy ALL-CAPS exports.
+    if not any(ch.islower() for ch in name):
+        name = name.title()
+    # Keep common surname/suffix patterns readable after title-casing.
+    name = re.sub(r"(?<=')([a-z])", lambda m: m.group(1).upper(), name)
+    name = re.sub(r"\bMc([a-z])", lambda m: f"Mc{m.group(1).upper()}", name)
+    name = re.sub(r"\b(Ii|Iii|Iv|Vi|Vii|Viii|Ix|Xi|Xii|Xiii|Xiv|Xv)\b", lambda m: m.group(1).upper(), name)
+    name = re.sub(r"\bJr\.?\b", "Jr.", name)
+    name = re.sub(r"\bSr\.?\b", "Sr.", name)
+    return name
+
+
+def decorate_candidate_label(candidate: str, party_norm: str) -> str:
+    name = normalize_candidate_case(candidate)
+    if not name:
+        return ""
+    if (party_norm or "").strip().upper().startswith("REP"):
+        return re.sub(r"\(\s*I\s*\)", "(R*)", name, flags=re.IGNORECASE)
+    return name
 
 
 def _safe_int_str(value: str) -> int | None:
@@ -300,6 +335,10 @@ def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_
         .nth(0)["party_norm"]
     )
     out["winner_party"] = out["winner_candidate"].map(cand_party).fillna("UNK")
+    out["winner_candidate"] = out.apply(
+        lambda row: decorate_candidate_label(row.get("winner_candidate", ""), row.get("winner_party", "")),
+        axis=1,
+    )
 
     return out.reset_index().rename(columns={"index": "_key"})
 
@@ -487,7 +526,7 @@ def main() -> None:
         normalize_district_for_join(o, d) for o, d in zip(df["office"].tolist(), df["district_raw"].tolist())
     ]
     df["party_norm"] = df.get("party", "").fillna("").astype(str).map(normalize_party)
-    df["candidate"] = df["candidate"].fillna("").astype(str).str.strip()
+    df["candidate"] = df["candidate"].fillna("").astype(str).map(normalize_candidate_case)
     if "precinct" in df.columns:
         df["precinct"] = df["precinct"].fillna("").astype(str)
     df["votes"] = pd.to_numeric(df[votes_col], errors="coerce").fillna(0).astype(int)
