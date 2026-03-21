@@ -277,7 +277,64 @@ def build_weighted_map_from_geometry(
     return out
 
 
-def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list[tuple[str, float]]]) -> dict[str, Any]:
+def build_scope_year_supplemental_assignments(
+    all_entries: list[GroupEntry],
+) -> dict[tuple[str, int], dict[str, list[tuple[str, float]]]]:
+    """
+    Build fallback geoid->district assignments from district-specific contest files.
+
+    This rescues precinct keys that are present in contest outputs but absent from
+    the precinct->district crosswalk (for example newly named/split precinct codes).
+    """
+    by_scope_year: dict[tuple[str, int], dict[str, dict[str, int]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(int))
+    )
+
+    for e in all_entries:
+        if not is_district_specific_office(e.office, e.district):
+            continue
+        expected_scope = scope_for_district_office(e.office)
+        if not expected_scope or expected_scope != e.scope:
+            continue
+
+        district_num = normalize_district_number(e.district)
+        if not district_num:
+            continue
+
+        payload = load_json(e.path)
+        results = payload.get("results") or {}
+        if not isinstance(results, dict):
+            continue
+
+        bucket = by_scope_year[(e.scope, e.year)]
+        for geoid, row in results.items():
+            geoid_key = normalize_precinct_key(str(geoid))
+            if not geoid_key or not isinstance(row, dict):
+                continue
+            # Prefer higher-vote observations when a key appears multiple times.
+            votes = max(1, parse_vote_int(row.get("total_votes")))
+            bucket[geoid_key][district_num] += votes
+
+    out: dict[tuple[str, int], dict[str, list[tuple[str, float]]]] = {}
+    for scope_year, geoid_map in by_scope_year.items():
+        mapped: dict[str, list[tuple[str, float]]] = {}
+        for geoid_key, district_votes in geoid_map.items():
+            if not district_votes:
+                continue
+            winner = sorted(
+                district_votes.items(),
+                key=lambda item: (-item[1], int(item[0]) if item[0].isdigit() else item[0]),
+            )[0][0]
+            mapped[geoid_key] = [(winner, 1.0)]
+        out[scope_year] = mapped
+    return out
+
+
+def aggregate_group(
+    entries: list[GroupEntry],
+    geoid_to_district: dict[str, list[tuple[str, float]]],
+    supplemental_assignments: dict[str, list[tuple[str, float]]] | None = None,
+) -> dict[str, Any]:
     by_district: dict[str, dict[str, float]] = {}
     total_input_votes = 0
     matched_input_votes = 0
@@ -289,6 +346,10 @@ def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list
         results = payload.get("results") or {}
         if not isinstance(results, dict):
             continue
+
+        entry_scope = scope_for_district_office(e.office)
+        entry_district = normalize_district_number(e.district)
+        direct_entry_fallback_ok = bool(entry_scope and entry_scope == e.scope and entry_district)
 
         for geoid, row in results.items():
             geoid_key = normalize_precinct_key(str(geoid))
@@ -304,6 +365,10 @@ def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list
             # Always reallocate through the target crosswalk so all years/offices
             # are expressed on the configured baseline district lines.
             assignments = geoid_to_district.get(geoid_key, [])
+            if not assignments and supplemental_assignments:
+                assignments = supplemental_assignments.get(geoid_key, [])
+            if not assignments and direct_entry_fallback_ok:
+                assignments = [(entry_district, 1.0)]
             if not assignments:
                 continue
 
@@ -381,6 +446,104 @@ def aggregate_group(entries: list[GroupEntry], geoid_to_district: dict[str, list
         "matched_input_votes": matched_input_votes,
         "match_coverage_pct": coverage_pct,
         "input_files": uniq_inputs,
+    }
+
+
+def normalize_party_bucket(raw_party: str) -> str:
+    token = re.sub(r"[^A-Z]", "", (raw_party or "").strip().upper())
+    if token.startswith("I") and len(token) > 1:
+        token = token[1:]
+    if token.endswith("I") and len(token) > 1:
+        token = token[:-1]
+    if token in {"D", "DEM", "DEMOCRAT", "DEMOCRATIC"} or token.startswith("DEM") or "DEMOCRAT" in token:
+        return "DEM"
+    if token in {"R", "REP", "REPUBLICAN"} or token.startswith("REP") or "REPUBLICAN" in token:
+        return "REP"
+    return "OTH"
+
+
+def aggregate_district_office_from_csv(
+    *,
+    csv_path: Path,
+    office_name: str,
+    max_district_num: int,
+) -> dict[str, Any]:
+    by_district: dict[str, dict[str, int]] = defaultdict(
+        lambda: {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0}
+    )
+
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as fh:
+        reader = csv.DictReader(fh)
+        for row in reader:
+            office = str(row.get("office") or "").strip().lower()
+            if office != office_name.lower():
+                continue
+
+            district_num = normalize_district_number(str(row.get("district") or ""))
+            if not district_num:
+                continue
+
+            votes = parse_vote_int(row.get("total_votes"))
+            if votes < 0:
+                votes = 0
+
+            bucket = normalize_party_bucket(str(row.get("party") or ""))
+            node = by_district[district_num]
+            node["total_votes"] += votes
+            if bucket == "DEM":
+                node["dem_votes"] += votes
+            elif bucket == "REP":
+                node["rep_votes"] += votes
+            else:
+                node["other_votes"] += votes
+
+    # Keep a complete district set for stable rendering.
+    for d in range(1, max_district_num + 1):
+        by_district.setdefault(str(d), {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0})
+
+    finalized: dict[str, dict[str, Any]] = {}
+    for district_num, row in by_district.items():
+        total = int(row.get("total_votes") or 0)
+        dem = int(row.get("dem_votes") or 0)
+        rep = int(row.get("rep_votes") or 0)
+        other = int(row.get("other_votes") or 0)
+        signed_margin_pct = ((rep - dem) / total) * 100.0 if total > 0 else 0.0
+
+        if rep > dem and rep >= other:
+            winner = "Republican"
+            winner_party = "REP"
+        elif dem > rep and dem >= other:
+            winner = "Democratic"
+            winner_party = "DEM"
+        elif other > rep and other > dem:
+            winner = "Other"
+            winner_party = "OTH"
+        else:
+            winner = "Tie"
+            winner_party = "TIE"
+
+        finalized[district_num] = {
+            "total_votes": total,
+            "dem_votes": dem,
+            "rep_votes": rep,
+            "other_votes": other,
+            "dem_candidate": "",
+            "rep_candidate": "",
+            "winner": winner,
+            "winner_party": winner_party,
+            "margin_pct": signed_margin_pct,
+        }
+
+    sorted_results = dict(
+        sorted(finalized.items(), key=lambda kv: (int(kv[0]) if kv[0].isdigit() else kv[0]))
+    )
+    total_input_votes = sum(int(v.get("total_votes") or 0) for v in sorted_results.values())
+    return {
+        "results": sorted_results,
+        "total_input_votes": total_input_votes,
+        "matched_input_votes": total_input_votes,
+        "match_coverage_pct": 100.0,
+        "input_files": [str(csv_path).replace("\\", "/")],
     }
 
 
@@ -552,12 +715,26 @@ def main() -> None:
         print("  state_senate_2024 missing -> using state_senate_2022 mapping")
 
     all_entries: list[GroupEntry] = []
+    year_source_csv: dict[int, Path] = {}
     for year_dir in sorted(args.derived_base.iterdir()):
         if not year_dir.is_dir() or not year_dir.name.isdigit():
             continue
         year = int(year_dir.name)
         if years_filter and year not in years_filter:
             continue
+
+        manifest_path = year_dir / "contests" / "manifest.json"
+        if manifest_path.exists():
+            manifest = load_json(manifest_path)
+            csv_raw = str(manifest.get("csv") or "").strip()
+            if csv_raw:
+                csv_rel = normalize_json_relpath(csv_raw)
+                csv_candidates = [Path(csv_rel), project_root / csv_rel]
+                for c in csv_candidates:
+                    if c.exists():
+                        year_source_csv[year] = c
+                        break
+
         entries = build_groups_for_year(year_dir, args.derived_base, project_root)
         all_entries.extend(entries)
 
@@ -565,12 +742,31 @@ def main() -> None:
     for e in all_entries:
         grouped[(e.scope, e.contest_type, e.year)].append(e)
 
+    supplemental_by_scope_year = build_scope_year_supplemental_assignments(all_entries)
+
     args.out_dir.mkdir(parents=True, exist_ok=True)
     manifest_files: list[dict[str, Any]] = []
 
     for (scope, contest_type, year), entries in sorted(grouped.items(), key=lambda x: (x[0][0], x[0][1], x[0][2])):
-        geoid_to_district = select_scope_crosswalk(scope, crosswalk_maps=crosswalk_maps)
-        agg = aggregate_group(entries, geoid_to_district)
+        direct_csv = year_source_csv.get(year)
+        use_direct_state_house_2024 = (
+            scope == "state_house"
+            and contest_type == "state_house"
+            and year == 2024
+            and direct_csv is not None
+            and direct_csv.exists()
+        )
+
+        if use_direct_state_house_2024:
+            agg = aggregate_district_office_from_csv(
+                csv_path=direct_csv,
+                office_name="state house",
+                max_district_num=180,
+            )
+        else:
+            geoid_to_district = select_scope_crosswalk(scope, crosswalk_maps=crosswalk_maps)
+            supplemental = supplemental_by_scope_year.get((scope, year), {})
+            agg = aggregate_group(entries, geoid_to_district, supplemental)
         results = agg["results"]
         if not results:
             continue

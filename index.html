@@ -5693,7 +5693,32 @@ body { height: var(--app-height); }
   .controls-collapsed-label {
     background: linear-gradient(120deg, var(--psp-red), var(--psp-navy)) !important;
     color: #ffffff !important;
-    border-color: rgba(247, 194, 139, 0.38) !important;
+    border-color: rgba(247, 194, 139, 0.6) !important;
+    box-shadow: 0 10px 22px rgba(11, 39, 72, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.24) !important;
+    font-weight: 900 !important;
+  }
+
+  .map-topbar-badge {
+    font-size: 13px !important;
+    letter-spacing: 0.04em !important;
+    text-transform: none !important;
+    padding: 7px 12px !important;
+  }
+
+  .controls-title-pill {
+    font-size: 15px !important;
+  }
+
+  .controls-collapsed-label {
+    font-size: 12.5px !important;
+  }
+
+  @media (max-width: 480px) {
+    .map-topbar-badge {
+      font-size: 11px !important;
+      padding: 6px 10px !important;
+    }
   }
 
   .controls-header,
@@ -9347,12 +9372,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return `${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
     }
 
-    // Prefix with party for the vote-counter Lead pill only (R+ / D+).
+    // Winner party is already shown in the Winner row; keep Lead as margin only.
     function focusLeadMarginLabel(repVotes, demVotes, totalVotes) {
       const margin = Number(repVotes || 0) - Number(demVotes || 0);
       if (!margin) return 'Tie';
-      const party = margin > 0 ? 'R' : 'D';
-      return `${party}+${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
+      return `${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
     }
 
     function compactWinnerMarginLabel(repVotes, demVotes, totalVotes, repCandidate, demCandidate) {
