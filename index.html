@@ -12061,7 +12061,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'district-fill', 
           type: 'fill', 
           source: 'districts', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.7 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.62 } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'district-stroke', 
@@ -12170,7 +12170,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'state-house-fill', 
           type: 'fill', 
           source: 'state-house', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.6 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.54 } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-house-stroke', 
@@ -12277,7 +12277,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'state-senate-fill', 
           type: 'fill', 
           source: 'state-senate', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.65 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.58 } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-senate-stroke', 
@@ -14908,7 +14908,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // so precinct fills/dots remain visually primary.
       if (map.getLayer('county-fill')) {
         map.setPaintProperty('county-fill', 'fill-color', expr);
-        map.setPaintProperty('county-fill', 'fill-opacity', precinctsEnabled ? 0.10 : 0.82);
+        map.setPaintProperty('county-fill', 'fill-opacity', precinctsEnabled ? 0.10 : 0.74);
       }
 
       // Flip mode: outline flipped counties in red/blue (to-winner), leave others subtle.
