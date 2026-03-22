@@ -481,6 +481,9 @@
     <meta charset='utf-8'>
     <title>Peach State Pulse (2000-2024)</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover'>
+    <meta name="author" content="Shamar Davis">
+    <meta name="copyright" content="© 2026 Shamar Does Elections. All Rights Reserved.">
+    <!-- Watermark: SDE Creator Attribution | Created by Shamar Davis | Copyright 2026 Shamar Does Elections -->
     <meta property="og:title" content="Peach State Pulse (2000-2024)">
     <meta property="og:description" content="Interactive visualization of Georgia election trends from 2000 to 2024, with county, precinct, and district views.">
     <meta property="og:image" content="preview.png">
@@ -5428,6 +5431,41 @@ body { height: var(--app-height); }
     display: none;
   }
 
+  .atlas-credit-bar {
+    position: fixed;
+    left: 50%;
+    bottom: calc(10px + var(--safe-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 10012;
+    max-width: calc(100vw - 24px);
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.14);
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .atlas-credit-bar {
+      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + 12px);
+      max-width: calc(100vw - 16px);
+      padding: 5px 10px;
+      font-size: 10px;
+      white-space: normal;
+    }
+  }
+
   @media (max-width: 768px) {
     :root {
       --mobile-dock-h: 62px;
@@ -6103,8 +6141,9 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </details>
       </div>
-      <div class="sidebar-footer" style="padding: 16px 0; text-align: center; color: #888; font-size: 15px; border-top: 1px solid #e5e7eb; background: #f9fafb;">
-        Created by Shamar Davis
+      <div class="sidebar-footer" style="padding: 14px 10px; text-align: center; color: #64748b; font-size: 12px; line-height: 1.45; border-top: 1px solid #e5e7eb; background: #f9fafb;">
+        © 2026 Shamar Does Elections. All Rights Reserved.<br>
+        Created by Shamar Davis.
       </div>
     </div>
   <!-- Floating Sidebar Expand/Collapse Button (smaller size) -->
@@ -6397,6 +6436,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- Duplicate sidebar removed to fix HTML errors -->
 
+    <div class="atlas-credit-bar" aria-label="Atlas credits">
+      &copy; 2026 Shamar Does Elections | Created by Shamar Davis
+    </div>
+
     <div class="mobile-sheet-scrim" id="mobile-sheet-scrim" aria-hidden="true"></div>
     <nav class="mobile-dock" id="mobile-dock" aria-label="Mobile panel dock">
       <button type="button" class="mobile-dock-btn" data-mobile-sheet-btn="search" aria-pressed="false">Search</button>
@@ -6458,6 +6501,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script>
     // --- CONFIG ---
+    const ATLAS_CREATOR_SIGNATURE = Object.freeze({
+      creator: 'Shamar Davis',
+      studio: 'Shamar Does Elections',
+      year: 2026,
+      project: 'Peach State Pulse',
+      signature: 'SDE-PSP-2026-SD'
+    });
+    try {
+      Object.defineProperty(window, '__atlas_creator_signature__', {
+        value: ATLAS_CREATOR_SIGNATURE.signature,
+        enumerable: false,
+        configurable: false,
+        writable: false
+      });
+    } catch (_) {}
+
     function detectBasePath() {
       // GitHub Pages project sites are served under /<repo-name>/...
       if (!window.location.hostname.endsWith('github.io')) return '';
