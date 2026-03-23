@@ -7387,11 +7387,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       const shift = (Number(currentSignedPct) || 0) - (Number(prevSignedPct) || 0);
       if (Math.abs(shift) < 0.01) {
-        return { cls: 'tie', text: `No shift vs ${prevYear}` };
+        return { cls: 'tie', text: `Shift:No shift since ${prevYear}` };
       }
       return {
         cls: shift > 0 ? 'rep' : 'dem',
-        text: `${shift > 0 ? 'R' : 'D'} +${Math.abs(shift).toFixed(2)} vs ${prevYear}`
+        text: `Shift: ${shift > 0 ? 'R' : 'D'}+${Math.abs(shift).toFixed(2)} since ${prevYear}`
       };
     }
 
