@@ -7397,6 +7397,86 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     }
 
+    function clearFocusCountyAnalysis() {
+      try {
+        const existing = document.getElementById('focus-county-analysis-wrap');
+        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      } catch (_) {}
+    }
+
+    function renderFocusCountyAnalysis(series, meta) {
+      try {
+        const chartEl = document.getElementById('focus-trend-chart');
+        if (!chartEl) return;
+        clearFocusCountyAnalysis();
+
+        if (!Array.isArray(series) || !series.length) return;
+        if (!meta || meta.kind !== 'county' || !meta.county) return;
+
+        const sorted = series.slice().sort((a, b) => Number(a.year) - Number(b.year));
+        const selectedYear = Number(meta.year);
+        const selectedEntry = sorted.find(s => Number(s.year) === selectedYear) || sorted[sorted.length - 1];
+        const entry2020 = sorted.find(s => Number(s.year) === 2020) || null;
+        const earliest = sorted[0];
+
+        const shiftSince2020 = entry2020 ? (Number(selectedEntry.margin_pct) - Number(entry2020.margin_pct)) : null; // Rep-signed
+        const longShift = Number(selectedEntry.margin_pct) - Number(earliest.margin_pct);
+
+        const countyNorm = normalizeGeorgiaCountyKey(meta.county);
+        const popNode = countyPopulationEstimates?.counties?.[countyNorm] || null;
+        const demoNode = countyDemographics?.counties?.[countyNorm] || null;
+        const contextBucket = classifyGeorgiaCountyContext(meta.county, { demo: demoNode, pop: popNode, trendSeries: sorted });
+
+        const traj = trajectorySnapshotAnalysis({ series: sorted, selectedYear, contextBucket });
+        const census = censusCheckAnalysis({
+          popNode,
+          shiftSince2020RepSignedPct: shiftSince2020,
+          latestMarginRepSignedPct: Number(selectedEntry.margin_pct) || 0,
+          longShiftRepSignedPct: longShift,
+          contextBucket
+        });
+        const insight = countyCensusInsight({
+          popNode,
+          shiftSince2020RepSignedPct: shiftSince2020,
+          latestMarginRepSignedPct: Number(selectedEntry.margin_pct) || 0,
+          contextBucket
+        });
+
+        const toneForLabel = (label) => {
+          const s = (label || '').toString();
+          if (s.includes('Democratic') || s.includes('Democrats') || s.includes('toward Democrats')) return 'dem';
+          if (s.includes('Republican') || s.includes('Republicans') || s.includes('toward Republicans')) return 'rep';
+          return 'tie';
+        };
+
+        const wrap = document.createElement('div');
+        wrap.id = 'focus-county-analysis-wrap';
+        wrap.innerHTML = `
+          <div class="focus-trend-stats" style="margin-top:10px;">
+            <div class="focus-trend-stat">
+              <span class="focus-trend-stat-label">Trajectory Snapshot</span>
+              <span class="focus-trend-stat-value ${toneForLabel(traj.label)}">${escapeHtml(traj.label)}</span>
+              <div class="focus-trend-summary-note" style="margin-top:6px;">${escapeHtml(traj.note)}</div>
+            </div>
+            <div class="focus-trend-stat">
+              <span class="focus-trend-stat-label">Census Check</span>
+              <span class="focus-trend-stat-value ${toneForLabel(census.label)}">${escapeHtml(census.label)}</span>
+              <div class="focus-trend-summary-note" style="margin-top:6px;">${escapeHtml(census.note)}</div>
+            </div>
+            <div class="focus-trend-stat">
+              <span class="focus-trend-stat-label">County Census Insight</span>
+              <span class="focus-trend-stat-value tie">${escapeHtml(insight.label)}</span>
+              <div class="focus-trend-summary-note" style="margin-top:6px;">${escapeHtml(insight.note)}</div>
+            </div>
+          </div>
+        `.trim();
+
+        const plot = chartEl.querySelector('.focus-trend-plot');
+        if (!plot) return;
+        plot.appendChild(wrap);
+      } catch (_) {}
+    }
+
     function renderFocusTrendSeries(series, caption = 'Trend history') {
       const captionEl = document.getElementById('focus-trend-caption');
       const chartEl = document.getElementById('focus-trend-chart');
@@ -7404,6 +7484,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (captionEl) captionEl.textContent = caption;
       if (!series || !series.length) {
         chartEl.innerHTML = `<div class="focus-trend-empty">No historical trend data available.</div>`;
+        clearFocusCountyAnalysis();
         return;
       }
 
@@ -7564,6 +7645,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="focus-trend-list">${cards}</div>
       `;
+      clearFocusCountyAnalysis();
       try { updateMobileOverlayOffsets(); } catch (_) {}
     }
 
@@ -7639,6 +7721,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const [contestType, year] = parseContestValue(contestValue);
       if (!contestType || !year) {
         renderFocusTrendEmpty('Select a contest to load trend history.', 'Trend history');
+        clearFocusCountyAnalysis();
         return;
       }
 
@@ -7672,9 +7755,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (reqId !== voteCounterTrendRequestId) return;
         renderFocusTrendSeries(series, baseCaption);
+        if (meta.kind === 'county') {
+          renderFocusCountyAnalysis(series, meta);
+        } else {
+          clearFocusCountyAnalysis();
+        }
       } catch (err) {
         if (reqId !== voteCounterTrendRequestId) return;
         renderFocusTrendEmpty('Failed to load trend history.', baseCaption);
+        clearFocusCountyAnalysis();
         console.warn('Failed to load focus trend:', err?.message || err);
       }
     }
