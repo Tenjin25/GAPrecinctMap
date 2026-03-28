@@ -47,7 +47,8 @@ Supporting metadata:
 - State House district info: `Data/ga_state_house_districts.csv`
 - State Senate district info: `Data/ga_state_senate_districts.csv`
 - District descriptions: `Data/ga_district_descriptions.json`
-- County demographics summary: `Data/ga_county_demographics.json`
+- County demographics summary (optional): `Data/ga_county_demographics.json`
+- County population estimates (CO-EST, 2020-2025): `Data/CO-EST2025-POP-13.csv`
 
 ## Election Coverage
 
@@ -126,6 +127,16 @@ Primary builder:
 
 - `scripts/build_precinct_district_crosswalks_from_blockassign.py`
 
+## County Sidebar Analysis (County Popup)
+
+When a county is selected, the sidebar popup includes three county-level analysis sections that are computed from data already in this repo (no external fetches):
+
+- **Trajectory Snapshot**: labels the county’s electoral direction using the selected year result, shift since 2020, long-run shift, flip history, and streaks (contest-specific).
+- **Census Check**: compares post-2020 population change (CO-EST) against the county’s vote movement to label reinforcement / realignment pressure / mixed / limited change.
+- **County Census Insight**: a short, Georgia-specific plain-English growth context sentence (Atlanta core/suburban/exurban, Black Belt rural, regional metros, etc.) without claiming causation.
+
+Georgia-specific context is assigned via a lightweight county-type classifier inside `index.html` (name-driven buckets with optional demographic refinement when available).
+
 ## Methodology
 
 ### Precinct Join Strategy
@@ -198,6 +209,18 @@ Primary normalization locations:
 
 - `index.html`: complete front-end application, map logic, UI, and data loading.
 - `Data/`: source CSV/GeoJSON assets and generated JSON/crosswalk outputs.
+
+## County Population Estimates (CO-EST)
+
+The app loads county population estimates from `Data/CO-EST2025-POP-13.csv`.
+
+This repo keeps that file in a normalized, analysis-friendly format:
+
+- Columns: `county, base_2020, est_2020..est_2025, change_abs, change_pct, yoy_abs, yoy_pct`
+- `change_pct` is computed from `est_2020` → `est_2025`
+- `yoy_pct` is computed from `est_2024` → `est_2025`
+
+Note: the in-app parser is resilient and can also read the original Census export shape (header rows + dotted county lines), but the cleaned format is preferred for maintenance.
 - `scripts/`: data prep and transformation scripts.
 - `build_ga_election_data.py`: top-level statewide/county contest builder.
 - Utility scripts in root:
