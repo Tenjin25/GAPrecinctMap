@@ -8005,7 +8005,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const v = String(value || '');
         if (v.includes('\u2192') || v.includes('\u2197') || /\bR\+\d/.test(v)) return 'rep';
         if (v.includes('\u2190') || v.includes('\u2198') || /\bD\+\d/.test(v)) return 'dem';
-        if (v.includes('\u2194') || /Tie|Even|N\\/A/i.test(v)) return 'neutral';
+        if (v.includes('\u2194') || /Tie|Even|N\/A/i.test(v)) return 'neutral';
         if (String(label || '').toLowerCase() === 'selected year') {
           if (/\bR\+/.test(v)) return 'rep';
           if (/\bD\+/.test(v)) return 'dem';
