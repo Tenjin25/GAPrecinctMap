@@ -167,7 +167,7 @@ Key behavior:
 - Party tokens normalize to major buckets (`D`/`R`/other variants).
 - Legacy incumbent-coded party fields like `IR`, `RI`, `ID`, `DI` are normalized.
 - Candidate names are converted from all-caps source forms to regular case where needed.
-- Republican incumbent candidate suffix `(I)` is rewritten to `(R*)` for UI clarity.
+- Incumbent marker `(I)` (and legacy `(R*)`) is rewritten as a trailing `*` in JSON candidate labels (e.g. `Jane Doe (I)` → `Jane Doe*`).
 
 Primary normalization locations:
 

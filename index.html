@@ -10177,6 +10177,75 @@ document.addEventListener('DOMContentLoaded', function() {
       return `<span class="meta-chip ${cls}"><span class="dot"></span>${label}</span>`;
     }
 
+    function competitivenessTierMeta(marginPctAbs, party) {
+      const pct = Math.abs(Number(marginPctAbs || 0));
+      const normalizedParty = (party || '').toString().toLowerCase();
+
+      if (normalizedParty !== 'rep' && normalizedParty !== 'dem') {
+        return {
+          party: 'tie',
+          label: 'Tossup',
+          shortLabel: 'Tossup',
+          color: '#6b7280',
+          marginPct: pct
+        };
+      }
+
+      const partyWord = normalizedParty === 'rep' ? 'Republican' : 'Democratic';
+      let tier = 'Tossup';
+      let color = normalizedParty === 'rep' ? '#dc2626' : '#2563eb';
+
+      if (pct >= 40) {
+        tier = 'Annihilation';
+        color = normalizedParty === 'rep' ? '#7f1d1d' : '#1e3a8a';
+      } else if (pct >= 30) {
+        tier = 'Dominant';
+        color = normalizedParty === 'rep' ? '#b91c1c' : '#1d4ed8';
+      } else if (pct >= 20) {
+        tier = 'Stronghold';
+        color = normalizedParty === 'rep' ? '#dc2626' : '#2563eb';
+      } else if (pct >= 10) {
+        tier = 'Safe';
+        color = normalizedParty === 'rep' ? '#ef4444' : '#3b82f6';
+      } else if (pct >= 5.5) {
+        tier = 'Likely';
+        color = normalizedParty === 'rep' ? '#f87171' : '#60a5fa';
+      } else if (pct >= 1.0) {
+        tier = 'Lean';
+        color = normalizedParty === 'rep' ? '#fecaca' : '#93c5fd';
+      } else if (pct >= 0.5) {
+        tier = 'Tilt';
+        color = normalizedParty === 'rep' ? '#fff1f2' : '#dbeafe';
+      }
+
+      const sideAbbrev = normalizedParty === 'rep' ? 'R' : 'D';
+      const label = tier === 'Tossup' ? `Tossup (${partyWord} Win)` : `${tier} ${partyWord}`;
+      const shortLabel = tier === 'Tossup' ? `Tossup ${sideAbbrev}` : `${tier} ${sideAbbrev}`;
+      return {
+        party: normalizedParty,
+        label,
+        shortLabel,
+        color,
+        marginPct: pct
+      };
+    }
+
+    function competitivenessTierMetaFromSignedMarginPct(signedMarginPct) {
+      const signed = Number(signedMarginPct) || 0;
+      if (signed > 0) return competitivenessTierMeta(signed, 'rep');
+      if (signed < 0) return competitivenessTierMeta(Math.abs(signed), 'dem');
+      return competitivenessTierMeta(0, 'tie');
+    }
+
+    function tierChipHTML(tierMeta) {
+      if (!tierMeta || !tierMeta.label) return '';
+      const partyClass = tierMeta.party === 'rep' ? 'rep' : (tierMeta.party === 'dem' ? 'dem' : 'tie');
+      const pct = Math.abs(Number(tierMeta.marginPct || 0));
+      const winner = partyClass === 'rep' ? 'R' : (partyClass === 'dem' ? 'D' : 'T');
+      const dotColor = winner === 'T' ? '#9ca3af' : colorForMarginMode(pct, winner);
+      return `<span class="meta-chip tier"><span class="dot" style="background:${dotColor};"></span>${escapeHtml(tierMeta.label)}</span>`;
+    }
+
     // Hover outline (stroke-only highlight) helpers.
     const HOVER_OUTLINE_LAYER_IDS = [
       'county-stroke-hover',
@@ -10482,6 +10551,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const signedMarginPct = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
       const winner = signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T');
+      const tierMeta = competitivenessTierMetaFromSignedMarginPct(signedMarginPct);
       const subtitle = `${formatContestName(contestType, year)} ${year}`;
 
       let demoLine = '';
@@ -10505,10 +10575,11 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         chips.push(winnerChipHTML(winner));
       }
+      chips.push(tierChipHTML(tierMeta));
 
       if (prevSignedForFlip !== null) {
         const flipChip = flipChipHTML(prevSignedForFlip, signedMarginPct);
-        if (flipChip) chips.unshift(flipChip);
+        if (flipChip) chips.push(flipChip);
       }
 
       const inner = `
@@ -10572,6 +10643,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const signedMarginPct = Number(row[`${contestType}_margin_pct`]);
       const curSigned = isNaN(signedMarginPct) ? signedMarginPctFromVotes(demVotes, repVotes, demVotes + repVotes + otherVotes) : signedMarginPct;
       const winner = curSigned > 0 ? 'R' : (curSigned < 0 ? 'D' : 'T');
+      const tierMeta = competitivenessTierMetaFromSignedMarginPct(curSigned);
       const chips = [];
       let prevSignedForFlip = null;
       if (vizPrevCache?.prevYear && vizPrevCache?.prevPrecinctMarginByNorm) {
@@ -10584,10 +10656,11 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         chips.push(winnerChipHTML(winner));
       }
+      chips.push(tierChipHTML(tierMeta));
 
       if (prevSignedForFlip !== null) {
         const flipChip = flipChipHTML(prevSignedForFlip, curSigned);
-        if (flipChip) chips.unshift(flipChip);
+        if (flipChip) chips.push(flipChip);
       }
 
       const inner = `
@@ -10743,6 +10816,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const signedMarginPct = ('margin_pct' in row) ? Number(row.margin_pct || 0) : signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
       const winnerRaw = (row.winner || '').toString().toUpperCase();
       const winner = winnerRaw.startsWith('REP') ? 'R' : (winnerRaw.startsWith('DEM') ? 'D' : (signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T')));
+      const tierMeta = competitivenessTierMetaFromSignedMarginPct(signedMarginPct);
 
       const chips = [];
       let prevSignedForFlip = null;
@@ -10764,10 +10838,11 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         chips.push(winnerChipHTML(winner));
       }
+      chips.push(tierChipHTML(tierMeta));
 
       if (prevSignedForFlip !== null) {
         const flipChip = flipChipHTML(prevSignedForFlip, signedMarginPct);
-        if (flipChip) chips.unshift(flipChip);
+        if (flipChip) chips.push(flipChip);
       }
 
       const desc = getDistrictDescription(scope, districtNum);

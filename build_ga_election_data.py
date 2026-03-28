@@ -136,13 +136,25 @@ def decorate_candidate_label(candidate: str, party_short: str) -> str:
     Adjust candidate display labels for the UI.
 
     OpenElections GA files sometimes mark incumbents as "(I)" in the candidate name.
-    For the map UI, convert Republican incumbents "(I)" -> "(R*)".
+    For the map UI + JSON outputs, convert incumbent markers like "(I)" (and legacy "(R*)")
+    into a simple trailing "*" (e.g., "Jane Doe (I)" -> "Jane Doe*").
     """
     name = normalize_candidate_case(candidate)
     if not name:
         return ""
-    if party_short == "R":
-        return re.sub(r"\(\s*I\s*\)", "(R*)", name, flags=re.IGNORECASE)
+    incumbent = False
+    if re.search(r"\(\s*I\s*\)", name, flags=re.IGNORECASE):
+        incumbent = True
+        name = re.sub(r"\(\s*I\s*\)", "", name, flags=re.IGNORECASE)
+
+    # Back-compat: some older builds wrote incumbency as "(R*)" / "(D*)".
+    if re.search(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", name, flags=re.IGNORECASE):
+        incumbent = True
+        name = re.sub(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", "", name, flags=re.IGNORECASE)
+
+    name = re.sub(r"\s+", " ", name).strip()
+    if incumbent and not name.endswith("*"):
+        name = f"{name}*"
     return name
 
 

@@ -16,7 +16,8 @@ that match index.html's precinct overlay expectations:
   - precinct_norm (UPPER normalized "COUNTY - PREC_ID")
   - id (GEOID20)
 
-Centroids are representative points (guaranteed inside polygons).
+Centroid points are generated with polylabel (projected) and fall back to representative points;
+they are guaranteed to be inside polygons.
 
 Inputs:
   - Data/tl_2020_13_vtd20.geojson (recommended; produced by scripts/prepare_tiger_2020_geojsons.py)
@@ -91,6 +92,53 @@ def _clean_precinct_label(name: str) -> str:
             out_parts.append(token[:1].upper() + token[1:].lower() if token else token)
     return " ".join(out_parts).strip()
 
+def _safe_point_on_surface_meters(geom):
+    """
+    Return a point guaranteed inside the polygon, preferring a visually centered point.
+
+    Input geometry is expected to be in a projected CRS (meters), e.g. EPSG:3857.
+    """
+    if geom is None:
+        return None
+    try:
+        if geom.is_empty:
+            return None
+    except Exception:
+        return None
+
+    g = geom
+    try:
+        if hasattr(g, "is_valid") and not g.is_valid:
+            try:
+                from shapely import make_valid
+                g = make_valid(g)
+            except Exception:
+                # buffer(0) is a common fallback to repair minor self-intersections.
+                try:
+                    g = g.buffer(0)
+                except Exception:
+                    g = geom
+    except Exception:
+        g = geom
+
+    # polylabel tends to pick a nicer "center" than representative_point for long/concave shapes.
+    try:
+        from shapely.ops import polylabel
+
+        pt = polylabel(g, tolerance=50.0)  # ~50m accuracy is plenty for dot rendering.
+        if pt is not None and not pt.is_empty:
+            return pt
+    except Exception:
+        pass
+
+    try:
+        return g.representative_point()
+    except Exception:
+        try:
+            return g.centroid
+        except Exception:
+            return None
+
 
 def main() -> None:
     ap = argparse.ArgumentParser()
@@ -163,9 +211,11 @@ def main() -> None:
     poly = poly[["geometry", "county_nam", "county_norm", "prec_id", "precinct_name", "precinct_norm", "id"]]
     poly = poly.set_geometry("geometry")
 
-    # Centroids: representative points are safer than centroids for concave polygons.
-    pts = gdf.copy()
-    pts["geometry"] = pts.geometry.representative_point()
+    # Points: use polylabel (projected) for nicer "centroid" placement while keeping the point inside.
+    # Fall back to representative_point when polylabel fails.
+    pts = gdf.to_crs("EPSG:3857").copy()
+    pts["geometry"] = pts.geometry.apply(_safe_point_on_surface_meters)
+    pts = pts.to_crs("EPSG:4326")
     rows2 = [build_row(r) for _, r in pts.iterrows()]
     for k in rows2[0].keys():
         pts[k] = [rr[k] for rr in rows2]

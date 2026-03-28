@@ -124,30 +124,10 @@
     "score": 1.0,
     "method": "exact"
   },
-  "WILCOX - ABBEVILLE NORTH": {
-    "to": "WILCOX - ABBEVILLE NORTH 2",
-    "score": 0.9375,
-    "method": "fuzzy"
-  },
-  "WILCOX - ABBEVILLE SOUTH": {
-    "to": "WILCOX - ABBEVILLE SOUTH 5",
-    "score": 0.9375,
-    "method": "fuzzy"
-  },
   "WILCOX - PINEVIEW 2": {
     "to": "WILCOX - PINEVIEW 2",
     "score": 1.0,
     "method": "exact"
-  },
-  "WILCOX - ROCHELLE SOUTH": {
-    "to": "WILCOX - ROCHELLE SOUTH 4",
-    "score": 0.9333333333333333,
-    "method": "fuzzy"
-  },
-  "WILCOX - ROCHELLE NORTH": {
-    "to": "WILCOX - ROCHELLE NORTH 1",
-    "score": 0.9333333333333333,
-    "method": "fuzzy"
   },
   "WILCOX - PITTS 3": {
     "to": "WILCOX - PITTS 3",
@@ -179,6 +159,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DOUGHERTY - PALMYRA RD METHODIST": {
+    "to": "DOUGHERTY - PALMYRA",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "DOUGHERTY - ALBANY MIDDLE SCHOOL": {
     "to": "DOUGHERTY - ALBANY MIDDLE SCHOOL",
     "score": 1.0,
@@ -209,6 +194,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DOUGHERTY - PUTNEY 1ST BAPTIST": {
+    "to": "DOUGHERTY - PUTNEY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "DOUGHERTY - LOVETT HALL": {
     "to": "DOUGHERTY - LOVETT HALL",
     "score": 1.0,
@@ -224,15 +214,30 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DOUGHERTY - COVENANT CHURCH": {
+    "to": "DOUGHERTY - COVENANT",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "DOUGHERTY - MERRY ACRES MIDDLE": {
     "to": "DOUGHERTY - MERRY ACRES MIDDLE",
     "score": 1.0,
     "method": "exact"
   },
+  "DOUGHERTY - 2ND MT ZION CHURCH": {
+    "to": "DOUGHERTY - MT.",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "DOUGHERTY - MT ZION CENTER": {
     "to": "DOUGHERTY - MT. ZION CENTER",
-    "score": 0.9655172413793104,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
+  },
+  "DOUGHERTY - LAMAR REESE ELEM": {
+    "to": "DOUGHERTY - LAMAR REESE ELEM SCHOOL",
+    "score": 1.0,
+    "method": "exact_loose"
   },
   "DOUGHERTY - WESTOVER HIGH SCHOOL": {
     "to": "DOUGHERTY - WESTOVER HIGH SCHOOL",
@@ -245,9 +250,9 @@
     "method": "exact"
   },
   "DOUGHERTY - 1ST CHRISTIAN CHURCH": {
-    "to": "DOUGHERTY - FIRST CHRISTIAN CHURCH",
-    "score": 0.9047619047619048,
-    "method": "fuzzy"
+    "to": "DOUGHERTY - CHRIST",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "DOUGHERTY - WESTTOWN ELEM SCHOOL": {
     "to": "DOUGHERTY - WESTTOWN ELEM SCHOOL",
@@ -631,13 +636,13 @@
   },
   "TOOMBS - NEWBRANCH": {
     "to": "TOOMBS - NEW BRANCH",
-    "score": 0.9473684210526315,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "TOOMBS - S.T.I.A.L.C.": {
     "to": "TOOMBS - S.T.I.A.L.C",
-    "score": 0.9565217391304348,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "TOOMBS - V.P.D.": {
     "to": "TOOMBS - V.P.D.",
@@ -684,6 +689,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "HABERSHAM - DEMOREST": {
+    "to": "HABERSHAM - CITY OF DEMOREST",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "HABERSHAM - HABERSHAM NORTH": {
     "to": "HABERSHAM - HABERSHAM NORTH",
     "score": 1.0,
@@ -704,35 +714,75 @@
     "score": 1.0,
     "method": "exact"
   },
+  "HALL - QUILLIANS": {
+    "to": "HALL - 17-QUILLIANS",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - CLERMONT": {
+    "to": "HALL - 16-CLERMONT",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - BIG HICKORY": {
+    "to": "HALL - 32-BIG HICKORY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "HALL - FLOWERY BRANCH II": {
     "to": "HALL - 07-FLOWERY BRANCH II",
-    "score": 0.918918918918919,
-    "method": "fuzzy"
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "HALL - FRIENDSHIP III": {
     "to": "HALL - 35-FRIENDSHIP III",
-    "score": 0.9032258064516129,
-    "method": "fuzzy"
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "HALL - FLOWERY BRANCH I": {
     "to": "HALL - 06-FLOWERY BRANCH I",
-    "score": 0.9142857142857143,
+    "score": 0.9411764705882353,
     "method": "fuzzy"
+  },
+  "HALL - CHICOPEE": {
+    "to": "HALL - 02-CHICOPEE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - WEST WHELCHEL": {
+    "to": "HALL - 23-WEST WHELCHEL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - GAINESVILLE V": {
+    "to": "HALL - 28-GAINESVILLE V",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "HALL - GAINESVILLE IV": {
     "to": "HALL - 27-GAINESVILLE IV",
-    "score": 0.9032258064516129,
-    "method": "fuzzy"
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "HALL - GAINESVILLE III": {
     "to": "HALL - 26-GAINESVILLE III",
-    "score": 0.9090909090909091,
-    "method": "fuzzy"
+    "score": 0.99,
+    "method": "compact_contains"
   },
-  "HALL - GAINESVILLE II": {
-    "to": "HALL - 25-GAINESVILLE II",
-    "score": 0.9032258064516129,
-    "method": "fuzzy"
+  "HALL - GILLSVILLE": {
+    "to": "HALL - 31-GILLSVILLE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - BARK CAMP": {
+    "to": "HALL - 18-BARK CAMP",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "HALL - CHESTATEE": {
+    "to": "HALL - 20-CHESTATEE",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "LOWNDES - NORTHSIDE": {
     "to": "LOWNDES - NORTHSIDE",
@@ -889,30 +939,55 @@
     "score": 1.0,
     "method": "exact"
   },
+  "LEE - 3 CJC": {
+    "to": "LEE - CJC",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "LEE - 5 FRIENDSHIP BAPT.": {
     "to": "LEE - FRIENDSHIP BAPT",
-    "score": 0.9090909090909091,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact_base"
   },
   "LEE - 6 FIRST BAPTIST": {
     "to": "LEE - FIRST BAPTIST",
-    "score": 0.9285714285714286,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "LEE - 4 LEESBURG": {
+    "to": "LEE - LEESBURG",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "LEE - 8 SOVEREIGN GRACE": {
     "to": "LEE - SOVEREIGN GRACE",
-    "score": 0.9375,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
   },
   "LEE - 7 SDA CHURCH": {
     "to": "LEE - SDA CHURCH",
-    "score": 0.9090909090909091,
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "LEE - 9 CENTURY FIRE STAT": {
+    "to": "LEE - CENTURY FIRE STATION",
+    "score": 0.918918918918919,
     "method": "fuzzy"
+  },
+  "LEE - 10 REDBONE": {
+    "to": "LEE - REDBONE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "LEE - 1 CHOKEE": {
+    "to": "LEE - CHOKEE",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "LEE - 2 SMITHVILLE": {
     "to": "LEE - SMITHVILLE",
-    "score": 0.9090909090909091,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
   },
   "CLARKE - 8B": {
     "to": "CLARKE - 8B",
@@ -1319,6 +1394,21 @@
     "score": 1.0,
     "method": "exact"
   },
+  "TAYLOR - PRECINCT 5": {
+    "to": "TAYLOR - #5",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "TAYLOR - PRECINCT 1": {
+    "to": "TAYLOR - #1",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "TAYLOR - PRECINCT 6": {
+    "to": "TAYLOR - #6",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "COLQUITT - ROBINSON": {
     "to": "COLQUITT - ROBINSON",
     "score": 1.0,
@@ -1453,6 +1543,11 @@
     "to": "COOK - CECIL",
     "score": 1.0,
     "method": "exact"
+  },
+  "COOK - NEW LIFE BAPTIST": {
+    "to": "COOK - NEW",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COOK - RIVERBEND": {
     "to": "COOK - RIVERBEND",
@@ -1637,7 +1732,7 @@
   "MORGAN - BETHSPRINGFIELD": {
     "to": "MORGAN - BETHSPRINGFIELD",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "LAURENS - BREWTON": {
     "to": "LAURENS - BREWTON",
@@ -1709,6 +1804,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "LAURENS - WT ADAMS FIRE STA 18": {
+    "to": "LAURENS - FIRE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "CATOOSA - GRAYSVILLE": {
     "to": "CATOOSA - GRAYSVILLE",
     "score": 1.0,
@@ -1778,6 +1878,11 @@
     "to": "MURRAY - SPRING PLACE",
     "score": 1.0,
     "method": "exact"
+  },
+  "MURRAY - DOOLITTLE": {
+    "to": "MURRAY - CARTERS-DOOLITTLE",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "MURRAY - MCDONALD": {
     "to": "MURRAY - MCDONALD",
@@ -1968,6 +2073,11 @@
     "to": "MCDUFFIE - FORT CREEK",
     "score": 1.0,
     "method": "exact"
+  },
+  "MCDUFFIE - DEARING UMC": {
+    "to": "MCDUFFIE - DEARING",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "MCDUFFIE - WHITEOAK": {
     "to": "MCDUFFIE - WHITEOAK",
@@ -2289,6 +2399,16 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DECATUR - COLISEUM": {
+    "to": "DECATUR - BAINBRIDGE-COLISEUM",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "DECATUR - FAIRGROUNDS": {
+    "to": "DECATUR - BRIDGE-FAIRGROUNDS",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "DECATUR - WEST BAINBRIDGE": {
     "to": "DECATUR - WEST BAINBRIDGE",
     "score": 1.0,
@@ -2316,8 +2436,8 @@
   },
   "DECATUR - MT. PLEASANT": {
     "to": "DECATUR - MT PLEASANT",
-    "score": 0.9565217391304348,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "BALDWIN - CITY HALL ANNEX": {
     "to": "BALDWIN - CITY HALL ANNEX",
@@ -2482,12 +2602,12 @@
   "PIERCE - SUNSETSWEAT": {
     "to": "PIERCE - SUNSETSWEAT",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "PIERCE - HACKLEBARNEYCASON": {
     "to": "PIERCE - HACKLEBARNEYCASON",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "PIERCE - OTTER CREEK": {
     "to": "PIERCE - OTTER CREEK",
@@ -2579,6 +2699,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "HARALSON - STEADMAN": {
+    "to": "HARALSON - BEREA-STEADMAN",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "HARALSON - BUNCOMBE": {
     "to": "HARALSON - BUNCOMBE",
     "score": 1.0,
@@ -2623,6 +2748,11 @@
     "to": "LONG - SOUTH LUDOWICI",
     "score": 1.0,
     "method": "exact"
+  },
+  "RABUN - RABUN COUNTY": {
+    "to": "RABUN - RABUN",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "BURKE - GIRARD": {
     "to": "BURKE - GIRARD",
@@ -2914,6 +3044,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "BERRIEN - UPPER TENTH": {
+    "to": "BERRIEN - EAST",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "BLECKLEY - FAIRGROUND": {
     "to": "BLECKLEY - FAIRGROUND",
     "score": 1.0,
@@ -2943,6 +3078,11 @@
     "to": "COWETA - GREENTOP",
     "score": 1.0,
     "method": "exact"
+  },
+  "COWETA - TC CENTRAL": {
+    "to": "COWETA - CENTRAL",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COWETA - NEWNAN": {
     "to": "COWETA - NEWNAN",
@@ -3176,7 +3316,7 @@
   },
   "CAMDEN - WEST SAINT MARY": {
     "to": "CAMDEN - WEST SAINT MARYS",
-    "score": 0.967741935483871,
+    "score": 0.96,
     "method": "fuzzy"
   },
   "CAMDEN - MARY LEE CLARK": {
@@ -3284,6 +3424,21 @@
     "score": 1.0,
     "method": "exact"
   },
+  "MERIWETHER - MIDDLE 9TH-GAY": {
+    "to": "MERIWETHER - GAY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "MERIWETHER - LOWER 9TH-WOODBURY": {
+    "to": "MERIWETHER - WOODBURY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "MERIWETHER - UPPER 9TH -ALVATON": {
+    "to": "MERIWETHER - ALVATON",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "MERIWETHER - LUTHERSVILLE": {
     "to": "MERIWETHER - LUTHERSVILLE",
     "score": 1.0,
@@ -3356,13 +3511,23 @@
   },
   "LAMAR - CHAPPELL MILL V FD": {
     "to": "LAMAR - CHAPPELL MILL V. FD",
-    "score": 0.972972972972973,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
+  },
+  "HANCOCK - DEVEREUX FIRE STATION": {
+    "to": "HANCOCK - DEVEREUX",
+    "score": 1.0,
+    "method": "exact_loose"
   },
   "HANCOCK - SPARTA 4C": {
     "to": "HANCOCK - SPARTA 4C",
     "score": 1.0,
     "method": "exact"
+  },
+  "HANCOCK - MAYFIELD COMMUNITY CENTER": {
+    "to": "HANCOCK - MAYFIELD",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "ATKINSON - AXSON": {
     "to": "ATKINSON - AXSON",
@@ -3874,10 +4039,20 @@
     "score": 1.0,
     "method": "exact"
   },
+  "WEBSTER - PRESTON 3": {
+    "to": "WEBSTER - PRESTON",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "COLUMBIA - HARLEM BRANCH LIBRARY": {
+    "to": "COLUMBIA - HARLEM",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "COLUMBIA - GROVETOWN MIDDLE SCH": {
     "to": "COLUMBIA - GROVETOWN MIDDLE SCHOOL",
-    "score": 0.9302325581395349,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact"
   },
   "COLUMBIA - BESSIE THOMAS CENTER": {
     "to": "COLUMBIA - BESSIE THOMAS CENTER",
@@ -3893,6 +4068,11 @@
     "to": "COLUMBIA - BLANCHARD PARK",
     "score": 1.0,
     "method": "exact"
+  },
+  "COLUMBIA - SECOND MT. CARMEL BAPTIST CHURCH": {
+    "to": "COLUMBIA - CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COLUMBIA - KIOKEE BAPT CHURCH": {
     "to": "COLUMBIA - KIOKEE BAPTIST CHURCH",
@@ -3911,13 +4091,13 @@
   },
   "COLUMBIA - EUBANKBLANCHARD CTR": {
     "to": "COLUMBIA - EUBANKBLANCHARD CENTER",
-    "score": 0.926829268292683,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact"
   },
   "COLUMBIA - MTZ COL FIRE HDQTR.": {
     "to": "COLUMBIA - MTZ COL FIRE HDQTR",
-    "score": 0.972972972972973,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "COLUMBIA - WESTSIDE BAPT CHURCH": {
     "to": "COLUMBIA - WESTSIDE BAPT CHURCH",
@@ -3954,6 +4134,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "COLUMBIA - BELAIR BAPTIST CHURCH": {
+    "to": "COLUMBIA - CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "COLUMBIA - CHRIST SANCTIFIED": {
     "to": "COLUMBIA - CHRIST SANCTIFIED",
     "score": 1.0,
@@ -3976,8 +4161,8 @@
   },
   "COLUMBIA - BLUERIDGE ELEMENTARY": {
     "to": "COLUMBIA - BLUE RIDGE ELEMENTARY",
-    "score": 0.975609756097561,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "COLUMBIA - REDEEMER CHURCH": {
     "to": "COLUMBIA - REDEEMER CHURCH",
@@ -3995,9 +4180,9 @@
     "method": "exact"
   },
   "COLUMBIA - COL CTY BOARD OF EDU": {
-    "to": "COLUMBIA - COL CTY BD OF EDU",
-    "score": 0.918918918918919,
-    "method": "fuzzy"
+    "to": "COLUMBIA - COL",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COLUMBIA - CHURCH OF OUR SAVIOR": {
     "to": "COLUMBIA - CHURCH OF OUR SAVIOR",
@@ -4088,6 +4273,16 @@
     "to": "WALKER - FAIRYLAND",
     "score": 1.0,
     "method": "exact"
+  },
+  "WALKER - WEST ARMUCHEE": {
+    "to": "WALKER - ARMUCHEE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "WALKER - EAST ARMUCHEE": {
+    "to": "WALKER - ARMUCHEE",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "GWINNETT - SUGAR HILL D": {
     "to": "GWINNETT - SUGAR HILL D",
@@ -4886,8 +5081,8 @@
   },
   "BRYAN - J.F.GREGORY PARK": {
     "to": "BRYAN - J.F. GREGORY PARK",
-    "score": 0.9696969696969697,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "BRYAN - DANIELSIDING": {
     "to": "BRYAN - DANIELSIDING",
@@ -4905,14 +5100,19 @@
     "method": "exact"
   },
   "BRYAN - PUBLIC SAFETY COMPX": {
-    "to": "BRYAN - PUBLIC SAFETY COMPLEX",
-    "score": 0.95,
-    "method": "fuzzy"
+    "to": "BRYAN - PUBLIC",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "BRYAN - KELLER": {
     "to": "BRYAN - KELLER",
     "score": 1.0,
     "method": "exact"
+  },
+  "BRYAN - RH RECREATION COMPX": {
+    "to": "BRYAN - RH",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "CARROLL - TYUS": {
     "to": "CARROLL - TYUS",
@@ -5028,6 +5228,11 @@
     "to": "ELBERT - CENTERVILLE",
     "score": 1.0,
     "method": "exact"
+  },
+  "ELBERT - RUCKERSVILLE": {
+    "to": "ELBERT - MOSS-RUCKERSVILLE",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "ELBERT - GAINES": {
     "to": "ELBERT - GAINES",
@@ -5146,8 +5351,8 @@
   },
   "DOUGLAS - FIRST BAPTIST LITHIA SPRINGS": {
     "to": "DOUGLAS - FIRST BAPTIST - LITHIA SPRINGS",
-    "score": 0.9655172413793104,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DOUGLAS - GOLDEN METHODIST CH": {
     "to": "DOUGLAS - GOLDEN METHODIST CH",
@@ -5610,9 +5815,9 @@
     "method": "exact"
   },
   "CLAY - DAYS CROSS ROAD": {
-    "to": "CLAY - DAYS CROSS ROADS",
-    "score": 0.967741935483871,
-    "method": "fuzzy"
+    "to": "CLAY - DAYS",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "SCREVEN - BAY BRANCH": {
     "to": "SCREVEN - BAY BRANCH",
@@ -5626,8 +5831,8 @@
   },
   "SCREVEN - SCREVEN REC. DEPT.": {
     "to": "SCREVEN - SCREVEN REC DEPT",
-    "score": 0.9411764705882353,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "SCREVEN - GREENHILL CHURCH": {
     "to": "SCREVEN - GREENHILL CHURCH",
@@ -5954,10 +6159,25 @@
     "score": 1.0,
     "method": "exact"
   },
+  "LINCOLN - B - LINCOLN CLUB": {
+    "to": "LINCOLN - LINCOLN",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "LINCOLN - LINCOLN CENTER": {
     "to": "LINCOLN - LINCOLN CENTER",
     "score": 1.0,
     "method": "exact"
+  },
+  "LINCOLN - A - FAITH TEMPLE": {
+    "to": "LINCOLN - FAITH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "LINCOLN - B - TABERNACLE": {
+    "to": "LINCOLN - TABERNACLE",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "WHITFIELD - 3A": {
     "to": "WHITFIELD - 3A",
@@ -5974,10 +6194,35 @@
     "score": 1.0,
     "method": "exact"
   },
+  "WHITFIELD - CARBONDALE": {
+    "to": "WHITFIELD - CA",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "WHITFIELD - UPPER TENTH": {
+    "to": "WHITFIELD - TH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "WHITFIELD - WESTSIDE": {
+    "to": "WHITFIELD - ES",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "WHITFIELD - 5A": {
     "to": "WHITFIELD - 5A",
     "score": 1.0,
     "method": "exact"
+  },
+  "WHITFIELD - PLEASANT GROVE": {
+    "to": "WHITFIELD - AN",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "WHITFIELD - LOWER TENTH": {
+    "to": "WHITFIELD - TH",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "WHITFIELD - 1A": {
     "to": "WHITFIELD - 1A",
@@ -5997,17 +6242,17 @@
   "MUSCOGEE - FORTWADDELL": {
     "to": "MUSCOGEE - FORTWADDELL",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "MUSCOGEE - MT PILGRIM": {
     "to": "MUSCOGEE - MT. PILGRIM",
-    "score": 0.9523809523809523,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "MUSCOGEE - CARVERMACK": {
     "to": "MUSCOGEE - CARVERMACK",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "MUSCOGEE - GENTIANREESE LDS": {
     "to": "MUSCOGEE - GENTIANREESE LDS",
@@ -6017,7 +6262,7 @@
   "MUSCOGEE - MOONMORNINGSIDE": {
     "to": "MUSCOGEE - MOONMORNINGSIDE",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "MUSCOGEE - ROTHSCHILD": {
     "to": "MUSCOGEE - ROTHSCHILD",
@@ -6037,7 +6282,7 @@
   "MUSCOGEE - PSALMONDMATHEWS": {
     "to": "MUSCOGEE - PSALMONDMATHEWS",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "MUSCOGEE - CORNERSTONE": {
     "to": "MUSCOGEE - CORNERSTONE",
@@ -6046,8 +6291,8 @@
   },
   "MUSCOGEE - ST MARKHEIFERHORN": {
     "to": "MUSCOGEE - ST. MARKHEIFERHORN",
-    "score": 0.9714285714285714,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "MUSCOGEE - WYNNBROOK": {
     "to": "MUSCOGEE - WYNNBROOK",
@@ -6056,8 +6301,13 @@
   },
   "MUSCOGEE - ST ANDREWSMIDLAND": {
     "to": "MUSCOGEE - ST. ANDREWSMIDLAND",
-    "score": 0.9714285714285714,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
+  },
+  "MUSCOGEE - EPWORTH UMC": {
+    "to": "MUSCOGEE - EPWORTH",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "MUSCOGEE - FIRST AFRICAN": {
     "to": "MUSCOGEE - FIRST AFRICAN",
@@ -6139,10 +6389,225 @@
     "score": 1.0,
     "method": "exact"
   },
+  "CHATHAM - ISLE OF HOPE BAPTIST": {
+    "to": "CHATHAM - 1-12 ISLE OF HOPE BAPTIST",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ST PETERS EPISCOPAL": {
+    "to": "CHATHAM - 4-12 ST PETERS EPISCOPAL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - SKID IS PRES CHURCH": {
+    "to": "CHATHAM - 4-13 SKID IS PRES CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ST LUKE CHURCH": {
+    "to": "CHATHAM - 1-14 ST LUKE CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - FERGUSON AVE BAPTIST": {
+    "to": "CHATHAM - 1-16 FERGUSON AVE BAPTIST",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - SKIDAWAY ISLAND STAT": {
+    "to": "CHATHAM - 4-15 SKIDAWAY ISLAND STATE PARK",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BLOOMINGDALE COMMUNITY CENTER": {
+    "to": "CHATHAM - 7-08 BLOOMINGDALE COM CTR",
+    "score": 0.9019607843137255,
+    "method": "fuzzy"
+  },
+  "CHATHAM - PROGRESSIVE REC CTR": {
+    "to": "CHATHAM - 7-10 PROGRESSIVE REC CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - COASTAL CATHEDRAL": {
+    "to": "CHATHAM - 7-14 COASTAL CATHEDRAL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - POOLER CITY HALL": {
+    "to": "CHATHAM - 7-06 POOLER CITY HALL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BAMBOO FARMS": {
+    "to": "CHATHAM - 6-11 BAMBOO FARMS",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - GARDEN CITY CITY HAL": {
+    "to": "CHATHAM - 7-13 GARDEN CITY CITY HALL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - OLD COURTHOUSE": {
+    "to": "CHATHAM - 3-01 OLD COURTHOUSE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - GUARD HOUSE COMM CTR": {
+    "to": "CHATHAM - 4-10 GUARD HOUSE COMM CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ISLANDS CHRISTIAN CH": {
+    "to": "CHATHAM - 1-17 ISLANDS CHRISTIAN CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - SEVENTH DAY ADV CHR": {
+    "to": "CHATHAM - 7-11 SEVENTH DAY ADV CHR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - LAKE SHORE COMMUNITY CENTER": {
+    "to": "CHATHAM - 7-04 LAKE SHORE COMM CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BARTLETT MIDDLE SCHOOL": {
+    "to": "CHATHAM - 5-01 BARTLETT MIDDLE SCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - RIVERVIEW HEALTH REH": {
+    "to": "CHATHAM - 3-14 RIVERVIEW HEALTH REH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BEACH HIGH SCHOOL": {
+    "to": "CHATHAM - 8-12 BEACH HIGH SCHOOL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BUTLER ELEMENTARY SC": {
+    "to": "CHATHAM - 8-11 BUTLER ELEM SCHOOL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - W W LAW CENTER": {
+    "to": "CHATHAM - 2-03 W. W. LAW CENTER",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BLACKSHEAR COMMUNITY CENTER": {
+    "to": "CHATHAM - 2-02 BLACKSHEAR COMM CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - NEW COV 7 DAY ADV CH": {
+    "to": "CHATHAM - 3-13 NEW COV 7 DAY ADV CH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - SAVANNAH HIGH SCHOOL": {
+    "to": "CHATHAM - 3-03 SAVANNAH HIGH SCHOOL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ELI WHITNEY COMPLEX": {
+    "to": "CHATHAM - 3-15 ELI WHITNEY COMPLEX",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - GARDEN CITY REC CTR": {
+    "to": "CHATHAM - 8-15 GARDEN CITY REC CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - MOSES JACKSON CENTER": {
+    "to": "CHATHAM - 8-09 MOSES JACKSON CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - CIVIC CENTER": {
+    "to": "CHATHAM - 8-01 CIVIC CENTER",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - LIBERTY CITY COMMUNITY CENTER": {
+    "to": "CHATHAM - 5-05 LIBERTY CITY COMM CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - JONESVILLE BAPT CH": {
+    "to": "CHATHAM - 5-10 JONESVILLE BAPT CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "CHATHAM - FIRST PRESBYTERIAN CHURCH": {
     "to": "CHATHAM - 1-01 FIRST PRESBYTERIAN CHURCH",
-    "score": 0.9090909090909091,
-    "method": "fuzzy"
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - BIBLE BAPTIST CHURCH": {
+    "to": "CHATHAM - 3-10 BIBLE BAPTIST CHURCH",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - CARVER HEIGHTS COMM": {
+    "to": "CHATHAM - 8-10 CARVER HEIGHTS COMM",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ELKS LODGE": {
+    "to": "CHATHAM - 5-07 ELKS LODGE",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - JENKINS HIGH SCHOOL": {
+    "to": "CHATHAM - 3-08 JENKINS HIGH SCHOOL",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - CRUSADER COMMUNITY CENTER": {
+    "to": "CHATHAM - 6-03 CRUSADER COMM CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - JEA BUILDING": {
+    "to": "CHATHAM - 1-05 JEA BUILDING",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - ROSE OF SHARON": {
+    "to": "CHATHAM - 3-02 ROSE OF SHARON",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - WILLIAMS COURT APTS": {
+    "to": "CHATHAM - 2-12 WILLIAMS COURT APTS",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - SALVATION ARMY": {
+    "to": "CHATHAM - 2-09 THE SALVATION ARMY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - S GARDENS CHRISTIAN": {
+    "to": "CHATHAM - 2-11 S GARDENS CHRISTIAN",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - GARDEN CITY SENIOR CENTER": {
+    "to": "CHATHAM - 7-01 GARDEN CITY SENIOR CTR",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "CHATHAM - WEST BROAD STREET YMCA": {
+    "to": "CHATHAM - 8-05 W BROAD ST YMCA",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "WORTH - MINTON": {
     "to": "WORTH - MINTON",
@@ -6178,6 +6643,11 @@
     "to": "WORTH - SHINGLER",
     "score": 1.0,
     "method": "exact"
+  },
+  "WORTH - SYLVESTER EAST": {
+    "to": "WORTH - SYLVESTER",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "WORTH - ISABELLA": {
     "to": "WORTH - ISABELLA",
@@ -7886,8 +8356,8 @@
   },
   "WHITE - MT YONAH": {
     "to": "WHITE - MT. YONAH",
-    "score": 0.9411764705882353,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "WHITE - TESNATEE": {
     "to": "WHITE - TESNATEE",
@@ -7939,6 +8409,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "PAULDING - BURNT HICKORY PARK": {
+    "to": "PAULDING - P",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "PAULDING - AUSTIN MIDDLE SCHOOL": {
     "to": "PAULDING - AUSTIN MIDDLE SCHOOL",
     "score": 1.0,
@@ -7974,15 +8449,45 @@
     "score": 1.0,
     "method": "exact"
   },
+  "BUTTS - BUTTS CO COMM C": {
+    "to": "BUTTS - BUTTS CO COMM CENTER",
+    "score": 0.9285714285714286,
+    "method": "fuzzy"
+  },
+  "WILKES - SENIOR CITIZEN": {
+    "to": "WILKES - SENIOR CITIZEN CENTER",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
   "WILKES - RAYLE CITY HALL": {
     "to": "WILKES - RAYLE CITY HALL",
     "score": 1.0,
     "method": "exact"
   },
+  "WILKES - EDWARD B POPE": {
+    "to": "WILKES - EDWARD B POPE CENTER",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
+  "WILKES - TIGNALL SCHOOL": {
+    "to": "WILKES - TIGNALL",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
   "WILKES - COURTHOUSE": {
     "to": "WILKES - COURTHOUSE",
     "score": 1.0,
     "method": "exact"
+  },
+  "WILKES - YOUNG FARMERS": {
+    "to": "WILKES - YOUNG FARMERS BLDG",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
+  "WILKES - METASVILLE FIRE": {
+    "to": "WILKES - METASVILLE FIRE STATION",
+    "score": 1.0,
+    "method": "fuzzy"
   },
   "BARROW - 02": {
     "to": "BARROW - 02",
@@ -8065,9 +8570,9 @@
     "method": "exact"
   },
   "BAKER - HOGGARDS MILL": {
-    "to": "BAKER - HOGGARD MILL",
-    "score": 0.96,
-    "method": "fuzzy"
+    "to": "BAKER - HOGGARD",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "BAKER - ANNA": {
     "to": "BAKER - ANNA",
@@ -8171,8 +8676,8 @@
   },
   "ROCKDALE - ST PIUS": {
     "to": "ROCKDALE - ST. PIUS",
-    "score": 0.9333333333333333,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "ROCKDALE - MILSTEAD": {
     "to": "ROCKDALE - MILSTEAD",
@@ -8259,6 +8764,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "GLYNN - STERLING ELEMENTARY": {
+    "to": "GLYNN - STERLING ELEM SCHOOL",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
   "GLYNN - SE BAPTIST BLDG": {
     "to": "GLYNN - SE BAPTIST BLDG",
     "score": 1.0,
@@ -8273,11 +8783,6 @@
     "to": "GLYNN - SELDEN PARK",
     "score": 1.0,
     "method": "exact"
-  },
-  "GLYNN - COLLEGE PLACE": {
-    "to": "GLYNN - COLLEGE PLACE A",
-    "score": 0.9285714285714286,
-    "method": "fuzzy"
   },
   "GLYNN - ABUNDANT LIFE": {
     "to": "GLYNN - ABUNDANT LIFE",
@@ -8596,8 +9101,13 @@
   },
   "DEKALB - HARRIS - MARGARET HARRIS ED": {
     "to": "DEKALB - HARRIS-MARGARET HARRIS ED",
-    "score": 0.9615384615384616,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
+  },
+  "DEKALB - BRIAR VISTA ELEM UNI ATL": {
+    "to": "DEKALB - BRIAR VISTA ELEM",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - LAVISTA ROAD": {
     "to": "DEKALB - LAVISTA ROAD",
@@ -8618,6 +9128,11 @@
     "to": "DEKALB - SHAMROCK",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - CLAIREMONT WEST DEC": {
+    "to": "DEKALB - CLAIREMONT WEST",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - SCOTT": {
     "to": "DEKALB - SCOTT",
@@ -8684,15 +9199,40 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - LIN - MARY LIN ELEM ATL": {
+    "to": "DEKALB - LIN-MARY LIN ELEM",
+    "score": 1.0,
+    "method": "compact_base"
+  },
   "DEKALB - MCWILLIAMS": {
     "to": "DEKALB - MCWILLIAMS",
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - MONTREAL TUC": {
+    "to": "DEKALB - MONTREAL",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - PINEY GROVE": {
     "to": "DEKALB - PINEY GROVE",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - PONCE DE LEON DEC": {
+    "to": "DEKALB - PONCE DE LEON",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - BOULEVARD ATL": {
+    "to": "DEKALB - BOULEVARD",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - GLENNWOOD DEC": {
+    "to": "DEKALB - GLENNWOOD",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - CANDLER": {
     "to": "DEKALB - CANDLER",
@@ -8724,10 +9264,20 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - JOHNSON ESTATES ATL": {
+    "to": "DEKALB - JOHNSON ESTATES",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - CROSSROADS": {
     "to": "DEKALB - CROSSROADS",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - AVONDALE AVO": {
+    "to": "DEKALB - AVONDALE",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - MIDWAY ELEM": {
     "to": "DEKALB - MIDWAY ELEM",
@@ -8746,8 +9296,8 @@
   },
   "DEKALB - KING - ML KING JR HIGH": {
     "to": "DEKALB - KING-ML KING JR HIGH",
-    "score": 0.9523809523809523,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DEKALB - RAINBOW ELEM": {
     "to": "DEKALB - RAINBOW ELEM",
@@ -8834,6 +9384,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - EMORY SOUTH UNI ATL": {
+    "to": "DEKALB - EMORY SOUTH",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - LAKESIDE HIGH": {
     "to": "DEKALB - LAKESIDE HIGH",
     "score": 1.0,
@@ -8859,6 +9414,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - WOODWARD ELEM BHAVN": {
+    "to": "DEKALB - WOODWARD ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - MEMORIAL SOUTH": {
     "to": "DEKALB - MEMORIAL SOUTH",
     "score": 1.0,
@@ -8874,20 +9434,115 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - BROOKHAVEN BHAVN": {
+    "to": "DEKALB - BROOKHAVEN",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - ASHFORD PARK ELEM BHAVN": {
+    "to": "DEKALB - ASHFORD PARK ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - SKYLAND BHAVN": {
+    "to": "DEKALB - SKYLAND",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - BRIARWOOD BHAVN": {
+    "to": "DEKALB - BRIARWOOD",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - DORAVILLE NORTH DOR": {
+    "to": "DEKALB - DORAVILLE NORTH",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - GEORGETOWN DUN": {
+    "to": "DEKALB - GEORGETOWN",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - OAKCLIFF ELEM": {
     "to": "DEKALB - OAKCLIFF ELEM",
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - DUNWOODY DUN": {
+    "to": "DEKALB - DUNWOODY",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - CHAMBLEE CHA": {
+    "to": "DEKALB - CHAMBLEE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - SILVER LAKE ATL BHAVN": {
+    "to": "DEKALB - SILVER LAKE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - CHESNUT ELEM DUN": {
+    "to": "DEKALB - CHESNUT ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - DUNWOODY LIBRARY DUN": {
+    "to": "DEKALB - DUNWOODY LIBRARY",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - WINTERS CHAPEL DUN": {
+    "to": "DEKALB - WINTERS CHAPEL",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - MONTCLAIR ELEM BHAVN": {
+    "to": "DEKALB - MONTCLAIR ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - AUSTIN DUN": {
+    "to": "DEKALB - AUSTIN",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - DORAVILLE SOUTH DOR": {
+    "to": "DEKALB - DORAVILLE SOUTH",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - HUNTLEY HILLS ELEM CHA": {
     "to": "DEKALB - HUNTLEY HILLS ELEM",
-    "score": 0.9,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - ASHFORD PARKSIDE BHAVN": {
+    "to": "DEKALB - ASHFORD PARKSIDE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - BROCKETT TUC": {
+    "to": "DEKALB - BROCKETT",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - HUGH HOWELL TUC": {
+    "to": "DEKALB - HUGH HOWELL",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - NORTHLAKE": {
     "to": "DEKALB - NORTHLAKE",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - IDLEWOOD ELEM TUC": {
+    "to": "DEKALB - IDLEWOOD ELEM",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - EVANSDALE ELEM": {
     "to": "DEKALB - EVANSDALE ELEM",
@@ -8954,10 +9609,15 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - PINE LAKE PIN": {
+    "to": "DEKALB - PINE LAKE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - CANDLER - MURPHEY CANDLER ELEM": {
     "to": "DEKALB - CANDLER-MURPHEY CANDLER ELEM",
-    "score": 0.9655172413793104,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DEKALB - NORTH HAIRSTON": {
     "to": "DEKALB - NORTH HAIRSTON",
@@ -8984,10 +9644,45 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - EPWORTH ATL": {
+    "to": "DEKALB - EPWORTH",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - EAST LAKE ATL": {
+    "to": "DEKALB - EAST",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "DEKALB - METROPOLITAN ATL": {
+    "to": "DEKALB - METROPOLITAN",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - BURGESS ELEM ATL": {
+    "to": "DEKALB - BURGESS ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - MCNAIR HIGH": {
     "to": "DEKALB - MCNAIR HIGH",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - CLAIREMONT EAST DEC": {
+    "to": "DEKALB - CLAIREMONT EAST",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - RENFROE MIDDLE DEC": {
+    "to": "DEKALB - RENFROE MIDDLE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - OAKHURST DEC": {
+    "to": "DEKALB - OAKHURST",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - NORTH DECATUR": {
     "to": "DEKALB - NORTH DECATUR",
@@ -9021,8 +9716,8 @@
   },
   "DEKALB - BOULDERCREST ROAD": {
     "to": "DEKALB - BOULDERCREST RD",
-    "score": 0.9375,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact"
   },
   "DEKALB - CEDAR GROVE SOUTH": {
     "to": "DEKALB - CEDAR GROVE SOUTH",
@@ -9051,8 +9746,8 @@
   },
   "DEKALB - MILLER - ELDRIDGE L. MILLER ELEM": {
     "to": "DEKALB - MILLER-ELDRIDGE L. MILLER ELEM",
-    "score": 0.967741935483871,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DEKALB - ROWLAND ROAD": {
     "to": "DEKALB - ROWLAND ROAD",
@@ -9066,8 +9761,8 @@
   },
   "DEKALB - HARRIS - NARVIE J. HARRIS ELEM": {
     "to": "DEKALB - HARRIS-NARVIE J. HARRIS ELEM",
-    "score": 0.9655172413793104,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DEKALB - COLUMBIA DRIVE": {
     "to": "DEKALB - COLUMBIA DRIVE",
@@ -9086,8 +9781,8 @@
   },
   "DEKALB - MATHIS - BOB MATHIS ELEM": {
     "to": "DEKALB - MATHIS-BOB MATHIS ELEM",
-    "score": 0.9565217391304348,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "DEKALB - SNAPFINGER ROAD NORTH": {
     "to": "DEKALB - SNAPFINGER ROAD NORTH",
@@ -9104,15 +9799,85 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - KITTREDGE ELEM BHAVN": {
+    "to": "DEKALB - KITTREDGE ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - CROSS KEYS HIGH BHAVN": {
+    "to": "DEKALB - CROSS KEYS HIGH",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - MT.VERNON WEST DUN": {
+    "to": "DEKALB - MT. VERNON WEST",
+    "score": 1.0,
+    "method": "compact_base"
+  },
+  "DEKALB - DRESDEN ELEM CHA": {
+    "to": "DEKALB - DRESDEN ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - ASHFORD DUNWOODY ROAD BHAVN": {
+    "to": "DEKALB - ASHFORD DUNWOODY RD",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - KINGSLEY ELEM DUN": {
+    "to": "DEKALB - KINGSLEY ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - PEACHTREE MIDDLE DUN": {
+    "to": "DEKALB - PEACHTREE MIDDLE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - WARREN TECH": {
     "to": "DEKALB - WARREN TECH",
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - TILLY MILL ROAD DUN": {
+    "to": "DEKALB - TILLY MILL ROAD",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - NORTH PEACHTREE DUN": {
+    "to": "DEKALB - NORTH PEACHTREE",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - MONTGOMERY ELEM BHAVN": {
+    "to": "DEKALB - MONTGOMERY ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - BRIARLAKE ELEM": {
     "to": "DEKALB - BRIARLAKE ELEM",
     "score": 1.0,
     "method": "exact"
+  },
+  "DEKALB - TUCKER TUC": {
+    "to": "DEKALB - TUCKER",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - BROCKETT ELEM TUC": {
+    "to": "DEKALB - BROCKETT ELEM",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - TUCKER LIBRARY TUC": {
+    "to": "DEKALB - TUCKER LIBRARY",
+    "score": 1.0,
+    "method": "exact_base"
+  },
+  "DEKALB - MIDVALE ELEM TUC": {
+    "to": "DEKALB - MIDVALE ELEM",
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - FAIRINGTON ELEM": {
     "to": "DEKALB - FAIRINGTON ELEM",
@@ -9124,6 +9889,11 @@
     "score": 1.0,
     "method": "exact"
   },
+  "DEKALB - LITHONIA LIT": {
+    "to": "DEKALB - LITHONIA",
+    "score": 1.0,
+    "method": "exact_base"
+  },
   "DEKALB - STONE MILL ELEM": {
     "to": "DEKALB - STONE MILL ELEM",
     "score": 1.0,
@@ -9131,13 +9901,13 @@
   },
   "DEKALB - STONE MOUNTAIN CHAMPION STO": {
     "to": "DEKALB - STONE MOUNTAIN CHAMPION",
-    "score": 0.92,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - STONE MOUNTAIN MIDDLE TUC": {
     "to": "DEKALB - STONE MOUNTAIN MIDDLE",
-    "score": 0.9130434782608695,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "exact_base"
   },
   "DEKALB - ROCK CHAPEL ELEM": {
     "to": "DEKALB - ROCK CHAPEL ELEM",
@@ -9495,9 +10265,9 @@
     "method": "exact"
   },
   "COBB - VAUGHAN 01": {
-    "to": "COBB - VAUGHN 01",
-    "score": 0.9473684210526315,
-    "method": "fuzzy"
+    "to": "COBB - NORTH",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COBB - LOST MOUNTAIN 04": {
     "to": "COBB - LOST MOUNTAIN 04",
@@ -9660,9 +10430,9 @@
     "method": "exact"
   },
   "COBB - LASSITER 01": {
-    "to": "COBB - LASSSITER 01",
-    "score": 0.9565217391304348,
-    "method": "fuzzy"
+    "to": "COBB - EAST",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "COBB - SEWELL MILL 01": {
     "to": "COBB - SEWELL MILL 01",
@@ -9686,7 +10456,7 @@
   },
   "COBB - WILLEO 01": {
     "to": "COBB - WILEO 01",
-    "score": 0.9411764705882353,
+    "score": 0.9333333333333333,
     "method": "fuzzy"
   },
   "COBB - SOPE CREEK 03": {
@@ -9713,11 +10483,6 @@
     "to": "COBB - BELLS FERRY 02",
     "score": 1.0,
     "method": "exact"
-  },
-  "COBB - ROCKY MOUNT 01": {
-    "to": "COBB - ROCKY MOUNTAIN 01",
-    "score": 0.9032258064516129,
-    "method": "fuzzy"
   },
   "COBB - KELL 01": {
     "to": "COBB - KELL 01",
@@ -9816,8 +10581,8 @@
   },
   "COBB - HARMONY-LELAND 01": {
     "to": "COBB - HARMONY LELAND 01",
-    "score": 0.9411764705882353,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "COBB - TERRELL MILL 01": {
     "to": "COBB - TERRELL MILL 01",
@@ -9971,7 +10736,7 @@
   },
   "COBB - SHALLOWFORD FALLS 01": {
     "to": "COBB - SHALLOWFORD FALL 01",
-    "score": 0.9743589743589743,
+    "score": 0.972972972972973,
     "method": "fuzzy"
   },
   "COBB - PEBBLEBROOK 01": {
@@ -10154,15 +10919,50 @@
     "score": 1.0,
     "method": "exact"
   },
+  "SPALDING - LIBERTY SPRINGS": {
+    "to": "SPALDING - LIBERTY",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "SPALDING - GARY REID FIRE STATION": {
+    "to": "SPALDING - GARY REID",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
+  "SPALDING - FAIRMONT COMMUNITY CENTER": {
+    "to": "SPALDING - FAIRMONT",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
+  "SPALDING - UGA CAMPUS": {
+    "to": "SPALDING - GA",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "SPALDING - CITY PARK": {
     "to": "SPALDING - CITY PARK",
     "score": 1.0,
     "method": "exact"
   },
+  "SPALDING - CARVER FIRE STATION": {
+    "to": "SPALDING - CARVER",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
+  "SPALDING - AMBUCS PARK GYM": {
+    "to": "SPALDING - AMBUCS",
+    "score": 0.99,
+    "method": "compact_contains"
+  },
   "SPALDING - FIRST PRESBYTERIAN": {
     "to": "SPALDING - FIRST PRESBYTERIA",
     "score": 0.9714285714285714,
     "method": "fuzzy"
+  },
+  "SPALDING - SECOND BAPTIST CHURCH": {
+    "to": "SPALDING - SECOND",
+    "score": 0.99,
+    "method": "compact_contains"
   },
   "SPALDING - SUNNYSIDE METHODIST": {
     "to": "SPALDING - SUNNYSIDE METHODI",
@@ -10174,10 +10974,20 @@
     "score": 1.0,
     "method": "exact"
   },
+  "SPALDING - ROBERTS FIRE STATION": {
+    "to": "SPALDING - ROBERTS",
+    "score": 1.0,
+    "method": "exact_loose"
+  },
   "CHARLTON - RACEPOND": {
     "to": "CHARLTON - RACEPOND",
     "score": 1.0,
     "method": "exact"
+  },
+  "CHARLTON - FOLKSTON FIRE": {
+    "to": "CHARLTON - FOLKSTON",
+    "score": 1.0,
+    "method": "fuzzy"
   },
   "CHARLTON - FOLKSTON": {
     "to": "CHARLTON - FOLKSTON",
@@ -10562,7 +11372,7 @@
   "RANDOLPH - CUTHBERTCOURTHOUSE": {
     "to": "RANDOLPH - CUTHBERTCOURTHOUSE",
     "score": 1.0,
-    "method": "exact"
+    "method": "fuzzy"
   },
   "RANDOLPH - FOUNTAIN BRIDGE": {
     "to": "RANDOLPH - FOUNTAIN BRIDGE",
@@ -10811,8 +11621,8 @@
   },
   "LIBERTY - MEMORIAL DR EAST": {
     "to": "LIBERTY - MEMORIAL DR. EAST",
-    "score": 0.9696969696969697,
-    "method": "fuzzy"
+    "score": 1.0,
+    "method": "compact"
   },
   "LIBERTY - HINESVILLE LODGE 271": {
     "to": "LIBERTY - HINESVILLE LODGE 271",

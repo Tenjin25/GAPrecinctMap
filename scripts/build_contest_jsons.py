@@ -29,6 +29,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -96,8 +97,19 @@ def decorate_candidate_label(candidate: str, party_norm: str) -> str:
     name = normalize_candidate_case(candidate)
     if not name:
         return ""
-    if (party_norm or "").strip().upper().startswith("REP"):
-        return re.sub(r"\(\s*I\s*\)", "(R*)", name, flags=re.IGNORECASE)
+    incumbent = False
+    if re.search(r"\(\s*I\s*\)", name, flags=re.IGNORECASE):
+        incumbent = True
+        name = re.sub(r"\(\s*I\s*\)", "", name, flags=re.IGNORECASE)
+
+    # Back-compat: some older builds wrote incumbency as "(R*)" / "(D*)".
+    if re.search(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", name, flags=re.IGNORECASE):
+        incumbent = True
+        name = re.sub(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", "", name, flags=re.IGNORECASE)
+
+    name = re.sub(r"\s+", " ", name).strip()
+    if incumbent and not name.endswith("*"):
+        name = f"{name}*"
     return name
 
 
@@ -224,11 +236,19 @@ def extract_precinct_name(precinct_raw: str) -> str:
 
 
 def slugify(s: str) -> str:
-    s = (s or "").strip()
+    raw = (s or "").strip()
+    s = raw
     s = re.sub(r"[^\w\s\-\.]", "", s, flags=re.UNICODE)
     s = re.sub(r"\s+", "_", s)
     s = re.sub(r"_+", "_", s)
-    return s.strip("._-") or "contest"
+    out = s.strip("._-") or "contest"
+
+    # Avoid Windows path/filename limits for long referendum titles by capping slug length
+    # and appending a stable hash suffix.
+    if len(out) > 140:
+        h = hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10]
+        out = (out[:120].rstrip("._-") or "contest") + "__" + h
+    return out
 
 def normalize_office_loose(office: str) -> str:
     s = (office or "").replace("\u00a0", " ").strip().upper()
