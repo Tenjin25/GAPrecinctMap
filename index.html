@@ -7793,8 +7793,8 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         `.trim();
 
-        const censusTone = focusToneClassFromTrajectoryLabel(census.label, Number(selectedEntry.margin_pct) || 0);
-        const censusToneClass = focusToneClass(censusTone === 'competitive' ? 'competitive' : censusTone);
+        const censusStatusClass = focusStatusClassFromTrajectoryLabel(census.label, Number(selectedEntry.margin_pct) || 0);
+        const censusToneClass = focusToneClass(censusStatusClass === 'competitive' ? 'competitive' : censusStatusClass);
         const censusHtml = `
           <p class="focus-census-check ${escapeHtml(censusToneClass)}" role="note" aria-label="Census Check">
             <strong>Census check:</strong> ${escapeHtml(census.label)}. ${escapeHtml(census.note)}

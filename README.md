@@ -127,9 +127,9 @@ Primary builder:
 
 - `scripts/build_precinct_district_crosswalks_from_blockassign.py`
 
-## County Sidebar Analysis (County Popup)
+## Selected County Popup Analysis
 
-When a county is selected, the sidebar popup includes three county-level analysis sections that are computed from data already in this repo (no external fetches):
+When a county is selected, the top-right selected popup (vote counter) includes three county-level analysis sections that are computed from data already in this repo (no external fetches):
 
 - **Trajectory Snapshot**: labels the county’s electoral direction using the selected year result, shift since 2020, long-run shift, flip history, and streaks (contest-specific).
 - **Census Check**: compares post-2020 population change (CO-EST) against the county’s vote movement to label reinforcement / realignment pressure / mixed / limited change.
