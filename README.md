@@ -23,6 +23,12 @@ Core capabilities:
   - Historical trend cards with consistent margin math
 - Click-to-zoom interaction for county and district geographies.
 
+UI notes:
+
+- Hover tooltips surface a consistent "meta chip" row (winner, rating/tier, flip/shift where applicable) plus a compact vote breakdown card.
+- Tooltips can be pinned so you can pan/zoom without losing the hovered summary.
+- A source badge indicates how precinct results were matched (VTD20-derived join vs fallback matching).
+
 ## Geographic Layers
 
 Primary boundaries in use:
@@ -47,7 +53,7 @@ Supporting metadata:
 
 - Time window in app experience: 2000 through 2024 (contest-dependent coverage).
 - County/statewide slices: generated from OpenElections-style GA CSV exports.
-- Precinct-keyed derived slices: VTD20-keyed outputs centered on modern precinct-era files.
+- Precinct-keyed derived slices: VTD20-keyed outputs (modern join keys) for years where precinct-level source data is available.
 - District overlays: produced by reallocating precinct results into district lines using weighted crosswalks.
 
 Not every contest exists in every year/scope. Availability is controlled by manifest files and source data completeness.
@@ -101,6 +107,13 @@ Each file contains:
   - `scripts/build_vtd10_key_to_vtd20_keymap.py` (pre-2020 support)
   - `scripts/build_contest_jsons.py`
 
+File shape (high level):
+
+- Top-level metadata: `office`, `district`, `level`, `keys`
+- `results`: object keyed by VTD20 join key (typically `GEOID20` / `id`)
+  - vote totals: `total_votes`, `dem_votes`, `rep_votes`, `other_votes`
+  - winner fields: `winner_candidate`, `winner_party`, `winner_votes`, `margin_votes`
+
 ### 4) Precinct-to-District Crosswalks
 
 - `Data/crosswalks/precinct_to_cd118.csv`
@@ -119,9 +132,17 @@ Primary builder:
 
 The app prioritizes stable ID-based joins and then uses normalized fallback matching only when necessary.
 
-- Preferred key for precinct detail: VTD20 `GEOID20`/`id`.
+- Preferred key for precinct detail: VTD20 `GEOID20`/`id` (stable geography identifier).
 - Supplemental key support for older years can bridge VTD10-era naming to VTD20 keys.
 - Normalized county+precinct matching is used as fallback for records with inconsistent naming.
+
+### Precinct Rendering and Centroids
+
+Precinct interaction uses a mix of polygons and centroids:
+
+- `Data/Voting_Precincts.geojson` provides higher-zoom precinct polygons for rendering.
+- `Data/precinct_centroids.geojson` provides point features used for fast hit-testing and as a fallback when polygons are suppressed.
+- Centroids are intended to be *visually inside* their polygons (not just mathematical centroids), improving hover/click behavior for thin/concave shapes.
 
 ### Overlay Allocation Strategy
 
@@ -129,8 +150,7 @@ District overlays are weighted reallocations, not winner-take-all assignment.
 
 - Crosswalk rows contain `precinct_key`, `district_num`, and `area_weight`.
 - A precinct can contribute votes fractionally to multiple districts.
-- Current default crosswalk generation is geometry-overlap based.
-- Block assignment sources are optional and script-selectable during crosswalk generation, not mandatory.
+- Current default crosswalk generation is geometry-overlap based, with optional block-assignment inputs to improve edge cases.
 
 ### Modern-Line Reference
 
@@ -202,6 +222,8 @@ Recommended checks during data refreshes:
 - Manifest integrity:
   - `Data/contests/manifest.json` references existing files.
   - `Data/district_contests/manifest.json` references existing files.
+- Spot-check derived VTD20 manifests:
+  - `Data/derived_vtd20/<year>/contests/manifest.json` should only reference files that exist in `Data/derived_vtd20/<year>/contests/vtd20/`.
 - Join coverage:
   - Use `scripts/check_join_coverage.py` to compare geometry keys vs results keys for targeted contests.
 - Vote conservation:
