@@ -3230,10 +3230,32 @@ body { height: var(--app-height); }
     margin: 0;
   }
 
+  .focus-census-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #0f172a;
+  }
+
+  .focus-census-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
   .focus-census-note {
     font-size: 12px;
     line-height: 1.45;
     color: #334155;
+  }
+
+  .focus-census-source {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #64748b;
   }
 
   .focus-census-check {
@@ -3271,6 +3293,7 @@ body { height: var(--app-height); }
   .focus-trajectory {
     --trajectory-accent-rgb: 100, 116, 139;
     --trajectory-accent-soft: rgba(100, 116, 139, 0.2);
+    --trajectory-accent-glow: rgba(100, 116, 139, 0.2);
     position: relative;
     display: grid;
     gap: 10px;
@@ -3280,21 +3303,37 @@ body { height: var(--app-height); }
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 245, 249, 0.92) 100%);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74), 0 6px 16px rgba(15, 23, 42, 0.08);
     overflow: hidden;
+    isolation: isolate;
+    animation: trajectory-fade-up 0.22s ease-out;
   }
 
   .focus-trajectory.status-dem {
     --trajectory-accent-rgb: 37, 99, 235;
     --trajectory-accent-soft: rgba(37, 99, 235, 0.22);
+    --trajectory-accent-glow: rgba(37, 99, 235, 0.24);
   }
 
   .focus-trajectory.status-rep {
     --trajectory-accent-rgb: 220, 38, 38;
     --trajectory-accent-soft: rgba(220, 38, 38, 0.24);
+    --trajectory-accent-glow: rgba(220, 38, 38, 0.24);
   }
 
   .focus-trajectory.status-competitive {
     --trajectory-accent-rgb: 217, 119, 6;
     --trajectory-accent-soft: rgba(217, 119, 6, 0.24);
+    --trajectory-accent-glow: rgba(217, 119, 6, 0.26);
+  }
+
+  @keyframes trajectory-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .focus-trajectory::before {
@@ -3313,6 +3352,20 @@ body { height: var(--app-height); }
     pointer-events: none;
   }
 
+  .focus-trajectory::after {
+    content: '';
+    position: absolute;
+    top: -28%;
+    right: -14%;
+    width: 180px;
+    height: 180px;
+    border-radius: 999px;
+    background: radial-gradient(circle, var(--trajectory-accent-glow) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0.72;
+    pointer-events: none;
+    z-index: -1;
+  }
+
   .focus-trajectory-head {
     display: flex;
     flex-direction: column;
@@ -3321,6 +3374,21 @@ body { height: var(--app-height); }
     gap: 6px;
     padding-bottom: 6px;
     border-bottom: 1px dashed rgba(var(--trajectory-accent-rgb), 0.25);
+  }
+
+  .focus-trajectory-subtype {
+    font-size: 11px;
+    line-height: 1.35;
+    color: #475569;
+    font-weight: 800;
+  }
+
+  .focus-trajectory-stage {
+    font-size: 10px;
+    line-height: 1.35;
+    color: #64748b;
+    font-weight: 800;
+    letter-spacing: 0.02em;
   }
 
   .focus-trajectory-kicker {
@@ -3372,6 +3440,63 @@ body { height: var(--app-height); }
     background: rgba(254, 243, 199, 0.9);
   }
 
+  .focus-trajectory-trendline {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 30px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.9) 100%);
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+    font-weight: 700;
+  }
+
+  .focus-trajectory-trendline .trend-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 0 7px;
+    border-radius: 999px;
+    background: rgba(226, 232, 240, 0.8);
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .focus-trajectory-trendline .trend-text {
+    min-width: 0;
+    display: inline;
+    color: inherit;
+  }
+
+  .focus-trajectory-trendline .focus-trajectory-arrow {
+    margin-right: 4px;
+  }
+
+  .focus-trajectory-trendline.tone-rep {
+    color: #b91c1c;
+    border-color: rgba(220, 38, 38, 0.22);
+    background: rgba(254, 242, 242, 0.86);
+  }
+
+  .focus-trajectory-trendline.tone-dem {
+    color: #1d4ed8;
+    border-color: rgba(37, 99, 235, 0.22);
+    background: rgba(239, 246, 255, 0.9);
+  }
+
+  .focus-trajectory-trendline.tone-neutral {
+    color: #475569;
+  }
+
   .focus-trajectory-meaning {
     margin: 0;
     padding: 7px 8px;
@@ -3383,6 +3508,11 @@ body { height: var(--app-height); }
     color: #334155;
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  .focus-trajectory-meaning strong {
+    font-weight: 800;
+    color: #0f172a;
   }
 
   .focus-trajectory-meaning.tone-dem {
@@ -3402,7 +3532,7 @@ body { height: var(--app-height); }
 
   .focus-trajectory-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 8px;
   }
 
@@ -3416,6 +3546,35 @@ body { height: var(--app-height); }
     border: 1px solid rgba(148, 163, 184, 0.16);
     background: rgba(255, 255, 255, 0.82);
     box-shadow: var(--trajectory-item-shadow);
+    transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  }
+
+  .focus-trajectory-item.is-latest {
+    grid-column: 1 / -1;
+    gap: 3px;
+    padding: 10px 11px;
+    border-color: rgba(var(--trajectory-accent-rgb), 0.28);
+    background: linear-gradient(
+      180deg,
+      rgba(var(--trajectory-accent-rgb), 0.06) 0%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+  }
+
+  .focus-trajectory-item.is-latest .focus-trajectory-label {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+
+  .focus-trajectory-item.is-latest .focus-trajectory-value {
+    font-size: 13px;
+  }
+
+  .focus-trajectory-growth {
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: #64748b;
   }
 
   .focus-trajectory-item.tone-dem {
@@ -3426,6 +3585,17 @@ body { height: var(--app-height); }
   .focus-trajectory-item.tone-rep {
     --trajectory-item-shadow: inset 3px 0 0 rgba(220, 38, 38, 0.42);
     border-color: rgba(220, 38, 38, 0.18);
+  }
+
+  .focus-trajectory-item.tone-neutral {
+    --trajectory-item-shadow: inset 3px 0 0 rgba(100, 116, 139, 0.34);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .focus-trajectory-item:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--trajectory-item-shadow), 0 4px 10px rgba(15, 23, 42, 0.08);
+    }
   }
 
   .focus-trajectory-label {
@@ -7768,6 +7938,127 @@ document.addEventListener('DOMContentLoaded', function() {
       return 'competitive';
     }
 
+    function trajectoryToneClass(tone) {
+      return focusToneClass(tone);
+    }
+
+    function normalizeTrajectoryArrow(arrow) {
+      if (arrow === '\u2197') return '\u2192'; // ↗ -> →
+      if (arrow === '\u2198') return '\u2190'; // ↘ -> ←
+      return arrow;
+    }
+
+    function arrowForRepSignedShift(value) {
+      const v = Number(value);
+      if (!Number.isFinite(v) || Math.abs(v) < 0.5) return '\u2194'; // ↔
+      return v > 0 ? '\u2192' : '\u2190'; // → for redder, ← for bluer
+    }
+
+    function formatGeorgiaContextSubtype(contextBucket) {
+      const b = String(contextBucket || '');
+      if (b === 'atlanta_core') return 'Atlanta core county';
+      if (b === 'atlanta_suburban') return 'Atlanta suburban county';
+      if (b === 'atlanta_exurban') return 'Atlanta exurban county';
+      if (b === 'regional_metro') return 'Regional metro county';
+      if (b === 'college_county') return 'College / university county';
+      if (b === 'military_anchor') return 'Military-anchor county';
+      if (b === 'logistics_industrial') return 'Logistics / industrial corridor county';
+      if (b === 'black_belt_rural') return 'Black Belt rural county';
+      if (b === 'mountain_amenity') return 'Mountain / amenity county';
+      return 'Rural / small-metro county';
+    }
+
+    function formatGeorgiaTrajectoryStage(repSignedMarginPct) {
+      const m = Number(repSignedMarginPct);
+      if (!Number.isFinite(m)) return '';
+      if (m >= 25) return 'Stage: Deep Red';
+      if (m >= 15) return 'Stage: Softening Red';
+      if (m >= 5) return 'Stage: Competitive Edge';
+      if (m >= 0) return 'Stage: Tossup Range';
+      if (m <= -25) return 'Stage: Deep Blue';
+      if (m <= -15) return 'Stage: Softening Blue';
+      if (m <= -5) return 'Stage: Competitive Edge';
+      return 'Stage: Tossup Range';
+    }
+
+    function renderFocusTrajectorySnapshotHTML(meta) {
+      if (!meta) return '';
+      const statusText = String(meta.statusText || '').trim();
+      const statusClass = String(meta.statusClass || '').trim() || 'competitive';
+      const statusToneClass = trajectoryToneClass(meta.statusTone || 'neutral');
+      const subtypeText = String(meta.subtypeText || '').trim();
+      const stageText = String(meta.stageText || '').trim();
+      const trendText = String(meta.trendText || '').trim();
+      const meaningText = String(meta.meaningText || '').trim();
+      const growthDynamicText = String(meta.growthDynamic || '').trim();
+      const details = Array.isArray(meta.details) ? meta.details : [];
+
+      const trendTone = (trendText.includes('\u2192') || trendText.includes('\u2197'))
+        ? 'rep'
+        : ((trendText.includes('\u2190') || trendText.includes('\u2198')) ? 'dem' : 'neutral');
+      const trendToneClass = trajectoryToneClass(trendTone);
+      const trendArrowMatch = trendText.match(/^([\u2190\u2192\u2194\u2197\u2198])\s*/);
+      const trendArrow = trendArrowMatch ? normalizeTrajectoryArrow(trendArrowMatch[1]) : '';
+      const trendBody = trendArrow ? trendText.replace(/^([\u2190\u2192\u2194\u2197\u2198])\s*/, '') : trendText;
+
+      const detailTone = (label, value) => {
+        const v = String(value || '');
+        if (v.includes('\u2192') || v.includes('\u2197') || /\bR\+\d/.test(v)) return 'rep';
+        if (v.includes('\u2190') || v.includes('\u2198') || /\bD\+\d/.test(v)) return 'dem';
+        if (v.includes('\u2194') || /Tie|Even|N\\/A/i.test(v)) return 'neutral';
+        if (String(label || '').toLowerCase() === 'selected year') {
+          if (/\bR\+/.test(v)) return 'rep';
+          if (/\bD\+/.test(v)) return 'dem';
+        }
+        return 'neutral';
+      };
+
+      return `
+        <div class="focus-trajectory status-${escapeHtml(statusClass)}" role="group" aria-label="Trajectory Snapshot">
+          <div class="focus-trajectory-head">
+            <span class="focus-trajectory-kicker">Trajectory Snapshot</span>
+            <span class="focus-trajectory-status ${escapeHtml(statusToneClass)}">${escapeHtml(statusText)}</span>
+            ${subtypeText ? `<span class="focus-trajectory-subtype">${escapeHtml(subtypeText)}</span>` : ''}
+            ${stageText ? `<span class="focus-trajectory-stage">${escapeHtml(stageText)}</span>` : ''}
+          </div>
+          ${trendText ? `
+            <p class="focus-trajectory-trendline ${escapeHtml(trendToneClass)}">
+              <span class="trend-tag">Momentum</span>
+              <span class="trend-text">
+                ${trendArrow ? `<span class="focus-trajectory-arrow ${escapeHtml(trendToneClass)}">${escapeHtml(trendArrow)}</span>` : ''}
+                ${escapeHtml(trendBody)}
+              </span>
+            </p>
+          ` : ''}
+          ${meaningText ? `<p class="focus-trajectory-meaning ${escapeHtml(statusToneClass)}"><strong>Meaning:</strong> ${escapeHtml(meaningText)}</p>` : ''}
+          ${details.length ? `
+            <div class="focus-trajectory-grid" aria-label="Trajectory details">
+              ${details.map(item => {
+                const tone = detailTone(item?.label, item?.value);
+                const toneClass = trajectoryToneClass(tone);
+                const label = String(item?.label || '');
+                const valueRaw = String(item?.value || '');
+                const arrowMatch = valueRaw.trim().match(/^([\u2190\u2192\u2194\u2197\u2198])\s*/);
+                const arrow = arrowMatch ? normalizeTrajectoryArrow(arrowMatch[1]) : '';
+                const valueBody = arrow ? valueRaw.trim().replace(/^([\u2190\u2192\u2194\u2197\u2198])\s*/, '') : valueRaw;
+                const rowRole = String(item?.role || '').toLowerCase() === 'latest' ? 'is-latest' : 'is-shift';
+                return `
+                  <div class="focus-trajectory-item ${escapeHtml(toneClass)} ${escapeHtml(rowRole)}">
+                    <span class="focus-trajectory-label">${escapeHtml(label)}</span>
+                    <span class="focus-trajectory-value ${escapeHtml(toneClass)}">
+                      ${arrow ? `<span class="focus-trajectory-arrow ${escapeHtml(toneClass)}">${escapeHtml(arrow)}</span>` : ''}
+                      ${escapeHtml(valueBody)}
+                    </span>
+                    ${(rowRole === 'is-latest' && growthDynamicText) ? `<span class="focus-trajectory-growth">${escapeHtml(growthDynamicText)}</span>` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
     function buildFocusCountyAnalysisHTML(series, meta) {
       try {
         if (!Array.isArray(series) || !series.length) return '';
@@ -7821,43 +8112,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         const statusClass = focusStatusClassFromTrajectoryLabel(traj.label, Number(selectedEntry.margin_pct) || 0);
-        const statusTone = focusToneClass(statusClass === 'competitive' ? 'competitive' : statusClass);
+        const statusToneValue = statusClass === 'competitive' ? 'competitive' : statusClass;
 
-        const detailRows = [
+        const cappedSeries = (Number.isFinite(selectedYear)
+          ? normalizedSeries.filter(s => Number(s.year) <= selectedYear)
+          : normalizedSeries);
+        const seriesForFlip = cappedSeries.length ? cappedSeries : normalizedSeries;
+
+        let flipCount = 0;
+        let lastFlip = null; // { year, from, to }
+        for (let i = 1; i < seriesForFlip.length; i++) {
+          const a = String(seriesForFlip[i - 1]?.winner || '').toUpperCase();
+          const b = String(seriesForFlip[i]?.winner || '').toUpperCase();
+          if (!(['REP', 'DEM'].includes(a) && ['REP', 'DEM'].includes(b))) continue;
+          if (a !== b) {
+            flipCount += 1;
+            lastFlip = { year: Number(seriesForFlip[i]?.year), from: a === 'REP' ? 'R' : 'D', to: b === 'REP' ? 'R' : 'D' };
+          }
+        }
+
+        const streak = (() => {
+          const w = String(seriesForFlip[seriesForFlip.length - 1]?.winner || '').toUpperCase();
+          if (!['REP', 'DEM'].includes(w)) return { party: 'T', n: 0 };
+          let n = 0;
+          for (let i = seriesForFlip.length - 1; i >= 0; i--) {
+            const wi = String(seriesForFlip[i]?.winner || '').toUpperCase();
+            if (wi !== w) break;
+            n += 1;
+          }
+          return { party: w === 'REP' ? 'R' : 'D', n };
+        })();
+
+        const subtypeText = formatGeorgiaContextSubtype(contextBucket);
+        const stageText = formatGeorgiaTrajectoryStage(Number(selectedEntry.margin_pct) || 0);
+        const momentumArrow = arrowForRepSignedShift(shiftSince2020 === null ? longShift : shiftSince2020);
+        const momentumBody = shiftSince2020 === null
+          ? `Since ${Number(earliest.year)}: ${formatPartyShiftFromRepSignedPct(longShift)}.`
+          : `Since 2020: ${formatPartyShiftFromRepSignedPct(shiftSince2020)}; since ${Number(earliest.year)}: ${formatPartyShiftFromRepSignedPct(longShift)}.`;
+        const trendText = `${momentumArrow} ${momentumBody}`;
+
+        const growthDynamicParts = [];
+        if (lastFlip && Number.isFinite(lastFlip.year)) growthDynamicParts.push(`Flip ${lastFlip.from}\u2192${lastFlip.to} in ${lastFlip.year}`);
+        if (streak.n >= 1 && ['R', 'D'].includes(streak.party)) {
+          growthDynamicParts.push(`${streak.party === 'R' ? 'Republican' : 'Democratic'} streak: ${streak.n}`);
+        }
+        if (!growthDynamicParts.length && flipCount > 0) growthDynamicParts.push(`${flipCount} flip${flipCount === 1 ? '' : 's'} in series`);
+        const growthDynamic = growthDynamicParts.join(' \u2022 ');
+
+        const details = [
           {
-            label: 'Selected',
+            label: 'Selected year',
             value: `${Number(selectedEntry.year)}: ${formatPartyMarginFromRepSignedPct(Number(selectedEntry.margin_pct) || 0)}`,
-            tone: focusToneClass(focusToneFromRepSignedPct(Number(selectedEntry.margin_pct) || 0))
+            role: 'latest'
           },
           {
-            label: 'Since 2020',
-            value: shiftSince2020 === null ? 'N/A' : formatPartyShiftFromRepSignedPct(shiftSince2020),
-            tone: focusToneClass(focusToneFromRepSignedPct(shiftSince2020))
+            label: 'Shift vs 2020',
+            value: shiftSince2020 === null
+              ? '\u2194 N/A'
+              : `${arrowForRepSignedShift(shiftSince2020)} ${formatPartyShiftFromRepSignedPct(shiftSince2020)} since 2020`
           },
           {
-            label: `Since ${Number(earliest.year)}`,
-            value: formatPartyShiftFromRepSignedPct(longShift),
-            tone: focusToneClass(focusToneFromRepSignedPct(longShift))
+            label: `Long-run since ${Number(earliest.year)}`,
+            value: `${arrowForRepSignedShift(longShift)} ${formatPartyShiftFromRepSignedPct(longShift)} since ${Number(earliest.year)}`
+          },
+          {
+            label: 'Flip history',
+            value: lastFlip ? `Flip ${lastFlip.from}\u2192${lastFlip.to} (${lastFlip.year})` : 'No flip in series'
+          },
+          {
+            label: 'Streak',
+            value: (streak.n && ['R', 'D'].includes(streak.party))
+              ? `${streak.party === 'R' ? 'Republican' : 'Democratic'}: ${streak.n} election${streak.n === 1 ? '' : 's'}`
+              : 'No clear streak'
           }
         ];
 
-        const trajectoryHtml = `
-          <div class="focus-trajectory status-${escapeHtml(statusClass)}" role="group" aria-label="Trajectory Snapshot">
-            <div class="focus-trajectory-head">
-              <span class="focus-trajectory-kicker">Trajectory Snapshot</span>
-              <span class="focus-trajectory-status ${escapeHtml(statusTone)}">${escapeHtml(traj.label)}</span>
-            </div>
-            <p class="focus-trajectory-meaning ${escapeHtml(statusTone)}">${escapeHtml(traj.note)}</p>
-            <div class="focus-trajectory-grid" aria-label="Trajectory details">
-              ${detailRows.map(r => `
-                <div class="focus-trajectory-item ${escapeHtml(r.tone)}">
-                  <span class="focus-trajectory-label">${escapeHtml(r.label)}</span>
-                  <span class="focus-trajectory-value ${escapeHtml(r.tone)}">${escapeHtml(r.value)}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `.trim();
+        const trajectoryHtml = renderFocusTrajectorySnapshotHTML({
+          statusText: traj.label,
+          statusClass,
+          statusTone: statusToneValue,
+          subtypeText,
+          stageText,
+          trendText,
+          meaningText: traj.note,
+          growthDynamic,
+          details
+        }).trim();
 
         const censusStatusClass = focusStatusClassFromTrajectoryLabel(census.label, Number(selectedEntry.margin_pct) || 0);
         const censusToneClass = focusToneClass(censusStatusClass === 'competitive' ? 'competitive' : censusStatusClass);
@@ -7881,7 +8221,9 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="focus-trend-chip">${escapeHtml(yoyChipText)}</span>
               <span class="focus-trend-chip ${escapeHtml(shiftChipTone)}">${escapeHtml(shiftChipText)}</span>
             </div>
-            <p class="focus-census-note">${escapeHtml(census.note)}</p>
+            <p class="focus-census-summary">${escapeHtml(census.summary || census.note || '')}</p>
+            ${census.interpretation ? `<p class="focus-census-note">${escapeHtml(census.interpretation)}</p>` : ''}
+            ${census.sourceNote ? `<p class="focus-census-source">${escapeHtml(census.sourceNote)}</p>` : ''}
           </div>
         `.trim();
 
@@ -7889,9 +8231,15 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="focus-census-insight" role="note" aria-label="County Census Insight">
             <div class="focus-census-head">
               <span class="focus-census-kicker">County Census Insight</span>
-              <span class="focus-census-pill">${escapeHtml(insight.label)}</span>
+              <span class="focus-census-pill">${escapeHtml(insight.signalLabel || insight.label || '')}</span>
             </div>
-            <p class="focus-census-note">${escapeHtml(insight.note)}</p>
+            <p class="focus-census-summary">${escapeHtml(insight.patternLabel || '')}</p>
+            <div class="focus-census-chips" aria-label="Insight chips">
+              <span class="focus-trend-chip">${escapeHtml(`County type: ${formatGeorgiaContextSubtype(contextBucket)}`)}</span>
+              ${Number.isFinite(popNode?.change_pct) ? `<span class="focus-trend-chip">${escapeHtml(`Since 2020: ${(Number(popNode.change_pct) >= 0 ? '+' : '') + Number(popNode.change_pct).toFixed(2)}%`)}</span>` : ''}
+            </div>
+            ${insight.noteLabel || insight.note ? `<p class="focus-census-note">${escapeHtml(insight.noteLabel || insight.note)}</p>` : ''}
+            ${insight.sourceNote ? `<p class="focus-census-source">${escapeHtml(insight.sourceNote)}</p>` : ''}
           </div>
         `.trim();
 
@@ -12263,8 +12611,40 @@ document.addEventListener('DOMContentLoaded', function() {
         ? `electoral shift vs 2020 ${formatPartyShiftFromRepSignedPct(shift)}`
         : 'electoral shift vs 2020 N/A';
 
-      const note = `${popClause}${yoyClause ? `, ${yoyClause},` : ','} ${shiftClause}.`.replace(/\s+/g, ' ').trim();
-      return { label, note };
+      const summary = `${popClause}${yoyClause ? `, ${yoyClause},` : ','} ${shiftClause}.`.replace(/\s+/g, ' ').trim();
+      const interpretation = (() => {
+        if (label === 'Limited demographic change') {
+          return (contextBucket === 'black_belt_rural')
+            ? 'Population change is modest here, so the demographic signal looks limited and continuity is a safer read than a forced realignment story.'
+            : 'Population change is modest, so demographic pressure for near-term political change looks limited.';
+        }
+        if (label === 'Reinforcing Democratic trend') {
+          if (['atlanta_core', 'atlanta_suburban', 'regional_metro', 'college_county'].includes(contextBucket)) {
+            return 'Growth and vote movement point the same way, consistent with metro/suburban churn reinforcing recent Democratic gains.';
+          }
+          return 'Growth and vote movement point the same way, consistent with the current Democratic direction being reinforced rather than offset.';
+        }
+        if (label === 'Reinforcing Republican trend') {
+          if (['atlanta_exurban', 'logistics_industrial', 'mountain_amenity'].includes(contextBucket)) {
+            return 'Growth alongside sustained Republican margins is consistent with reinforcement in an outer-metro / corridor style county, not immediate partisan change.';
+          }
+          return 'Growth alongside continued Republican strength is consistent with reinforcement rather than rapid partisan change.';
+        }
+        if (label === 'Realignment pressure toward Democrats') {
+          return 'Growth plus sustained Democratic improvement is consistent with realignment pressure, though one cycle alone is not enough to lock it in.';
+        }
+        if (label === 'Realignment pressure toward Republicans') {
+          return 'The demographic and electoral pattern is consistent with pressure toward Republicans, but treat the signal cautiously unless it repeats.';
+        }
+        if (smallCounty) {
+          return 'Signals conflict or are uneven, and in a small-population county it’s safer to treat this as mixed rather than deterministic.';
+        }
+        return 'Population change and vote movement do not clearly reinforce each other here, so the demographic signal is mixed.';
+      })();
+
+      const sourceNote = 'Source: Census CO-EST county population estimates (2020–2025).';
+      const note = `${summary}${interpretation ? ` ${interpretation}` : ''}`.replace(/\s+/g, ' ').trim();
+      return { label, note, summary, interpretation, sourceNote };
     }
 
     function countyCensusInsight({ popNode, shiftSince2020RepSignedPct, latestMarginRepSignedPct, contextBucket }) {
@@ -12324,10 +12704,32 @@ document.addEventListener('DOMContentLoaded', function() {
         return 'Slow growth or population softness suggests limited demographic pressure for political change.';
       })();
 
-      const label = growthKnown
+      const signalLabel = growthKnown
         ? `${growthPhrase.charAt(0).toUpperCase() + growthPhrase.slice(1)} since 2020 (${growthPct.toFixed(2)}%)`
         : `${growthPhrase.charAt(0).toUpperCase() + growthPhrase.slice(1)} since 2020`;
-      return { label, note: base };
+
+      const patternLabel = (() => {
+        if (contextBucket === 'atlanta_core') return 'Core Atlanta metro growth pattern.';
+        if (contextBucket === 'atlanta_suburban') return 'Atlanta suburban expansion pattern.';
+        if (contextBucket === 'atlanta_exurban') return 'Outer-metro commuter / exurban expansion pattern.';
+        if (contextBucket === 'regional_metro') return 'Regional hub / city-anchor growth pattern.';
+        if (contextBucket === 'college_county') return 'University-centered population churn pattern.';
+        if (contextBucket === 'military_anchor') return 'Institution-anchor stability with gradual change.';
+        if (contextBucket === 'logistics_industrial') return 'Employment-driven corridor growth pattern.';
+        if (contextBucket === 'black_belt_rural') return 'Black Belt rural stability with slower growth.';
+        if (contextBucket === 'mountain_amenity') return 'Mountain / amenity growth pattern.';
+        return 'Rural stability / slower-growth pattern.';
+      })();
+
+      const sourceNote = 'Source: Census CO-EST county population estimates (2020–2025).';
+      return {
+        label: signalLabel,
+        note: base,
+        signalLabel,
+        patternLabel,
+        noteLabel: base,
+        sourceNote
+      };
     }
 
     function showCountyDetails(countyName) {
