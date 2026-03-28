@@ -6572,6 +6572,7 @@ document.addEventListener('DOMContentLoaded', function() {
         state_house: withBase('./Data/tl_2022_13_sldl.geojson'),
         state_senate: withBase('./Data/tl_2022_13_sldu.geojson'),
         county_demographics: withBase('./Data/ga_county_demographics.json'),
+        county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         election: withBase('./Data/ga_elections_aggregated.json'),
         district_election: withBase('./Data/ga_district_results.json'),
         district_contests_dir: withBase('./Data/district_contests'),
@@ -6857,6 +6858,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let stateSenateInfo = null;
     let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concord-Harrisburg"
     let countyDemographics = null; // County-level VAP (18+) + total-pop race/ethnicity from DP1
+    let countyPopulationEstimates = null; // Census CO-EST county population estimates (2020-2025)
     let countyNameMap = {};
     let currentView = 'counties'; // 'counties', 'districts', 'state_house', 'state_senate'
     let currentElectionResults = null; // Current contest results for county details
@@ -8330,6 +8332,159 @@ document.addEventListener('DOMContentLoaded', function() {
         setStatus('CSV Parse Exception: ' + err.message);
         console.error(err);
         return [];
+      }
+    }
+
+    function parseGaCountyPopulationEstimates(csvText) {
+      try {
+        const raw = (csvText || '').toString();
+        if (!raw.trim()) return null;
+
+        // Cleaned format support (preferred): header begins with "county,base_2020,est_2020,...".
+        // Keeps the app resilient if the upstream CO-EST file is normalized for easier use.
+        const trimmed = raw.trimStart();
+        if (/^county\s*,/i.test(trimmed)) {
+          const parsed = Papa.parse(raw, {
+            header: true,
+            dynamicTyping: true,
+            skipEmptyLines: true
+          });
+          if (parsed?.errors?.length) console.warn('County population estimates parse warnings:', parsed.errors);
+          const rows = Array.isArray(parsed?.data) ? parsed.data : [];
+          if (!rows.length) return null;
+
+          const yearKeys = Object.keys(rows[0] || {}).filter(k => /^est_\d{4}$/i.test(k));
+          const years = yearKeys
+            .map(k => Number(String(k).replace(/^est_/i, '')))
+            .filter(y => Number.isFinite(y))
+            .sort((a, b) => a - b);
+          if (!years.length) return null;
+
+          const out = { meta: { source: 'CO-EST2025-POP-13.csv', years }, counties: {} };
+          rows.forEach(r => {
+            const name = (r?.county || '').toString().trim();
+            if (!name) return;
+            const countyNorm = normalizeGeorgiaCountyKey(name);
+            if (!countyNorm) return;
+
+            const base2020 = Number(r?.base_2020) || 0;
+            const estimates = {};
+            years.forEach(y => { estimates[y] = Number(r?.[`est_${y}`]) || 0; });
+
+            const latestYear = years[years.length - 1];
+            const prevYear = years.length >= 2 ? years[years.length - 2] : null;
+            const pop2020 = estimates[2020] ?? 0;
+            const popLatest = estimates[latestYear] ?? 0;
+            const changeAbs = popLatest - pop2020;
+            const changePct = pop2020 ? (changeAbs / pop2020) * 100.0 : 0;
+            const yoyAbs = prevYear ? (popLatest - (estimates[prevYear] ?? 0)) : 0;
+            const prevPop = prevYear ? (estimates[prevYear] ?? 0) : 0;
+            const yoyPct = prevPop ? (yoyAbs / prevPop) * 100.0 : 0;
+
+            out.counties[countyNorm] = {
+              name,
+              base_2020: base2020,
+              estimates,
+              latest_year: latestYear,
+              pop_2020: pop2020,
+              pop_latest: popLatest,
+              change_abs: changeAbs,
+              change_pct: Number(changePct.toFixed(2)),
+              yoy_abs: yoyAbs,
+              yoy_pct: Number(yoyPct.toFixed(2))
+            };
+          });
+
+          return Object.keys(out.counties).length ? out : null;
+        }
+
+        const parsed = Papa.parse(raw, {
+          header: false,
+          dynamicTyping: false,
+          skipEmptyLines: true
+        });
+        if (parsed?.errors?.length) {
+          console.warn('County population estimates parse warnings:', parsed.errors);
+        }
+        const rows = Array.isArray(parsed?.data) ? parsed.data : [];
+        if (!rows.length) return null;
+
+        const headerIdx = rows.findIndex(r => (r?.[0] || '').toString().trim() === 'Geographic Area');
+        if (headerIdx < 0 || headerIdx + 1 >= rows.length) return null;
+
+        const yearsRow = rows[headerIdx + 1] || [];
+        const years = [];
+        for (let i = 2; i < yearsRow.length; i++) {
+          const token = (yearsRow[i] || '').toString().replace(/[^\d]/g, '');
+          const y = Number(token);
+          if (Number.isFinite(y) && y >= 1900) years.push(y);
+        }
+        if (!years.length) return null;
+
+        const toNum = (cell) => {
+          const s = (cell ?? '').toString().trim().replace(/^"+|"+$/g, '').replace(/,/g, '');
+          const n = Number(s);
+          return Number.isFinite(n) ? n : 0;
+        };
+
+        const normalizeArea = (areaRaw) => {
+          const rawArea = (areaRaw || '').toString().trim();
+          if (!rawArea) return '';
+          // File format uses ".Appling County, Georgia" for counties.
+          const cleaned = rawArea.replace(/^\./, '').trim();
+          // Keep only the county name (no "County", no ", Georgia").
+          return cleaned
+            .replace(/,\s*GEORGIA\s*$/i, '')
+            .replace(/\s+COUNTY\s*$/i, '')
+            .trim();
+        };
+
+        const out = { meta: { source: 'CO-EST2025-POP-13.csv', years }, counties: {} };
+        for (let i = headerIdx + 2; i < rows.length; i++) {
+          const r = rows[i] || [];
+          const area = (r[0] || '').toString().trim();
+          if (!area) continue;
+          if (!area.startsWith('.')) continue; // skip the statewide total row
+          if (!/COUNTY/i.test(area)) continue;
+
+          const countyName = normalizeArea(area);
+          if (!countyName) continue;
+          const countyNorm = countyName.toUpperCase();
+
+          const base2020 = toNum(r[1]);
+          const estimates = {};
+          for (let j = 0; j < years.length; j++) {
+            estimates[years[j]] = toNum(r[2 + j]);
+          }
+
+          const latestYear = years[years.length - 1];
+          const prevYear = years.length >= 2 ? years[years.length - 2] : null;
+          const pop2020 = estimates[2020] ?? 0;
+          const popLatest = estimates[latestYear] ?? 0;
+          const changeAbs = popLatest - pop2020;
+          const changePct = pop2020 ? (changeAbs / pop2020) * 100.0 : 0;
+          const yoyAbs = prevYear ? (popLatest - (estimates[prevYear] ?? 0)) : 0;
+          const prevPop = prevYear ? (estimates[prevYear] ?? 0) : 0;
+          const yoyPct = prevPop ? (yoyAbs / prevPop) * 100.0 : 0;
+
+          out.counties[countyNorm] = {
+            name: countyName,
+            base_2020: base2020,
+            estimates,
+            latest_year: latestYear,
+            pop_2020: pop2020,
+            pop_latest: popLatest,
+            change_abs: changeAbs,
+            change_pct: Number(changePct.toFixed(2)),
+            yoy_abs: yoyAbs,
+            yoy_pct: Number(yoyPct.toFixed(2))
+          };
+        }
+
+        return Object.keys(out.counties).length ? out : null;
+      } catch (err) {
+        console.warn('Failed to parse county population estimates:', err?.message || err);
+        return null;
       }
     }
 
@@ -11337,6 +11492,336 @@ document.addEventListener('DOMContentLoaded', function() {
       try { updateMobileOverlayOffsets(); } catch (_) {}
     }
 
+    const GA_COUNTY_CONTEXT_SETS = (() => {
+      const set = (arr) => new Set((arr || []).map(s => (s || '').toString().trim().toUpperCase()).filter(Boolean));
+      return Object.freeze({
+        atlanta_core: set(['Fulton', 'DeKalb', 'Clayton']),
+        atlanta_suburban: set(['Cobb', 'Gwinnett', 'Henry', 'Douglas', 'Rockdale']),
+        atlanta_exurban: set(['Cherokee', 'Forsyth', 'Paulding', 'Coweta', 'Fayette', 'Bartow', 'Jackson', 'Hall', 'Walton', 'Newton', 'Pickens']),
+        regional_metro: set(['Chatham', 'Bibb', 'Muscogee', 'Richmond', 'Houston', 'Dougherty', 'Clarke', 'Carroll', 'Spalding', 'Troup']),
+        college_county: set(['Clarke', 'Bulloch', 'Lowndes', 'Baldwin']),
+        military_anchor: set(['Liberty', 'Houston', 'Muscogee']),
+        logistics_industrial: set(['Bryan', 'Effingham', 'Hall', 'Jackson', 'Whitfield', 'Henry', 'Fayette', 'Coweta']),
+        black_belt_rural: set([
+          'Dougherty', 'Terrell', 'Sumter', 'Macon', 'Randolph', 'Clay', 'Quitman', 'Stewart', 'Early', 'Decatur', 'Lee', 'Calhoun', 'Baker',
+          'Hancock', 'Baldwin', 'Washington', 'Warren', 'Jefferson', 'Taliaferro', 'Wilkinson', 'Johnson', 'Twiggs', 'Glascock'
+        ]),
+        mountain_amenity: set(['Fannin', 'Union', 'Rabun', 'Towns', 'White', 'Lumpkin'])
+      });
+    })();
+
+    const GA_COUNTY_CONTEXT_PRIORITY = Object.freeze([
+      'atlanta_core',
+      'atlanta_suburban',
+      'atlanta_exurban',
+      'college_county',
+      'military_anchor',
+      'logistics_industrial',
+      'regional_metro',
+      'black_belt_rural',
+      'mountain_amenity',
+      'rural_stable'
+    ]);
+
+    function normalizeGeorgiaCountyKey(name) {
+      return (name || '')
+        .toString()
+        .replace(/\s+COUNTY$/i, '')
+        .replace(/[^a-z0-9 .\-]/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toUpperCase();
+    }
+
+    function classifyGeorgiaCountyContext(countyName, { demo = null, pop = null, trendSeries = null } = {}) {
+      const key = normalizeGeorgiaCountyKey(countyName);
+      if (!key) return 'rural_stable';
+
+      // Name-driven classification with fixed priority order.
+      for (const bucket of GA_COUNTY_CONTEXT_PRIORITY) {
+        if (bucket === 'rural_stable') continue;
+        const s = GA_COUNTY_CONTEXT_SETS[bucket];
+        if (s && s.has(key)) return bucket;
+      }
+
+      // Optional refinement for Black Belt: high Black share + durable Democratic history + slower growth.
+      try {
+        const blackPct = Number(demo?.black_pop_pct ?? demo?.black_pct ?? demo?.black ?? null);
+        const popChangePct = Number(pop?.change_pct ?? null);
+        const hasSlowGrowth = Number.isFinite(popChangePct) ? popChangePct <= 3.5 : true;
+
+        let durableDem = false;
+        if (Array.isArray(trendSeries) && trendSeries.length >= 3) {
+          const sorted = trendSeries.slice().sort((a, b) => Number(a.year) - Number(b.year));
+          const latest = sorted[sorted.length - 1];
+          const streak = (() => {
+            const w = (latest?.winner || '').toString().toUpperCase();
+            if (w !== 'DEM') return 0;
+            let n = 0;
+            for (let i = sorted.length - 1; i >= 0; i--) {
+              const wi = (sorted[i]?.winner || '').toString().toUpperCase();
+              if (wi !== 'DEM') break;
+              n += 1;
+            }
+            return n;
+          })();
+          const absMargin = Math.abs(Number(latest?.margin_pct || 0));
+          durableDem = streak >= 2 && absMargin >= 8;
+        }
+
+        if (Number.isFinite(blackPct) && blackPct >= 35 && durableDem && hasSlowGrowth) {
+          return 'black_belt_rural';
+        }
+      } catch (_) {}
+
+      return 'rural_stable';
+    }
+
+    function formatPartyShiftFromRepSignedPct(shiftRepSignedPct) {
+      const s = Number(shiftRepSignedPct) || 0;
+      const abs = Math.abs(s);
+      if (abs < 0.01) return 'No change';
+      const dir = s > 0 ? 'R' : 'D';
+      return `${dir}+${abs.toFixed(2)}%`;
+    }
+
+    function formatPartyMarginFromRepSignedPct(marginRepSignedPct) {
+      const m = Number(marginRepSignedPct) || 0;
+      const abs = Math.abs(m);
+      if (abs < 0.01) return 'Even';
+      const dir = m > 0 ? 'R' : 'D';
+      return `${dir}+${abs.toFixed(2)}%`;
+    }
+
+    function trajectorySnapshotAnalysis({ series, selectedYear, contextBucket }) {
+      const sortedAll = (series || []).slice().sort((a, b) => Number(a.year) - Number(b.year));
+      if (!sortedAll.length) {
+        return { label: 'Volatile / inconsistent', note: 'No historical trend series available for this contest.' };
+      }
+
+      const y = Number(selectedYear);
+      const upTo = Number.isFinite(y) ? sortedAll.filter(s => Number(s.year) <= y) : sortedAll;
+      const sorted = upTo.length ? upTo : sortedAll;
+      const earliest = sorted[0];
+      const latest = sorted[sorted.length - 1];
+
+      const latestMargin = Number(latest.margin_pct) || 0; // Rep-signed
+      const latestWinner = (latest.winner || '').toString().toUpperCase();
+      const absLatest = Math.abs(latestMargin);
+
+      const entry2020 = sortedAll.find(s => Number(s.year) === 2020) || null;
+      const entrySelected = sortedAll.find(s => Number(s.year) === y) || latest;
+      const shiftSince2020 = entry2020 && entrySelected ? (Number(entrySelected.margin_pct) - Number(entry2020.margin_pct)) : null;
+      const longShift = (Number(entrySelected.margin_pct) - Number(earliest.margin_pct));
+
+      // Flips and streaks (up to selected year).
+      let flipCount = 0;
+      let lastFlip = null; // { year, from, to }
+      for (let i = 1; i < sorted.length; i++) {
+        const a = (sorted[i - 1]?.winner || '').toString().toUpperCase();
+        const b = (sorted[i]?.winner || '').toString().toUpperCase();
+        if (!(['REP', 'DEM'].includes(a) && ['REP', 'DEM'].includes(b))) continue;
+        if (a !== b) {
+          flipCount += 1;
+          lastFlip = { year: Number(sorted[i]?.year), from: a === 'REP' ? 'R' : 'D', to: b === 'REP' ? 'R' : 'D' };
+        }
+      }
+      const streak = (() => {
+        const w = (latestWinner || '').toString().toUpperCase();
+        if (!['REP', 'DEM'].includes(w)) return { party: 'T', n: 0 };
+        let n = 0;
+        for (let i = sorted.length - 1; i >= 0; i--) {
+          const wi = (sorted[i]?.winner || '').toString().toUpperCase();
+          if (wi !== w) break;
+          n += 1;
+        }
+        return { party: w === 'REP' ? 'R' : 'D', n };
+      })();
+
+      const selectedMargin = Number(entrySelected?.margin_pct ?? latestMargin) || 0;
+      const selectedAbs = Math.abs(selectedMargin);
+      const selectedWinner = (entrySelected?.winner || latestWinner || '').toString().toUpperCase();
+      const selectedParty = selectedWinner === 'REP' ? 'R' : (selectedWinner === 'DEM' ? 'D' : 'T');
+
+      const recentDir = (shiftSince2020 === null) ? 0 : (shiftSince2020 > 1.25 ? 1 : (shiftSince2020 < -1.25 ? -1 : 0)); // + = R shift
+      const longDir = longShift > 2.5 ? 1 : (longShift < -2.5 ? -1 : 0);
+      const isCompetitive = selectedAbs < 8.0;
+      const recentFlips = (() => {
+        const tail = sorted.slice(Math.max(0, sorted.length - 5));
+        let c = 0;
+        for (let i = 1; i < tail.length; i++) {
+          const a = (tail[i - 1]?.winner || '').toString().toUpperCase();
+          const b = (tail[i]?.winner || '').toString().toUpperCase();
+          if (!(['REP', 'DEM'].includes(a) && ['REP', 'DEM'].includes(b))) continue;
+          if (a !== b) c += 1;
+        }
+        return c;
+      })();
+
+      const stableStronghold = selectedAbs >= 30 && streak.n >= 3 && recentFlips === 0 && Math.abs(longShift) <= 3.0;
+      const durable = selectedAbs >= 12 && streak.n >= 3 && recentFlips <= 1;
+      const conflictingSignals = (recentDir !== 0 && longDir !== 0 && recentDir !== longDir && Math.abs(shiftSince2020 || 0) >= 2.5 && Math.abs(longShift) >= 4.0);
+
+      let label = 'Volatile / inconsistent';
+      if (stableStronghold) {
+        label = 'Stable partisan stronghold';
+      } else if (durable) {
+        label = selectedParty === 'D' ? 'Durable Democratic' : (selectedParty === 'R' ? 'Durable Republican' : 'Volatile / inconsistent');
+      } else if (isCompetitive && longDir !== 0 && recentDir === longDir && Math.abs(longShift) >= 4.0) {
+        label = longDir < 0 ? 'Competitive but drifting Democratic' : 'Competitive but drifting Republican';
+      } else if (conflictingSignals || recentFlips >= 2 || flipCount >= 3) {
+        label = 'Volatile / inconsistent';
+      } else if (longDir !== 0 && recentDir === longDir && Math.abs(longShift) >= 6.0) {
+        label = longDir < 0 ? 'Realigning Democratic' : 'Realigning Republican';
+      } else if (selectedParty === 'D') {
+        label = selectedAbs >= 10 ? 'Durable Democratic' : 'Competitive but drifting Democratic';
+      } else if (selectedParty === 'R') {
+        label = selectedAbs >= 10 ? 'Durable Republican' : 'Competitive but drifting Republican';
+      }
+
+      const contextLead = (() => {
+        if (contextBucket === 'black_belt_rural') return 'In this Black Belt county';
+        if (contextBucket === 'atlanta_core') return 'In the Atlanta core';
+        if (contextBucket === 'atlanta_suburban') return 'In the Atlanta suburbs';
+        if (contextBucket === 'atlanta_exurban') return 'On the outer edge of metro Atlanta';
+        if (contextBucket === 'college_county') return 'In a university-centered county';
+        if (contextBucket === 'regional_metro') return 'Around a regional metro anchor';
+        if (contextBucket === 'military_anchor') return 'In a military-anchor county';
+        if (contextBucket === 'logistics_industrial') return 'Along a growth corridor';
+        if (contextBucket === 'mountain_amenity') return 'In the North Georgia mountains';
+        return 'Across recent cycles';
+      })();
+
+      const lineParts = [];
+      lineParts.push(`${entrySelected.year}: ${formatPartyMarginFromRepSignedPct(selectedMargin)}`);
+      if (shiftSince2020 !== null) lineParts.push(`shift since 2020 ${formatPartyShiftFromRepSignedPct(shiftSince2020)}`);
+      lineParts.push(`long-run change since ${earliest.year} ${formatPartyShiftFromRepSignedPct(longShift)}`);
+      const sentence1 = `${contextLead}, ${lineParts.join(', ')}.`;
+
+      const sentence2Parts = [];
+      if (streak.n >= 2 && ['R', 'D'].includes(streak.party)) sentence2Parts.push(`${streak.party} streak: ${streak.n}`);
+      if (lastFlip) sentence2Parts.push(`last flip ${lastFlip.from}->${lastFlip.to} (${lastFlip.year})`);
+      const sentence2 = sentence2Parts.length ? `${sentence2Parts.join('; ')}.` : '';
+
+      const note = `${sentence1}${sentence2 ? ` ${sentence2}` : ''}`.replace(/\s+/g, ' ').trim();
+
+      return { label, note };
+    }
+
+    function censusCheckAnalysis({ popNode, shiftSince2020RepSignedPct, latestMarginRepSignedPct, longShiftRepSignedPct, contextBucket }) {
+      const growthPct = Number(popNode?.change_pct);
+      const yoyPct = Number(popNode?.yoy_pct);
+      const popLatest = Number(popNode?.pop_latest);
+      const smallCounty = Number.isFinite(popLatest) && popLatest > 0 && popLatest < 12000;
+
+      const shift = Number(shiftSince2020RepSignedPct);
+      const shiftKnown = Number.isFinite(shiftSince2020RepSignedPct);
+      const shiftDir = !shiftKnown ? 0 : (shift > 1.5 ? 1 : (shift < -1.5 ? -1 : 0)); // + = R shift
+      const growthKnown = Number.isFinite(growthPct);
+      const growthDir = !growthKnown ? 0 : (growthPct >= 4.0 ? 1 : (growthPct <= -1.0 ? -1 : 0)); // + = growing, - = shrinking
+
+      const latestMargin = Number(latestMarginRepSignedPct) || 0;
+      const currentParty = latestMargin > 0 ? 'R' : (latestMargin < 0 ? 'D' : 'T');
+
+      const limitedGrowth = !growthKnown || Math.abs(growthPct) < 1.5;
+      const limitedShift = !shiftKnown || Math.abs(shift) < 2.0;
+
+      let label = 'Mixed demographic signal';
+      if (smallCounty && limitedGrowth) {
+        label = 'Limited demographic change';
+      } else if (limitedGrowth && limitedShift) {
+        label = 'Limited demographic change';
+      } else if (contextBucket === 'black_belt_rural' && (limitedGrowth || limitedShift)) {
+        label = limitedGrowth && limitedShift ? 'Limited demographic change' : 'Mixed demographic signal';
+      } else if (growthKnown && growthPct >= 6.0 && shiftKnown && shiftDir < 0 && (currentParty === 'D' || Number(longShiftRepSignedPct) < 0)) {
+        label = 'Reinforcing Democratic trend';
+      } else if (growthKnown && growthPct >= 6.0 && shiftKnown && shiftDir > 0 && (currentParty === 'R' || Number(longShiftRepSignedPct) > 0)) {
+        label = 'Reinforcing Republican trend';
+      } else if (growthKnown && growthPct >= 4.0 && shiftKnown && shiftDir < 0 && currentParty === 'R') {
+        label = 'Realignment pressure toward Democrats';
+      } else if (growthKnown && growthPct >= 4.0 && shiftKnown && shiftDir > 0 && currentParty === 'D') {
+        label = 'Realignment pressure toward Republicans';
+      } else if ((growthDir > 0 && shiftDir === 0) || (growthDir === 0 && shiftDir !== 0) || (growthDir < 0 && shiftDir !== 0)) {
+        label = 'Mixed demographic signal';
+      }
+
+      const popClause = (growthKnown && Number.isFinite(popNode?.change_abs))
+        ? `Population is ${growthPct >= 0 ? 'up' : 'down'} ${Math.abs(growthPct).toFixed(2)}% since 2020 (${Number(popNode.change_abs).toLocaleString()})`
+        : 'Population change since 2020 is unavailable';
+      const yoyClause = (Number.isFinite(yoyPct) && Number.isFinite(popNode?.yoy_abs))
+        ? `latest YoY ${yoyPct >= 0 ? '+' : ''}${yoyPct.toFixed(2)}% (${Number(popNode.yoy_abs).toLocaleString()})`
+        : '';
+      const shiftClause = shiftKnown
+        ? `electoral shift vs 2020 ${formatPartyShiftFromRepSignedPct(shift)}`
+        : 'electoral shift vs 2020 N/A';
+
+      const note = `${popClause}${yoyClause ? `, ${yoyClause},` : ','} ${shiftClause}.`.replace(/\s+/g, ' ').trim();
+      return { label, note };
+    }
+
+    function countyCensusInsight({ popNode, shiftSince2020RepSignedPct, latestMarginRepSignedPct, contextBucket }) {
+      const growthPct = Number(popNode?.change_pct);
+      const growthKnown = Number.isFinite(growthPct);
+      const growthTone = !growthKnown ? 'steady' : (growthPct >= 8.0 ? 'fast' : (growthPct >= 3.0 ? 'steady' : (growthPct <= -1.0 ? 'soft' : 'slow')));
+
+      const shift = Number(shiftSince2020RepSignedPct);
+      const shiftKnown = Number.isFinite(shiftSince2020RepSignedPct);
+      const shiftDir = !shiftKnown ? 0 : (shift > 1.5 ? 1 : (shift < -1.5 ? -1 : 0)); // + = R shift
+
+      const margin = Number(latestMarginRepSignedPct) || 0;
+      const currentParty = margin > 0 ? 'R' : (margin < 0 ? 'D' : 'T');
+
+      const growthPhrase = (() => {
+        if (growthTone === 'fast') return 'fast growth';
+        if (growthTone === 'steady') return 'steady growth';
+        if (growthTone === 'slow') return 'slow growth';
+        if (growthTone === 'soft') return 'population softness';
+        return 'population change';
+      })();
+
+      const base = (() => {
+        if (contextBucket === 'atlanta_core') {
+          return 'Core metro growth and demographic change remain consistent with a strong Democratic base.';
+        }
+        if (contextBucket === 'atlanta_suburban') {
+          return shiftDir < 0
+            ? 'Suburban growth and demographic change are consistent with the county’s leftward movement.'
+            : 'Metro-area growth appears steady, though political change remains mixed.';
+        }
+        if (contextBucket === 'atlanta_exurban') {
+          return currentParty === 'R' && shiftDir >= 0
+            ? 'Outer-metro commuter growth may be helping sustain the county’s Republican lean.'
+            : 'Outer-metro growth appears steady, with a more mixed political signal.';
+        }
+        if (contextBucket === 'regional_metro') {
+          return 'Regional hub growth may be contributing to a gradually more competitive political profile.';
+        }
+        if (contextBucket === 'college_county') {
+          return shiftDir < 0
+            ? 'University-centered population patterns appear consistent with more Democratic-leaning recent results.'
+            : 'College-driven population patterns may be adding volatility, with mixed political effects.';
+        }
+        if (contextBucket === 'military_anchor') {
+          return 'Institutional stability and steady growth suggest a more gradual political evolution.';
+        }
+        if (contextBucket === 'logistics_industrial') {
+          return 'Employment-driven corridor growth may be reshaping the county, though the political effect remains mixed.';
+        }
+        if (contextBucket === 'black_belt_rural') {
+          return 'Slower growth or population softness is consistent with a more established political pattern.';
+        }
+        if (contextBucket === 'mountain_amenity') {
+          return 'Amenity and retirement-oriented growth may be reinforcing the county’s existing lean.';
+        }
+        return 'Slow growth or population softness suggests limited demographic pressure for political change.';
+      })();
+
+      const label = growthKnown
+        ? `${growthPhrase.charAt(0).toUpperCase() + growthPhrase.slice(1)} since 2020 (${growthPct.toFixed(2)}%)`
+        : `${growthPhrase.charAt(0).toUpperCase() + growthPhrase.slice(1)} since 2020`;
+      return { label, note: base };
+    }
+
     function showCountyDetails(countyName) {
       // --- GA Map Card-Style Sidebar ---
       const sidebar = document.getElementById('sidebar');
@@ -11646,11 +12131,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   sidebarContent += `</div>`;
   sidebarContent += `</div>`;
+
+  // County trajectory + census analysis (derived from existing contest trend series + CO-EST population estimates).
+  sidebarContent += `<div class="competitiveness-section">`;
+  sidebarContent += '<h5>Trajectory Snapshot</h5>';
+  sidebarContent += `<div id="county-trajectory-snapshot" style="margin-top:6px;color:#94a3b8;">Loading...</div>`;
+  sidebarContent += `</div>`;
+  sidebarContent += `<div class="competitiveness-section">`;
+  sidebarContent += '<h5>Census Check</h5>';
+  sidebarContent += `<div id="county-census-check" style="margin-top:6px;color:#94a3b8;">Loading...</div>`;
+  sidebarContent += `</div>`;
+  sidebarContent += `<div class="competitiveness-section">`;
+  sidebarContent += '<h5>County Census Insight</h5>';
+  sidebarContent += `<div id="county-census-insight" style="margin-top:6px;color:#94a3b8;">Loading...</div>`;
+  sidebarContent += `</div>`;
+
   // Historical trend (year-by-year margins) for the currently selected contest.
   sidebarContent += `<div class="competitiveness-section">`;
   sidebarContent += '<h5>Historical Trends</h5>';
   sidebarContent += `<div id="county-trends" style="margin-top:6px;color:#94a3b8;">Loading...</div>`;
   sidebarContent += `</div>`;
+  const countyDetailsRequestKey = `${normalizeGeorgiaCountyKey(countyDisplay)}|${contestType}|${year}`;
+  try { contentEl.dataset.countyDetailsRequestKey = countyDetailsRequestKey; } catch (_) {}
   contentEl.innerHTML = sidebarContent;
   // Populate trends asynchronously from manifest slices (does not block UI).
   (async () => {
@@ -11658,13 +12160,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const series = await getCountyTrendSeries(contestType, countyName);
       const el = document.getElementById('county-trends');
       if (!el) return;
+      try {
+        if (contentEl?.dataset?.countyDetailsRequestKey && contentEl.dataset.countyDetailsRequestKey !== countyDetailsRequestKey) return;
+      } catch (_) {}
       if (!series.length) {
         el.innerHTML = '<div style="color:#999;">No historical data</div>';
         return;
       }
-      el.innerHTML = series
+
+      const sorted = series
         .slice()
-        .sort((a, b) => a.year - b.year)
+        .sort((a, b) => Number(a.year) - Number(b.year));
+
+      el.innerHTML = sorted
         .map(s => {
           const win = (s.winner || '').toString().toUpperCase();
           const color = win === 'REP' ? '#ef4444' : (win === 'DEM' ? '#3b82f6' : '#a3a3a3');
@@ -11672,6 +12180,58 @@ document.addEventListener('DOMContentLoaded', function() {
           return `<div style="display:flex;justify-content:space-between;gap:10px;"><span style="color:#64748b;">${s.year}</span><span style="color:${color};font-weight:700;">${label}</span></div>`;
         })
         .join('');
+
+      const selectedYear = Number(year);
+      const selectedEntry = sorted.find(s => Number(s.year) === selectedYear) || sorted[sorted.length - 1];
+      const entry2020 = sorted.find(s => Number(s.year) === 2020) || null;
+      const earliest = sorted[0];
+      const shiftSince2020 = entry2020 ? (Number(selectedEntry.margin_pct) - Number(entry2020.margin_pct)) : null; // Rep-signed
+      const longShift = Number(selectedEntry.margin_pct) - Number(earliest.margin_pct);
+
+      const popNode = countyPopulationEstimates?.counties?.[norm] || null;
+      const demoNode = countyDemographics?.counties?.[norm] || null;
+      const contextBucket = classifyGeorgiaCountyContext(countyDisplay, { demo: demoNode, pop: popNode, trendSeries: sorted });
+
+      const trajectoryEl = document.getElementById('county-trajectory-snapshot');
+      if (trajectoryEl) {
+        const traj = trajectorySnapshotAnalysis({ series: sorted, selectedYear, contextBucket });
+        const tone = traj.label.includes('Democratic') ? '#2563eb' : (traj.label.includes('Republican') ? '#dc2626' : '#0f172a');
+        trajectoryEl.innerHTML = `
+          <p style="margin:0;color:${tone};font-weight:800;font-size:16px;">${escapeHtml(traj.label)}</p>
+          <p style="margin:6px 0 0 0;color:#64748b;font-size:13px;line-height:1.45;">${escapeHtml(traj.note)}</p>
+        `.trim();
+      }
+
+      const censusEl = document.getElementById('county-census-check');
+      if (censusEl) {
+        const census = censusCheckAnalysis({
+          popNode,
+          shiftSince2020RepSignedPct: shiftSince2020,
+          latestMarginRepSignedPct: Number(selectedEntry.margin_pct) || 0,
+          longShiftRepSignedPct: longShift,
+          contextBucket
+        });
+        const tone = census.label.includes('Democratic') ? '#2563eb'
+          : (census.label.includes('Republican') ? '#dc2626' : '#0f172a');
+        censusEl.innerHTML = `
+          <p style="margin:0;color:${tone};font-weight:800;font-size:16px;">${escapeHtml(census.label)}</p>
+          <p style="margin:6px 0 0 0;color:#64748b;font-size:13px;line-height:1.45;">${escapeHtml(census.note)}</p>
+        `.trim();
+      }
+
+      const insightEl = document.getElementById('county-census-insight');
+      if (insightEl) {
+        const insight = countyCensusInsight({
+          popNode,
+          shiftSince2020RepSignedPct: shiftSince2020,
+          latestMarginRepSignedPct: Number(selectedEntry.margin_pct) || 0,
+          contextBucket
+        });
+        insightEl.innerHTML = `
+          <p style="margin:0;color:#0f172a;font-weight:800;font-size:16px;">${escapeHtml(insight.label)}</p>
+          <p style="margin:6px 0 0 0;color:#64748b;font-size:13px;line-height:1.45;">${escapeHtml(insight.note)}</p>
+        `.trim();
+      }
     } catch (err) {
       const el = document.getElementById('county-trends');
       if (el) el.innerHTML = '<div style="color:#999;">Failed to load trends</div>';
@@ -14126,6 +14686,15 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (err) {
           countyDemographics = null;
           console.warn('County demographics not loaded:', err?.message || err);
+        }
+
+        // Optional county population estimates (Census CO-EST 2020-2025) for county sidebar analysis.
+        try {
+          const popCsv = await loadCSV(CONFIG.paths.county_population_estimates);
+          countyPopulationEstimates = parseGaCountyPopulationEstimates(popCsv);
+        } catch (err) {
+          countyPopulationEstimates = null;
+          console.warn('County population estimates not loaded:', err?.message || err);
         }
 
         try {
