@@ -7505,6 +7505,21 @@ document.addEventListener('DOMContentLoaded', function() {
       queueHoverRefresh();
     });
 
+    // Keep precinct overlay visibility in sync with zoom (dots <-> polygons).
+    let precinctVisibilityRaf = null;
+    map.on('zoom', () => {
+      if (!precinctsEnabled && !precinctLoadInFlight) return;
+      if (precinctVisibilityRaf) return;
+      precinctVisibilityRaf = requestAnimationFrame(() => {
+        precinctVisibilityRaf = null;
+        try { updatePrecinctVisibility(); } catch (_) {}
+      });
+    });
+    map.on('zoomend', () => {
+      if (!precinctsEnabled && !precinctLoadInFlight) return;
+      try { updatePrecinctVisibility(); } catch (_) {}
+    });
+
     const DEBUG = false;
     const debugLog = (...args) => { if (DEBUG) console.log(...args); };
 
@@ -13983,6 +13998,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (err) {
         console.warn('Failed to apply cached precinct colors:', err?.message || err);
       }
+      // If precinct polygons were loaded async (e.g., via zoom threshold), show them immediately.
+      try { updatePrecinctVisibility(); } catch (_) {}
       setStatus('Precinct geometry ready');
       return true;
     }
@@ -14087,6 +14104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	          console.warn('Failed to build precinct code index:', err?.message || err);
 	        }
 	        addPrecinctCentroidLayers();
+          // If centroids were loaded async (e.g., via zoom/initialization), show them immediately.
+          try { updatePrecinctVisibility(); } catch (_) {}
 	      } catch (err) {
 	        console.warn('Failed to load precinct centroids:', err?.message || err);
 	      } finally {
@@ -14132,8 +14151,8 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'precinct-dot',
           type: 'circle',
           source: 'precinct-centroids',
-          // Visible at statewide zoom; polygons take over later.
-          maxzoom: minZoom,
+          // Visibility is controlled by updatePrecinctVisibility(); keep this layer available
+          // at all zooms so dots can remain visible while precinct polygons load.
           layout: { visibility: 'none' },
           paint: {
             'circle-radius': [
@@ -14312,11 +14331,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const minZoom = (CONFIG.precincts?.minZoom || 8.5);
       const z = map.getZoom();
       const polyVisible = precinctsEnabled && z >= minZoom;
-      const dotVisible = precinctsEnabled && z < minZoom;
+      // Keep dots visible while precinct polygons are not yet loaded so we never "blank out"
+      // when users zoom past the threshold before the polygon source is ready.
+      const dotVisible = precinctsEnabled && (z < minZoom || !precinctSourceLoaded);
       try { applyLabelHaloTuning(); } catch (_) {}
 
-      // Auto-load precinct centroids at statewide zoom (fast), polygons later (heavy).
-      if (dotVisible && !precinctCentroidsLoaded && !precinctCentroidsLoadInFlight) {
+      // Auto-load precinct centroids (fast) and polygons later (heavy).
+      if (precinctsEnabled && !precinctCentroidsLoaded && !precinctCentroidsLoadInFlight) {
         ensurePrecinctCentroidsLoaded().catch(err => console.warn('Precinct centroids load failed:', err?.message || err));
       }
       if (polyVisible && !precinctSourceLoaded && !precinctLoadInFlight) {
