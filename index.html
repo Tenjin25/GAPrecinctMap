@@ -14097,6 +14097,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addPrecinctLayers() {
       if (!map.getSource('precincts') || map.getLayer('precinct-fill')) return;
+      const baseSymbolLayerId = getFirstStyleSymbolLayerId();
       map.addLayer({
         id: 'precinct-fill',
         type: 'fill',
@@ -14104,7 +14105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minzoom: CONFIG.precincts?.minZoom || 8.5,
         layout: { visibility: 'none' },
         paint: { 'fill-color': '#d1d5db', 'fill-opacity': 0.72 }
-      });
+      }, (baseSymbolLayerId && map.getLayer(baseSymbolLayerId)) ? baseSymbolLayerId : undefined);
       map.addLayer({
         id: 'precinct-stroke',
         type: 'line',
@@ -14116,7 +14117,7 @@ document.addEventListener('DOMContentLoaded', function() {
           'line-width': ['case', ['boolean', ['feature-state', 'hover'], false], 2.25, 0.25],
           'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.95, 0.65]
         }
-      });
+      }, (baseSymbolLayerId && map.getLayer(baseSymbolLayerId)) ? baseSymbolLayerId : undefined);
 
       map.on('click', 'precinct-fill', (e) => {
         const props = e.features?.[0]?.properties || {};
@@ -14236,6 +14237,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function addPrecinctCentroidLayers() {
       if (!map.getSource('precinct-centroids')) return;
       const minZoom = CONFIG.precincts?.minZoom || 8.5;
+      const baseSymbolLayerId = getFirstStyleSymbolLayerId();
 
       if (!map.getLayer('precinct-dot')) {
         map.addLayer({
@@ -14259,7 +14261,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'circle-stroke-color': wrapPrecinctDotStrokeColor('rgba(15,23,42,0.35)'),
             'circle-stroke-width': 0.5
           }
-        });
+        }, (baseSymbolLayerId && map.getLayer(baseSymbolLayerId)) ? baseSymbolLayerId : undefined);
       }
 
       // When polygons are enabled at high zoom, keep showing centroids for precincts missing polygons.
@@ -14284,7 +14286,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'circle-stroke-color': wrapPrecinctDotStrokeColor('rgba(15,23,42,0.35)'),
             'circle-stroke-width': 0.5
           }
-        });
+        }, (baseSymbolLayerId && map.getLayer(baseSymbolLayerId)) ? baseSymbolLayerId : undefined);
       }
 
       // If a contest was already applied before centroids loaded, apply cached colors.
