@@ -599,110 +599,154 @@ body { height: var(--app-height); }
 }
 
 .hover-tooltip .tooltip-title {
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-weight: 750;
+  margin-bottom: 8px;
   color: #ffffff;
   font-size: 14px;
+  line-height: 1.25;
   letter-spacing: 0.3px;
 }
 
-  .hover-tooltip .tooltip-trends {
-    font-size: 12px;
-    line-height: 1.6;
-  }
+.hover-tooltip .tooltip-trends {
+  font-size: 12px;
+  line-height: 1.6;
+}
 
-  /* County hover tooltip: NCMap-style quickline + insight (counties only). */
-  .hover-tooltip .tooltip-title-wrap {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hover-tooltip .tooltip-title-main {
-    font-weight: 800;
-  }
-  .hover-tooltip .tooltip-title-badge {
-    font-size: 11px;
-    font-weight: 850;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(148, 163, 184, 0.16);
-    border: 1px solid rgba(148, 163, 184, 0.24);
-    color: rgba(226, 232, 240, 0.92);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-  }
-  .hover-tooltip .tooltip-title-badge.rep {
-    background: rgba(239, 68, 68, 0.16);
-    border-color: rgba(239, 68, 68, 0.24);
-    color: rgba(254, 226, 226, 0.95);
-  }
-  .hover-tooltip .tooltip-title-badge.dem {
-    background: rgba(96, 165, 250, 0.16);
-    border-color: rgba(96, 165, 250, 0.24);
-    color: rgba(219, 234, 254, 0.95);
-  }
-  .hover-tooltip .tooltip-kicker {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 800;
-    font-size: 10px;
-    color: rgba(148, 163, 184, 0.95);
-    margin-bottom: 6px;
-  }
-  .hover-tooltip .tooltip-quickline {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 2px 0 6px;
-  }
-  .hover-tooltip .tooltip-quickline .rep,
-  .hover-tooltip .tooltip-quickline .dem,
-  .hover-tooltip .tooltip-quickline .tie {
-    font-weight: 900;
-    font-size: 15px;
-    letter-spacing: 0.2px;
-    white-space: nowrap;
-  }
-  .hover-tooltip .tooltip-quickline .rep { color: #ef4444; }
-  .hover-tooltip .tooltip-quickline .dem { color: #60a5fa; }
-  .hover-tooltip .tooltip-quickline .tie { color: #e2e8f0; }
-  .hover-tooltip .tooltip-quickline .tier {
-    color: rgba(226, 232, 240, 0.86);
-    font-size: 11px;
-    font-weight: 750;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .hover-tooltip .tooltip-delta {
-    margin-top: 6px;
-    padding-top: 6px;
-    border-top: 1px solid rgba(148, 163, 184, 0.22);
-  }
-  .hover-tooltip .tooltip-delta-line {
-    color: rgba(226, 232, 240, 0.90);
-    font-size: 12px;
-    font-weight: 650;
-  }
-  .hover-tooltip .tooltip-shift.rep { color: #f87171; font-weight: 850; }
-  .hover-tooltip .tooltip-shift.dem { color: #93c5fd; font-weight: 850; }
-  .hover-tooltip .tooltip-shift.tie { color: rgba(226, 232, 240, 0.90); font-weight: 800; }
-  .hover-tooltip .tooltip-flip {
-    margin-top: 6px;
-    font-size: 12px;
-    font-weight: 750;
-    color: rgba(226, 232, 240, 0.90);
-  }
-  .hover-tooltip .tooltip-flip.rep { color: rgba(254, 226, 226, 0.96); }
-  .hover-tooltip .tooltip-flip.dem { color: rgba(219, 234, 254, 0.96); }
-  .hover-tooltip .tooltip-insight {
-    margin-top: 8px;
-    color: rgba(226, 232, 240, 0.88);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.45;
-  }
+/* County hover tooltip: NCMap-style layout (counties only). */
+.hover-tooltip .tooltip-title-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.hover-tooltip .tooltip-title-main {
+  display: inline-flex;
+  align-items: center;
+}
+.hover-tooltip .tooltip-title-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.hover-tooltip .tooltip-title-badge:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.hover-tooltip .tooltip-title-badge.rep {
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(248, 113, 113, 0.35);
+}
+.hover-tooltip .tooltip-title-badge.dem {
+  color: #bfdbfe;
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(96, 165, 250, 0.35);
+}
+.hover-tooltip .tooltip-title-badge.tie {
+  color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.2);
+  border-color: rgba(148, 163, 184, 0.35);
+}
+.hover-tooltip .tooltip-kicker {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.92);
+  margin-bottom: 5px;
+}
+.hover-tooltip .tooltip-hint {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 750;
+  color: rgba(226, 232, 240, 0.92);
+  opacity: 0.95;
+}
+.hover-tooltip .tooltip-quickline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.28;
+}
+.hover-tooltip .tooltip-quickline .rep { color: #fecaca; }
+.hover-tooltip .tooltip-quickline .dem { color: #bfdbfe; }
+.hover-tooltip .tooltip-quickline .tie { color: #e2e8f0; }
+.hover-tooltip .tooltip-quickline .tier {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.92);
+}
+.hover-tooltip .tooltip-insight {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(226, 232, 240, 0.92);
+}
+.hover-tooltip .tooltip-delta {
+  margin-top: 7px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: rgba(226, 232, 240, 0.92);
+}
+.hover-tooltip .tooltip-delta-line {
+  margin-top: 4px;
+  color: rgba(226, 232, 240, 0.92);
+}
+.hover-tooltip .tooltip-body.desktop-collapsed .tooltip-delta {
+  font-size: 13px;
+  line-height: 1.25;
+}
+.hover-tooltip .tooltip-delta .tooltip-shift { font-weight: 800; }
+.hover-tooltip .tooltip-delta .tooltip-shift.rep { color: #fecaca; }
+.hover-tooltip .tooltip-delta .tooltip-shift.dem { color: #bfdbfe; }
+.hover-tooltip .tooltip-delta .tooltip-shift.tie { color: rgba(226, 232, 240, 0.92); }
+.hover-tooltip .tooltip-flip {
+  margin-top: 6px;
+  font-size: 11.5px;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  color: rgba(226, 232, 240, 0.92);
+}
+.hover-tooltip .tooltip-flip.rep { color: #fecaca; }
+.hover-tooltip .tooltip-flip.dem { color: #bfdbfe; }
+.hover-tooltip .tooltip-more {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+}
+.hover-tooltip .tooltip-more summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.18);
+  color: rgba(226, 232, 240, 0.96);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hover-tooltip .tooltip-more summary::-webkit-details-marker { display: none; }
+.hover-tooltip .tooltip-more-body { margin-top: 10px; }
+
+/* Show Close only when pinned (matches NCMap). */
+#hover-tooltip[data-pinned="0"] #tooltip-close-btn { display: none; }
 
 .quick-tooltip {
   background: rgba(40, 40, 40, 0.95);
@@ -1805,8 +1849,11 @@ body { height: var(--app-height); }
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 7px;
   }
+  .hover-tooltip .tooltip-head.is-compact { margin-bottom: 6px; }
+  .hover-tooltip .tooltip-head .tooltip-title { margin-bottom: 0; }
 
   .hover-tooltip .tooltip-actions {
     display: flex;
@@ -10926,6 +10973,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (view === 'vtds_2000') {
         add2000VTDLayers();
       }
+      try { applyLabelHaloTuning(); } catch (_) {}
       
       // Repopulate contest selector
       updateContestSelectForCurrentView();
@@ -12225,35 +12273,61 @@ document.addEventListener('DOMContentLoaded', function() {
       const pinnedShell = !!(tooltipPinned || (forceTooltip && isTouchInteractionMode()));
       const desktopCollapsed = !pinnedShell && !isTouchInteractionMode() && !isMobileViewportNow();
 
-      const compactInner = `
-        <div class="tooltip-kicker">${escapeHtml(subtitle)}</div>
-        <div class="tooltip-quickline">
-          <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
-          ${tierShort ? `<span class="tier">${escapeHtml(tierShort)}</span>` : ''}
+      const classicInner = `
+        <div class="tooltip-body">
+          <div class="hover-meta">${chips.join('')}</div>
+          ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
+          ${shiftLine}
+          ${flipLine}
+          ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
+          ${demoLine}
         </div>
-        ${shiftLine}
-        ${flipLine}
-        ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
       `.trim();
 
-      const expandedInner = `
-        <div class="tooltip-kicker">${escapeHtml(subtitle)}</div>
-        <div class="tooltip-quickline">
-          <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
-          ${tierLong ? `<span class="tier">${escapeHtml(tierLong)}</span>` : ''}
+      const desktopCollapsedInner = `
+        <div class="tooltip-body desktop-collapsed">
+          <div class="tooltip-quickline">
+            <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
+            ${tierLong ? `<span class="tier">${escapeHtml(tierLong)}</span>` : ''}
+          </div>
+          ${shiftLine}
+          ${flipLine}
+          ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
         </div>
-        <div class="hover-meta">${chips.join('')}</div>
-        ${shiftLine}
-        ${flipLine}
-        ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
-        ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
-        ${demoLine}
       `.trim();
+
+      const compactInner = `
+        <div class="tooltip-body">
+          <div class="tooltip-quickline">
+            <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
+            ${tierShort ? `<span class="tier">${escapeHtml(tierShort)}</span>` : ''}
+          </div>
+          ${shiftLine}
+          ${flipLine}
+          ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
+          <details class="tooltip-more" aria-label="More details">
+            <summary>Details</summary>
+            <div class="tooltip-more-body">
+              <div class="hover-meta">${chips.join('')}</div>
+              ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
+              ${demoLine}
+            </div>
+          </details>
+        </div>
+      `.trim();
+
+      const useCompact = isMobileViewportNow();
+      const actionHint = useCompact
+        ? (pinnedShell ? 'Pinned • tap Close to dismiss' : (isTouchInteractionMode() ? 'Tap to pin details' : 'Click to pin details'))
+        : '';
+      const inner = desktopCollapsed
+        ? desktopCollapsedInner
+        : `${useCompact ? compactInner : classicInner}${actionHint ? `<div class="tooltip-hint">${escapeHtml(actionHint)}</div>` : ''}`;
 
       showHoverTooltip(
         e.point.x,
         e.point.y,
-        buildTooltipShell(buildTooltipTitleWithTier(`${countyDisplay} County`, tierMeta), desktopCollapsed ? compactInner : expandedInner),
+        buildTooltipShell(buildTooltipTitleWithTier(`${countyDisplay} County`, tierMeta), inner),
         { force: !!forceTooltip }
       );
       wireTooltipButtons();
@@ -14292,25 +14366,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyLabelHaloTuning() {
-      const haloColor = 'rgba(255,255,255,0.92)';
-      const haloWidth = precinctsEnabled ? 2.5 : 2.0;
+      const contestValue = (document.getElementById('contestSelect')?.value || '').toString().trim();
+      const hasContest = !!contestValue;
+      const heavyOverlay = hasContest && ((currentView === 'counties' && !precinctsEnabled) || (currentView !== 'counties'));
+
+      const settlementTextColor = 'rgba(15, 23, 42, 0.94)';
+      const settlementTextOpacity = heavyOverlay ? 1.0 : 0.96;
+      const settlementHaloColor = heavyOverlay ? 'rgba(255, 255, 255, 0.97)' : 'rgba(255, 255, 255, 0.92)';
+      const settlementHaloWidth = heavyOverlay ? 2.25 : 1.9;
+      const settlementHaloBlur = heavyOverlay ? 0.7 : 0.58;
+
+      const countyTextColor = 'rgba(15, 23, 42, 0.96)';
+      const countyTextOpacity = 1.0;
+      const countyHaloColor = heavyOverlay ? 'rgba(255, 255, 255, 0.94)' : 'rgba(255, 255, 255, 0.88)';
+      const countyHaloWidth = heavyOverlay ? 2.0 : 1.7;
+      const countyHaloBlur = heavyOverlay ? 0.62 : 0.52;
+
+      // Our custom county label layer (if present).
       try {
         if (map.getLayer('county-label')) {
-          map.setPaintProperty('county-label', 'text-halo-color', haloColor);
-          map.setPaintProperty('county-label', 'text-halo-width', haloWidth);
-          try { map.setPaintProperty('county-label', 'text-halo-blur', 0.4); } catch (_) {}
+          map.setPaintProperty('county-label', 'text-color', countyTextColor);
+          map.setPaintProperty('county-label', 'text-opacity', countyTextOpacity);
+          map.setPaintProperty('county-label', 'text-halo-color', countyHaloColor);
+          map.setPaintProperty('county-label', 'text-halo-width', countyHaloWidth);
+          try { map.setPaintProperty('county-label', 'text-halo-blur', countyHaloBlur); } catch (_) {}
         }
       } catch (_) {}
 
-      // Best-effort: bump halos on base place labels if present in the active Mapbox style.
+      // Best-effort: match NCMap-style settlement/county label tuning on base Mapbox style layers.
       try {
         const layers = map.getStyle && map.getStyle().layers ? map.getStyle().layers : [];
         (layers || []).forEach(l => {
           if (!l || l.type !== 'symbol' || !l.id) return;
-          if (!/place|settlement|town|city|village|county/i.test(l.id)) return;
+          const id = String(l.id || '').toLowerCase();
+          const isSettlementLabel = /(settlement|place|city|town|village|locality|hamlet)/.test(id);
+          const isCountyLabel = /(county-label|(^|[-_])county([-_]|$)|(^|[-_])counties([-_]|$))/.test(id);
+          if (!isSettlementLabel && !isCountyLabel) return;
           try {
-            map.setPaintProperty(l.id, 'text-halo-color', haloColor);
-            map.setPaintProperty(l.id, 'text-halo-width', haloWidth);
+            if (isSettlementLabel) {
+              map.setPaintProperty(l.id, 'text-color', settlementTextColor);
+              map.setPaintProperty(l.id, 'text-opacity', settlementTextOpacity);
+              map.setPaintProperty(l.id, 'text-halo-color', settlementHaloColor);
+              map.setPaintProperty(l.id, 'text-halo-width', settlementHaloWidth);
+              try { map.setPaintProperty(l.id, 'text-halo-blur', settlementHaloBlur); } catch (_) {}
+            } else {
+              map.setPaintProperty(l.id, 'text-color', countyTextColor);
+              map.setPaintProperty(l.id, 'text-opacity', countyTextOpacity);
+              map.setPaintProperty(l.id, 'text-halo-color', countyHaloColor);
+              map.setPaintProperty(l.id, 'text-halo-width', countyHaloWidth);
+              try { map.setPaintProperty(l.id, 'text-halo-blur', countyHaloBlur); } catch (_) {}
+            }
           } catch (_) {}
         });
       } catch (_) {}
@@ -14384,7 +14489,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'district-fill', 
           type: 'fill', 
           source: 'districts', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.62 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.78 } 
         });
         addLayerWithOptionalSourceLayer({
           id: 'district-stroke-casing',
@@ -14519,7 +14624,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'state-house-fill', 
           type: 'fill', 
           source: 'state-house', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.54 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.76 } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-house-stroke-casing', 
@@ -14652,7 +14757,7 @@ document.addEventListener('DOMContentLoaded', function() {
           id: 'state-senate-fill', 
           type: 'fill', 
           source: 'state-senate', 
-          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.58 } 
+          paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.77 } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-senate-stroke-casing', 
@@ -16854,6 +16959,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // All other contests (statewide) aggregate county data by district
         await applyStatewideContestToDistricts(contestType, year);
       }
+      try { applyLabelHaloTuning(); } catch (_) {}
       if (previousRegionPinnedState?.meta?.regionKey) {
         try {
           await focusRegionSummary(previousRegionPinnedState.meta.regionKey);
