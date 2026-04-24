@@ -7462,7 +7462,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mapboxgl.accessToken = CONFIG.mapboxToken;
 
-    const map = new mapboxgl.Map({ container: 'map', style: 'mapbox://styles/mapbox/light-v11', center: CONFIG.center, zoom: CONFIG.zoom });
+    // Match NCMap basemap configuration.
+    // Silence Mapbox telemetry requests (often blocked by ad blockers, causing noisy console errors).
+    try {
+      if (mapboxgl && typeof mapboxgl.setTelemetryEnabled === 'function') {
+        mapboxgl.setTelemetryEnabled(false);
+      }
+    } catch (_) {}
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v11',
+      center: CONFIG.center,
+      zoom: CONFIG.zoom,
+      preserveDrawingBuffer: true,
+      performanceMetricsCollection: false
+    });
 
     const IS_COARSE_POINTER = (() => {
       try { return window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (_) { return false; }
