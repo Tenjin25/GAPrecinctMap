@@ -25,10 +25,12 @@ Core capabilities:
 
 UI notes:
 
-- Hover tooltips surface a consistent hierarchy: title + contest subtitle, compact meta chips (winner, lead/margin, rating/tier, flip/shift when applicable), and a vote breakdown card with a visible 50% marker (district tooltips).
+- County hover tooltip follows the NCMap layout pattern (desktop-collapsed quickline, mobile compact → expandable details). The Close button only appears when a tooltip is pinned.
+- District hover tooltips keep the original rendering system/hooks but use a more legible hierarchy and compact chips. District result bars retain a visible 50% marker.
 - Tooltips can be pinned so you can pan/zoom without losing the hovered summary.
 - A source badge indicates how precinct results were matched (VTD20-derived join vs fallback matching).
 - Precinct centroids log match stats to the console when the overlay is active (total/matched-by-norm/id/fallback/unmatched) to help validate coverage.
+- Map overlays (county/district/precinct layers) are inserted below basemap symbol layers so town/place labels remain readable and consistent.
 
 ## Geographic Layers
 
@@ -279,3 +281,10 @@ When updating the project for new source files or corrected joins:
 ## Deployment Note
 
 GitHub Pages serves this project as static assets. Deployment/runtime hosting is handled by Pages, so this README deliberately excludes local run instructions.
+
+## Basemap Notes
+
+This app uses Mapbox Light (`mapbox://styles/mapbox/light-v11`) and matches the NCMap basemap runtime settings:
+
+- Mapbox telemetry is disabled (to reduce ad-blocker console noise).
+- `preserveDrawingBuffer: true` and `performanceMetricsCollection: false` are set on the map instance.
