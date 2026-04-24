@@ -192,6 +192,11 @@ Relevant app functions in `index.html`:
 - `focusLeadMarginLabel(...)`
 - `winnerMarginLabelShort(...)`
 
+Recent display consistency update:
+
+- County and statewide winner-call margin labels now always include a trailing `%` when showing margin percentage text.
+- County shift-mode labels now always include a trailing `%`.
+
 ## Candidate Label and Party Normalization
 
 Normalization logic exists in both county/statewide and contest-build pipelines.

@@ -11220,7 +11220,7 @@ document.addEventListener('DOMContentLoaded', function() {
           winnerName: fullCandidateLabel(repCandidate, 'Republican'),
           shortLabel: shortCandidateLabel(repCandidate, 'Republican'),
           marginPct,
-          text: `${shortCandidateLabel(repCandidate, 'Republican')} +${marginPct.toFixed(2)}`
+          text: `${shortCandidateLabel(repCandidate, 'Republican')} +${marginPct.toFixed(2)}%`
         };
       }
       if (demVotes > repVotes) {
@@ -11229,7 +11229,7 @@ document.addEventListener('DOMContentLoaded', function() {
           winnerName: fullCandidateLabel(demCandidate, 'Democratic'),
           shortLabel: shortCandidateLabel(demCandidate, 'Democratic'),
           marginPct,
-          text: `${shortCandidateLabel(demCandidate, 'Democratic')} +${marginPct.toFixed(2)}`
+          text: `${shortCandidateLabel(demCandidate, 'Democratic')} +${marginPct.toFixed(2)}%`
         };
       }
       return {
@@ -11237,7 +11237,7 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName: 'Tie',
         shortLabel: 'Even',
         marginPct,
-        text: `Even ${marginPct.toFixed(2)}`
+        text: `Even ${marginPct.toFixed(2)}%`
       };
     }
 
@@ -12126,7 +12126,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const abs = Math.abs(v);
       if (abs < 0.005) return 'Even';
       const side = v > 0 ? 'R' : 'D';
-      return `${side}+${abs.toFixed(2)}`;
+      return `${side}+${abs.toFixed(2)}%`;
     }
 
     function shiftClassFromDelta(deltaPct) {
