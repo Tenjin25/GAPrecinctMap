@@ -612,6 +612,36 @@ body { height: var(--app-height); }
   }
 
   /* County hover tooltip: NCMap-style quickline + insight (counties only). */
+  .hover-tooltip .tooltip-title-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hover-tooltip .tooltip-title-main {
+    font-weight: 800;
+  }
+  .hover-tooltip .tooltip-title-badge {
+    font-size: 11px;
+    font-weight: 850;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.16);
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    color: rgba(226, 232, 240, 0.92);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .hover-tooltip .tooltip-title-badge.rep {
+    background: rgba(239, 68, 68, 0.16);
+    border-color: rgba(239, 68, 68, 0.24);
+    color: rgba(254, 226, 226, 0.95);
+  }
+  .hover-tooltip .tooltip-title-badge.dem {
+    background: rgba(96, 165, 250, 0.16);
+    border-color: rgba(96, 165, 250, 0.24);
+    color: rgba(219, 234, 254, 0.95);
+  }
   .hover-tooltip .tooltip-kicker {
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -658,6 +688,14 @@ body { height: var(--app-height); }
   .hover-tooltip .tooltip-shift.rep { color: #f87171; font-weight: 850; }
   .hover-tooltip .tooltip-shift.dem { color: #93c5fd; font-weight: 850; }
   .hover-tooltip .tooltip-shift.tie { color: rgba(226, 232, 240, 0.90); font-weight: 800; }
+  .hover-tooltip .tooltip-flip {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 750;
+    color: rgba(226, 232, 240, 0.90);
+  }
+  .hover-tooltip .tooltip-flip.rep { color: rgba(254, 226, 226, 0.96); }
+  .hover-tooltip .tooltip-flip.dem { color: rgba(219, 234, 254, 0.96); }
   .hover-tooltip .tooltip-insight {
     margin-top: 8px;
     color: rgba(226, 232, 240, 0.88);
@@ -11757,6 +11795,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastPrecinctHoverKey = null;
     let lastPrecinctHoverRenderedAt = 0;
     const PRECINCT_HOVER_THROTTLE_MS = 75;
+    let lastCountyHoverKey = null;
+    let lastCountyHoverRenderedAt = 0;
+    const COUNTY_HOVER_THROTTLE_MS = 55;
 
     function setLayerVisibilityIfExists(layerId, visibility) {
       if (!layerId || !map.getLayer(layerId)) return;
@@ -11998,6 +12039,33 @@ document.addEventListener('DOMContentLoaded', function() {
       return v > 0 ? 'rep' : 'dem';
     }
 
+    function buildTooltipTitleWithTier(titleText, tierMeta = null) {
+      const safeTitle = escapeHtml(String(titleText || '').trim());
+      if (!safeTitle) return '';
+      if (!tierMeta || !tierMeta.label) return safeTitle;
+      const partyClass = tierMeta.party === 'rep' ? 'rep' : (tierMeta.party === 'dem' ? 'dem' : 'tie');
+      return `
+        <span class="tooltip-title-wrap">
+          <span class="tooltip-title-main">${safeTitle}</span>
+          <span class="tooltip-title-badge ${partyClass}">${escapeHtml(tierMeta.label)}</span>
+        </span>
+      `.trim();
+    }
+
+    function flipLineHTML(prevSignedPct, curSignedPct, fromYear = null, toYear = null) {
+      const f = flipInfo(prevSignedPct, curSignedPct);
+      if (!f.flipped) return '';
+      const labelFrom = f.from === 'R' ? 'R' : 'D';
+      const labelTo = f.to === 'R' ? 'R' : 'D';
+      const cls = f.to === 'R' ? 'rep' : 'dem';
+      const fy = Number(fromYear);
+      const ty = Number(toYear);
+      const hasYears = Number.isFinite(fy) && Number.isFinite(ty);
+      const years = hasYears ? ` (${String(fy).slice(-2)}→${String(ty).slice(-2)})` : '';
+      const title = hasYears ? ` title="Flip ${labelFrom}→${labelTo} (${fy}→${ty})"` : '';
+      return `<div class="tooltip-flip ${cls}"${title}>Flip: ${labelFrom}→${labelTo}${years}</div>`;
+    }
+
     function countyHoverInsightLine({ signedMarginPct, shiftDelta, mode }) {
       if (mode !== 'shift') return '';
       const signed = Number(signedMarginPct);
@@ -12047,8 +12115,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       const contestValue = document.getElementById('contestSelect')?.value || '';
 
+      // Avoid rebuilding the same county tooltip repeatedly while the pointer moves within one county.
+      try {
+        const hoverKey = `${norm}|${contestValue}|${currentVizMode}|${isMobileViewportNow() ? 'm' : 'd'}|p${tooltipPinned ? '1' : '0'}`;
+        const tooltip = document.getElementById('hover-tooltip');
+        const tooltipVisible = !!tooltip && tooltip.style.display !== 'none' && (tooltip.innerHTML || '').trim().length > 0;
+        const now = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+        if (!forceTooltip && !tooltipPinned && tooltipVisible) {
+          if (hoverKey === lastCountyHoverKey) return;
+          if (now - lastCountyHoverRenderedAt < COUNTY_HOVER_THROTTLE_MS) return;
+        }
+        lastCountyHoverKey = hoverKey;
+        lastCountyHoverRenderedAt = now;
+      } catch (_) {}
+
       if (!contestValue || !row) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${countyDisplay} County`, '<div style="color:#64748b;">Select a contest to see results</div>'), { force: !!forceTooltip });
+        const hoverTitle = buildTooltipTitleWithTier(`${countyDisplay} County`);
+        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">Select a contest to see results</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
         return;
       }
@@ -12061,7 +12144,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const otherVotes = Number(row[`${contestType}_other`] || 0);
       const totalVotes = Number(row[`${contestType}_total`] || 0);
       if (totalVotes <= 0) {
-        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${countyDisplay} County`, '<div style="color:#64748b;">No data available</div>'), { force: !!forceTooltip });
+        const hoverTitle = buildTooltipTitleWithTier(`${countyDisplay} County`);
+        showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(hoverTitle, '<div style="color:#64748b;">No data available</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
         return;
       }
@@ -12105,6 +12189,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const shiftLine = (currentVizMode === 'shift' && vizShiftCache?.prevYear && Number.isFinite(shiftDelta))
         ? `<div class="tooltip-delta"><div class="tooltip-delta-line">Shift (${escapeHtml(`${vizShiftCache.prevYear}→${vizShiftCache.year}`)}): <span class="tooltip-shift ${escapeHtml(shiftClassFromDelta(shiftDelta))}">${escapeHtml(formatShiftLabel(shiftDelta))}</span></div></div>`
         : '';
+      const flipLine = (prevSignedForFlip !== null && vizPrevCache?.prevYear)
+        ? flipLineHTML(prevSignedForFlip, signedMarginPct, vizPrevCache.prevYear, Number(year))
+        : '';
       const insight = countyHoverInsightLine({ signedMarginPct, shiftDelta, mode: currentVizMode });
 
       if (currentVizMode === 'shift' && vizShiftCache?.prevYear) {
@@ -12130,6 +12217,7 @@ document.addEventListener('DOMContentLoaded', function() {
           ${tierShort ? `<span class="tier">${escapeHtml(tierShort)}</span>` : ''}
         </div>
         ${shiftLine}
+        ${flipLine}
         ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
       `.trim();
 
@@ -12141,6 +12229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="hover-meta">${chips.join('')}</div>
         ${shiftLine}
+        ${flipLine}
         ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
         ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
         ${demoLine}
@@ -12149,7 +12238,7 @@ document.addEventListener('DOMContentLoaded', function() {
       showHoverTooltip(
         e.point.x,
         e.point.y,
-        buildTooltipShell(`${countyDisplay} County`, desktopCollapsed ? compactInner : expandedInner),
+        buildTooltipShell(buildTooltipTitleWithTier(`${countyDisplay} County`, tierMeta), desktopCollapsed ? compactInner : expandedInner),
         { force: !!forceTooltip }
       );
       wireTooltipButtons();
@@ -12414,9 +12503,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Preserve existing “shift chip” behavior in shift mode; otherwise show winner chip.
         if (currentVizMode === 'shift') out.push(chips[0]);
         else out.push(winnerChipHTML(winner));
-        if (marginCall && marginCall.text) {
-          out.push(`<span class="meta-chip ${escapeHtml(marginCall.party || 'tie')} margin"><span class="dot"></span>${escapeHtml(marginCall.text)}</span>`);
-        }
         out.push(tierChipHTML(tierMeta));
         return out.filter(Boolean);
       })();
