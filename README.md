@@ -25,9 +25,10 @@ Core capabilities:
 
 UI notes:
 
-- Hover tooltips surface a consistent "meta chip" row (winner, rating/tier, flip/shift where applicable) plus a compact vote breakdown card.
+- Hover tooltips surface a consistent hierarchy: title + contest subtitle, compact meta chips (winner, lead/margin, rating/tier, flip/shift when applicable), and a vote breakdown card with a visible 50% marker (district tooltips).
 - Tooltips can be pinned so you can pan/zoom without losing the hovered summary.
 - A source badge indicates how precinct results were matched (VTD20-derived join vs fallback matching).
+- Precinct centroids log match stats to the console when the overlay is active (total/matched-by-norm/id/fallback/unmatched) to help validate coverage.
 
 ## Geographic Layers
 

@@ -139,7 +139,7 @@
       left: 8px !important;
       right: 8px !important;
       top: auto !important;
-      bottom: calc(var(--legend-h, 56px) + var(--safe-bottom, 0px) + 8px) !important;
+      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + var(--vote-counter-h, 0px) + 8px + (var(--legend-h, 56px) - 56px) + var(--controls-h, 0px)) !important;
       max-width: none !important;
       width: auto !important;
       max-height: 42vh;
@@ -606,10 +606,65 @@ body { height: var(--app-height); }
   letter-spacing: 0.3px;
 }
 
-.hover-tooltip .tooltip-trends {
-  font-size: 12px;
-  line-height: 1.6;
-}
+  .hover-tooltip .tooltip-trends {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* County hover tooltip: NCMap-style quickline + insight (counties only). */
+  .hover-tooltip .tooltip-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    font-size: 10px;
+    color: rgba(148, 163, 184, 0.95);
+    margin-bottom: 6px;
+  }
+  .hover-tooltip .tooltip-quickline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 2px 0 6px;
+  }
+  .hover-tooltip .tooltip-quickline .rep,
+  .hover-tooltip .tooltip-quickline .dem,
+  .hover-tooltip .tooltip-quickline .tie {
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+  .hover-tooltip .tooltip-quickline .rep { color: #ef4444; }
+  .hover-tooltip .tooltip-quickline .dem { color: #60a5fa; }
+  .hover-tooltip .tooltip-quickline .tie { color: #e2e8f0; }
+  .hover-tooltip .tooltip-quickline .tier {
+    color: rgba(226, 232, 240, 0.86);
+    font-size: 11px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .hover-tooltip .tooltip-delta {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(148, 163, 184, 0.22);
+  }
+  .hover-tooltip .tooltip-delta-line {
+    color: rgba(226, 232, 240, 0.90);
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .hover-tooltip .tooltip-shift.rep { color: #f87171; font-weight: 850; }
+  .hover-tooltip .tooltip-shift.dem { color: #93c5fd; font-weight: 850; }
+  .hover-tooltip .tooltip-shift.tie { color: rgba(226, 232, 240, 0.90); font-weight: 800; }
+  .hover-tooltip .tooltip-insight {
+    margin-top: 8px;
+    color: rgba(226, 232, 240, 0.88);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.45;
+  }
 
 .quick-tooltip {
   background: rgba(40, 40, 40, 0.95);
@@ -1875,6 +1930,57 @@ body { height: var(--app-height); }
     align-items: center;
   }
 
+  /* District tooltip: keep chips compact (do not upscale flip/rating). */
+  .hover-tooltip .district-hover .hover-meta {
+    margin-top: 8px;
+    gap: 6px;
+  }
+  .hover-tooltip .district-hover .hover-meta.is-secondary {
+    margin-top: 6px;
+  }
+  .hover-tooltip .district-hover .meta-chip {
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+  .hover-tooltip .district-hover .meta-chip.flip {
+    border-width: 1px;
+    box-shadow: none;
+    padding: 5px 9px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+  .hover-tooltip .district-hover .meta-chip.flip .dot {
+    width: 8px;
+    height: 8px;
+  }
+  .hover-tooltip .district-hover .district-subtitle {
+    margin-top: 6px;
+    color: rgba(226, 232, 240, 0.82);
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .hover-tooltip .district-hover .result-card {
+    margin-top: 8px;
+  }
+  .hover-tooltip .district-hover .result-card .rc-bar {
+    position: relative;
+  }
+  .hover-tooltip .district-hover .result-card .rc-bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    bottom: -2px;
+    width: 2px;
+    transform: translateX(-1px);
+    background: rgba(15, 23, 42, 0.30);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.25);
+    pointer-events: none;
+  }
+
   .meta-chip {
     display: inline-flex;
     align-items: center;
@@ -2071,7 +2177,7 @@ body { height: var(--app-height); }
     }
 
     html.android-mobile #hover-tooltip {
-      bottom: calc(var(--legend-h, 56px) + var(--safe-bottom, 0px) + var(--android-vv-bottom, 0px) + 8px) !important;
+      bottom: calc(var(--safe-bottom, 0px) + var(--android-vv-bottom, 0px) + var(--mobile-dock-h, 62px) + var(--vote-counter-h, 0px) + 8px + (var(--legend-h, 56px) - 56px) + var(--controls-h, 0px)) !important;
     }
 
     .contest-toolbar {
@@ -6114,7 +6220,7 @@ body { height: var(--app-height); }
     }
 
     #hover-tooltip {
-      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + 8px) !important;
+      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + var(--vote-counter-h, 0px) + 8px + (var(--legend-h, 56px) - 56px) + var(--controls-h, 0px)) !important;
     }
 
     body.mobile-input-active .vote-counter {
@@ -6167,7 +6273,10 @@ body { height: var(--app-height); }
     #hover-tooltip {
       left: 142px !important;
       right: 8px !important;
-      bottom: 8px !important;
+      bottom: calc(8px + var(--safe-bottom, 0px)) !important;
+    }
+    #hover-tooltip {
+      bottom: calc(8px + var(--safe-bottom, 0px) + var(--vote-counter-h, 0px)) !important;
     }
   }
 
@@ -7382,6 +7491,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentElectionResults = null; // Current contest results for county details
     let currentPrecinctResults = null; // Current contest results keyed by precinct_norm
     let currentPrecinctResultsById = null; // Current contest results keyed by precinct GEOID/id
+    let currentPrecinctResultsByCountyCode = null; // Map<string "COUNTY|CODE", row> fallback match
+    let currentPrecinctResultsByCountyClean = null; // Map<string "COUNTY|CLEAN_NAME", row> fallback match
     let currentVizMode = 'margins'; // 'margins', 'winners', 'shift', 'flips'
     let previousElectionData = null; // For shift mode
     let precinctsEnabled = false;
@@ -7500,16 +7611,135 @@ document.addEventListener('DOMContentLoaded', function() {
         .toUpperCase();
     }
 
-    function getCurrentPrecinctResultRow(precinctNormRaw, precinctIdRaw = '') {
+    function normalizePrecinctToken(name) {
+      return (name || '')
+        .toString()
+        .replace(/[^a-z0-9 .\-]/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toUpperCase();
+    }
+
+    function normalizePrecinctNameForFallback(name) {
+      // More aggressive cleanup: drop common prefixes and collapse tokens.
+      let t = normalizePrecinctToken(name);
+      if (!t) return '';
+      t = t.replace(/^(PRECINCT|PCT|PRCT|PR)\s+/i, '');
+      t = t.replace(/\s+#\s*/g, ' ');
+      t = t.replace(/\s+/g, ' ').trim();
+      return t;
+    }
+
+    function matchPrecinctResultRow(precinctNormRaw, precinctIdRaw = '', { countyNorm = '', precId = '', precClean = '' } = {}) {
       const precinctNorm = (precinctNormRaw || '').toString().trim().toUpperCase();
       const precinctId = (precinctIdRaw || '').toString().trim().toUpperCase();
+      const cNorm = normalizeCountyToken(countyNorm);
+      const pId = normalizePrecinctToken(precId);
+      const pClean = normalizePrecinctNameForFallback(precClean || precId);
+
       if (precinctNorm && currentPrecinctResults && currentPrecinctResults.has(precinctNorm)) {
-        return currentPrecinctResults.get(precinctNorm);
+        return { row: currentPrecinctResults.get(precinctNorm), method: 'norm' };
       }
       if (precinctId && currentPrecinctResultsById && currentPrecinctResultsById.has(precinctId)) {
-        return currentPrecinctResultsById.get(precinctId);
+        return { row: currentPrecinctResultsById.get(precinctId), method: 'id' };
       }
-      return null;
+
+      if (cNorm && pId && currentPrecinctResultsByCountyCode) {
+        const key = `${cNorm}|${pId}`;
+        if (currentPrecinctResultsByCountyCode.has(key)) return { row: currentPrecinctResultsByCountyCode.get(key), method: 'county_code' };
+      }
+      if (cNorm && pClean && currentPrecinctResultsByCountyClean) {
+        const key = `${cNorm}|${pClean}`;
+        if (currentPrecinctResultsByCountyClean.has(key)) return { row: currentPrecinctResultsByCountyClean.get(key), method: 'county_clean' };
+      }
+
+      // Final attempt: use a cleaned precinct_norm if available (punctuation/spacing quirks).
+      if (precinctNorm && currentPrecinctResults) {
+        const cleanedNorm = normalizePrecinctToken(precinctNorm);
+        if (cleanedNorm && cleanedNorm !== precinctNorm && currentPrecinctResults.has(cleanedNorm)) {
+          return { row: currentPrecinctResults.get(cleanedNorm), method: 'fallback' };
+        }
+      }
+
+      return { row: null, method: 'unmatched' };
+    }
+
+    function getCurrentPrecinctResultRow(precinctNormRaw, precinctIdRaw = '', opts = {}) {
+      const precinctNorm = (precinctNormRaw || '').toString().trim().toUpperCase();
+      const precinctId = (precinctIdRaw || '').toString().trim().toUpperCase();
+      const out = matchPrecinctResultRow(precinctNorm, precinctId, opts || {});
+      return out && out.row ? out.row : null;
+    }
+
+    function logPrecinctCentroidMatchStats(tag = '') {
+      if (!precinctsEnabled) return;
+      let gj = precinctCentroidsData;
+      try {
+        const src = map.getSource && map.getSource('precinct-centroids');
+        const data = src ? (src._data || src.data) : null;
+        if (data && data.features) gj = data;
+      } catch (_) {}
+      const feats = gj && Array.isArray(gj.features) ? gj.features : null;
+      if (!feats || !feats.length) return;
+
+      let total = 0;
+      let byNorm = 0;
+      let byId = 0;
+      let byFallback = 0;
+      let unmatched = 0;
+      feats.forEach(f => {
+        const p = f && f.properties ? f.properties : {};
+        const precinctNorm = (p.precinct_norm || '').toString().trim().toUpperCase();
+        const precinctId = (p.id || p.GEOID20 || '').toString().trim().toUpperCase();
+        const countyNorm = (p.county_norm || p.county_nam || '').toString();
+        const precId = (p.prec_id || '').toString();
+        const precClean = (p.prec_clean || p.prec_id || '').toString();
+        total += 1;
+        const out = matchPrecinctResultRow(precinctNorm, precinctId, { countyNorm, precId, precClean });
+        if (!out || !out.row) { unmatched += 1; return; }
+        if (out.method === 'norm') byNorm += 1;
+        else if (out.method === 'id') byId += 1;
+        else byFallback += 1;
+      });
+
+      console.log('[Precinct centroid match stats]', tag ? `(${tag})` : '', {
+        total_centroids: total,
+        matched_by_norm: byNorm,
+        matched_by_id: byId,
+        matched_by_fallback: byFallback,
+        unmatched
+      });
+    }
+
+    function wrapPrecinctDotColor(expr) {
+      const fallback = expr || '#94a3b8';
+      return ['case', ['boolean', ['feature-state', 'selected'], false], '#fde047', fallback];
+    }
+
+    function wrapPrecinctDotOpacity(baseOpacity) {
+      const o = Number(baseOpacity);
+      const fallback = Number.isFinite(o) ? o : 0.82;
+      return ['case', ['boolean', ['feature-state', 'selected'], false], 0.95, fallback];
+    }
+
+    function wrapPrecinctDotStrokeColor(baseColor) {
+      return ['case', ['boolean', ['feature-state', 'selected'], false], '#92400e', baseColor || 'rgba(15,23,42,0.35)'];
+    }
+
+    let selectedPrecinctCentroidFeatureId = null;
+    function clearSelectedPrecinctCentroid() {
+      if (selectedPrecinctCentroidFeatureId === null || selectedPrecinctCentroidFeatureId === undefined) return;
+      try { map.setFeatureState({ source: 'precinct-centroids', id: selectedPrecinctCentroidFeatureId }, { selected: false }); } catch (_) {}
+      selectedPrecinctCentroidFeatureId = null;
+    }
+
+    function setSelectedPrecinctCentroidFeature(feature) {
+      const id = feature?.id;
+      if (id === null || id === undefined) return;
+      if (selectedPrecinctCentroidFeatureId === id) return;
+      clearSelectedPrecinctCentroid();
+      selectedPrecinctCentroidFeatureId = id;
+      try { map.setFeatureState({ source: 'precinct-centroids', id }, { selected: true }); } catch (_) {}
     }
 
     function isKnownPrecinctCodeForCounty(countyNameOrNorm, code) {
@@ -11753,6 +11983,35 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    function formatShiftLabel(deltaPct) {
+      const v = Number(deltaPct);
+      if (!Number.isFinite(v)) return '';
+      const abs = Math.abs(v);
+      if (abs < 0.005) return 'Even';
+      const side = v > 0 ? 'R' : 'D';
+      return `${side}+${abs.toFixed(2)}`;
+    }
+
+    function shiftClassFromDelta(deltaPct) {
+      const v = Number(deltaPct);
+      if (!Number.isFinite(v) || Math.abs(v) < 0.005) return 'tie';
+      return v > 0 ? 'rep' : 'dem';
+    }
+
+    function countyHoverInsightLine({ signedMarginPct, shiftDelta, mode }) {
+      if (mode !== 'shift') return '';
+      const signed = Number(signedMarginPct);
+      const delta = Number(shiftDelta);
+      if (!Number.isFinite(signed)) return '';
+      if (Math.abs(signed) < 0.5) return 'Tiny changes can flip it.';
+      if (!Number.isFinite(delta) || Math.abs(delta) < 1.25) return '';
+      if (signed > 0 && delta < 0) return 'Still Republican, but weakening.';
+      if (signed < 0 && delta > 0) return 'Still Democratic, but slipping.';
+      if (delta < 0) return 'Democrats gaining ground lately.';
+      if (delta > 0) return 'Republicans gaining ground lately.';
+      return '';
+    }
+
     function renderCountyHoverAtPoint(e, { forceTooltip = false } = {}) {
       if (!(e.features && e.features[0])) return;
 
@@ -11822,6 +12081,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const winner = signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T');
       const tierMeta = competitivenessTierMetaFromSignedMarginPct(signedMarginPct);
       const subtitle = `${formatContestName(contestType, year)} ${year}`;
+      const marginCall = winnerMarginCall(repVotes, demVotes, totalVotes, repCandidate, demCandidate);
+      const tierShort = tierMeta?.shortLabel || tierMeta?.label || '';
+      const tierLong = tierMeta?.label || '';
 
       let demoLine = '';
       try {
@@ -11837,6 +12099,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const prev = vizPrevCache.prevCountyTotals[norm] || null;
         prevSignedForFlip = prev ? signedMarginPctFromVotes(prev.dem, prev.rep, prev.total) : 0;
       }
+      const shiftDelta = (currentVizMode === 'shift' && vizShiftCache?.prevYear && prevSignedForFlip !== null && Number.isFinite(Number(prevSignedForFlip)))
+        ? (signedMarginPct - Number(prevSignedForFlip))
+        : NaN;
+      const shiftLine = (currentVizMode === 'shift' && vizShiftCache?.prevYear && Number.isFinite(shiftDelta))
+        ? `<div class="tooltip-delta"><div class="tooltip-delta-line">Shift (${escapeHtml(`${vizShiftCache.prevYear}→${vizShiftCache.year}`)}): <span class="tooltip-shift ${escapeHtml(shiftClassFromDelta(shiftDelta))}">${escapeHtml(formatShiftLabel(shiftDelta))}</span></div></div>`
+        : '';
+      const insight = countyHoverInsightLine({ signedMarginPct, shiftDelta, mode: currentVizMode });
 
       if (currentVizMode === 'shift' && vizShiftCache?.prevYear) {
         const prevSigned = (prevSignedForFlip !== null) ? prevSignedForFlip : 0;
@@ -11851,13 +12120,38 @@ document.addEventListener('DOMContentLoaded', function() {
         if (flipChip) chips.push(flipChip);
       }
 
-      const inner = `
+      const pinnedShell = !!(tooltipPinned || (forceTooltip && isTouchInteractionMode()));
+      const desktopCollapsed = !pinnedShell && !isTouchInteractionMode() && !isMobileViewportNow();
+
+      const compactInner = `
+        <div class="tooltip-kicker">${escapeHtml(subtitle)}</div>
+        <div class="tooltip-quickline">
+          <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
+          ${tierShort ? `<span class="tier">${escapeHtml(tierShort)}</span>` : ''}
+        </div>
+        ${shiftLine}
+        ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
+      `.trim();
+
+      const expandedInner = `
+        <div class="tooltip-kicker">${escapeHtml(subtitle)}</div>
+        <div class="tooltip-quickline">
+          <span class="${escapeHtml(marginCall.party || 'tie')}">${escapeHtml(marginCall.text || '')}</span>
+          ${tierLong ? `<span class="tier">${escapeHtml(tierLong)}</span>` : ''}
+        </div>
         <div class="hover-meta">${chips.join('')}</div>
+        ${shiftLine}
+        ${insight ? `<div class="tooltip-insight">${escapeHtml(insight)}</div>` : ''}
         ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
         ${demoLine}
-      `;
+      `.trim();
 
-      showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${countyDisplay} County`, inner), { force: !!forceTooltip });
+      showHoverTooltip(
+        e.point.x,
+        e.point.y,
+        buildTooltipShell(`${countyDisplay} County`, desktopCollapsed ? compactInner : expandedInner),
+        { force: !!forceTooltip }
+      );
       wireTooltipButtons();
     }
 
@@ -11895,7 +12189,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      const row = getCurrentPrecinctResultRow(precinctNorm, precinctId);
+      const row = getCurrentPrecinctResultRow(precinctNorm, precinctId, { countyNorm: countyName, precId });
       if (!row) {
         showHoverTooltip(point.x, point.y, buildTooltipShell(title, '<div style="color:#64748b;">No precinct results loaded for this contest in this view. Switch to Counties and pick the contest.</div>'), { force: !!forceTooltip });
         wireTooltipButtons();
@@ -12085,6 +12379,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerRaw = (row.winner || '').toString().toUpperCase();
       const winner = winnerRaw.startsWith('REP') ? 'R' : (winnerRaw.startsWith('DEM') ? 'D' : (signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T')));
       const tierMeta = competitivenessTierMetaFromSignedMarginPct(signedMarginPct);
+      const marginCall = winnerMarginCall(repVotes, demVotes, totalVotes, repCandidate, demCandidate);
 
       const chips = [];
       let prevSignedForFlip = null;
@@ -12114,12 +12409,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const desc = getDistrictDescription(scope, districtNum);
+      const primaryChips = (() => {
+        const out = [];
+        // Preserve existing “shift chip” behavior in shift mode; otherwise show winner chip.
+        if (currentVizMode === 'shift') out.push(chips[0]);
+        else out.push(winnerChipHTML(winner));
+        if (marginCall && marginCall.text) {
+          out.push(`<span class="meta-chip ${escapeHtml(marginCall.party || 'tie')} margin"><span class="dot"></span>${escapeHtml(marginCall.text)}</span>`);
+        }
+        out.push(tierChipHTML(tierMeta));
+        return out.filter(Boolean);
+      })();
+      const flipChipOnly = (() => {
+        const flip = chips.find(c => (c || '').includes('meta-chip flip'));
+        return flip || '';
+      })();
+
       const inner = `
-        <div class="hover-meta">${chips.join('')}</div>
-        ${desc ? `<div style="margin-top:6px;font-size:12px;color:#94a3b8;"><strong style="color:#e2e8f0;">Area:</strong> ${desc}</div>` : ''}
-        ${_demoHTML}
-        ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
-      `;
+        <div class="district-hover">
+          <div class="district-subtitle">${escapeHtml(subtitle)}</div>
+          <div class="hover-meta">${primaryChips.join('')}</div>
+          ${flipChipOnly ? `<div class="hover-meta is-secondary">${flipChipOnly}</div>` : ''}
+          ${desc ? `<div class="meta-subtle"><strong style="color:#e2e8f0;">Area:</strong> ${desc}</div>` : ''}
+          ${_demoHTML}
+          ${buildResultCardHTML('', subtitle, demVotes, repVotes, otherVotes, demCandidate, repCandidate)}
+        </div>
+      `.trim();
       showHoverTooltip(e.point.x, e.point.y, buildTooltipShell(`${districtLabel} ${districtNum}`, inner), { force: !!forceTooltip });
       wireTooltipButtons();
     }
@@ -12475,17 +12790,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const dh = dockVisible ? Math.round(mobileDock.getBoundingClientRect().height || 0) : 0;
         root.style.setProperty('--topbar-h', `${Math.max(0, th)}px`);
         root.style.setProperty('--mobile-dock-h', `${Math.max(0, dh)}px`);
-        if (isDesktop) {
-          const counterVisible = !!(voteCounter && voteCounter.style.display !== 'none' && voteCounter.getClientRects().length);
-          const vh = counterVisible ? Math.round(voteCounter.getBoundingClientRect().height) : 0;
-          root.style.setProperty('--desktop-vote-counter-h', `${Math.max(0, vh)}px`);
-        } else {
-          root.style.removeProperty('--desktop-vote-counter-h');
-        }
+        const counterVisible = !!(voteCounter && voteCounter.style.display !== 'none' && voteCounter.getClientRects().length);
+        const vh = counterVisible ? Math.round(voteCounter.getBoundingClientRect().height || 0) : 0;
+        root.style.setProperty('--vote-counter-h', `${Math.max(0, vh)}px`);
+        if (isDesktop) root.style.setProperty('--desktop-vote-counter-h', `${Math.max(0, vh)}px`);
+        else root.style.removeProperty('--desktop-vote-counter-h');
         if (!isMobile) {
           root.style.removeProperty('--legend-h');
           root.style.removeProperty('--controls-h');
           root.style.removeProperty('--mobile-dock-h');
+          root.style.removeProperty('--vote-counter-h');
           return;
         }
         const legend = document.getElementById('legend');
@@ -13450,8 +13764,9 @@ document.addEventListener('DOMContentLoaded', function() {
           },
           paint: {
             'text-color': '#222',
-            'text-halo-color': '#f7f7f7', // original background halo
-            'text-halo-width': 2
+            'text-halo-color': 'rgba(255,255,255,0.92)',
+            'text-halo-width': 2.0,
+            'text-halo-blur': 0.4
           }
         });
         // Add mouseleave event handler
@@ -13526,6 +13841,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const countyRaw = (original.county_nam || original.COUNTYNAME || original.County || original.NAME || '').toString().trim();
         const countyNorm = countyRaw.replace(/[^a-z0-9 .\-]/gi, '').replace(/\s+/g, ' ').trim().toUpperCase();
         const precRaw = (original.prec_id || original.PREC_ID || '').toString().trim();
+        const precIdNorm = normalizePrecinctToken(precRaw);
+        const precClean = normalizePrecinctNameForFallback(precRaw);
         const geoid = (original.id || original.GEOID20 || original.geoid20 || original.GEOID || original.objectid || '')
           .toString()
           .trim()
@@ -13538,6 +13855,8 @@ document.addEventListener('DOMContentLoaded', function() {
           precinct_name: precinctRaw,
           precinct_norm: precinctNorm,
           prec_id: precRaw,
+          prec_id_norm: precIdNorm,
+          prec_clean: precClean,
           id: geoid || null,
           GEOID20: geoid || ''
         };
@@ -13633,7 +13952,10 @@ document.addEventListener('DOMContentLoaded', function() {
             precinctCentroidsData.features = (precinctCentroidsData.features || []).map(f => {
               const p = f.properties || {};
               const county = (p.county_nam || p.COUNTYNAME || p.County || p.NAME || '').toString().trim();
+              const countyNorm = normalizeCountyToken(p.county_norm || county);
               const prec = (p.prec_id || p.PREC_ID || '').toString().trim();
+              const precIdNorm = normalizePrecinctToken(prec);
+              const precClean = normalizePrecinctNameForFallback(prec);
               const geoid = (p.id || p.GEOID20 || p.geoid20 || p.objectid || '').toString().trim().toUpperCase();
               const norm = (p.precinct_norm || (county && prec ? `${county} - ${prec}` : '')).toString()
                 .replace(/[^a-z0-9 .\-]/gi, '')
@@ -13643,7 +13965,10 @@ document.addEventListener('DOMContentLoaded', function() {
               f.properties = {
                 ...p,
                 county_nam: county || p.county_nam || '',
+                county_norm: countyNorm,
                 prec_id: prec || p.prec_id || '',
+                prec_id_norm: precIdNorm,
+                prec_clean: precClean,
                 id: geoid || '',
                 GEOID20: geoid || '',
                 precinct_norm: norm,
@@ -13652,7 +13977,7 @@ document.addEventListener('DOMContentLoaded', function() {
               return f;
             });
           } catch (_) {}
-	        map.addSource('precinct-centroids', { type: 'geojson', data: pts });
+	        map.addSource('precinct-centroids', { type: 'geojson', data: pts, generateId: true });
 	        precinctCentroidsLoaded = true;
 	        // Build a lightweight county -> precinct code index for key-variant matching.
 	        try {
@@ -13727,14 +14052,15 @@ document.addEventListener('DOMContentLoaded', function() {
           paint: {
             'circle-radius': [
               'interpolate', ['linear'], ['zoom'],
-              5, 1.2,
-              6.5, 2.0,
-              7.5, 2.8,
-              8.4, 3.2
+              4.0, 0.45,
+              5.5, 0.95,
+              6.5, 1.45,
+              7.5, 2.15,
+              8.4, 2.75
             ],
-            'circle-color': '#94a3b8',
-            'circle-opacity': 0.85,
-            'circle-stroke-color': 'rgba(15,23,42,0.35)',
+            'circle-color': wrapPrecinctDotColor('#94a3b8'),
+            'circle-opacity': wrapPrecinctDotOpacity(0.82),
+            'circle-stroke-color': wrapPrecinctDotStrokeColor('rgba(15,23,42,0.35)'),
             'circle-stroke-width': 0.5
           }
         });
@@ -13752,14 +14078,15 @@ document.addEventListener('DOMContentLoaded', function() {
           paint: {
             'circle-radius': [
               'interpolate', ['linear'], ['zoom'],
-              minZoom, 3.8,
-              10, 4.6,
-              12, 5.4
+              3.2, 0.8,
+              10, 3.9,
+              12, 4.8,
+              14, 5.6
             ],
-            'circle-color': '#94a3b8',
-            'circle-opacity': 0.9,
-            'circle-stroke-color': 'rgba(15,23,42,0.45)',
-            'circle-stroke-width': 0.75
+            'circle-color': wrapPrecinctDotColor('#94a3b8'),
+            'circle-opacity': wrapPrecinctDotOpacity(0.82),
+            'circle-stroke-color': wrapPrecinctDotStrokeColor('rgba(15,23,42,0.35)'),
+            'circle-stroke-width': 0.5
           }
         });
       }
@@ -13767,8 +14094,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // If a contest was already applied before centroids loaded, apply cached colors.
       if (lastPrecinctDotExpr) {
         try {
-          map.setPaintProperty('precinct-dot', 'circle-color', lastPrecinctDotExpr);
-          if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', lastPrecinctDotExpr);
+          map.setPaintProperty('precinct-dot', 'circle-color', wrapPrecinctDotColor(lastPrecinctDotExpr));
+          if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', wrapPrecinctDotColor(lastPrecinctDotExpr));
         } catch (err) {
           console.warn('Failed to apply precinct dot colors:', err?.message || err);
         }
@@ -13801,7 +14128,7 @@ document.addEventListener('DOMContentLoaded', function() {
               return;
             }
 
-            const row = getCurrentPrecinctResultRow(precinctNorm, precinctId);
+            const row = getCurrentPrecinctResultRow(precinctNorm, precinctId, { countyNorm: countyName, precId });
             if (!row) {
               showHoverTooltip(
                 evt.point.x,
@@ -13838,6 +14165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!f) return;
             setTooltipPinned(false);
             renderPrecinctHoverAtPoint(e.point, f, { forceTooltip: true });
+            try { setSelectedPrecinctCentroidFeature(f); } catch (_) {}
             if (isTouchInteractionMode()) setTooltipPinned(true);
           } catch (_) {}
         });
@@ -13858,6 +14186,31 @@ document.addEventListener('DOMContentLoaded', function() {
       wirePrecinctDotHover('precinct-dot-missing');
     }
 
+    function applyLabelHaloTuning() {
+      const haloColor = 'rgba(255,255,255,0.92)';
+      const haloWidth = precinctsEnabled ? 2.5 : 2.0;
+      try {
+        if (map.getLayer('county-label')) {
+          map.setPaintProperty('county-label', 'text-halo-color', haloColor);
+          map.setPaintProperty('county-label', 'text-halo-width', haloWidth);
+          try { map.setPaintProperty('county-label', 'text-halo-blur', 0.4); } catch (_) {}
+        }
+      } catch (_) {}
+
+      // Best-effort: bump halos on base place labels if present in the active Mapbox style.
+      try {
+        const layers = map.getStyle && map.getStyle().layers ? map.getStyle().layers : [];
+        (layers || []).forEach(l => {
+          if (!l || l.type !== 'symbol' || !l.id) return;
+          if (!/place|settlement|town|city|village|county/i.test(l.id)) return;
+          try {
+            map.setPaintProperty(l.id, 'text-halo-color', haloColor);
+            map.setPaintProperty(l.id, 'text-halo-width', haloWidth);
+          } catch (_) {}
+        });
+      } catch (_) {}
+    }
+
     function updatePrecinctVisibility() {
       const btn = document.getElementById('precinct-toggle');
       if (btn) {
@@ -13874,6 +14227,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const z = map.getZoom();
       const polyVisible = precinctsEnabled && z >= minZoom;
       const dotVisible = precinctsEnabled && z < minZoom;
+      try { applyLabelHaloTuning(); } catch (_) {}
 
       // Auto-load precinct centroids at statewide zoom (fast), polygons later (heavy).
       if (dotVisible && !precinctCentroidsLoaded && !precinctCentroidsLoadInFlight) {
@@ -13906,6 +14260,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       } else {
         setTooltipPinned(false);
+        clearSelectedPrecinctCentroid();
         setPrecinctResultSource('none');
       }
       clearHoverOutline();
@@ -13924,11 +14279,25 @@ document.addEventListener('DOMContentLoaded', function() {
           source: 'districts', 
           paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.62 } 
         });
+        addLayerWithOptionalSourceLayer({
+          id: 'district-stroke-casing',
+          type: 'line',
+          source: 'districts',
+          paint: {
+            'line-color': 'rgba(255,255,255,0.78)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 2.6, 8.5, 4.2, 12, 5.0],
+            'line-opacity': 0.92
+          }
+        });
         addLayerWithOptionalSourceLayer({ 
           id: 'district-stroke', 
           type: 'line', 
           source: 'districts', 
-          paint: { 'line-color': '#1f2937', 'line-width': 2 } 
+          paint: {
+            'line-color': 'rgba(0,0,0,0.55)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.5, 8.5, 3.0, 12, 3.4],
+            'line-opacity': 0.95
+          }
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'district-stroke-hover', 
@@ -13936,7 +14305,12 @@ document.addEventListener('DOMContentLoaded', function() {
           source: 'districts',
           layout: { visibility: 'none' },
           filter: ['==', ['get', '_'], '__'],
-          paint: { 'line-color': 'rgba(15, 23, 42, 0.55)', 'line-width': 4, 'line-opacity': 0.95 }
+          paint: {
+            'line-color': 'rgba(0,0,0,0.78)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 3.4, 8.5, 5.0, 12, 6.0],
+            'line-opacity': 0.96,
+            'line-blur': 0.55
+          }
         });
         
         // Add click handler for districts with full trends popup
@@ -14041,10 +14415,24 @@ document.addEventListener('DOMContentLoaded', function() {
           paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.54 } 
         });
         addLayerWithOptionalSourceLayer({ 
+          id: 'state-house-stroke-casing', 
+          type: 'line', 
+          source: 'state-house', 
+          paint: {
+            'line-color': 'rgba(255,255,255,0.76)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.4, 8.5, 2.8, 12, 3.2],
+            'line-opacity': 0.88
+          } 
+        });
+        addLayerWithOptionalSourceLayer({ 
           id: 'state-house-stroke', 
           type: 'line', 
           source: 'state-house', 
-          paint: { 'line-color': '#374151', 'line-width': 1 } 
+          paint: {
+            'line-color': 'rgba(0,0,0,0.45)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 0.6, 8.5, 1.8, 12, 2.2],
+            'line-opacity': 0.92
+          } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-house-stroke-hover', 
@@ -14052,7 +14440,12 @@ document.addEventListener('DOMContentLoaded', function() {
           source: 'state-house',
           layout: { visibility: 'none' },
           filter: ['==', ['get', '_'], '__'],
-          paint: { 'line-color': 'rgba(15, 23, 42, 0.55)', 'line-width': 3, 'line-opacity': 0.95 }
+          paint: {
+            'line-color': 'rgba(0,0,0,0.72)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 2.0, 8.5, 3.2, 12, 4.2],
+            'line-opacity': 0.96,
+            'line-blur': 0.5
+          }
         });
         
         // Add click handler for state house districts with full trends popup
@@ -14155,10 +14548,24 @@ document.addEventListener('DOMContentLoaded', function() {
           paint: { 'fill-color': '#e0e0e0', 'fill-opacity': 0.58 } 
         });
         addLayerWithOptionalSourceLayer({ 
+          id: 'state-senate-stroke-casing', 
+          type: 'line', 
+          source: 'state-senate', 
+          paint: {
+            'line-color': 'rgba(255,255,255,0.76)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.4, 8.5, 2.8, 12, 3.2],
+            'line-opacity': 0.88
+          } 
+        });
+        addLayerWithOptionalSourceLayer({ 
           id: 'state-senate-stroke', 
           type: 'line', 
           source: 'state-senate', 
-          paint: { 'line-color': '#4b5563', 'line-width': 1 } 
+          paint: {
+            'line-color': 'rgba(0,0,0,0.45)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 0.6, 8.5, 1.8, 12, 2.2],
+            'line-opacity': 0.92
+          } 
         });
         addLayerWithOptionalSourceLayer({ 
           id: 'state-senate-stroke-hover', 
@@ -14166,7 +14573,12 @@ document.addEventListener('DOMContentLoaded', function() {
           source: 'state-senate',
           layout: { visibility: 'none' },
           filter: ['==', ['get', '_'], '__'],
-          paint: { 'line-color': 'rgba(15, 23, 42, 0.55)', 'line-width': 3, 'line-opacity': 0.95 }
+          paint: {
+            'line-color': 'rgba(0,0,0,0.72)',
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 2.0, 8.5, 3.2, 12, 4.2],
+            'line-opacity': 0.96,
+            'line-blur': 0.5
+          }
         });
         
         // Add click handler for state senate districts with full trends popup
@@ -14853,7 +15265,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const [contestType, year] = parseContestValue(contestValue);
       const hitNorm = (hitProps.precinct_norm || selectedLabel).toString().trim().toUpperCase();
       const hitId = (hitProps.id || hitProps.GEOID20 || '').toString().trim().toUpperCase();
-      const row = getCurrentPrecinctResultRow(hitNorm, hitId);
+      const row = getCurrentPrecinctResultRow(hitNorm, hitId, { countyNorm: hitCounty, precId: hitPrec });
       if (row && contestType) {
         const demVotes = Number(row[`${contestType}_dem`] || 0);
         const repVotes = Number(row[`${contestType}_rep`] || 0);
@@ -16583,6 +16995,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const countyAgg = {};
       currentPrecinctResults = needsPrecinctDetail ? new Map() : null;
       currentPrecinctResultsById = needsPrecinctDetail ? derivedPrecinctResultsById : null;
+      currentPrecinctResultsByCountyCode = needsPrecinctDetail ? new Map() : null;
+      currentPrecinctResultsByCountyClean = needsPrecinctDetail ? new Map() : null;
       contestData.forEach(row => {
         const rowName = (row.county || '').toString();
         const countyOnly = rowName.includes(' - ') ? rowName.split(' - ')[0] : rowName;
@@ -16596,11 +17010,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const demCand = (row[`${contestType}_dem_candidate`] || '').toString();
         const repCand = (row[`${contestType}_rep_candidate`] || '').toString();
 
-        if (needsPrecinctDetail && !derivedPrecinctResultsById) {
-          const norms = precinctNormVariants(rowName);
-          norms.forEach(n => {
-            currentPrecinctResults.set(n, row);
-          });
+        if (needsPrecinctDetail) {
+          // Always build a name-based fallback map, even if we also have derived-id precinct rows,
+          // so centroids/polygons with mismatched ids still get colored.
+          try {
+            const norms = precinctNormVariants(rowName);
+            norms.forEach(n => {
+              if (n) currentPrecinctResults.set(n, row);
+            });
+          } catch (_) {}
+
+          // Additional fallbacks keyed by county+precinct token(s).
+          try {
+            if (rowName.includes(' - ')) {
+              const precPartRaw = rowName.split(' - ', 2)[1] || '';
+              const precToken = normalizePrecinctToken(precPartRaw);
+              const precClean = normalizePrecinctNameForFallback(precPartRaw);
+              if (precToken) currentPrecinctResultsByCountyCode.set(`${countyNorm}|${precToken}`, row);
+              if (precClean) currentPrecinctResultsByCountyClean.set(`${countyNorm}|${precClean}`, row);
+            }
+          } catch (_) {}
         }
         if (!countyAgg[countyNorm]) {
           countyAgg[countyNorm] = {
@@ -16625,7 +17054,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (needsPrecinctDetail) {
         if (currentPrecinctResultsById && currentPrecinctResultsById.size) {
-          setPrecinctResultSource('derived', `${currentPrecinctResultsById.size.toLocaleString()} ids`);
+          const keyCount = currentPrecinctResults ? currentPrecinctResults.size : 0;
+          const detail = keyCount
+            ? `${currentPrecinctResultsById.size.toLocaleString()} ids + ${keyCount.toLocaleString()} keys`
+            : `${currentPrecinctResultsById.size.toLocaleString()} ids`;
+          setPrecinctResultSource('derived', detail);
         } else if (currentPrecinctResults && currentPrecinctResults.size) {
           setPrecinctResultSource('fallback', `${currentPrecinctResults.size.toLocaleString()} keys`);
         } else {
@@ -16799,7 +17232,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // so precinct fills/dots remain visually primary.
       if (map.getLayer('county-fill')) {
         map.setPaintProperty('county-fill', 'fill-color', expr);
-        map.setPaintProperty('county-fill', 'fill-opacity', precinctsEnabled ? 0.10 : 0.74);
+        map.setPaintProperty('county-fill', 'fill-opacity', precinctsEnabled ? 0.38 : 0.74);
       }
 
       // Flip mode: outline flipped counties in red/blue (to-winner), leave others subtle.
@@ -16881,8 +17314,8 @@ document.addEventListener('DOMContentLoaded', function() {
             exprPrecinct.push(['==', ['upcase', ['to-string', ['coalesce', ['get', 'id'], ['get', 'GEOID20']]]], precinctId]);
             exprPrecinct.push(color);
           });
-        } else {
-          contestData.forEach(row => {
+        }
+        contestData.forEach(row => {
             const precinctNames = precinctNormVariants(row.county);
             const demVotes = Number(row[`${contestType}_dem`] || 0);
             const repVotes = Number(row[`${contestType}_rep`] || 0);
@@ -16921,8 +17354,29 @@ document.addEventListener('DOMContentLoaded', function() {
               exprPrecinct.push(['==', ['get', 'precinct_norm'], precinctName]);
               exprPrecinct.push(color);
             });
+
+            // Extra fallbacks for centroid/polygon schemas where `precinct_norm` is present but
+            // results keys are more reliably matched by county+prec_id tokens.
+            try {
+              const rowNameRaw = (row?.county || '').toString();
+              if (rowNameRaw.includes(' - ')) {
+                const parts = rowNameRaw.split(' - ', 2);
+                const countyOnly = (parts[0] || '').toString();
+                const precPart = (parts[1] || '').toString();
+                const countyNorm = normalizeCountyToken(countyOnly);
+                const precToken = normalizePrecinctToken(precPart);
+                const precClean = normalizePrecinctNameForFallback(precPart);
+                if (countyNorm && precToken) {
+                  exprPrecinct.push(['==', ['concat', ['get', 'county_norm'], '|', ['get', 'prec_id_norm']], `${countyNorm}|${precToken}`]);
+                  exprPrecinct.push(color);
+                }
+                if (countyNorm && precClean) {
+                  exprPrecinct.push(['==', ['concat', ['get', 'county_norm'], '|', ['get', 'prec_clean']], `${countyNorm}|${precClean}`]);
+                  exprPrecinct.push(color);
+                }
+              }
+            } catch (_) {}
           });
-        }
         exprPrecinct.push('#d1d5db');
         // Cache for later, in case precinct overlay loads after the contest is applied.
         lastPrecinctFillExpr = exprPrecinct;
@@ -16931,11 +17385,12 @@ document.addEventListener('DOMContentLoaded', function() {
           map.setPaintProperty('precinct-fill', 'fill-color', exprPrecinct);
         }
         if (map.getLayer('precinct-dot')) {
-          map.setPaintProperty('precinct-dot', 'circle-color', exprPrecinct);
+          map.setPaintProperty('precinct-dot', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
         }
         if (map.getLayer('precinct-dot-missing')) {
-          map.setPaintProperty('precinct-dot-missing', 'circle-color', exprPrecinct);
+          map.setPaintProperty('precinct-dot-missing', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
         }
+        try { logPrecinctCentroidMatchStats(`contest:${contestType}_${year}`); } catch (_) {}
       }
   setStatewideContestTitle(`${formatContestName(contestType, year)} (${year})`);
       setStatus(`Applied contest: ${formatContestName(contestType, year)} ${year}`);
@@ -16967,8 +17422,29 @@ document.addEventListener('DOMContentLoaded', function() {
         rowsById = null;
       }
 
-      currentPrecinctResults = null;
+      currentPrecinctResults = new Map();
+      currentPrecinctResultsByCountyCode = new Map();
+      currentPrecinctResultsByCountyClean = new Map();
       currentPrecinctResultsById = rowsById && rowsById.size ? rowsById : null;
+      try {
+        const rows = Array.isArray(contestRows) ? contestRows : [];
+        rows.forEach(row => {
+          const rowNameRaw = (row?.county || '').toString();
+          if (!rowNameRaw || !rowNameRaw.includes(' - ')) return;
+          const precinctNames = precinctNormVariantsLiteForOverlay(rowNameRaw, null);
+          precinctNames.forEach(n => {
+            if (n && n.includes(' - ')) currentPrecinctResults.set(n, row);
+          });
+          const parts = rowNameRaw.split(' - ', 2);
+          const countyOnly = (parts[0] || '').toString();
+          const precPart = (parts[1] || '').toString();
+          const countyNorm = normalizeCountyToken(countyOnly);
+          const precToken = normalizePrecinctToken(precPart);
+          const precClean = normalizePrecinctNameForFallback(precPart);
+          if (countyNorm && precToken) currentPrecinctResultsByCountyCode.set(`${countyNorm}|${precToken}`, row);
+          if (countyNorm && precClean) currentPrecinctResultsByCountyClean.set(`${countyNorm}|${precClean}`, row);
+        });
+      } catch (_) {}
 
       if (!rowsById || !rowsById.size) {
         // Fallback: build precinct mapping/colors from the contest slice when derived ids aren't available.
@@ -17043,8 +17519,9 @@ document.addEventListener('DOMContentLoaded', function() {
             lastPrecinctFillExpr = exprPrecinct;
             lastPrecinctDotExpr = exprPrecinct;
             if (map.getLayer('precinct-fill')) map.setPaintProperty('precinct-fill', 'fill-color', exprPrecinct);
-            if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', exprPrecinct);
-            if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', exprPrecinct);
+            if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
+            if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
+            try { logPrecinctCentroidMatchStats(`fallback:${contestType}_${year}`); } catch (_) {}
             setPrecinctResultSource('fallback', `${byNorm.size.toLocaleString()} keys`);
             return;
           }
@@ -17056,8 +17533,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lastPrecinctFillExpr = '#d1d5db';
         lastPrecinctDotExpr = '#d1d5db';
         if (map.getLayer('precinct-fill')) map.setPaintProperty('precinct-fill', 'fill-color', '#d1d5db');
-        if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', '#d1d5db');
-        if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', '#d1d5db');
+        if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', wrapPrecinctDotColor('#d1d5db'));
+        if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', wrapPrecinctDotColor('#d1d5db'));
         return;
       }
 
@@ -17123,13 +17600,65 @@ document.addEventListener('DOMContentLoaded', function() {
         exprPrecinct.push(color);
       });
 
+      // Fallback: color features by normalized precinct keys when ids don't match centroid/polygon properties.
+      try {
+        const rows = Array.isArray(contestRows) ? contestRows : [];
+        rows.forEach(r => {
+          const rowNameRaw = (r?.county || '').toString();
+          if (!rowNameRaw || !rowNameRaw.includes(' - ')) return;
+          const demVotes = Number(r?.[`${contestType}_dem`] || 0);
+          const repVotes = Number(r?.[`${contestType}_rep`] || 0);
+          const otherVotes = Number(r?.[`${contestType}_other`] || 0);
+          const totalVotesRaw = Number(r?.[`${contestType}_total`] || 0);
+          const totalVotes = totalVotesRaw > 0 ? totalVotesRaw : (demVotes + repVotes + otherVotes);
+          if (totalVotes <= 0) return;
+          const signedRaw = Number(r?.[`${contestType}_margin_pct`]);
+          const signed = Number.isFinite(signedRaw) ? signedRaw : signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
+          const winnerRaw = (r?.[`${contestType}_winner`] || '').toString().toUpperCase();
+          const winner = winnerRaw.startsWith('REP')
+            ? 'R'
+            : (winnerRaw.startsWith('DEM') ? 'D' : (repVotes === demVotes ? 'T' : (repVotes > demVotes ? 'R' : 'D')));
+
+          let color = '#d1d5db';
+          if (mode === 'winners') {
+            color = colorForWinnerMode(winner);
+          } else {
+            // Without stable ids, Shift/Flips fall back to margins for unmatched features.
+            color = colorForMarginMode(Math.abs(signed), winner === 'T' ? 'R' : winner);
+          }
+
+          precinctNormVariantsLiteForOverlay(rowNameRaw, null).forEach(k => {
+            if (!k || !k.includes(' - ')) return;
+            exprPrecinct.push(['==', ['get', 'precinct_norm'], k]);
+            exprPrecinct.push(color);
+          });
+
+          const parts = rowNameRaw.split(' - ', 2);
+          const countyNorm = normalizeCountyToken(parts[0] || '');
+          const precPart = (parts[1] || '').toString();
+          const precToken = normalizePrecinctToken(precPart);
+          const precClean = normalizePrecinctNameForFallback(precPart);
+          if (countyNorm && precToken) {
+            exprPrecinct.push(['==', ['concat', ['get', 'county_norm'], '|', ['get', 'prec_id_norm']], `${countyNorm}|${precToken}`]);
+            exprPrecinct.push(color);
+          }
+          if (countyNorm && precClean) {
+            exprPrecinct.push(['==', ['concat', ['get', 'county_norm'], '|', ['get', 'prec_clean']], `${countyNorm}|${precClean}`]);
+            exprPrecinct.push(color);
+          }
+        });
+      } catch (_) {}
+
       exprPrecinct.push('#d1d5db');
       lastPrecinctFillExpr = exprPrecinct;
       lastPrecinctDotExpr = exprPrecinct;
       if (map.getLayer('precinct-fill')) map.setPaintProperty('precinct-fill', 'fill-color', exprPrecinct);
-      if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', exprPrecinct);
-      if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', exprPrecinct);
-      setPrecinctResultSource('derived', `${rowsById.size.toLocaleString()} ids`);
+      if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
+      if (map.getLayer('precinct-dot-missing')) map.setPaintProperty('precinct-dot-missing', 'circle-color', wrapPrecinctDotColor(exprPrecinct));
+      try { logPrecinctCentroidMatchStats(`derived:${contestType}_${year}`); } catch (_) {}
+      const keyCount = currentPrecinctResults ? currentPrecinctResults.size : 0;
+      const detail = keyCount ? `${rowsById.size.toLocaleString()} ids + ${keyCount.toLocaleString()} keys` : `${rowsById.size.toLocaleString()} ids`;
+      setPrecinctResultSource('derived', detail);
     }
 
     async function applyDistrictContest(contestType, year) {
@@ -17283,14 +17812,32 @@ document.addEventListener('DOMContentLoaded', function() {
           if (map.getLayer(strokeLayerName)) {
             try {
               if (strokeLayerName === 'district-stroke') {
-                map.setPaintProperty(strokeLayerName, 'line-color', '#1f2937');
-                map.setPaintProperty(strokeLayerName, 'line-width', 2);
+                if (map.getLayer('district-stroke-casing')) {
+                  map.setPaintProperty('district-stroke-casing', 'line-color', 'rgba(255,255,255,0.78)');
+                  map.setPaintProperty('district-stroke-casing', 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 2.6, 8.5, 4.2, 12, 5.0]);
+                  map.setPaintProperty('district-stroke-casing', 'line-opacity', 0.92);
+                }
+                map.setPaintProperty(strokeLayerName, 'line-color', 'rgba(0,0,0,0.55)');
+                map.setPaintProperty(strokeLayerName, 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 1.5, 8.5, 3.0, 12, 3.4]);
+                map.setPaintProperty(strokeLayerName, 'line-opacity', 0.95);
               } else if (strokeLayerName === 'state-house-stroke') {
-                map.setPaintProperty(strokeLayerName, 'line-color', '#374151');
-                map.setPaintProperty(strokeLayerName, 'line-width', 1);
+                if (map.getLayer('state-house-stroke-casing')) {
+                  map.setPaintProperty('state-house-stroke-casing', 'line-color', 'rgba(255,255,255,0.76)');
+                  map.setPaintProperty('state-house-stroke-casing', 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 1.4, 8.5, 2.8, 12, 3.2]);
+                  map.setPaintProperty('state-house-stroke-casing', 'line-opacity', 0.88);
+                }
+                map.setPaintProperty(strokeLayerName, 'line-color', 'rgba(0,0,0,0.45)');
+                map.setPaintProperty(strokeLayerName, 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 0.6, 8.5, 1.8, 12, 2.2]);
+                map.setPaintProperty(strokeLayerName, 'line-opacity', 0.92);
               } else {
-                map.setPaintProperty(strokeLayerName, 'line-color', '#4b5563');
-                map.setPaintProperty(strokeLayerName, 'line-width', 1);
+                if (map.getLayer('state-senate-stroke-casing')) {
+                  map.setPaintProperty('state-senate-stroke-casing', 'line-color', 'rgba(255,255,255,0.76)');
+                  map.setPaintProperty('state-senate-stroke-casing', 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 1.4, 8.5, 2.8, 12, 3.2]);
+                  map.setPaintProperty('state-senate-stroke-casing', 'line-opacity', 0.88);
+                }
+                map.setPaintProperty(strokeLayerName, 'line-color', 'rgba(0,0,0,0.45)');
+                map.setPaintProperty(strokeLayerName, 'line-width', ['interpolate', ['linear'], ['zoom'], 4, 0.6, 8.5, 1.8, 12, 2.2]);
+                map.setPaintProperty(strokeLayerName, 'line-opacity', 0.92);
               }
             } catch (_) {}
           }
