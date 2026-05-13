@@ -2069,46 +2069,46 @@ body { height: var(--app-height); }
   /* VoteHub-style compact results hover: precinct + district layers only */
   #hover-tooltip[data-context="votehub-results"] {
     background: rgba(3, 7, 18, 0.96);
-    color: #e5e7eb;
-    border: 1px solid rgba(148, 163, 184, 0.28);
+    color: #f1f5f9;
+    border: 1px solid rgba(148, 163, 184, 0.34);
     border-radius: 8px;
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
     padding: 0;
-    max-width: 310px;
-    min-width: 250px;
+    max-width: 292px;
+    min-width: 236px;
     backdrop-filter: blur(10px);
     opacity: 1;
   }
 
   #hover-tooltip[data-context="votehub-results"] .votehub-results-card {
-    padding: 12px 14px;
+    padding: 10px 12px;
     font-family: inherit;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-title {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 800;
-    color: #f3f4f6;
-    margin-bottom: 2px;
+    color: #f8fafc;
+    margin-bottom: 1px;
     line-height: 1.25;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-subtitle {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #94a3b8;
-    margin-bottom: 8px;
+    color: #cbd5e1;
+    margin-bottom: 7px;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-winner {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 900;
-    color: #f9fafb;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+    color: #f8fafc;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.28);
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-winner.rep {
@@ -2124,7 +2124,7 @@ body { height: var(--app-height); }
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-raw-lead {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     font-family: "JetBrains Mono","Consolas","SFMono-Regular",monospace;
   }
@@ -2145,10 +2145,10 @@ body { height: var(--app-height); }
     display: grid;
     grid-template-columns: 10px minmax(0, 1fr) auto auto;
     align-items: center;
-    gap: 8px;
-    padding: 5px 0;
-    font-size: 12.5px;
-    color: #e5e7eb;
+    gap: 7px;
+    padding: 4px 0;
+    font-size: 12px;
+    color: #f1f5f9;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-dot {
@@ -2184,32 +2184,32 @@ body { height: var(--app-height); }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-votes {
     font-weight: 800;
-    color: #f1f5f9;
+    color: #f8fafc;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-pct {
-    font-weight: 500;
-    color: #94a3b8;
+    font-weight: 700;
+    color: #e2e8f0;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-total {
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid rgba(148, 163, 184, 0.24);
-    font-size: 11.5px;
-    color: #94a3b8;
+    margin-top: 7px;
+    padding-top: 7px;
+    border-top: 1px solid rgba(148, 163, 184, 0.28);
+    font-size: 11px;
+    color: #cbd5e1;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-row.rep .vhr-name {
-    color: #fecaca;
+    color: #ffffff;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-row.dem .vhr-name {
-    color: #bfdbfe;
+    color: #ffffff;
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-row.other .vhr-name {
-    color: #cbd5e1;
+    color: #ffffff;
   }
 
   .meta-chip {
@@ -7599,7 +7599,14 @@ document.addEventListener('DOMContentLoaded', function() {
         totals.dem,
         totals.rep,
         totals.other,
-        { kind: 'region', regionKey, regionLabel: region.label, contestType, year: Number(year) },
+        {
+          kind: 'region',
+          regionKey,
+          regionLabel: region.label,
+          contestType,
+          year: Number(year),
+          marginPct: signedMarginPctFromVotes(totals.dem, totals.rep, totals.total)
+        },
         { demCandidate: totals.demCandidate, repCandidate: totals.repCandidate }
       );
       setStatus(`Loaded ${region.label}: ${compactWinnerMarginLabel(totals.rep, totals.dem, totals.total, totals.repCandidate, totals.demCandidate)}`);
@@ -8448,7 +8455,7 @@ document.addEventListener('DOMContentLoaded', function() {
         : (winnerParty === 'dem'
           ? formatVoteCounterCandidateLabel(resolvedCandidates.demCandidate, 'D', 'Democratic')
           : 'Tie');
-      const leadLabel = focusLeadMarginLabel(r, d, total);
+      const leadLabel = focusLeadMarginLabel(r, d, total, meta);
 
       winnerEl.textContent = winnerLabel;
       winnerEl.className = `focus-pill-value ${winnerParty}`;
@@ -11041,7 +11048,14 @@ document.addEventListener('DOMContentLoaded', function() {
           Number(row.dem_votes || 0),
           Number(row.rep_votes || 0),
           Number(row.other_votes || 0),
-          { kind: 'district', scope, districtNum: districtId, contestType, year: Number(year) },
+          {
+            kind: 'district',
+            scope,
+            districtNum: districtId,
+            contestType,
+            year: Number(year),
+            marginPct: getVotehubNumberFromAliases(row, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(Number(row.dem_votes || 0), Number(row.rep_votes || 0), Number(row.total_votes || 0)))
+          },
           { demCandidate, repCandidate }
         );
       } catch (err) {
@@ -11304,6 +11318,16 @@ document.addEventListener('DOMContentLoaded', function() {
       return Math.abs(roundedSignedMarginPctValue(repVotes, demVotes, totalVotes, decimals));
     }
 
+    function resolveSignedMarginPct(repVotes, demVotes, totalVotes, marginSource = null) {
+      const src = marginSource || {};
+      const candidateKeys = ['marginPct', 'margin_pct', 'signedMarginPct', 'lead_pct', 'margin'];
+      for (const key of candidateKeys) {
+        const n = Number(src?.[key]);
+        if (Number.isFinite(n)) return n;
+      }
+      return signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
+    }
+
     function leadMarginPctLabel(repVotes, demVotes, totalVotes) {
       const margin = Number(repVotes || 0) - Number(demVotes || 0);
       if (!margin) return 'Tie';
@@ -11311,19 +11335,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Winner party is already shown in the Winner row; keep Lead as margin only.
-    function focusLeadMarginLabel(repVotes, demVotes, totalVotes) {
-      const margin = Number(repVotes || 0) - Number(demVotes || 0);
-      if (!margin) return 'Tie';
-      return `${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
+    function focusLeadMarginLabel(repVotes, demVotes, totalVotes, marginSource = null) {
+      const signed = resolveSignedMarginPct(repVotes, demVotes, totalVotes, marginSource);
+      if (!Number.isFinite(signed) || Math.abs(signed) < 0.0005) return 'Tie';
+      return `${formatVotehubPct(Math.abs(signed))}%`;
     }
 
-    function compactWinnerMarginLabel(repVotes, demVotes, totalVotes, repCandidate, demCandidate) {
-      const margin = Number(repVotes || 0) - Number(demVotes || 0);
-      const pctLabel = `${roundedMarginPctValue(repVotes, demVotes, totalVotes).toFixed(2)}%`;
-      if (margin > 0) {
+    function compactWinnerMarginLabel(repVotes, demVotes, totalVotes, repCandidate, demCandidate, marginSource = null) {
+      const signed = resolveSignedMarginPct(repVotes, demVotes, totalVotes, marginSource);
+      if (!Number.isFinite(signed) || Math.abs(signed) < 0.0005) return 'Tie';
+      const pctLabel = `${formatVotehubPct(Math.abs(signed))}%`;
+      if (signed > 0) {
         return `${shortCandidateLabel(repCandidate, 'Republican')} +${pctLabel}`;
       }
-      if (margin < 0) {
+      if (signed < 0) {
         return `${shortCandidateLabel(demCandidate, 'Democratic')} +${pctLabel}`;
       }
       return 'Tie';
@@ -11358,24 +11383,25 @@ document.addEventListener('DOMContentLoaded', function() {
       return { flipped, from, to };
     }
 
-    function winnerMarginCall(repVotes, demVotes, totalVotes, repCandidate, demCandidate) {
-      const marginPct = roundedMarginPctValue(repVotes, demVotes, totalVotes);
-      if (repVotes > demVotes) {
+    function winnerMarginCall(repVotes, demVotes, totalVotes, repCandidate, demCandidate, marginSource = null) {
+      const signed = resolveSignedMarginPct(repVotes, demVotes, totalVotes, marginSource);
+      const marginPct = Math.abs(signed);
+      if (signed > 0) {
         return {
           party: 'rep',
           winnerName: fullCandidateLabel(repCandidate, 'Republican'),
           shortLabel: shortCandidateLabel(repCandidate, 'Republican'),
           marginPct,
-          text: `${shortCandidateLabel(repCandidate, 'Republican')} +${marginPct.toFixed(2)}%`
+          text: `${shortCandidateLabel(repCandidate, 'Republican')} +${formatVotehubPct(marginPct)}%`
         };
       }
-      if (demVotes > repVotes) {
+      if (signed < 0) {
         return {
           party: 'dem',
           winnerName: fullCandidateLabel(demCandidate, 'Democratic'),
           shortLabel: shortCandidateLabel(demCandidate, 'Democratic'),
           marginPct,
-          text: `${shortCandidateLabel(demCandidate, 'Democratic')} +${marginPct.toFixed(2)}%`
+          text: `${shortCandidateLabel(demCandidate, 'Democratic')} +${formatVotehubPct(marginPct)}%`
         };
       }
       return {
@@ -11383,7 +11409,7 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName: 'Tie',
         shortLabel: 'Even',
         marginPct,
-        text: `Even ${marginPct.toFixed(2)}%`
+        text: `Even ${formatVotehubPct(marginPct)}%`
       };
     }
 
@@ -11540,6 +11566,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (scope === 'state_senate') return `State Senate District ${numLabel}`;
       if (scope === 'state_house') return `State House District ${numLabel}`;
       return `${districtLabel} ${numLabel}`.trim();
+    }
+
+    function buildVotehubPrecinctTitle(countyName, precId, props = {}) {
+      const countyRaw = (countyName || props.county_nam || props.COUNTYNAME || '').toString().trim();
+      const county = countyRaw ? `${displayCountyName(countyRaw)} County` : 'Unknown County';
+      const precinctRaw = (precId || props.prec_id || props.PRECINCT || props.precinct || '').toString().trim();
+      const precinct = precinctRaw ? precinctRaw.toUpperCase() : 'Unknown Precinct';
+      return `${county} - ${precinct}`;
     }
 
     function compactCompetitivenessLabel(marginPct, party) {
@@ -11761,7 +11795,7 @@ document.addEventListener('DOMContentLoaded', function() {
         : (winnerParty === 'dem'
           ? formatVoteCounterCandidateLabel(resolvedCandidates.demCandidate, 'D', 'Democratic')
           : 'Tie');
-      const leadLabel = focusLeadMarginLabel(r, d, total);
+      const leadLabel = focusLeadMarginLabel(r, d, total, meta);
 
       winnerEl.textContent = winnerLabel;
       winnerEl.className = `focus-pill-value ${winnerParty}`;
@@ -11780,7 +11814,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (leadMetaEl) {
         leadMetaEl.textContent = winnerParty === 'tie'
           ? 'Even race'
-          : compactWinnerMarginLabel(r, d, total, resolvedCandidates.repCandidate, resolvedCandidates.demCandidate);
+          : compactWinnerMarginLabel(r, d, total, resolvedCandidates.repCandidate, resolvedCandidates.demCandidate, meta);
         leadMetaEl.dataset.party = winnerParty;
       }
       if (demShareFill) demShareFill.style.width = `${demPctDisplay.toFixed(2)}%`;
@@ -12549,7 +12583,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repVotes,
         otherVotes,
         { demCandidate, repCandidate },
-        { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year) }
+        { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year), marginPct: signedMarginPct }
       );
 
       const signedMarginPct = getVotehubNumberFromAliases(row, [`${contestType}_margin_pct`, 'margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, totalVotes));
@@ -12588,7 +12622,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const precinctId = (props.id || props.GEOID20 || '').toString().trim().toUpperCase();
       const countyName = (props.county_nam || '').toString().trim();
       const precId = (props.prec_id || '').toString().trim();
-      const title = `${countyName} - ${precId}`;
+      const title = buildVotehubPrecinctTitle(countyName, precId, props);
       setPrecinctHoverFeature(feature);
 
       const contestValue = document.getElementById('contestSelect')?.value || '';
@@ -12660,7 +12694,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repVotes,
         otherVotes,
         { demCandidate, repCandidate },
-        { kind: 'precinct', county: countyName, precinct: title, contestType, year: Number(year) }
+        { kind: 'precinct', county: countyName, precinct: title, contestType, year: Number(year), marginPct: curSigned }
       );
     }
 
@@ -12793,7 +12827,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repVotes,
         otherVotes,
         { demCandidate, repCandidate },
-        { kind: 'district', scope, districtNum: Number(districtNum), contestType, year: Number(year) }
+        { kind: 'district', scope, districtNum: Number(districtNum), contestType, year: Number(year), marginPct: signedMarginPct }
       );
 
       const signedMarginPct = getVotehubNumberFromAliases(row, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, totalVotes));
@@ -13788,7 +13822,13 @@ document.addEventListener('DOMContentLoaded', function() {
         demVotes,
         repVotes,
         otherVotes,
-        { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year) },
+        {
+          kind: 'county',
+          county: countyDisplay.toUpperCase(),
+          contestType,
+          year: Number(year),
+          marginPct: getVotehubNumberFromAliases(countyData, [`${contestType}_margin_pct`, 'margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, totalVotes))
+        },
         { demCandidate, repCandidate }
       );
       if (!sidebarReady) return;
@@ -14745,7 +14785,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     demVotes,
                     repVotes,
                     otherVotes,
-                    { kind: 'district', scope: 'congressional', districtNum: Number(districtNum), contestType, year: Number(year) },
+                    { kind: 'district', scope: 'congressional', districtNum: Number(districtNum), contestType, year: Number(year), marginPct: getVotehubNumberFromAliases(row, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, demVotes + repVotes + otherVotes)) },
                     { demCandidate, repCandidate }
                   );
                 }).catch(() => {});
@@ -14884,7 +14924,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     demVotes,
                     repVotes,
                     otherVotes,
-                    { kind: 'district', scope: 'state_house', districtNum: Number(districtNum), contestType, year: Number(year) },
+                    { kind: 'district', scope: 'state_house', districtNum: Number(districtNum), contestType, year: Number(year), marginPct: getVotehubNumberFromAliases(row, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, demVotes + repVotes + otherVotes)) },
                     { demCandidate, repCandidate }
                   );
                 }).catch(() => {});
@@ -15022,7 +15062,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     demVotes,
                     repVotes,
                     otherVotes,
-                    { kind: 'district', scope: 'state_senate', districtNum: Number(districtNum), contestType, year: Number(year) },
+                    { kind: 'district', scope: 'state_senate', districtNum: Number(districtNum), contestType, year: Number(year), marginPct: getVotehubNumberFromAliases(row, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, demVotes + repVotes + otherVotes)) },
                     { demCandidate, repCandidate }
                   );
                 }).catch(() => {});
@@ -15679,7 +15719,14 @@ document.addEventListener('DOMContentLoaded', function() {
           demVotes,
           repVotes,
           otherVotes,
-          { kind: 'precinct', county: hitCounty.toUpperCase(), precinct: selectedLabel, contestType, year: Number(year) },
+          {
+            kind: 'precinct',
+            county: hitCounty.toUpperCase(),
+            precinct: selectedLabel,
+            contestType,
+            year: Number(year),
+            marginPct: getVotehubNumberFromAliases(row, [`${contestType}_margin_pct`, 'margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(demVotes, repVotes, demVotes + repVotes + otherVotes))
+          },
           { demCandidate: row[`${contestType}_dem_candidate`] || '', repCandidate: row[`${contestType}_rep_candidate`] || '' }
         );
       }
