@@ -2124,8 +2124,8 @@ body { height: var(--app-height); }
   }
 
   #hover-tooltip[data-context="votehub-results"] .vhr-raw-lead {
-    font-size: 12px;
-    font-weight: 800;
+    font-size: inherit;
+    font-weight: 900;
     font-family: "JetBrains Mono","Consolas","SFMono-Regular",monospace;
   }
 
@@ -11434,7 +11434,11 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName,
         winnerParty,
         marginPct,
-        showWinnerLine = true
+        showWinnerLine = true,
+        showShiftLine = false,
+        shiftLineText = '',
+        shiftLineClass = '',
+        shiftLineYears = ''
       } = options || {};
 
       const d = Number(demVotes || 0);
@@ -11504,11 +11508,19 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       ` : '';
 
+      const shiftText = String(shiftLineText || '').trim();
+      const shiftCls = String(shiftLineClass || '').trim();
+      const shiftYears = String(shiftLineYears || '').trim();
+      const shiftLine = (showShiftLine && shiftText)
+        ? `<div class="tooltip-delta"><div class="tooltip-delta-line">Shift ${shiftYears ? `(${escapeHtml(shiftYears)})` : ''}: <span class="tooltip-shift ${escapeHtml(shiftCls || 'tie')}">${escapeHtml(shiftText)}</span></div></div>`
+        : '';
+
       return `
         <div class="votehub-results-card">
           <div class="vhr-title">${escapeHtml(String(title || 'Results'))}</div>
           <div class="vhr-subtitle">${escapeHtml(String(subtitle || ''))}</div>
           ${showWinnerLine ? `<div class="vhr-winner ${winnerToneClass}" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;"><span>${escapeHtml(winnerLine)}</span><span class="vhr-raw-lead ${winnerToneClass}">${escapeHtml(`${formatVotehubVotes(rawLeadVotes)} votes`)}</span></div>` : ''}
+          ${shiftLine}
           ${rowsHtml}
           ${otherHtml}
           <div class="vhr-total">Total votes: ${formatVotehubVotes(total)}</div>
@@ -12546,6 +12558,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerName = winner === 'R'
         ? shortCandidateLabel(repCandidate, 'Republican')
         : (winner === 'D' ? shortCandidateLabel(demCandidate, 'Democratic') : 'Tie');
+      let countyShiftDelta = NaN;
+      if (currentVizMode === 'shift' && vizShiftCache?.prevYear && vizPrevCache?.prevCountyTotals) {
+        const prev = vizPrevCache.prevCountyTotals[norm] || null;
+        const prevSigned = prev ? signedMarginPctFromVotes(prev.dem, prev.rep, prev.total) : NaN;
+        if (Number.isFinite(prevSigned)) countyShiftDelta = signedMarginPct - prevSigned;
+      }
       const inner = buildVotehubResultsTooltip({
         title: `${countyDisplay} County`,
         subtitle: 'County',
@@ -12559,7 +12577,11 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName,
         winnerParty: winner,
         marginPct: Math.abs(signedMarginPct),
-        showWinnerLine: true
+        showWinnerLine: true,
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(countyShiftDelta) && !!vizShiftCache?.prevYear,
+        shiftLineText: Number.isFinite(countyShiftDelta) ? formatShiftLabel(countyShiftDelta) : '',
+        shiftLineClass: shiftClassFromDelta(countyShiftDelta),
+        shiftLineYears: (vizShiftCache?.prevYear && vizShiftCache?.year) ? `${vizShiftCache.prevYear}→${vizShiftCache.year}` : ''
       });
 
       showHoverTooltip(
@@ -12625,6 +12647,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerName = winner === 'R'
         ? shortCandidateLabel(repCandidate, 'Republican')
         : (winner === 'D' ? shortCandidateLabel(demCandidate, 'Democratic') : 'Tie');
+      let precinctShiftDelta = NaN;
+      if (currentVizMode === 'shift' && vizShiftCache?.prevYear && vizPrevCache?.prevPrecinctMarginByNorm) {
+        const prevSigned = Number(vizPrevCache.prevPrecinctMarginByNorm.get(precinctNorm));
+        if (Number.isFinite(prevSigned)) precinctShiftDelta = curSigned - prevSigned;
+      }
       const inner = buildVotehubResultsTooltip({
         title,
         subtitle: 'Precinct',
@@ -12638,7 +12665,11 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName,
         winnerParty: winner,
         marginPct: Math.abs(curSigned),
-        showWinnerLine: true
+        showWinnerLine: true,
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(precinctShiftDelta) && !!vizShiftCache?.prevYear,
+        shiftLineText: Number.isFinite(precinctShiftDelta) ? formatShiftLabel(precinctShiftDelta) : '',
+        shiftLineClass: shiftClassFromDelta(precinctShiftDelta),
+        shiftLineYears: (vizShiftCache?.prevYear && vizShiftCache?.year) ? `${vizShiftCache.prevYear}→${vizShiftCache.year}` : ''
       });
       showHoverTooltip(point.x, point.y, buildTooltipShell('', inner), { force: !!forceTooltip, context: 'votehub-results' });
       wireTooltipButtons();
@@ -12791,6 +12822,18 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerName = winner === 'R'
         ? shortCandidateLabel(repCandidate, 'Republican')
         : (winner === 'D' ? shortCandidateLabel(demCandidate, 'Democratic') : 'Tie');
+      let districtShiftDelta = NaN;
+      let prevYearForFlip = null;
+      try {
+        const prevCached = await ensurePrevDistrictCache(scope, contestType, Number(year));
+        prevYearForFlip = prevCached?.prevYear || null;
+        const prevResults = prevCached?.prevNode?.general?.results || null;
+        const prevRow = prevResults ? (prevResults[String(districtNum)] || prevResults[String(Number(districtNum))] || null) : null;
+        if (prevRow) {
+          const prevSigned = getVotehubNumberFromAliases(prevRow, ['margin_pct', 'margin', 'lead_pct'], signedMarginPctFromVotes(Number(prevRow.dem_votes || 0), Number(prevRow.rep_votes || 0), Number(prevRow.total_votes || 0)));
+          if (Number.isFinite(prevSigned)) districtShiftDelta = signedMarginPct - prevSigned;
+        }
+      } catch (_) {}
       const subtitleLabel = scope === 'congressional'
         ? 'Congressional District'
         : (scope === 'state_senate' ? 'State Senate' : 'State House');
@@ -12807,7 +12850,11 @@ document.addEventListener('DOMContentLoaded', function() {
         winnerName,
         winnerParty: winner,
         marginPct: Math.abs(signedMarginPct),
-        showWinnerLine: true
+        showWinnerLine: true,
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(districtShiftDelta) && !!prevYearForFlip,
+        shiftLineText: Number.isFinite(districtShiftDelta) ? formatShiftLabel(districtShiftDelta) : '',
+        shiftLineClass: shiftClassFromDelta(districtShiftDelta),
+        shiftLineYears: (prevYearForFlip && year) ? `${prevYearForFlip}→${year}` : ''
       });
       showHoverTooltip(e.point.x, e.point.y, buildTooltipShell('', inner), { force: !!forceTooltip, context: 'votehub-results' });
       wireTooltipButtons();
