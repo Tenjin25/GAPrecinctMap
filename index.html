@@ -11460,16 +11460,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const repShare = getVotehubShare(r, total);
       const otherShare = getVotehubShare(o, total);
 
-      const numericMargin = Number(marginPct);
-      const winnerPartyNorm = (winnerParty || '').toString().toUpperCase();
-      const tie = (!Number.isFinite(numericMargin) || Math.abs(numericMargin) < 0.0005 || winnerPartyNorm === 'TIE' || winnerPartyNorm === 'T');
-      const winnerToneClass = tie
-        ? 'tie'
-        : ((winnerPartyNorm.startsWith('DEM') || winnerPartyNorm === 'D') ? 'dem' : 'rep');
-      const resolvedWinnerName = tie
-        ? 'Tie'
-        : (winnerName || (winnerPartyNorm.startsWith('REP') || winnerPartyNorm === 'R' ? shortCandidateLabel(repLabel, 'Republican') : shortCandidateLabel(demLabel, 'Democratic')));
-      const winnerLine = tie ? 'Tie' : `${shortCandidateLabel(resolvedWinnerName, resolvedWinnerName)} ${formatVotehubPctWithSign(Math.abs(numericMargin))}`;
+      // Keep VoteHub winner/margin text in lockstep with the selected panel logic.
+      const panelWinnerCall = winnerMarginCall(r, d, total, repLabel, demLabel);
+      const tie = panelWinnerCall.party === 'tie';
+      const winnerToneClass = panelWinnerCall.party || 'tie';
+      const winnerLine = tie ? 'Tie' : String(panelWinnerCall.text || '');
       const rawLeadVotes = Math.abs(r - d);
 
       const rows = [
@@ -11490,9 +11485,9 @@ document.addEventListener('DOMContentLoaded', function() {
       ];
 
       if (!tie) {
-        if (winnerPartyNorm.startsWith('DEM') || winnerPartyNorm === 'D') {
+        if (winnerToneClass === 'dem') {
           rows.sort((a, b) => (a.party === 'D' ? -1 : 1));
-        } else if (winnerPartyNorm.startsWith('REP') || winnerPartyNorm === 'R') {
+        } else if (winnerToneClass === 'rep') {
           rows.sort((a, b) => (a.party === 'R' ? -1 : 1));
         }
       }
