@@ -10499,11 +10499,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	      sel.appendChild(fragment);
 	      sel.dataset.populated = 'true';
-	      sel.onchange = () => {
-	        applyContest(sel.value);
-	        if (typeof lastSelectedCounty !== 'undefined' && lastSelectedCounty) {
-	          showCountyDetails(lastSelectedCounty);
-	        }
+	      sel.onchange = async () => {
+	        await applyContest(sel.value);
 	        saveUIState();
 	      };
 	    }
@@ -10539,7 +10536,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sel) {
           sel.innerHTML = '<option value="">No contests available for this view</option>';
           sel.dataset.populated = 'true';
-          sel.onchange = () => { applyContest(sel.value); };
+          sel.onchange = async () => { await applyContest(sel.value); };
         }
         return;
       }
@@ -10653,13 +10650,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Hide loading spinner
   var spinner = document.getElementById('contest-loading-spinner');
   if (spinner) spinner.style.display = 'none';
-      sel.onchange = () => {
+      sel.onchange = async () => {
         // Always use applyContest - it will check for colorblind mode automatically
-        applyContest(sel.value);
-        // Explicitly update sidebar for last selected county
-        if (typeof lastSelectedCounty !== 'undefined' && lastSelectedCounty) {
-          showCountyDetails(lastSelectedCounty);
-        }
+        await applyContest(sel.value);
       };
 
     }
@@ -10680,7 +10673,7 @@ document.addEventListener('DOMContentLoaded', function() {
           sel.appendChild(opt);
         }
       });
-      sel.onchange = () => { applyContest(sel.value); };
+      sel.onchange = async () => { await applyContest(sel.value); };
     }
 
     function populateContestSelectForStateSenate(csvData) {
@@ -10699,7 +10692,7 @@ document.addEventListener('DOMContentLoaded', function() {
           sel.appendChild(opt);
         }
       });
-      sel.onchange = () => { applyContest(sel.value); };
+      sel.onchange = async () => { await applyContest(sel.value); };
     }
 
     function populateContestSelectFromCongressionalCSV(csvData) {
@@ -10718,7 +10711,7 @@ document.addEventListener('DOMContentLoaded', function() {
           sel.appendChild(opt);
         }
       });
-      sel.onchange = () => { applyContest(sel.value); };
+      sel.onchange = async () => { await applyContest(sel.value); };
     }
 
     function setAnalysisMode(mode) {
@@ -17189,6 +17182,14 @@ document.addEventListener('DOMContentLoaded', function() {
     async function applyContest(contestKey) {
       if (!contestKey) return setStatus('Select a contest');
 
+      const previousPinnedState = voteCounterPinned
+        ? {
+            ...voteCounterPinned,
+            meta: voteCounterPinned.meta ? { ...voteCounterPinned.meta } : null,
+            candidates: voteCounterPinned.candidates ? { ...voteCounterPinned.candidates } : null
+          }
+        : null;
+
       const previousRegionPinnedState = voteCounterPinned?.meta?.kind === 'region'
         ? {
             ...voteCounterPinned,
@@ -17221,6 +17222,12 @@ document.addEventListener('DOMContentLoaded', function() {
           await focusRegionSummary(previousRegionPinnedState.meta.regionKey);
         } catch (err) {
           console.warn('Failed to restore regional selection after contest change:', err?.message || err);
+        }
+      } else if (previousPinnedState?.meta) {
+        try {
+          await restorePinnedSelectionForView(previousPinnedState, currentView, contestKey);
+        } catch (err) {
+          console.warn('Failed to restore pinned selection after contest change:', err?.message || err);
         }
       }
       updateContextBanner();
