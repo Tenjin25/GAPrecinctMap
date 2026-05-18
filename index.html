@@ -133,25 +133,56 @@
     }
   }
   @media (max-width: 768px) {
-    /* Mobile: dock hover tooltip above bottom legend for easier reading/taps. */
+    /* Mobile: dock hover tooltip above the dock controls for easier reading/taps. */
     #hover-tooltip {
       position: fixed !important;
       left: 8px !important;
       right: 8px !important;
       top: auto !important;
-      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + var(--vote-counter-h, 0px) + 8px + (var(--legend-h, 56px) - 56px) + var(--controls-h, 0px)) !important;
+      bottom: calc(var(--safe-bottom, 0px) + var(--mobile-dock-h, 62px) + 24px + var(--vote-counter-h, 0px) + 8px) !important;
       max-width: none !important;
       width: auto !important;
-      max-height: 42vh;
+      max-height: min(58vh, calc(100vh - 12px - var(--safe-top, 0px) - var(--safe-bottom, 0px) - var(--mobile-dock-h, 62px) - var(--vote-counter-h, 0px)));
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       touch-action: pan-y;
+      overscroll-behavior: contain;
+      z-index: 10031 !important;
+      padding: 12px 14px !important;
+      border-radius: 12px !important;
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
+    }
+    @supports (height: 100svh) {
+      #hover-tooltip {
+        max-height: min(58svh, calc(100svh - 12px - var(--safe-top, 0px) - var(--safe-bottom, 0px) - var(--mobile-dock-h, 62px) - var(--vote-counter-h, 0px)));
+      }
+    }
+    #hover-tooltip .tooltip-trends {
+      font-size: 13.5px;
+    }
+    #hover-tooltip .tooltip-vote-line {
+      margin: 5px 0;
+    }
+    #hover-tooltip .tooltip-vote-pct {
+      padding: 1px 6px;
+      font-size: 0.94em;
     }
     #hover-tooltip .tooltip-btn {
       min-height: 44px;
       padding: 10px 12px;
       font-size: 13px;
       border-radius: 12px;
+    }
+    #hover-tooltip .tooltip-head {
+      flex-direction: column;
+      gap: 8px;
+    }
+    #hover-tooltip .tooltip-actions {
+      width: 100%;
+    }
+    #hover-tooltip .tooltip-btn {
+      flex: 1 1 auto;
     }
   }
     .spinner svg {
@@ -1845,7 +1876,7 @@ body { height: var(--app-height); }
     box-shadow: 0 18px 44px rgba(15, 23, 42, 0.25);
     backdrop-filter: blur(14px);
     border-radius: 14px;
-    max-width: 360px;
+    max-width: 280px;
     animation: tooltip-in 140ms ease-out;
   }
 
@@ -1853,7 +1884,7 @@ body { height: var(--app-height); }
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 7px;
   }
   .hover-tooltip .tooltip-head.is-compact { margin-bottom: 6px; }
@@ -1881,6 +1912,11 @@ body { height: var(--app-height); }
   /* Allow interacting with tooltip buttons only when pinned. */
   #hover-tooltip[data-pinned="1"] {
     pointer-events: auto;
+  }
+  @media (pointer: coarse) {
+    #hover-tooltip[data-pinned="0"] {
+      pointer-events: none;
+    }
   }
 
   /* Help modal */
@@ -16078,13 +16114,18 @@ document.addEventListener('DOMContentLoaded', function() {
       tooltip.setAttribute('data-pinned', tooltipPinned ? '1' : '0');
     }
 
-    function buildTooltipShell(title, innerHtml) {
+    function buildTooltipShell(title, innerHtml, options = {}) {
+      const pinned = !!((options && options.pinned === true) || tooltipPinned);
+      const showClose = !!(pinned || options.showClose === true);
+      const headClass = pinned ? 'is-pinned' : (showClose ? 'is-classic' : 'is-compact');
       return `
-        <div class="tooltip-head">
+        <div class="tooltip-head ${headClass}">
           <div class="tooltip-title">${title}</div>
-          <div class="tooltip-actions">
-            <button class="tooltip-btn" id="tooltip-close-btn" type="button">Close</button>
-          </div>
+          ${showClose ? `
+            <div class="tooltip-actions">
+              <button class="tooltip-btn" id="tooltip-close-btn" type="button">Close</button>
+            </div>
+          ` : ''}
         </div>
         <div class="tooltip-trends">${innerHtml}</div>
       `;
