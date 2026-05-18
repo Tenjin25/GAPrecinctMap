@@ -12496,6 +12496,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return `${side}+${abs.toFixed(2)}%`;
     }
 
+    function normalizeShiftSignedMargin(value, decimals = 2) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return NaN;
+      return Number(n.toFixed(decimals));
+    }
+
     function shiftClassFromDelta(deltaPct) {
       const v = Number(deltaPct);
       if (!Number.isFinite(v) || Math.abs(v) < 0.005) return 'tie';
@@ -12618,7 +12624,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { kind: 'county', county: countyDisplay.toUpperCase(), contestType, year: Number(year) }
       );
 
-      const signedMarginPct = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
+      const signedMarginPct = roundedSignedMarginPctValue(repVotes, demVotes, totalVotes);
       const winner = signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T');
       const winnerName = winner === 'R'
         ? shortCandidateLabel(repCandidate, 'Republican')
@@ -12627,7 +12633,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let countyPrevSigned = NaN;
       if (vizPrevCache?.prevYear && vizPrevCache?.prevCountyTotals) {
         const prev = vizPrevCache.prevCountyTotals[norm] || null;
-        const prevSigned = prev ? signedMarginPctFromVotes(prev.dem, prev.rep, prev.total) : NaN;
+        const prevSigned = prev ? roundedSignedMarginPctValue(prev.rep, prev.dem, prev.total) : NaN;
         if (Number.isFinite(prevSigned)) {
           countyPrevSigned = prevSigned;
           if (currentVizMode === 'shift' && vizShiftCache?.prevYear) countyShiftDelta = signedMarginPct - prevSigned;
@@ -12714,7 +12720,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const demCandidate = (row[`${contestType}_dem_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Democrat')).toString().trim();
       const repCandidate = (row[`${contestType}_rep_candidate`] || getCandidateName(year, formatContestName(contestType, year), 'Republican')).toString().trim();
       const subtitle = `${formatContestName(contestType, year)} ${year}`;
-      const curSigned = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
+      const curSigned = roundedSignedMarginPctValue(repVotes, demVotes, totalVotes);
       const winner = curSigned > 0 ? 'R' : (curSigned < 0 ? 'D' : 'T');
       const winnerName = winner === 'R'
         ? shortCandidateLabel(repCandidate, 'Republican')
@@ -12722,7 +12728,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let precinctShiftDelta = NaN;
       let precinctPrevSigned = NaN;
       if (vizPrevCache?.prevYear && vizPrevCache?.prevPrecinctMarginByNorm) {
-        const prevSigned = Number(vizPrevCache.prevPrecinctMarginByNorm.get(precinctNorm));
+        const prevSigned = normalizeShiftSignedMargin(vizPrevCache.prevPrecinctMarginByNorm.get(precinctNorm));
         if (Number.isFinite(prevSigned)) {
           precinctPrevSigned = prevSigned;
           if (currentVizMode === 'shift' && vizShiftCache?.prevYear) precinctShiftDelta = curSigned - prevSigned;
@@ -12896,7 +12902,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { kind: 'district', scope, districtNum: Number(districtNum), contestType, year: Number(year) }
       );
 
-      const signedMarginPct = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
+      const signedMarginPct = roundedSignedMarginPctValue(repVotes, demVotes, totalVotes);
       const winnerRaw = (row.winner || '').toString().toUpperCase();
       const winner = winnerRaw.startsWith('REP') ? 'R' : (winnerRaw.startsWith('DEM') ? 'D' : (signedMarginPct > 0 ? 'R' : (signedMarginPct < 0 ? 'D' : 'T')));
       const winnerName = winner === 'R'
@@ -12911,7 +12917,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevResults = prevCached?.prevNode?.general?.results || null;
         const prevRow = prevResults ? (prevResults[String(districtNum)] || prevResults[String(Number(districtNum))] || null) : null;
         if (prevRow) {
-          const prevSigned = signedMarginPctFromVotes(Number(prevRow.dem_votes || 0), Number(prevRow.rep_votes || 0), Number(prevRow.total_votes || 0));
+          const prevSigned = roundedSignedMarginPctValue(Number(prevRow.rep_votes || 0), Number(prevRow.dem_votes || 0), Number(prevRow.total_votes || 0));
           if (Number.isFinite(prevSigned)) {
             districtPrevSigned = prevSigned;
             districtShiftDelta = signedMarginPct - prevSigned;
