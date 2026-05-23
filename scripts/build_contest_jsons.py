@@ -133,34 +133,11 @@ def normalize_district_for_join(office: str, district: str) -> str:
     n = _safe_int_str(d)
     if n is None:
         return d
-    if _office_scope(o) == "congressional":
+    if o == "U.S. HOUSE":
         return f"{n:02d}"
-    if _office_scope(o) in {"state_house", "state_senate"}:
+    if o in {"STATE HOUSE", "STATE SENATE"}:
         return f"{n:03d}"
     return str(n)
-
-
-def _office_scope(office: str) -> str | None:
-    o = re.sub(r"[^A-Z0-9 ]", " ", (office or "").upper())
-    o = re.sub(r"\s+", " ", o).strip()
-    if "U S HOUSE" in o or "U S REPRESENTATIVE" in o or "UNITED STATES REPRESENTATIVE" in o:
-        return "congressional"
-    if "STATE HOUSE" in o or "STATE REPRESENTATIVE" in o:
-        return "state_house"
-    if "STATE SENATE" in o or "STATE SENATOR" in o:
-        return "state_senate"
-    return None
-
-
-def canonical_office_label(office: str) -> str:
-    scope = _office_scope(office)
-    if scope == "congressional":
-        return "U.S. House"
-    if scope == "state_house":
-        return "State House"
-    if scope == "state_senate":
-        return "State Senate"
-    return (office or "").strip()
 
 
 def extract_precinct_code(precinct_raw: str) -> str:
@@ -294,8 +271,8 @@ def _levels_from_csv(levels: Iterable[str]) -> list[Level]:
     return out
 
 
-def _aggregate_contest(df: pd.DataFrame, *, level: Level, office_canon: str, district_norm: str) -> pd.DataFrame:
-    sub = df[(df["office_canon"] == office_canon) & (df["district_norm"] == district_norm)].copy()
+def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_raw: str) -> pd.DataFrame:
+    sub = df[(df["office"] == office) & (df["district_raw"] == district_raw)].copy()
 
     if level == "county":
         sub["_key"] = sub["county_norm"]
@@ -564,13 +541,9 @@ def main() -> None:
     df["county_norm"] = df["county"].map(normalize_county_loose)
     df["office"] = df["office"].fillna("").astype(str).str.strip()
     df["office_norm"] = df["office"].map(normalize_office_loose)
-    df["office_canon"] = df["office"].map(canonical_office_label)
     df["district_raw"] = df.get("district", "").fillna("").astype(str).str.strip()
-    df["district_norm"] = [
-        normalize_district_for_join(o, d) for o, d in zip(df["office_canon"].tolist(), df["district_raw"].tolist())
-    ]
     df["district_join"] = [
-        normalize_district_for_join(o, d) for o, d in zip(df["office_canon"].tolist(), df["district_raw"].tolist())
+        normalize_district_for_join(o, d) for o, d in zip(df["office"].tolist(), df["district_raw"].tolist())
     ]
     df["party_norm"] = df.get("party", "").fillna("").astype(str).map(normalize_party)
     df["candidate"] = df["candidate"].fillna("").astype(str).map(normalize_candidate_case)
@@ -580,9 +553,9 @@ def main() -> None:
     df.attrs["_vtd_join"] = args.vtd_join
 
     contests = (
-        df[["office_canon", "office_norm", "district_norm"]]
+        df[["office", "office_norm", "district_raw"]]
         .drop_duplicates()
-        .sort_values(["office_canon", "district_norm"], kind="mergesort")
+        .sort_values(["office", "district_raw"], kind="mergesort")
         .reset_index(drop=True)
     )
     offices_filter: set[str] = set()
@@ -597,9 +570,7 @@ def main() -> None:
         if "|" not in args.only_contest:
             raise SystemExit("--only-contest must look like 'office|district' (district may be empty)")
         o, d = args.only_contest.split("|", 1)
-        o = canonical_office_label(o)
-        d = normalize_district_for_join(o, d.strip())
-        contests = contests[(contests["office_canon"] == o) & (contests["district_norm"] == d)].reset_index(drop=True)
+        contests = contests[(contests["office"] == o) & (contests["district_raw"] == d)].reset_index(drop=True)
 
     print(f"{args.csv}: {len(contests)} contests")
 
@@ -615,12 +586,11 @@ def main() -> None:
     }
 
     for _, r in contests.iterrows():
-        office = r["office_canon"]
-        district_raw = r["district_norm"]
-        scope = _office_scope(office)
+        office = r["office"]
+        district_raw = r["district_raw"]
 
         district_for_slug = district_raw
-        if scope in {"congressional", "state_house", "state_senate"} and district_raw:
+        if office in {"U.S. House", "State House", "State Senate"} and district_raw:
             district_for_slug = normalize_district_for_join(office, district_raw)
         contest_slug = slugify(office) + ("__" + slugify(district_for_slug) if district_for_slug else "")
 
@@ -628,14 +598,14 @@ def main() -> None:
         contest_entry: dict[str, object] = {"office": office, "district": district_raw, "slug": contest_slug, "outputs": {}}
 
         for level in levels:
-            if level == "congressional" and scope != "congressional":
+            if level == "congressional" and office != "U.S. House":
                 continue
-            if level == "state_house" and scope != "state_house":
+            if level == "state_house" and office != "State House":
                 continue
-            if level == "state_senate" and scope != "state_senate":
+            if level == "state_senate" and office != "State Senate":
                 continue
 
-            agg = _aggregate_contest(df, level=level, office_canon=office, district_norm=district_raw)
+            agg = _aggregate_contest(df, level=level, office=office, district_raw=district_raw)
             if agg.empty:
                 continue
 

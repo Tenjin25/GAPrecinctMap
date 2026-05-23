@@ -89,7 +89,7 @@ def office_to_contest_type(office: str, district: str, slug: str) -> str:
             return "us_house"
         if ("STATE HOUSE" in o) or ("STATE REPRESENTATIVE" in o):
             return "state_house"
-        if "STATE SENATE" in o or "STATE SENATOR" in o:
+        if "STATE SENATE" in o:
             return "state_senate"
         if "PUBLIC SERVICE COMMISSION" in o:
             dn = normalize_district_number(d)
@@ -137,7 +137,6 @@ def is_district_specific_office(office: str, district: str) -> bool:
         or ("STATE HOUSE" in o)
         or ("STATE REPRESENTATIVE" in o)
         or ("STATE SENATE" in o)
-        or ("STATE SENATOR" in o)
     )
 
 
@@ -148,7 +147,7 @@ def scope_for_district_office(office: str) -> str | None:
         return "congressional"
     if ("STATE HOUSE" in o) or ("STATE REPRESENTATIVE" in o):
         return "state_house"
-    if "STATE SENATE" in o or "STATE SENATOR" in o:
+    if "STATE SENATE" in o:
         return "state_senate"
     return None
 
