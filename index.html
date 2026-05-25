@@ -7497,6 +7497,21 @@ document.addEventListener('DOMContentLoaded', function() {
       try { return new URL(p, window.location.href).toString(); } catch (_) { return p; }
     }
 
+    function resolveDistrictContestsDir() {
+      const defaultDir = './Data/district_contests';
+      const draDir = './Data/district_contests_dra';
+      let source = 'prod';
+      try {
+        const params = new URLSearchParams(window.location.search || '');
+        source = (params.get('districtSource') || '').trim().toLowerCase();
+      } catch (_) {}
+      if (source === 'dra') {
+        console.warn('Using DRA district contests directory:', draDir);
+        return draDir;
+      }
+      return defaultDir;
+    }
+
     const CONFIG = {
       mapboxToken: 'pk.eyJ1Ijoic2hhbWFyZGF2aXMiLCJhIjoiY21kcW8yeDB2MDhvbTJzb29qeGp1aDZmZCJ9.Zw_i6U-dL7_bEKRHTUh7yg',
       tilesets: {
@@ -7531,7 +7546,7 @@ document.addEventListener('DOMContentLoaded', function() {
         county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         election: withBase('./Data/ga_elections_aggregated.json'),
         district_election: withBase('./Data/ga_district_results.json'),
-        district_contests_dir: withBase('./Data/district_contests'),
+        district_contests_dir: withBase(resolveDistrictContestsDir()),
         districts_info: withBase('./Data/ga_congressional_districts.csv'),
         state_house_info: withBase('./Data/ga_state_house_districts.csv'),
         state_senate_info: withBase('./Data/ga_state_senate_districts.csv'),
