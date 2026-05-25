@@ -130,6 +130,18 @@ Primary builder:
 
 - `scripts/build_precinct_district_crosswalks_from_blockassign.py`
 
+### DRA GitHub Crosswalk Pipeline
+
+You can also build crosswalks from Dave's Redistricting App (DRA) GitHub VTD data:
+
+- Script: `scripts/build_dra_crosswalk_pipeline.py`
+- Source: `https://github.com/dra2020/vtd_data` (downloads GeoJSON zip via raw GitHub URL)
+- Default output: `Data/crosswalks_dra/`
+
+Example:
+
+`.\.venv\Scripts\python.exe scripts/build_dra_crosswalk_pipeline.py`
+
 ## Selected County Popup Analysis
 
 When a county is selected, the top-right selected popup (vote counter) includes three county-level analysis sections that are computed from data already in this repo (no external fetches):
