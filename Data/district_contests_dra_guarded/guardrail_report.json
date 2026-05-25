@@ -1,0 +1,611 @@
+{
+  "prod_dir": "Data\\district_contests",
+  "dra_dir": "Data\\district_contests_dra_csv",
+  "out_dir": "Data\\district_contests_dra_guarded",
+  "max_total_delta": 1000,
+  "allow_row_mismatch": false,
+  "chosen_dra": 51,
+  "chosen_prod": 69,
+  "decisions": [
+    {
+      "file": "congressional_agriculture_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80244)"
+    },
+    {
+      "file": "congressional_agriculture_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_agriculture_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_attorney_general_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80822)"
+    },
+    {
+      "file": "congressional_attorney_general_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_attorney_general_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_district_attorney_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 181876)"
+    },
+    {
+      "file": "congressional_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 81965)"
+    },
+    {
+      "file": "congressional_governor_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_governor_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_insurance_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80700)"
+    },
+    {
+      "file": "congressional_insurance_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_insurance_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_labor_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80146)"
+    },
+    {
+      "file": "congressional_labor_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_labor_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_lieutenant_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 81191)"
+    },
+    {
+      "file": "congressional_lieutenant_governor_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_lieutenant_governor_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_president_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_president_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 254021)"
+    },
+    {
+      "file": "congressional_public_service_commission_1_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 70077)"
+    },
+    {
+      "file": "congressional_public_service_commission_1_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_public_service_commission_4_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80015)"
+    },
+    {
+      "file": "congressional_public_service_commission_4_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_secretary_of_state_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 81088)"
+    },
+    {
+      "file": "congressional_secretary_of_state_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_secretary_of_state_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_superintendent_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 80896)"
+    },
+    {
+      "file": "congressional_superintendent_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_superintendent_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_house_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 77854)"
+    },
+    {
+      "file": "congressional_us_house_2016.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_house_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_house_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_house_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 248821)"
+    },
+    {
+      "file": "congressional_us_senate_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 14/14, delta 82570)"
+    },
+    {
+      "file": "congressional_us_senate_2016.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_senate_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_senate_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "congressional_us_senate_special_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80254)"
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta -10)"
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 6)"
+    },
+    {
+      "file": "state_house_attorney_general_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80812)"
+    },
+    {
+      "file": "state_house_attorney_general_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 0)"
+    },
+    {
+      "file": "state_house_attorney_general_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta -1)"
+    },
+    {
+      "file": "state_house_district_attorney_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 170/179, delta 181879)"
+    },
+    {
+      "file": "state_house_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 81962)"
+    },
+    {
+      "file": "state_house_governor_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 3)"
+    },
+    {
+      "file": "state_house_governor_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta -5)"
+    },
+    {
+      "file": "state_house_insurance_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80700)"
+    },
+    {
+      "file": "state_house_insurance_commissioner_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 1)"
+    },
+    {
+      "file": "state_house_insurance_commissioner_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 1)"
+    },
+    {
+      "file": "state_house_labor_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80150)"
+    },
+    {
+      "file": "state_house_labor_commissioner_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta -3)"
+    },
+    {
+      "file": "state_house_labor_commissioner_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 6)"
+    },
+    {
+      "file": "state_house_lieutenant_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 81194)"
+    },
+    {
+      "file": "state_house_lieutenant_governor_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta -3)"
+    },
+    {
+      "file": "state_house_lieutenant_governor_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 10)"
+    },
+    {
+      "file": "state_house_president_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 7)"
+    },
+    {
+      "file": "state_house_president_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 254016)"
+    },
+    {
+      "file": "state_house_public_service_commission_1_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 70086)"
+    },
+    {
+      "file": "state_house_public_service_commission_1_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 2)"
+    },
+    {
+      "file": "state_house_public_service_commission_4_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80014)"
+    },
+    {
+      "file": "state_house_public_service_commission_4_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 3)"
+    },
+    {
+      "file": "state_house_secretary_of_state_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 81087)"
+    },
+    {
+      "file": "state_house_secretary_of_state_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 8)"
+    },
+    {
+      "file": "state_house_secretary_of_state_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 14)"
+    },
+    {
+      "file": "state_house_state_house_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 70293)"
+    },
+    {
+      "file": "state_house_state_house_2016.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 0)"
+    },
+    {
+      "file": "state_house_state_house_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 0)"
+    },
+    {
+      "file": "state_house_state_house_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 1)"
+    },
+    {
+      "file": "state_house_state_house_2024.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_house_superintendent_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 80902)"
+    },
+    {
+      "file": "state_house_superintendent_2018.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 177/180, delta 3)"
+    },
+    {
+      "file": "state_house_superintendent_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 6)"
+    },
+    {
+      "file": "state_house_us_senate_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 176/180, delta 82566)"
+    },
+    {
+      "file": "state_house_us_senate_2016.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 1)"
+    },
+    {
+      "file": "state_house_us_senate_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta -1)"
+    },
+    {
+      "file": "state_house_us_senate_2022.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 178/180, delta 1)"
+    },
+    {
+      "file": "state_house_us_senate_special_2020.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 179/180, delta 6)"
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80245)"
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_attorney_general_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80819)"
+    },
+    {
+      "file": "state_senate_attorney_general_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_attorney_general_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_district_attorney_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 181876)"
+    },
+    {
+      "file": "state_senate_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 81962)"
+    },
+    {
+      "file": "state_senate_governor_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_governor_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80701)"
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_labor_commissioner_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80147)"
+    },
+    {
+      "file": "state_senate_labor_commissioner_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_labor_commissioner_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 81195)"
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_president_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_president_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 254026)"
+    },
+    {
+      "file": "state_senate_public_service_commission_1_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 70080)"
+    },
+    {
+      "file": "state_senate_public_service_commission_1_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_public_service_commission_4_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80019)"
+    },
+    {
+      "file": "state_senate_public_service_commission_4_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_secretary_of_state_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 81088)"
+    },
+    {
+      "file": "state_senate_secretary_of_state_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_secretary_of_state_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_state_senate_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_state_senate_2024.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 234189)"
+    },
+    {
+      "file": "state_senate_superintendent_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 80894)"
+    },
+    {
+      "file": "state_senate_superintendent_2018.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_superintendent_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_us_senate_2014.json",
+      "chosen": "prod",
+      "reason": "prod_guard(rows 56/56, delta 82572)"
+    },
+    {
+      "file": "state_senate_us_senate_2016.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_us_senate_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_us_senate_2022.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    },
+    {
+      "file": "state_senate_us_senate_special_2020.json",
+      "chosen": "dra",
+      "reason": "dra_pass"
+    }
+  ]
+}
