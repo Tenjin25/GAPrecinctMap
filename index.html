@@ -7498,13 +7498,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function resolveDistrictContestsDir() {
-      const defaultDir = './Data/district_contests';
+      const defaultDir = './Data/district_contests_dra_guarded';
       const draDir = './Data/district_contests_dra';
+      const prodDir = './Data/district_contests';
+      const guardedDir = './Data/district_contests_dra_guarded';
       let source = 'prod';
       try {
         const params = new URLSearchParams(window.location.search || '');
         source = (params.get('districtSource') || '').trim().toLowerCase();
       } catch (_) {}
+      if (source === 'prod') return prodDir;
+      if (source === 'guarded' || source === 'dra_guarded') return guardedDir;
       if (source === 'dra') {
         console.warn('Using DRA district contests directory:', draDir);
         return draDir;
@@ -7547,6 +7551,7 @@ document.addEventListener('DOMContentLoaded', function() {
         election: withBase('./Data/ga_elections_aggregated.json'),
         district_election: withBase('./Data/ga_district_results.json'),
         district_contests_dir: withBase(resolveDistrictContestsDir()),
+        district_contests_pre2014_dir: withBase('./Data/district_contests_pre2014_county_approx'),
         districts_info: withBase('./Data/ga_congressional_districts.csv'),
         state_house_info: withBase('./Data/ga_state_house_districts.csv'),
         state_senate_info: withBase('./Data/ga_state_senate_districts.csv'),
@@ -10030,12 +10035,20 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadDistrictSlice(scope, contestType, year) {
       const key = `${scope}_${contestType}_${year}`;
       if (districtSliceCache.has(key)) return districtSliceCache.get(key);
+      const y = Number(year);
 
       try {
         const payload = await loadJSON(`${CONFIG.paths.district_contests_dir}/${key}.json`);
         districtSliceCache.set(key, payload);
         return payload;
       } catch (_) {
+        if (Number.isFinite(y) && y < 2014) {
+          try {
+            const pre2014Payload = await loadJSON(`${CONFIG.paths.district_contests_pre2014_dir}/${key}.json`);
+            districtSliceCache.set(key, pre2014Payload);
+            return pre2014Payload;
+          } catch (_) {}
+        }
         const derivedPayload = await loadDistrictSliceFromDerivedVtd20(scope, contestType, year);
         if (derivedPayload) {
           districtSliceCache.set(key, derivedPayload);
@@ -16827,6 +16840,13 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
           const dManifest = await loadJSON(`${CONFIG.paths.district_contests_dir}/manifest.json`);
           districtManifest = dManifest?.files || [];
+          try {
+            const pre2014Manifest = await loadJSON(`${CONFIG.paths.district_contests_pre2014_dir}/manifest.json`);
+            const pre2014Files = Array.isArray(pre2014Manifest?.files) ? pre2014Manifest.files : [];
+            if (pre2014Files.length) {
+              districtManifest = districtManifest.concat(pre2014Files);
+            }
+          } catch (_) {}
           districtElectionDataJSON = null;
           districtSliceCache = new Map();
           if (!districtManifest.length) {
