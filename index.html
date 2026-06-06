@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -505,8 +505,8 @@
           window.__topbarResizeObserver.observe(topbar);
         }
       } catch (_) {}
-      setupRegionJumpButtons();
-      updateContextBanner();
+      if (typeof setupRegionJumpButtons === 'function') setupRegionJumpButtons();
+      if (typeof updateContextBanner === 'function') updateContextBanner();
     });
     // Zoom to county by name using turf.js
     function zoomToCounty(countyName) {
@@ -9188,6 +9188,9 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 <body>
 <!-- Move JS to script block -->
 <script>
+// Global defaults shared by the early UI script and the main map script.
+window.overlayOpacityPreset = window.overlayOpacityPreset || 'focus';
+
 // Accessibility: Color Blind Mode Toggle
 document.addEventListener('DOMContentLoaded', function() {
   var accBtn = document.getElementById('accessibility-toggle');
@@ -9452,9 +9455,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const overlayPresetSelect = document.getElementById('overlay-opacity-preset');
   if (overlayPresetSelect) {
-    overlayPresetSelect.value = String(overlayOpacityPreset || 'reveal');
+    window.overlayOpacityPreset = window.overlayOpacityPreset || 'focus';
+    overlayPresetSelect.value = String(window.overlayOpacityPreset || 'reveal');
     overlayPresetSelect.addEventListener('change', function() {
-      overlayOpacityPreset = String(this.value || 'reveal');
+      window.overlayOpacityPreset = String(this.value || 'reveal');
+      try { overlayOpacityPreset = window.overlayOpacityPreset; } catch (_) {}
       if (typeof applyLayerOpacityTuning === 'function') applyLayerOpacityTuning();
     });
   }
@@ -10063,25 +10068,6 @@ document.addEventListener('DOMContentLoaded', function() {
       try { return new URL(p, window.location.href).toString(); } catch (_) { return p; }
     }
 
-<<<<<<< HEAD
-    function resolveDistrictContestsDir() {
-      const defaultDir = './Data/district_contests';
-      const draDir = './Data/district_contests_dra';
-      let source = 'prod';
-      try {
-        const params = new URLSearchParams(window.location.search || '');
-        source = (params.get('districtSource') || '').trim().toLowerCase();
-      } catch (_) {}
-      if (source === 'dra') {
-        console.warn('Using DRA district contests directory:', draDir);
-        return draDir;
-      }
-      return defaultDir;
-    }
-
-=======
-<<<<<<< HEAD
-=======
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
     const DATA_CACHE_BUSTER = '2026-05-25-11';
@@ -10096,8 +10082,6 @@ document.addEventListener('DOMContentLoaded', function() {
       return `${p}${sep}v=${encodeURIComponent(DATA_CACHE_BUSTER)}`;
     }
 
->>>>>>> a89ed30 (Update Georgia precinct map index)
->>>>>>> 354ab21 (Update Georgia precinct map index)
     const CONFIG = {
       mapboxToken: 'pk.eyJ1Ijoic2hhbWFyZGF2aXMiLCJhIjoiY21kcW8yeDB2MDhvbTJzb29qeGp1aDZmZCJ9.Zw_i6U-dL7_bEKRHTUh7yg',
       tilesets: {
@@ -10132,20 +10116,13 @@ document.addEventListener('DOMContentLoaded', function() {
         county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         election: withBase('./Data/ga_elections_aggregated.json'),
         district_election: withBase('./Data/ga_district_results.json'),
-<<<<<<< HEAD
-        district_contests_dir: withBase(resolveDistrictContestsDir()),
-=======
         district_contests_dir: withBase('./Data/district_contests'),
-<<<<<<< HEAD
-=======
         district_contests_dirs: {
           '2022': withBase('./Data/district_contests'),
           '2024': withBase('./Data/district_contests'),
           '2026': withBase('./Data/district_contests')
         },
         district_contests_pre2014_dir: withBase('./Data/district_contests_pre2014_county_approx'),
->>>>>>> a89ed30 (Update Georgia precinct map index)
->>>>>>> 354ab21 (Update Georgia precinct map index)
         districts_info: withBase('./Data/ga_congressional_districts.csv'),
         state_house_info: withBase('./Data/ga_state_house_districts.csv'),
         state_senate_info: withBase('./Data/ga_state_senate_districts.csv'),
@@ -11029,7 +11006,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let scenarioScope = 'statewide'; // statewide | fulton
     let turnoutBivariateEnabled = false;
     let demographicsHighContrastEnabled = false;
-    let overlayOpacityPreset = 'focus'; // reveal | balanced | focus
+    var overlayOpacityPreset = window.overlayOpacityPreset || 'focus'; // reveal | balanced | focus
+    window.overlayOpacityPreset = overlayOpacityPreset;
     let smartInsightsEnabled = false; // session-only toggle; default off
     let smartInsightsLastOverlayKey = '';
     let smartInsightsActiveCountySet = null; // Set<string countyNorm> (UPPERCASE) for the current contest
@@ -18244,19 +18222,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function loadDistrictSlice(scope, contestType, year, linesYearOverride = currentDistrictLinesYear) {
       const key = `${scope}_${contestType}_${year}`;
-<<<<<<< HEAD
-      if (districtSliceCache.has(key)) return districtSliceCache.get(key);
-
-      try {
-        const payload = await loadJSON(`${CONFIG.paths.district_contests_dir}/${key}.json`);
-        districtSliceCache.set(key, payload);
-        return payload;
-      } catch (_) {
-        const derivedPayload = await loadDistrictSliceFromDerivedVtd20(scope, contestType, year);
-        if (derivedPayload) {
-          districtSliceCache.set(key, derivedPayload);
-          return derivedPayload;
-=======
       const linesYear = normalizeDistrictLinesYear(linesYearOverride);
       const cacheKey = `${linesYear}|${key}`;
       const modeledDef = getModeledContestDefinition(contestType, year);
@@ -18290,7 +18255,6 @@ document.addEventListener('DOMContentLoaded', function() {
             districtSliceCache.set(cacheKey, payload);
             return payload;
           } catch (_) {}
->>>>>>> a89ed30 (Update Georgia precinct map index)
         }
 
         if (linesYear === 2022 && !districtElectionDataJSON) {
@@ -21703,7 +21667,7 @@ document.addEventListener('DOMContentLoaded', function() {
           changePct2023To2024: Number.isFinite(changePct2023To2024) ? changePct2023To2024 : NaN
         };
 
-        if (countyNorm === 'NORTH CAROLINA') statewide = entry;
+        if (countyNorm === 'GEORGIA') statewide = entry;
         else byNorm.set(countyNorm, entry);
       });
       return { byNorm, statewide };
@@ -21718,12 +21682,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getNcCensusContext(countyNorm) {
       const norm = String(countyNorm || '').trim().toUpperCase();
-      const urbanAnchor = new Set(['WAKE', 'MECKLENBURG', 'DURHAM', 'ORANGE', 'GUILFORD', 'FORSYTH', 'BUNCOMBE']);
-      const metroSpillover = new Set(['JOHNSTON', 'UNION', 'CABARRUS', 'IREDELL', 'HARNETT', 'CHATHAM', 'PENDER', 'FRANKLIN', 'GASTON', 'CLEVELAND']);
-      const coastalGrowth = new Set(['BRUNSWICK', 'NEW HANOVER', 'PENDER', 'ONSLOW', 'CURRITUCK', 'CARTERET']);
-      const ruralSlowdown = new Set(['ROBESON', 'BLADEN', 'RICHMOND', 'ANSON', 'MARTIN', 'GATES', 'HALIFAX', 'SCOTLAND', 'WASHINGTON', 'BERTIE', 'NORTHAMPTON']);
-      const mixedTransition = new Set(['PASQUOTANK', 'ALAMANCE', 'DAVIDSON', 'ROWAN', 'NASH', 'PITT', 'CUMBERLAND', 'RANDOLPH', 'CATAWBA', 'WAYNE', 'CRAVEN']);
-      const institutionalHub = new Set(['CUMBERLAND', 'HOKE', 'ONSLOW', 'WAYNE', 'CRAVEN']);
+      const urbanAnchor = new Set(['FULTON', 'DEKALB', 'COBB', 'GWINNETT', 'CLAYTON', 'CHATHAM']);
+      const metroSpillover = new Set(['CHEROKEE', 'FORSYTH', 'HENRY', 'PAULDING', 'DOUGLAS', 'ROCKDALE', 'COWETA', 'FAYETTE', 'HALL', 'JACKSON', 'BARROW', 'WALTON', 'NEWTON']);
+      const coastalGrowth = new Set(['CHATHAM', 'BRYAN', 'EFFINGHAM', 'LIBERTY', 'MCINTOSH', 'GLYNN', 'CAMDEN', 'LONG']);
+      const ruralSlowdown = new Set(['STEWART', 'RANDOLPH', 'TERRELL', 'CLAY', 'QUITMAN', 'CALHOUN', 'MACON', 'TALBOT', 'TAYLOR', 'WILCOX', 'DOOLY', 'CRISP']);
+      const mixedTransition = new Set(['BIBB', 'HOUSTON', 'BULLOCH', 'LOWNDES', 'THOMAS', 'TROUP', 'MUSCOGEE', 'SUMTER', 'DOUGHERTY', 'LAURENS', 'RICHMOND', 'COLUMBIA']);
+      const institutionalHub = new Set(['LIBERTY', 'CAMDEN', 'MUSCOGEE', 'HOUSTON', 'CHATHAM']);
 
       let signalEmoji = '📊';
       let signalLabel = 'Steady population signal';
@@ -22523,22 +22487,22 @@ document.addEventListener('DOMContentLoaded', function() {
 	      if (!norm) return '🏭 Stable / Local Growth';
 
 	      const coastal = new Set([
-	        'BRUNSWICK', 'NEW HANOVER', 'PENDER', 'ONSLOW', 'CARTERET', 'CRAVEN',
-	        'PAMLICO', 'BEAUFORT', 'HYDE', 'DARE', 'TYRRELL', 'CURRITUCK',
-	        'PASQUOTANK', 'CAMDEN', 'CHOWAN', 'PERQUIMANS'
+	        'CHATHAM', 'BRYAN', 'EFFINGHAM', 'LIBERTY', 'MCINTOSH', 'GLYNN',
+	        'CAMDEN', 'LONG'
 	      ]);
-	      const charlotteMetro = new Set([
-	        'MECKLENBURG', 'UNION', 'CABARRUS', 'GASTON', 'IREDELL', 'ROWAN',
-	        'LINCOLN', 'STANLY', 'CLEVELAND', 'CATAWBA'
+	      const atlantaMetro = new Set([
+	        'FULTON', 'DEKALB', 'COBB', 'GWINNETT', 'CLAYTON', 'CHEROKEE',
+	        'FORSYTH', 'HENRY', 'PAULDING', 'DOUGLAS', 'ROCKDALE', 'FAYETTE',
+	        'HALL', 'JACKSON', 'BARROW', 'WALTON', 'NEWTON'
 	      ]);
-	      const i95Corridor = new Set([
-	        'NORTHAMPTON', 'HALIFAX', 'EDGECOMBE', 'NASH', 'WILSON', 'JOHNSTON',
-	        'HARNETT', 'CUMBERLAND', 'ROBESON', 'SAMPSON', 'WAYNE', 'DUPLIN'
+	      const i75Corridor = new Set([
+	        'BIBB', 'HOUSTON', 'DOOLY', 'CRISP', 'TURNER', 'TIFT',
+	        'COOK', 'LOWNDES', 'COLQUITT', 'THOMAS'
 	      ]);
 
 	      if (coastal.has(norm)) return '🌊 Coastal Growth';
-	      if (charlotteMetro.has(norm)) return '🌆 Metro Spillover';
-	      if (i95Corridor.has(norm)) return '🛣️ Corridor Growth';
+	      if (atlantaMetro.has(norm)) return '🌆 Metro Atlanta Spillover';
+	      if (i75Corridor.has(norm)) return '🛣️ I-75 Corridor Growth';
 
 	      void growthRate;
 	      return '🏭 Stable / Local Growth';
@@ -31239,54 +31203,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         addCountyLayers();
         try {
-<<<<<<< HEAD
-          const dManifest = await loadJSON(`${CONFIG.paths.district_contests_dir}/manifest.json`);
-          districtManifest = dManifest?.files || [];
-          districtElectionDataJSON = null;
-          districtSliceCache = new Map();
-          if (!districtManifest.length) {
-            const yearCandidates = Array.from(new Set((contestManifest || []).map(e => Number(e?.year)).filter(y => Number.isFinite(y))));
-            districtManifest = await buildDistrictManifestFromDerivedVtd20(yearCandidates);
-          }
-          if (contestManifest.length > 0 || districtManifest.length > 0) updateContestSelectForCurrentView();
-          setStatus(districtManifest.length ? 'District index loaded' : 'District index unavailable');
-        } catch (manifestErr) {
-          const yearCandidates = Array.from(new Set((contestManifest || []).map(e => Number(e?.year)).filter(y => Number.isFinite(y))));
-          districtManifest = await buildDistrictManifestFromDerivedVtd20(yearCandidates);
-          districtSliceCache = new Map();
-          if (districtManifest.length) {
-            districtElectionDataJSON = null;
-            if (contestManifest.length > 0 || districtManifest.length > 0) updateContestSelectForCurrentView();
-            setStatus('District index built from derived VTD20 manifests');
-          }
-          try {
-            districtElectionDataJSON = await loadJSON(CONFIG.paths.district_election);
-            debugLog('District election data loaded:', districtElectionDataJSON);
-            districtSliceCache = new Map();
-            if (!districtManifest.length) setStatus('District JSON fallback loaded');
-          } catch (err) {
-            console.warn('District election data not loaded:', err.message);
-            if (!districtManifest.length) districtElectionDataJSON = null;
-          }
-        }
-
-        // Optional district resources: do not fail app initialization if absent
-        try {
-          const districtsCSV = await loadCSV(CONFIG.paths.districts_info);
-          districtsInfo = parseCSV(districtsCSV);
-          setStatus('Congressional data loaded');
-        } catch (err) {
-          console.warn('District CSV not loaded:', err.message);
-        }
-
-        // Optional descriptive district labels (manual overrides).
-        try {
-          districtDescriptions = await loadJSON(CONFIG.paths.district_descriptions);
-=======
           const savedSmart = sessionStorage.getItem('smartInsightsEnabled') === '1';
           if (savedSmart) await setSmartInsightsEnabled(true, { persist: false });
           else syncSmartInsightsToggleUI();
->>>>>>> a89ed30 (Update Georgia precinct map index)
         } catch (_) {
           try { syncSmartInsightsToggleUI(); } catch (_) {}
         }
