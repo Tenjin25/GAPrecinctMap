@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -10531,7 +10531,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let stateHouseInfo = null;
     let stateSenateInfo = null;
     let districtDescriptions = null; // Optional labels like "Sampson & Bladen Counties" or "Concord–Harrisburg"
-    let countyDemographics = null; // County-level VAP (18+) + total-pop race/ethnicity from DP1 (includes AIAN/native)
+    let countyDemographics = null; // County-level VAP (18+) + 2020 Census total-pop race/ethnicity shares (includes AIAN/native)
     let countyPopulationEstimatesByNorm = null; // Map<string countyNorm, growth/estimate summary from Vintage 2025 county estimates>
     let countyPopulationEstimateStatewide = null; // Statewide GA summary from the same file
 
@@ -20090,7 +20090,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="demo-hover-card">
           <div class="demo-hover-metric">${metricLabel} ${Math.round(metricValue).toLocaleString()}</div>
           ${races}
-          <div class="demo-hover-note">${Number.isFinite(Number(cvap)) ? 'CVAP totals from ACS special tabulation (2020–2024). ' : ''}Race/ethnicity reflects total population (DP1), not VAP-by-race.</div>
+          <div class="demo-hover-note">${Number.isFinite(Number(cvap)) ? 'CVAP totals from ACS special tabulation (2020–2024). ' : ''}Race/ethnicity reflects 2020 Census total population; the headline total here is VAP, not race-specific VAP.</div>
         </div>
       `;
     }
@@ -20891,8 +20891,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (badge) badge.textContent = demographicsHighContrastEnabled ? 'Demographics HC' : 'Demographics';
         if (footer) {
           footer.textContent = demographicsHighContrastEnabled
-            ? 'High-contrast colors enabled. County shares use DP1 total population; district/precinct shares use available VAP race fields.'
-            : 'County shares use DP1 total population; district/precinct shares use available VAP race fields.';
+            ? 'High-contrast colors enabled. County shares use 2020 Census total population; district/precinct shares use available VAP race fields.'
+            : 'County shares use 2020 Census total population; district/precinct shares use available VAP race fields.';
         }
         content.innerHTML = buildDemographicsLegendHTML();
       } else if (mode === 'population_change') {
@@ -21620,18 +21620,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const byNorm = new Map();
       let statewide = null;
       (Array.isArray(rows) ? rows : []).forEach(row => {
-        const countyName = (row?.county_name || '').toString().trim();
+        const countyName = (row?.county_name || row?.county || '').toString().trim();
         const countyNorm = normalizeCountyToken(row?.county_norm || countyName);
         if (!countyName || !countyNorm) return;
 
-        const population2020 = Number(row?.population_2020 || 0);
-        const population2021 = Number(row?.population_2021 || 0);
-        const population2022 = Number(row?.population_2022 || 0);
-        const population2023 = Number(row?.population_2023 || 0);
-        const population2024 = Number(row?.population_2024 || 0);
-        const population2025 = Number(row?.population_2025 || 0);
-        const changePct2020To2025 = Number(row?.change_2020_2025_pct);
-        const changePct2024To2025 = Number(row?.change_2024_2025_pct);
+        const population2020 = Number(row?.population_2020 ?? row?.est_2020 ?? 0);
+        const population2021 = Number(row?.population_2021 ?? row?.est_2021 ?? 0);
+        const population2022 = Number(row?.population_2022 ?? row?.est_2022 ?? 0);
+        const population2023 = Number(row?.population_2023 ?? row?.est_2023 ?? 0);
+        const population2024 = Number(row?.population_2024 ?? row?.est_2024 ?? 0);
+        const population2025 = Number(row?.population_2025 ?? row?.est_2025 ?? 0);
+        const change2020To2025Raw = Number(row?.change_2020_2025 ?? row?.change_abs ?? (population2025 - population2020));
+        const change2024To2025Raw = Number(row?.change_2024_2025 ?? row?.yoy_abs ?? (population2025 - population2024));
+        const changePct2020To2025 = Number(row?.change_2020_2025_pct ?? row?.change_pct);
+        const changePct2024To2025 = Number(row?.change_2024_2025_pct ?? row?.yoy_pct);
         const changePct2023To2024 = population2023 > 0 && population2024 > 0
           ? ((population2024 - population2023) / population2023) * 100
           : NaN;
@@ -21660,8 +21662,8 @@ document.addEventListener('DOMContentLoaded', function() {
           monotoneUp,
           monotoneDown,
           volatile,
-          change2020To2025: Number(row?.change_2020_2025 || 0),
-          change2024To2025: Number(row?.change_2024_2025 || 0),
+          change2020To2025: Number.isFinite(change2020To2025Raw) ? change2020To2025Raw : 0,
+          change2024To2025: Number.isFinite(change2024To2025Raw) ? change2024To2025Raw : 0,
           changePct2020To2025: Number.isFinite(changePct2020To2025) ? changePct2020To2025 : NaN,
           changePct2024To2025: Number.isFinite(changePct2024To2025) ? changePct2024To2025 : NaN,
           changePct2023To2024: Number.isFinite(changePct2023To2024) ? changePct2023To2024 : NaN
@@ -26076,7 +26078,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ? 'Congressional District'
         : (scope === 'state_senate' ? 'State Senate' : 'State House');
       const districtTitle = scope === 'congressional'
-        ? `NC-${String(districtNum).padStart(2, '0')}`
+        ? `GA-${String(districtNum).padStart(2, '0')}`
         : `${districtLabel} ${districtNum}`;
       const winnerName = signedMarginPct > 0
         ? shortCandidateLabel(repCandidate, 'Republican')
@@ -27282,7 +27284,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } catch (_) {}
 
-  // County demographics (DP1-derived: VAP 18+ + total-pop race/ethnicity shares).
+  // County demographics (2020 Census total-pop race shares + VAP totals from the repo DRA aggregates).
   let demoHtml = '';
   try {
     const demo = countyDemographics?.counties?.[norm] || null;
@@ -27300,7 +27302,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { extraClass: 'sidebar-demo-race-row' }
       );
       demoHtml += `<p class="sidebar-breakdown"><b>VAP (18+):</b> ${escapeHtml(Number(demo.vap_18plus || 0).toLocaleString())}</p>`;
-      demoHtml += `<p class="sidebar-margin-details" style="margin-top:6px;">Race/ethnicity shown is total population (DP1), not VAP-by-race.</p>`;
+      demoHtml += `<p class="sidebar-margin-details" style="margin-top:6px;">Race/ethnicity shown is 2020 Census total population; the total above is VAP (18+).</p>`;
       if (demoRaceChips) demoHtml += demoRaceChips;
     }
   } catch (_) {}
@@ -31004,7 +31006,7 @@ document.addEventListener('DOMContentLoaded', function() {
         districtDescriptions = null;
       }
 
-      // Optional county demographics (DP1-derived) for sidebar/tooltips.
+      // Optional county demographics (2020 Census total-pop shares + repo VAP totals) for sidebar/tooltips.
       try {
         countyDemographics = await loadJSON(CONFIG.paths.county_demographics);
       } catch (err) {
@@ -33315,5 +33317,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
-
