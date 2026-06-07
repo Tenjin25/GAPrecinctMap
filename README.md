@@ -224,11 +224,20 @@ The app loads county population estimates from `Data/CO-EST2025-POP-13.csv`.
 
 This repo keeps that file in a normalized, analysis-friendly format:
 
-- Columns: `county, base_2020, est_2020..est_2025, change_abs, change_pct, yoy_abs, yoy_pct`
-- `change_pct` is computed from `est_2020` → `est_2025`
-- `yoy_pct` is computed from `est_2024` → `est_2025`
+- Columns: `county_name, county_norm, base_2020, population_2020..population_2025, change_2020_2025, change_2020_2025_pct, change_2024_2025, change_2024_2025_pct`
+- `change_2020_2025_pct` is computed from `population_2020` → `population_2025`
+- `change_2024_2025_pct` is computed from `population_2024` → `population_2025`
 
 Note: the in-app parser is resilient and can also read the original Census export shape (header rows + dotted county lines), but the cleaned format is preferred for maintenance.
+
+## County Demographics Source
+
+County demographic summaries in `Data/ga_county_demographics.json` are aggregated from the repository's DRA Georgia VTD tabblock dataset:
+
+- Race/ethnicity shares: `T_20_CENS` (2020 Census total population fields)
+- VAP totals: `V_20_VAP` (2020 voting-age population fields)
+
+This keeps the county demographic panel self-contained and consistent with the other DRA-backed demographic assets already used elsewhere in the project.
 - `scripts/`: data prep and transformation scripts.
 - `build_ga_election_data.py`: top-level statewide/county contest builder.
 - Utility scripts in root:
