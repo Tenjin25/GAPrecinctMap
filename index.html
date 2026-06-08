@@ -30457,9 +30457,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function pickDistrictCandidateName(row, party, fallbackCandidates, contestType, year) {
       const partyNorm = (party || '').toString().trim().toLowerCase();
       const isDem = partyNorm === 'd' || partyNorm === 'dem' || partyNorm === 'democrat' || partyNorm === 'democratic';
+      const ct = (contestType || '').toString().trim();
+      const contestScopedKeys = ct
+        ? (isDem
+          ? [`${ct}_dem_candidate`, `${ct}_dem_candidate_name`, `${ct}_dem_name`, `${ct}_candidate_dem`]
+          : [`${ct}_rep_candidate`, `${ct}_rep_candidate_name`, `${ct}_rep_name`, `${ct}_candidate_rep`, `${ct}_gop_candidate`])
+        : [];
       const keys = isDem
-        ? ['dem_candidate', 'dem_candidate_name', 'dem_name', 'candidate_dem', 'democrat', 'demCandidate', 'dem_candidate_full', 'dem_nominee', 'deminee']
-        : ['rep_candidate', 'rep_candidate_name', 'rep_name', 'candidate_rep', 'republican', 'repCandidate', 'rep_candidate_full', 'rep_nominee', 'gop_candidate'];
+        ? [...contestScopedKeys, 'dem_candidate', 'dem_candidate_name', 'dem_name', 'candidate_dem', 'democrat', 'demCandidate', 'dem_candidate_full', 'dem_nominee', 'deminee']
+        : [...contestScopedKeys, 'rep_candidate', 'rep_candidate_name', 'rep_name', 'candidate_rep', 'republican', 'repCandidate', 'rep_candidate_full', 'rep_nominee', 'gop_candidate'];
       for (const key of keys) {
         const raw = row?.[key];
         if (raw !== undefined && raw !== null && String(raw).trim()) {
@@ -30467,7 +30473,9 @@ document.addEventListener('DOMContentLoaded', function() {
           if (cleaned) return cleaned;
         }
       }
-      const fb = isDem ? fallbackCandidates?.dem : fallbackCandidates?.rep;
+      const fb = isDem
+        ? (fallbackCandidates?.dem ?? fallbackCandidates?.demCandidate ?? fallbackCandidates?.dem_candidate)
+        : (fallbackCandidates?.rep ?? fallbackCandidates?.repCandidate ?? fallbackCandidates?.rep_candidate);
       if (fb !== undefined && fb !== null && String(fb).trim()) {
         const cleaned = stripRunningMateName(String(fb).trim());
         if (cleaned) return cleaned;
@@ -30690,7 +30698,9 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && !districtRowHasCandidateNames(row)) {
+          if (row) {
+            // Always pass contest-level fallbacks; the renderer still prefers district-specific
+            // row fields first, including contest-scoped fields like president_dem_candidate.
             cand = await getContestCandidates(contestType, year);
           }
           if (el) el.innerHTML = renderDistrictElectionInfoHTML(contestType, year, row, cand);
@@ -30776,7 +30786,9 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && !districtRowHasCandidateNames(row)) {
+          if (row) {
+            // Always pass contest-level fallbacks; the renderer still prefers district-specific
+            // row fields first, including contest-scoped fields like president_dem_candidate.
             cand = await getContestCandidates(contestType, year);
           }
           if (el) el.innerHTML = renderDistrictElectionInfoHTML(contestType, year, row, cand);
