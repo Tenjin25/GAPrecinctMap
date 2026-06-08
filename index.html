@@ -30454,6 +30454,49 @@ document.addEventListener('DOMContentLoaded', function() {
       return results[keyA] || results[keyB] || null;
     }
 
+    function pickDistrictCandidateName(row, party, fallbackCandidates, contestType, year) {
+      const partyNorm = (party || '').toString().trim().toLowerCase();
+      const isDem = partyNorm === 'd' || partyNorm === 'dem' || partyNorm === 'democrat' || partyNorm === 'democratic';
+      const keys = isDem
+        ? ['dem_candidate', 'dem_candidate_name', 'dem_name', 'candidate_dem', 'democrat', 'demCandidate', 'dem_candidate_full', 'dem_nominee', 'deminee']
+        : ['rep_candidate', 'rep_candidate_name', 'rep_name', 'candidate_rep', 'republican', 'repCandidate', 'rep_candidate_full', 'rep_nominee', 'gop_candidate'];
+      for (const key of keys) {
+        const raw = row?.[key];
+        if (raw !== undefined && raw !== null && String(raw).trim()) {
+          const cleaned = stripRunningMateName(String(raw).trim());
+          if (cleaned) return cleaned;
+        }
+      }
+      const fb = isDem ? fallbackCandidates?.dem : fallbackCandidates?.rep;
+      if (fb !== undefined && fb !== null && String(fb).trim()) {
+        const cleaned = stripRunningMateName(String(fb).trim());
+        if (cleaned) return cleaned;
+      }
+      try {
+        const office = (typeof formatContestName === 'function') ? formatContestName(contestType, year) : '';
+        const catalog = (typeof getCandidateName === 'function')
+          ? getCandidateName(Number(year), office, isDem ? 'Democrat' : 'Republican')
+          : '';
+        if (catalog && String(catalog).trim()) return stripRunningMateName(String(catalog).trim());
+      } catch (_) {}
+      try {
+        const meta = { contestType, year, office: (typeof formatContestName === 'function' ? formatContestName(contestType, year) : '') };
+        const last = (typeof getCandidateLastName === 'function')
+          ? getCandidateLastName(row, isDem ? 'Democrat' : 'Republican', meta)
+          : '';
+        if (last && !/^(D|R|Democrat|Republican|Democratic)$/i.test(String(last).trim())) return String(last).trim();
+      } catch (_) {}
+      return isDem ? 'D' : 'R';
+    }
+
+    function districtRowHasCandidateNames(row) {
+      if (!row) return false;
+      return !!(
+        pickDistrictCandidateName(row, 'dem', null, '', '') !== 'D' &&
+        pickDistrictCandidateName(row, 'rep', null, '', '') !== 'R'
+      );
+    }
+
     function renderDistrictElectionInfoHTML(contestType, year, row, fallbackCandidates) {
       if (!row) return '<div style="color:#999;">No results for this district/contest.</div>';
       const demVotes = Number(row.dem_votes || 0);
@@ -30462,12 +30505,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const totalVotes = Number(row.total_votes || (demVotes + repVotes + otherVotes));
       if (totalVotes <= 0) return '<div style="color:#999;">No results for this district/contest.</div>';
 
-      let demCandidate = stripRunningMateName((row.dem_candidate || '').toString().trim());
-      let repCandidate = stripRunningMateName((row.rep_candidate || '').toString().trim());
-      if (!demCandidate) demCandidate = stripRunningMateName((fallbackCandidates?.dem || '').toString().trim());
-      if (!repCandidate) repCandidate = stripRunningMateName((fallbackCandidates?.rep || '').toString().trim());
-      if (!demCandidate) demCandidate = 'D';
-      if (!repCandidate) repCandidate = 'R';
+      const demCandidate = pickDistrictCandidateName(row, 'dem', fallbackCandidates, contestType, year);
+      const repCandidate = pickDistrictCandidateName(row, 'rep', fallbackCandidates, contestType, year);
 
       const demPct = (demVotes / totalVotes) * 100.0;
       const repPct = (repVotes / totalVotes) * 100.0;
@@ -30651,10 +30690,8 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && contestType !== 'us_house') {
-            const demBlank = !((row.dem_candidate || '').toString().trim());
-            const repBlank = !((row.rep_candidate || '').toString().trim());
-            if (demBlank || repBlank) cand = await getContestCandidates(contestType, year);
+          if (row && !districtRowHasCandidateNames(row)) {
+            cand = await getContestCandidates(contestType, year);
           }
           if (el) el.innerHTML = renderDistrictElectionInfoHTML(contestType, year, row, cand);
         } catch (err) {
@@ -30739,10 +30776,8 @@ document.addEventListener('DOMContentLoaded', function() {
           if (reqId !== districtSidebarRequestId) return;
           const el = document.getElementById('district-election');
           let cand = null;
-          if (row && contestType !== 'us_house') {
-            const demBlank = !((row.dem_candidate || '').toString().trim());
-            const repBlank = !((row.rep_candidate || '').toString().trim());
-            if (demBlank || repBlank) cand = await getContestCandidates(contestType, year);
+          if (row && !districtRowHasCandidateNames(row)) {
+            cand = await getContestCandidates(contestType, year);
           }
           if (el) el.innerHTML = renderDistrictElectionInfoHTML(contestType, year, row, cand);
         } catch (err) {
