@@ -1,0 +1,2657 @@
+{
+  "prod_dir": "Data\\district_contests",
+  "dra_dir": "Data\\district_contests_dra",
+  "counts": {
+    "prod_manifest_files": 120,
+    "dra_manifest_files": 120,
+    "common_files": 120,
+    "equal_total_files": 1,
+    "changed_total_files": 119,
+    "only_in_prod": 0,
+    "only_in_dra": 0
+  },
+  "only_in_prod": [],
+  "only_in_dra": [],
+  "per_file": [
+    {
+      "file": "congressional_agriculture_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2112068,
+        "total": 2112068
+      },
+      "dra_totals": {
+        "dem": 932161,
+        "rep": 1260152,
+        "other": 0,
+        "total": 2192312
+      },
+      "delta_dra_minus_prod": {
+        "dem": 932161,
+        "rep": 1260152,
+        "other": -2112068,
+        "total": 80244
+      }
+    },
+    {
+      "file": "congressional_agriculture_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1605343,
+        "rep": 0,
+        "other": 1777233,
+        "total": 3382576
+      },
+      "dra_totals": {
+        "dem": 1605342,
+        "rep": 0,
+        "other": 1777234,
+        "total": 3382577
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 0,
+        "other": 1,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_agriculture_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1331427,
+        "rep": 1612561,
+        "other": 66067,
+        "total": 3010053
+      },
+      "dra_totals": {
+        "dem": 1331427,
+        "rep": 1612560,
+        "other": 66067,
+        "total": 3010053
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": -1,
+        "other": 0,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_attorney_general_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124979,
+        "total": 2124979
+      },
+      "dra_totals": {
+        "dem": 967656,
+        "rep": 1234290,
+        "other": 3852,
+        "total": 2205801
+      },
+      "delta_dra_minus_prod": {
+        "dem": 967656,
+        "rep": 1234290,
+        "other": -2121127,
+        "total": 80822
+      }
+    },
+    {
+      "file": "congressional_attorney_general_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1672732,
+        "rep": 0,
+        "other": 1726209,
+        "total": 3398941
+      },
+      "dra_totals": {
+        "dem": 1672730,
+        "rep": 0,
+        "other": 1726210,
+        "total": 3398942
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 0,
+        "other": 1,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_attorney_general_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1389387,
+        "rep": 1583944,
+        "other": 46524,
+        "total": 3019857
+      },
+      "dra_totals": {
+        "dem": 1389388,
+        "rep": 1583942,
+        "other": 46523,
+        "total": 3019856
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -2,
+        "other": -1,
+        "total": -1
+      }
+    },
+    {
+      "file": "congressional_district_attorney_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1571319,
+        "rep": 1467703,
+        "other": 56274,
+        "total": 3095298
+      },
+      "dra_totals": {
+        "dem": 1677554,
+        "rep": 1535513,
+        "other": 64107,
+        "total": 3277174
+      },
+      "delta_dra_minus_prod": {
+        "dem": 106235,
+        "rep": 67810,
+        "other": 7833,
+        "total": 181876
+      }
+    },
+    {
+      "file": "congressional_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2147203,
+        "total": 2147203
+      },
+      "dra_totals": {
+        "dem": 1018290,
+        "rep": 1153229,
+        "other": 57646,
+        "total": 2229168
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1018290,
+        "rep": 1153229,
+        "other": -2089557,
+        "total": 81965
+      }
+    },
+    {
+      "file": "congressional_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1711092,
+        "rep": 1722542,
+        "other": 32531,
+        "total": 3466165
+      },
+      "dra_totals": {
+        "dem": 1711091,
+        "rep": 1722543,
+        "other": 32532,
+        "total": 3466166
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 1,
+        "other": 1,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1378361,
+        "rep": 1646187,
+        "other": 21781,
+        "total": 3046329
+      },
+      "dra_totals": {
+        "dem": 1378360,
+        "rep": 1646188,
+        "other": 21781,
+        "total": 3046328
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 1,
+        "other": 0,
+        "total": -1
+      }
+    },
+    {
+      "file": "congressional_insurance_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2121037,
+        "total": 2121037
+      },
+      "dra_totals": {
+        "dem": 935507,
+        "rep": 1190759,
+        "other": 75468,
+        "total": 2201737
+      },
+      "delta_dra_minus_prod": {
+        "dem": 935507,
+        "rep": 1190759,
+        "other": -2045569,
+        "total": 80700
+      }
+    },
+    {
+      "file": "congressional_insurance_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1615163,
+        "rep": 1693254,
+        "other": 89675,
+        "total": 3398090
+      },
+      "dra_totals": {
+        "dem": 1615162,
+        "rep": 1693254,
+        "other": 89676,
+        "total": 3398092
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 0,
+        "other": 1,
+        "total": 2
+      }
+    },
+    {
+      "file": "congressional_insurance_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360216,
+        "rep": 1641737,
+        "other": 0,
+        "total": 3001953
+      },
+      "dra_totals": {
+        "dem": 1360217,
+        "rep": 1641740,
+        "other": 0,
+        "total": 3001955
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 3,
+        "other": 0,
+        "total": 2
+      }
+    },
+    {
+      "file": "congressional_labor_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2110523,
+        "total": 2110523
+      },
+      "dra_totals": {
+        "dem": 961090,
+        "rep": 1228503,
+        "other": 1075,
+        "total": 2190669
+      },
+      "delta_dra_minus_prod": {
+        "dem": 961090,
+        "rep": 1228503,
+        "other": -2109448,
+        "total": 80146
+      }
+    },
+    {
+      "file": "congressional_labor_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1628320,
+        "rep": 0,
+        "other": 1759120,
+        "total": 3387441
+      },
+      "dra_totals": {
+        "dem": 1628319,
+        "rep": 0,
+        "other": 1759119,
+        "total": 3387440
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 0,
+        "other": -1,
+        "total": -1
+      }
+    },
+    {
+      "file": "congressional_labor_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1343650,
+        "rep": 1582560,
+        "other": 77794,
+        "total": 3004005
+      },
+      "dra_totals": {
+        "dem": 1343650,
+        "rep": 1582560,
+        "other": 77796,
+        "total": 3004006
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_lieutenant_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2128764,
+        "total": 2128764
+      },
+      "dra_totals": {
+        "dem": 946406,
+        "rep": 1263551,
+        "other": 0,
+        "total": 2209955
+      },
+      "delta_dra_minus_prod": {
+        "dem": 946406,
+        "rep": 1263551,
+        "other": -2128764,
+        "total": 81191
+      }
+    },
+    {
+      "file": "congressional_lieutenant_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1626539,
+        "rep": 1700166,
+        "other": 0,
+        "total": 3326704
+      },
+      "dra_totals": {
+        "dem": 1626539,
+        "rep": 1700165,
+        "other": 0,
+        "total": 3326703
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": -1,
+        "other": 0,
+        "total": -1
+      }
+    },
+    {
+      "file": "congressional_lieutenant_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1381041,
+        "rep": 1566270,
+        "other": 65981,
+        "total": 3013293
+      },
+      "dra_totals": {
+        "dem": 1381039,
+        "rep": 1566272,
+        "other": 65982,
+        "total": 3013293
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 2,
+        "other": 1,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_president_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2053393,
+        "rep": 2071519,
+        "other": 51597,
+        "total": 4176510
+      },
+      "dra_totals": {
+        "dem": 2053394,
+        "rep": 2071519,
+        "other": 51596,
+        "total": 4176510
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 0,
+        "other": -1,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_president_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1937997,
+        "rep": 2047997,
+        "other": 30119,
+        "total": 4016112
+      },
+      "dra_totals": {
+        "dem": 2084872,
+        "rep": 2153060,
+        "other": 32205,
+        "total": 4270133
+      },
+      "delta_dra_minus_prod": {
+        "dem": 146875,
+        "rep": 105063,
+        "other": 2086,
+        "total": 254021
+      }
+    },
+    {
+      "file": "congressional_public_service_commission_1_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1898838,
+        "total": 1898838
+      },
+      "dra_totals": {
+        "dem": 42168,
+        "rep": 1316129,
+        "other": 610619,
+        "total": 1968915
+      },
+      "delta_dra_minus_prod": {
+        "dem": 42168,
+        "rep": 1316129,
+        "other": -1288219,
+        "total": 70077
+      }
+    },
+    {
+      "file": "congressional_public_service_commission_1_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1873047,
+        "rep": 2056033,
+        "other": 148844,
+        "total": 4077922
+      },
+      "dra_totals": {
+        "dem": 1873045,
+        "rep": 2056035,
+        "other": 148844,
+        "total": 4077923
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 2,
+        "other": 0,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_public_service_commission_4_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2102879,
+        "total": 2102879
+      },
+      "dra_totals": {
+        "dem": 891625,
+        "rep": 1162750,
+        "other": 128521,
+        "total": 2182894
+      },
+      "delta_dra_minus_prod": {
+        "dem": 891625,
+        "rep": 1162750,
+        "other": -1974358,
+        "total": 80015
+      }
+    },
+    {
+      "file": "congressional_public_service_commission_4_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1887781,
+        "rep": 2031193,
+        "other": 125735,
+        "total": 4044710
+      },
+      "dra_totals": {
+        "dem": 1887779,
+        "rep": 2031195,
+        "other": 125733,
+        "total": 4044710
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 2,
+        "other": -2,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_secretary_of_state_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2127557,
+        "total": 2127557
+      },
+      "dra_totals": {
+        "dem": 876230,
+        "rep": 1326342,
+        "other": 6072,
+        "total": 2208645
+      },
+      "delta_dra_minus_prod": {
+        "dem": 876230,
+        "rep": 1326342,
+        "other": -2121485,
+        "total": 81088
+      }
+    },
+    {
+      "file": "congressional_secretary_of_state_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1678521,
+        "rep": 1662496,
+        "other": 76202,
+        "total": 3417220
+      },
+      "dra_totals": {
+        "dem": 1678522,
+        "rep": 1662497,
+        "other": 76200,
+        "total": 3417218
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 1,
+        "other": -2,
+        "total": -2
+      }
+    },
+    {
+      "file": "congressional_secretary_of_state_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1308750,
+        "rep": 1619107,
+        "other": 84891,
+        "total": 3012748
+      },
+      "dra_totals": {
+        "dem": 1308749,
+        "rep": 1619109,
+        "other": 84894,
+        "total": 3012749
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 2,
+        "other": 3,
+        "total": 1
+      }
+    },
+    {
+      "file": "congressional_superintendent_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124471,
+        "total": 2124471
+      },
+      "dra_totals": {
+        "dem": 924523,
+        "rep": 1270207,
+        "other": 10634,
+        "total": 2205367
+      },
+      "delta_dra_minus_prod": {
+        "dem": 924523,
+        "rep": 1270207,
+        "other": -2113837,
+        "total": 80896
+      }
+    },
+    {
+      "file": "congressional_superintendent_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1614065,
+        "rep": 0,
+        "other": 1784856,
+        "total": 3398921
+      },
+      "dra_totals": {
+        "dem": 1614068,
+        "rep": 0,
+        "other": 1784854,
+        "total": 3398921
+      },
+      "delta_dra_minus_prod": {
+        "dem": 3,
+        "rep": 0,
+        "other": -2,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_superintendent_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360619,
+        "rep": 1648134,
+        "other": 0,
+        "total": 3008752
+      },
+      "dra_totals": {
+        "dem": 1360621,
+        "rep": 1648134,
+        "other": 0,
+        "total": 3008754
+      },
+      "delta_dra_minus_prod": {
+        "dem": 2,
+        "rep": 0,
+        "other": 0,
+        "total": 2
+      }
+    },
+    {
+      "file": "congressional_us_house_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1935331,
+        "total": 1935331
+      },
+      "dra_totals": {
+        "dem": 863525,
+        "rep": 1149660,
+        "other": 0,
+        "total": 2013185
+      },
+      "delta_dra_minus_prod": {
+        "dem": 863525,
+        "rep": 1149660,
+        "other": -1935331,
+        "total": 77854
+      }
+    },
+    {
+      "file": "congressional_us_house_2016.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 53276,
+        "rep": 20667,
+        "other": 3179661,
+        "total": 3253604
+      },
+      "dra_totals": {
+        "dem": 53275,
+        "rep": 20667,
+        "other": 3179661,
+        "total": 3253603
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 0,
+        "other": 0,
+        "total": -1
+      }
+    },
+    {
+      "file": "congressional_us_house_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 795924,
+        "rep": 204693,
+        "other": 2342145,
+        "total": 3342763
+      },
+      "dra_totals": {
+        "dem": 795923,
+        "rep": 204692,
+        "other": 2342144,
+        "total": 3342763
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -1,
+        "other": -1,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_us_house_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1986093,
+        "rep": 2094495,
+        "other": 0,
+        "total": 4080589
+      },
+      "dra_totals": {
+        "dem": 1986094,
+        "rep": 2094494,
+        "other": 0,
+        "total": 4080589
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -1,
+        "other": 0,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_us_house_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1846205,
+        "rep": 2081606,
+        "other": 0,
+        "total": 3927812
+      },
+      "dra_totals": {
+        "dem": 1989229,
+        "rep": 2187405,
+        "other": 0,
+        "total": 4176633
+      },
+      "delta_dra_minus_prod": {
+        "dem": 143024,
+        "rep": 105799,
+        "other": 0,
+        "total": 248821
+      }
+    },
+    {
+      "file": "congressional_us_senate_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2161781,
+        "total": 2161781
+      },
+      "dra_totals": {
+        "dem": 1032813,
+        "rep": 1169267,
+        "other": 42271,
+        "total": 2244351
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1032813,
+        "rep": 1169267,
+        "other": -2119510,
+        "total": 82570
+      }
+    },
+    {
+      "file": "congressional_us_senate_2016.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325302,
+        "total": 3326341
+      },
+      "dra_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325304,
+        "total": 3326343
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2,
+        "total": 2
+      }
+    },
+    {
+      "file": "congressional_us_senate_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1970159,
+        "rep": 2071721,
+        "other": 96505,
+        "total": 4138384
+      },
+      "dra_totals": {
+        "dem": 1970159,
+        "rep": 2071723,
+        "other": 96504,
+        "total": 4138384
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 2,
+        "other": -1,
+        "total": 0
+      }
+    },
+    {
+      "file": "congressional_us_senate_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2864089,
+        "rep": 2832859,
+        "other": 63737,
+        "total": 5760684
+      },
+      "dra_totals": {
+        "dem": 2864089,
+        "rep": 2832857,
+        "other": 63735,
+        "total": 5760686
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": -2,
+        "other": -2,
+        "total": 2
+      }
+    },
+    {
+      "file": "congressional_us_senate_special_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1973828,
+        "rep": 2040843,
+        "other": 91443,
+        "total": 4106114
+      },
+      "dra_totals": {
+        "dem": 1973830,
+        "rep": 2040842,
+        "other": 91443,
+        "total": 4106112
+      },
+      "delta_dra_minus_prod": {
+        "dem": 2,
+        "rep": -1,
+        "other": 0,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2112062,
+        "total": 2112062
+      },
+      "dra_totals": {
+        "dem": 932162,
+        "rep": 1260152,
+        "other": 0,
+        "total": 2192316
+      },
+      "delta_dra_minus_prod": {
+        "dem": 932162,
+        "rep": 1260152,
+        "other": -2112062,
+        "total": 80254
+      }
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1605339,
+        "rep": 0,
+        "other": 1777235,
+        "total": 3382579
+      },
+      "dra_totals": {
+        "dem": 1605339,
+        "rep": 0,
+        "other": 1777231,
+        "total": 3382569
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": -4,
+        "total": -10
+      }
+    },
+    {
+      "file": "state_house_agriculture_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1331422,
+        "rep": 1612558,
+        "other": 66064,
+        "total": 3010054
+      },
+      "dra_totals": {
+        "dem": 1331426,
+        "rep": 1612555,
+        "other": 66066,
+        "total": 3010060
+      },
+      "delta_dra_minus_prod": {
+        "dem": 4,
+        "rep": -3,
+        "other": 2,
+        "total": 6
+      }
+    },
+    {
+      "file": "state_house_attorney_general_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124982,
+        "total": 2124982
+      },
+      "dra_totals": {
+        "dem": 967656,
+        "rep": 1234295,
+        "other": 3852,
+        "total": 2205794
+      },
+      "delta_dra_minus_prod": {
+        "dem": 967656,
+        "rep": 1234295,
+        "other": -2121130,
+        "total": 80812
+      }
+    },
+    {
+      "file": "state_house_attorney_general_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1672734,
+        "rep": 0,
+        "other": 1726214,
+        "total": 3398944
+      },
+      "dra_totals": {
+        "dem": 1672738,
+        "rep": 0,
+        "other": 1726207,
+        "total": 3398944
+      },
+      "delta_dra_minus_prod": {
+        "dem": 4,
+        "rep": 0,
+        "other": -7,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_house_attorney_general_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1389384,
+        "rep": 1583940,
+        "other": 46527,
+        "total": 3019856
+      },
+      "dra_totals": {
+        "dem": 1389395,
+        "rep": 1583944,
+        "other": 46527,
+        "total": 3019855
+      },
+      "delta_dra_minus_prod": {
+        "dem": 11,
+        "rep": 4,
+        "other": 0,
+        "total": -1
+      }
+    },
+    {
+      "file": "state_house_district_attorney_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1571321,
+        "rep": 1467704,
+        "other": 56274,
+        "total": 3095299
+      },
+      "dra_totals": {
+        "dem": 1677555,
+        "rep": 1535512,
+        "other": 64106,
+        "total": 3277178
+      },
+      "delta_dra_minus_prod": {
+        "dem": 106234,
+        "rep": 67808,
+        "other": 7832,
+        "total": 181879
+      }
+    },
+    {
+      "file": "state_house_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2147203,
+        "total": 2147203
+      },
+      "dra_totals": {
+        "dem": 1018288,
+        "rep": 1153229,
+        "other": 57646,
+        "total": 2229165
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1018288,
+        "rep": 1153229,
+        "other": -2089557,
+        "total": 81962
+      }
+    },
+    {
+      "file": "state_house_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1711087,
+        "rep": 1722545,
+        "other": 32532,
+        "total": 3466168
+      },
+      "dra_totals": {
+        "dem": 1711093,
+        "rep": 1722543,
+        "other": 32530,
+        "total": 3466171
+      },
+      "delta_dra_minus_prod": {
+        "dem": 6,
+        "rep": -2,
+        "other": -2,
+        "total": 3
+      }
+    },
+    {
+      "file": "state_house_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1378364,
+        "rep": 1646181,
+        "other": 21784,
+        "total": 3046332
+      },
+      "dra_totals": {
+        "dem": 1378360,
+        "rep": 1646187,
+        "other": 21782,
+        "total": 3046327
+      },
+      "delta_dra_minus_prod": {
+        "dem": -4,
+        "rep": 6,
+        "other": -2,
+        "total": -5
+      }
+    },
+    {
+      "file": "state_house_insurance_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2121036,
+        "total": 2121036
+      },
+      "dra_totals": {
+        "dem": 935509,
+        "rep": 1190759,
+        "other": 75466,
+        "total": 2201736
+      },
+      "delta_dra_minus_prod": {
+        "dem": 935509,
+        "rep": 1190759,
+        "other": -2045570,
+        "total": 80700
+      }
+    },
+    {
+      "file": "state_house_insurance_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1615161,
+        "rep": 1693254,
+        "other": 89679,
+        "total": 3398095
+      },
+      "dra_totals": {
+        "dem": 1615159,
+        "rep": 1693252,
+        "other": 89678,
+        "total": 3398096
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": -2,
+        "other": -1,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_house_insurance_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360212,
+        "rep": 1641738,
+        "other": 0,
+        "total": 3001956
+      },
+      "dra_totals": {
+        "dem": 1360210,
+        "rep": 1641737,
+        "other": 0,
+        "total": 3001957
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": -1,
+        "other": 0,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_house_labor_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2110522,
+        "total": 2110522
+      },
+      "dra_totals": {
+        "dem": 961091,
+        "rep": 1228508,
+        "other": 1075,
+        "total": 2190672
+      },
+      "delta_dra_minus_prod": {
+        "dem": 961091,
+        "rep": 1228508,
+        "other": -2109447,
+        "total": 80150
+      }
+    },
+    {
+      "file": "state_house_labor_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1628323,
+        "rep": 0,
+        "other": 1759118,
+        "total": 3387439
+      },
+      "dra_totals": {
+        "dem": 1628317,
+        "rep": 0,
+        "other": 1759115,
+        "total": 3387436
+      },
+      "delta_dra_minus_prod": {
+        "dem": -6,
+        "rep": 0,
+        "other": -3,
+        "total": -3
+      }
+    },
+    {
+      "file": "state_house_labor_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1343649,
+        "rep": 1582556,
+        "other": 77794,
+        "total": 3004003
+      },
+      "dra_totals": {
+        "dem": 1343649,
+        "rep": 1582561,
+        "other": 77796,
+        "total": 3004009
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 5,
+        "other": 2,
+        "total": 6
+      }
+    },
+    {
+      "file": "state_house_lieutenant_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2128761,
+        "total": 2128761
+      },
+      "dra_totals": {
+        "dem": 946404,
+        "rep": 1263556,
+        "other": 0,
+        "total": 2209955
+      },
+      "delta_dra_minus_prod": {
+        "dem": 946404,
+        "rep": 1263556,
+        "other": -2128761,
+        "total": 81194
+      }
+    },
+    {
+      "file": "state_house_lieutenant_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1626544,
+        "rep": 1700161,
+        "other": 0,
+        "total": 3326708
+      },
+      "dra_totals": {
+        "dem": 1626541,
+        "rep": 1700169,
+        "other": 0,
+        "total": 3326705
+      },
+      "delta_dra_minus_prod": {
+        "dem": -3,
+        "rep": 8,
+        "other": 0,
+        "total": -3
+      }
+    },
+    {
+      "file": "state_house_lieutenant_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1381042,
+        "rep": 1566272,
+        "other": 65984,
+        "total": 3013288
+      },
+      "dra_totals": {
+        "dem": 1381041,
+        "rep": 1566270,
+        "other": 65978,
+        "total": 3013298
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -2,
+        "other": -6,
+        "total": 10
+      }
+    },
+    {
+      "file": "state_house_president_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2053398,
+        "rep": 2071523,
+        "other": 51592,
+        "total": 4176503
+      },
+      "dra_totals": {
+        "dem": 2053389,
+        "rep": 2071520,
+        "other": 51597,
+        "total": 4176510
+      },
+      "delta_dra_minus_prod": {
+        "dem": -9,
+        "rep": -3,
+        "other": 5,
+        "total": 7
+      }
+    },
+    {
+      "file": "state_house_president_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1937997,
+        "rep": 2047998,
+        "other": 30116,
+        "total": 4016112
+      },
+      "dra_totals": {
+        "dem": 2084870,
+        "rep": 2153065,
+        "other": 32204,
+        "total": 4270128
+      },
+      "delta_dra_minus_prod": {
+        "dem": 146873,
+        "rep": 105067,
+        "other": 2088,
+        "total": 254016
+      }
+    },
+    {
+      "file": "state_house_public_service_commission_1_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1898829,
+        "total": 1898829
+      },
+      "dra_totals": {
+        "dem": 42168,
+        "rep": 1316126,
+        "other": 610615,
+        "total": 1968915
+      },
+      "delta_dra_minus_prod": {
+        "dem": 42168,
+        "rep": 1316126,
+        "other": -1288214,
+        "total": 70086
+      }
+    },
+    {
+      "file": "state_house_public_service_commission_1_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1873047,
+        "rep": 2056034,
+        "other": 148845,
+        "total": 4077920
+      },
+      "dra_totals": {
+        "dem": 1873046,
+        "rep": 2056033,
+        "other": 148838,
+        "total": 4077922
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -1,
+        "other": -7,
+        "total": 2
+      }
+    },
+    {
+      "file": "state_house_public_service_commission_4_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2102882,
+        "total": 2102882
+      },
+      "dra_totals": {
+        "dem": 891623,
+        "rep": 1162752,
+        "other": 128528,
+        "total": 2182896
+      },
+      "delta_dra_minus_prod": {
+        "dem": 891623,
+        "rep": 1162752,
+        "other": -1974354,
+        "total": 80014
+      }
+    },
+    {
+      "file": "state_house_public_service_commission_4_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1887776,
+        "rep": 2031199,
+        "other": 125732,
+        "total": 4044709
+      },
+      "dra_totals": {
+        "dem": 1887779,
+        "rep": 2031197,
+        "other": 125732,
+        "total": 4044712
+      },
+      "delta_dra_minus_prod": {
+        "dem": 3,
+        "rep": -2,
+        "other": 0,
+        "total": 3
+      }
+    },
+    {
+      "file": "state_house_secretary_of_state_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2127560,
+        "total": 2127560
+      },
+      "dra_totals": {
+        "dem": 876227,
+        "rep": 1326352,
+        "other": 6073,
+        "total": 2208647
+      },
+      "delta_dra_minus_prod": {
+        "dem": 876227,
+        "rep": 1326352,
+        "other": -2121487,
+        "total": 81087
+      }
+    },
+    {
+      "file": "state_house_secretary_of_state_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1678522,
+        "rep": 1662496,
+        "other": 76197,
+        "total": 3417217
+      },
+      "dra_totals": {
+        "dem": 1678523,
+        "rep": 1662490,
+        "other": 76198,
+        "total": 3417225
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -6,
+        "other": 1,
+        "total": 8
+      }
+    },
+    {
+      "file": "state_house_secretary_of_state_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1308747,
+        "rep": 1619104,
+        "other": 84891,
+        "total": 3012742
+      },
+      "dra_totals": {
+        "dem": 1308747,
+        "rep": 1619104,
+        "other": 84890,
+        "total": 3012756
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": -1,
+        "total": 14
+      }
+    },
+    {
+      "file": "state_house_state_house_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1849057,
+        "total": 1849057
+      },
+      "dra_totals": {
+        "dem": 705050,
+        "rep": 1204184,
+        "other": 10114,
+        "total": 1919350
+      },
+      "delta_dra_minus_prod": {
+        "dem": 705050,
+        "rep": 1204184,
+        "other": -1838943,
+        "total": 70293
+      }
+    },
+    {
+      "file": "state_house_state_house_2016.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 259872,
+        "rep": 163977,
+        "other": 2586188,
+        "total": 3010040
+      },
+      "dra_totals": {
+        "dem": 259875,
+        "rep": 163974,
+        "other": 2586198,
+        "total": 3010040
+      },
+      "delta_dra_minus_prod": {
+        "dem": 3,
+        "rep": -3,
+        "other": 10,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_house_state_house_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 525487,
+        "rep": 346282,
+        "other": 2219017,
+        "total": 3090782
+      },
+      "dra_totals": {
+        "dem": 525480,
+        "rep": 346279,
+        "other": 2219020,
+        "total": 3090782
+      },
+      "delta_dra_minus_prod": {
+        "dem": -7,
+        "rep": -3,
+        "other": 3,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_house_state_house_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1838357,
+        "rep": 1983717,
+        "other": 879,
+        "total": 3822955
+      },
+      "dra_totals": {
+        "dem": 1838354,
+        "rep": 1983708,
+        "other": 878,
+        "total": 3822956
+      },
+      "delta_dra_minus_prod": {
+        "dem": -3,
+        "rep": -9,
+        "other": -1,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_house_state_house_2024.json",
+      "same_totals": true,
+      "prod_totals": {
+        "dem": 2154876,
+        "rep": 2633691,
+        "other": 0,
+        "total": 4788567
+      },
+      "dra_totals": {
+        "dem": 2154876,
+        "rep": 2633691,
+        "other": 0,
+        "total": 4788567
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": 0,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_house_superintendent_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124463,
+        "total": 2124463
+      },
+      "dra_totals": {
+        "dem": 924523,
+        "rep": 1270209,
+        "other": 10634,
+        "total": 2205365
+      },
+      "delta_dra_minus_prod": {
+        "dem": 924523,
+        "rep": 1270209,
+        "other": -2113829,
+        "total": 80902
+      }
+    },
+    {
+      "file": "state_house_superintendent_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1614068,
+        "rep": 0,
+        "other": 1784854,
+        "total": 3398916
+      },
+      "dra_totals": {
+        "dem": 1614068,
+        "rep": 0,
+        "other": 1784853,
+        "total": 3398919
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": -1,
+        "total": 3
+      }
+    },
+    {
+      "file": "state_house_superintendent_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360620,
+        "rep": 1648132,
+        "other": 0,
+        "total": 3008754
+      },
+      "dra_totals": {
+        "dem": 1360621,
+        "rep": 1648129,
+        "other": 0,
+        "total": 3008760
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -3,
+        "other": 0,
+        "total": 6
+      }
+    },
+    {
+      "file": "state_house_us_senate_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2161781,
+        "total": 2161781
+      },
+      "dra_totals": {
+        "dem": 1032817,
+        "rep": 1169265,
+        "other": 42280,
+        "total": 2244347
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1032817,
+        "rep": 1169265,
+        "other": -2119501,
+        "total": 82566
+      }
+    },
+    {
+      "file": "state_house_us_senate_2016.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325301,
+        "total": 3326340
+      },
+      "dra_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325302,
+        "total": 3326341
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_house_us_senate_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1970158,
+        "rep": 2071728,
+        "other": 96506,
+        "total": 4138385
+      },
+      "dra_totals": {
+        "dem": 1970157,
+        "rep": 2071722,
+        "other": 96504,
+        "total": 4138384
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -6,
+        "other": -2,
+        "total": -1
+      }
+    },
+    {
+      "file": "state_house_us_senate_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2864090,
+        "rep": 2832861,
+        "other": 63732,
+        "total": 5760687
+      },
+      "dra_totals": {
+        "dem": 2864092,
+        "rep": 2832863,
+        "other": 63730,
+        "total": 5760688
+      },
+      "delta_dra_minus_prod": {
+        "dem": 2,
+        "rep": 2,
+        "other": -2,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_house_us_senate_special_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1973827,
+        "rep": 2040842,
+        "other": 91434,
+        "total": 4106109
+      },
+      "dra_totals": {
+        "dem": 1973831,
+        "rep": 2040843,
+        "other": 91438,
+        "total": 4106115
+      },
+      "delta_dra_minus_prod": {
+        "dem": 4,
+        "rep": 1,
+        "other": 4,
+        "total": 6
+      }
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2112065,
+        "total": 2112065
+      },
+      "dra_totals": {
+        "dem": 932162,
+        "rep": 1260157,
+        "other": 0,
+        "total": 2192310
+      },
+      "delta_dra_minus_prod": {
+        "dem": 932162,
+        "rep": 1260157,
+        "other": -2112065,
+        "total": 80245
+      }
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1605341,
+        "rep": 0,
+        "other": 1777233,
+        "total": 3382574
+      },
+      "dra_totals": {
+        "dem": 1605345,
+        "rep": 0,
+        "other": 1777234,
+        "total": 3382576
+      },
+      "delta_dra_minus_prod": {
+        "dem": 4,
+        "rep": 0,
+        "other": 1,
+        "total": 2
+      }
+    },
+    {
+      "file": "state_senate_agriculture_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1331429,
+        "rep": 1612557,
+        "other": 66064,
+        "total": 3010052
+      },
+      "dra_totals": {
+        "dem": 1331425,
+        "rep": 1612559,
+        "other": 66065,
+        "total": 3010050
+      },
+      "delta_dra_minus_prod": {
+        "dem": -4,
+        "rep": 2,
+        "other": 1,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_attorney_general_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124978,
+        "total": 2124978
+      },
+      "dra_totals": {
+        "dem": 967657,
+        "rep": 1234293,
+        "other": 3852,
+        "total": 2205797
+      },
+      "delta_dra_minus_prod": {
+        "dem": 967657,
+        "rep": 1234293,
+        "other": -2121126,
+        "total": 80819
+      }
+    },
+    {
+      "file": "state_senate_attorney_general_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1672732,
+        "rep": 0,
+        "other": 1726208,
+        "total": 3398942
+      },
+      "dra_totals": {
+        "dem": 1672732,
+        "rep": 0,
+        "other": 1726212,
+        "total": 3398939
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": 4,
+        "total": -3
+      }
+    },
+    {
+      "file": "state_senate_attorney_general_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1389387,
+        "rep": 1583945,
+        "other": 46524,
+        "total": 3019857
+      },
+      "dra_totals": {
+        "dem": 1389388,
+        "rep": 1583944,
+        "other": 46523,
+        "total": 3019856
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -1,
+        "other": -1,
+        "total": -1
+      }
+    },
+    {
+      "file": "state_senate_district_attorney_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1571319,
+        "rep": 1467703,
+        "other": 56274,
+        "total": 3095297
+      },
+      "dra_totals": {
+        "dem": 1677553,
+        "rep": 1535514,
+        "other": 64107,
+        "total": 3277173
+      },
+      "delta_dra_minus_prod": {
+        "dem": 106234,
+        "rep": 67811,
+        "other": 7833,
+        "total": 181876
+      }
+    },
+    {
+      "file": "state_senate_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2147202,
+        "total": 2147202
+      },
+      "dra_totals": {
+        "dem": 1018292,
+        "rep": 1153234,
+        "other": 57647,
+        "total": 2229164
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1018292,
+        "rep": 1153234,
+        "other": -2089555,
+        "total": 81962
+      }
+    },
+    {
+      "file": "state_senate_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1711090,
+        "rep": 1722541,
+        "other": 32532,
+        "total": 3466164
+      },
+      "dra_totals": {
+        "dem": 1711092,
+        "rep": 1722543,
+        "other": 32532,
+        "total": 3466166
+      },
+      "delta_dra_minus_prod": {
+        "dem": 2,
+        "rep": 2,
+        "other": 0,
+        "total": 2
+      }
+    },
+    {
+      "file": "state_senate_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1378360,
+        "rep": 1646186,
+        "other": 21780,
+        "total": 3046330
+      },
+      "dra_totals": {
+        "dem": 1378358,
+        "rep": 1646188,
+        "other": 21780,
+        "total": 3046327
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 2,
+        "other": 0,
+        "total": -3
+      }
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2121033,
+        "total": 2121033
+      },
+      "dra_totals": {
+        "dem": 935507,
+        "rep": 1190761,
+        "other": 75472,
+        "total": 2201734
+      },
+      "delta_dra_minus_prod": {
+        "dem": 935507,
+        "rep": 1190761,
+        "other": -2045561,
+        "total": 80701
+      }
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1615161,
+        "rep": 1693254,
+        "other": 89677,
+        "total": 3398091
+      },
+      "dra_totals": {
+        "dem": 1615166,
+        "rep": 1693251,
+        "other": 89674,
+        "total": 3398089
+      },
+      "delta_dra_minus_prod": {
+        "dem": 5,
+        "rep": -3,
+        "other": -3,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_insurance_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360215,
+        "rep": 1641739,
+        "other": 0,
+        "total": 3001955
+      },
+      "dra_totals": {
+        "dem": 1360216,
+        "rep": 1641738,
+        "other": 0,
+        "total": 3001953
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -1,
+        "other": 0,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_labor_commissioner_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2110522,
+        "total": 2110522
+      },
+      "dra_totals": {
+        "dem": 961093,
+        "rep": 1228503,
+        "other": 1075,
+        "total": 2190669
+      },
+      "delta_dra_minus_prod": {
+        "dem": 961093,
+        "rep": 1228503,
+        "other": -2109447,
+        "total": 80147
+      }
+    },
+    {
+      "file": "state_senate_labor_commissioner_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1628321,
+        "rep": 0,
+        "other": 1759118,
+        "total": 3387439
+      },
+      "dra_totals": {
+        "dem": 1628322,
+        "rep": 0,
+        "other": 1759119,
+        "total": 3387439
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 0,
+        "other": 1,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_senate_labor_commissioner_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1343649,
+        "rep": 1582560,
+        "other": 77796,
+        "total": 3004004
+      },
+      "dra_totals": {
+        "dem": 1343650,
+        "rep": 1582561,
+        "other": 77793,
+        "total": 3004005
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 1,
+        "other": -3,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2128760,
+        "total": 2128760
+      },
+      "dra_totals": {
+        "dem": 946408,
+        "rep": 1263555,
+        "other": 0,
+        "total": 2209955
+      },
+      "delta_dra_minus_prod": {
+        "dem": 946408,
+        "rep": 1263555,
+        "other": -2128760,
+        "total": 81195
+      }
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1626540,
+        "rep": 1700164,
+        "other": 0,
+        "total": 3326704
+      },
+      "dra_totals": {
+        "dem": 1626540,
+        "rep": 1700166,
+        "other": 0,
+        "total": 3326705
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 2,
+        "other": 0,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_senate_lieutenant_governor_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1381043,
+        "rep": 1566274,
+        "other": 65981,
+        "total": 3013294
+      },
+      "dra_totals": {
+        "dem": 1381042,
+        "rep": 1566272,
+        "other": 65981,
+        "total": 3013290
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -2,
+        "other": 0,
+        "total": -4
+      }
+    },
+    {
+      "file": "state_senate_president_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2053393,
+        "rep": 2071521,
+        "other": 51595,
+        "total": 4176508
+      },
+      "dra_totals": {
+        "dem": 2053390,
+        "rep": 2071518,
+        "other": 51599,
+        "total": 4176507
+      },
+      "delta_dra_minus_prod": {
+        "dem": -3,
+        "rep": -3,
+        "other": 4,
+        "total": -1
+      }
+    },
+    {
+      "file": "state_senate_president_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1937996,
+        "rep": 2047997,
+        "other": 30117,
+        "total": 4016113
+      },
+      "dra_totals": {
+        "dem": 2084870,
+        "rep": 2153057,
+        "other": 32204,
+        "total": 4270139
+      },
+      "delta_dra_minus_prod": {
+        "dem": 146874,
+        "rep": 105060,
+        "other": 2087,
+        "total": 254026
+      }
+    },
+    {
+      "file": "state_senate_public_service_commission_1_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 1898836,
+        "total": 1898836
+      },
+      "dra_totals": {
+        "dem": 42169,
+        "rep": 1316128,
+        "other": 610620,
+        "total": 1968916
+      },
+      "delta_dra_minus_prod": {
+        "dem": 42169,
+        "rep": 1316128,
+        "other": -1288216,
+        "total": 70080
+      }
+    },
+    {
+      "file": "state_senate_public_service_commission_1_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1873047,
+        "rep": 2056034,
+        "other": 148845,
+        "total": 4077924
+      },
+      "dra_totals": {
+        "dem": 1873045,
+        "rep": 2056037,
+        "other": 148841,
+        "total": 4077925
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": 3,
+        "other": -4,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_senate_public_service_commission_4_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2102874,
+        "total": 2102874
+      },
+      "dra_totals": {
+        "dem": 891627,
+        "rep": 1162750,
+        "other": 128523,
+        "total": 2182893
+      },
+      "delta_dra_minus_prod": {
+        "dem": 891627,
+        "rep": 1162750,
+        "other": -1974351,
+        "total": 80019
+      }
+    },
+    {
+      "file": "state_senate_public_service_commission_4_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1887781,
+        "rep": 2031196,
+        "other": 125731,
+        "total": 4044711
+      },
+      "dra_totals": {
+        "dem": 1887780,
+        "rep": 2031198,
+        "other": 125732,
+        "total": 4044712
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": 2,
+        "other": 1,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_senate_secretary_of_state_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2127555,
+        "total": 2127555
+      },
+      "dra_totals": {
+        "dem": 876228,
+        "rep": 1326344,
+        "other": 6073,
+        "total": 2208643
+      },
+      "delta_dra_minus_prod": {
+        "dem": 876228,
+        "rep": 1326344,
+        "other": -2121482,
+        "total": 81088
+      }
+    },
+    {
+      "file": "state_senate_secretary_of_state_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1678521,
+        "rep": 1662497,
+        "other": 76202,
+        "total": 3417218
+      },
+      "dra_totals": {
+        "dem": 1678524,
+        "rep": 1662498,
+        "other": 76198,
+        "total": 3417219
+      },
+      "delta_dra_minus_prod": {
+        "dem": 3,
+        "rep": 1,
+        "other": -4,
+        "total": 1
+      }
+    },
+    {
+      "file": "state_senate_secretary_of_state_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1308752,
+        "rep": 1619107,
+        "other": 84890,
+        "total": 3012749
+      },
+      "dra_totals": {
+        "dem": 1308752,
+        "rep": 1619102,
+        "other": 84890,
+        "total": 3012745
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": -5,
+        "other": 0,
+        "total": -4
+      }
+    },
+    {
+      "file": "state_senate_state_senate_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1742998,
+        "rep": 2023685,
+        "other": 0,
+        "total": 3766682
+      },
+      "dra_totals": {
+        "dem": 1742999,
+        "rep": 2023683,
+        "other": 0,
+        "total": 3766686
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": -2,
+        "other": 0,
+        "total": 4
+      }
+    },
+    {
+      "file": "state_senate_state_senate_2024.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1591166,
+        "rep": 1996316,
+        "other": 0,
+        "total": 3587482
+      },
+      "dra_totals": {
+        "dem": 1719715,
+        "rep": 2101952,
+        "other": 0,
+        "total": 3821671
+      },
+      "delta_dra_minus_prod": {
+        "dem": 128549,
+        "rep": 105636,
+        "other": 0,
+        "total": 234189
+      }
+    },
+    {
+      "file": "state_senate_superintendent_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2124468,
+        "total": 2124468
+      },
+      "dra_totals": {
+        "dem": 924526,
+        "rep": 1270209,
+        "other": 10634,
+        "total": 2205362
+      },
+      "delta_dra_minus_prod": {
+        "dem": 924526,
+        "rep": 1270209,
+        "other": -2113834,
+        "total": 80894
+      }
+    },
+    {
+      "file": "state_senate_superintendent_2018.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1614067,
+        "rep": 0,
+        "other": 1784855,
+        "total": 3398922
+      },
+      "dra_totals": {
+        "dem": 1614068,
+        "rep": 0,
+        "other": 1784857,
+        "total": 3398922
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1,
+        "rep": 0,
+        "other": 2,
+        "total": 0
+      }
+    },
+    {
+      "file": "state_senate_superintendent_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1360621,
+        "rep": 1648132,
+        "other": 0,
+        "total": 3008752
+      },
+      "dra_totals": {
+        "dem": 1360620,
+        "rep": 1648131,
+        "other": 0,
+        "total": 3008750
+      },
+      "delta_dra_minus_prod": {
+        "dem": -1,
+        "rep": -1,
+        "other": 0,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_us_senate_2014.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 0,
+        "rep": 0,
+        "other": 2161776,
+        "total": 2161776
+      },
+      "dra_totals": {
+        "dem": 1032816,
+        "rep": 1169268,
+        "other": 42273,
+        "total": 2244348
+      },
+      "delta_dra_minus_prod": {
+        "dem": 1032816,
+        "rep": 1169268,
+        "other": -2119503,
+        "total": 82572
+      }
+    },
+    {
+      "file": "state_senate_us_senate_2016.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325303,
+        "total": 3326342
+      },
+      "dra_totals": {
+        "dem": 1039,
+        "rep": 0,
+        "other": 3325301,
+        "total": 3326340
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 0,
+        "other": -2,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_us_senate_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1970157,
+        "rep": 2071720,
+        "other": 96506,
+        "total": 4138382
+      },
+      "dra_totals": {
+        "dem": 1970157,
+        "rep": 2071721,
+        "other": 96505,
+        "total": 4138380
+      },
+      "delta_dra_minus_prod": {
+        "dem": 0,
+        "rep": 1,
+        "other": -1,
+        "total": -2
+      }
+    },
+    {
+      "file": "state_senate_us_senate_2022.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 2864088,
+        "rep": 2832859,
+        "other": 63738,
+        "total": 5760687
+      },
+      "dra_totals": {
+        "dem": 2864091,
+        "rep": 2832860,
+        "other": 63736,
+        "total": 5760684
+      },
+      "delta_dra_minus_prod": {
+        "dem": 3,
+        "rep": 1,
+        "other": -2,
+        "total": -3
+      }
+    },
+    {
+      "file": "state_senate_us_senate_special_2020.json",
+      "same_totals": false,
+      "prod_totals": {
+        "dem": 1973831,
+        "rep": 2040843,
+        "other": 91445,
+        "total": 4106114
+      },
+      "dra_totals": {
+        "dem": 1973829,
+        "rep": 2040840,
+        "other": 91445,
+        "total": 4106114
+      },
+      "delta_dra_minus_prod": {
+        "dem": -2,
+        "rep": -3,
+        "other": 0,
+        "total": 0
+      }
+    }
+  ]
+}
