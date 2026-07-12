@@ -10271,8 +10271,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-11-1';
-    const APP_BUILD_ID = '2026-07-11-1';
+    const DATA_CACHE_BUSTER = '2026-07-11-2';
+    const APP_BUILD_ID = '2026-07-11-2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -12851,9 +12851,9 @@ document.addEventListener('DOMContentLoaded', function() {
         focus: {
           countyActive: 0.9,
           countyWithPrecinct: 0.18,
-          district: 0.76,
-          house: 0.77,
-          senate: 0.77,
+          district: 0.86,
+          house: 0.88,
+          senate: 0.87,
           precinctFill: 0.76,
           precinctDot: 0.88
         }
@@ -25777,6 +25777,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const popChangeToneColor = popChangeHeaderMeta?.tone === 'gain'
         ? '#166534'
         : (popChangeHeaderMeta?.tone === 'loss' ? '#7c2d12' : '#334155');
+      const popChangeTopLineDesktop = (() => {
+        if (!popChangeHeaderMeta) return '';
+        if (!isDesktopTooltipMode()) return '';
+        return `
+          <div class="tooltip-insight" style="margin:0 0 8px 0;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,0.28);border:1px solid rgba(255,184,151,0.30);box-shadow:inset 3px 0 0 rgba(255,153,102,0.78);">
+            <strong style="color:#fff7ed;">${escapeHtml(popChangeHeaderMeta.line)}</strong><br>
+            <span style="color:rgba(255,247,237,0.90);">${escapeHtml(popChangeHeaderMeta.raw)}</span><br>
+            <span style="color:${popChangeToneColor};font-size:11px;font-weight:800;letter-spacing:0.02em;">${escapeHtml(popChangeHeaderMeta.label)}</span>
+          </div>
+        `.trim();
+      })();
       const popChangeTopLineMobile = (() => {
         if (!popChangeHeaderMeta) return '';
         if (isDesktopTooltipMode()) return '';
@@ -25843,6 +25854,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </details>
         `.trim();
       const inner = `
+        ${popChangeTopLineDesktop}
         ${popChangeTopLineMobile}
         ${votehubCore}
         ${mobileCountyDetails}
