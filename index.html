@@ -762,6 +762,57 @@ body.focus-active.hover-preview-active .vote-counter {
   margin-bottom: 8px;
 }
 
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(84px, 0.8fr);
+  gap: 10px 12px;
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(148,163,184,0.22);
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-left {
+  min-width: 0;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-line {
+  color: #15803d;
+  font-size: 12.5px;
+  line-height: 1.38;
+  font-weight: 800;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.loss .vhr-pop-line,
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.loss .vhr-pop-right,
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.loss .vhr-pop-label {
+  color: #a16207;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.flat .vhr-pop-line,
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.flat .vhr-pop-right,
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-card.flat .vhr-pop-label {
+  color: #94a3b8;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-line .statewide {
+  opacity: 0.92;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-right {
+  text-align: right;
+  color: #15803d;
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-weight: 800;
+}
+
+#hover-tooltip[data-context="votehub-results"] .vhr-pop-label {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
 #hover-tooltip[data-context="votehub-results"] .vhr-winner {
   font-size: 12.5px;
   font-weight: 900;
@@ -10271,8 +10322,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-11-2';
-    const APP_BUILD_ID = '2026-07-11-2';
+    const DATA_CACHE_BUSTER = '2026-07-11-3';
+    const APP_BUILD_ID = '2026-07-11-3';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -25769,33 +25820,38 @@ document.addEventListener('DOMContentLoaded', function() {
         const toneLabel = tone === 'gain' ? 'Growth' : (tone === 'loss' ? 'Decline' : 'Flat');
         return {
           line: `Population change: ${signAbs}${Math.round(abs).toLocaleString()} (${pctLine})`,
-          raw: `${p2020.toLocaleString()} → ${p2025.toLocaleString()}`,
+          raw: `${p2020.toLocaleString()} -> ${p2025.toLocaleString()}`,
           tone,
-          label: toneLabel
+          label: toneLabel,
+          p2020,
+          p2025,
+          abs,
+          pct,
+          statePct
         };
       })();
-      const popChangeToneColor = popChangeHeaderMeta?.tone === 'gain'
-        ? '#166534'
-        : (popChangeHeaderMeta?.tone === 'loss' ? '#7c2d12' : '#334155');
-      const popChangeTopLineDesktop = (() => {
+      const popChangeCardHtml = (() => {
         if (!popChangeHeaderMeta) return '';
-        if (!isDesktopTooltipMode()) return '';
+        const absValue = Number(popChangeHeaderMeta.abs);
+        const pctValue = Number(popChangeHeaderMeta.pct);
+        const statePctValue = Number(popChangeHeaderMeta.statePct);
+        if (!Number.isFinite(absValue) || !Number.isFinite(pctValue)) return '';
+        const signAbs = absValue > 0 ? '+' : '';
+        const signPct = pctValue > 0 ? '+' : '';
+        const statewideLine = Number.isFinite(statePctValue)
+          ? `${signPct}${pctValue.toFixed(1)}% (${statePctValue >= 0 ? '+' : ''}${statePctValue.toFixed(1)}% statewide)`
+          : `${signPct}${pctValue.toFixed(1)}%`;
         return `
-          <div class="tooltip-insight" style="margin:0 0 8px 0;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,0.28);border:1px solid rgba(255,184,151,0.30);box-shadow:inset 3px 0 0 rgba(255,153,102,0.78);">
-            <strong style="color:#fff7ed;">${escapeHtml(popChangeHeaderMeta.line)}</strong><br>
-            <span style="color:rgba(255,247,237,0.90);">${escapeHtml(popChangeHeaderMeta.raw)}</span><br>
-            <span style="color:${popChangeToneColor};font-size:11px;font-weight:800;letter-spacing:0.02em;">${escapeHtml(popChangeHeaderMeta.label)}</span>
-          </div>
-        `.trim();
-      })();
-      const popChangeTopLineMobile = (() => {
-        if (!popChangeHeaderMeta) return '';
-        if (isDesktopTooltipMode()) return '';
-        return `
-          <div class="tooltip-insight" style="margin:0 0 8px 0;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,0.06);border:1px solid rgba(148,163,184,0.35);">
-            <strong style="color:${popChangeToneColor};">${escapeHtml(popChangeHeaderMeta.line)}</strong><br>
-            <span style="color:${popChangeToneColor};">${escapeHtml(popChangeHeaderMeta.raw)}</span><br>
-            <span style="color:${popChangeToneColor};font-size:11px;font-weight:700;">${escapeHtml(popChangeHeaderMeta.label)}</span>
+          <div class="vhr-pop-card ${escapeHtml(String(popChangeHeaderMeta.tone || ''))}">
+            <div class="vhr-pop-left">
+              <div class="vhr-pop-line">Population change: ${escapeHtml(`${signAbs}${Math.round(absValue).toLocaleString()}`)}</div>
+              <div class="vhr-pop-line"><span class="statewide">(${escapeHtml(statewideLine)})</span></div>
+            </div>
+            <div class="vhr-pop-right">
+              <div>${escapeHtml(Math.round(Number(popChangeHeaderMeta.p2020)).toLocaleString())} -></div>
+              <div>${escapeHtml(Math.round(Number(popChangeHeaderMeta.p2025)).toLocaleString())}</div>
+              <span class="vhr-pop-label">${escapeHtml(popChangeHeaderMeta.label)}</span>
+            </div>
           </div>
         `.trim();
       })();
@@ -25826,17 +25882,18 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSignedMarginPct: signedMarginPct,
         flipYearLabel: vizPrevCache?.prevYear || null,
         districtType: 'County',
-        showWinnerLine: true,
+        showWinnerLine: currentVizMode !== 'population_change',
         shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
         shiftToneClass: shiftClass,
         shiftYearLabel: (vizShiftCache?.prevYear && vizShiftCache?.year) ? `${vizShiftCache.prevYear}→${vizShiftCache.year}` : '',
-        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!vizShiftCache?.prevYear
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!vizShiftCache?.prevYear,
+        popChangeCardHtml
       });
       const detailLines = `
         ${finalInsight ? `<div class="tooltip-insight">${escapeHtml(finalInsight)}</div>` : ''}
         ${censusDetailLine}
         ${popChangeDetailLine}
-        ${(currentVizMode === 'population_change' && popChangeHeaderMeta?.label) ? `<div class="tooltip-insight" style="color:${popChangeToneColor};font-weight:700;">${escapeHtml(popChangeHeaderMeta.label)}</div>` : ''}
+        ${(currentVizMode === 'population_change' && popChangeHeaderMeta?.label) ? `<div class="tooltip-insight tooltip-insight-tone-text">${escapeHtml(popChangeHeaderMeta.label)}</div>` : ''}
         ${(currentVizMode === 'shift' && Number.isFinite(shiftDelta) && vizShiftCache?.prevYear) ? '' : shiftLine}
         ${flipLine}
         ${deltaBlock}
@@ -25854,8 +25911,6 @@ document.addEventListener('DOMContentLoaded', function() {
           </details>
         `.trim();
       const inner = `
-        ${popChangeTopLineDesktop}
-        ${popChangeTopLineMobile}
         ${votehubCore}
         ${mobileCountyDetails}
       `.trim();
@@ -28239,7 +28294,8 @@ document.addEventListener('DOMContentLoaded', function() {
       shiftYearLabel,
       showShiftLine,
       winnerLineToneClass,
-      winnerRawLeadToneClass
+      winnerRawLeadToneClass,
+      popChangeCardHtml
     } = {}) {
       const dVotes = Number(demVotes || 0);
       const rVotes = Number(repVotes || 0);
@@ -28315,6 +28371,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="votehub-results-card">
           <div class="vhr-title">${escapeHtml((title || '').toString())}</div>
           ${(subtitle || districtType) ? `<div class="vhr-subtitle">${escapeHtml(String(subtitle || districtType || ''))}</div>` : ''}
+          ${String(popChangeCardHtml || '').trim()}
           ${winnerLine}
           ${flipLine}
           ${shiftLine}
