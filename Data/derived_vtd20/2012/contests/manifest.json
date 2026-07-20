@@ -1,0 +1,54 @@
+{
+  "csv": "Data\\20121106__ga__general__precinct.csv",
+  "levels": [
+    "vtd20"
+  ],
+  "contests": [
+    {
+      "office": "President",
+      "district": "",
+      "slug": "President",
+      "outputs": {
+        "vtd20": {
+          "path": "Data/derived_vtd20/2012/contests/vtd20/President.json",
+          "rows": 2532
+        }
+      },
+      "coverage": {
+        "source_votes": 3897839,
+        "matched_vtd10_votes": 3236749,
+        "fallback_vtd20_votes": 378453,
+        "dropped_votes": 282637,
+        "precincts": 2819,
+        "matched_exact": 2136,
+        "matched_fuzzy": 254,
+        "matched_alias": 0,
+        "fallback": 235,
+        "dropped": 194,
+        "vtd10_missing_shares": 0,
+        "output_votes": 3615202,
+        "output_vtd20": 2532
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "slug": "President",
+      "source_votes": 3897839,
+      "matched_vtd10_votes": 3236749,
+      "fallback_vtd20_votes": 378453,
+      "dropped_votes": 282637,
+      "precincts": 2819,
+      "matched_exact": 2136,
+      "matched_fuzzy": 254,
+      "matched_alias": 0,
+      "fallback": 235,
+      "dropped": 194,
+      "vtd10_missing_shares": 0,
+      "output_votes": 3615202,
+      "output_vtd20": 2532
+    }
+  ],
+  "method": "vtd10_weighted_shares",
+  "blockpath_promoted_at_utc": "2026-07-20T20:35:59.488370+00:00"
+}

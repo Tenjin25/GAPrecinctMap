@@ -176,6 +176,77 @@ def parse_vote_int(value: Any) -> int:
         return int(round(f))
 
 
+def normalize_party_bucket(raw_party: str) -> str:
+    token = re.sub(r"[^A-Z]", "", (raw_party or "").strip().upper())
+    if token.startswith("I") and len(token) > 1:
+        token = token[1:]
+    if token.endswith("I") and len(token) > 1:
+        token = token[:-1]
+    if token in {"D", "DEM", "DEMOCRAT", "DEMOCRATIC"} or token.startswith("DEM") or "DEMOCRAT" in token:
+        return "DEM"
+    if token in {"R", "REP", "REPUBLICAN"} or token.startswith("REP") or "REPUBLICAN" in token:
+        return "REP"
+    return "OTH"
+
+
+def clean_candidate_label(raw: str) -> str:
+    name = re.sub(r"\s+", " ", (raw or "").strip())
+    if not name:
+        return ""
+    # Drop trailing party tags sometimes present on winner labels: "Name (D)", "Name (R*)".
+    name = re.sub(r"\s*\(\s*[A-Z]{1,3}\s*\*?\s*\)\s*$", "", name, flags=re.IGNORECASE)
+    return name.strip()
+
+
+def pick_top_candidate_name(vote_map: dict[str, float]) -> str:
+    if not vote_map:
+        return ""
+    ranked = sorted(vote_map.items(), key=lambda kv: (-float(kv[1]), kv[0]))
+    return clean_candidate_label(ranked[0][0]) if ranked else ""
+
+
+def infer_party_candidates_from_results(results: dict[str, Any]) -> tuple[str, str]:
+    """
+    Infer statewide (or contest-wide) DEM/REP nominee labels from VTD/precinct rows.
+
+    Preference order per row:
+      1) explicit dem_candidate / rep_candidate fields
+      2) winner_candidate when winner_party is DEM/REP
+    Vote-weight by the corresponding party/total votes so the modal nominee wins.
+    """
+    dem_votes: dict[str, float] = defaultdict(float)
+    rep_votes: dict[str, float] = defaultdict(float)
+
+    if not isinstance(results, dict):
+        return "", ""
+
+    for row in results.values():
+        if not isinstance(row, dict):
+            continue
+        dem_name = clean_candidate_label(str(row.get("dem_candidate") or ""))
+        rep_name = clean_candidate_label(str(row.get("rep_candidate") or ""))
+        dem_n = float(parse_vote_int(row.get("dem_votes")))
+        rep_n = float(parse_vote_int(row.get("rep_votes")))
+        if dem_name:
+            dem_votes[dem_name] += max(1.0, dem_n)
+        if rep_name:
+            rep_votes[rep_name] += max(1.0, rep_n)
+
+        if dem_name and rep_name:
+            continue
+
+        winner_party = normalize_party_bucket(str(row.get("winner_party") or ""))
+        winner_name = clean_candidate_label(str(row.get("winner_candidate") or ""))
+        if not winner_name:
+            continue
+        if winner_party == "DEM" and not dem_name:
+            dem_votes[winner_name] += max(1.0, dem_n or float(parse_vote_int(row.get("winner_votes"))))
+        elif winner_party == "REP" and not rep_name:
+            rep_votes[winner_name] += max(1.0, rep_n or float(parse_vote_int(row.get("winner_votes"))))
+
+    return pick_top_candidate_name(dem_votes), pick_top_candidate_name(rep_votes)
+
+
 @dataclass
 class GroupEntry:
     scope: str
@@ -339,6 +410,8 @@ def aggregate_group(
     total_input_votes = 0
     matched_input_votes = 0
     input_files: list[str] = []
+    contest_dem_votes: dict[str, float] = defaultdict(float)
+    contest_rep_votes: dict[str, float] = defaultdict(float)
 
     for e in entries:
         payload = load_json(e.path)
@@ -346,6 +419,19 @@ def aggregate_group(
         results = payload.get("results") or {}
         if not isinstance(results, dict):
             continue
+
+        # Contest-level labels (written by newer blockpath builds).
+        top_dem = clean_candidate_label(str(payload.get("dem_candidate") or ""))
+        top_rep = clean_candidate_label(str(payload.get("rep_candidate") or ""))
+        if top_dem:
+            contest_dem_votes[top_dem] += 1.0
+        if top_rep:
+            contest_rep_votes[top_rep] += 1.0
+        inferred_dem, inferred_rep = infer_party_candidates_from_results(results)
+        if inferred_dem:
+            contest_dem_votes[inferred_dem] += 1.0
+        if inferred_rep:
+            contest_rep_votes[inferred_rep] += 1.0
 
         entry_scope = scope_for_district_office(e.office)
         entry_district = normalize_district_number(e.district)
@@ -388,12 +474,31 @@ def aggregate_group(
                         "dem_votes": 0.0,
                         "rep_votes": 0.0,
                         "other_votes": 0.0,
+                        "dem_cand_votes": defaultdict(float),
+                        "rep_cand_votes": defaultdict(float),
                     },
                 )
                 node["total_votes"] += total_votes * w
                 node["dem_votes"] += dem_votes * w
                 node["rep_votes"] += rep_votes * w
                 node["other_votes"] += other_votes * w
+
+                dem_name = clean_candidate_label(str(row.get("dem_candidate") or ""))
+                rep_name = clean_candidate_label(str(row.get("rep_candidate") or ""))
+                if not dem_name or not rep_name:
+                    winner_party = normalize_party_bucket(str(row.get("winner_party") or ""))
+                    winner_name = clean_candidate_label(str(row.get("winner_candidate") or ""))
+                    if winner_name and winner_party == "DEM" and not dem_name:
+                        dem_name = winner_name
+                    elif winner_name and winner_party == "REP" and not rep_name:
+                        rep_name = winner_name
+                if dem_name:
+                    node["dem_cand_votes"][dem_name] += max(w, dem_votes * w)
+                if rep_name:
+                    node["rep_cand_votes"][rep_name] += max(w, rep_votes * w)
+
+    contest_dem = pick_top_candidate_name(contest_dem_votes)
+    contest_rep = pick_top_candidate_name(contest_rep_votes)
 
     finalized: dict[str, dict[str, Any]] = {}
     for district_num, row in by_district.items():
@@ -420,13 +525,16 @@ def aggregate_group(
             winner = "Tie"
             winner_party = "TIE"
 
+        dem_candidate = pick_top_candidate_name(row.get("dem_cand_votes") or {}) or contest_dem
+        rep_candidate = pick_top_candidate_name(row.get("rep_cand_votes") or {}) or contest_rep
+
         finalized[district_num] = {
             "total_votes": total,
             "dem_votes": dem,
             "rep_votes": rep,
             "other_votes": other,
-            "dem_candidate": "",
-            "rep_candidate": "",
+            "dem_candidate": dem_candidate,
+            "rep_candidate": rep_candidate,
             "winner": winner,
             "winner_party": winner_party,
             "margin_pct": signed_margin_pct,
@@ -449,27 +557,21 @@ def aggregate_group(
     }
 
 
-def normalize_party_bucket(raw_party: str) -> str:
-    token = re.sub(r"[^A-Z]", "", (raw_party or "").strip().upper())
-    if token.startswith("I") and len(token) > 1:
-        token = token[1:]
-    if token.endswith("I") and len(token) > 1:
-        token = token[:-1]
-    if token in {"D", "DEM", "DEMOCRAT", "DEMOCRATIC"} or token.startswith("DEM") or "DEMOCRAT" in token:
-        return "DEM"
-    if token in {"R", "REP", "REPUBLICAN"} or token.startswith("REP") or "REPUBLICAN" in token:
-        return "REP"
-    return "OTH"
-
-
 def aggregate_district_office_from_csv(
     *,
     csv_path: Path,
     office_name: str,
     max_district_num: int,
 ) -> dict[str, Any]:
-    by_district: dict[str, dict[str, int]] = defaultdict(
-        lambda: {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0}
+    by_district: dict[str, dict[str, Any]] = defaultdict(
+        lambda: {
+            "total_votes": 0,
+            "dem_votes": 0,
+            "rep_votes": 0,
+            "other_votes": 0,
+            "dem_cand_votes": defaultdict(int),
+            "rep_cand_votes": defaultdict(int),
+        }
     )
 
     with csv_path.open("r", encoding="utf-8-sig", newline="") as fh:
@@ -488,18 +590,33 @@ def aggregate_district_office_from_csv(
                 votes = 0
 
             bucket = normalize_party_bucket(str(row.get("party") or ""))
+            cand = clean_candidate_label(str(row.get("candidate") or ""))
             node = by_district[district_num]
             node["total_votes"] += votes
             if bucket == "DEM":
                 node["dem_votes"] += votes
+                if cand:
+                    node["dem_cand_votes"][cand] += votes
             elif bucket == "REP":
                 node["rep_votes"] += votes
+                if cand:
+                    node["rep_cand_votes"][cand] += votes
             else:
                 node["other_votes"] += votes
 
     # Keep a complete district set for stable rendering.
     for d in range(1, max_district_num + 1):
-        by_district.setdefault(str(d), {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0})
+        by_district.setdefault(
+            str(d),
+            {
+                "total_votes": 0,
+                "dem_votes": 0,
+                "rep_votes": 0,
+                "other_votes": 0,
+                "dem_cand_votes": defaultdict(int),
+                "rep_cand_votes": defaultdict(int),
+            },
+        )
 
     finalized: dict[str, dict[str, Any]] = {}
     for district_num, row in by_district.items():
@@ -527,8 +644,8 @@ def aggregate_district_office_from_csv(
             "dem_votes": dem,
             "rep_votes": rep,
             "other_votes": other,
-            "dem_candidate": "",
-            "rep_candidate": "",
+            "dem_candidate": pick_top_candidate_name(row.get("dem_cand_votes") or {}),
+            "rep_candidate": pick_top_candidate_name(row.get("rep_cand_votes") or {}),
             "winner": winner,
             "winner_party": winner_party,
             "margin_pct": signed_margin_pct,
