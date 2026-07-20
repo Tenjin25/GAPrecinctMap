@@ -9579,6 +9579,30 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
   }
+  const districtLines2022Btn = document.getElementById('district-lines-2022');
+  if (districtLines2022Btn) {
+    districtLines2022Btn.onclick = function() {
+      if (typeof setDistrictLinesMode === 'function') {
+        setDistrictLinesMode(2022).catch(() => {});
+      }
+    };
+  }
+  const districtLines2024Btn = document.getElementById('district-lines-2024');
+  if (districtLines2024Btn) {
+    districtLines2024Btn.onclick = function() {
+      if (typeof setDistrictLinesMode === 'function') {
+        setDistrictLinesMode(2024).catch(() => {});
+      }
+    };
+  }
+  const districtLines2026Btn = document.getElementById('district-lines-2026');
+  if (districtLines2026Btn) {
+    districtLines2026Btn.onclick = function() {
+      if (typeof setDistrictLinesMode === 'function') {
+        setDistrictLinesMode(2026).catch(() => {});
+      }
+    };
+  }
   const splitTicketBtn = document.getElementById('split-ticket-toggle');
   if (splitTicketBtn) {
     if (typeof syncSplitTicketToggleUI === 'function') syncSplitTicketToggleUI();
@@ -9989,6 +10013,17 @@ document.addEventListener('DOMContentLoaded', function() {
                   <button id="state-senate-view" class="view-toggle-btn" onclick="setMapView('state_senate')" data-testid="view-state-senate" aria-label="Show state senate districts view" aria-pressed="false">State Senate</button>
                 </div>
             </div>
+            <div id="district-lines-control-group" class="control-group" style="margin-bottom:10px;">
+                <span class="section-kicker">District Lines</span>
+                <div class="view-toggle-row" style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button id="district-lines-2022" class="view-toggle-btn active" type="button" data-testid="lines-2022" aria-label="Use 2022 district lines" aria-pressed="true">2022 Lines</button>
+                  <button id="district-lines-2024" class="view-toggle-btn" type="button" data-testid="lines-2024" aria-label="Use 2024 district lines" aria-pressed="false">2024 Lines</button>
+                </div>
+                <div style="margin-top:4px;font-size:11px;color:#6b7280;">
+                  2022 uses CD118 + 2022 House/Senate maps; 2024 uses CD119 + 2024 House/Senate maps.
+                </div>
+                <div id="district-lines-loading-hint" class="district-lines-loading-hint" aria-live="polite" aria-atomic="true"></div>
+            </div>
             <div class="control-group viz-inline-group" style="margin-bottom:10px;">
               <span class="section-kicker">Analysis Mode</span>
               <div class="viz-modes-inline" id="viz-modes-inline">
@@ -10349,8 +10384,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-19-nc-hybrid-default';
-    const APP_BUILD_ID = '2026-07-19-nc-hybrid-default';
+    const DATA_CACHE_BUSTER = '2026-07-20-district-lines-toggles';
+    const APP_BUILD_ID = '2026-07-20-district-lines-toggles';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -10389,8 +10424,14 @@ document.addEventListener('DOMContentLoaded', function() {
         precincts: withBase('./Data/Voting_Precincts.geojson'),
         precinct_centroids: withBase('./Data/precinct_centroids.geojson'),
         districts: withBase('./Data/tl_2022_13_cd118.geojson'),
+        districts_2022: withBase('./Data/tl_2022_13_cd118.geojson'),
+        districts_2024: withBase('./Data/tl_2024_13_cd119.geojson'),
         state_house: withBase('./Data/tl_2022_13_sldl.geojson'),
+        state_house_2022: withBase('./Data/tl_2022_13_sldl.geojson'),
+        state_house_2024: withBase('./Data/tl_2024_13_sldl.geojson'),
         state_senate: withBase('./Data/tl_2022_13_sldu.geojson'),
+        state_senate_2022: withBase('./Data/tl_2022_13_sldu.geojson'),
+        state_senate_2024: withBase('./Data/tl_2024_13_sldu.geojson'),
         county_demographics: withBase('./Data/ga_county_demographics.json'),
         county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         election: withBase('./Data/ga_elections_aggregated.json'),
@@ -11708,11 +11749,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function normalizeDistrictLinesYear(raw) {
+      const n = Number(raw);
+      if (n === 2024 || n === 2026) return n;
       return 2022;
     }
 
     function getDistrictLinesLabel(linesYear = currentDistrictLinesYear) {
-      return `${normalizeDistrictLinesYear(linesYear)} lines`;
+      const y = normalizeDistrictLinesYear(linesYear);
+      if (y === 2024) return '2024 lines (CD119 + 2024 House/Senate)';
+      if (y === 2026) return '2026 lines';
+      return '2022 lines (CD118 + 2022 House/Senate)';
     }
 
     function getActiveDistrictContestsDir(linesYear = currentDistrictLinesYear, scope = null) {
@@ -12405,7 +12451,29 @@ document.addEventListener('DOMContentLoaded', function() {
       return '';
     }
 
-    function updateDistrictLinesToggleUI() {}
+    function updateDistrictLinesToggleUI() {
+      const y = normalizeDistrictLinesYear(currentDistrictLinesYear);
+      const group = document.getElementById('district-lines-control-group');
+      const btn2022 = document.getElementById('district-lines-2022');
+      const btn2024 = document.getElementById('district-lines-2024');
+      const btn2026 = document.getElementById('district-lines-2026');
+      const showLinesControls = currentView !== 'counties';
+      if (group) group.style.display = showLinesControls ? '' : 'none';
+      if (btn2022) {
+        btn2022.classList.toggle('active', y === 2022);
+        btn2022.setAttribute('aria-pressed', y === 2022 ? 'true' : 'false');
+      }
+      if (btn2024) {
+        btn2024.classList.toggle('active', y === 2024);
+        btn2024.setAttribute('aria-pressed', y === 2024 ? 'true' : 'false');
+      }
+      if (btn2026) {
+        // GA has no 2026 district layer yet.
+        btn2026.style.display = 'none';
+        btn2026.classList.toggle('active', y === 2026);
+        btn2026.setAttribute('aria-pressed', y === 2026 ? 'true' : 'false');
+      }
+    }
 
     function clearDistrictSearchGeoJSONCache() {
       delete window['districts__search_geojson'];
