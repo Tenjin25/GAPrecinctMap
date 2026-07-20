@@ -602,113 +602,6 @@ def aggregate_group(
     }
 
 
-def aggregate_district_office_from_csv(
-    *,
-    csv_path: Path,
-    office_name: str,
-    max_district_num: int,
-) -> dict[str, Any]:
-    by_district: dict[str, dict[str, Any]] = defaultdict(
-        lambda: {
-            "total_votes": 0,
-            "dem_votes": 0,
-            "rep_votes": 0,
-            "other_votes": 0,
-            "dem_cand_votes": defaultdict(int),
-            "rep_cand_votes": defaultdict(int),
-        }
-    )
-
-    with csv_path.open("r", encoding="utf-8-sig", newline="") as fh:
-        reader = csv.DictReader(fh)
-        for row in reader:
-            office = str(row.get("office") or "").strip().lower()
-            if office != office_name.lower():
-                continue
-
-            district_num = normalize_district_number(str(row.get("district") or ""))
-            if not district_num:
-                continue
-
-            votes = parse_vote_int(row.get("total_votes"))
-            if votes < 0:
-                votes = 0
-
-            bucket = normalize_party_bucket(str(row.get("party") or ""))
-            cand = clean_candidate_label(str(row.get("candidate") or ""))
-            node = by_district[district_num]
-            node["total_votes"] += votes
-            if bucket == "DEM":
-                node["dem_votes"] += votes
-                if cand:
-                    node["dem_cand_votes"][cand] += votes
-            elif bucket == "REP":
-                node["rep_votes"] += votes
-                if cand:
-                    node["rep_cand_votes"][cand] += votes
-            else:
-                node["other_votes"] += votes
-
-    # Keep a complete district set for stable rendering.
-    for d in range(1, max_district_num + 1):
-        by_district.setdefault(
-            str(d),
-            {
-                "total_votes": 0,
-                "dem_votes": 0,
-                "rep_votes": 0,
-                "other_votes": 0,
-                "dem_cand_votes": defaultdict(int),
-                "rep_cand_votes": defaultdict(int),
-            },
-        )
-
-    finalized: dict[str, dict[str, Any]] = {}
-    for district_num, row in by_district.items():
-        total = int(row.get("total_votes") or 0)
-        dem = int(row.get("dem_votes") or 0)
-        rep = int(row.get("rep_votes") or 0)
-        other = int(row.get("other_votes") or 0)
-        signed_margin_pct = ((rep - dem) / total) * 100.0 if total > 0 else 0.0
-
-        if rep > dem and rep >= other:
-            winner = "Republican"
-            winner_party = "REP"
-        elif dem > rep and dem >= other:
-            winner = "Democratic"
-            winner_party = "DEM"
-        elif other > rep and other > dem:
-            winner = "Other"
-            winner_party = "OTH"
-        else:
-            winner = "Tie"
-            winner_party = "TIE"
-
-        finalized[district_num] = {
-            "total_votes": total,
-            "dem_votes": dem,
-            "rep_votes": rep,
-            "other_votes": other,
-            "dem_candidate": pick_top_candidate_name(row.get("dem_cand_votes") or {}),
-            "rep_candidate": pick_top_candidate_name(row.get("rep_cand_votes") or {}),
-            "winner": winner,
-            "winner_party": winner_party,
-            "margin_pct": signed_margin_pct,
-        }
-
-    sorted_results = dict(
-        sorted(finalized.items(), key=lambda kv: (int(kv[0]) if kv[0].isdigit() else kv[0]))
-    )
-    total_input_votes = sum(int(v.get("total_votes") or 0) for v in sorted_results.values())
-    return {
-        "results": sorted_results,
-        "total_input_votes": total_input_votes,
-        "matched_input_votes": total_input_votes,
-        "match_coverage_pct": 100.0,
-        "input_files": [str(csv_path).replace("\\", "/")],
-    }
-
-
 def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path) -> list[GroupEntry]:
     manifest_path = year_dir / "contests" / "manifest.json"
     if not manifest_path.exists():
@@ -909,25 +802,12 @@ def main() -> None:
         print("  state_senate_2024 missing -> using state_senate_2022 mapping")
 
     all_entries: list[GroupEntry] = []
-    year_source_csv: dict[int, Path] = {}
     for year_dir in sorted(args.derived_base.iterdir()):
         if not year_dir.is_dir() or not year_dir.name.isdigit():
             continue
         year = int(year_dir.name)
         if years_filter and year not in years_filter:
             continue
-
-        manifest_path = year_dir / "contests" / "manifest.json"
-        if manifest_path.exists():
-            manifest = load_json(manifest_path)
-            csv_raw = str(manifest.get("csv") or "").strip()
-            if csv_raw:
-                csv_rel = normalize_json_relpath(csv_raw)
-                csv_candidates = [Path(csv_rel), project_root / csv_rel]
-                for c in csv_candidates:
-                    if c.exists():
-                        year_source_csv[year] = c
-                        break
 
         entries = build_groups_for_year(year_dir, args.derived_base, project_root)
         all_entries.extend(entries)
@@ -944,31 +824,16 @@ def main() -> None:
 
     for (scope, contest_type, year), entries in sorted(grouped.items(), key=lambda x: (x[0][0], x[0][1], x[0][2])):
         # Publish statewide/top-ticket overlays only (not seat races, DA, PSC, etc.).
+        # Seat types (state_house / state_senate / us_house) are intentionally absent from
+        # STATEWIDE_OVERLAY_CONTEST_TYPES — never publish member elections as overlays.
         if contest_type not in STATEWIDE_OVERLAY_CONTEST_TYPES:
             continue
 
-        direct_csv = year_source_csv.get(year)
-        use_direct_state_house_2024 = (
-            lines_year == 2024
-            and scope == "state_house"
-            and contest_type == "state_house"
-            and year == 2024
-            and direct_csv is not None
-            and direct_csv.exists()
+        geoid_to_district = select_scope_crosswalk(
+            scope, lines_year=lines_year, crosswalk_maps=crosswalk_maps
         )
-
-        if use_direct_state_house_2024:
-            agg = aggregate_district_office_from_csv(
-                csv_path=direct_csv,
-                office_name="state house",
-                max_district_num=180,
-            )
-        else:
-            geoid_to_district = select_scope_crosswalk(
-                scope, lines_year=lines_year, crosswalk_maps=crosswalk_maps
-            )
-            supplemental = supplemental_by_scope_year.get((scope, year), {})
-            agg = aggregate_group(entries, geoid_to_district, supplemental)
+        supplemental = supplemental_by_scope_year.get((scope, year), {})
+        agg = aggregate_group(entries, geoid_to_district, supplemental)
         results = agg["results"]
         if not results:
             continue

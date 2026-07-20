@@ -19271,6 +19271,22 @@ document.addEventListener('DOMContentLoaded', function() {
 	      sel.innerHTML = '<option value="">Select a contest...</option>';
 
 	      const contestYearPairs = {};
+        // Seat races / district-office contests must never appear in the contest picker.
+        // District overlays are statewide/top-ticket only (President, Gov, US Senate, executives),
+        // even when rolled up onto CD / state house / state senate geography.
+        const seatOrDistrictOfficeContestTypes = new Set([
+          'state_house',
+          'state_senate',
+          'us_house'
+        ]);
+        function isSeatOrDistrictOfficeContestType(contestType) {
+          const key = String(contestType || '').trim().toLowerCase();
+          if (!key) return false;
+          if (seatOrDistrictOfficeContestTypes.has(key)) return true;
+          if (key.startsWith('public_service_commission')) return true;
+          if (key.startsWith('district_attorney') || key === 'da' || key.startsWith('solicitor')) return true;
+          return false;
+        }
         const councilOfStateTypes = new Set([
           'governor',
           'lieutenant_governor',
@@ -19303,6 +19319,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        const year = Number(entry.year);
 	        const rows = Number(entry.rows || entry.districts || 0) || 0;
 	        if (!contestType || rows <= 0) return;
+          if (isSeatOrDistrictOfficeContestType(contestType)) return;
 
           // Hide older judicial contests until we have reliable D/R alignment data.
           // Older appellate judicial races are nonpartisan in some cycles; without endorsements they read as "OTHER".
@@ -30375,7 +30392,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getHistoricalTrends(countyName, isDistrict = false, districtNum = null) {
       const presidentialYears = [2024, 2020, 2016, 2012, 2008];
-      const stateHouseYears = [2024, 2022, 2020, 2018, 2016]; // Recent state house elections
       // Georgia governor elections align with presidential years (e.g., 2016, 2020, 2024).
       const governorYears = [2024, 2020, 2016, 2012, 2008];
       const trends = [];
@@ -30410,8 +30426,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
       } else {
-        // For counties, show both presidential and recent state house trends
-        
+        // For counties, show presidential and governor trends (not legislative seat races)
+
         // Presidential trends
         presidentialYears.forEach(year => {
           const data = electionData.find(row => 
@@ -30448,18 +30464,16 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
         
-        // Add separator if we have presidential data
+        // Governor trends (statewide; do not surface State House seat races here)
         if (trends.length > 0) {
           trends.push({
             year: 0,
-            display: '--- State House ---',
+            display: '--- Governor ---',
             margin: 0,
             type: 'separator'
           });
         }
-        
-        // State House trends (recent years only)
-        // Governor trends (recent years only)
+
         governorYears.forEach(year => {
           const data = electionData.find(row => 
             row.year == year && row.county === countyName
@@ -30481,32 +30495,6 @@ document.addEventListener('DOMContentLoaded', function() {
               margin: margin,
               type: 'governor'
             });
-          }
-        });
-        stateHouseYears.forEach(year => {
-          const data = electionData.find(row => 
-            row.year == year && row.county === countyName
-          );
-          
-          if (data && data.state_house_total > 0) {
-            const demVotes = data.state_house_dem || 0;
-            const repVotes = data.state_house_rep || 0;
-            const totalVotes = data.state_house_total || 0;
-            
-            if (totalVotes > 0) {
-              const demPct = (demVotes / totalVotes) * 100;
-              const repPct = (repVotes / totalVotes) * 100;
-              const margin = demPct - repPct;
-              const winner = margin > 0 ? 'D' : 'R';
-              const marginAbs = countyMarginPctDisplayValue(repVotes, demVotes, totalVotes);
-              
-              trends.push({
-                year: year,
-                display: `${year}: ${winner}+${formatCountyMarginPctForDisplay(marginAbs)}% (House)`,
-                margin: margin,
-                type: 'state_house'
-              });
-            }
           }
         });
       }
