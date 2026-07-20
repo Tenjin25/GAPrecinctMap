@@ -1,52 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-    // Resolve the initial legend palette before first paint. The full palette
-    // initializer below still owns persistence and interactive switching.
-    try {
-      const initialPalette = window.localStorage?.getItem('ga-atlas-partisan-palette-v1') === 'atlas'
-        ? 'atlas'
-        : 'dra';
-      document.documentElement.setAttribute('data-initial-partisan-palette', initialPalette);
-    } catch (_) {
-      document.documentElement.setAttribute('data-initial-partisan-palette', 'dra');
-    }
-  </script>
   <style>
   :root {
     --initial-margin-1: #67000d;
     --initial-margin-2: #a50f15;
     --initial-margin-3: #cb181d;
-    --initial-margin-4: #ef3b2c;
-    --initial-margin-5: #fb6a4a;
-    --initial-margin-6: #fcae91;
-    --initial-margin-7: #fee8c8;
+    --initial-margin-4: #e03a32;
+    --initial-margin-5: #e85a52;
+    --initial-margin-6: #f99a90;
+    --initial-margin-7: #f5d6c4;
     --initial-margin-8: #f7f7f7;
-    --initial-margin-9: #e1f5fe;
-    --initial-margin-10: #c6dbef;
-    --initial-margin-11: #9ecae1;
-    --initial-margin-12: #6baed6;
-    --initial-margin-13: #3182bd;
+    --initial-margin-9: #b8d4ec;
+    --initial-margin-10: #8bbde0;
+    --initial-margin-11: #6baed6;
+    --initial-margin-12: #3f8fd0;
+    --initial-margin-13: #1f6aad;
     --initial-margin-14: #08519c;
     --initial-margin-15: #08306b;
-  }
-  html[data-initial-partisan-palette="dra"] {
-    --initial-margin-1: #68000c;
-    --initial-margin-2: #940016;
-    --initial-margin-3: #b91227;
-    --initial-margin-4: #d52b3f;
-    --initial-margin-5: #f16672;
-    --initial-margin-6: #f58f96;
-    --initial-margin-7: #f8bec2;
-    --initial-margin-8: #f7f7f7;
-    --initial-margin-9: #b6d5f5;
-    --initial-margin-10: #78afe9;
-    --initial-margin-11: #4699e5;
-    --initial-margin-12: #1f75bd;
-    --initial-margin-13: #0863a8;
-    --initial-margin-14: #064a80;
-    --initial-margin-15: #04345c;
   }
   /* Mobile Styles - Enhanced for touch and small screens */
   @media (max-width: 768px) {
@@ -9489,28 +9460,10 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 // Global defaults shared by the early UI script and the main map script.
 window.overlayOpacityPreset = window.overlayOpacityPreset || 'focus';
 
-const DRA_PARTISAN_COLORS = Object.freeze({
-  r40: '#68000c',
-  r30: '#940016',
-  r20: '#b91227',
-  r10: '#d52b3f',
-  r5_5: '#f16672',
-  r1: '#f58f96',
-  r0_5: '#f8bec2',
-  tie: '#f7f7f7',
-  d0_5: '#b6d5f5',
-  d1: '#78afe9',
-  d5_5: '#4699e5',
-  d10: '#1f75bd',
-  d20: '#0863a8',
-  d30: '#064a80',
-  d40: '#04345c'
-});
 
 // Accessibility: Color Blind Mode Toggle
 document.addEventListener('DOMContentLoaded', function() {
   var accBtn = document.getElementById('accessibility-toggle');
-  var draPaletteBtn = document.getElementById('dra-palette-toggle');
   var helpBtn = document.getElementById('help-btn');
   var helpBackdrop = document.getElementById('help-backdrop');
   var helpClose = document.getElementById('help-close');
@@ -9533,46 +9486,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pressed = document.body.classList.contains('colorblind-mode');
     accBtn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
   }
-  function syncDraPaletteToggle() {
-    if (!draPaletteBtn) return;
-    const pressed = document.body.classList.contains('dra-palette');
-    draPaletteBtn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-    draPaletteBtn.textContent = pressed ? 'Atlas Colors' : 'DRA Colors';
-    draPaletteBtn.title = pressed
-      ? 'Use the original Atlas colors'
-      : 'Use DRA-inspired colors with the existing 15 margin tiers';
-  }
-  const DRA_PALETTE_STORAGE_KEY = 'ga-atlas-partisan-palette-v1';
-  try {
-    if (window.localStorage && window.localStorage.getItem(DRA_PALETTE_STORAGE_KEY) !== 'atlas') {
-      document.body.classList.add('dra-palette');
-    }
-  } catch (_) {
-    document.body.classList.add('dra-palette');
-  }
-  syncDraPaletteToggle();
   updateLegendColors();
-  if (draPaletteBtn) {
-    draPaletteBtn.onclick = function() {
-      const enabled = document.body.classList.toggle('dra-palette');
-      try {
-        if (window.localStorage) {
-          window.localStorage.setItem(DRA_PALETTE_STORAGE_KEY, enabled ? 'dra' : 'atlas');
-        }
-      } catch (_) {}
-      document.documentElement.setAttribute('data-initial-partisan-palette', enabled ? 'dra' : 'atlas');
-      syncDraPaletteToggle();
-      updateLegendColors();
-      if (typeof splitTicketOverlayCache !== 'undefined' && splitTicketOverlayCache && typeof splitTicketOverlayCache.clear === 'function') {
-        splitTicketOverlayCache.clear();
-      }
-      const contestSelect = document.getElementById('contestSelect');
-      const contestKey = contestSelect && contestSelect.value;
-      if (contestKey) applyContest(contestKey);
-      try { updateFiltersActiveChip(); } catch (_) {}
-      try { saveUIState(); } catch (_) {}
-    };
-  }
     if (accBtn) {
       syncColorblindToggleAria();
       accBtn.onclick = function() {
@@ -10012,7 +9926,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   <details class="contest-tools-more" aria-label="More tools">
                     <summary class="tool-chip-btn tool-chip-btn-muted" role="button">More</summary>
                     <div class="contest-tools-row contest-tools-row-more">
-                      <button id="dra-palette-toggle" title="Use the original Atlas colors" class="tool-chip-btn tool-chip-btn-muted" type="button" data-testid="tool-dra-palette" aria-label="Toggle DRA color palette" aria-pressed="true">Atlas Colors</button>
                       <button id="follow-hover-toggle" title="Auto-update hover tooltip while panning (mobile)" class="tool-chip-btn tool-chip-btn-muted" type="button" data-testid="tool-follow-hover" aria-label="Toggle auto hover while panning" aria-pressed="false">Auto Hover Off</button>
                       <button id="gps-locate-btn" title="Find my precinct by GPS" class="tool-chip-btn" type="button" data-testid="tool-gps" aria-label="Find my precinct by GPS">Find My Precinct</button>
                       <button id="reset-view-btn" title="Reset map camera and clear pinned focus" class="tool-chip-btn tool-chip-btn-muted" type="button" data-testid="tool-reset-view" aria-label="Reset map view">Reset View</button>
@@ -10162,21 +10075,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="legend-content" id="legend-content">
             <div class="legend-scale-shell">
               <div class="legend-spectrum margins">
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-1);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-2);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-3);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-4);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-5);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-6);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-7);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-8); border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-9);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-10);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-11);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-12);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-13);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-14);"></span>
-                <span class="legend-segment legend-color" style="background: var(--initial-margin-15);"></span>
+                <span class="legend-segment legend-color" style="background: #67000d;"></span>
+                <span class="legend-segment legend-color" style="background: #a50f15;"></span>
+                <span class="legend-segment legend-color" style="background: #cb181d;"></span>
+                <span class="legend-segment legend-color" style="background: #e03a32;"></span>
+                <span class="legend-segment legend-color" style="background: #e85a52;"></span>
+                <span class="legend-segment legend-color" style="background: #f99a90;"></span>
+                <span class="legend-segment legend-color" style="background: #f5d6c4;"></span>
+                <span class="legend-segment legend-color" style="background: #f7f7f7; border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
+                <span class="legend-segment legend-color" style="background: #b8d4ec;"></span>
+                <span class="legend-segment legend-color" style="background: #8bbde0;"></span>
+                <span class="legend-segment legend-color" style="background: #6baed6;"></span>
+                <span class="legend-segment legend-color" style="background: #3f8fd0;"></span>
+                <span class="legend-segment legend-color" style="background: #1f6aad;"></span>
+                <span class="legend-segment legend-color" style="background: #08519c;"></span>
+                <span class="legend-segment legend-color" style="background: #08306b;"></span>
               </div>
               <div class="legend-scale-caption">
                 <span class="rep">Republican Annihilation</span>
@@ -10436,8 +10349,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-18-georgia-dra-1';
-    const APP_BUILD_ID = '2026-07-18-georgia-dra-1';
+    const DATA_CACHE_BUSTER = '2026-07-19-nc-hybrid-default';
+    const APP_BUILD_ID = '2026-07-19-nc-hybrid-default';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -13218,27 +13131,6 @@ document.addEventListener('DOMContentLoaded', function() {
           precinctDotBaseOpacity = Math.max(precinctDotBaseOpacity, 0.97);
         }
       }
-      const partisanModeActive = ['margins', 'winners', 'shift', 'flips'].includes(
-        String(currentVizMode || 'margins').toLowerCase()
-      );
-      const draPartisanPresentationActive =
-        activePartisanPaletteKey() === 'dra' &&
-        contestIsActive &&
-        partisanModeActive;
-      const draCountyPresentationActive =
-        draPartisanPresentationActive &&
-        currentView === 'counties';
-      if (draPartisanPresentationActive) {
-        // Keep the shared DRA table at the same perceived weight across
-        // congressional and state legislative district views.
-        houseBaseOpacity = districtBaseOpacity;
-        senateBaseOpacity = districtBaseOpacity;
-      }
-      if (draCountyPresentationActive && !precinctsActuallyVisible) {
-        // Counties use that same blend unless precincts need to remain primary.
-        countyBaseOpacity = districtBaseOpacity;
-      }
-
       if (map.getLayer('county-fill')) {
         if (!contestIsActive) {
           try { map.setPaintProperty('county-fill', 'fill-color', '#d9e3ef'); } catch (_) {}
@@ -13253,9 +13145,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (map.getLayer('county-stroke-casing')) {
         try {
-          map.setPaintProperty('county-stroke-casing', 'line-opacity', draCountyPresentationActive
-            ? ['interpolate', ['linear'], ['zoom'], 4, 0.30, 6, 0.38, 8, 0.50, 10, 0.62, 12, 0.76]
-            : 0);
+          map.setPaintProperty('county-stroke-casing', 'line-opacity', 0);
         } catch (_) {}
       }
       if (map.getLayer('district-fill')) {
@@ -19134,7 +19024,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const precinct = `precincts:${precinctsEnabled ? 1 : 0}|geom:${precinctGeom}`;
       const palette = (typeof activePartisanPaletteKey === 'function')
         ? activePartisanPaletteKey()
-        : (document.body.classList.contains('colorblind-mode') ? 'colorblind' : (document.body.classList.contains('dra-palette') ? 'dra' : 'atlas'));
+        : (document.body.classList.contains('colorblind-mode') ? 'colorblind' : 'atlas');
       return `k:${key}|ct:${ct}|y:${Number.isFinite(y) ? y : ''}|v:${view}|m:${mode}|palette:${palette}|lines:${linesYear}|${precinct}|${overlays}|scenario:${scenarioSignature()}`;
     }
 
@@ -24762,7 +24652,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (smartInsightsEnabled) labels.push('Smart Insights');
       if (turnoutBivariateEnabled) labels.push('Turnout opacity');
       if (document.body.classList.contains('colorblind-mode')) labels.push('Colorblind');
-      if (document.body.classList.contains('dra-palette')) labels.push('DRA colors');
       if (currentVizMode && currentVizMode !== 'margins') {
         labels.push(`Mode: ${getReadableModeLabel(currentVizMode)}`);
       }
@@ -31874,20 +31763,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function categoryColorForMargin(marginPct, winner) {
+      // DRA-hybrid mid tiers; OG Stronghold + OG Dominant/Annihilation.
+      // Safe sits clearly above Stronghold (wider mid→deep gap).
       if (marginPct >= 40) {
-        return winner === 'R' ? '#67000d' : '#08306b';
+        return winner === 'R' ? '#67000d' : '#08306b'; // OG Annihilation
       } else if (marginPct >= 30) {
-        return winner === 'R' ? '#a50f15' : '#08519c';
+        return winner === 'R' ? '#a50f15' : '#08519c'; // OG Dominant
       } else if (marginPct >= 20) {
-        return winner === 'R' ? '#cb181d' : '#3182bd';
+        return winner === 'R' ? '#cb181d' : '#1f6aad'; // Stronghold — OG Dem nudged darker
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#ef3b2c' : '#6baed6';
+        return winner === 'R' ? '#e03a32' : '#3f8fd0'; // Safe — toward OG brightness, still above Stronghold
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#fb6a4a' : '#9ecae1';
+        return winner === 'R' ? '#e85a52' : '#6baed6'; // Likely — option A (locked)
       } else if (marginPct >= 1.0) {
-        return winner === 'R' ? '#fcae91' : '#c6dbef';
+        return winner === 'R' ? '#f99a90' : '#8bbde0'; // Lean — cooler red, less orange
       } else if (marginPct >= 0.5) {
-        return winner === 'R' ? '#fee8c8' : '#e1f5fe';
+        return winner === 'R' ? '#f5d6c4' : '#b8d4ec'; // Dem Tilt less white, still under Lean
       } else {
         return '#f7f7f7';
       }
@@ -31897,25 +31788,9 @@ document.addEventListener('DOMContentLoaded', function() {
       return document.body.classList.contains('colorblind-mode');
     }
 
-    function isDraPaletteActive() {
-      return document.body.classList.contains('dra-palette');
-    }
-
     function activePartisanPaletteKey() {
       if (isColorblindModeActive()) return 'colorblind';
-      if (isDraPaletteActive()) return 'dra';
       return 'atlas';
-    }
-
-    function draColorForMargin(marginPct, winner) {
-      if (marginPct >= 40) return winner === 'R' ? DRA_PARTISAN_COLORS.r40 : DRA_PARTISAN_COLORS.d40;
-      if (marginPct >= 30) return winner === 'R' ? DRA_PARTISAN_COLORS.r30 : DRA_PARTISAN_COLORS.d30;
-      if (marginPct >= 20) return winner === 'R' ? DRA_PARTISAN_COLORS.r20 : DRA_PARTISAN_COLORS.d20;
-      if (marginPct >= 10) return winner === 'R' ? DRA_PARTISAN_COLORS.r10 : DRA_PARTISAN_COLORS.d10;
-      if (marginPct >= 5.5) return winner === 'R' ? DRA_PARTISAN_COLORS.r5_5 : DRA_PARTISAN_COLORS.d5_5;
-      if (marginPct >= 1.0) return winner === 'R' ? DRA_PARTISAN_COLORS.r1 : DRA_PARTISAN_COLORS.d1;
-      if (marginPct >= 0.5) return winner === 'R' ? DRA_PARTISAN_COLORS.r0_5 : DRA_PARTISAN_COLORS.d0_5;
-      return DRA_PARTISAN_COLORS.tie;
     }
 
     function accessibilityMarginColor(marginPct, winner) {
@@ -31931,25 +31806,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function colorForMarginMode(marginPctAbs, winner) {
-      if (isColorblindModeActive()) return accessibilityMarginColor(marginPctAbs, winner);
-      if (isDraPaletteActive()) return draColorForMargin(marginPctAbs, winner);
-      return categoryColorForMargin(marginPctAbs, winner);
+      return isColorblindModeActive()
+        ? accessibilityMarginColor(marginPctAbs, winner)
+        : categoryColorForMargin(marginPctAbs, winner);
     }
 
     function colorForWinnerMode(winner) {
       // winner: 'R' | 'D' | 'T'
       const cb = isColorblindModeActive();
-      if (winner === 'R') return cb ? '#d97706' : (isDraPaletteActive() ? DRA_PARTISAN_COLORS.r10 : '#dc2626');
-      if (winner === 'D') return cb ? '#2563eb' : (isDraPaletteActive() ? DRA_PARTISAN_COLORS.d10 : '#2563eb');
-      return isDraPaletteActive() && !cb ? DRA_PARTISAN_COLORS.tie : '#9ca3af';
+      if (winner === 'R') return cb ? '#d97706' : '#dc2626';
+      if (winner === 'D') return cb ? '#2563eb' : '#2563eb';
+      return '#9ca3af';
     }
 
     function colorForFlipMode(toWinner) {
       // toWinner: 'R' | 'D' | 'T'
-      const cb = isColorblindModeActive();
-      if (toWinner === 'R') return cb ? '#d97706' : (isDraPaletteActive() ? DRA_PARTISAN_COLORS.r10 : '#dc2626');
-      if (toWinner === 'D') return isDraPaletteActive() && !cb ? DRA_PARTISAN_COLORS.d10 : '#2563eb';
-      return isDraPaletteActive() && !cb ? DRA_PARTISAN_COLORS.tie : '#e2e8f0';
+      if (toWinner === 'R') return isColorblindModeActive() ? '#d97706' : '#dc2626';
+      if (toWinner === 'D') return '#2563eb';
+      return '#e2e8f0';
     }
 
     function signedMarginPctFromVotes(demVotes, repVotes, totalVotes) {
@@ -31964,13 +31838,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const a = Math.abs(s);
       const cb = isColorblindModeActive();
       const dir = s >= 0 ? 'R' : 'D';
-      if (a < 0.5) return isDraPaletteActive() && !cb ? DRA_PARTISAN_COLORS.tie : '#f8fafc';
-      if (isDraPaletteActive() && !cb) {
-        if (a >= 15) return dir === 'R' ? DRA_PARTISAN_COLORS.r20 : DRA_PARTISAN_COLORS.d20;
-        if (a >= 10) return dir === 'R' ? DRA_PARTISAN_COLORS.r10 : DRA_PARTISAN_COLORS.d10;
-        if (a >= 5) return dir === 'R' ? DRA_PARTISAN_COLORS.r5_5 : DRA_PARTISAN_COLORS.d5_5;
-        return dir === 'R' ? DRA_PARTISAN_COLORS.r1 : DRA_PARTISAN_COLORS.d1;
-      }
+      if (a < 0.5) return '#f8fafc';
       // Bins tuned for readability; "strong" kicks in at 10.
       const bin = a >= 15 ? 4 : a >= 10 ? 3 : a >= 5 ? 2 : 1;
       if (cb) {
