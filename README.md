@@ -86,9 +86,9 @@ Each file contains county-level rows with fields such as:
 
 ### 2) District Contest Slices
 
-- Manifest: `Data/district_contests/manifest.json`
-- Files: `Data/district_contests/<scope>_<contest_type>_<year>.json`
-- Primary builder: `scripts/build_district_contests_from_derived_vtd20.py`
+- Manifests: `Data/district_contests_2022/manifest.json`, `Data/district_contests_2024/manifest.json`
+- Files: `Data/district_contests_<lines-year>/<scope>_<contest_type>_<year>.json`
+- Primary builder: `scripts/build_district_contests_from_derived_vtd20.py` (`--lines-year` 2022 or 2024)
 
 Scopes:
 
@@ -252,7 +252,7 @@ This keeps the county demographic panel self-contained and consistent with the o
 2. County/statewide contest slices are built into `Data/contests`.
 3. Precinct files are mapped to VTD20 keys and emitted into `Data/derived_vtd20/<year>/contests`.
 4. Precinct-to-district weighted crosswalk CSVs are produced in `Data/crosswalks`.
-5. District contest slices are aggregated into `Data/district_contests` from derived VTD20 outputs.
+5. District contest slices are aggregated into `Data/district_contests_2022` / `Data/district_contests_2024` from derived VTD20 outputs (by lines vintage).
 6. The front-end loads manifests and slices dynamically based on selected contest/year/view mode.
 
 ## Validation and QA Focus
@@ -261,7 +261,7 @@ Recommended checks during data refreshes:
 
 - Manifest integrity:
   - `Data/contests/manifest.json` references existing files.
-  - `Data/district_contests/manifest.json` references existing files.
+  - `Data/district_contests_2022/manifest.json` and `Data/district_contests_2024/manifest.json` reference existing files.
 - Spot-check derived VTD20 manifests:
   - `Data/derived_vtd20/<year>/contests/manifest.json` should only reference files that exist in `Data/derived_vtd20/<year>/contests/vtd20/`.
 - Join coverage:

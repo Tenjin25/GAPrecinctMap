@@ -32,7 +32,7 @@ def sum_party_totals(payload: dict) -> dict[str, int]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--prod-dir", type=Path, default=Path("Data/district_contests"))
+    ap.add_argument("--prod-dir", type=Path, default=Path("Data/district_contests_2024"))
     ap.add_argument("--dra-dir", type=Path, default=Path("Data/district_contests_dra"))
     ap.add_argument("--out", type=Path, default=Path("Data/district_contests_dra/dra_vs_prod_report.json"))
     args = ap.parse_args()

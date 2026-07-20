@@ -6,7 +6,7 @@ This script intentionally avoids overwriting production district outputs.
 Steps:
 1) Build DRA-derived crosswalks (downloads from GitHub) into Data/crosswalks_dra.
 2) Run district aggregation using those crosswalks into Data/district_contests_dra.
-3) Compare output file inventory against production Data/district_contests/manifest.json.
+3) Compare output file inventory against production Data/district_contests_2024/manifest.json.
 """
 
 from __future__ import annotations
@@ -77,7 +77,7 @@ def main() -> None:
     ap.add_argument("--python-exe", default=sys.executable)
     ap.add_argument("--crosswalk-dir", type=Path, default=Path("Data/crosswalks_dra"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/district_contests_dra"))
-    ap.add_argument("--prod-manifest", type=Path, default=Path("Data/district_contests/manifest.json"))
+    ap.add_argument("--prod-manifest", type=Path, default=Path("Data/district_contests_2024/manifest.json"))
     ap.add_argument("--state", default="GA")
     ap.add_argument("--year", default="2020")
     ap.add_argument("--version", default="07")
@@ -163,7 +163,7 @@ def main() -> None:
     if only_prod or only_dra:
         raise SystemExit(
             "Parity check failed: DRA output file inventory differs from production. "
-            "Review before replacing live district_contests."
+            "Review before replacing live district_contests_2024."
         )
 
     print("Parity check passed.")

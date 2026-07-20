@@ -19,9 +19,11 @@ Fallback boundaries (when CSV crosswalks are missing):
   - Data/tl_2022_13_sldl.geojson
   - Data/tl_2022_13_sldu.geojson
 
-Outputs (statewide / top-ticket federal overlays only):
-  - Data/district_contests/<scope>_<contest_type>_<year>.json
-  - Data/district_contests/manifest.json
+Outputs (statewide / top-ticket federal overlays only), by district-lines vintage:
+  - Data/district_contests_2022/  (CD118 + 2022 SH/SS crosswalks)
+  - Data/district_contests_2024/  (CD119 + 2024 SH/SS crosswalks)
+  - <out-dir>/<scope>_<contest_type>_<year>.json
+  - <out-dir>/manifest.json
 
 Excluded from published overlays: District Attorney, PSC, US House seats,
 State House/Senate seats, and other local contests. Seat-race derived files may
@@ -771,23 +773,42 @@ def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path
 def select_scope_crosswalk(
     scope: str,
     *,
+    lines_year: int,
     crosswalk_maps: dict[str, dict[str, list[tuple[str, float]]]],
 ) -> dict[str, list[tuple[str, float]]]:
+    if lines_year not in (2022, 2024):
+        raise ValueError(f"Unsupported lines_year: {lines_year}")
     if scope == "congressional":
-        # Prefer CD119 (2024 lines) when available; fall back to CD118.
-        return crosswalk_maps.get("congressional_2024") or crosswalk_maps["congressional"]
+        if lines_year == 2024:
+            return crosswalk_maps.get("congressional_2024") or crosswalk_maps["congressional"]
+        return crosswalk_maps["congressional"]
     if scope == "state_house":
-        # Lock legislative overlays to 2024 district plan.
-        return crosswalk_maps["state_house_2024"]
+        return crosswalk_maps[f"state_house_{lines_year}"]
     if scope == "state_senate":
-        return crosswalk_maps["state_senate_2024"]
+        return crosswalk_maps[f"state_senate_{lines_year}"]
     raise ValueError(f"Unknown scope: {scope}")
+
+
+def default_out_dir_for_lines_year(lines_year: int) -> Path:
+    return Path(f"Data/district_contests_{lines_year}")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--derived-base", type=Path, default=Path("Data/derived_vtd20"))
-    ap.add_argument("--out-dir", type=Path, default=Path("Data/district_contests"))
+    ap.add_argument(
+        "--lines-year",
+        type=int,
+        choices=[2022, 2024],
+        default=2024,
+        help="District-lines vintage for crosswalks and default out dir (2022 or 2024).",
+    )
+    ap.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Output directory (default: Data/district_contests_<lines-year>).",
+    )
     ap.add_argument("--years", default="", help="Optional comma-separated years, e.g. 2014,2016,2018")
 
     ap.add_argument("--crosswalk-cd", type=Path, default=Path("Data/crosswalks/precinct_to_cd118.csv"))
@@ -814,6 +835,8 @@ def main() -> None:
     ap.add_argument("--sldl-geojson", type=Path, default=Path("Data/tl_2022_13_sldl.geojson"))
     ap.add_argument("--sldu-geojson", type=Path, default=Path("Data/tl_2022_13_sldu.geojson"))
     args = ap.parse_args()
+    lines_year = int(args.lines_year)
+    out_dir = args.out_dir if args.out_dir is not None else default_out_dir_for_lines_year(lines_year)
 
     if not args.derived_base.exists():
         raise SystemExit(f"Missing derived base: {args.derived_base}")
@@ -827,6 +850,8 @@ def main() -> None:
                 continue
             years_filter.add(int(token))
 
+    print(f"District lines year: {lines_year}")
+    print(f"Output directory: {out_dir}")
     print("Loading precinct->district weighted maps...")
     crosswalk_maps: dict[str, dict[str, list[tuple[str, float]]]] = {}
 
@@ -911,6 +936,7 @@ def main() -> None:
     for e in all_entries:
         grouped[(e.scope, e.contest_type, e.year)].append(e)
 
+    args.out_dir = out_dir
     supplemental_by_scope_year = build_scope_year_supplemental_assignments(all_entries)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
@@ -923,7 +949,8 @@ def main() -> None:
 
         direct_csv = year_source_csv.get(year)
         use_direct_state_house_2024 = (
-            scope == "state_house"
+            lines_year == 2024
+            and scope == "state_house"
             and contest_type == "state_house"
             and year == 2024
             and direct_csv is not None
@@ -937,7 +964,9 @@ def main() -> None:
                 max_district_num=180,
             )
         else:
-            geoid_to_district = select_scope_crosswalk(scope, crosswalk_maps=crosswalk_maps)
+            geoid_to_district = select_scope_crosswalk(
+                scope, lines_year=lines_year, crosswalk_maps=crosswalk_maps
+            )
             supplemental = supplemental_by_scope_year.get((scope, year), {})
             agg = aggregate_group(entries, geoid_to_district, supplemental)
         results = agg["results"]
@@ -956,6 +985,7 @@ def main() -> None:
                 "scope": scope,
                 "contest_type": contest_type,
                 "year": year,
+                "district_lines_year": lines_year,
                 "source": "derived_vtd20",
                 "generated_at_utc": dt.datetime.now(dt.UTC).isoformat(),
                 "match_coverage_pct": agg["match_coverage_pct"],
@@ -988,6 +1018,7 @@ def main() -> None:
 
     manifest = {
         "source": str(args.derived_base).replace("\\", "/"),
+        "district_lines_year": lines_year,
         "generated_at_utc": dt.datetime.now(dt.UTC).isoformat(),
         "files": sorted(manifest_files, key=lambda x: (x["scope"], x["contest_type"], x["year"])),
     }
