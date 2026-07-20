@@ -10384,8 +10384,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-20-district-lines-toggles';
-    const APP_BUILD_ID = '2026-07-20-district-lines-toggles';
+    const DATA_CACHE_BUSTER = '2026-07-20-district-contests-vintage';
+    const APP_BUILD_ID = '2026-07-20-district-contests-vintage';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -10423,6 +10423,8 @@ document.addEventListener('DOMContentLoaded', function() {
         counties: withBase('./Data/tl_2020_13_county20.geojson'),
         precincts: withBase('./Data/Voting_Precincts.geojson'),
         precinct_centroids: withBase('./Data/precinct_centroids.geojson'),
+        precinct_aliases: withBase('./Data/precinct_alias_index.json'),
+        precinct_friendly_names: withBase('./Data/precinct_friendly_names.json'),
         districts: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2022: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2024: withBase('./Data/tl_2024_13_cd119.geojson'),
@@ -11335,6 +11337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let precinctCentroidsData = null; // Cached centroids GeoJSON so we can annotate with has_polygon after polygons load.
     let precinctCentroidsLoaded = false;
     let precinctCentroidsLoadInFlight = false;
+    let precinctCentroidsLoadPromise = null;
     let countyNameByFipsMapCache = null; // Map<string fips3, string county_name>
     let precinctCodeIndexByCounty = null; // Map<string countyNorm, Set<string prec_id>> built from precinct centroids.
     let precinctAliasIndexByCounty = null; // Map<string countyNorm, Map<string alias, string[] codes>>
@@ -11447,7 +11450,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const contest = String(params.get('contest') || '').trim();
       const mode = normalizeURLModeToken(params.get('mode'));
       const focus = String(params.get('focus') || '').trim();
-      const lines = null;
+      const linesRaw = String(params.get('lines') || '').trim();
+      const lines = linesRaw ? normalizeDistrictLinesYear(linesRaw) : null;
       const swingRaw = String(params.get('swing') || '').trim();
       const swing = swingRaw ? Number(swingRaw) : null;
       const sscopeRaw = String(params.get('sscope') || '').trim().toLowerCase();
@@ -11473,6 +11477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contest ||
         mode ||
         focus ||
+        lines !== null ||
         swingRaw ||
         sscopeRaw ||
         barometerEnabled !== null ||
@@ -11527,6 +11532,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const contestValue = String(document.getElementById('contestSelect')?.value || '').trim();
       if (contestValue) params.set('contest', contestValue);
       if (currentVizMode && currentVizMode !== 'margins') params.set('mode', currentVizMode);
+      const linesYear = normalizeDistrictLinesYear(currentDistrictLinesYear);
+      if (linesYear !== 2022) params.set('lines', String(linesYear));
       if (Number.isFinite(Number(scenarioSwingPct)) && Math.abs(Number(scenarioSwingPct)) >= 0.05) {
         params.set('swing', Number(scenarioSwingPct).toFixed(1));
       }
@@ -11682,6 +11689,10 @@ document.addEventListener('DOMContentLoaded', function() {
           await setMapView(state.view);
         }
 
+        if (state.lines !== null && state.lines !== normalizeDistrictLinesYear(currentDistrictLinesYear)) {
+          await setDistrictLinesMode(state.lines);
+        }
+
         if (state.mode && state.mode !== currentVizMode) {
           switchVizMode(state.mode);
         }
@@ -11774,20 +11785,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getPreferredDistrictSlicePaths(scope, contestType, year, linesYear = currentDistrictLinesYear) {
-      const y = Number(year);
-      const ly = normalizeDistrictLinesYear(linesYear);
       const key = `${scope}_${contestType}_${year}`;
       const out = [];
-      const calibrated2020Dir = (CONFIG.paths?.district_contests_2020_2024_dir || '').toString().trim();
       const baseDir = (getActiveDistrictContestsDir(linesYear, scope) || '').toString().trim();
-
-      // Prefer calibrated slices only for congressional scope on 2022 lines.
-      // Legislative scopes continue to use the primary district_contests data.
-      if (ly === 2022 && scope === 'congressional' && Number.isFinite(y) && y >= 2020 && calibrated2020Dir) {
-        out.push(`${calibrated2020Dir}/${key}.json`);
-      }
+      // Vintage folders only: Data/district_contests_2022 or Data/district_contests_2024
+      // (never the deleted Data/district_contests root).
       if (baseDir) out.push(`${baseDir}/${key}.json`);
-
       return Array.from(new Set(out));
     }
 
@@ -12508,6 +12511,31 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     }
 
+    async function ensureLegislativeDistrictSource(scope, linesYear = currentDistrictLinesYear) {
+      if (!map) return false;
+      const sourceId = scope === 'state_house' ? 'state-house' : (scope === 'state_senate' ? 'state-senate' : '');
+      if (!sourceId) return false;
+      if (map.getSource(sourceId)) return true;
+      const tilesetKey = scope === 'state_house' ? 'state_house' : 'state_senate';
+      const vectorUrl = CONFIG.tilesets?.enabled ? CONFIG.tilesets?.sources?.[tilesetKey]?.url : '';
+      if (vectorUrl) {
+        map.addSource(sourceId, { type: 'vector', url: vectorUrl });
+        return true;
+      }
+      const geoJSON = await loadDistrictGeometry(scope, linesYear);
+      if (!geoJSON) throw new Error(`${scope} geometry returned no data`);
+      map.addSource(sourceId, { type: 'geojson', data: geoJSON });
+      window[`${sourceId}__search_geojson`] = geoJSON;
+      return true;
+    }
+
+    async function ensureDistrictSourceForView(view = currentView, linesYear = currentDistrictLinesYear) {
+      if (view === 'districts') return ensureCongressionalDistrictSource(linesYear);
+      if (view === 'state_house') return ensureLegislativeDistrictSource('state_house', linesYear);
+      if (view === 'state_senate') return ensureLegislativeDistrictSource('state_senate', linesYear);
+      return false;
+    }
+
     async function refreshDistrictGeometrySources(linesYear = currentDistrictLinesYear) {
       if (!map) return;
       const targets = [
@@ -12614,7 +12642,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nextContestSelect.value = previousContestValue;
         if (appReady) {
           try {
-            await applyContest(previousContestValue);
+            await applyContest(previousContestValue, { force: true });
           } catch (err) {
             console.warn('Failed to reapply contest after district-line switch:', err?.message || err);
             nextContestSelect.value = '';
@@ -18697,12 +18725,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const p = atlasPerf(`slice.district:${cacheKey}`, async () => {
 
         const candidatePaths = getPreferredDistrictSlicePaths(scope, contestType, year, linesYear);
+        const fetchErrors = [];
         for (const path of candidatePaths) {
           try {
             const payload = await loadJSON(path);
-            districtSliceCache.set(cacheKey, payload);
-            return payload;
-          } catch (_) {}
+            if (payload && typeof payload === 'object') {
+              districtSliceCache.set(cacheKey, payload);
+              return payload;
+            }
+          } catch (err) {
+            fetchErrors.push(`${path}: ${err?.message || err}`);
+          }
         }
 
         if (linesYear === 2022 && !districtElectionDataJSON) {
@@ -18711,8 +18744,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const fallback = linesYear === 2022
           ? (districtElectionDataJSON?.results_by_year?.[year]?.[scope]?.[contestType] || null)
           : null;
-        districtSliceCache.set(cacheKey, fallback);
-        return fallback;
+        // Do not cache null/misses — a transient 404 or race before files hydrate
+        // must not permanently blank district overlays for this session.
+        if (fallback && typeof fallback === 'object') {
+          districtSliceCache.set(cacheKey, fallback);
+          return fallback;
+        }
+        if (fetchErrors.length) {
+          console.warn(`District slice miss ${cacheKey}. Tried: ${fetchErrors.join(' | ')}`);
+        }
+        return null;
       });
 
       districtSliceInflight.set(cacheKey, p);
@@ -19225,7 +19266,16 @@ document.addEventListener('DOMContentLoaded', function() {
     async function handleContestSelectionChange(contestKey) {
       try { refreshStartHereHint(); } catch (_) {}
       const queued = queueContestSelection(contestKey);
-      if (!contestChangeInFlight && queued.key && queued.key === lastCompletedContestSelection) {
+      const districtViewNeedsPaint = (
+        (currentView === 'districts' || currentView === 'state_house' || currentView === 'state_senate') &&
+        (!currentDistrictTurnoutTotals || !Object.keys(currentDistrictTurnoutTotals).length)
+      );
+      if (
+        !contestChangeInFlight &&
+        queued.key &&
+        queued.key === lastCompletedContestSelection &&
+        !districtViewNeedsPaint
+      ) {
         queueCountyDetailsRefresh();
         return;
       }
@@ -19245,7 +19295,11 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (_) {}
             setTimeout(resolve, 0);
           });
-          await applyContest(next.key, { selectionSeq: next.seq });
+          const forceRepaint = (
+            (currentView === 'districts' || currentView === 'state_house' || currentView === 'state_senate') &&
+            (!currentDistrictTurnoutTotals || !Object.keys(currentDistrictTurnoutTotals).length)
+          );
+          await applyContest(next.key, { selectionSeq: next.seq, force: forceRepaint });
 
           // If users switched again while we were loading, apply the newest selection next.
           if (queuedContestSelection && queuedContestSelection.seq !== next.seq) {
@@ -19844,9 +19898,11 @@ document.addEventListener('DOMContentLoaded', function() {
           : (crosswalks.congressional_2022 || crosswalks.congressional)) || '';
       }
       if (scope === 'state_house') {
+        if (linesYear === 2026) return crosswalks.state_house_2024 || crosswalks.state_house_2022 || '';
         return crosswalks[`state_house_${linesYear}`] || crosswalks.state_house_2022 || '';
       }
       if (scope === 'state_senate') {
+        if (linesYear === 2026) return crosswalks.state_senate_2024 || crosswalks.state_senate_2022 || '';
         return crosswalks[`state_senate_${linesYear}`] || crosswalks.state_senate_2022 || '';
       }
       return '';
@@ -20080,13 +20136,16 @@ document.addEventListener('DOMContentLoaded', function() {
       lastCountyFillExpr = null;
       clearHoverOutline();
 
-      if (view === 'districts' && !map.getSource('districts')) {
-        setStatus('Loading congressional districts...');
+      if (view === 'districts' || view === 'state_house' || view === 'state_senate') {
+        const label = view === 'districts'
+          ? 'congressional districts'
+          : (view === 'state_house' ? 'state house districts' : 'state senate districts');
+        setStatus(`Loading ${label}...`);
         try {
-          await ensureCongressionalDistrictSource(currentDistrictLinesYear);
+          await ensureDistrictSourceForView(view, currentDistrictLinesYear);
         } catch (err) {
-          console.warn('Congressional GeoJSON retry failed:', err?.message || err);
-          setStatus('Congressional districts are temporarily unavailable. Try Congress again in a moment.');
+          console.warn(`${label} load failed:`, err?.message || err);
+          setStatus(`${label} are temporarily unavailable. Try again in a moment.`);
         }
       }
       
@@ -20122,7 +20181,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (canPreserveContest) {
         nextContestSelect.value = previousContestValue;
         try {
-          await applyContest(previousContestValue);
+          await applyContest(previousContestValue, { force: true });
           if (previousPinnedState) {
             await restorePinnedSelectionForView(previousPinnedState, view, previousContestValue);
           }
@@ -26161,15 +26220,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const precFull = (props.precinct_full_name || props.precinct_desc || props.enr_desc || props.ENR_DESC || '').toString().replace(/\s+/g, ' ').trim();
       const fallbackFull = (!precFull && precinctFullNameByNormCache && precinctNorm && precinctFullNameByNormCache.has(precinctNorm))
         ? String(precinctFullNameByNormCache.get(precinctNorm) || '').toString().replace(/\s+/g, ' ').trim()
-        : '';
-      const displayCode = precId || (precinctNorm.includes(' - ') ? precinctNorm.split(' - ')[1] : '');
+        : stripCountyPrefixFromPrecinctLabel(countyName, props.precinct_name || '');
+      const displayCode = precId || (precinctNorm.includes(' - ') ? precinctNorm.split(' - ').slice(1).join(' - ') : '');
       const displayPrecinct = pickBestPrecinctDisplayName({
         countyName,
         code: displayCode,
         fullName: precFull,
         fallbackFullName: fallbackFull
       });
-      const title = `${displayCountyName(countyName)} - ${displayPrecinct}`;
+      const title = displayPrecinct
+        ? `${displayCountyName(countyName)} - ${displayPrecinct}`
+        : displayCountyName(countyName);
       setPrecinctHoverFeature(feature);
 
       const contestValue = document.getElementById('contestSelect')?.value || '';
@@ -28425,8 +28486,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const countyRaw = (original.county_nam || original.COUNTYNAME || original.County || original.NAME20 || original.NAME || countyFromFips || '').toString().trim();
         const countyNorm = countyRaw.replace(/[^a-z0-9 .\-]/gi, '').replace(/\s+/g, ' ').trim().toUpperCase();
         const precRaw = (original.prec_id || original.PREC_ID || original.VTDST20 || original.VTDST10 || original.VTDST00 || '').toString().trim();
-        const fullNameRaw = (original.enr_desc || original.ENR_DESC || original.precinct_full_name || original.precinct_name || '').toString();
-        const fullName = fullNameRaw.replace(/\s+/g, ' ').trim();
+        const fullNameRaw = (original.enr_desc || original.ENR_DESC || original.precinct_full_name || '').toString();
+        // precinct_name is usually the synthetic "County - Precinct" join key — strip before using as a label.
+        const fromPrecinctName = stripCountyPrefixFromPrecinctLabel(countyRaw, original.precinct_name || '');
+        const fullName = (fullNameRaw.replace(/\s+/g, ' ').trim()
+          || fromPrecinctName
+          || '').replace(/\s+/g, ' ').trim();
         const precinctRaw = countyRaw && precRaw ? `${countyRaw} - ${precRaw}` : countyRaw;
         const precinctNorm = (precinctRaw || '').replace(/[^a-z0-9 .\-]/gi, '').replace(/\s+/g, ' ').trim().toUpperCase();
         if (precinctNorm && fullName) fullNameByNorm.set(precinctNorm, fullName);
@@ -28457,7 +28522,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const full = (!p.precinct_full_name && precinctFullNameByNormCache && n && precinctFullNameByNormCache.has(n))
               ? String(precinctFullNameByNormCache.get(n) || '').toString().replace(/\s+/g, ' ').trim()
               : (p.precinct_full_name || p.precinct_desc || '').toString().replace(/\s+/g, ' ').trim();
-            f.properties = { ...p, precinct_full_name: full || (p.precinct_full_name || ''), has_polygon: !!(n && precinctPolygonNormSet && precinctPolygonNormSet.has(n)) };
+            const countyForStrip = (p.county_nam || '').toString().trim();
+            const strippedFull = stripCountyPrefixFromPrecinctLabel(countyForStrip, full);
+            f.properties = { ...p, precinct_full_name: strippedFull || '', has_polygon: !!(n && precinctPolygonNormSet && precinctPolygonNormSet.has(n)) };
             return f;
           });
           const src = map.getSource('precinct-centroids');
@@ -28700,8 +28767,11 @@ document.addEventListener('DOMContentLoaded', function() {
             zoomToClickedPrecinctFeature(e.features[0], { padding: 44, duration: 900, maxZoom: 13.8 });
             setTooltipPinned(false);
             renderPrecinctHoverAtPoint(e.point, e.features[0], { forceTooltip: true, pinSelection: true });
-            const full = (props.precinct_full_name || props.precinct_desc || props.enr_desc || props.ENR_DESC || '').toString().replace(/\s+/g, ' ').trim();
-            const label = full || (props.prec_id || '').toString().trim();
+            const full = stripCountyPrefixFromPrecinctLabel(
+              props.county_nam || '',
+              (props.precinct_full_name || props.precinct_desc || props.enr_desc || props.ENR_DESC || props.precinct_name || '').toString()
+            );
+            const label = full || formatPrecinctDisplayLabel(props.county_nam || '', props.prec_id || '') || (props.prec_id || '').toString().trim();
             setStatus(`Selected precinct highlighted in yellow: ${props.county_nam || ''} ${label}`.trim());
           }
         } catch (_) {}
@@ -28715,10 +28785,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 	    async function ensurePrecinctCentroidsLoaded() {
-	      if (precinctCentroidsLoaded || map.getSource('precinct-centroids')) return true;
-	      if (precinctCentroidsLoadInFlight) return false;
+	      if (precinctCentroidsLoaded && map.getSource('precinct-centroids')) {
+	        addPrecinctCentroidLayers();
+	        return true;
+	      }
+	      if (map.getSource('precinct-centroids')) {
+	        precinctCentroidsLoaded = true;
+	        addPrecinctCentroidLayers();
+	        try { updatePrecinctVisibility(); } catch (_) {}
+	        return true;
+	      }
+	      if (precinctCentroidsLoadPromise) {
+	        try { await precinctCentroidsLoadPromise; } catch (_) {}
+	        return !!(precinctCentroidsLoaded && map.getSource('precinct-centroids'));
+	      }
 	      precinctCentroidsLoadInFlight = true;
-	      try {
+	      precinctCentroidsLoadPromise = (async () => {
 	        const pts = await loadJSON(CONFIG.paths.precinct_centroids);
           precinctCentroidsData = pts;
           try {
@@ -28731,13 +28813,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 .replace(/\s+/g, ' ')
                 .trim()
                 .toUpperCase();
-              const full = (p.precinct_full_name || p.precinct_desc || p.enr_desc || p.ENR_DESC || '').toString().replace(/\s+/g, ' ').trim();
+              // Never treat synthetic "County - Precinct" precinct_name as a full display name.
+              const rawFull = (p.precinct_full_name || p.precinct_desc || p.enr_desc || p.ENR_DESC || '').toString().replace(/\s+/g, ' ').trim();
+              const full = stripCountyPrefixFromPrecinctLabel(county, rawFull);
               f.properties = {
                 ...p,
                 county_nam: county || p.county_nam || '',
                 prec_id: prec || p.prec_id || '',
                 precinct_norm: norm,
-                precinct_full_name: full || (p.precinct_full_name || ''),
+                precinct_full_name: full || '',
                 has_polygon: !!(norm && precinctPolygonNormSet && precinctPolygonNormSet.has(norm))
               };
               return f;
@@ -28772,12 +28856,17 @@ document.addEventListener('DOMContentLoaded', function() {
           if (splitTicketOverlayEnabled && currentContestMeta?.contestType && currentContestMeta?.year) {
             refreshSplitTicketOverlayForSelection(currentContestMeta.contestType, currentContestMeta.year).catch(() => {});
           }
+          try { updatePrecinctVisibility(); } catch (_) {}
           queueViewportPrecinctCountUpdate();
+	      })();
+	      try {
+	        await precinctCentroidsLoadPromise;
 	      } catch (err) {
 	        console.warn('Failed to load precinct centroids:', err?.message || err);
           setViewportPrecinctCountText('Viewing -- precincts');
 	      } finally {
 	        precinctCentroidsLoadInFlight = false;
+	        precinctCentroidsLoadPromise = null;
 	      }
 	      return precinctCentroidsLoaded;
 	    }
@@ -29070,21 +29159,72 @@ document.addEventListener('DOMContentLoaded', function() {
       return toTitleCaseName(String(rawName).replace(/[_]+/g, ' ').replace(/\s+/g, ' ').trim());
     }
 
+    function stripCountyPrefixFromPrecinctLabel(countyNameOrNorm, labelRaw) {
+      const label = String(labelRaw || '').replace(/\s+/g, ' ').trim();
+      if (!label) return '';
+      const countyDisplay = displayCountyName(countyNameOrNorm || '');
+      const countyNorm = normalizeCountyToken(countyNameOrNorm || countyDisplay);
+      if (!countyNorm) return label;
+
+      const labelUpper = label.toUpperCase();
+      const countyUpper = String(countyDisplay || countyNorm).toUpperCase();
+      if (labelUpper === countyUpper || labelUpper === countyNorm) return '';
+
+      // "Gwinnett - Sugar Hill D" / "GWINNETT - SUGAR HILL D"
+      const spaced = label.match(/^(.+?)\s+-\s+(.+)$/);
+      if (spaced) {
+        const leftNorm = normalizeCountyToken(spaced[1]);
+        const right = String(spaced[2] || '').replace(/\s+/g, ' ').trim();
+        if (leftNorm === countyNorm) {
+          const rightNorm = normalizeCountyToken(right);
+          // "Gwinnett - Gwinnett" (or County - County) is not a useful precinct label.
+          if (!right || rightNorm === countyNorm) return '';
+          return right;
+        }
+      }
+
+      // Tight hyphen: "Gwinnett-Gwinnett" / "Gwinnett-Sugar Hill D"
+      const tight = label.match(/^([A-Za-z .']+)-(.+)$/);
+      if (tight) {
+        const leftNorm = normalizeCountyToken(tight[1]);
+        const right = String(tight[2] || '').replace(/\s+/g, ' ').trim();
+        if (leftNorm === countyNorm) {
+          const rightNorm = normalizeCountyToken(right);
+          if (!right || rightNorm === countyNorm) return '';
+          return right;
+        }
+      }
+
+      return label;
+    }
+
     function formatPrecinctDisplayLabel(countyNameOrNorm, precinctCodeRaw) {
       const code = resolvePrecinctCanonicalCode(countyNameOrNorm, precinctCodeRaw);
       if (!code) return '';
       const friendly = getPrecinctFriendlyName(countyNameOrNorm, code);
-      if (!friendly) return `Precinct ${code}`;
-      return `${friendly} (${code})`;
+      if (friendly) return friendly;
+      const strippedCode = stripCountyPrefixFromPrecinctLabel(countyNameOrNorm, code);
+      if (strippedCode && normalizeCountyToken(strippedCode) !== normalizeCountyToken(countyNameOrNorm)) {
+        return toTitleCaseName(strippedCode);
+      }
+      // Avoid "Gwinnett - Gwinnett" when the only token is the county name.
+      if (normalizeCountyToken(code) === normalizeCountyToken(countyNameOrNorm)) {
+        return 'Precinct';
+      }
+      return `Precinct ${code}`;
     }
 
-    function isNoisyPrecinctFullName(fullRaw, codeRaw = '') {
+    function isNoisyPrecinctFullName(fullRaw, codeRaw = '', countyNameOrNorm = '') {
       const full = String(fullRaw || '').replace(/\s+/g, ' ').trim();
       const code = String(codeRaw || '').trim().toUpperCase();
       if (!full) return true;
-      const upper = full.toUpperCase();
+      const stripped = stripCountyPrefixFromPrecinctLabel(countyNameOrNorm, full);
+      if (!stripped) return true;
+      const upper = stripped.toUpperCase();
       const compact = upper.replace(/[^A-Z0-9]/g, '');
       const codeCompact = code ? code.replace(/[^A-Z0-9]/g, '') : '';
+      const countyNorm = normalizeCountyToken(countyNameOrNorm);
+      if (countyNorm && normalizeCountyToken(stripped) === countyNorm) return true;
       if (codeCompact && compact === codeCompact) return true;
       if (/VOTING\s*DISTRICT/i.test(upper)) return true;
       // "CODE CODE" variants, or short opaque labels.
@@ -29097,14 +29237,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const rawCode = String(code || '').trim().toUpperCase();
       const canonicalCode = rawCode ? resolvePrecinctCanonicalCode(countyName, rawCode) : '';
       const friendly = rawCode ? getPrecinctFriendlyName(countyName, rawCode) : '';
-      const friendlyLabel = (canonicalCode && friendly) ? `${friendly} (${canonicalCode})` : '';
+      const friendlyLabel = friendly || '';
 
-      const full = String(fullName || '').replace(/\s+/g, ' ').trim();
-      const fallbackFull = String(fallbackFullName || '').replace(/\s+/g, ' ').trim();
+      const full = stripCountyPrefixFromPrecinctLabel(countyName, fullName);
+      const fallbackFull = stripCountyPrefixFromPrecinctLabel(countyName, fallbackFullName);
 
       // If the shapefile's "full name" is just a code-ish token (or a "VOTING DISTRICT" placeholder),
       // prefer a real friendly label when we have it.
-      if (friendlyLabel && (isNoisyPrecinctFullName(full, rawCode) || isNoisyPrecinctFullName(fallbackFull, rawCode))) {
+      if (friendlyLabel && (isNoisyPrecinctFullName(full, rawCode, countyName) || isNoisyPrecinctFullName(fallbackFull, rawCode, countyName))) {
         return friendlyLabel;
       }
 
@@ -29116,7 +29256,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const codeOnly = canonicalCode || rawCode;
-      return full || fallbackFull || friendlyLabel || (codeOnly ? `Precinct ${codeOnly}` : '');
+      if (codeOnly && normalizeCountyToken(codeOnly) === normalizeCountyToken(countyName)) {
+        return friendlyLabel || '';
+      }
+      const codeLabel = friendlyLabel || toTitleCaseName(stripCountyPrefixFromPrecinctLabel(countyName, codeOnly) || codeOnly);
+      return full || fallbackFull || codeLabel || (codeOnly ? `Precinct ${codeOnly}` : '');
     }
 
     async function ensurePrecinctVariantOverrides() {
@@ -29271,8 +29415,11 @@ document.addEventListener('DOMContentLoaded', function() {
             renderPrecinctHoverAtPoint(e.point, f, { forceTooltip: true, pinSelection: true });
             if (props.county_nam && props.prec_id) {
               showCountyDetails(props.county_nam);
-              const full = (props.precinct_full_name || props.precinct_desc || props.enr_desc || props.ENR_DESC || '').toString().replace(/\s+/g, ' ').trim();
-              const label = full || (props.prec_id || '').toString().trim();
+              const full = stripCountyPrefixFromPrecinctLabel(
+                props.county_nam,
+                (props.precinct_full_name || props.precinct_desc || props.enr_desc || props.ENR_DESC || props.precinct_name || '').toString()
+              );
+              const label = full || formatPrecinctDisplayLabel(props.county_nam, props.prec_id) || (props.prec_id || '').toString().trim();
               setStatus(`Selected precinct highlighted in yellow: ${props.county_nam} ${label}`);
             }
           } catch (_) {}
@@ -31449,6 +31596,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       try { reinforceMapLabelHalos(); } catch (_) {}
       try { applyLayerOpacityTuning(); } catch (_) {}
+      // Layers may have been missing when the user first picked a contest during deferred
+      // hydration — force a repaint now that district sources exist.
+      try {
+        const contestValue = (document.getElementById('contestSelect')?.value || '').toString().trim();
+        if (
+          contestValue &&
+          appReady &&
+          (currentView === 'districts' || currentView === 'state_house' || currentView === 'state_senate')
+        ) {
+          applyContest(contestValue, { force: true }).catch(err => {
+            console.warn('Post-hydration district contest reapply failed:', err?.message || err);
+          });
+        }
+      } catch (_) {}
     }
 
     async function hydrateAtlasDataAndDistrictSources() {
@@ -33682,27 +33843,32 @@ document.addEventListener('DOMContentLoaded', function() {
           const linesLabel = getDistrictLinesLabel();
           const contestTypeKey = String(contestType || '').trim().toLowerCase();
           const preserveDistrictViewSummary = contestTypeKey === 'state_house' || contestTypeKey === 'state_senate';
+          // Manifest mode leaves electionData empty — always drive the vote counter from
+          // the district slice totals so district views are not blank after a successful load.
+          setVoteCounterBaselineState(
+            'Statewide',
+            `${formatContestLabel(contestType, year)} (${linesLabel})`,
+            totalDem,
+            totalRep,
+            totalOther,
+            { kind: 'statewide', contestType, year: Number(year) },
+            resolvedStatewideCandidates()
+          );
           if (mode === 'demographics') {
             setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
             setStatus(`Applied demographic mode for ${getReadableViewLabel(currentView)} (${linesLabel}).`);
-            setVoteCounterBaselineState(
-              'Statewide',
-              `${formatContestLabel(contestType, year)} (${linesLabel})`,
-              totalDem,
-              totalRep,
-              totalOther,
-              { kind: 'statewide', contestType, year: Number(year) },
-              resolvedStatewideCandidates()
-            );
             refreshStatewideSummaryFromCountyRows(contestData, ` - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
           } else {
             const statewideSummary = refreshStatewideSummaryFromCountyRows(contestData, ' - Statewide Result');
-            const statewideDemPct = statewideSummary?.total ? (statewideSummary.dem / statewideSummary.total) * 100 : 0;
-            const statewideRepPct = statewideSummary?.total ? (statewideSummary.rep / statewideSummary.total) * 100 : 0;
+            if (!statewideSummary && totalVotes > 0) {
+              setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} (${linesLabel})`);
+            }
+            const summaryDemPct = statewideSummary?.total ? (statewideSummary.dem / statewideSummary.total) * 100 : demPct;
+            const summaryRepPct = statewideSummary?.total ? (statewideSummary.rep / statewideSummary.total) * 100 : repPct;
             if (preserveDistrictViewSummary) {
-              setStatus(`Applied ${getReadableViewLabel(currentView)} crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${statewideDemPct.toFixed(2)}% D, ${statewideRepPct.toFixed(2)}% R.`);
+              setStatus(`Applied ${getReadableViewLabel(currentView)} crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${coverageText}.`);
             } else {
-              setStatus(`Applied district crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${statewideDemPct.toFixed(2)}% D, ${statewideRepPct.toFixed(2)}% R.`);
+              setStatus(`Applied district crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${coverageText}.`);
             }
           }
           return;
