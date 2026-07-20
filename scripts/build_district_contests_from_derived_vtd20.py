@@ -7,6 +7,7 @@ Inputs:
 
 Preferred weighted mappings (CSV):
   - Data/crosswalks/precinct_to_cd118.csv
+  - Data/crosswalks/precinct_to_cd119.csv (preferred for congressional overlays)
   - Data/crosswalks/precinct_to_2022_state_house.csv
   - Data/crosswalks/precinct_to_2024_state_house.csv
   - Data/crosswalks/precinct_to_2022_state_senate.csv
@@ -18,9 +19,13 @@ Fallback boundaries (when CSV crosswalks are missing):
   - Data/tl_2022_13_sldl.geojson
   - Data/tl_2022_13_sldu.geojson
 
-Outputs:
+Outputs (statewide / top-ticket federal overlays only):
   - Data/district_contests/<scope>_<contest_type>_<year>.json
   - Data/district_contests/manifest.json
+
+Excluded from published overlays: District Attorney, PSC, US House seats,
+State House/Senate seats, and other local contests. Seat-race derived files may
+still be read as supplemental precinct->district fallbacks.
 """
 
 from __future__ import annotations
@@ -47,6 +52,26 @@ SCOPE_TO_JOIN_FIELD = {
     "state_house": "SLDLST",
     "state_senate": "SLDUST",
 }
+
+# Statewide / top-ticket federal offices only (district overlays).
+# Exclude: DA, PSC, US House seats, State House/Senate seats, locals.
+STATEWIDE_OVERLAY_CONTEST_TYPES = frozenset(
+    {
+        "president",
+        "governor",
+        "lieutenant_governor",
+        "us_senate",
+        "us_senate_special",
+        "attorney_general",
+        "secretary_of_state",
+        "treasurer",
+        "auditor",
+        "labor_commissioner",
+        "insurance_commissioner",
+        "agriculture_commissioner",
+        "superintendent",
+    }
+)
 
 
 def normalize_district_number(raw: str) -> str:
@@ -138,6 +163,24 @@ def is_district_specific_office(office: str, district: str) -> bool:
         or ("STATE REPRESENTATIVE" in o)
         or ("STATE SENATE" in o)
     )
+
+
+def is_statewide_overlay_contest(office: str, district: str, slug: str) -> bool:
+    """True for President / Governor / US Senate / statewide executives only."""
+    if is_district_specific_office(office, district):
+        return False
+    contest_type = office_to_contest_type(office, district, slug)
+    if contest_type not in STATEWIDE_OVERLAY_CONTEST_TYPES:
+        return False
+    # Belt-and-suspenders: never treat DA / solicitor / PSC as statewide overlays
+    # even if naming variants confuse office_to_contest_type.
+    o = re.sub(r"[^A-Z0-9 ]+", " ", (office or "").upper())
+    o = re.sub(r"\s+", " ", o).strip()
+    if "DISTRICT ATTORNEY" in o or re.search(r"\bDA\b", o) or "SOLICITOR" in o:
+        return False
+    if "PUBLIC SERVICE COMMISSION" in o:
+        return False
+    return True
 
 
 def scope_for_district_office(office: str) -> str | None:
@@ -693,6 +736,8 @@ def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path
         district_specific = is_district_specific_office(office, district)
 
         if district_specific:
+            # Keep seat races only for supplemental precinct->district fallbacks;
+            # they are not published as district_contests overlays.
             scope = scope_for_district_office(office)
             if not scope:
                 continue
@@ -707,7 +752,7 @@ def build_groups_for_year(year_dir: Path, derived_base: Path, project_root: Path
                     path=path,
                 )
             )
-        else:
+        elif is_statewide_overlay_contest(office, district, slug):
             for scope in ("congressional", "state_house", "state_senate"):
                 out.append(
                     GroupEntry(
@@ -729,8 +774,8 @@ def select_scope_crosswalk(
     crosswalk_maps: dict[str, dict[str, list[tuple[str, float]]]],
 ) -> dict[str, list[tuple[str, float]]]:
     if scope == "congressional":
-        # Lock congressional overlays to the current CD118 (2022 cycle) lines.
-        return crosswalk_maps["congressional"]
+        # Prefer CD119 (2024 lines) when available; fall back to CD118.
+        return crosswalk_maps.get("congressional_2024") or crosswalk_maps["congressional"]
     if scope == "state_house":
         # Lock legislative overlays to 2024 district plan.
         return crosswalk_maps["state_house_2024"]
@@ -746,6 +791,7 @@ def main() -> None:
     ap.add_argument("--years", default="", help="Optional comma-separated years, e.g. 2014,2016,2018")
 
     ap.add_argument("--crosswalk-cd", type=Path, default=Path("Data/crosswalks/precinct_to_cd118.csv"))
+    ap.add_argument("--crosswalk-cd119", type=Path, default=Path("Data/crosswalks/precinct_to_cd119.csv"))
     ap.add_argument(
         "--crosswalk-state-house-2022", type=Path, default=Path("Data/crosswalks/precinct_to_2022_state_house.csv")
     )
@@ -786,7 +832,7 @@ def main() -> None:
 
     if args.crosswalk_cd.exists():
         crosswalk_maps["congressional"] = load_weighted_crosswalk(args.crosswalk_cd)
-        print(f"  congressional CSV: {len(crosswalk_maps['congressional'])} precincts")
+        print(f"  congressional CSV (CD118): {len(crosswalk_maps['congressional'])} precincts")
     else:
         crosswalk_maps["congressional"] = build_weighted_map_from_geometry(
             vtd20_geojson=args.vtd20_geojson,
@@ -794,6 +840,12 @@ def main() -> None:
             district_join_field=SCOPE_TO_JOIN_FIELD["congressional"],
         )
         print(f"  congressional geometry fallback: {len(crosswalk_maps['congressional'])} precincts")
+
+    if args.crosswalk_cd119.exists():
+        crosswalk_maps["congressional_2024"] = load_weighted_crosswalk(args.crosswalk_cd119)
+        print(f"  congressional_2024 CSV (CD119): {len(crosswalk_maps['congressional_2024'])} precincts")
+    else:
+        print("  congressional_2024 CSV missing -> will use CD118 for congressional overlays")
 
     if args.crosswalk_state_house_2022.exists():
         crosswalk_maps["state_house_2022"] = load_weighted_crosswalk(args.crosswalk_state_house_2022)
@@ -865,6 +917,10 @@ def main() -> None:
     manifest_files: list[dict[str, Any]] = []
 
     for (scope, contest_type, year), entries in sorted(grouped.items(), key=lambda x: (x[0][0], x[0][1], x[0][2])):
+        # Publish statewide/top-ticket overlays only (not seat races, DA, PSC, etc.).
+        if contest_type not in STATEWIDE_OVERLAY_CONTEST_TYPES:
+            continue
+
         direct_csv = year_source_csv.get(year)
         use_direct_state_house_2024 = (
             scope == "state_house"

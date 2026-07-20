@@ -11,14 +11,15 @@ Reads:
 
 Writes:
   - Data/crosswalks/precinct_to_cd118.csv
+  - Data/crosswalks/precinct_to_cd119.csv
   - Data/crosswalks/precinct_to_2022_state_house.csv
   - Data/crosswalks/precinct_to_2024_state_house.csv
   - Data/crosswalks/precinct_to_2022_state_senate.csv
   - Data/crosswalks/precinct_to_2024_state_senate.csv
 
 By default:
-  - Congressional (CD118) uses polygon area overlap between VTD20 and CD118.
-  - State house/senate use polygon area overlap between VTD20 and SLDL/SLDU.
+  - Congressional CD118 / CD119 use polygon area overlap with the matching TIGER vintage.
+  - State house/senate 2022 and 2024 each use their matching SLDL/SLDU vintage.
 
 Optional:
   - You can switch any chamber to BlockAssign source with:
@@ -243,8 +244,11 @@ def main() -> None:
     ap.add_argument("--sldu-member", default="BlockAssign_ST13_GA_SLDU.txt")
     ap.add_argument("--vtd20-geojson", type=Path, default=Path("Data/tl_2020_13_vtd20.geojson"))
     ap.add_argument("--cd118-geojson", type=Path, default=Path("Data/tl_2022_13_cd118.geojson"))
+    ap.add_argument("--cd119-geojson", type=Path, default=Path("Data/tl_2024_13_cd119.geojson"))
     ap.add_argument("--sldl-geojson", type=Path, default=Path("Data/tl_2022_13_sldl.geojson"))
+    ap.add_argument("--sldl-2024-geojson", type=Path, default=Path("Data/tl_2024_13_sldl.geojson"))
     ap.add_argument("--sldu-geojson", type=Path, default=Path("Data/tl_2022_13_sldu.geojson"))
+    ap.add_argument("--sldu-2024-geojson", type=Path, default=Path("Data/tl_2024_13_sldu.geojson"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/crosswalks"))
     ap.add_argument(
         "--cd-from-blockassign",
@@ -264,8 +268,8 @@ def main() -> None:
     ap.add_argument(
         "--copy-2022-to-2024",
         action="store_true",
-        help="Also write 2024 legislative files from the same source rows. "
-        "By default, existing 2024 files are preserved.",
+        help="DEPRECATED: copy 2022 legislative rows into 2024 files. "
+        "By default 2024 files are built from --sldl-2024-geojson / --sldu-2024-geojson.",
     )
     args = ap.parse_args()
 
@@ -295,15 +299,26 @@ def main() -> None:
         cd_mode = "geometry"
     cd_path = args.out_dir / "precinct_to_cd118.csv"
     write_crosswalk_csv(cd_path, cd_rows)
-    if cd_mode == "blockassign":
-        print(
-            f"Wrote {cd_path} from blockassign ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts, "
-            f"{cd_stats['matched_blocks']} matched blocks)"
+    print(
+        f"Wrote {cd_path} from {cd_mode} ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts"
+        + (f", {cd_stats['matched_blocks']} matched blocks)" if cd_mode == "blockassign" else ")")
+    )
+
+    if args.cd119_geojson.exists() and not args.cd_from_blockassign:
+        cd119_rows, cd119_stats = build_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            district_geojson=args.cd119_geojson,
+            district_field="CD119FP",
         )
+        cd119_path = args.out_dir / "precinct_to_cd119.csv"
+        write_crosswalk_csv(cd119_path, cd119_rows)
+        print(
+            f"Wrote {cd119_path} from geometry ({cd119_stats['rows']} rows, {cd119_stats['precincts']} precincts)"
+        )
+    elif args.cd_from_blockassign:
+        print("Skipping precinct_to_cd119.csv (using BlockAssign CD source for CD118 only)")
     else:
-        print(
-            f"Wrote {cd_path} from geometry ({cd_stats['rows']} rows, {cd_stats['precincts']} precincts)"
-        )
+        print(f"Skipping precinct_to_cd119.csv (missing {args.cd119_geojson})")
 
     if args.house_from_blockassign:
         if block_to_precinct is None:
@@ -322,28 +337,29 @@ def main() -> None:
         )
         house_mode = "geometry"
     sldl_2022_path = args.out_dir / "precinct_to_2022_state_house.csv"
-    sldl_2024_path = args.out_dir / "precinct_to_2024_state_house.csv"
     write_crosswalk_csv(sldl_2022_path, sldl_rows)
-    wrote_house_2024 = False
-    if args.copy_2022_to_2024 or not sldl_2024_path.exists():
+    print(
+        f"Wrote {sldl_2022_path} from {house_mode} ({sldl_stats['rows']} rows, {sldl_stats['precincts']} precincts"
+        + (f", {sldl_stats['matched_blocks']} matched blocks)" if house_mode == "blockassign" else ")")
+    )
+
+    sldl_2024_path = args.out_dir / "precinct_to_2024_state_house.csv"
+    if args.copy_2022_to_2024 or args.house_from_blockassign:
         write_crosswalk_csv(sldl_2024_path, sldl_rows)
-        wrote_house_2024 = True
-    if wrote_house_2024:
-        if house_mode == "blockassign":
-            print(
-                f"Wrote {sldl_2022_path} and {sldl_2024_path} from blockassign ({sldl_stats['rows']} rows, "
-                f"{sldl_stats['precincts']} precincts, {sldl_stats['matched_blocks']} matched blocks)"
-            )
-        else:
-            print(
-                f"Wrote {sldl_2022_path} and {sldl_2024_path} from geometry ({sldl_stats['rows']} rows, "
-                f"{sldl_stats['precincts']} precincts)"
-            )
-    else:
-        print(
-            f"Wrote {sldl_2022_path} ({sldl_stats['rows']} rows, {sldl_stats['precincts']} precincts, "
-            f"{sldl_stats['matched_blocks']} matched blocks); preserved existing {sldl_2024_path}"
+        print(f"Wrote {sldl_2024_path} as copy of 2022/{house_mode} rows")
+    elif args.sldl_2024_geojson.exists():
+        sldl_2024_rows, sldl_2024_stats = build_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            district_geojson=args.sldl_2024_geojson,
+            district_field="SLDLST",
         )
+        write_crosswalk_csv(sldl_2024_path, sldl_2024_rows)
+        print(
+            f"Wrote {sldl_2024_path} from 2024 geometry "
+            f"({sldl_2024_stats['rows']} rows, {sldl_2024_stats['precincts']} precincts)"
+        )
+    else:
+        raise SystemExit(f"Missing 2024 house geometry: {args.sldl_2024_geojson}")
 
     if args.senate_from_blockassign:
         if block_to_precinct is None:
@@ -362,28 +378,29 @@ def main() -> None:
         )
         senate_mode = "geometry"
     sldu_2022_path = args.out_dir / "precinct_to_2022_state_senate.csv"
-    sldu_2024_path = args.out_dir / "precinct_to_2024_state_senate.csv"
     write_crosswalk_csv(sldu_2022_path, sldu_rows)
-    wrote_senate_2024 = False
-    if args.copy_2022_to_2024 or not sldu_2024_path.exists():
+    print(
+        f"Wrote {sldu_2022_path} from {senate_mode} ({sldu_stats['rows']} rows, {sldu_stats['precincts']} precincts"
+        + (f", {sldu_stats['matched_blocks']} matched blocks)" if senate_mode == "blockassign" else ")")
+    )
+
+    sldu_2024_path = args.out_dir / "precinct_to_2024_state_senate.csv"
+    if args.copy_2022_to_2024 or args.senate_from_blockassign:
         write_crosswalk_csv(sldu_2024_path, sldu_rows)
-        wrote_senate_2024 = True
-    if wrote_senate_2024:
-        if senate_mode == "blockassign":
-            print(
-                f"Wrote {sldu_2022_path} and {sldu_2024_path} from blockassign ({sldu_stats['rows']} rows, "
-                f"{sldu_stats['precincts']} precincts, {sldu_stats['matched_blocks']} matched blocks)"
-            )
-        else:
-            print(
-                f"Wrote {sldu_2022_path} and {sldu_2024_path} from geometry ({sldu_stats['rows']} rows, "
-                f"{sldu_stats['precincts']} precincts)"
-            )
-    else:
-        print(
-            f"Wrote {sldu_2022_path} ({sldu_stats['rows']} rows, {sldu_stats['precincts']} precincts, "
-            f"{sldu_stats['matched_blocks']} matched blocks); preserved existing {sldu_2024_path}"
+        print(f"Wrote {sldu_2024_path} as copy of 2022/{senate_mode} rows")
+    elif args.sldu_2024_geojson.exists():
+        sldu_2024_rows, sldu_2024_stats = build_weight_rows_from_geometry(
+            vtd20_geojson=args.vtd20_geojson,
+            district_geojson=args.sldu_2024_geojson,
+            district_field="SLDUST",
         )
+        write_crosswalk_csv(sldu_2024_path, sldu_2024_rows)
+        print(
+            f"Wrote {sldu_2024_path} from 2024 geometry "
+            f"({sldu_2024_stats['rows']} rows, {sldu_2024_stats['precincts']} precincts)"
+        )
+    else:
+        raise SystemExit(f"Missing 2024 senate geometry: {args.sldu_2024_geojson}")
 
 
 if __name__ == "__main__":
