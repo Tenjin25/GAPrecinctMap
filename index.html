@@ -6,16 +6,16 @@
     --initial-margin-1: #67000d;
     --initial-margin-2: #a50f15;
     --initial-margin-3: #cb181d;
-    --initial-margin-4: #e03a32;
-    --initial-margin-5: #e85a52;
-    --initial-margin-6: #f99a90;
+    --initial-margin-4: #db3830;
+    --initial-margin-5: #eb544c;
+    --initial-margin-6: #fa9983;
     --initial-margin-7: #f4c9c5;
     --initial-margin-8: #f7f7f7;
     --initial-margin-9: #c7ddf0;
     --initial-margin-10: #8bbde0;
     --initial-margin-11: #6baed6;
-    --initial-margin-12: #3f8fd0;
-    --initial-margin-13: #1f6aad;
+    --initial-margin-12: #4795d2;
+    --initial-margin-13: #2876b5;
     --initial-margin-14: #08519c;
     --initial-margin-15: #08306b;
   }
@@ -10113,16 +10113,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="legend-segment legend-color" style="background: #67000d;"></span>
                 <span class="legend-segment legend-color" style="background: #a50f15;"></span>
                 <span class="legend-segment legend-color" style="background: #cb181d;"></span>
-                <span class="legend-segment legend-color" style="background: #e03a32;"></span>
-                <span class="legend-segment legend-color" style="background: #e85a52;"></span>
-                <span class="legend-segment legend-color" style="background: #f99a90;"></span>
+                <span class="legend-segment legend-color" style="background: #db3830;"></span>
+                <span class="legend-segment legend-color" style="background: #eb544c;"></span>
+                <span class="legend-segment legend-color" style="background: #fa9983;"></span>
                 <span class="legend-segment legend-color" style="background: #f4c9c5;"></span>
                 <span class="legend-segment legend-color" style="background: #f7f7f7; border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
                 <span class="legend-segment legend-color" style="background: #c7ddf0;"></span>
                 <span class="legend-segment legend-color" style="background: #8bbde0;"></span>
                 <span class="legend-segment legend-color" style="background: #6baed6;"></span>
-                <span class="legend-segment legend-color" style="background: #3f8fd0;"></span>
-                <span class="legend-segment legend-color" style="background: #1f6aad;"></span>
+                <span class="legend-segment legend-color" style="background: #4795d2;"></span>
+                <span class="legend-segment legend-color" style="background: #2876b5;"></span>
                 <span class="legend-segment legend-color" style="background: #08519c;"></span>
                 <span class="legend-segment legend-color" style="background: #08306b;"></span>
               </div>
@@ -31989,13 +31989,13 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (marginPct >= 30) {
         return winner === 'R' ? '#a50f15' : '#08519c'; // OG Dominant
       } else if (marginPct >= 20) {
-        return winner === 'R' ? '#cb181d' : '#1f6aad'; // Stronghold — OG Dem nudged darker
+        return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold — midpoint blue, OG red
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#e03a32' : '#3f8fd0'; // Safe — toward OG brightness, still above Stronghold
+        return winner === 'R' ? '#db3830' : '#4795d2'; // Safe — midpoint between OG and newer ramp
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#e85a52' : '#6baed6'; // Likely — option A (locked)
+        return winner === 'R' ? '#eb544c' : '#6baed6'; // Likely — midpoint red, established blue
       } else if (marginPct >= 1.0) {
-        return winner === 'R' ? '#f99a90' : '#8bbde0'; // Lean — cooler red, less orange
+        return winner === 'R' ? '#fa9983' : '#8bbde0'; // Lean — midpoint red, established blue
       } else if (marginPct >= 0.5) {
         return winner === 'R' ? '#f4c9c5' : '#c7ddf0'; // Balanced Tilt shades, still clearly lighter than Lean
       } else {
