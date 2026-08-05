@@ -346,13 +346,16 @@ def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_
     out["margin_votes"] = (out["winner_votes"] - out["runnerup_votes"]).astype(int)
     out["winner_candidate"] = out["winner_candidate"].fillna("")
 
+    # Keep the candidate name as the mapping index. Using groupby().nth(0)
+    # here can return a positional index, causing every winner-party lookup
+    # to miss and fall back to UNK.
     cand_party = (
         sub.groupby(["candidate", "party_norm"], dropna=False)["votes"]
         .sum()
         .reset_index()
         .sort_values(["candidate", "votes", "party_norm"], ascending=[True, False, True], kind="mergesort")
-        .groupby("candidate", sort=False)
-        .nth(0)["party_norm"]
+        .drop_duplicates("candidate", keep="first")
+        .set_index("candidate")["party_norm"]
     )
     out["winner_party"] = out["winner_candidate"].map(cand_party).fillna("UNK")
     out["winner_candidate"] = out.apply(
@@ -547,6 +550,17 @@ def main() -> None:
     ]
     df["party_norm"] = df.get("party", "").fillna("").astype(str).map(normalize_party)
     df["candidate"] = df["candidate"].fillna("").astype(str).map(normalize_candidate_case)
+    # The 2020 first-round Senate races are multi-candidate contests. Keep the
+    # two runoff nominees as DEM/REP and bucket every other name into OTH.
+    if "20201103" in args.csv.name:
+        targets = {
+            "U.S. Senate": {"JON OSSOFF", "DAVID A. PERDUE"},
+            "U.S. Senate (Special)": {"RAPHAEL WARNOCK", "KELLY LOEFFLER"},
+        }
+        for office_name, names in targets.items():
+            mask = df["office"].eq(office_name)
+            keys = df.loc[mask, "candidate"].astype(str).str.replace(r"\s*\(I\)\s*", "", regex=True).str.strip().str.upper()
+            df.loc[mask & ~keys.isin(names), "party_norm"] = "OTH"
     if "precinct" in df.columns:
         df["precinct"] = df["precinct"].fillna("").astype(str)
     df["votes"] = pd.to_numeric(df[votes_col], errors="coerce").fillna(0).astype(int)

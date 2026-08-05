@@ -1,5 +1,5 @@
 {
-  "csv": "Data\\20221108__ga__general__precinct-total.csv",
+  "csv": "Data\\20221108__ga__general__official__precinct.csv",
   "levels": [
     "vtd20"
   ],
@@ -10,24 +10,9 @@
       "slug": "Attorney_General",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Attorney_General.json",
-          "rows": 2442
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Attorney_General.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3919044,
-        "matched_vtd10_votes": 3087443,
-        "fallback_vtd20_votes": 471277,
-        "dropped_votes": 360324,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3558720,
-        "output_vtd20": 2442
       }
     },
     {
@@ -36,24 +21,9 @@
       "slug": "Commissioner_of_Agriculture",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Agriculture.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Commissioner_of_Agriculture.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3905762,
-        "matched_vtd10_votes": 3076678,
-        "fallback_vtd20_votes": 469831,
-        "dropped_votes": 359253,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 297,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3546509,
-        "output_vtd20": 2443
       }
     },
     {
@@ -62,24 +32,9 @@
       "slug": "Commissioner_of_Insurance",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Insurance.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Commissioner_of_Insurance.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3895524,
-        "matched_vtd10_votes": 3068683,
-        "fallback_vtd20_votes": 468576,
-        "dropped_votes": 358265,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 231,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3537259,
-        "output_vtd20": 2443
       }
     },
     {
@@ -88,24 +43,9 @@
       "slug": "Commissioner_of_Labor",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Labor.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Commissioner_of_Labor.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3898024,
-        "matched_vtd10_votes": 3070423,
-        "fallback_vtd20_votes": 468967,
-        "dropped_votes": 358634,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3539390,
-        "output_vtd20": 2443
       }
     },
     {
@@ -114,24 +54,9 @@
       "slug": "Governor",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Governor.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Governor.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3953433,
-        "matched_vtd10_votes": 3114593,
-        "fallback_vtd20_votes": 475376,
-        "dropped_votes": 363464,
-        "precincts": 2722,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 233,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3589969,
-        "output_vtd20": 2443
       }
     },
     {
@@ -140,50 +65,9 @@
       "slug": "Lieutenant_Governor",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Lieutenant_Governor.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Lieutenant_Governor.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3910348,
-        "matched_vtd10_votes": 3080681,
-        "fallback_vtd20_votes": 470202,
-        "dropped_votes": 359465,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3550883,
-        "output_vtd20": 2443
-      }
-    },
-    {
-      "office": "STATE SCHOOL SUPERINTENDENT",
-      "district": "",
-      "slug": "STATE_SCHOOL_SUPERINTENDENT",
-      "outputs": {
-        "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/STATE_SCHOOL_SUPERINTENDENT.json",
-          "rows": 2443
-        }
-      },
-      "coverage": {
-        "source_votes": 3904399,
-        "matched_vtd10_votes": 3075744,
-        "fallback_vtd20_votes": 469490,
-        "dropped_votes": 359165,
-        "precincts": 2721,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3545234,
-        "output_vtd20": 2443
       }
     },
     {
@@ -192,24 +76,801 @@
       "slug": "Secretary_of_State",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/Secretary_of_State.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\Secretary_of_State.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 3910201,
-        "matched_vtd10_votes": 3080701,
-        "fallback_vtd20_votes": 470120,
-        "dropped_votes": 359380,
-        "precincts": 2722,
-        "matched_exact": 1900,
-        "matched_fuzzy": 277,
-        "matched_alias": 9,
-        "fallback": 296,
-        "dropped": 233,
-        "vtd10_missing_shares": 0,
-        "output_votes": 3550821,
-        "output_vtd20": 2443
+      }
+    },
+    {
+      "office": "State House",
+      "district": "128",
+      "slug": "State_House__128",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__128.json",
+          "rows": 23
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "133",
+      "slug": "State_House__133",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__133.json",
+          "rows": 13
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "145",
+      "slug": "State_House__145",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__145.json",
+          "rows": 4
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "149",
+      "slug": "State_House__149",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__149.json",
+          "rows": 8
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "150",
+      "slug": "State_House__150",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__150.json",
+          "rows": 4
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "155",
+      "slug": "State_House__155",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__155.json",
+          "rows": 15
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "156",
+      "slug": "State_House__156",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__156.json",
+          "rows": 20
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "157",
+      "slug": "State_House__157",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__157.json",
+          "rows": 23
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "158",
+      "slug": "State_House__158",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__158.json",
+          "rows": 19
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "159",
+      "slug": "State_House__159",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__159.json",
+          "rows": 15
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "160",
+      "slug": "State_House__160",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__160.json",
+          "rows": 11
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "161",
+      "slug": "State_House__161",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__161.json",
+          "rows": 10
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "167",
+      "slug": "State_House__167",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__167.json",
+          "rows": 17
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "168",
+      "slug": "State_House__168",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__168.json",
+          "rows": 12
+        }
+      }
+    },
+    {
+      "office": "State House",
+      "district": "178",
+      "slug": "State_House__178",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_House__178.json",
+          "rows": 16
+        }
+      }
+    },
+    {
+      "office": "State School Superintendent",
+      "district": "",
+      "slug": "State_School_Superintendent",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_School_Superintendent.json",
+          "rows": 2721
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "1",
+      "slug": "State_Senate__001",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__001.json",
+          "rows": 55
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "10",
+      "slug": "State_Senate__010",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__010.json",
+          "rows": 38
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "11",
+      "slug": "State_Senate__011",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__011.json",
+          "rows": 82
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "12",
+      "slug": "State_Senate__012",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__012.json",
+          "rows": 72
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "13",
+      "slug": "State_Senate__013",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__013.json",
+          "rows": 55
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "16",
+      "slug": "State_Senate__016",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__016.json",
+          "rows": 32
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "17",
+      "slug": "State_Senate__017",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__017.json",
+          "rows": 39
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "18",
+      "slug": "State_Senate__018",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__018.json",
+          "rows": 38
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "19",
+      "slug": "State_Senate__019",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__019.json",
+          "rows": 70
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "2",
+      "slug": "State_Senate__002",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__002.json",
+          "rows": 69
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "20",
+      "slug": "State_Senate__020",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__020.json",
+          "rows": 55
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "22",
+      "slug": "State_Senate__022",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__022.json",
+          "rows": 60
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "23",
+      "slug": "State_Senate__023",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__023.json",
+          "rows": 91
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "24",
+      "slug": "State_Senate__024",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__024.json",
+          "rows": 73
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "25",
+      "slug": "State_Senate__025",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__025.json",
+          "rows": 48
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "26",
+      "slug": "State_Senate__026",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__026.json",
+          "rows": 57
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "29",
+      "slug": "State_Senate__029",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__029.json",
+          "rows": 14
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "3",
+      "slug": "State_Senate__003",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__003.json",
+          "rows": 51
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "32",
+      "slug": "State_Senate__032",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__032.json",
+          "rows": 25
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "33",
+      "slug": "State_Senate__033",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__033.json",
+          "rows": 35
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "37",
+      "slug": "State_Senate__037",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__037.json",
+          "rows": 39
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "38",
+      "slug": "State_Senate__038",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__038.json",
+          "rows": 21
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "4",
+      "slug": "State_Senate__004",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__004.json",
+          "rows": 47
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "40",
+      "slug": "State_Senate__040",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__040.json",
+          "rows": 42
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "41",
+      "slug": "State_Senate__041",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__041.json",
+          "rows": 50
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "42",
+      "slug": "State_Senate__042",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__042.json",
+          "rows": 54
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "43",
+      "slug": "State_Senate__043",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__043.json",
+          "rows": 34
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "44",
+      "slug": "State_Senate__044",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__044.json",
+          "rows": 15
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "45",
+      "slug": "State_Senate__045",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__045.json",
+          "rows": 27
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "46",
+      "slug": "State_Senate__046",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__046.json",
+          "rows": 38
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "47",
+      "slug": "State_Senate__047",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__047.json",
+          "rows": 36
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "48",
+      "slug": "State_Senate__048",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__048.json",
+          "rows": 7
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "49",
+      "slug": "State_Senate__049",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__049.json",
+          "rows": 30
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "5",
+      "slug": "State_Senate__005",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__005.json",
+          "rows": 26
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "50",
+      "slug": "State_Senate__050",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__050.json",
+          "rows": 41
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "51",
+      "slug": "State_Senate__051",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__051.json",
+          "rows": 5
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "55",
+      "slug": "State_Senate__055",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__055.json",
+          "rows": 38
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "56",
+      "slug": "State_Senate__056",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__056.json",
+          "rows": 23
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "6",
+      "slug": "State_Senate__006",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__006.json",
+          "rows": 20
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "7",
+      "slug": "State_Senate__007",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__007.json",
+          "rows": 32
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "8",
+      "slug": "State_Senate__008",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__008.json",
+          "rows": 48
+        }
+      }
+    },
+    {
+      "office": "State Senate",
+      "district": "9",
+      "slug": "State_Senate__009",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\State_Senate__009.json",
+          "rows": 37
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "1",
+      "slug": "U.S._House__01",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__01.json",
+          "rows": 232
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "10",
+      "slug": "U.S._House__10",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__10.json",
+          "rows": 160
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "11",
+      "slug": "U.S._House__11",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__11.json",
+          "rows": 76
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "12",
+      "slug": "U.S._House__12",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__12.json",
+          "rows": 270
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "13",
+      "slug": "U.S._House__13",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__13.json",
+          "rows": 41
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "14",
+      "slug": "U.S._House__14",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__14.json",
+          "rows": 18
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "2",
+      "slug": "U.S._House__02",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__02.json",
+          "rows": 167
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "3",
+      "slug": "U.S._House__03",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__03.json",
+          "rows": 50
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "4",
+      "slug": "U.S._House__04",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__04.json",
+          "rows": 178
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "5",
+      "slug": "U.S._House__05",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__05.json",
+          "rows": 46
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "6",
+      "slug": "U.S._House__06",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__06.json",
+          "rows": 51
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "7",
+      "slug": "U.S._House__07",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__07.json",
+          "rows": 113
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "8",
+      "slug": "U.S._House__08",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__08.json",
+          "rows": 224
+        }
+      }
+    },
+    {
+      "office": "U.S. House",
+      "district": "9",
+      "slug": "U.S._House__09",
+      "outputs": {
+        "vtd20": {
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._House__09.json",
+          "rows": 118
+        }
       }
     },
     {
@@ -218,173 +879,21 @@
       "slug": "U.S._Senate",
       "outputs": {
         "vtd20": {
-          "path": "Data/derived_vtd20/2022/contests/vtd20/U.S._Senate.json",
-          "rows": 2443
+          "path": "Data\\derived_vtd20\\2022\\contests\\vtd20\\U.S._Senate.json",
+          "rows": 2721
         }
-      },
-      "coverage": {
-        "source_votes": 7477801,
-        "matched_vtd10_votes": 5888812,
-        "fallback_vtd20_votes": 903241,
-        "dropped_votes": 685748,
-        "precincts": 2721,
-        "matched_exact": 1901,
-        "matched_fuzzy": 279,
-        "matched_alias": 9,
-        "fallback": 298,
-        "dropped": 232,
-        "vtd10_missing_shares": 0,
-        "output_votes": 6792053,
-        "output_vtd20": 2443
+      }
+    },
+    {
+      "office": "U.S. Senate Runoff",
+      "district": "",
+      "slug": "U.S._Senate_Runoff",
+      "outputs": {
+        "vtd20": {
+          "path": "Data/derived_vtd20/2022/contests/vtd20/U.S._Senate_Runoff.json",
+          "rows": 2710
+        }
       }
     }
-  ],
-  "coverage": [
-    {
-      "slug": "Attorney_General",
-      "source_votes": 3919044,
-      "matched_vtd10_votes": 3087443,
-      "fallback_vtd20_votes": 471277,
-      "dropped_votes": 360324,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3558720,
-      "output_vtd20": 2442
-    },
-    {
-      "slug": "Commissioner_of_Agriculture",
-      "source_votes": 3905762,
-      "matched_vtd10_votes": 3076678,
-      "fallback_vtd20_votes": 469831,
-      "dropped_votes": 359253,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 297,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3546509,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "Commissioner_of_Insurance",
-      "source_votes": 3895524,
-      "matched_vtd10_votes": 3068683,
-      "fallback_vtd20_votes": 468576,
-      "dropped_votes": 358265,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 231,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3537259,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "Commissioner_of_Labor",
-      "source_votes": 3898024,
-      "matched_vtd10_votes": 3070423,
-      "fallback_vtd20_votes": 468967,
-      "dropped_votes": 358634,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3539390,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "Governor",
-      "source_votes": 3953433,
-      "matched_vtd10_votes": 3114593,
-      "fallback_vtd20_votes": 475376,
-      "dropped_votes": 363464,
-      "precincts": 2722,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 233,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3589969,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "Lieutenant_Governor",
-      "source_votes": 3910348,
-      "matched_vtd10_votes": 3080681,
-      "fallback_vtd20_votes": 470202,
-      "dropped_votes": 359465,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3550883,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "STATE_SCHOOL_SUPERINTENDENT",
-      "source_votes": 3904399,
-      "matched_vtd10_votes": 3075744,
-      "fallback_vtd20_votes": 469490,
-      "dropped_votes": 359165,
-      "precincts": 2721,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3545234,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "Secretary_of_State",
-      "source_votes": 3910201,
-      "matched_vtd10_votes": 3080701,
-      "fallback_vtd20_votes": 470120,
-      "dropped_votes": 359380,
-      "precincts": 2722,
-      "matched_exact": 1900,
-      "matched_fuzzy": 277,
-      "matched_alias": 9,
-      "fallback": 296,
-      "dropped": 233,
-      "vtd10_missing_shares": 0,
-      "output_votes": 3550821,
-      "output_vtd20": 2443
-    },
-    {
-      "slug": "U.S._Senate",
-      "source_votes": 7477801,
-      "matched_vtd10_votes": 5888812,
-      "fallback_vtd20_votes": 903241,
-      "dropped_votes": 685748,
-      "precincts": 2721,
-      "matched_exact": 1901,
-      "matched_fuzzy": 279,
-      "matched_alias": 9,
-      "fallback": 298,
-      "dropped": 232,
-      "vtd10_missing_shares": 0,
-      "output_votes": 6792053,
-      "output_vtd20": 2443
-    }
-  ],
-  "method": "vtd10_weighted_shares",
-  "blockpath_promoted_at_utc": "2026-07-20T20:35:59.704342+00:00"
+  ]
 }

@@ -6,9 +6,9 @@
     --initial-margin-1: #67000d;
     --initial-margin-2: #a50f15;
     --initial-margin-3: #cb181d;
-    --initial-margin-4: #db3830;
-    --initial-margin-5: #eb544c;
-    --initial-margin-6: #fa9983;
+    --initial-margin-4: #e93a2d;
+    --initial-margin-5: #f7634b;
+    --initial-margin-6: #fca793;
     --initial-margin-7: #f4c9c5;
     --initial-margin-8: #f7f7f7;
     --initial-margin-9: #c7ddf0;
@@ -10304,9 +10304,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="legend-segment legend-color" style="background: #67000d;"></span>
                 <span class="legend-segment legend-color" style="background: #a50f15;"></span>
                 <span class="legend-segment legend-color" style="background: #cb181d;"></span>
-                <span class="legend-segment legend-color" style="background: #db3830;"></span>
-                <span class="legend-segment legend-color" style="background: #eb544c;"></span>
-                <span class="legend-segment legend-color" style="background: #fa9983;"></span>
+                <span class="legend-segment legend-color" style="background: #e93a2d;"></span>
+                <span class="legend-segment legend-color" style="background: #f7634b;"></span>
+                <span class="legend-segment legend-color" style="background: #fca793;"></span>
                 <span class="legend-segment legend-color" style="background: #f4c9c5;"></span>
                 <span class="legend-segment legend-color" style="background: #f7f7f7; border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
                 <span class="legend-segment legend-color" style="background: #c7ddf0;"></span>
@@ -10575,8 +10575,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-07-21-ui-theme-refresh';
-    const APP_BUILD_ID = '2026-07-20-district-contests-vintage';
+    const DATA_CACHE_BUSTER = '2026-08-05-official-election-data';
+    const APP_BUILD_ID = '2026-08-05-official-election-data';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -10613,6 +10613,9 @@ document.addEventListener('DOMContentLoaded', function() {
       paths: {
         counties: withBase('./Data/tl_2020_13_county20.geojson'),
         precincts: withBase('./Data/Voting_Precincts.geojson'),
+        // Legacy contests use VTD20 geometry because the modern precinct boundaries
+        // do not share stable identifiers with the 2000–2012 result exports.
+        precincts_fallback_vtd20: withBase('./Data/tl_2020_13_vtd20.geojson'),
         precinct_centroids: withBase('./Data/precinct_centroids.geojson'),
         precinct_aliases: withBase('./Data/precinct_alias_index.json'),
         precinct_friendly_names: withBase('./Data/precinct_friendly_names.json'),
@@ -11520,6 +11523,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let precinctSourceLoaded = false;
     let precinctLoadInFlight = false;
     let precinctGeometryMode = null; // 'precinct' or 'vtd20' based on contest year
+    const derivedPrecinctResultsCache = new Map(); // key `${contestType}_${year}` -> Map<precinct_norm, row>
+    const derivedPrecinctResultsInflight = new Map();
+    const derivedPrecinctManifestCache = new Map(); // year -> manifest
+    const derivedPrecinctManifestInflight = new Map();
     let lastPrecinctFillExpr = null; // Cached fill-color expression for precinct overlay.
     let lastPrecinctDotExpr = null; // Cached circle-color expression for precinct dots (statewide zoom).
     let lastCountyFillExpr = null; // Cached fill-color expression for county layer.
@@ -19236,6 +19243,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'president': 'President of the United States',
 	        'governor': 'Governor',
 	        'us_senate': 'United States Senator',
+	        'us_senate_special': 'United States Senator — Special Election',
+	        'us_senate_runoff': 'United States Senator — Runoff',
 	        'lieutenant_governor': 'Lieutenant Governor',
 	        'attorney_general': 'Attorney General',
 	        'auditor': 'State Auditor',
@@ -19284,10 +19293,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	      return nameMap[contestType] || contestType.toUpperCase();
 	    }
 
-    function formatContestLabel(contestType, year) {
+	    function formatContestLabel(contestType, year) {
+	      const y = Number(year);
+	      if (contestType === 'us_senate' && y === 2020) return 'US Senate — Regular (2020)';
+	      if (contestType === 'us_senate_special' && y === 2020) return 'US Senate — Special (2020)';
+	      if (contestType === 'us_senate' && y === 2021) return 'US Senate — Regular Runoff (2021)';
+	      if (contestType === 'us_senate_special' && y === 2021) return 'US Senate — Special Runoff (2021)';
+	      if (contestType === 'us_senate_runoff' && y === 2022) return 'US Senate — Runoff (2022)';
       const officeName = formatContestName(contestType, year);
       return Number.isFinite(Number(year)) ? `${officeName} ${year}` : officeName;
-    }
+	    }
 
     function populateContestSelectFromElectionJSON(electionData) {
       if (!Array.isArray(electionData) || electionData.length === 0) return;
@@ -19578,7 +19593,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
-	        if (contestType === 'us_senate') return 'US Senate';
+	        if (contestType === 'us_senate' || contestType === 'us_senate_special' || contestType === 'us_senate_runoff') return 'US Senate';
 	        if (contestType === 'governor') return 'GA Governor';
 	        if (contestType === 'lieutenant_governor') return 'GA Lieutenant Governor';
 	        if (contestType === 'attorney_general') return 'GA Attorney General';
@@ -19655,7 +19670,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	          if (isJudicial) {
               opt.textContent = `${formatContestName(item.contestType, item.year)} (${item.year})`;
 	          } else {
-              opt.textContent = `${label} (${item.year})`;
+	              opt.textContent = `${formatContestLabel(item.contestType, item.year)}`;
 	          }
 	          if (q) {
 	            const hay = `${label} ${item.year} ${item.contestType} ${formatContestName(item.contestType, item.year)}`.toUpperCase();
@@ -29692,12 +29707,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function togglePrecinctOverlay() {
-      precinctsEnabled = !precinctsEnabled;
-      if (precinctsEnabled) {
-        // Always prefer centroids first so statewide zoom is responsive.
-        await ensurePrecinctCentroidsLoaded();
-        if (map.getZoom() >= (CONFIG.precincts?.minZoom || 8.5)) {
-          await ensurePrecinctSourceLoaded();
+      const nextEnabled = !precinctsEnabled;
+      precinctsEnabled = nextEnabled;
+      if (nextEnabled) {
+        try {
+          // Always prefer centroids first so statewide zoom is responsive.
+          await ensurePrecinctCentroidsLoaded();
+          if (map.getZoom() >= (CONFIG.precincts?.minZoom || 8.5)) {
+            await ensurePrecinctSourceLoaded();
+          }
+        } catch (err) {
+          precinctsEnabled = false;
+          clearHoverOutline();
+          updatePrecinctVisibility();
+          applyLayerOpacityTuning();
+          setStatus('Precinct overlay unavailable');
+          console.warn('Precinct overlay failed to load:', err?.message || err);
+          return;
         }
       } else {
         setTooltipPinned(false);
@@ -32182,11 +32208,11 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (marginPct >= 20) {
         return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold — midpoint blue, OG red
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#db3830' : '#4795d2'; // Safe — midpoint between OG and newer ramp
+        return winner === 'R' ? '#e93a2d' : '#4795d2'; // Safe — midpoint between OG and newer ramp
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#eb544c' : '#6baed6'; // Likely — midpoint red, established blue
+        return winner === 'R' ? '#f7634b' : '#6baed6'; // Likely — midpoint red, established blue
       } else if (marginPct >= 1.0) {
-        return winner === 'R' ? '#fa9983' : '#8bbde0'; // Lean — midpoint red, established blue
+        return winner === 'R' ? '#fca793' : '#8bbde0'; // Lean — midpoint red, established blue
       } else if (marginPct >= 0.5) {
         return winner === 'R' ? '#f4c9c5' : '#c7ddf0'; // Balanced Tilt shades, still clearly lighter than Lean
       } else {
@@ -32632,6 +32658,193 @@ document.addEventListener('DOMContentLoaded', function() {
       return cached;
     }
 
+    function normalizeDerivedContestOffice(value) {
+      return String(value || '')
+        .toUpperCase()
+        .replace(/&/g, ' AND ')
+        .replace(/[^A-Z0-9]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function derivedContestOfficeAliases(contestType, year) {
+      const ct = String(contestType || '').trim().toLowerCase();
+      const label = normalizeDerivedContestOffice(formatContestName(ct, year));
+      const aliases = new Set(label ? [label] : []);
+      if (ct === 'president') ['PRESIDENT', 'PRESIDENT OF THE UNITED STATES'].forEach(v => aliases.add(v));
+      if (ct === 'us_senate' || ct === 'us_senate_special' || ct === 'us_senate_runoff') {
+        ['US SENATE', 'UNITED STATES SENATE', 'UNITED STATES SENATOR', 'U S SENATE'].forEach(v => aliases.add(v));
+      }
+      if (ct === 'us_house') ['US HOUSE', 'U S HOUSE', 'UNITED STATES HOUSE', 'U S HOUSE OF REPRESENTATIVES'].forEach(v => aliases.add(v));
+      if (ct === 'superintendent') ['STATE SCHOOL SUPERINTENDENT', 'SUPERINTENDENT OF PUBLIC INSTRUCTION'].forEach(v => aliases.add(v));
+      if (ct === 'auditor') ['STATE AUDITOR', 'AUDITOR'].forEach(v => aliases.add(v));
+      return aliases;
+    }
+
+    async function loadDerivedPrecinctManifest(year) {
+      const y = Number(year);
+      if (derivedPrecinctManifestCache.has(y)) return derivedPrecinctManifestCache.get(y);
+      if (derivedPrecinctManifestInflight.has(y)) return derivedPrecinctManifestInflight.get(y);
+      const p = loadJSON(`${CONFIG.paths.derived_vtd20_base}/${y}/contests/manifest.json`)
+        .then(manifest => {
+          derivedPrecinctManifestCache.set(y, manifest);
+          return manifest;
+        })
+        .catch(() => null);
+      derivedPrecinctManifestInflight.set(y, p);
+      try { return await p; } finally { derivedPrecinctManifestInflight.delete(y); }
+    }
+
+    async function derivedPrecinctContestCandidates(contestType, year, { includeDistricts = false } = {}) {
+      const ct = String(contestType || '').trim().toLowerCase();
+      const y = Number(year);
+      const manifest = await loadDerivedPrecinctManifest(y);
+      const aliases = derivedContestOfficeAliases(ct, y);
+      const entries = Array.isArray(manifest?.contests) ? manifest.contests : [];
+      const matches = entries.filter(entry => {
+        if (!includeDistricts && String(entry?.district || '').trim()) return false;
+        const office = normalizeDerivedContestOffice(entry?.office || entry?.slug || '');
+        const officeBase = office.replace(/\bSPECIAL\b|\bRUNOFF\b/g, '').replace(/\s+/g, ' ').trim();
+        if (!aliases.has(office) && !aliases.has(officeBase)) return false;
+        const special = /SPECIAL/.test(office);
+        const runoff = /RUNOFF/.test(office);
+        if (ct === 'us_senate_special' && !special) return false;
+        if (ct === 'us_senate_runoff' && !runoff) return false;
+        if (ct === 'us_senate' && (special || runoff)) return false;
+        return true;
+      });
+      const files = matches
+        .map(entry => String(entry?.slug || '').trim())
+        .filter(Boolean)
+        .map(slug => `${slug}.json`);
+      // The generated presidential files changed naming convention in 2016.
+      if (ct === 'president') {
+        files.push(...(y === 2016
+          ? ['President_of_the_United_States.json', 'President.json']
+          : ['President.json', 'President_of_the_United_States.json']));
+      }
+      return Array.from(new Set(files));
+    }
+
+    function precinctNormByGeometryId() {
+      const out = new Map();
+      const addFeatures = (features) => {
+        (features || []).forEach(feature => {
+          const p = feature?.properties || {};
+          const id = String(p.id || p.GEOID20 || p.GEOID || feature?.id || '').trim().toUpperCase();
+          const norm = String(p.precinct_norm || p.join_key_name || '').trim().toUpperCase();
+          if (id && norm) out.set(id, norm);
+        });
+      };
+      try { addFeatures(precinctCentroidsData?.features); } catch (_) {}
+      try {
+        const src = map.getSource('precincts');
+        addFeatures(src?._data?.features || src?.data?.features);
+      } catch (_) {}
+      return out;
+    }
+
+    async function loadDerivedPrecinctResults(contestType, year, contestData = [], options = {}) {
+      const includeDistricts = !!options?.includeDistricts;
+      const key = `${String(contestType || '').trim()}_${Number(year)}|districts:${includeDistricts ? 1 : 0}`;
+      if (derivedPrecinctResultsCache.has(key)) return derivedPrecinctResultsCache.get(key);
+      if (derivedPrecinctResultsInflight.has(key)) return derivedPrecinctResultsInflight.get(key);
+      const candidates = await derivedPrecinctContestCandidates(contestType, year, { includeDistricts });
+      if (!candidates.length || !CONFIG.paths?.derived_vtd20_base) return null;
+
+      const p = (async () => {
+        const payloads = [];
+        for (const filename of candidates) {
+          try {
+            const payload = await loadJSON(`${CONFIG.paths.derived_vtd20_base}/${Number(year)}/contests/vtd20/${filename}`);
+            if (payload?.results && Object.keys(payload.results).length) payloads.push(payload);
+          } catch (_) {}
+        }
+        if (!payloads.length) return null;
+
+        const idToNorm = precinctNormByGeometryId();
+        if (!idToNorm.size) return null;
+        const candidateRow = (contestData || []).find(row => (
+          Number(row?.[`${contestType}_total`] || 0) > 0
+        )) || {};
+        const demCandidate = candidateRow[`${contestType}_dem_candidate`] || '';
+        const repCandidate = candidateRow[`${contestType}_rep_candidate`] || '';
+        const results = new Map();
+        payloads.forEach(payload => Object.entries(payload.results || {}).forEach(([rawId, result]) => {
+          const norm = idToNorm.get(String(rawId || '').trim().toUpperCase());
+          if (!norm || !result) return;
+          const dem = Number(result.dem_votes) || 0;
+          const rep = Number(result.rep_votes) || 0;
+          const other = Number(result.other_votes) || 0;
+          const total = Number(result.total_votes) || (dem + rep + other);
+          if (total <= 0) return;
+          const marginPct = ((rep - dem) / total) * 100;
+          results.set(norm, {
+            county: norm,
+            year: Number(year),
+            [`${contestType}_dem`]: dem,
+            [`${contestType}_rep`]: rep,
+            [`${contestType}_other`]: other,
+            [`${contestType}_total`]: total,
+            [`${contestType}_dem_candidate`]: demCandidate,
+            [`${contestType}_rep_candidate`]: repCandidate,
+            [`${contestType}_margin_pct`]: marginPct,
+            [`${contestType}_winner`]: rep > dem ? 'REPUBLICAN' : (dem > rep ? 'DEMOCRAT' : 'TIE'),
+            __derived_precinct: true,
+            __derived_precinct_id: String(rawId || '').trim().toUpperCase()
+          });
+        }));
+        if (results.size) derivedPrecinctResultsCache.set(key, results);
+        return results.size ? results : null;
+      })();
+      derivedPrecinctResultsInflight.set(key, p);
+      try {
+        return await p;
+      } finally {
+        derivedPrecinctResultsInflight.delete(key);
+      }
+    }
+
+    function repaintPrecinctOverlayFromResults(contestType, year) {
+      if (!precinctsEnabled || !currentPrecinctResults || !currentPrecinctResults.size) return false;
+      const out = ['match', ['get', 'precinct_norm']];
+      const turnout = new Map();
+      const mode = String(currentVizMode || 'margins').toLowerCase();
+      const rowsByObject = new Map();
+      currentPrecinctResults.forEach((row, norm) => {
+        if (!row || !norm) return;
+        const names = rowsByObject.get(row) || [];
+        names.push(norm);
+        rowsByObject.set(row, names);
+      });
+      rowsByObject.forEach((names, row) => {
+        const dem = Number(row[`${contestType}_dem`] || 0);
+        const rep = Number(row[`${contestType}_rep`] || 0);
+        const other = Number(row[`${contestType}_other`] || 0);
+        const total = Number(row[`${contestType}_total`] || 0);
+        if (total <= 0) return;
+        const signed = signedMarginPctFromVotes(dem, rep, total);
+        const winner = rep > dem ? 'R' : (dem > rep ? 'D' : 'T');
+        const color = mode === 'winners'
+          ? colorForWinnerMode(winner)
+          : colorForMarginMode(Math.abs(signed), winner === 'T' ? 'R' : winner);
+        names.forEach(norm => {
+          out.push(norm, color);
+          turnout.set(norm, total);
+        });
+      });
+      const legacyFallback = Number(year) <= 2012 && getDesiredPrecinctGeometryMode() === 'vtd20';
+      out.push(legacyFallback ? '#d1d5db' : 'rgba(0,0,0,0)');
+      lastPrecinctFillExpr = out;
+      lastPrecinctDotExpr = out;
+      currentPrecinctTurnoutTotals = turnout;
+      if (map.getLayer('precinct-fill')) map.setPaintProperty('precinct-fill', 'fill-color', out);
+      if (map.getLayer('precinct-dot')) map.setPaintProperty('precinct-dot', 'circle-color', out);
+      lastAppliedPrecinctPaintExpr = out;
+      applyLayerOpacityTuning();
+      return true;
+    }
+
     async function applyContest(contestKey, opts = {}) {
       const selectionSeq = Number(opts?.selectionSeq || 0);
       const force = !!opts?.force;
@@ -32823,10 +33036,16 @@ document.addEventListener('DOMContentLoaded', function() {
       // provide a shorter base code (e.g. "03S" vs "03SE"/"03SM").
       let precinctIdx = null;
       let precinctAliasIdx = null;
+      let derivedPrecinctResults = null;
       if (needsPrecinctDetail) {
         try { precinctIdx = await ensurePrecinctCodeIndex(); } catch (_) { precinctIdx = null; }
         try { precinctAliasIdx = await ensurePrecinctAliasIndex(); } catch (_) { precinctAliasIdx = null; }
         try { await ensurePrecinctVariantOverrides(); } catch (_) {}
+        try {
+          derivedPrecinctResults = await loadDerivedPrecinctResults(contestType, year, contestData);
+        } catch (err) {
+          console.warn('Derived precinct results unavailable:', err?.message || err);
+        }
       }
       if (staleCheck()) return;
 
@@ -33021,11 +33240,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // If we already have cached county aggregates, reusing them keeps normal contest switches fast.
       let precinctCacheKey = '';
       let skipPrecinctRowBuild = false;
-      currentPrecinctResults = needsPrecinctDetail ? new Map() : null;
+      currentPrecinctResults = needsPrecinctDetail ? (derivedPrecinctResults || new Map()) : null;
       if (needsPrecinctDetail) {
-        const matchSig = `code:${precinctIdx ? 1 : 0}|alias:${precinctAliasIdx ? 1 : 0}|var:${precinctVariantOverridesByCounty ? 1 : 0}`;
+        const matchSig = derivedPrecinctResults
+          ? 'derived:vtd20'
+          : `code:${precinctIdx ? 1 : 0}|alias:${precinctAliasIdx ? 1 : 0}|var:${precinctVariantOverridesByCounty ? 1 : 0}`;
         precinctCacheKey = `${aggCacheKey}|precinctMatch:${matchSig}`;
-        if (precinctAdjustedRowCache.has(precinctCacheKey)) {
+        if (derivedPrecinctResults) {
+          skipPrecinctRowBuild = true;
+        } else if (precinctAdjustedRowCache.has(precinctCacheKey)) {
           currentPrecinctResults = precinctAdjustedRowCache.get(precinctCacheKey) || new Map();
           skipPrecinctRowBuild = true;
         }
@@ -33904,6 +34127,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const coveragePct = districtNode?.meta?.match_coverage_pct;
 
         if (districtResults && Object.keys(districtResults).length > 0) {
+          if (precinctsEnabled) {
+            try { await ensurePrecinctCentroidsLoaded(); } catch (_) {}
+            try {
+              currentPrecinctResults = await loadDerivedPrecinctResults(
+                contestType,
+                year,
+                contestData,
+                { includeDistricts: true }
+              );
+              repaintPrecinctOverlayFromResults(contestType, year);
+            } catch (err) {
+              currentPrecinctResults = null;
+              console.warn('District precinct results unavailable:', err?.message || err);
+            }
+          } else {
+            currentPrecinctResults = null;
+          }
           let mode = (currentVizMode || 'margins');
           currentDistrictTurnoutTotals = {};
           currentCountyTurnoutTotals = {};

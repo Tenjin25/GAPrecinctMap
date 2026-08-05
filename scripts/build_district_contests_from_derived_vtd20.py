@@ -64,6 +64,7 @@ STATEWIDE_OVERLAY_CONTEST_TYPES = frozenset(
         "lieutenant_governor",
         "us_senate",
         "us_senate_special",
+        "us_senate_runoff",
         "attorney_general",
         "secretary_of_state",
         "treasurer",
@@ -127,6 +128,8 @@ def office_to_contest_type(office: str, district: str, slug: str) -> str:
     if "LIEUTENANT GOVERNOR" in o:
         return "lieutenant_governor"
     if ("U S SENATE" in o) or ("UNITED STATES SENATOR" in o):
+        if "RUNOFF" in o or "runoff" in s:
+            return "us_senate_runoff"
         if "SPECIAL" in o or "special" in s:
             return "us_senate_special"
         return "us_senate"

@@ -1,5 +1,5 @@
 {
-  "csv": "Data\\20201103__ga__general__precinct.csv",
+  "csv": "Data\\20201103__ga__general__official__precinct.csv",
   "levels": [
     "vtd20"
   ],
@@ -11,23 +11,8 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/President.json",
-          "rows": 2517
+          "rows": 2407
         }
-      },
-      "coverage": {
-        "source_votes": 4998482,
-        "matched_vtd10_votes": 3959565,
-        "fallback_vtd20_votes": 700882,
-        "dropped_votes": 338035,
-        "precincts": 2656,
-        "matched_exact": 1941,
-        "matched_fuzzy": 232,
-        "matched_alias": 0,
-        "fallback": 336,
-        "dropped": 144,
-        "vtd10_missing_shares": 0,
-        "output_votes": 4660447,
-        "output_vtd20": 2517
       }
     },
     {
@@ -36,8 +21,8 @@
       "slug": "Public_Service_Commission__1",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\Public_Service_Commission__1.json",
-          "rows": 2656
+          "path": "Data/derived_vtd20/2020/contests/vtd20/Public_Service_Commission__1.json",
+          "rows": 2251
         }
       }
     },
@@ -47,8 +32,8 @@
       "slug": "Public_Service_Commission__4",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\Public_Service_Commission__4.json",
-          "rows": 2656
+          "path": "Data/derived_vtd20/2020/contests/vtd20/Public_Service_Commission__4.json",
+          "rows": 2251
         }
       }
     },
@@ -58,8 +43,8 @@
       "slug": "State_House__001",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__001.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__001.json",
+          "rows": 14
         }
       }
     },
@@ -69,8 +54,8 @@
       "slug": "State_House__002",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__002.json",
-          "rows": 11
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__002.json",
+          "rows": 7
         }
       }
     },
@@ -80,7 +65,7 @@
       "slug": "State_House__003",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__003.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__003.json",
           "rows": 8
         }
       }
@@ -91,8 +76,8 @@
       "slug": "State_House__004",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__004.json",
-          "rows": 12
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__004.json",
+          "rows": 8
         }
       }
     },
@@ -102,7 +87,7 @@
       "slug": "State_House__005",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__005.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__005.json",
           "rows": 11
         }
       }
@@ -113,8 +98,8 @@
       "slug": "State_House__006",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__006.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__006.json",
+          "rows": 6
         }
       }
     },
@@ -124,7 +109,7 @@
       "slug": "State_House__007",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__007.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__007.json",
           "rows": 26
         }
       }
@@ -135,7 +120,7 @@
       "slug": "State_House__008",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__008.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__008.json",
           "rows": 20
         }
       }
@@ -146,7 +131,7 @@
       "slug": "State_House__009",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__009.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__009.json",
           "rows": 5
         }
       }
@@ -157,7 +142,7 @@
       "slug": "State_House__010",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__010.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__010.json",
           "rows": 12
         }
       }
@@ -168,7 +153,7 @@
       "slug": "State_House__011",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__011.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__011.json",
           "rows": 19
         }
       }
@@ -179,8 +164,8 @@
       "slug": "State_House__012",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__012.json",
-          "rows": 24
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__012.json",
+          "rows": 23
         }
       }
     },
@@ -190,7 +175,7 @@
       "slug": "State_House__013",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__013.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__013.json",
           "rows": 12
         }
       }
@@ -201,8 +186,8 @@
       "slug": "State_House__014",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__014.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__014.json",
+          "rows": 13
         }
       }
     },
@@ -212,7 +197,7 @@
       "slug": "State_House__015",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__015.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__015.json",
           "rows": 9
         }
       }
@@ -223,7 +208,7 @@
       "slug": "State_House__016",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__016.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__016.json",
           "rows": 14
         }
       }
@@ -234,8 +219,8 @@
       "slug": "State_House__017",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__017.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__017.json",
+          "rows": 2
         }
       }
     },
@@ -245,8 +230,8 @@
       "slug": "State_House__018",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__018.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__018.json",
+          "rows": 17
         }
       }
     },
@@ -256,8 +241,8 @@
       "slug": "State_House__019",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__019.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__019.json",
+          "rows": 4
         }
       }
     },
@@ -267,7 +252,7 @@
       "slug": "State_House__020",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__020.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__020.json",
           "rows": 11
         }
       }
@@ -278,7 +263,7 @@
       "slug": "State_House__021",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__021.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__021.json",
           "rows": 11
         }
       }
@@ -289,8 +274,8 @@
       "slug": "State_House__022",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__022.json",
-          "rows": 17
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__022.json",
+          "rows": 15
         }
       }
     },
@@ -300,7 +285,7 @@
       "slug": "State_House__023",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__023.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__023.json",
           "rows": 12
         }
       }
@@ -311,8 +296,8 @@
       "slug": "State_House__024",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__024.json",
-          "rows": 9
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__024.json",
+          "rows": 8
         }
       }
     },
@@ -322,8 +307,8 @@
       "slug": "State_House__025",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__025.json",
-          "rows": 12
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__025.json",
+          "rows": 9
         }
       }
     },
@@ -333,8 +318,8 @@
       "slug": "State_House__026",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__026.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__026.json",
+          "rows": 9
         }
       }
     },
@@ -344,7 +329,7 @@
       "slug": "State_House__027",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__027.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__027.json",
           "rows": 13
         }
       }
@@ -355,8 +340,8 @@
       "slug": "State_House__028",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__028.json",
-          "rows": 17
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__028.json",
+          "rows": 15
         }
       }
     },
@@ -366,7 +351,7 @@
       "slug": "State_House__029",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__029.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__029.json",
           "rows": 11
         }
       }
@@ -377,7 +362,7 @@
       "slug": "State_House__030",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__030.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__030.json",
           "rows": 15
         }
       }
@@ -388,7 +373,7 @@
       "slug": "State_House__031",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__031.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__031.json",
           "rows": 4
         }
       }
@@ -399,7 +384,7 @@
       "slug": "State_House__032",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__032.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__032.json",
           "rows": 18
         }
       }
@@ -410,8 +395,8 @@
       "slug": "State_House__033",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__033.json",
-          "rows": 30
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__033.json",
+          "rows": 25
         }
       }
     },
@@ -421,7 +406,7 @@
       "slug": "State_House__034",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__034.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__034.json",
           "rows": 17
         }
       }
@@ -432,7 +417,7 @@
       "slug": "State_House__035",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__035.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__035.json",
           "rows": 13
         }
       }
@@ -443,7 +428,7 @@
       "slug": "State_House__036",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__036.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__036.json",
           "rows": 16
         }
       }
@@ -454,8 +439,8 @@
       "slug": "State_House__037",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__037.json",
-          "rows": 21
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__037.json",
+          "rows": 20
         }
       }
     },
@@ -465,8 +450,8 @@
       "slug": "State_House__038",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__038.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__038.json",
+          "rows": 12
         }
       }
     },
@@ -476,7 +461,7 @@
       "slug": "State_House__039",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__039.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__039.json",
           "rows": 12
         }
       }
@@ -487,8 +472,8 @@
       "slug": "State_House__040",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__040.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__040.json",
+          "rows": 15
         }
       }
     },
@@ -498,8 +483,8 @@
       "slug": "State_House__041",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__041.json",
-          "rows": 11
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__041.json",
+          "rows": 9
         }
       }
     },
@@ -509,8 +494,8 @@
       "slug": "State_House__042",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__042.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__042.json",
+          "rows": 13
         }
       }
     },
@@ -520,8 +505,8 @@
       "slug": "State_House__043",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__043.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__043.json",
+          "rows": 12
         }
       }
     },
@@ -531,8 +516,8 @@
       "slug": "State_House__044",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__044.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__044.json",
+          "rows": 15
         }
       }
     },
@@ -542,8 +527,8 @@
       "slug": "State_House__045",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__045.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__045.json",
+          "rows": 12
         }
       }
     },
@@ -553,7 +538,7 @@
       "slug": "State_House__046",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__046.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__046.json",
           "rows": 16
         }
       }
@@ -564,8 +549,8 @@
       "slug": "State_House__047",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__047.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__047.json",
+          "rows": 12
         }
       }
     },
@@ -575,7 +560,7 @@
       "slug": "State_House__048",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__048.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__048.json",
           "rows": 14
         }
       }
@@ -586,7 +571,7 @@
       "slug": "State_House__049",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__049.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__049.json",
           "rows": 18
         }
       }
@@ -597,8 +582,8 @@
       "slug": "State_House__050",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__050.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__050.json",
+          "rows": 13
         }
       }
     },
@@ -608,7 +593,7 @@
       "slug": "State_House__051",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__051.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__051.json",
           "rows": 13
         }
       }
@@ -619,7 +604,7 @@
       "slug": "State_House__052",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__052.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__052.json",
           "rows": 26
         }
       }
@@ -630,8 +615,8 @@
       "slug": "State_House__053",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__053.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__053.json",
+          "rows": 19
         }
       }
     },
@@ -641,7 +626,7 @@
       "slug": "State_House__054",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__054.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__054.json",
           "rows": 17
         }
       }
@@ -652,8 +637,8 @@
       "slug": "State_House__055",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__055.json",
-          "rows": 25
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__055.json",
+          "rows": 23
         }
       }
     },
@@ -663,7 +648,7 @@
       "slug": "State_House__056",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__056.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__056.json",
           "rows": 27
         }
       }
@@ -674,8 +659,8 @@
       "slug": "State_House__057",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__057.json",
-          "rows": 24
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__057.json",
+          "rows": 20
         }
       }
     },
@@ -685,8 +670,8 @@
       "slug": "State_House__058",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__058.json",
-          "rows": 30
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__058.json",
+          "rows": 29
         }
       }
     },
@@ -696,7 +681,7 @@
       "slug": "State_House__059",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__059.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__059.json",
           "rows": 19
         }
       }
@@ -707,7 +692,7 @@
       "slug": "State_House__060",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__060.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__060.json",
           "rows": 21
         }
       }
@@ -718,8 +703,8 @@
       "slug": "State_House__061",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__061.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__061.json",
+          "rows": 13
         }
       }
     },
@@ -729,8 +714,8 @@
       "slug": "State_House__062",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__062.json",
-          "rows": 25
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__062.json",
+          "rows": 22
         }
       }
     },
@@ -740,7 +725,7 @@
       "slug": "State_House__063",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__063.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__063.json",
           "rows": 28
         }
       }
@@ -751,7 +736,7 @@
       "slug": "State_House__064",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__064.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__064.json",
           "rows": 26
         }
       }
@@ -762,8 +747,8 @@
       "slug": "State_House__065",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__065.json",
-          "rows": 24
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__065.json",
+          "rows": 21
         }
       }
     },
@@ -773,8 +758,8 @@
       "slug": "State_House__066",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__066.json",
-          "rows": 12
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__066.json",
+          "rows": 10
         }
       }
     },
@@ -784,8 +769,8 @@
       "slug": "State_House__067",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__067.json",
-          "rows": 9
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__067.json",
+          "rows": 6
         }
       }
     },
@@ -795,8 +780,8 @@
       "slug": "State_House__068",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__068.json",
-          "rows": 11
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__068.json",
+          "rows": 10
         }
       }
     },
@@ -806,8 +791,8 @@
       "slug": "State_House__069",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__069.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__069.json",
+          "rows": 19
         }
       }
     },
@@ -817,8 +802,8 @@
       "slug": "State_House__070",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__070.json",
-          "rows": 12
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__070.json",
+          "rows": 10
         }
       }
     },
@@ -828,8 +813,8 @@
       "slug": "State_House__071",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__071.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__071.json",
+          "rows": 12
         }
       }
     },
@@ -839,7 +824,7 @@
       "slug": "State_House__072",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__072.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__072.json",
           "rows": 20
         }
       }
@@ -850,8 +835,8 @@
       "slug": "State_House__073",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__073.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__073.json",
+          "rows": 6
         }
       }
     },
@@ -861,8 +846,8 @@
       "slug": "State_House__074",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__074.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__074.json",
+          "rows": 13
         }
       }
     },
@@ -872,8 +857,8 @@
       "slug": "State_House__075",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__075.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__075.json",
+          "rows": 13
         }
       }
     },
@@ -883,8 +868,8 @@
       "slug": "State_House__076",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__076.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__076.json",
+          "rows": 10
         }
       }
     },
@@ -894,7 +879,7 @@
       "slug": "State_House__077",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__077.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__077.json",
           "rows": 12
         }
       }
@@ -905,8 +890,8 @@
       "slug": "State_House__078",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__078.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__078.json",
+          "rows": 14
         }
       }
     },
@@ -916,8 +901,8 @@
       "slug": "State_House__079",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__079.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__079.json",
+          "rows": 1
         }
       }
     },
@@ -927,8 +912,8 @@
       "slug": "State_House__080",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__080.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__080.json",
+          "rows": 8
         }
       }
     },
@@ -938,8 +923,8 @@
       "slug": "State_House__081",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__081.json",
-          "rows": 17
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__081.json",
+          "rows": 8
         }
       }
     },
@@ -949,8 +934,8 @@
       "slug": "State_House__082",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__082.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__082.json",
+          "rows": 9
         }
       }
     },
@@ -960,8 +945,8 @@
       "slug": "State_House__083",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__083.json",
-          "rows": 17
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__083.json",
+          "rows": 9
         }
       }
     },
@@ -971,8 +956,8 @@
       "slug": "State_House__084",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__084.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__084.json",
+          "rows": 14
         }
       }
     },
@@ -982,8 +967,8 @@
       "slug": "State_House__085",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__085.json",
-          "rows": 21
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__085.json",
+          "rows": 12
         }
       }
     },
@@ -993,8 +978,8 @@
       "slug": "State_House__086",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__086.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__086.json",
+          "rows": 16
         }
       }
     },
@@ -1004,8 +989,8 @@
       "slug": "State_House__087",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__087.json",
-          "rows": 23
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__087.json",
+          "rows": 15
         }
       }
     },
@@ -1015,8 +1000,8 @@
       "slug": "State_House__088",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__088.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__088.json",
+          "rows": 11
         }
       }
     },
@@ -1026,8 +1011,8 @@
       "slug": "State_House__089",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__089.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__089.json",
+          "rows": 9
         }
       }
     },
@@ -1037,8 +1022,8 @@
       "slug": "State_House__090",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__090.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__090.json",
+          "rows": 13
         }
       }
     },
@@ -1048,8 +1033,8 @@
       "slug": "State_House__091",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__091.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__091.json",
+          "rows": 5
         }
       }
     },
@@ -1059,8 +1044,8 @@
       "slug": "State_House__092",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__092.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__092.json",
+          "rows": 6
         }
       }
     },
@@ -1070,7 +1055,7 @@
       "slug": "State_House__093",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__093.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__093.json",
           "rows": 12
         }
       }
@@ -1081,7 +1066,7 @@
       "slug": "State_House__094",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__094.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__094.json",
           "rows": 16
         }
       }
@@ -1092,7 +1077,7 @@
       "slug": "State_House__095",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__095.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__095.json",
           "rows": 15
         }
       }
@@ -1103,7 +1088,7 @@
       "slug": "State_House__096",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__096.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__096.json",
           "rows": 10
         }
       }
@@ -1114,7 +1099,7 @@
       "slug": "State_House__097",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__097.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__097.json",
           "rows": 13
         }
       }
@@ -1125,7 +1110,7 @@
       "slug": "State_House__098",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__098.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__098.json",
           "rows": 10
         }
       }
@@ -1136,7 +1121,7 @@
       "slug": "State_House__099",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__099.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__099.json",
           "rows": 8
         }
       }
@@ -1147,7 +1132,7 @@
       "slug": "State_House__100",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__100.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__100.json",
           "rows": 9
         }
       }
@@ -1158,7 +1143,7 @@
       "slug": "State_House__101",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__101.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__101.json",
           "rows": 12
         }
       }
@@ -1169,7 +1154,7 @@
       "slug": "State_House__102",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__102.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__102.json",
           "rows": 11
         }
       }
@@ -1180,8 +1165,8 @@
       "slug": "State_House__103",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__103.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__103.json",
+          "rows": 6
         }
       }
     },
@@ -1191,7 +1176,7 @@
       "slug": "State_House__104",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__104.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__104.json",
           "rows": 11
         }
       }
@@ -1202,7 +1187,7 @@
       "slug": "State_House__105",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__105.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__105.json",
           "rows": 10
         }
       }
@@ -1213,7 +1198,7 @@
       "slug": "State_House__106",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__106.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__106.json",
           "rows": 13
         }
       }
@@ -1224,7 +1209,7 @@
       "slug": "State_House__107",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__107.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__107.json",
           "rows": 11
         }
       }
@@ -1235,7 +1220,7 @@
       "slug": "State_House__108",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__108.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__108.json",
           "rows": 15
         }
       }
@@ -1246,8 +1231,8 @@
       "slug": "State_House__109",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__109.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__109.json",
+          "rows": 13
         }
       }
     },
@@ -1257,8 +1242,8 @@
       "slug": "State_House__110",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__110.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__110.json",
+          "rows": 9
         }
       }
     },
@@ -1268,8 +1253,8 @@
       "slug": "State_House__111",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__111.json",
-          "rows": 13
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__111.json",
+          "rows": 12
         }
       }
     },
@@ -1279,7 +1264,7 @@
       "slug": "State_House__112",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__112.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__112.json",
           "rows": 18
         }
       }
@@ -1290,8 +1275,8 @@
       "slug": "State_House__113",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__113.json",
-          "rows": 11
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__113.json",
+          "rows": 10
         }
       }
     },
@@ -1301,8 +1286,8 @@
       "slug": "State_House__114",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__114.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__114.json",
+          "rows": 8
         }
       }
     },
@@ -1312,7 +1297,7 @@
       "slug": "State_House__115",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__115.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__115.json",
           "rows": 16
         }
       }
@@ -1323,8 +1308,8 @@
       "slug": "State_House__116",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__116.json",
-          "rows": 8
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__116.json",
+          "rows": 0
         }
       }
     },
@@ -1334,8 +1319,8 @@
       "slug": "State_House__117",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__117.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__117.json",
+          "rows": 10
         }
       }
     },
@@ -1345,7 +1330,7 @@
       "slug": "State_House__118",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__118.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__118.json",
           "rows": 10
         }
       }
@@ -1356,7 +1341,7 @@
       "slug": "State_House__119",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__119.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__119.json",
           "rows": 17
         }
       }
@@ -1367,8 +1352,8 @@
       "slug": "State_House__120",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__120.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__120.json",
+          "rows": 18
         }
       }
     },
@@ -1378,8 +1363,8 @@
       "slug": "State_House__121",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__121.json",
-          "rows": 22
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__121.json",
+          "rows": 16
         }
       }
     },
@@ -1389,8 +1374,8 @@
       "slug": "State_House__122",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__122.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__122.json",
+          "rows": 14
         }
       }
     },
@@ -1400,7 +1385,7 @@
       "slug": "State_House__123",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__123.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__123.json",
           "rows": 21
         }
       }
@@ -1411,7 +1396,7 @@
       "slug": "State_House__124",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__124.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__124.json",
           "rows": 22
         }
       }
@@ -1422,7 +1407,7 @@
       "slug": "State_House__125",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__125.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__125.json",
           "rows": 16
         }
       }
@@ -1433,7 +1418,7 @@
       "slug": "State_House__126",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__126.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__126.json",
           "rows": 27
         }
       }
@@ -1444,7 +1429,7 @@
       "slug": "State_House__127",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__127.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__127.json",
           "rows": 15
         }
       }
@@ -1455,7 +1440,7 @@
       "slug": "State_House__128",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__128.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__128.json",
           "rows": 29
         }
       }
@@ -1466,8 +1451,8 @@
       "slug": "State_House__129",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__129.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__129.json",
+          "rows": 14
         }
       }
     },
@@ -1477,8 +1462,8 @@
       "slug": "State_House__130",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__130.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__130.json",
+          "rows": 15
         }
       }
     },
@@ -1488,8 +1473,8 @@
       "slug": "State_House__131",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__131.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__131.json",
+          "rows": 14
         }
       }
     },
@@ -1499,8 +1484,8 @@
       "slug": "State_House__132",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__132.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__132.json",
+          "rows": 15
         }
       }
     },
@@ -1510,7 +1495,7 @@
       "slug": "State_House__133",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__133.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__133.json",
           "rows": 18
         }
       }
@@ -1521,8 +1506,8 @@
       "slug": "State_House__134",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__134.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__134.json",
+          "rows": 9
         }
       }
     },
@@ -1532,7 +1517,7 @@
       "slug": "State_House__135",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__135.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__135.json",
           "rows": 8
         }
       }
@@ -1543,8 +1528,8 @@
       "slug": "State_House__136",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__136.json",
-          "rows": 10
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__136.json",
+          "rows": 7
         }
       }
     },
@@ -1554,8 +1539,8 @@
       "slug": "State_House__137",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__137.json",
-          "rows": 23
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__137.json",
+          "rows": 21
         }
       }
     },
@@ -1565,8 +1550,8 @@
       "slug": "State_House__138",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__138.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__138.json",
+          "rows": 14
         }
       }
     },
@@ -1576,7 +1561,7 @@
       "slug": "State_House__139",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__139.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__139.json",
           "rows": 16
         }
       }
@@ -1587,8 +1572,8 @@
       "slug": "State_House__140",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__140.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__140.json",
+          "rows": 13
         }
       }
     },
@@ -1598,7 +1583,7 @@
       "slug": "State_House__141",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__141.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__141.json",
           "rows": 17
         }
       }
@@ -1609,7 +1594,7 @@
       "slug": "State_House__142",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__142.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__142.json",
           "rows": 9
         }
       }
@@ -1620,7 +1605,7 @@
       "slug": "State_House__143",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__143.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__143.json",
           "rows": 13
         }
       }
@@ -1631,8 +1616,8 @@
       "slug": "State_House__144",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__144.json",
-          "rows": 22
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__144.json",
+          "rows": 20
         }
       }
     },
@@ -1642,7 +1627,7 @@
       "slug": "State_House__145",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__145.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__145.json",
           "rows": 17
         }
       }
@@ -1653,7 +1638,7 @@
       "slug": "State_House__146",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__146.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__146.json",
           "rows": 7
         }
       }
@@ -1664,7 +1649,7 @@
       "slug": "State_House__147",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__147.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__147.json",
           "rows": 7
         }
       }
@@ -1675,8 +1660,8 @@
       "slug": "State_House__148",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__148.json",
-          "rows": 16
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__148.json",
+          "rows": 12
         }
       }
     },
@@ -1686,8 +1671,8 @@
       "slug": "State_House__149",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__149.json",
-          "rows": 29
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__149.json",
+          "rows": 28
         }
       }
     },
@@ -1697,8 +1682,8 @@
       "slug": "State_House__150",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__150.json",
-          "rows": 17
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__150.json",
+          "rows": 16
         }
       }
     },
@@ -1708,8 +1693,8 @@
       "slug": "State_House__151",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__151.json",
-          "rows": 36
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__151.json",
+          "rows": 33
         }
       }
     },
@@ -1719,8 +1704,8 @@
       "slug": "State_House__152",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__152.json",
-          "rows": 27
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__152.json",
+          "rows": 25
         }
       }
     },
@@ -1730,8 +1715,8 @@
       "slug": "State_House__153",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__153.json",
-          "rows": 15
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__153.json",
+          "rows": 11
         }
       }
     },
@@ -1741,8 +1726,8 @@
       "slug": "State_House__154",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__154.json",
-          "rows": 23
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__154.json",
+          "rows": 20
         }
       }
     },
@@ -1752,7 +1737,7 @@
       "slug": "State_House__155",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__155.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__155.json",
           "rows": 16
         }
       }
@@ -1763,8 +1748,8 @@
       "slug": "State_House__156",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__156.json",
-          "rows": 21
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__156.json",
+          "rows": 20
         }
       }
     },
@@ -1774,7 +1759,7 @@
       "slug": "State_House__157",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__157.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__157.json",
           "rows": 17
         }
       }
@@ -1785,8 +1770,8 @@
       "slug": "State_House__158",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__158.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__158.json",
+          "rows": 16
         }
       }
     },
@@ -1796,8 +1781,8 @@
       "slug": "State_House__159",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__159.json",
-          "rows": 24
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__159.json",
+          "rows": 23
         }
       }
     },
@@ -1807,7 +1792,7 @@
       "slug": "State_House__160",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__160.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__160.json",
           "rows": 15
         }
       }
@@ -1818,8 +1803,8 @@
       "slug": "State_House__161",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__161.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__161.json",
+          "rows": 14
         }
       }
     },
@@ -1829,8 +1814,8 @@
       "slug": "State_House__162",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__162.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__162.json",
+          "rows": 11
         }
       }
     },
@@ -1840,8 +1825,8 @@
       "slug": "State_House__163",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__163.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__163.json",
+          "rows": 13
         }
       }
     },
@@ -1851,8 +1836,8 @@
       "slug": "State_House__164",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__164.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__164.json",
+          "rows": 8
         }
       }
     },
@@ -1862,8 +1847,8 @@
       "slug": "State_House__165",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__165.json",
-          "rows": 23
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__165.json",
+          "rows": 12
         }
       }
     },
@@ -1873,8 +1858,8 @@
       "slug": "State_House__166",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__166.json",
-          "rows": 22
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__166.json",
+          "rows": 13
         }
       }
     },
@@ -1884,8 +1869,8 @@
       "slug": "State_House__167",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__167.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__167.json",
+          "rows": 18
         }
       }
     },
@@ -1895,7 +1880,7 @@
       "slug": "State_House__168",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__168.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__168.json",
           "rows": 12
         }
       }
@@ -1906,7 +1891,7 @@
       "slug": "State_House__169",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__169.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__169.json",
           "rows": 11
         }
       }
@@ -1917,8 +1902,8 @@
       "slug": "State_House__170",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__170.json",
-          "rows": 19
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__170.json",
+          "rows": 16
         }
       }
     },
@@ -1928,7 +1913,7 @@
       "slug": "State_House__171",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__171.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__171.json",
           "rows": 24
         }
       }
@@ -1939,8 +1924,8 @@
       "slug": "State_House__172",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__172.json",
-          "rows": 21
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__172.json",
+          "rows": 20
         }
       }
     },
@@ -1950,8 +1935,8 @@
       "slug": "State_House__173",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__173.json",
-          "rows": 26
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__173.json",
+          "rows": 25
         }
       }
     },
@@ -1961,7 +1946,7 @@
       "slug": "State_House__174",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__174.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__174.json",
           "rows": 23
         }
       }
@@ -1972,8 +1957,8 @@
       "slug": "State_House__175",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__175.json",
-          "rows": 21
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__175.json",
+          "rows": 19
         }
       }
     },
@@ -1983,8 +1968,8 @@
       "slug": "State_House__176",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__176.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__176.json",
+          "rows": 16
         }
       }
     },
@@ -1994,8 +1979,8 @@
       "slug": "State_House__177",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__177.json",
-          "rows": 8
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__177.json",
+          "rows": 5
         }
       }
     },
@@ -2005,7 +1990,7 @@
       "slug": "State_House__178",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__178.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__178.json",
           "rows": 20
         }
       }
@@ -2016,8 +2001,8 @@
       "slug": "State_House__179",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__179.json",
-          "rows": 14
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__179.json",
+          "rows": 5
         }
       }
     },
@@ -2027,8 +2012,8 @@
       "slug": "State_House__180",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_House__180.json",
-          "rows": 18
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_House__180.json",
+          "rows": 13
         }
       }
     },
@@ -2038,8 +2023,8 @@
       "slug": "State_Senate__001",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__001.json",
-          "rows": 51
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__001.json",
+          "rows": 20
         }
       }
     },
@@ -2049,8 +2034,8 @@
       "slug": "State_Senate__002",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__002.json",
-          "rows": 63
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__002.json",
+          "rows": 4
         }
       }
     },
@@ -2060,8 +2045,8 @@
       "slug": "State_Senate__003",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__003.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__003.json",
+          "rows": 33
         }
       }
     },
@@ -2071,8 +2056,8 @@
       "slug": "State_Senate__004",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__004.json",
-          "rows": 44
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__004.json",
+          "rows": 42
         }
       }
     },
@@ -2082,7 +2067,7 @@
       "slug": "State_Senate__005",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__005.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__005.json",
           "rows": 27
         }
       }
@@ -2093,8 +2078,8 @@
       "slug": "State_Senate__006",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__006.json",
-          "rows": 52
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__006.json",
+          "rows": 50
         }
       }
     },
@@ -2104,8 +2089,8 @@
       "slug": "State_Senate__007",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__007.json",
-          "rows": 48
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__007.json",
+          "rows": 47
         }
       }
     },
@@ -2115,8 +2100,8 @@
       "slug": "State_Senate__008",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__008.json",
-          "rows": 39
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__008.json",
+          "rows": 32
         }
       }
     },
@@ -2126,7 +2111,7 @@
       "slug": "State_Senate__009",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__009.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__009.json",
           "rows": 42
         }
       }
@@ -2137,8 +2122,8 @@
       "slug": "State_Senate__010",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__010.json",
-          "rows": 40
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__010.json",
+          "rows": 36
         }
       }
     },
@@ -2148,8 +2133,8 @@
       "slug": "State_Senate__011",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__011.json",
-          "rows": 76
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__011.json",
+          "rows": 71
         }
       }
     },
@@ -2159,8 +2144,8 @@
       "slug": "State_Senate__012",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__012.json",
-          "rows": 72
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__012.json",
+          "rows": 60
         }
       }
     },
@@ -2170,8 +2155,8 @@
       "slug": "State_Senate__013",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__013.json",
-          "rows": 76
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__013.json",
+          "rows": 68
         }
       }
     },
@@ -2181,8 +2166,8 @@
       "slug": "State_Senate__014",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__014.json",
-          "rows": 36
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__014.json",
+          "rows": 34
         }
       }
     },
@@ -2192,8 +2177,8 @@
       "slug": "State_Senate__015",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__015.json",
-          "rows": 37
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__015.json",
+          "rows": 35
         }
       }
     },
@@ -2203,8 +2188,8 @@
       "slug": "State_Senate__016",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__016.json",
-          "rows": 56
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__016.json",
+          "rows": 37
         }
       }
     },
@@ -2214,8 +2199,8 @@
       "slug": "State_Senate__017",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__017.json",
-          "rows": 35
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__017.json",
+          "rows": 31
         }
       }
     },
@@ -2225,8 +2210,8 @@
       "slug": "State_Senate__018",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__018.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__018.json",
+          "rows": 43
         }
       }
     },
@@ -2236,8 +2221,8 @@
       "slug": "State_Senate__019",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__019.json",
-          "rows": 68
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__019.json",
+          "rows": 64
         }
       }
     },
@@ -2247,8 +2232,8 @@
       "slug": "State_Senate__020",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__020.json",
-          "rows": 32
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__020.json",
+          "rows": 31
         }
       }
     },
@@ -2258,8 +2243,8 @@
       "slug": "State_Senate__021",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__021.json",
-          "rows": 45
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__021.json",
+          "rows": 39
         }
       }
     },
@@ -2269,7 +2254,7 @@
       "slug": "State_Senate__022",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__022.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__022.json",
           "rows": 56
         }
       }
@@ -2280,8 +2265,8 @@
       "slug": "State_Senate__023",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__023.json",
-          "rows": 88
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__023.json",
+          "rows": 71
         }
       }
     },
@@ -2291,8 +2276,8 @@
       "slug": "State_Senate__024",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__024.json",
-          "rows": 75
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__024.json",
+          "rows": 55
         }
       }
     },
@@ -2302,8 +2287,8 @@
       "slug": "State_Senate__025",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__025.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__025.json",
+          "rows": 48
         }
       }
     },
@@ -2313,8 +2298,8 @@
       "slug": "State_Senate__026",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__026.json",
-          "rows": 58
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__026.json",
+          "rows": 56
         }
       }
     },
@@ -2324,8 +2309,8 @@
       "slug": "State_Senate__027",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__027.json",
-          "rows": 20
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__027.json",
+          "rows": 16
         }
       }
     },
@@ -2335,8 +2320,8 @@
       "slug": "State_Senate__028",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__028.json",
-          "rows": 47
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__028.json",
+          "rows": 44
         }
       }
     },
@@ -2346,8 +2331,8 @@
       "slug": "State_Senate__029",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__029.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__029.json",
+          "rows": 45
         }
       }
     },
@@ -2357,8 +2342,8 @@
       "slug": "State_Senate__030",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__030.json",
-          "rows": 36
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__030.json",
+          "rows": 29
         }
       }
     },
@@ -2368,8 +2353,8 @@
       "slug": "State_Senate__031",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__031.json",
-          "rows": 35
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__031.json",
+          "rows": 21
         }
       }
     },
@@ -2379,8 +2364,8 @@
       "slug": "State_Senate__032",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__032.json",
-          "rows": 52
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__032.json",
+          "rows": 49
         }
       }
     },
@@ -2390,8 +2375,8 @@
       "slug": "State_Senate__033",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__033.json",
-          "rows": 39
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__033.json",
+          "rows": 37
         }
       }
     },
@@ -2401,8 +2386,8 @@
       "slug": "State_Senate__034",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__034.json",
-          "rows": 45
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__034.json",
+          "rows": 43
         }
       }
     },
@@ -2412,8 +2397,8 @@
       "slug": "State_Senate__035",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__035.json",
-          "rows": 50
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__035.json",
+          "rows": 44
         }
       }
     },
@@ -2423,8 +2408,8 @@
       "slug": "State_Senate__036",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__036.json",
-          "rows": 85
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__036.json",
+          "rows": 82
         }
       }
     },
@@ -2434,7 +2419,7 @@
       "slug": "State_Senate__037",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__037.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__037.json",
           "rows": 40
         }
       }
@@ -2445,8 +2430,8 @@
       "slug": "State_Senate__038",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__038.json",
-          "rows": 65
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__038.json",
+          "rows": 59
         }
       }
     },
@@ -2456,8 +2441,8 @@
       "slug": "State_Senate__039",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__039.json",
-          "rows": 86
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__039.json",
+          "rows": 82
         }
       }
     },
@@ -2467,8 +2452,8 @@
       "slug": "State_Senate__040",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__040.json",
-          "rows": 47
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__040.json",
+          "rows": 19
         }
       }
     },
@@ -2478,8 +2463,8 @@
       "slug": "State_Senate__041",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__041.json",
-          "rows": 47
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__041.json",
+          "rows": 32
         }
       }
     },
@@ -2489,8 +2474,8 @@
       "slug": "State_Senate__042",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__042.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__042.json",
+          "rows": 23
         }
       }
     },
@@ -2500,8 +2485,8 @@
       "slug": "State_Senate__043",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__043.json",
-          "rows": 37
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__043.json",
+          "rows": 24
         }
       }
     },
@@ -2511,8 +2496,8 @@
       "slug": "State_Senate__044",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__044.json",
-          "rows": 49
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__044.json",
+          "rows": 41
         }
       }
     },
@@ -2522,7 +2507,7 @@
       "slug": "State_Senate__045",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__045.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__045.json",
           "rows": 34
         }
       }
@@ -2533,8 +2518,8 @@
       "slug": "State_Senate__046",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__046.json",
-          "rows": 43
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__046.json",
+          "rows": 41
         }
       }
     },
@@ -2544,8 +2529,8 @@
       "slug": "State_Senate__047",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__047.json",
-          "rows": 33
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__047.json",
+          "rows": 25
         }
       }
     },
@@ -2555,8 +2540,8 @@
       "slug": "State_Senate__048",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__048.json",
-          "rows": 38
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__048.json",
+          "rows": 36
         }
       }
     },
@@ -2566,7 +2551,7 @@
       "slug": "State_Senate__049",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__049.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__049.json",
           "rows": 30
         }
       }
@@ -2577,8 +2562,8 @@
       "slug": "State_Senate__050",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__050.json",
-          "rows": 36
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__050.json",
+          "rows": 35
         }
       }
     },
@@ -2588,7 +2573,7 @@
       "slug": "State_Senate__051",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__051.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__051.json",
           "rows": 58
         }
       }
@@ -2599,8 +2584,8 @@
       "slug": "State_Senate__052",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__052.json",
-          "rows": 44
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__052.json",
+          "rows": 43
         }
       }
     },
@@ -2610,8 +2595,8 @@
       "slug": "State_Senate__053",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__053.json",
-          "rows": 39
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__053.json",
+          "rows": 35
         }
       }
     },
@@ -2621,8 +2606,8 @@
       "slug": "State_Senate__054",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__054.json",
-          "rows": 43
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__054.json",
+          "rows": 25
         }
       }
     },
@@ -2632,7 +2617,7 @@
       "slug": "State_Senate__055",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__055.json",
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__055.json",
           "rows": 44
         }
       }
@@ -2643,8 +2628,8 @@
       "slug": "State_Senate__056",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\State_Senate__056.json",
-          "rows": 51
+          "path": "Data/derived_vtd20/2020/contests/vtd20/State_Senate__056.json",
+          "rows": 48
         }
       }
     },
@@ -2654,8 +2639,8 @@
       "slug": "U.S._House__01",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__01.json",
-          "rows": 226
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__01.json",
+          "rows": 120
         }
       }
     },
@@ -2665,8 +2650,8 @@
       "slug": "U.S._House__02",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__02.json",
-          "rows": 213
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__02.json",
+          "rows": 181
         }
       }
     },
@@ -2676,8 +2661,8 @@
       "slug": "U.S._House__03",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__03.json",
-          "rows": 184
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__03.json",
+          "rows": 157
         }
       }
     },
@@ -2687,8 +2672,8 @@
       "slug": "U.S._House__04",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__04.json",
-          "rows": 169
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__04.json",
+          "rows": 132
         }
       }
     },
@@ -2698,8 +2683,8 @@
       "slug": "U.S._House__05",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__05.json",
-          "rows": 269
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__05.json",
+          "rows": 233
         }
       }
     },
@@ -2709,8 +2694,8 @@
       "slug": "U.S._House__06",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__06.json",
-          "rows": 204
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__06.json",
+          "rows": 158
         }
       }
     },
@@ -2720,8 +2705,8 @@
       "slug": "U.S._House__07",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__07.json",
-          "rows": 127
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__07.json",
+          "rows": 123
         }
       }
     },
@@ -2731,8 +2716,8 @@
       "slug": "U.S._House__08",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__08.json",
-          "rows": 207
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__08.json",
+          "rows": 194
         }
       }
     },
@@ -2742,8 +2727,8 @@
       "slug": "U.S._House__09",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__09.json",
-          "rows": 166
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__09.json",
+          "rows": 163
         }
       }
     },
@@ -2753,8 +2738,8 @@
       "slug": "U.S._House__10",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__10.json",
-          "rows": 200
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__10.json",
+          "rows": 167
         }
       }
     },
@@ -2764,8 +2749,8 @@
       "slug": "U.S._House__11",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__11.json",
-          "rows": 147
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__11.json",
+          "rows": 143
         }
       }
     },
@@ -2775,8 +2760,8 @@
       "slug": "U.S._House__12",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__12.json",
-          "rows": 242
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__12.json",
+          "rows": 222
         }
       }
     },
@@ -2786,8 +2771,8 @@
       "slug": "U.S._House__13",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__13.json",
-          "rows": 187
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__13.json",
+          "rows": 173
         }
       }
     },
@@ -2797,8 +2782,8 @@
       "slug": "U.S._House__14",
       "outputs": {
         "vtd20": {
-          "path": "Data\\derived_vtd20\\2020\\contests\\vtd20\\U.S._House__14.json",
-          "rows": 154
+          "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._House__14.json",
+          "rows": 115
         }
       }
     },
@@ -2809,23 +2794,8 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._Senate.json",
-          "rows": 2517
+          "rows": 2407
         }
-      },
-      "coverage": {
-        "source_votes": 4952175,
-        "matched_vtd10_votes": 3923736,
-        "fallback_vtd20_votes": 694000,
-        "dropped_votes": 334439,
-        "precincts": 2656,
-        "matched_exact": 1941,
-        "matched_fuzzy": 232,
-        "matched_alias": 0,
-        "fallback": 336,
-        "dropped": 144,
-        "vtd10_missing_shares": 0,
-        "output_votes": 4617736,
-        "output_vtd20": 2517
       }
     },
     {
@@ -2835,832 +2805,9 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._Senate_Special.json",
-          "rows": 2517
+          "rows": 2407
         }
-      },
-      "coverage": {
-        "source_votes": 4914361,
-        "matched_vtd10_votes": 3891866,
-        "fallback_vtd20_votes": 690334,
-        "dropped_votes": 332161,
-        "precincts": 2656,
-        "matched_exact": 1941,
-        "matched_fuzzy": 232,
-        "matched_alias": 0,
-        "fallback": 336,
-        "dropped": 144,
-        "vtd10_missing_shares": 0,
-        "output_votes": 4582200,
-        "output_vtd20": 2517
       }
     }
-  ],
-  "coverage": [
-    {
-      "slug": "President",
-      "source_votes": 4998482,
-      "matched_vtd10_votes": 3959565,
-      "fallback_vtd20_votes": 700882,
-      "dropped_votes": 338035,
-      "precincts": 2656,
-      "matched_exact": 1941,
-      "matched_fuzzy": 232,
-      "matched_alias": 0,
-      "fallback": 336,
-      "dropped": 144,
-      "vtd10_missing_shares": 0,
-      "output_votes": 4660447,
-      "output_vtd20": 2517
-    },
-    {
-      "slug": "Public_Service_Commission__1"
-    },
-    {
-      "slug": "Public_Service_Commission__4"
-    },
-    {
-      "slug": "State_House__001"
-    },
-    {
-      "slug": "State_House__002"
-    },
-    {
-      "slug": "State_House__003"
-    },
-    {
-      "slug": "State_House__004"
-    },
-    {
-      "slug": "State_House__005"
-    },
-    {
-      "slug": "State_House__006"
-    },
-    {
-      "slug": "State_House__007"
-    },
-    {
-      "slug": "State_House__008"
-    },
-    {
-      "slug": "State_House__009"
-    },
-    {
-      "slug": "State_House__010"
-    },
-    {
-      "slug": "State_House__011"
-    },
-    {
-      "slug": "State_House__012"
-    },
-    {
-      "slug": "State_House__013"
-    },
-    {
-      "slug": "State_House__014"
-    },
-    {
-      "slug": "State_House__015"
-    },
-    {
-      "slug": "State_House__016"
-    },
-    {
-      "slug": "State_House__017"
-    },
-    {
-      "slug": "State_House__018"
-    },
-    {
-      "slug": "State_House__019"
-    },
-    {
-      "slug": "State_House__020"
-    },
-    {
-      "slug": "State_House__021"
-    },
-    {
-      "slug": "State_House__022"
-    },
-    {
-      "slug": "State_House__023"
-    },
-    {
-      "slug": "State_House__024"
-    },
-    {
-      "slug": "State_House__025"
-    },
-    {
-      "slug": "State_House__026"
-    },
-    {
-      "slug": "State_House__027"
-    },
-    {
-      "slug": "State_House__028"
-    },
-    {
-      "slug": "State_House__029"
-    },
-    {
-      "slug": "State_House__030"
-    },
-    {
-      "slug": "State_House__031"
-    },
-    {
-      "slug": "State_House__032"
-    },
-    {
-      "slug": "State_House__033"
-    },
-    {
-      "slug": "State_House__034"
-    },
-    {
-      "slug": "State_House__035"
-    },
-    {
-      "slug": "State_House__036"
-    },
-    {
-      "slug": "State_House__037"
-    },
-    {
-      "slug": "State_House__038"
-    },
-    {
-      "slug": "State_House__039"
-    },
-    {
-      "slug": "State_House__040"
-    },
-    {
-      "slug": "State_House__041"
-    },
-    {
-      "slug": "State_House__042"
-    },
-    {
-      "slug": "State_House__043"
-    },
-    {
-      "slug": "State_House__044"
-    },
-    {
-      "slug": "State_House__045"
-    },
-    {
-      "slug": "State_House__046"
-    },
-    {
-      "slug": "State_House__047"
-    },
-    {
-      "slug": "State_House__048"
-    },
-    {
-      "slug": "State_House__049"
-    },
-    {
-      "slug": "State_House__050"
-    },
-    {
-      "slug": "State_House__051"
-    },
-    {
-      "slug": "State_House__052"
-    },
-    {
-      "slug": "State_House__053"
-    },
-    {
-      "slug": "State_House__054"
-    },
-    {
-      "slug": "State_House__055"
-    },
-    {
-      "slug": "State_House__056"
-    },
-    {
-      "slug": "State_House__057"
-    },
-    {
-      "slug": "State_House__058"
-    },
-    {
-      "slug": "State_House__059"
-    },
-    {
-      "slug": "State_House__060"
-    },
-    {
-      "slug": "State_House__061"
-    },
-    {
-      "slug": "State_House__062"
-    },
-    {
-      "slug": "State_House__063"
-    },
-    {
-      "slug": "State_House__064"
-    },
-    {
-      "slug": "State_House__065"
-    },
-    {
-      "slug": "State_House__066"
-    },
-    {
-      "slug": "State_House__067"
-    },
-    {
-      "slug": "State_House__068"
-    },
-    {
-      "slug": "State_House__069"
-    },
-    {
-      "slug": "State_House__070"
-    },
-    {
-      "slug": "State_House__071"
-    },
-    {
-      "slug": "State_House__072"
-    },
-    {
-      "slug": "State_House__073"
-    },
-    {
-      "slug": "State_House__074"
-    },
-    {
-      "slug": "State_House__075"
-    },
-    {
-      "slug": "State_House__076"
-    },
-    {
-      "slug": "State_House__077"
-    },
-    {
-      "slug": "State_House__078"
-    },
-    {
-      "slug": "State_House__079"
-    },
-    {
-      "slug": "State_House__080"
-    },
-    {
-      "slug": "State_House__081"
-    },
-    {
-      "slug": "State_House__082"
-    },
-    {
-      "slug": "State_House__083"
-    },
-    {
-      "slug": "State_House__084"
-    },
-    {
-      "slug": "State_House__085"
-    },
-    {
-      "slug": "State_House__086"
-    },
-    {
-      "slug": "State_House__087"
-    },
-    {
-      "slug": "State_House__088"
-    },
-    {
-      "slug": "State_House__089"
-    },
-    {
-      "slug": "State_House__090"
-    },
-    {
-      "slug": "State_House__091"
-    },
-    {
-      "slug": "State_House__092"
-    },
-    {
-      "slug": "State_House__093"
-    },
-    {
-      "slug": "State_House__094"
-    },
-    {
-      "slug": "State_House__095"
-    },
-    {
-      "slug": "State_House__096"
-    },
-    {
-      "slug": "State_House__097"
-    },
-    {
-      "slug": "State_House__098"
-    },
-    {
-      "slug": "State_House__099"
-    },
-    {
-      "slug": "State_House__100"
-    },
-    {
-      "slug": "State_House__101"
-    },
-    {
-      "slug": "State_House__102"
-    },
-    {
-      "slug": "State_House__103"
-    },
-    {
-      "slug": "State_House__104"
-    },
-    {
-      "slug": "State_House__105"
-    },
-    {
-      "slug": "State_House__106"
-    },
-    {
-      "slug": "State_House__107"
-    },
-    {
-      "slug": "State_House__108"
-    },
-    {
-      "slug": "State_House__109"
-    },
-    {
-      "slug": "State_House__110"
-    },
-    {
-      "slug": "State_House__111"
-    },
-    {
-      "slug": "State_House__112"
-    },
-    {
-      "slug": "State_House__113"
-    },
-    {
-      "slug": "State_House__114"
-    },
-    {
-      "slug": "State_House__115"
-    },
-    {
-      "slug": "State_House__116"
-    },
-    {
-      "slug": "State_House__117"
-    },
-    {
-      "slug": "State_House__118"
-    },
-    {
-      "slug": "State_House__119"
-    },
-    {
-      "slug": "State_House__120"
-    },
-    {
-      "slug": "State_House__121"
-    },
-    {
-      "slug": "State_House__122"
-    },
-    {
-      "slug": "State_House__123"
-    },
-    {
-      "slug": "State_House__124"
-    },
-    {
-      "slug": "State_House__125"
-    },
-    {
-      "slug": "State_House__126"
-    },
-    {
-      "slug": "State_House__127"
-    },
-    {
-      "slug": "State_House__128"
-    },
-    {
-      "slug": "State_House__129"
-    },
-    {
-      "slug": "State_House__130"
-    },
-    {
-      "slug": "State_House__131"
-    },
-    {
-      "slug": "State_House__132"
-    },
-    {
-      "slug": "State_House__133"
-    },
-    {
-      "slug": "State_House__134"
-    },
-    {
-      "slug": "State_House__135"
-    },
-    {
-      "slug": "State_House__136"
-    },
-    {
-      "slug": "State_House__137"
-    },
-    {
-      "slug": "State_House__138"
-    },
-    {
-      "slug": "State_House__139"
-    },
-    {
-      "slug": "State_House__140"
-    },
-    {
-      "slug": "State_House__141"
-    },
-    {
-      "slug": "State_House__142"
-    },
-    {
-      "slug": "State_House__143"
-    },
-    {
-      "slug": "State_House__144"
-    },
-    {
-      "slug": "State_House__145"
-    },
-    {
-      "slug": "State_House__146"
-    },
-    {
-      "slug": "State_House__147"
-    },
-    {
-      "slug": "State_House__148"
-    },
-    {
-      "slug": "State_House__149"
-    },
-    {
-      "slug": "State_House__150"
-    },
-    {
-      "slug": "State_House__151"
-    },
-    {
-      "slug": "State_House__152"
-    },
-    {
-      "slug": "State_House__153"
-    },
-    {
-      "slug": "State_House__154"
-    },
-    {
-      "slug": "State_House__155"
-    },
-    {
-      "slug": "State_House__156"
-    },
-    {
-      "slug": "State_House__157"
-    },
-    {
-      "slug": "State_House__158"
-    },
-    {
-      "slug": "State_House__159"
-    },
-    {
-      "slug": "State_House__160"
-    },
-    {
-      "slug": "State_House__161"
-    },
-    {
-      "slug": "State_House__162"
-    },
-    {
-      "slug": "State_House__163"
-    },
-    {
-      "slug": "State_House__164"
-    },
-    {
-      "slug": "State_House__165"
-    },
-    {
-      "slug": "State_House__166"
-    },
-    {
-      "slug": "State_House__167"
-    },
-    {
-      "slug": "State_House__168"
-    },
-    {
-      "slug": "State_House__169"
-    },
-    {
-      "slug": "State_House__170"
-    },
-    {
-      "slug": "State_House__171"
-    },
-    {
-      "slug": "State_House__172"
-    },
-    {
-      "slug": "State_House__173"
-    },
-    {
-      "slug": "State_House__174"
-    },
-    {
-      "slug": "State_House__175"
-    },
-    {
-      "slug": "State_House__176"
-    },
-    {
-      "slug": "State_House__177"
-    },
-    {
-      "slug": "State_House__178"
-    },
-    {
-      "slug": "State_House__179"
-    },
-    {
-      "slug": "State_House__180"
-    },
-    {
-      "slug": "State_Senate__001"
-    },
-    {
-      "slug": "State_Senate__002"
-    },
-    {
-      "slug": "State_Senate__003"
-    },
-    {
-      "slug": "State_Senate__004"
-    },
-    {
-      "slug": "State_Senate__005"
-    },
-    {
-      "slug": "State_Senate__006"
-    },
-    {
-      "slug": "State_Senate__007"
-    },
-    {
-      "slug": "State_Senate__008"
-    },
-    {
-      "slug": "State_Senate__009"
-    },
-    {
-      "slug": "State_Senate__010"
-    },
-    {
-      "slug": "State_Senate__011"
-    },
-    {
-      "slug": "State_Senate__012"
-    },
-    {
-      "slug": "State_Senate__013"
-    },
-    {
-      "slug": "State_Senate__014"
-    },
-    {
-      "slug": "State_Senate__015"
-    },
-    {
-      "slug": "State_Senate__016"
-    },
-    {
-      "slug": "State_Senate__017"
-    },
-    {
-      "slug": "State_Senate__018"
-    },
-    {
-      "slug": "State_Senate__019"
-    },
-    {
-      "slug": "State_Senate__020"
-    },
-    {
-      "slug": "State_Senate__021"
-    },
-    {
-      "slug": "State_Senate__022"
-    },
-    {
-      "slug": "State_Senate__023"
-    },
-    {
-      "slug": "State_Senate__024"
-    },
-    {
-      "slug": "State_Senate__025"
-    },
-    {
-      "slug": "State_Senate__026"
-    },
-    {
-      "slug": "State_Senate__027"
-    },
-    {
-      "slug": "State_Senate__028"
-    },
-    {
-      "slug": "State_Senate__029"
-    },
-    {
-      "slug": "State_Senate__030"
-    },
-    {
-      "slug": "State_Senate__031"
-    },
-    {
-      "slug": "State_Senate__032"
-    },
-    {
-      "slug": "State_Senate__033"
-    },
-    {
-      "slug": "State_Senate__034"
-    },
-    {
-      "slug": "State_Senate__035"
-    },
-    {
-      "slug": "State_Senate__036"
-    },
-    {
-      "slug": "State_Senate__037"
-    },
-    {
-      "slug": "State_Senate__038"
-    },
-    {
-      "slug": "State_Senate__039"
-    },
-    {
-      "slug": "State_Senate__040"
-    },
-    {
-      "slug": "State_Senate__041"
-    },
-    {
-      "slug": "State_Senate__042"
-    },
-    {
-      "slug": "State_Senate__043"
-    },
-    {
-      "slug": "State_Senate__044"
-    },
-    {
-      "slug": "State_Senate__045"
-    },
-    {
-      "slug": "State_Senate__046"
-    },
-    {
-      "slug": "State_Senate__047"
-    },
-    {
-      "slug": "State_Senate__048"
-    },
-    {
-      "slug": "State_Senate__049"
-    },
-    {
-      "slug": "State_Senate__050"
-    },
-    {
-      "slug": "State_Senate__051"
-    },
-    {
-      "slug": "State_Senate__052"
-    },
-    {
-      "slug": "State_Senate__053"
-    },
-    {
-      "slug": "State_Senate__054"
-    },
-    {
-      "slug": "State_Senate__055"
-    },
-    {
-      "slug": "State_Senate__056"
-    },
-    {
-      "slug": "U.S._House__01"
-    },
-    {
-      "slug": "U.S._House__02"
-    },
-    {
-      "slug": "U.S._House__03"
-    },
-    {
-      "slug": "U.S._House__04"
-    },
-    {
-      "slug": "U.S._House__05"
-    },
-    {
-      "slug": "U.S._House__06"
-    },
-    {
-      "slug": "U.S._House__07"
-    },
-    {
-      "slug": "U.S._House__08"
-    },
-    {
-      "slug": "U.S._House__09"
-    },
-    {
-      "slug": "U.S._House__10"
-    },
-    {
-      "slug": "U.S._House__11"
-    },
-    {
-      "slug": "U.S._House__12"
-    },
-    {
-      "slug": "U.S._House__13"
-    },
-    {
-      "slug": "U.S._House__14"
-    },
-    {
-      "slug": "U.S._Senate",
-      "source_votes": 4952175,
-      "matched_vtd10_votes": 3923736,
-      "fallback_vtd20_votes": 694000,
-      "dropped_votes": 334439,
-      "precincts": 2656,
-      "matched_exact": 1941,
-      "matched_fuzzy": 232,
-      "matched_alias": 0,
-      "fallback": 336,
-      "dropped": 144,
-      "vtd10_missing_shares": 0,
-      "output_votes": 4617736,
-      "output_vtd20": 2517
-    },
-    {
-      "slug": "U.S._Senate_Special",
-      "source_votes": 4914361,
-      "matched_vtd10_votes": 3891866,
-      "fallback_vtd20_votes": 690334,
-      "dropped_votes": 332161,
-      "precincts": 2656,
-      "matched_exact": 1941,
-      "matched_fuzzy": 232,
-      "matched_alias": 0,
-      "fallback": 336,
-      "dropped": 144,
-      "vtd10_missing_shares": 0,
-      "output_votes": 4582200,
-      "output_vtd20": 2517
-    }
-  ],
-  "method": "vtd10_weighted_shares",
-  "blockpath_promoted_at_utc": "2026-07-20T20:35:59.645854+00:00"
+  ]
 }

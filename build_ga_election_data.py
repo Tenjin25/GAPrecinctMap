@@ -65,8 +65,10 @@ ELECTION_FILES = [
     (2014, DATA_DIR / "20141104__ga__general__precinct.csv"),
     (2016, DATA_DIR / "20161108__ga__general__precinct.csv"),
     (2018, DATA_DIR / "20181106__ga__general__precinct.csv"),
-    (2020, DATA_DIR / "20201103__ga__general__precinct.csv"),
-    (2022, DATA_DIR / "20221108__ga__general__precinct-total.csv"),
+    (2020, DATA_DIR / "20201103__ga__general__official__precinct.csv"),
+    # January 5, 2021 Georgia federal runoff: regular Senate + Isakson-seat special.
+    (2021, DATA_DIR / "20210105__ga__runoff__official__precinct.csv"),
+    (2022, DATA_DIR / "20221108__ga__general__official__precinct.csv"),
     (2024, DATA_DIR / "20241105__ga__general__precinct-level.csv"),
 ]
 
@@ -81,8 +83,19 @@ COUNTY_FILES = [
     (2012, DATA_DIR / "20121106__ga__general.csv"),
     (2014, DATA_DIR / "20141104__ga__general.csv"),
     (2016, DATA_DIR / "20161108__ga__general.csv"),
-    (2022, DATA_DIR / "20221108__ga__general__county.csv"),
+    # Official Georgia SOS archive summary aggregation.
+    (2022, DATA_DIR / "20221108__ga__general__official__county.csv"),
     (2024, DATA_DIR / "20241105__ga__general__county.csv"),
+    (2021, DATA_DIR / "20210105__ga__runoff__county.csv"),
+]
+
+FIRST_ROUND_TARGETS = {
+    "U.S. Senate": {"JON OSSOFF", "DAVID A. PERDUE"},
+    "U.S. Senate (Special)": {"RAPHAEL WARNOCK", "KELLY LOEFFLER"},
+}
+
+RUNOFF_FILES = [
+    (2022, DATA_DIR / "20221206__ga__general_runoff__official__precinct.csv"),
 ]
 
 
@@ -248,7 +261,7 @@ def load_csv(path: Path) -> pd.DataFrame | None:
 # ---------------------------------------------------------------------------
 # Aggregate votes per county per contest from a precinct-level CSV
 # ---------------------------------------------------------------------------
-def aggregate_county_votes(df: pd.DataFrame):
+def aggregate_county_votes(df: pd.DataFrame, target_candidates: dict[str, set[str]] | None = None):
     """
     Returns dict: { office_raw: { county: { party: [votes, candidate] } } }
     Uses vectorized groupby instead of iterrows for speed.
@@ -265,6 +278,11 @@ def aggregate_county_votes(df: pd.DataFrame):
         .astype(str)
         .map(normalize_candidate_case)
     )
+    if target_candidates:
+        for office_name, names in target_candidates.items():
+            mask = df["_office"].eq(office_name)
+            keys = df.loc[mask, "_cand"].astype(str).str.replace(r"\s*\(I\)\s*", "", regex=True).str.strip().str.upper()
+            df.loc[mask & ~keys.isin(names), "_party"] = "O"
     df["_votes"] = compute_votes(df).astype(int)
 
     # Drop rows with no office/county or non-county rollups.
@@ -297,7 +315,8 @@ def aggregate_county_votes(df: pd.DataFrame):
         county_party = {}
         for (county, party), sub in grp.groupby(["_county", "_party"]):
             total_v = int(sub["_votes"].sum())
-            cand = sub.loc[sub["_cand"].ne(""), "_cand"].iloc[0] if sub["_cand"].ne("").any() else ""
+            named = sub[sub["_cand"].ne("")].groupby("_cand", as_index=False)["_votes"].sum()
+            cand = named.sort_values(["_votes", "_cand"], ascending=[False, True]).iloc[0]["_cand"] if not named.empty else ""
             if county not in county_party:
                 county_party[county] = {}
             county_party[county][party] = [total_v, cand]
@@ -359,7 +378,7 @@ def main():
         if df is None:
             continue
         print(f"\nProcessing county file: {path.name}")
-        agg = aggregate_county_votes(df)
+        agg = aggregate_county_votes(df, FIRST_ROUND_TARGETS if year == 2020 else None)
         for office_raw, county_data in agg.items():
             ctype = normalize_office(office_raw)
             if not ctype:
@@ -377,7 +396,7 @@ def main():
         if df is None:
             continue
         print(f"\nProcessing: {path.name}")
-        agg = aggregate_county_votes(df)
+        agg = aggregate_county_votes(df, FIRST_ROUND_TARGETS if year == 2020 else None)
         for office_raw, county_data in agg.items():
             ctype = normalize_office(office_raw)
             if not ctype:
@@ -385,6 +404,24 @@ def main():
             # Don't overwrite with precinct data if we already have county-level data
             if year in county_overrides.get(ctype, {}):
                 all_slices[ctype][year] = county_overrides[ctype][year]
+                continue
+            rows = build_contest_rows(county_data)
+            if rows:
+                all_slices[ctype][year] = rows
+                print(f"  {ctype} {year}: {len(rows)} counties")
+
+    # Keep the 2022 Senate runoff separate from the same-year general election.
+    for year, path in RUNOFF_FILES:
+        df = load_csv(path)
+        if df is None:
+            continue
+        print(f"\nProcessing runoff: {path.name}")
+        agg = aggregate_county_votes(df)
+        for office_raw, county_data in agg.items():
+            ctype = normalize_office(office_raw)
+            if ctype == "us_senate":
+                ctype = "us_senate_runoff"
+            if not ctype:
                 continue
             rows = build_contest_rows(county_data)
             if rows:
@@ -428,6 +465,7 @@ def main():
         "president":              "presidential",
         "us_senate":              "us_senate",
         "us_senate_special":      "us_senate_special",
+        "us_senate_runoff":       "us_senate_runoff",
         "governor":               "governor",
         "lieutenant_governor":    "lieutenant_governor",
         "attorney_general":       "attorney_general",
