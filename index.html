@@ -10575,8 +10575,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-05-official-election-data';
-    const APP_BUILD_ID = '2026-08-05-official-election-data';
+    const DATA_CACHE_BUSTER = '2026-08-05-friendly-contest-labels';
+    const APP_BUILD_ID = '2026-08-05-friendly-contest-labels';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -19243,8 +19243,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'president': 'President of the United States',
 	        'governor': 'Governor',
 	        'us_senate': 'United States Senator',
-	        'us_senate_special': 'United States Senator — Special Election',
-	        'us_senate_runoff': 'United States Senator — Runoff',
+	        'us_senate_special': 'United States Senator',
+	        'us_senate_runoff': 'United States Senator',
 	        'lieutenant_governor': 'Lieutenant Governor',
 	        'attorney_general': 'Attorney General',
 	        'auditor': 'State Auditor',
@@ -19295,13 +19295,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	    function formatContestLabel(contestType, year) {
 	      const y = Number(year);
-	      if (contestType === 'us_senate' && y === 2020) return 'US Senate — Regular (2020)';
-	      if (contestType === 'us_senate_special' && y === 2020) return 'US Senate — Special (2020)';
-	      if (contestType === 'us_senate' && y === 2021) return 'US Senate — Regular Runoff (2021)';
-	      if (contestType === 'us_senate_special' && y === 2021) return 'US Senate — Special Runoff (2021)';
-	      if (contestType === 'us_senate_runoff' && y === 2022) return 'US Senate — Runoff (2022)';
+	      if (contestType === 'us_senate' && y === 2020) return 'US Senate (2020) — Regular';
+	      if (contestType === 'us_senate_special' && y === 2020) return 'US Senate (2020) — Special';
+	      if (contestType === 'us_senate' && y === 2021) return 'US Senate (2021) — Regular Runoff';
+	      if (contestType === 'us_senate_special' && y === 2021) return 'US Senate (2021) — Special Runoff';
+	      if (contestType === 'us_senate' && y === 2022) return 'US Senate (2022)';
+	      if (contestType === 'us_senate_runoff' && y === 2022) return 'US Senate (2022) — Runoff';
       const officeName = formatContestName(contestType, year);
-      return Number.isFinite(Number(year)) ? `${officeName} ${year}` : officeName;
+	      return Number.isFinite(Number(year)) ? `${officeName} (${year})` : officeName;
 	    }
 
     function populateContestSelectFromElectionJSON(electionData) {
