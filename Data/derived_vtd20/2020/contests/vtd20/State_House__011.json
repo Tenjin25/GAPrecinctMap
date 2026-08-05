@@ -1,1 +1,198 @@
-{"office": "State House", "district": "11", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"13227000008": {"total_votes": 218, "dem_votes": 125, "rep_votes": 93, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 125, "margin_votes": 32}, "13227000012": {"total_votes": 159, "dem_votes": 101, "rep_votes": 58, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 101, "margin_votes": 43}, "13227000011": {"total_votes": 163, "dem_votes": 101, "rep_votes": 62, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 101, "margin_votes": 39}, "13227000006": {"total_votes": 101, "dem_votes": 54, "rep_votes": 47, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 54, "margin_votes": 7}, "13227000009": {"total_votes": 175, "dem_votes": 100, "rep_votes": 75, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 100, "margin_votes": 25}, "13227000004": {"total_votes": 49, "dem_votes": 19, "rep_votes": 30, "other_votes": 0, "winner_candidate": "Rick Jasperse*", "winner_party": "UNK", "winner_votes": 30, "margin_votes": 11}, "13227000003": {"total_votes": 48, "dem_votes": 18, "rep_votes": 30, "other_votes": 0, "winner_candidate": "Rick Jasperse*", "winner_party": "UNK", "winner_votes": 30, "margin_votes": 12}, "13227000002": {"total_votes": 161, "dem_votes": 97, "rep_votes": 64, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 97, "margin_votes": 33}, "13227000005": {"total_votes": 37, "dem_votes": 13, "rep_votes": 24, "other_votes": 0, "winner_candidate": "Rick Jasperse*", "winner_party": "UNK", "winner_votes": 24, "margin_votes": 11}, "13227000001": {"total_votes": 292, "dem_votes": 188, "rep_votes": 104, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 188, "margin_votes": 84}, "13227000010": {"total_votes": 220, "dem_votes": 134, "rep_votes": 86, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 134, "margin_votes": 48}, "13227000007": {"total_votes": 87, "dem_votes": 61, "rep_votes": 26, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 61, "margin_votes": 35}, "13213000824": {"total_votes": 350, "dem_votes": 277, "rep_votes": 73, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 277, "margin_votes": 204}, "13213001895": {"total_votes": 318, "dem_votes": 209, "rep_votes": 109, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 209, "margin_votes": 100}, "13213000872": {"total_votes": 125, "dem_votes": 76, "rep_votes": 49, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 76, "margin_votes": 27}, "13129000973": {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 0, "margin_votes": 0}, "13129001056": {"total_votes": 147, "dem_votes": 93, "rep_votes": 54, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 93, "margin_votes": 39}, "13129000874": {"total_votes": 100, "dem_votes": 38, "rep_votes": 62, "other_votes": 0, "winner_candidate": "Rick Jasperse*", "winner_party": "UNK", "winner_votes": 62, "margin_votes": 24}, "13129001235": {"total_votes": 66, "dem_votes": 37, "rep_votes": 29, "other_votes": 0, "winner_candidate": "Kayla Hollifield", "winner_party": "UNK", "winner_votes": 37, "margin_votes": 8}}}
+{
+  "office": "State House",
+  "district": "11",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "13227000008": {
+      "total_votes": 218,
+      "dem_votes": 125,
+      "rep_votes": 93,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 125,
+      "margin_votes": 32
+    },
+    "13227000012": {
+      "total_votes": 159,
+      "dem_votes": 101,
+      "rep_votes": 58,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 101,
+      "margin_votes": 43
+    },
+    "13227000011": {
+      "total_votes": 163,
+      "dem_votes": 101,
+      "rep_votes": 62,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 101,
+      "margin_votes": 39
+    },
+    "13227000006": {
+      "total_votes": 101,
+      "dem_votes": 54,
+      "rep_votes": 47,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 54,
+      "margin_votes": 7
+    },
+    "13227000009": {
+      "total_votes": 175,
+      "dem_votes": 100,
+      "rep_votes": 75,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 100,
+      "margin_votes": 25
+    },
+    "13227000004": {
+      "total_votes": 49,
+      "dem_votes": 19,
+      "rep_votes": 30,
+      "other_votes": 0,
+      "winner_candidate": "Rick Jasperse*",
+      "winner_party": "UNK",
+      "winner_votes": 30,
+      "margin_votes": 11
+    },
+    "13227000003": {
+      "total_votes": 48,
+      "dem_votes": 18,
+      "rep_votes": 30,
+      "other_votes": 0,
+      "winner_candidate": "Rick Jasperse*",
+      "winner_party": "UNK",
+      "winner_votes": 30,
+      "margin_votes": 12
+    },
+    "13227000002": {
+      "total_votes": 161,
+      "dem_votes": 97,
+      "rep_votes": 64,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 97,
+      "margin_votes": 33
+    },
+    "13227000005": {
+      "total_votes": 37,
+      "dem_votes": 13,
+      "rep_votes": 24,
+      "other_votes": 0,
+      "winner_candidate": "Rick Jasperse*",
+      "winner_party": "UNK",
+      "winner_votes": 24,
+      "margin_votes": 11
+    },
+    "13227000001": {
+      "total_votes": 292,
+      "dem_votes": 188,
+      "rep_votes": 104,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 188,
+      "margin_votes": 84
+    },
+    "13227000010": {
+      "total_votes": 220,
+      "dem_votes": 134,
+      "rep_votes": 86,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 134,
+      "margin_votes": 48
+    },
+    "13227000007": {
+      "total_votes": 87,
+      "dem_votes": 61,
+      "rep_votes": 26,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 61,
+      "margin_votes": 35
+    },
+    "13213000824": {
+      "total_votes": 350,
+      "dem_votes": 277,
+      "rep_votes": 73,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 277,
+      "margin_votes": 204
+    },
+    "13213001895": {
+      "total_votes": 318,
+      "dem_votes": 209,
+      "rep_votes": 109,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 209,
+      "margin_votes": 100
+    },
+    "13213000872": {
+      "total_votes": 125,
+      "dem_votes": 76,
+      "rep_votes": 49,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 76,
+      "margin_votes": 27
+    },
+    "13129000973": {
+      "total_votes": 0,
+      "dem_votes": 0,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 0,
+      "margin_votes": 0
+    },
+    "13129001056": {
+      "total_votes": 147,
+      "dem_votes": 93,
+      "rep_votes": 54,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 93,
+      "margin_votes": 39
+    },
+    "13129000874": {
+      "total_votes": 100,
+      "dem_votes": 38,
+      "rep_votes": 62,
+      "other_votes": 0,
+      "winner_candidate": "Rick Jasperse*",
+      "winner_party": "UNK",
+      "winner_votes": 62,
+      "margin_votes": 24
+    },
+    "13129001235": {
+      "total_votes": 66,
+      "dem_votes": 37,
+      "rep_votes": 29,
+      "other_votes": 0,
+      "winner_candidate": "Kayla Hollifield",
+      "winner_party": "UNK",
+      "winner_votes": 37,
+      "margin_votes": 8
+    }
+  }
+}

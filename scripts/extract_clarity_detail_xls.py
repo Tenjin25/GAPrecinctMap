@@ -100,7 +100,12 @@ def extract_archive(path: Path) -> list[dict[str, str]]:
                         if not precinct or precinct.lower().startswith("total"):
                             continue
                         for pos, raw_candidate in candidate_positions:
-                            total_idx = pos + 5
+                            # The candidate header occupies one cell, while each
+                            # candidate's data occupies five cells: election day,
+                            # advanced, absentee, provisional, and total. The old
+                            # pos + 5 logic shifted every candidate by one cell.
+                            candidate_number = pos - 2
+                            total_idx = 6 + (candidate_number * 5)
                             if total_idx >= len(vals):
                                 continue
                             total = re.sub(r"[^0-9-]", "", vals[total_idx]) or "0"

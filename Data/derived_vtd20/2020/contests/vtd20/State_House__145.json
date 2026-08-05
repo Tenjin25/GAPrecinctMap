@@ -1,1 +1,178 @@
-{"office": "State House", "district": "145", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"13237000101": {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 0, "margin_votes": 0}, "13237000104": {"total_votes": 423, "dem_votes": 322, "rep_votes": 101, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 322, "margin_votes": 221}, "13237000107": {"total_votes": 286, "dem_votes": 200, "rep_votes": 86, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 200, "margin_votes": 114}, "1300900CTY2": {"total_votes": 201, "dem_votes": 141, "rep_votes": 60, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 141, "margin_votes": 81}, "13009001714": {"total_votes": 172, "dem_votes": 113, "rep_votes": 59, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 113, "margin_votes": 54}, "13009000322": {"total_votes": 191, "dem_votes": 134, "rep_votes": 57, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 134, "margin_votes": 77}, "1300900321W": {"total_votes": 880, "dem_votes": 629, "rep_votes": 251, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 629, "margin_votes": 378}, "1300900MONT": {"total_votes": 760, "dem_votes": 598, "rep_votes": 162, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 598, "margin_votes": 436}, "13009000319": {"total_votes": 366, "dem_votes": 270, "rep_votes": 96, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 270, "margin_votes": 174}, "1300900CTY6": {"total_votes": 539, "dem_votes": 417, "rep_votes": 122, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 417, "margin_votes": 295}, "1300900CTY3": {"total_votes": 356, "dem_votes": 230, "rep_votes": 126, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 230, "margin_votes": 104}, "1300900CTY4": {"total_votes": 96, "dem_votes": 70, "rep_votes": 26, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 70, "margin_votes": 44}, "1300900CTY1": {"total_votes": 363, "dem_votes": 273, "rep_votes": 90, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 273, "margin_votes": 183}, "1300900321E": {"total_votes": 316, "dem_votes": 201, "rep_votes": 115, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 201, "margin_votes": 86}, "1300900CTY5": {"total_votes": 436, "dem_votes": 350, "rep_votes": 86, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 350, "margin_votes": 264}, "13009000318": {"total_votes": 443, "dem_votes": 373, "rep_votes": 70, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 373, "margin_votes": 303}, "1300900MERI": {"total_votes": 545, "dem_votes": 432, "rep_votes": 113, "other_votes": 0, "winner_candidate": "Quentin T. Howell", "winner_party": "UNK", "winner_votes": 432, "margin_votes": 319}}}
+{
+  "office": "State House",
+  "district": "145",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "13237000101": {
+      "total_votes": 0,
+      "dem_votes": 0,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 0,
+      "margin_votes": 0
+    },
+    "13237000104": {
+      "total_votes": 423,
+      "dem_votes": 322,
+      "rep_votes": 101,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 322,
+      "margin_votes": 221
+    },
+    "13237000107": {
+      "total_votes": 286,
+      "dem_votes": 200,
+      "rep_votes": 86,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 200,
+      "margin_votes": 114
+    },
+    "1300900CTY2": {
+      "total_votes": 201,
+      "dem_votes": 141,
+      "rep_votes": 60,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 141,
+      "margin_votes": 81
+    },
+    "13009001714": {
+      "total_votes": 172,
+      "dem_votes": 113,
+      "rep_votes": 59,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 113,
+      "margin_votes": 54
+    },
+    "13009000322": {
+      "total_votes": 191,
+      "dem_votes": 134,
+      "rep_votes": 57,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 134,
+      "margin_votes": 77
+    },
+    "1300900321W": {
+      "total_votes": 880,
+      "dem_votes": 629,
+      "rep_votes": 251,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 629,
+      "margin_votes": 378
+    },
+    "1300900MONT": {
+      "total_votes": 760,
+      "dem_votes": 598,
+      "rep_votes": 162,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 598,
+      "margin_votes": 436
+    },
+    "13009000319": {
+      "total_votes": 366,
+      "dem_votes": 270,
+      "rep_votes": 96,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 270,
+      "margin_votes": 174
+    },
+    "1300900CTY6": {
+      "total_votes": 539,
+      "dem_votes": 417,
+      "rep_votes": 122,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 417,
+      "margin_votes": 295
+    },
+    "1300900CTY3": {
+      "total_votes": 356,
+      "dem_votes": 230,
+      "rep_votes": 126,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 230,
+      "margin_votes": 104
+    },
+    "1300900CTY4": {
+      "total_votes": 96,
+      "dem_votes": 70,
+      "rep_votes": 26,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 70,
+      "margin_votes": 44
+    },
+    "1300900CTY1": {
+      "total_votes": 363,
+      "dem_votes": 273,
+      "rep_votes": 90,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 273,
+      "margin_votes": 183
+    },
+    "1300900321E": {
+      "total_votes": 316,
+      "dem_votes": 201,
+      "rep_votes": 115,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 201,
+      "margin_votes": 86
+    },
+    "1300900CTY5": {
+      "total_votes": 436,
+      "dem_votes": 350,
+      "rep_votes": 86,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 350,
+      "margin_votes": 264
+    },
+    "13009000318": {
+      "total_votes": 443,
+      "dem_votes": 373,
+      "rep_votes": 70,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 373,
+      "margin_votes": 303
+    },
+    "1300900MERI": {
+      "total_votes": 545,
+      "dem_votes": 432,
+      "rep_votes": 113,
+      "other_votes": 0,
+      "winner_candidate": "Quentin T. Howell",
+      "winner_party": "UNK",
+      "winner_votes": 432,
+      "margin_votes": 319
+    }
+  }
+}
