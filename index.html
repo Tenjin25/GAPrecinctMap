@@ -10575,8 +10575,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-05-friendly-contest-labels';
-    const APP_BUILD_ID = '2026-08-05-friendly-contest-labels';
+    const DATA_CACHE_BUSTER = '2026-08-05-compact-contest-names';
+    const APP_BUILD_ID = '2026-08-05-compact-contest-names';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -19240,11 +19240,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function formatContestName(contestType, year) {
 	      const nameMap = {
-	        'president': 'President of the United States',
+	        'president': 'US President',
 	        'governor': 'Governor',
-	        'us_senate': 'United States Senator',
-	        'us_senate_special': 'United States Senator',
-	        'us_senate_runoff': 'United States Senator',
+	        'us_senate': 'US Senate',
+	        'us_senate_special': 'US Senate',
+	        'us_senate_runoff': 'US Senate',
 	        'lieutenant_governor': 'Lieutenant Governor',
 	        'attorney_general': 'Attorney General',
 	        'auditor': 'State Auditor',
