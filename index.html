@@ -34289,14 +34289,15 @@ document.addEventListener('DOMContentLoaded', function() {
           if (mode === 'demographics') {
             setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
             setStatus(`Applied demographic mode for ${getReadableViewLabel(currentView)} (${linesLabel}).`);
-            refreshStatewideSummaryFromCountyRows(contestData, ` - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
           } else {
-            const statewideSummary = refreshStatewideSummaryFromCountyRows(contestData, ' - Statewide Result');
-            if (!statewideSummary && totalVotes > 0) {
-              setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} (${linesLabel})`);
-            }
-            const summaryDemPct = statewideSummary?.total ? (statewideSummary.dem / statewideSummary.total) * 100 : demPct;
-            const summaryRepPct = statewideSummary?.total ? (statewideSummary.rep / statewideSummary.total) * 100 : repPct;
+            // The district slice is already a complete, weighted partition of the
+            // active lines. Do not aggregate county rows a second time here: in
+            // some years (especially 2022) the county and VTD20 inputs have
+            // different coverage, which overwrites the district totals and
+            // produces an inflated statewide margin in district views.
+            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} (${linesLabel})`);
+            const summaryDemPct = demPct;
+            const summaryRepPct = repPct;
             if (preserveDistrictViewSummary) {
               setStatus(`Applied ${getReadableViewLabel(currentView)} crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${coverageText}.`);
             } else {
