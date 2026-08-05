@@ -1,1 +1,168 @@
-{"office": "State House", "district": "158", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"13031000012": {"total_votes": 183, "dem_votes": 95, "rep_votes": 88, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 95, "margin_votes": 7}, "13031000011": {"total_votes": 1302, "dem_votes": 913, "rep_votes": 389, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 913, "margin_votes": 524}, "13031000009": {"total_votes": 63, "dem_votes": 38, "rep_votes": 25, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 38, "margin_votes": 13}, "13107001208": {"total_votes": 22, "dem_votes": 14, "rep_votes": 8, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 14, "margin_votes": 6}, "13107001748": {"total_votes": 47, "dem_votes": 20, "rep_votes": 27, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 27, "margin_votes": 7}, "13107000050": {"total_votes": 20, "dem_votes": 8, "rep_votes": 12, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 12, "margin_votes": 4}, "13107001333": {"total_votes": 57, "dem_votes": 34, "rep_votes": 23, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 34, "margin_votes": 11}, "13107000057": {"total_votes": 37, "dem_votes": 17, "rep_votes": 20, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 20, "margin_votes": 3}, "13107000053": {"total_votes": 958, "dem_votes": 635, "rep_votes": 323, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 635, "margin_votes": 312}, "13107001502": {"total_votes": 35, "dem_votes": 13, "rep_votes": 22, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 22, "margin_votes": 9}, "13107001429": {"total_votes": 48, "dem_votes": 20, "rep_votes": 28, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 28, "margin_votes": 8}, "13107001560": {"total_votes": 242, "dem_votes": 129, "rep_votes": 113, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 129, "margin_votes": 16}, "13107000058": {"total_votes": 86, "dem_votes": 35, "rep_votes": 51, "other_votes": 0, "winner_candidate": "Butch Parrish*", "winner_party": "UNK", "winner_votes": 51, "margin_votes": 16}, "13165000002": {"total_votes": 229, "dem_votes": 147, "rep_votes": 82, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 147, "margin_votes": 65}, "13165000005": {"total_votes": 158, "dem_votes": 95, "rep_votes": 63, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 95, "margin_votes": 32}, "13165000003": {"total_votes": 91, "dem_votes": 59, "rep_votes": 32, "other_votes": 0, "winner_candidate": "Ann P.D. Gleason", "winner_party": "UNK", "winner_votes": 59, "margin_votes": 27}}}
+{
+  "office": "State House",
+  "district": "158",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "13031000012": {
+      "total_votes": 183,
+      "dem_votes": 95,
+      "rep_votes": 88,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 95,
+      "margin_votes": 7
+    },
+    "13031000011": {
+      "total_votes": 1302,
+      "dem_votes": 913,
+      "rep_votes": 389,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 913,
+      "margin_votes": 524
+    },
+    "13031000009": {
+      "total_votes": 63,
+      "dem_votes": 38,
+      "rep_votes": 25,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 38,
+      "margin_votes": 13
+    },
+    "13107001208": {
+      "total_votes": 22,
+      "dem_votes": 14,
+      "rep_votes": 8,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 14,
+      "margin_votes": 6
+    },
+    "13107001748": {
+      "total_votes": 47,
+      "dem_votes": 20,
+      "rep_votes": 27,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 27,
+      "margin_votes": 7
+    },
+    "13107000050": {
+      "total_votes": 20,
+      "dem_votes": 8,
+      "rep_votes": 12,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 12,
+      "margin_votes": 4
+    },
+    "13107001333": {
+      "total_votes": 57,
+      "dem_votes": 34,
+      "rep_votes": 23,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 34,
+      "margin_votes": 11
+    },
+    "13107000057": {
+      "total_votes": 37,
+      "dem_votes": 17,
+      "rep_votes": 20,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 20,
+      "margin_votes": 3
+    },
+    "13107000053": {
+      "total_votes": 958,
+      "dem_votes": 635,
+      "rep_votes": 323,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 635,
+      "margin_votes": 312
+    },
+    "13107001502": {
+      "total_votes": 35,
+      "dem_votes": 13,
+      "rep_votes": 22,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 22,
+      "margin_votes": 9
+    },
+    "13107001429": {
+      "total_votes": 48,
+      "dem_votes": 20,
+      "rep_votes": 28,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 28,
+      "margin_votes": 8
+    },
+    "13107001560": {
+      "total_votes": 242,
+      "dem_votes": 129,
+      "rep_votes": 113,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 129,
+      "margin_votes": 16
+    },
+    "13107000058": {
+      "total_votes": 86,
+      "dem_votes": 35,
+      "rep_votes": 51,
+      "other_votes": 0,
+      "winner_candidate": "Butch Parrish*",
+      "winner_party": "UNK",
+      "winner_votes": 51,
+      "margin_votes": 16
+    },
+    "13165000002": {
+      "total_votes": 229,
+      "dem_votes": 147,
+      "rep_votes": 82,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 147,
+      "margin_votes": 65
+    },
+    "13165000005": {
+      "total_votes": 158,
+      "dem_votes": 95,
+      "rep_votes": 63,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 95,
+      "margin_votes": 32
+    },
+    "13165000003": {
+      "total_votes": 91,
+      "dem_votes": 59,
+      "rep_votes": 32,
+      "other_votes": 0,
+      "winner_candidate": "Ann P.D. Gleason",
+      "winner_party": "UNK",
+      "winner_votes": 59,
+      "margin_votes": 27
+    }
+  }
+}

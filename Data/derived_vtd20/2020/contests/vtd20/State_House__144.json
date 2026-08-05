@@ -1,1 +1,208 @@
-{"office": "State House", "district": "144", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"13169000004": {"total_votes": 98, "dem_votes": 68, "rep_votes": 30, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 68, "margin_votes": 38}, "13169000003": {"total_votes": 395, "dem_votes": 269, "rep_votes": 126, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 269, "margin_votes": 143}, "13169000005": {"total_votes": 115, "dem_votes": 75, "rep_votes": 40, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 75, "margin_votes": 35}, "132890000GI": {"total_votes": 413, "dem_votes": 257, "rep_votes": 156, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 257, "margin_votes": 101}, "132890000DB": {"total_votes": 113, "dem_votes": 73, "rep_votes": 40, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 73, "margin_votes": 33}, "132890000HV": {"total_votes": 100, "dem_votes": 66, "rep_votes": 34, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 66, "margin_votes": 32}, "13021000RU2": {"total_votes": 583, "dem_votes": 413, "rep_votes": 170, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 413, "margin_votes": 243}, "13175000014": {"total_votes": 84, "dem_votes": 35, "rep_votes": 49, "other_votes": 0, "winner_candidate": "Danny Mathis*", "winner_party": "UNK", "winner_votes": 49, "margin_votes": 14}, "13023000001": {"total_votes": 597, "dem_votes": 401, "rep_votes": 196, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 401, "margin_votes": 205}, "13175000018": {"total_votes": 286, "dem_votes": 192, "rep_votes": 94, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 192, "margin_votes": 98}, "13319000004": {"total_votes": 20, "dem_votes": 12, "rep_votes": 8, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 12, "margin_votes": 4}, "13319000011": {"total_votes": 70, "dem_votes": 33, "rep_votes": 37, "other_votes": 0, "winner_candidate": "Danny Mathis*", "winner_party": "UNK", "winner_votes": 37, "margin_votes": 4}, "13319000003": {"total_votes": 17, "dem_votes": 5, "rep_votes": 12, "other_votes": 0, "winner_candidate": "Danny Mathis*", "winner_party": "UNK", "winner_votes": 12, "margin_votes": 7}, "13319000010": {"total_votes": 422, "dem_votes": 244, "rep_votes": 178, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 244, "margin_votes": 66}, "13319000006": {"total_votes": 49, "dem_votes": 28, "rep_votes": 21, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 28, "margin_votes": 7}, "13319000005": {"total_votes": 225, "dem_votes": 185, "rep_votes": 40, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 185, "margin_votes": 145}, "13319000002": {"total_votes": 16, "dem_votes": 8, "rep_votes": 8, "other_votes": 0, "winner_candidate": "Danny Mathis*", "winner_party": "UNK", "winner_votes": 8, "margin_votes": 0}, "13319000007": {"total_votes": 150, "dem_votes": 82, "rep_votes": 68, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 82, "margin_votes": 14}, "13319000008": {"total_votes": 323, "dem_votes": 233, "rep_votes": 90, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 233, "margin_votes": 143}, "13153000BMS": {"total_votes": 890, "dem_votes": 672, "rep_votes": 218, "other_votes": 0, "winner_candidate": "Mary Whipple-Lue", "winner_party": "UNK", "winner_votes": 672, "margin_votes": 454}}}
+{
+  "office": "State House",
+  "district": "144",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "13169000004": {
+      "total_votes": 98,
+      "dem_votes": 68,
+      "rep_votes": 30,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 68,
+      "margin_votes": 38
+    },
+    "13169000003": {
+      "total_votes": 395,
+      "dem_votes": 269,
+      "rep_votes": 126,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 269,
+      "margin_votes": 143
+    },
+    "13169000005": {
+      "total_votes": 115,
+      "dem_votes": 75,
+      "rep_votes": 40,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 75,
+      "margin_votes": 35
+    },
+    "132890000GI": {
+      "total_votes": 413,
+      "dem_votes": 257,
+      "rep_votes": 156,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 257,
+      "margin_votes": 101
+    },
+    "132890000DB": {
+      "total_votes": 113,
+      "dem_votes": 73,
+      "rep_votes": 40,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 73,
+      "margin_votes": 33
+    },
+    "132890000HV": {
+      "total_votes": 100,
+      "dem_votes": 66,
+      "rep_votes": 34,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 66,
+      "margin_votes": 32
+    },
+    "13021000RU2": {
+      "total_votes": 583,
+      "dem_votes": 413,
+      "rep_votes": 170,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 413,
+      "margin_votes": 243
+    },
+    "13175000014": {
+      "total_votes": 84,
+      "dem_votes": 35,
+      "rep_votes": 49,
+      "other_votes": 0,
+      "winner_candidate": "Danny Mathis*",
+      "winner_party": "UNK",
+      "winner_votes": 49,
+      "margin_votes": 14
+    },
+    "13023000001": {
+      "total_votes": 597,
+      "dem_votes": 401,
+      "rep_votes": 196,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 401,
+      "margin_votes": 205
+    },
+    "13175000018": {
+      "total_votes": 286,
+      "dem_votes": 192,
+      "rep_votes": 94,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 192,
+      "margin_votes": 98
+    },
+    "13319000004": {
+      "total_votes": 20,
+      "dem_votes": 12,
+      "rep_votes": 8,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 12,
+      "margin_votes": 4
+    },
+    "13319000011": {
+      "total_votes": 70,
+      "dem_votes": 33,
+      "rep_votes": 37,
+      "other_votes": 0,
+      "winner_candidate": "Danny Mathis*",
+      "winner_party": "UNK",
+      "winner_votes": 37,
+      "margin_votes": 4
+    },
+    "13319000003": {
+      "total_votes": 17,
+      "dem_votes": 5,
+      "rep_votes": 12,
+      "other_votes": 0,
+      "winner_candidate": "Danny Mathis*",
+      "winner_party": "UNK",
+      "winner_votes": 12,
+      "margin_votes": 7
+    },
+    "13319000010": {
+      "total_votes": 422,
+      "dem_votes": 244,
+      "rep_votes": 178,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 244,
+      "margin_votes": 66
+    },
+    "13319000006": {
+      "total_votes": 49,
+      "dem_votes": 28,
+      "rep_votes": 21,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 28,
+      "margin_votes": 7
+    },
+    "13319000005": {
+      "total_votes": 225,
+      "dem_votes": 185,
+      "rep_votes": 40,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 185,
+      "margin_votes": 145
+    },
+    "13319000002": {
+      "total_votes": 16,
+      "dem_votes": 8,
+      "rep_votes": 8,
+      "other_votes": 0,
+      "winner_candidate": "Danny Mathis*",
+      "winner_party": "UNK",
+      "winner_votes": 8,
+      "margin_votes": 0
+    },
+    "13319000007": {
+      "total_votes": 150,
+      "dem_votes": 82,
+      "rep_votes": 68,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 82,
+      "margin_votes": 14
+    },
+    "13319000008": {
+      "total_votes": 323,
+      "dem_votes": 233,
+      "rep_votes": 90,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 233,
+      "margin_votes": 143
+    },
+    "13153000BMS": {
+      "total_votes": 890,
+      "dem_votes": 672,
+      "rep_votes": 218,
+      "other_votes": 0,
+      "winner_candidate": "Mary Whipple-Lue",
+      "winner_party": "UNK",
+      "winner_votes": 672,
+      "margin_votes": 454
+    }
+  }
+}

@@ -1,1 +1,178 @@
-{"office": "State House", "district": "18", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"13143000002": {"total_votes": 404, "dem_votes": 282, "rep_votes": 122, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 282, "margin_votes": 160}, "13143000010": {"total_votes": 100, "dem_votes": 74, "rep_votes": 26, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 74, "margin_votes": 48}, "13143000013": {"total_votes": 48, "dem_votes": 20, "rep_votes": 28, "other_votes": 0, "winner_candidate": "Tyler Paul Smith", "winner_party": "UNK", "winner_votes": 28, "margin_votes": 8}, "13143000012": {"total_votes": 170, "dem_votes": 106, "rep_votes": 64, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 106, "margin_votes": 42}, "13143000007": {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 0, "margin_votes": 0}, "13143000003": {"total_votes": 98, "dem_votes": 69, "rep_votes": 29, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 69, "margin_votes": 40}, "13143000011": {"total_votes": 29, "dem_votes": 21, "rep_votes": 8, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 21, "margin_votes": 13}, "13143000004": {"total_votes": 41, "dem_votes": 21, "rep_votes": 20, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 21, "margin_votes": 1}, "13143000008": {"total_votes": 4, "dem_votes": 1, "rep_votes": 3, "other_votes": 0, "winner_candidate": "Tyler Paul Smith", "winner_party": "UNK", "winner_votes": 3, "margin_votes": 2}, "13045001006": {"total_votes": 41, "dem_votes": 22, "rep_votes": 19, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 22, "margin_votes": 3}, "13045000501": {"total_votes": 233, "dem_votes": 170, "rep_votes": 63, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 170, "margin_votes": 107}, "13045001483": {"total_votes": 20, "dem_votes": 16, "rep_votes": 4, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 16, "margin_votes": 12}, "130450714A1": {"total_votes": 1038, "dem_votes": 763, "rep_votes": 275, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 763, "margin_votes": 488}, "130450714A5": {"total_votes": 493, "dem_votes": 418, "rep_votes": 75, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 418, "margin_votes": 343}, "130450714A3": {"total_votes": 717, "dem_votes": 591, "rep_votes": 126, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 591, "margin_votes": 465}, "13045001240": {"total_votes": 185, "dem_votes": 115, "rep_votes": 70, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 115, "margin_votes": 45}, "13045001496": {"total_votes": 142, "dem_votes": 93, "rep_votes": 49, "other_votes": 0, "winner_candidate": "Pat Rhudy", "winner_party": "UNK", "winner_votes": 93, "margin_votes": 44}}}
+{
+  "office": "State House",
+  "district": "18",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "13143000002": {
+      "total_votes": 404,
+      "dem_votes": 282,
+      "rep_votes": 122,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 282,
+      "margin_votes": 160
+    },
+    "13143000010": {
+      "total_votes": 100,
+      "dem_votes": 74,
+      "rep_votes": 26,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 74,
+      "margin_votes": 48
+    },
+    "13143000013": {
+      "total_votes": 48,
+      "dem_votes": 20,
+      "rep_votes": 28,
+      "other_votes": 0,
+      "winner_candidate": "Tyler Paul Smith",
+      "winner_party": "UNK",
+      "winner_votes": 28,
+      "margin_votes": 8
+    },
+    "13143000012": {
+      "total_votes": 170,
+      "dem_votes": 106,
+      "rep_votes": 64,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 106,
+      "margin_votes": 42
+    },
+    "13143000007": {
+      "total_votes": 0,
+      "dem_votes": 0,
+      "rep_votes": 0,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 0,
+      "margin_votes": 0
+    },
+    "13143000003": {
+      "total_votes": 98,
+      "dem_votes": 69,
+      "rep_votes": 29,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 69,
+      "margin_votes": 40
+    },
+    "13143000011": {
+      "total_votes": 29,
+      "dem_votes": 21,
+      "rep_votes": 8,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 21,
+      "margin_votes": 13
+    },
+    "13143000004": {
+      "total_votes": 41,
+      "dem_votes": 21,
+      "rep_votes": 20,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 21,
+      "margin_votes": 1
+    },
+    "13143000008": {
+      "total_votes": 4,
+      "dem_votes": 1,
+      "rep_votes": 3,
+      "other_votes": 0,
+      "winner_candidate": "Tyler Paul Smith",
+      "winner_party": "UNK",
+      "winner_votes": 3,
+      "margin_votes": 2
+    },
+    "13045001006": {
+      "total_votes": 41,
+      "dem_votes": 22,
+      "rep_votes": 19,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 22,
+      "margin_votes": 3
+    },
+    "13045000501": {
+      "total_votes": 233,
+      "dem_votes": 170,
+      "rep_votes": 63,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 170,
+      "margin_votes": 107
+    },
+    "13045001483": {
+      "total_votes": 20,
+      "dem_votes": 16,
+      "rep_votes": 4,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 16,
+      "margin_votes": 12
+    },
+    "130450714A1": {
+      "total_votes": 1038,
+      "dem_votes": 763,
+      "rep_votes": 275,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 763,
+      "margin_votes": 488
+    },
+    "130450714A5": {
+      "total_votes": 493,
+      "dem_votes": 418,
+      "rep_votes": 75,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 418,
+      "margin_votes": 343
+    },
+    "130450714A3": {
+      "total_votes": 717,
+      "dem_votes": 591,
+      "rep_votes": 126,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 591,
+      "margin_votes": 465
+    },
+    "13045001240": {
+      "total_votes": 185,
+      "dem_votes": 115,
+      "rep_votes": 70,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 115,
+      "margin_votes": 45
+    },
+    "13045001496": {
+      "total_votes": 142,
+      "dem_votes": 93,
+      "rep_votes": 49,
+      "other_votes": 0,
+      "winner_candidate": "Pat Rhudy",
+      "winner_party": "UNK",
+      "winner_votes": 93,
+      "margin_votes": 44
+    }
+  }
+}

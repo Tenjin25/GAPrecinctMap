@@ -1,1 +1,188 @@
-{"office": "State House", "district": "49", "level": "vtd20", "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.", "results": {"1312100AP06": {"total_votes": 360, "dem_votes": 329, "rep_votes": 31, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 329, "margin_votes": 298}, "131210AP07A": {"total_votes": 853, "dem_votes": 751, "rep_votes": 102, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 751, "margin_votes": 649}, "131210AP09A": {"total_votes": 1102, "dem_votes": 988, "rep_votes": 114, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 988, "margin_votes": 874}, "131210AP12A": {"total_votes": 201, "dem_votes": 164, "rep_votes": 37, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 164, "margin_votes": 127}, "1312100JC15": {"total_votes": 290, "dem_votes": 259, "rep_votes": 31, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 259, "margin_votes": 228}, "131210AP09B": {"total_votes": 255, "dem_votes": 236, "rep_votes": 19, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 236, "margin_votes": 217}, "131210AP021": {"total_votes": 814, "dem_votes": 717, "rep_votes": 97, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 717, "margin_votes": 620}, "131210AP022": {"total_votes": 559, "dem_votes": 472, "rep_votes": 87, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 472, "margin_votes": 385}, "131210AP01A": {"total_votes": 1223, "dem_votes": 1123, "rep_votes": 100, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 1123, "margin_votes": 1023}, "131210AP01D": {"total_votes": 240, "dem_votes": 203, "rep_votes": 37, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 203, "margin_votes": 166}, "131210AP12C": {"total_votes": 487, "dem_votes": 431, "rep_votes": 56, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 431, "margin_votes": 375}, "1312100AP05": {"total_votes": 1028, "dem_votes": 947, "rep_votes": 81, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 947, "margin_votes": 866}, "131210JC04B": {"total_votes": 94, "dem_votes": 88, "rep_votes": 6, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 88, "margin_votes": 82}, "131210AP01B": {"total_votes": 305, "dem_votes": 265, "rep_votes": 40, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 265, "margin_votes": 225}, "1312100JC16": {"total_votes": 665, "dem_votes": 604, "rep_votes": 61, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 604, "margin_votes": 543}, "1312100AP14": {"total_votes": 771, "dem_votes": 708, "rep_votes": 63, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 708, "margin_votes": 645}, "131210AP01C": {"total_votes": 557, "dem_votes": 505, "rep_votes": 52, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 505, "margin_votes": 453}, "1312100AP10": {"total_votes": 180, "dem_votes": 157, "rep_votes": 23, "other_votes": 0, "winner_candidate": "Jason T. Hayes", "winner_party": "UNK", "winner_votes": 157, "margin_votes": 134}}}
+{
+  "office": "State House",
+  "district": "49",
+  "level": "vtd20",
+  "keys": "Join on VTD20 GEOID20 (state+county+vtd id). Built by matching precinct names to VTD20 join keys; optionally uses --vtd20-crosswalk and --vtd20-supplemental-keymap.",
+  "results": {
+    "1312100AP06": {
+      "total_votes": 360,
+      "dem_votes": 329,
+      "rep_votes": 31,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 329,
+      "margin_votes": 298
+    },
+    "131210AP07A": {
+      "total_votes": 853,
+      "dem_votes": 751,
+      "rep_votes": 102,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 751,
+      "margin_votes": 649
+    },
+    "131210AP09A": {
+      "total_votes": 1102,
+      "dem_votes": 988,
+      "rep_votes": 114,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 988,
+      "margin_votes": 874
+    },
+    "131210AP12A": {
+      "total_votes": 201,
+      "dem_votes": 164,
+      "rep_votes": 37,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 164,
+      "margin_votes": 127
+    },
+    "1312100JC15": {
+      "total_votes": 290,
+      "dem_votes": 259,
+      "rep_votes": 31,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 259,
+      "margin_votes": 228
+    },
+    "131210AP09B": {
+      "total_votes": 255,
+      "dem_votes": 236,
+      "rep_votes": 19,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 236,
+      "margin_votes": 217
+    },
+    "131210AP021": {
+      "total_votes": 814,
+      "dem_votes": 717,
+      "rep_votes": 97,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 717,
+      "margin_votes": 620
+    },
+    "131210AP022": {
+      "total_votes": 559,
+      "dem_votes": 472,
+      "rep_votes": 87,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 472,
+      "margin_votes": 385
+    },
+    "131210AP01A": {
+      "total_votes": 1223,
+      "dem_votes": 1123,
+      "rep_votes": 100,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 1123,
+      "margin_votes": 1023
+    },
+    "131210AP01D": {
+      "total_votes": 240,
+      "dem_votes": 203,
+      "rep_votes": 37,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 203,
+      "margin_votes": 166
+    },
+    "131210AP12C": {
+      "total_votes": 487,
+      "dem_votes": 431,
+      "rep_votes": 56,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 431,
+      "margin_votes": 375
+    },
+    "1312100AP05": {
+      "total_votes": 1028,
+      "dem_votes": 947,
+      "rep_votes": 81,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 947,
+      "margin_votes": 866
+    },
+    "131210JC04B": {
+      "total_votes": 94,
+      "dem_votes": 88,
+      "rep_votes": 6,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 88,
+      "margin_votes": 82
+    },
+    "131210AP01B": {
+      "total_votes": 305,
+      "dem_votes": 265,
+      "rep_votes": 40,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 265,
+      "margin_votes": 225
+    },
+    "1312100JC16": {
+      "total_votes": 665,
+      "dem_votes": 604,
+      "rep_votes": 61,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 604,
+      "margin_votes": 543
+    },
+    "1312100AP14": {
+      "total_votes": 771,
+      "dem_votes": 708,
+      "rep_votes": 63,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 708,
+      "margin_votes": 645
+    },
+    "131210AP01C": {
+      "total_votes": 557,
+      "dem_votes": 505,
+      "rep_votes": 52,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 505,
+      "margin_votes": 453
+    },
+    "1312100AP10": {
+      "total_votes": 180,
+      "dem_votes": 157,
+      "rep_votes": 23,
+      "other_votes": 0,
+      "winner_candidate": "Jason T. Hayes",
+      "winner_party": "UNK",
+      "winner_votes": 157,
+      "margin_votes": 134
+    }
+  }
+}
