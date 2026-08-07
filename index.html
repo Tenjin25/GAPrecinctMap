@@ -10575,8 +10575,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-      const DATA_CACHE_BUSTER = '2026-08-07-2022-runoff-json-fix';
-      const APP_BUILD_ID = '2026-08-07-2022-runoff-json-fix';
+      const DATA_CACHE_BUSTER = '2026-08-07-2008-senate-runoff-county-fix';
+      const APP_BUILD_ID = '2026-08-07-2008-senate-runoff-county-fix';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -19299,6 +19299,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	      if (contestType === 'us_senate_special' && y === 2020) return 'US Senate (2020) — Special';
 	      if (contestType === 'us_senate' && y === 2021) return 'US Senate (2021) — Regular Runoff';
 	      if (contestType === 'us_senate_special' && y === 2021) return 'US Senate (2021) — Special Runoff';
+	      if (contestType === 'us_senate_runoff' && y === 2008) return 'US Senate (2008) - Runoff';
 	      if (contestType === 'us_senate' && y === 2022) return 'US Senate (2022)';
 	      if (contestType === 'us_senate_runoff' && y === 2022) return 'US Senate (2022) — Runoff';
       const officeName = formatContestName(contestType, year);
