@@ -1,7 +1,7 @@
 {
   "source": "Data/ga_2022_gen_prec.zip",
   "district_lines_year": 2022,
-  "generated_at_utc": "2026-08-05T22:01:21.449142+00:00",
+  "generated_at_utc": "2026-08-09T01:19:31.740388+00:00",
   "files": [
     {
       "scope": "congressional",
@@ -1512,6 +1512,48 @@
       "dem_total": 942028,
       "rep_total": 434788,
       "other_total": 0,
+      "major_party_contested": true,
+      "match_coverage_pct": 100.0
+    },
+    {
+      "scope": "congressional",
+      "contest_type": "president",
+      "year": 2008,
+      "file": "congressional_president_2008.json",
+      "rows": 14,
+      "districts": 14,
+      "total_votes": 3936151,
+      "dem_total": 1844205,
+      "rep_total": 2048826,
+      "other_total": 43120,
+      "major_party_contested": true,
+      "match_coverage_pct": 100.0
+    },
+    {
+      "scope": "state_house",
+      "contest_type": "president",
+      "year": 2008,
+      "file": "state_house_president_2008.json",
+      "rows": 180,
+      "districts": 180,
+      "total_votes": 3936160,
+      "dem_total": 1844198,
+      "rep_total": 2048819,
+      "other_total": 43143,
+      "major_party_contested": true,
+      "match_coverage_pct": 100.0
+    },
+    {
+      "scope": "state_senate",
+      "contest_type": "president",
+      "year": 2008,
+      "file": "state_senate_president_2008.json",
+      "rows": 56,
+      "districts": 56,
+      "total_votes": 3936154,
+      "dem_total": 1844203,
+      "rep_total": 2048825,
+      "other_total": 43126,
       "major_party_contested": true,
       "match_coverage_pct": 100.0
     }
