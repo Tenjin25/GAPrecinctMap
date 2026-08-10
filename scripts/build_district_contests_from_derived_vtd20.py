@@ -705,7 +705,11 @@ def main() -> None:
         default=None,
         help="Output directory (default: Data/district_contests_<lines-year>).",
     )
-    ap.add_argument("--years", default="", help="Optional comma-separated years, e.g. 2014,2016,2018")
+    ap.add_argument(
+        "--years",
+        default="",
+        help="Optional comma-separated years, e.g. 2014,2016,2018; preserves other manifest entries.",
+    )
 
     ap.add_argument("--crosswalk-cd", type=Path, default=Path("Data/crosswalks/precinct_to_cd118.csv"))
     ap.add_argument("--crosswalk-cd119", type=Path, default=Path("Data/crosswalks/precinct_to_cd119.csv"))
@@ -824,6 +828,14 @@ def main() -> None:
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     manifest_files: list[dict[str, Any]] = []
+    existing_manifest_files: list[dict[str, Any]] = []
+    if args.years:
+        existing_manifest_path = args.out_dir / "manifest.json"
+        if existing_manifest_path.exists():
+            try:
+                existing_manifest_files = list((load_json(existing_manifest_path).get("files") or []))
+            except (OSError, json.JSONDecodeError):
+                existing_manifest_files = []
 
     for (scope, contest_type, year), entries in sorted(grouped.items(), key=lambda x: (x[0][0], x[0][1], x[0][2])):
         # Publish statewide/top-ticket overlays only (not seat races, DA, PSC, etc.).
@@ -882,6 +894,13 @@ def main() -> None:
                 "major_party_contested": bool(major_party_contested),
                 "match_coverage_pct": float(agg["match_coverage_pct"]),
             }
+        )
+
+    if years_filter:
+        rebuilt_keys = {(x["scope"], x["contest_type"], int(x["year"])) for x in manifest_files}
+        manifest_files.extend(
+            x for x in existing_manifest_files
+            if (x.get("scope"), x.get("contest_type"), int(x.get("year") or 0)) not in rebuilt_keys
         )
 
     manifest = {
