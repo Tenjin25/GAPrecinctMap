@@ -105,7 +105,10 @@ def write_crosswalk(path: Path, crosswalk: dict[str, list[tuple[str, float]]]) -
 
 CONTESTS = {
     "governor": ("G22GOVDABR", "G22GOVRKEM", ("G22GOVLHAZ",)),
-    "lieutenant_governor": ("G22LTGDBAI", "G22LTGRGRA", ("G22LTGRJON",)),
+    # Burt Jones (JON) was the Republican nominee; Ryan Graham (GRA) was the
+    # Libertarian nominee.  Keeping those columns in their proper buckets is
+    # essential because these values seed all three district views.
+    "lieutenant_governor": ("G22LTGDBAI", "G22LTGRJON", ("G22LTGLGRA",)),
     "secretary_of_state": ("G22SOSDNGU", "G22SOSRRAF", ("G22SOSLMET",)),
     "attorney_general": ("G22ATGDJOR", "G22ATGRCAR", ("G22ATGLCOW",)),
     "agriculture_commissioner": ("G22AGRDHEM", "G22AGRRHAR", ("G22AGRLRAU",)),
