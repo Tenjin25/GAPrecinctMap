@@ -6,15 +6,15 @@
     --initial-margin-1: #67000d;
     --initial-margin-2: #a50f15;
     --initial-margin-3: #cb181d;
-    --initial-margin-4: #e93a2d;
-    --initial-margin-5: #f7634b;
-    --initial-margin-6: #fca793;
+    --initial-margin-4: #ef3b2c;
+    --initial-margin-5: #fb6a4a;
+    --initial-margin-6: #fcae91;
     --initial-margin-7: #f4c9c5;
     --initial-margin-8: #f7f7f7;
     --initial-margin-9: #c7ddf0;
-    --initial-margin-10: #8bbde0;
-    --initial-margin-11: #6baed6;
-    --initial-margin-12: #4795d2;
+    --initial-margin-10: #c6dbef;
+    --initial-margin-11: #9ecae1;
+    --initial-margin-12: #6baed6;
     --initial-margin-13: #2876b5;
     --initial-margin-14: #08519c;
     --initial-margin-15: #08306b;
@@ -10304,15 +10304,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="legend-segment legend-color" style="background: #67000d;"></span>
                 <span class="legend-segment legend-color" style="background: #a50f15;"></span>
                 <span class="legend-segment legend-color" style="background: #cb181d;"></span>
-                <span class="legend-segment legend-color" style="background: #e93a2d;"></span>
-                <span class="legend-segment legend-color" style="background: #f7634b;"></span>
-                <span class="legend-segment legend-color" style="background: #fca793;"></span>
+                <span class="legend-segment legend-color" style="background: #ef3b2c;"></span>
+                <span class="legend-segment legend-color" style="background: #fb6a4a;"></span>
+                <span class="legend-segment legend-color" style="background: #fcae91;"></span>
                 <span class="legend-segment legend-color" style="background: #f4c9c5;"></span>
                 <span class="legend-segment legend-color" style="background: #f7f7f7; border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
                 <span class="legend-segment legend-color" style="background: #c7ddf0;"></span>
-                <span class="legend-segment legend-color" style="background: #8bbde0;"></span>
-                <span class="legend-segment legend-color" style="background: #6baed6;"></span>
-                <span class="legend-segment legend-color" style="background: #4795d2;"></span>
+                <span class="legend-segment legend-color" style="background: #c6dbef;"></span>
+                <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
+                <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
                 <span class="legend-segment legend-color" style="background: #2876b5;"></span>
                 <span class="legend-segment legend-color" style="background: #08519c;"></span>
                 <span class="legend-segment legend-color" style="background: #08306b;"></span>
@@ -10575,8 +10575,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-      const DATA_CACHE_BUSTER = '2026-08-10-2021-2022-district-fix';
-      const APP_BUILD_ID = '2026-08-10-2021-2022-district-fix';
+      const DATA_CACHE_BUSTER = '2026-08-11-shared-margin-palette';
+      const APP_BUILD_ID = '2026-08-11-shared-margin-palette';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -32210,11 +32210,11 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (marginPct >= 20) {
         return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold — midpoint blue, OG red
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#e93a2d' : '#4795d2'; // Safe — midpoint between OG and newer ramp
+        return winner === 'R' ? '#ef3b2c' : '#6baed6'; // Safe — midpoint between OG and newer ramp
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#f7634b' : '#6baed6'; // Likely — midpoint red, established blue
+        return winner === 'R' ? '#fb6a4a' : '#9ecae1'; // Likely — midpoint red, established blue
       } else if (marginPct >= 1.0) {
-        return winner === 'R' ? '#fca793' : '#8bbde0'; // Lean — midpoint red, established blue
+        return winner === 'R' ? '#fcae91' : '#c6dbef'; // Lean — midpoint red, established blue
       } else if (marginPct >= 0.5) {
         return winner === 'R' ? '#f4c9c5' : '#c7ddf0'; // Balanced Tilt shades, still clearly lighter than Lean
       } else {
