@@ -11,10 +11,10 @@
     --initial-margin-6: #fcae91;
     --initial-margin-7: #f4c9c5;
     --initial-margin-8: #f7f7f7;
-    --initial-margin-9: #c7ddf0;
+    --initial-margin-9: #9ecae1;
     --initial-margin-10: #9ecae1;
     --initial-margin-11: #9ecae1;
-    --initial-margin-12: #6baed6;
+    --initial-margin-12: #5b9fd0;
     --initial-margin-13: #2876b5;
     --initial-margin-14: #08519c;
     --initial-margin-15: #08306b;
@@ -10309,7 +10309,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="legend-segment legend-color" style="background: #fcae91;"></span>
                 <span class="legend-segment legend-color" style="background: #f4c9c5;"></span>
                 <span class="legend-segment legend-color" style="background: #f7f7f7; border-left: 1px solid rgba(15,23,42,0.12); border-right: 1px solid rgba(15,23,42,0.12);"></span>
-                <span class="legend-segment legend-color" style="background: #c7ddf0;"></span>
+                <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
                 <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
                 <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
                 <span class="legend-segment legend-color" style="background: #9ecae1;"></span>
@@ -32210,13 +32210,13 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (marginPct >= 20) {
         return winner === 'R' ? '#cb181d' : '#2876b5'; // Stronghold — midpoint blue, OG red
       } else if (marginPct >= 10) {
-        return winner === 'R' ? '#e93a2d' : '#4795d2'; // Safe — midpoint between OG and newer ramp
+        return winner === 'R' ? '#e93a2d' : '#3f8fc9'; // Safe — midpoint between OG and newer ramp
       } else if (marginPct >= 5.5) {
-        return winner === 'R' ? '#f7634b' : '#6baed6'; // Likely — midpoint red, established blue
+        return winner === 'R' ? '#f7634b' : '#5b9fd0'; // Likely — midpoint red, established blue
       } else if (marginPct >= 1.0) {
         return winner === 'R' ? '#fcae91' : '#9ecae1'; // Lean — midpoint red, established blue
       } else if (marginPct >= 0.5) {
-        return winner === 'R' ? '#f4c9c5' : '#c7ddf0'; // Balanced Tilt shades, still clearly lighter than Lean
+        return winner === 'R' ? '#f4c9c5' : '#9ecae1'; // Balanced Tilt shades, still clearly lighter than Lean
       } else {
         return '#f7f7f7';
       }
