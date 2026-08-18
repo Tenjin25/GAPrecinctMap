@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Data" / "20241105__ga__general__precinct-level.csv"
 OUTPUT = ROOT / "Data" / "district_contests_2024" / "state_house_president_2024.json"
+OUTPUT_2022 = ROOT / "Data" / "district_contests_2022" / "state_house_president_2024.json"
 
 
 def num(value: str) -> int:
@@ -100,7 +101,12 @@ def main() -> None:
         "general": {"results": final},
     }
     OUTPUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    payload_2022 = json.loads(json.dumps(payload))
+    payload_2022["meta"]["district_lines_year"] = 2022
+    payload_2022["meta"]["source"] = "2024 SOS precinct export allocated by State House precinct buckets (2022-line view)"
+    OUTPUT_2022.write_text(json.dumps(payload_2022, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT}")
+    print(f"Wrote {OUTPUT_2022}")
     print("HD 177:", final.get("177"))
 
 
