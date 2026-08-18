@@ -6324,10 +6324,15 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     min-height: 54px;
     font-size: 15px;
     font-weight: 900;
+    font-family: "Manrope", "IBM Plex Sans", sans-serif;
     letter-spacing: -0.01em;
     color: #0f172a;
     border-color: rgba(37, 99, 235, 0.24);
     box-shadow: 0 14px 30px rgba(37, 99, 235, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  }
+
+  .contest-select-wrap-primary #contestSelect option {
+    font-family: "Manrope", "IBM Plex Sans", sans-serif;
   }
 
   .contest-onboard-hint {
@@ -10582,8 +10587,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-18-hd177-pretoday-typography-v7';
-    const APP_BUILD_ID = '2026-08-18-hd177-pretoday-typography-v7';
+    const DATA_CACHE_BUSTER = '2026-08-18-hd177-pretoday-typography-v8';
+    const APP_BUILD_ID = '2026-08-18-hd177-pretoday-typography-v8';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
