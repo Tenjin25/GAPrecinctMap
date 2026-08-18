@@ -576,7 +576,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
 html, body {
   height: 100vh;
@@ -586,24 +586,19 @@ html, body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   font-synthesis: none;
+  font-synthesis: none;
 }
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Manrope', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 400;
   color: #0f172a;
   overflow: hidden;
   touch-action: pan-x pan-y;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-/* Keep native controls on the same atlas type system in every browser mode. */
-button,
-input,
-select,
-textarea {
-  font: inherit;
 }
 #map {
   position: absolute;
@@ -1444,7 +1439,6 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   background: rgba(255, 255, 255, 0.95);
   color: var(--ui-text);
   font-size: 14px;
-  font-weight: 700;
 }
 
 /* Legend */
@@ -2825,6 +2819,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 
   body {
     font-family: 'Manrope', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 400;
     background: radial-gradient(circle at 14% 10%, #ffe5eb 0%, #fef2f2 34%, #fff8e6 76%);
     color: var(--ui-text);
   }
@@ -3857,7 +3852,6 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     box-shadow: none;
     color: #0f172a;
     font-size: 14px;
-  font-weight: 700;
   }
 
   .map-topbar #county-search {
@@ -10586,8 +10580,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-18-hd177-typography-main-v5';
-    const APP_BUILD_ID = '2026-08-18-hd177-typography-main-v5';
+    const DATA_CACHE_BUSTER = '2026-08-18-hd177-pretoday-typography-v6';
+    const APP_BUILD_ID = '2026-08-18-hd177-pretoday-typography-v6';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
