@@ -586,7 +586,6 @@ html, body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   font-synthesis: none;
-  font-synthesis: none;
 }
 body {
   height: 100vh;
@@ -599,6 +598,13 @@ body {
   touch-action: pan-x pan-y;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+/* Keep native controls on the same atlas type system in every browser mode. */
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 #map {
   position: absolute;
@@ -1439,6 +1445,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   background: rgba(255, 255, 255, 0.95);
   color: var(--ui-text);
   font-size: 14px;
+  font-weight: 700;
 }
 
 /* Legend */
@@ -3852,6 +3859,7 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     box-shadow: none;
     color: #0f172a;
     font-size: 14px;
+  font-weight: 700;
   }
 
   .map-topbar #county-search {
@@ -10580,8 +10588,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-15-dem-ramp-nc-red-v4';
-    const APP_BUILD_ID = '2026-08-15-dem-ramp-nc-red-v4';
+    const DATA_CACHE_BUSTER = '2026-08-18-hd177-president-fix-v1';
+    const APP_BUILD_ID = '2026-08-18-hd177-president-fix-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -25840,7 +25848,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       const download = document.createElement('a');
       download.href = dataUrl;
-      download.download = `nc-election-atlas-story-${snapshotStoryVariant}-${Date.now()}.png`;
+            download.download = `nc-election-atlas-story-${snapshotStoryVariant}-${Date.now()}.png`;
       document.body.appendChild(download);
       download.click();
       download.remove();
