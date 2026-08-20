@@ -1,37 +1,55 @@
-"""Repair the 2024 State House presidential slices from the SOS precinct export.
+"""Repair 2024 Georgia district presidential slices from complete spatial inputs.
 
 The 2024 export uses polling-place names, while the VTD20 matcher expects the
-older nine VTD names in Lowndes and several other counties.  The State House
-contest in the same export already records the district-specific vote buckets,
-so those buckets provide the correct allocation weights for statewide contests.
+older nine VTD names in Lowndes and several other counties.  The State House,
+State Senate, and U.S. House contests in the same export record district-specific
+vote buckets, so those buckets provide complete allocation weights for the
+statewide presidential contest.
 
-That direct allocation is valid only for the 2024 House lines.  The 2022-lines
-view must instead aggregate the matched VTD20 presidential results through the
-2022 precinct-to-House crosswalk; district numbers do not represent the same
-geography between the two line vintages.
+For the 2022-lines view, a precomputed spatial crosswalk remaps the complete SOS
+2024 district totals onto each old map.  Unchanged districts retain their
+complete SOS totals exactly; redrawn districts use party-specific weights
+derived from the New York Times' public 2024 presidential precinct geography.
 """
 
 from __future__ import annotations
 
 import csv
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Data" / "20241105__ga__general__precinct-level.csv"
-OUTPUT = ROOT / "Data" / "district_contests_2024" / "state_house_president_2024.json"
-OUTPUT_2022 = ROOT / "Data" / "district_contests_2022" / "state_house_president_2024.json"
-VTD20_SOURCE = ROOT / "Data" / "derived_vtd20" / "2024" / "contests" / "vtd20" / "President.json"
-CROSSWALK_2022 = ROOT / "Data" / "crosswalks" / "precinct_to_2022_state_house.csv"
-
-# These district polygons are unchanged between the 2022 and 2024 House maps.
-# Use the complete SOS State House bucket allocation when the VTD20 matcher
-# drops votes from renamed or consolidated precincts.  HD 128 is geometrically
-# identical across the two vintages; its VTD20 path omits Hancock and McDuffie
-# precincts that are present in the SOS bucket result.
-IDENTICAL_GEOGRAPHY_OVERRIDES = ("128",)
+RESULT_FIELDS = ("total_votes", "dem_votes", "rep_votes", "other_votes")
+SCOPE_CONFIGS = {
+    "state_house": {
+        "label": "State House",
+        "office": "STATE HOUSE",
+        "district_count": 180,
+        "file": "state_house_president_2024.json",
+        "remap_file": "Data/crosswalks/state_house_2024_to_2022_president_2024_weights.json",
+        "abbr": "HD",
+    },
+    "state_senate": {
+        "label": "State Senate",
+        "office": "STATE SENATE",
+        "district_count": 56,
+        "file": "state_senate_president_2024.json",
+        "remap_file": "Data/crosswalks/state_senate_2024_to_2022_president_2024_weights.json",
+        "abbr": "SD",
+    },
+    "congressional": {
+        "label": "Congressional",
+        "office": "U.S. HOUSE",
+        "district_count": 14,
+        "file": "congressional_president_2024.json",
+        "remap_file": "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json",
+        "abbr": "CD",
+    },
+}
 
 
 def num(value: object) -> int:
@@ -67,59 +85,101 @@ def finalize_results(results: dict[str, dict[str, float]]) -> dict[str, dict[str
     return final
 
 
-def build_2022_lines() -> tuple[dict[str, dict[str, object]], int, int]:
-    assignments: dict[str, list[tuple[str, float]]] = defaultdict(list)
-    with CROSSWALK_2022.open(encoding="utf-8-sig", newline="") as fh:
-        for row in csv.DictReader(fh):
-            precinct_key = row["precinct_key"].strip().upper()
-            district = row["district_num"].strip()
-            try:
-                weight = float(row["area_weight"])
-            except (TypeError, ValueError):
-                continue
-            if precinct_key and district and weight > 0:
-                assignments[precinct_key].append((district, weight))
-
-    source = json.loads(VTD20_SOURCE.read_text(encoding="utf-8"))
-    results: dict[str, dict[str, float]] = defaultdict(
-        lambda: {"total_votes": 0.0, "dem_votes": 0.0, "rep_votes": 0.0, "other_votes": 0.0}
+def allocate_integer_shares(total: int, weights: dict[str, object]) -> dict[str, int]:
+    parsed = {
+        str(district): float(weight)
+        for district, weight in weights.items()
+        if float(weight) > 0
+    }
+    weight_total = sum(parsed.values())
+    if weight_total <= 0:
+        raise RuntimeError("Cannot allocate votes with empty remap weights")
+    exact = {
+        district: total * weight / weight_total
+        for district, weight in parsed.items()
+    }
+    allocated = {
+        district: int(math.floor(value))
+        for district, value in exact.items()
+    }
+    remainder = total - sum(allocated.values())
+    order = sorted(
+        allocated,
+        key=lambda district: (exact[district] - allocated[district], -int(district)),
+        reverse=True,
     )
-    total_input_votes = 0
-    matched_input_votes = 0
-    for precinct_key, row in (source.get("results") or {}).items():
-        total = num(row.get("total_votes", 0))
-        dem = num(row.get("dem_votes", 0))
-        rep = num(row.get("rep_votes", 0))
-        other = num(row.get("other_votes", 0))
-        total_input_votes += total
-        district_weights = assignments.get(str(precinct_key).strip().upper(), [])
-        weight_total = sum(weight for _, weight in district_weights)
-        if weight_total <= 0:
-            continue
-        matched_input_votes += total
-        for district, weight in district_weights:
-            normalized_weight = weight / weight_total
-            out = results[district]
-            out["total_votes"] += total * normalized_weight
-            out["dem_votes"] += dem * normalized_weight
-            out["rep_votes"] += rep * normalized_weight
-            out["other_votes"] += other * normalized_weight
-
-    return finalize_results(results), total_input_votes, matched_input_votes
+    for district in order[:remainder]:
+        allocated[district] += 1
+    return allocated
 
 
-def apply_identical_geography_overrides(
-    results_2022: dict[str, dict[str, object]],
+def build_2022_lines(
     results_2024: dict[str, dict[str, object]],
+    config: dict[str, object],
+) -> tuple[dict[str, dict[str, object]], dict[str, object]]:
+    remap_path = ROOT / str(config["remap_file"])
+    remap = json.loads(remap_path.read_text(encoding="utf-8"))
+    meta = remap.get("meta") or {}
+    weights = remap.get("weights") or {}
+    unchanged = {str(district) for district in meta.get("unchanged_districts", [])}
+    changed = {str(district) for district in meta.get("changed_districts", [])}
+    district_count = int(config["district_count"])
+    label = str(config["label"])
+    abbr = str(config["abbr"])
+    expected = {str(district) for district in range(1, district_count + 1)}
+    if unchanged | changed != expected or unchanged & changed:
+        raise RuntimeError(
+            f"Remap district classification does not partition all {district_count} {label} districts"
+        )
+
+    final: dict[str, dict[str, object]] = {
+        district: dict(results_2024[district])
+        for district in unchanged
+    }
+    allocated: dict[str, dict[str, float]] = defaultdict(
+        lambda: {field: 0.0 for field in RESULT_FIELDS}
+    )
+    for current_district in sorted(changed, key=int):
+        source = results_2024.get(current_district)
+        district_weights = weights.get(current_district)
+        if source is None or not isinstance(district_weights, dict):
+            raise RuntimeError(f"Missing remap inputs for 2024-lines {abbr} {current_district}")
+        for field in RESULT_FIELDS:
+            field_weights = district_weights.get(field)
+            if not isinstance(field_weights, dict):
+                raise RuntimeError(f"Missing {field} remap weights for {abbr} {current_district}")
+            field_allocation = allocate_integer_shares(int(source[field]), field_weights)
+            for old_district, votes in field_allocation.items():
+                if old_district not in changed:
+                    raise RuntimeError(
+                        f"Changed {abbr} {current_district} unexpectedly maps into unchanged "
+                        f"{abbr} {old_district}"
+                    )
+                allocated[old_district][field] += votes
+
+    final.update(finalize_results(allocated))
+    final = dict(sorted(final.items(), key=lambda item: int(item[0])))
+    if set(final) != expected:
+        missing = sorted(expected - set(final), key=int)
+        raise RuntimeError(f"Missing remapped 2022-lines {label} districts: {missing}")
+
+    for field in RESULT_FIELDS:
+        source_total = sum(int(row[field]) for row in results_2024.values())
+        output_total = sum(int(row[field]) for row in final.values())
+        if source_total != output_total:
+            raise RuntimeError(
+                f"2022-lines {field} does not conserve the 2024-lines total: "
+                f"{output_total} != {source_total}"
+            )
+    return final, meta
+
+
+def update_manifest(
+    lines_year: int,
+    file_name: str,
+    results: dict[str, dict[str, object]],
+    coverage_pct: float,
 ) -> None:
-    for district in IDENTICAL_GEOGRAPHY_OVERRIDES:
-        source = results_2024.get(district)
-        if source is None:
-            raise RuntimeError(f"Missing 2024-lines result for HD {district}")
-        results_2022[district] = dict(source)
-
-
-def update_manifest(lines_year: int, results: dict[str, dict[str, object]], coverage_pct: float) -> None:
     manifest_path = ROOT / "Data" / f"district_contests_{lines_year}" / "manifest.json"
     original_text = manifest_path.read_text(encoding="utf-8")
     manifest = json.loads(original_text)
@@ -127,12 +187,12 @@ def update_manifest(lines_year: int, results: dict[str, dict[str, object]], cove
         (
             entry
             for entry in manifest.get("files", [])
-            if entry.get("file") == "state_house_president_2024.json"
+            if entry.get("file") == file_name
         ),
         None,
     )
     if target is None:
-        raise RuntimeError(f"Missing State House president entry in {manifest_path}")
+        raise RuntimeError(f"Missing {file_name} entry in {manifest_path}")
 
     target.update(
         {
@@ -151,31 +211,29 @@ def update_manifest(lines_year: int, results: dict[str, dict[str, object]], cove
         manifest_path.write_text(updated_text, encoding="utf-8")
 
 
-def main() -> None:
-    statewide: dict[tuple[str, str], dict[str, dict[str, int]]] = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
-    house_buckets: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: defaultdict(int))
-
-    with SOURCE.open(encoding="utf-8-sig", newline="") as fh:
-        for row in csv.DictReader(fh):
-            office = row["office"].strip().upper()
-            bucket = key(row)
-            if office == "PRESIDENT":
-                statewide[bucket][row["party"].strip().upper()]["votes"] += num(row["total_votes"])
-            elif office == "STATE HOUSE" and row["district"].strip():
-                house_buckets[bucket][row["district"].strip()] += num(row["total_votes"])
-
-    results: dict[str, dict[str, object]] = defaultdict(lambda: {"total_votes": 0, "dem_votes": 0, "rep_votes": 0, "other_votes": 0})
+def build_current_lines(
+    statewide: dict[tuple[str, str], dict[str, int]],
+    district_buckets: dict[tuple[str, str], dict[str, int]],
+    district_count: int,
+) -> tuple[dict[str, dict[str, object]], int]:
+    results: dict[str, dict[str, float]] = defaultdict(
+        lambda: {field: 0.0 for field in RESULT_FIELDS}
+    )
     input_total = 0
     for bucket, parties in statewide.items():
-        district_weights = house_buckets.get(bucket)
+        district_weights = district_buckets.get(bucket)
         if not district_weights:
             continue
         weight_total = sum(district_weights.values())
         if weight_total <= 0:
             continue
-        dem = parties.get("DEMOCRAT", {}).get("votes", 0)
-        rep = parties.get("REPUBLICAN", {}).get("votes", 0)
-        other = sum(v.get("votes", 0) for p, v in parties.items() if p not in {"DEMOCRAT", "REPUBLICAN"})
+        dem = parties.get("DEMOCRAT", 0)
+        rep = parties.get("REPUBLICAN", 0)
+        other = sum(
+            votes
+            for party, votes in parties.items()
+            if party not in {"DEMOCRAT", "REPUBLICAN"}
+        )
         total = dem + rep + other
         input_total += total
         for district, bucket_votes in district_weights.items():
@@ -187,57 +245,125 @@ def main() -> None:
             row["other_votes"] += other * weight
 
     final = finalize_results(results)
+    expected = {str(district) for district in range(1, district_count + 1)}
+    if set(final) != expected:
+        missing = sorted(expected - set(final), key=int)
+        raise RuntimeError(f"Current-lines bucket allocation is missing districts: {missing}")
+    return final, input_total
 
-    payload = {
+
+def write_scope_results(
+    scope: str,
+    config: dict[str, object],
+    statewide: dict[tuple[str, str], dict[str, int]],
+    district_buckets: dict[tuple[str, str], dict[str, int]],
+    statewide_total: int,
+) -> None:
+    label = str(config["label"])
+    file_name = str(config["file"])
+    final_2024, input_total = build_current_lines(
+        statewide,
+        district_buckets,
+        int(config["district_count"]),
+    )
+    if input_total != statewide_total:
+        raise RuntimeError(
+            f"{label} bucket allocation covers {input_total:,} of {statewide_total:,} presidential votes"
+        )
+
+    output_2024 = ROOT / "Data" / "district_contests_2024" / file_name
+    payload_2024 = {
         "meta": {
-            "scope": "state_house",
+            "scope": scope,
             "contest_type": "president",
             "year": 2024,
             "district_lines_year": 2024,
-            "source": "2024 SOS precinct export allocated by State House precinct buckets",
+            "source": f"2024 SOS precinct export allocated by {label} precinct buckets",
             "generated_by": "scripts/repair_2024_state_house_president.py",
             "match_coverage_pct": 100.0,
             "total_input_votes": input_total,
             "matched_input_votes": input_total,
             "input_files": ["Data/20241105__ga__general__precinct-level.csv"],
         },
-        "general": {"results": final},
+        "general": {"results": final_2024},
     }
-    OUTPUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    update_manifest(2024, final, 100.0)
-    final_2022, total_2022, matched_2022 = build_2022_lines()
-    apply_identical_geography_overrides(final_2022, final)
-    coverage_2022 = (matched_2022 / total_2022 * 100) if total_2022 else 0
+    output_2024.write_text(json.dumps(payload_2024, indent=2) + "\n", encoding="utf-8")
+    update_manifest(2024, file_name, final_2024, 100.0)
+
+    final_2022, remap_meta = build_2022_lines(final_2024, config)
+    output_2022 = ROOT / "Data" / "district_contests_2022" / file_name
     payload_2022 = {
         "meta": {
-            "scope": "state_house",
+            "scope": scope,
             "contest_type": "president",
             "year": 2024,
             "district_lines_year": 2022,
             "source": (
-                "2024 matched VTD20 presidential results aggregated through the 2022 House crosswalk; "
-                "identical-geometry districts use the complete SOS State House bucket allocation"
+                f"Complete 2024 SOS {label} bucket allocation remapped to the 2022 lines; "
+                "unchanged districts retain exact SOS totals and redrawn districts use constrained "
+                "NYT precinct-geography weights"
             ),
             "generated_by": "scripts/repair_2024_state_house_president.py",
-            "identical_geometry_overrides": list(IDENTICAL_GEOGRAPHY_OVERRIDES),
-            "match_coverage_pct": coverage_2022,
-            "total_input_votes": total_2022,
-            "matched_input_votes": matched_2022,
+            "remap_method": remap_meta.get("method"),
+            "unchanged_geometry_districts": remap_meta.get("unchanged_districts", []),
+            "spatially_remapped_districts": remap_meta.get("changed_districts", []),
+            "match_coverage_pct": 100.0,
+            "total_input_votes": input_total,
+            "matched_input_votes": input_total,
+            "allocated_output_votes": sum(
+                int(row["total_votes"])
+                for row in final_2022.values()
+            ),
             "input_files": [
-                "Data/derived_vtd20/2024/contests/vtd20/President.json",
-                "Data/crosswalks/precinct_to_2022_state_house.csv",
                 "Data/20241105__ga__general__precinct-level.csv",
+                str(config["remap_file"]),
+                remap_meta.get("district_map_2022"),
+                remap_meta.get("district_map_2024"),
             ],
+            "source_urls": [remap_meta.get("source_url")],
+            "spatial_source_sha256": remap_meta.get("source_sha256"),
         },
         "general": {"results": final_2022},
     }
-    OUTPUT_2022.write_text(json.dumps(payload_2022, indent=2) + "\n", encoding="utf-8")
-    update_manifest(2022, final_2022, coverage_2022)
-    print(f"Wrote {OUTPUT}")
-    print(f"Wrote {OUTPUT_2022}")
-    print("2024 lines HD 177:", final.get("177"))
-    for district in ("40", "81", "82", "128", "149"):
-        print(f"2022 lines HD {district}:", final_2022.get(district))
+    output_2022.write_text(json.dumps(payload_2022, indent=2) + "\n", encoding="utf-8")
+    update_manifest(2022, file_name, final_2022, 100.0)
+    print(f"Wrote {output_2024}")
+    print(f"Wrote {output_2022}")
+
+
+def main() -> None:
+    statewide: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    district_buckets: dict[str, dict[tuple[str, str], dict[str, int]]] = {
+        scope: defaultdict(lambda: defaultdict(int))
+        for scope in SCOPE_CONFIGS
+    }
+    office_to_scope = {
+        str(config["office"]): scope
+        for scope, config in SCOPE_CONFIGS.items()
+    }
+
+    with SOURCE.open(encoding="utf-8-sig", newline="") as fh:
+        for row in csv.DictReader(fh):
+            office = row["office"].strip().upper()
+            bucket = key(row)
+            if office == "PRESIDENT":
+                party = row["party"].strip().upper()
+                statewide[bucket][party] += num(row["total_votes"])
+                continue
+            scope = office_to_scope.get(office)
+            district = row["district"].strip()
+            if scope and district:
+                district_buckets[scope][bucket][district] += num(row["total_votes"])
+
+    statewide_total = sum(sum(parties.values()) for parties in statewide.values())
+    for scope, config in SCOPE_CONFIGS.items():
+        write_scope_results(
+            scope,
+            config,
+            statewide,
+            district_buckets[scope],
+            statewide_total,
+        )
 
 
 if __name__ == "__main__":
