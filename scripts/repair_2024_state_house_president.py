@@ -26,6 +26,13 @@ OUTPUT_2022 = ROOT / "Data" / "district_contests_2022" / "state_house_president_
 VTD20_SOURCE = ROOT / "Data" / "derived_vtd20" / "2024" / "contests" / "vtd20" / "President.json"
 CROSSWALK_2022 = ROOT / "Data" / "crosswalks" / "precinct_to_2022_state_house.csv"
 
+# These district polygons are unchanged between the 2022 and 2024 House maps.
+# Use the complete SOS State House bucket allocation when the VTD20 matcher
+# drops votes from renamed or consolidated precincts.  HD 128 is geometrically
+# identical across the two vintages; its VTD20 path omits Hancock and McDuffie
+# precincts that are present in the SOS bucket result.
+IDENTICAL_GEOGRAPHY_OVERRIDES = ("128",)
+
 
 def num(value: object) -> int:
     try:
@@ -99,6 +106,17 @@ def build_2022_lines() -> tuple[dict[str, dict[str, object]], int, int]:
             out["other_votes"] += other * normalized_weight
 
     return finalize_results(results), total_input_votes, matched_input_votes
+
+
+def apply_identical_geography_overrides(
+    results_2022: dict[str, dict[str, object]],
+    results_2024: dict[str, dict[str, object]],
+) -> None:
+    for district in IDENTICAL_GEOGRAPHY_OVERRIDES:
+        source = results_2024.get(district)
+        if source is None:
+            raise RuntimeError(f"Missing 2024-lines result for HD {district}")
+        results_2022[district] = dict(source)
 
 
 def update_manifest(lines_year: int, results: dict[str, dict[str, object]], coverage_pct: float) -> None:
@@ -188,6 +206,7 @@ def main() -> None:
     OUTPUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     update_manifest(2024, final, 100.0)
     final_2022, total_2022, matched_2022 = build_2022_lines()
+    apply_identical_geography_overrides(final_2022, final)
     coverage_2022 = (matched_2022 / total_2022 * 100) if total_2022 else 0
     payload_2022 = {
         "meta": {
@@ -195,14 +214,19 @@ def main() -> None:
             "contest_type": "president",
             "year": 2024,
             "district_lines_year": 2022,
-            "source": "2024 matched VTD20 presidential results aggregated through the 2022 House crosswalk",
+            "source": (
+                "2024 matched VTD20 presidential results aggregated through the 2022 House crosswalk; "
+                "identical-geometry districts use the complete SOS State House bucket allocation"
+            ),
             "generated_by": "scripts/repair_2024_state_house_president.py",
+            "identical_geometry_overrides": list(IDENTICAL_GEOGRAPHY_OVERRIDES),
             "match_coverage_pct": coverage_2022,
             "total_input_votes": total_2022,
             "matched_input_votes": matched_2022,
             "input_files": [
                 "Data/derived_vtd20/2024/contests/vtd20/President.json",
                 "Data/crosswalks/precinct_to_2022_state_house.csv",
+                "Data/20241105__ga__general__precinct-level.csv",
             ],
         },
         "general": {"results": final_2022},
@@ -212,7 +236,7 @@ def main() -> None:
     print(f"Wrote {OUTPUT}")
     print(f"Wrote {OUTPUT_2022}")
     print("2024 lines HD 177:", final.get("177"))
-    for district in ("40", "81", "82", "149"):
+    for district in ("40", "81", "82", "128", "149"):
         print(f"2022 lines HD {district}:", final_2022.get(district))
 
 

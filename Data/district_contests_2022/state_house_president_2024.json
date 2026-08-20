@@ -4,14 +4,18 @@
     "contest_type": "president",
     "year": 2024,
     "district_lines_year": 2022,
-    "source": "2024 matched VTD20 presidential results aggregated through the 2022 House crosswalk",
+    "source": "2024 matched VTD20 presidential results aggregated through the 2022 House crosswalk; identical-geometry districts use the complete SOS State House bucket allocation",
     "generated_by": "scripts/repair_2024_state_house_president.py",
+    "identical_geometry_overrides": [
+      "128"
+    ],
     "match_coverage_pct": 100.0,
     "total_input_votes": 4622013,
     "matched_input_votes": 4622013,
     "input_files": [
       "Data/derived_vtd20/2024/contests/vtd20/President.json",
-      "Data/crosswalks/precinct_to_2022_state_house.csv"
+      "Data/crosswalks/precinct_to_2022_state_house.csv",
+      "Data/20241105__ga__general__precinct-level.csv"
     ]
   },
   "general": {
@@ -1414,15 +1418,15 @@
         "margin_pct": 24.054645633632727
       },
       "128": {
-        "total_votes": 24421,
-        "dem_votes": 11120,
-        "rep_votes": 13228,
-        "other_votes": 73,
+        "total_votes": 28814,
+        "dem_votes": 13734,
+        "rep_votes": 14991,
+        "other_votes": 89,
         "dem_candidate": "Kamala D. Harris",
         "rep_candidate": "Donald J. Trump",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.631915154989558
+        "margin_pct": 4.3624626917470675
       },
       "129": {
         "total_votes": 22772,
