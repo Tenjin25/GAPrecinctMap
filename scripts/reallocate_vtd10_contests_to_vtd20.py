@@ -676,6 +676,25 @@ def main() -> None:
     df["district_raw"] = df.get("district", pd.Series([""] * len(df))).fillna("").astype(str).str.strip()
     df["party_norm"] = df.get("party", pd.Series([""] * len(df))).fillna("").astype(str).map(bcj.normalize_party)
     df["candidate"] = df["candidate"].fillna("").astype(str).map(bcj.normalize_candidate_case)
+    # Georgia's 2020 first-round Senate elections were multi-candidate races.
+    # District overlays compare the two runoff nominees, so all other candidates
+    # must stay in the OTH bucket instead of being folded into their party totals.
+    if str(year) == "2020":
+        top_two = {
+            "U.S. Senate": {"JON OSSOFF", "DAVID A. PERDUE"},
+            "U.S. Senate (Special)": {"RAPHAEL WARNOCK", "KELLY LOEFFLER"},
+        }
+        for office_name, nominee_names in top_two.items():
+            office_mask = df["office"].eq(office_name)
+            candidate_keys = (
+                df.loc[office_mask, "candidate"]
+                .astype(str)
+                .str.replace(r"\s*\(I\)\s*", "", regex=True)
+                .str.rstrip("*")
+                .str.strip()
+                .str.upper()
+            )
+            df.loc[office_mask & ~candidate_keys.isin(nominee_names), "party_norm"] = "OTH"
     if "precinct" not in df.columns:
         raise SystemExit("CSV missing 'precinct' column")
     df["precinct"] = df["precinct"].fillna("").astype(str)
