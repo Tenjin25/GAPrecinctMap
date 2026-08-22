@@ -10581,8 +10581,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-08-20-district-president-full-fix-v14';
-    const APP_BUILD_ID = '2026-08-20-district-president-full-fix-v14';
+    const DATA_CACHE_BUSTER = '2026-08-22-vtd-county-reconciliation-v15';
+    const APP_BUILD_ID = '2026-08-22-vtd-county-reconciliation-v15';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -34122,9 +34122,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return { dem: statewideDem, rep: statewideRep, other: statewideOther, total: statewideTotal };
       }
 
-      const contestData = electionData.filter(row => row.year == year);
+      // District slices are optimized for map allocation and can omit votes that
+      // do not resolve to a VTD polygon. Always load the contest-specific county
+      // slice for the statewide card/counter so those statewide numbers remain
+      // authoritative while the district slice continues to drive map shading.
+      let contestData = (electionData || []).filter(row => row.year == year);
+      try {
+        const contestSliceRows = await loadContestSlice(contestType, year);
+        if (Array.isArray(contestSliceRows) && contestSliceRows.length > 0) {
+          contestData = contestSliceRows;
+        }
+      } catch (err) {
+        console.warn('Canonical statewide contest slice unavailable:', err?.message || err);
+      }
 
-      // Prefer district-level results reallocated to 2024 lines when available.
       // Prefer district-level results reallocated to 2024 lines when available.
       if (currentView === 'districts' || currentView === 'state_house' || currentView === 'state_senate') {
         const districtScope = currentView === 'districts'
@@ -34280,36 +34291,37 @@ document.addEventListener('DOMContentLoaded', function() {
             ? ` | match coverage ${Number(coveragePct).toFixed(2)}%`
             : '';
           const linesLabel = getDistrictLinesLabel();
-          const contestTypeKey = String(contestType || '').trim().toLowerCase();
-          const preserveDistrictViewSummary = contestTypeKey === 'state_house' || contestTypeKey === 'state_senate';
-          // Manifest mode leaves electionData empty — always drive the vote counter from
-          // the district slice totals so district views are not blank after a successful load.
-          setVoteCounterBaselineState(
-            'Statewide',
-            `${formatContestLabel(contestType, year)} (${linesLabel})`,
-            totalDem,
-            totalRep,
-            totalOther,
-            { kind: 'statewide', contestType, year: Number(year) },
-            resolvedStatewideCandidates()
-          );
+          const summaryTitleSuffix = mode === 'demographics'
+            ? ` - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`
+            : ` - ${getReadableViewLabel(currentView)} (${linesLabel})`;
+          const statewideSummary = refreshStatewideSummaryFromCountyRows(contestData, summaryTitleSuffix);
+          // A district-only/modelled contest may not have a county slice. Keep a
+          // useful fallback in that case, but never prefer it over statewide data.
+          if (!statewideSummary) {
+            setVoteCounterBaselineState(
+              'Statewide',
+              `${formatContestLabel(contestType, year)} (${linesLabel})`,
+              totalDem,
+              totalRep,
+              totalOther,
+              { kind: 'statewide', contestType, year: Number(year) },
+              resolvedStatewideCandidates()
+            );
+            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year})${summaryTitleSuffix}`);
+          }
           if (mode === 'demographics') {
-            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} demographic profile (${linesLabel})`);
             setStatus(`Applied demographic mode for ${getReadableViewLabel(currentView)} (${linesLabel}).`);
           } else {
-            // The district slice is already a complete, weighted partition of the
-            // active lines. Do not aggregate county rows a second time here: in
-            // some years (especially 2022) the county and VTD20 inputs have
-            // different coverage, which overwrites the district totals and
-            // produces an inflated statewide margin in district views.
-            setStatewideContestTitle(`${formatContestName(contestType, year)} (${year}) - ${getReadableViewLabel(currentView)} (${linesLabel})`);
-            const summaryDemPct = demPct;
-            const summaryRepPct = repPct;
-            if (preserveDistrictViewSummary) {
-              setStatus(`Applied ${getReadableViewLabel(currentView)} crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${coverageText}.`);
-            } else {
-              setStatus(`Applied district crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); statewide summary stays ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${coverageText}.`);
-            }
+            const summaryDemPct = statewideSummary?.total
+              ? (statewideSummary.dem / statewideSummary.total) * 100
+              : demPct;
+            const summaryRepPct = statewideSummary?.total
+              ? (statewideSummary.rep / statewideSummary.total) * 100
+              : repPct;
+            const statewideCoverageText = statewideSummary?.total
+              ? ` | district slice contains ${((totalVotes / statewideSummary.total) * 100).toFixed(2)}% of statewide votes`
+              : coverageText;
+            setStatus(`Applied ${getReadableViewLabel(currentView)} crosswalk results to the map: ${formatContestLabel(contestType, year)} (${demPct.toFixed(2)}% D, ${repPct.toFixed(2)}% R, ${otherPct.toFixed(2)}% O); authoritative statewide summary is ${summaryDemPct.toFixed(2)}% D, ${summaryRepPct.toFixed(2)}% R${statewideCoverageText}.`);
           }
           return;
         }

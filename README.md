@@ -89,6 +89,7 @@ Each file contains county-level rows with fields such as:
 - Manifests: `Data/district_contests_2022/manifest.json`, `Data/district_contests_2024/manifest.json`
 - Files: `Data/district_contests_<lines-year>/<scope>_<contest_type>_<year>.json`
 - Primary builder: `scripts/build_district_contests_from_derived_vtd20.py` (`--lines-year` 2022 or 2024)
+- For years with incomplete precinct-to-VTD joins, use `--reconcile-county-totals`. It constrains each county to the canonical totals in `Data/contests`, preserving the mapped within-county district distribution. A VTD20 turnout file can supply district weights only when an entire county is otherwise unmatched.
 
 Scopes:
 
@@ -165,6 +166,8 @@ District overlays are weighted reallocations, not winner-take-all assignment.
 - Crosswalk rows contain `precinct_key`, `district_num`, and `area_weight`.
 - A precinct can contribute votes fractionally to multiple districts.
 - Current default crosswalk generation is geometry-overlap based, with optional block-assignment inputs to improve edge cases.
+- County reconciliation uses integer largest-remainder allocation, so published district totals conserve the exact statewide Democratic, Republican, other, and total vote counts.
+- In Georgia's multi-candidate 2020 U.S. Senate contests, the Democratic and Republican buckets represent the eventual runoff nominees; every other candidate is included in `other`.
 
 ### Modern-Line Reference
 
@@ -267,7 +270,7 @@ Recommended checks during data refreshes:
 - Join coverage:
   - Use `scripts/check_join_coverage.py` to compare geometry keys vs results keys for targeted contests.
 - Vote conservation:
-  - Confirm district-reallocated totals match statewide input totals within expected rounding tolerance.
+  - Confirm district-reallocated totals match the canonical statewide Democratic, Republican, other, and total vote counts exactly when county reconciliation is enabled.
 - Overlay spot checks:
   - Manually verify metro Atlanta and coastal/north Georgia district boundaries against known patterns.
 - Precision consistency:
