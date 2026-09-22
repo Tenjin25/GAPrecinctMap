@@ -10767,8 +10767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-16-county-cvap-mobile-v1';
-        const APP_BUILD_ID = '2026-09-14-directional-narrow-majority-v16';
+    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v1';
+    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -19576,6 +19576,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	        return `Judicial Retention ${contestType.toUpperCase()}`;
 	      }
 
+	      if (contestType.startsWith('ga_court_of_appeals_') && contestType.endsWith('_seat')) {
+	        const who = contestType.replace('ga_court_of_appeals_', '').replace(/_seat$/i, '').replace(/_/g, ' ').trim();
+	        const label = who ? (typeof toTitleCaseName === 'function' ? toTitleCaseName(who) : who) : contestType;
+	        return `Court of Appeals (${label})`;
+	      }
+	      if (contestType.startsWith('ga_supreme_court_') && contestType.endsWith('_seat')) {
+	        const who = contestType.replace('ga_supreme_court_', '').replace(/_seat$/i, '').replace(/_/g, ' ').trim();
+	        const label = who ? (typeof toTitleCaseName === 'function' ? toTitleCaseName(who) : who) : contestType;
+	        return `Supreme Court (${label})`;
+	      }
+
 	      if (contestType.startsWith('nc_court_of_appeals_judge_seat_')) {
 	        const seat = contestType.replace('nc_court_of_appeals_judge_seat_', '').replace(/^0+/, '');
 	        return `GA Court of Appeals Judge Seat ${seat || contestType}`;
@@ -19894,7 +19905,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // Hide older judicial contests until we have reliable D/R alignment data.
           // Older appellate judicial races are nonpartisan in some cycles; without endorsements they read as "OTHER".
-          const isJudicial = contestType.startsWith('nc_supreme_court_') || contestType.startsWith('nc_court_of_appeals_');
+          const isJudicial = contestType.startsWith('ga_supreme_court_') || contestType.startsWith('ga_court_of_appeals_') ||
+            contestType.startsWith('nc_supreme_court_') || contestType.startsWith('nc_court_of_appeals_');
           if (isJudicial && Number.isFinite(year) && year < 2018) return;
           if (councilOfStateTypes.has(contestType) && !parseMajorPartyContested(entry)) return;
 
@@ -19915,8 +19927,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
 	        if (contestType === 'agriculture_commissioner') return 'Agriculture Commissioner';
 	        if (contestType === 'superintendent') return 'Superintendent of Public Instruction';
-	        if (contestType.startsWith('nc_supreme_court_')) return 'GA Supreme Court';
-	        if (contestType.startsWith('nc_court_of_appeals_')) return 'Court of Appeals';
+	        if (contestType.startsWith('ga_supreme_court_') || contestType.startsWith('nc_supreme_court_')) return 'Supreme Court';
+	        if (contestType.startsWith('ga_court_of_appeals_') || contestType.startsWith('nc_court_of_appeals_')) return 'Court of Appeals';
 	        return formatContestName(contestType, '');
 	      }
 
@@ -19938,7 +19950,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'Insurance Commissioner',
 	        'Agriculture Commissioner',
 	        'Superintendent of Public Instruction',
-	        'GA Supreme Court',
+	        'Supreme Court',
 	        'Court of Appeals'
 	      ];
 
@@ -19960,7 +19972,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	      const fragment = document.createDocumentFragment();
 	      orderedLabels.forEach(label => {
 	        const items = (grouped.get(label) || []).slice();
-          const isJudicial = (label === 'GA Supreme Court' || label === 'Court of Appeals');
+          const isJudicial = (label === 'Supreme Court' || label === 'Court of Appeals');
 	        items.sort((a, b) => {
 	          const y = Number(a.year) - Number(b.year);
 	          if (y !== 0) return y;
@@ -21319,7 +21331,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function stripRunningMateName(name) {
-      const raw = (name || '').toString().trim();
+      const raw = (name || '').toString()
+        .replace(/\s*\(\s*I\s*\)\s*$/i, '')
+        .replace(/\s*\*+\s*$/, '')
+        .trim();
       if (!raw) return '';
       // Common presidential ticket separators.
       const seps = [' / ', '/', ' & ', '&', ' + ', '+', ' - ', ' – ', ' — '];
