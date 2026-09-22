@@ -108,9 +108,7 @@ def decorate_candidate_label(candidate: str, party_norm: str) -> str:
         name = re.sub(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", "", name, flags=re.IGNORECASE)
 
     name = re.sub(r"\s+", " ", name).strip()
-    if incumbent and not name.endswith("*"):
-        name = f"{name}*"
-    return name
+    return re.sub(r"\s*\*+\s*$", "", name).strip()
 
 
 def _safe_int_str(value: str) -> int | None:
@@ -328,12 +326,18 @@ def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_
     )
     runner = (
         cand_tot[cand_tot["_pos"] == 1]
-        .set_index("_key")[["votes"]]
-        .rename(columns={"votes": "runnerup_votes"})
+        .set_index("_key")[["candidate", "votes"]]
+        .rename(columns={"candidate": "runnerup_candidate", "votes": "runnerup_votes"})
+    )
+    candidate_maps = (
+        cand_tot.groupby("_key", sort=False)
+        .apply(lambda g: {str(r["candidate"]): int(r["votes"]) for _, r in g.iterrows()}, include_groups=False)
+        .rename("candidate_votes")
     )
 
     out = totals.join(by_party, how="left").join(winner, how="left")
     out = out.join(runner, how="left")
+    out = out.join(candidate_maps, how="left")
     if "runnerup_votes" not in out.columns:
         out["runnerup_votes"] = 0
 
@@ -345,6 +349,7 @@ def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_
     out["runnerup_votes"] = out["runnerup_votes"].fillna(0).astype(int)
     out["margin_votes"] = (out["winner_votes"] - out["runnerup_votes"]).astype(int)
     out["winner_candidate"] = out["winner_candidate"].fillna("")
+    out["runnerup_candidate"] = out["runnerup_candidate"].fillna("")
 
     # Keep the candidate name as the mapping index. Using groupby().nth(0)
     # here can return a positional index, causing every winner-party lookup
@@ -638,10 +643,21 @@ def main() -> None:
                     "rep_votes": int(row["rep_votes"]),
                     "other_votes": int(row["other_votes"]),
                     "winner_candidate": str(row["winner_candidate"]),
+                    "runnerup_candidate": str(row["runnerup_candidate"]),
                     "winner_party": str(row["winner_party"]),
                     "winner_votes": int(row["winner_votes"]),
+                    "runnerup_votes": int(row["runnerup_votes"]),
                     "margin_votes": int(row["margin_votes"]),
+                    "candidate_votes": dict(row["candidate_votes"]),
                 }
+                if str(row["winner_party"]) in {"OTH", "UNK"}:
+                    results_map[str(key)].update({
+                        "candidate_a": str(row["winner_candidate"]),
+                        "candidate_a_votes": int(row["winner_votes"]),
+                        "candidate_b": str(row["runnerup_candidate"]),
+                        "candidate_b_votes": int(row["runnerup_votes"]),
+                        "nonpartisan": True,
+                    })
 
             if level == "vtd20":
                 if not args.vtd20_geojson.exists():
