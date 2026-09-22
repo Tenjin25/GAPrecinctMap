@@ -10767,8 +10767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v2';
-    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v2';
+    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v3';
+    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v3';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -10843,10 +10843,10 @@ document.addEventListener('DOMContentLoaded', function() {
         districts_info: withBase('./Data/cvap_aggregates/congressional_2022__demographics_cvap24.csv'),
         state_house_info: withBase('./Data/cvap_aggregates/state_house_2022__demographics_cvap24.csv'),
         state_senate_info: withBase('./Data/cvap_aggregates/state_senate_2022__demographics_cvap24.csv'),
-        district_descriptions: withBase('./Data/ga_district_descriptions.json'),
+        district_descriptions: null,
         contests_dir: withBase('./Data/contests'),
         derived_vtd20_base: withBase('./Data/derived_vtd20'),
-        precinct_demographics: withBase('./Data/optional/ga_precinct_demographics_2020_vap.csv'),
+        precinct_demographics: null,
         reports_match_year_summary: withBase('./Data/reports/ga_precinct_match_year_summary.csv'),
         reports_top_unmatched: withBase('./Data/reports/ga_precinct_match_top_unmatched.csv'),
         crosswalks: {
@@ -19917,11 +19917,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
 	        if (contestType === 'us_senate' || contestType === 'us_senate_special' || contestType === 'us_senate_runoff') return 'US Senate';
-	        if (contestType === 'governor') return 'GA Governor';
-	        if (contestType === 'lieutenant_governor') return 'GA Lieutenant Governor';
-	        if (contestType === 'attorney_general') return 'GA Attorney General';
-	        if (contestType === 'secretary_of_state') return 'GA Secretary of State';
-	        if (contestType === 'treasurer') return 'GA Treasurer';
+	        if (contestType === 'governor') return 'Governor';
+	        if (contestType === 'lieutenant_governor') return 'Lieutenant Governor';
+	        if (contestType === 'attorney_general') return 'Attorney General';
+	        if (contestType === 'secretary_of_state') return 'Secretary of State';
+	        if (contestType === 'treasurer') return 'Treasurer';
 	        if (contestType === 'auditor') return 'Auditor';
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
@@ -19940,11 +19940,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	      const groupOrder = [
 	        'US President',
 	        'US Senate',
-	        'GA Governor',
-	        'GA Lieutenant Governor',
-	        'GA Attorney General',
-	        'GA Secretary of State',
-	        'GA Treasurer',
+	        'Governor',
+	        'Lieutenant Governor',
+	        'Attorney General',
+	        'Secretary of State',
+	        'Treasurer',
 	        'Auditor',
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
@@ -20095,11 +20095,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
 	        if (contestType === 'us_senate') return 'US Senate';
-	        if (contestType === 'governor') return 'GA Governor';
-	        if (contestType === 'lieutenant_governor') return 'GA Lieutenant Governor';
-	        if (contestType === 'attorney_general') return 'GA Attorney General';
-	        if (contestType === 'secretary_of_state') return 'GA Secretary of State';
-	        if (contestType === 'treasurer') return 'GA Treasurer';
+	        if (contestType === 'governor') return 'Governor';
+	        if (contestType === 'lieutenant_governor') return 'Lieutenant Governor';
+	        if (contestType === 'attorney_general') return 'Attorney General';
+	        if (contestType === 'secretary_of_state') return 'Secretary of State';
+	        if (contestType === 'treasurer') return 'Treasurer';
 	        if (contestType === 'auditor') return 'Auditor';
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
@@ -20111,11 +20111,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	      const groupOrder = [
 	        'US President',
 	        'US Senate',
-	        'GA Governor',
-	        'GA Lieutenant Governor',
-	        'GA Attorney General',
-	        'GA Secretary of State',
-	        'GA Treasurer',
+	        'Governor',
+	        'Lieutenant Governor',
+	        'Attorney General',
+	        'Secretary of State',
+	        'Treasurer',
 	        'Auditor',
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
@@ -32343,10 +32343,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Optional descriptive district labels (manual overrides).
-      try {
-        districtDescriptions = await loadJSON(CONFIG.paths.district_descriptions);
-      } catch (_) {
-        districtDescriptions = null;
+      if (CONFIG.paths.district_descriptions) {
+        try {
+          districtDescriptions = await loadJSON(CONFIG.paths.district_descriptions);
+        } catch (_) {
+          districtDescriptions = null;
+        }
       }
 
       // Optional county demographics (2020 Census total-pop shares + repo VAP totals) for sidebar/tooltips.
@@ -32374,16 +32376,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Optional precinct demographics (VAP by race from block aggregation).
-      try {
-        const precinctDemographicsCSV = await loadCSV(CONFIG.paths.precinct_demographics);
-        const rows = parseCSV(precinctDemographicsCSV);
-        const idx = buildPrecinctDemographicsIndexes(rows);
-        precinctDemographicsByNorm = idx.byNorm;
-        precinctDemographicsByCountyCode = idx.byCountyCode;
-      } catch (err) {
-        precinctDemographicsByNorm = null;
-        precinctDemographicsByCountyCode = null;
-        console.warn('Precinct demographics not loaded:', err?.message || err);
+      if (CONFIG.paths.precinct_demographics) {
+        try {
+          const precinctDemographicsCSV = await loadCSV(CONFIG.paths.precinct_demographics);
+          const rows = parseCSV(precinctDemographicsCSV);
+          const idx = buildPrecinctDemographicsIndexes(rows);
+          precinctDemographicsByNorm = idx.byNorm;
+          precinctDemographicsByCountyCode = idx.byCountyCode;
+        } catch (err) {
+          precinctDemographicsByNorm = null;
+          precinctDemographicsByCountyCode = null;
+          console.warn('Precinct demographics not loaded:', err?.message || err);
+        }
       }
 
       // Optional: preload RDH CVAP aggregates used for hover totals (non-blocking).
