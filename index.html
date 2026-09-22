@@ -10767,8 +10767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v1';
-    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v1';
+    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v2';
+    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -19559,7 +19559,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'auditor': 'State Auditor',
 	        'labor_commissioner': 'Commissioner of Labor',
 	        'insurance_commissioner': 'Commissioner of Insurance',
-	        'superintendent': 'Superintendent of Public Instruction',
+	        'superintendent': 'State School Superintendent',
 	        'agriculture_commissioner': 'Commissioner of Agriculture',
 	        'secretary_of_state': 'Secretary of State',
 	        'treasurer': 'Treasurer',
@@ -19926,7 +19926,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
 	        if (contestType === 'agriculture_commissioner') return 'Agriculture Commissioner';
-	        if (contestType === 'superintendent') return 'Superintendent of Public Instruction';
+	        if (contestType === 'superintendent') return 'State School Superintendent';
 	        if (contestType.startsWith('ga_supreme_court_') || contestType.startsWith('nc_supreme_court_')) return 'Supreme Court';
 	        if (contestType.startsWith('ga_court_of_appeals_') || contestType.startsWith('nc_court_of_appeals_')) return 'Court of Appeals';
 	        return formatContestName(contestType, '');
@@ -19949,7 +19949,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
 	        'Agriculture Commissioner',
-	        'Superintendent of Public Instruction',
+	        'State School Superintendent',
 	        'Supreme Court',
 	        'Court of Appeals'
 	      ];
@@ -20104,7 +20104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
 	        if (contestType === 'agriculture_commissioner') return 'Agriculture Commissioner';
-	        if (contestType === 'superintendent') return 'Superintendent of Public Instruction';
+	        if (contestType === 'superintendent') return 'State School Superintendent';
 	        return formatContestName(contestType, '');
 	      }
 
@@ -20120,7 +20120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
 	        'Agriculture Commissioner',
-	        'Superintendent of Public Instruction'
+	        'State School Superintendent'
 	      ];
 
 	      const grouped = new Map(); // label -> Array<{contestType, year}>
