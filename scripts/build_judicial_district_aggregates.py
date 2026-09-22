@@ -42,6 +42,9 @@ def clean_candidate(name: str) -> str:
     value = re.sub(r"\s+", " ", (name or "").replace('""', '"')).strip()
     value = re.sub(r"\s*\((?:I|In)\)?\s*$", "", value, flags=re.I).strip()
     value = re.sub(r"\s*\*+\s*$", "", value).strip()
+    # Prefer a ballot nickname over the formal given name: Charles "Charlie"
+    # Bethel becomes Charlie Bethel, avoiding two first names in the UI.
+    value = re.sub(r'^\S+(?:\s+\S+)?\s+"([^"]+)"\s+(.+)$', r"\1 \2", value).strip()
     return value
 
 
