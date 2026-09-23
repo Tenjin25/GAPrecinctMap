@@ -269,7 +269,7 @@ def _levels_from_csv(levels: Iterable[str]) -> list[Level]:
     return out
 
 
-def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_raw: str) -> pd.DataFrame:
+def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_raw: str, vtd20_key: str = "name") -> pd.DataFrame:
     sub = df[(df["office"] == office) & (df["district_raw"] == district_raw)].copy()
 
     if level == "county":
@@ -289,7 +289,18 @@ def _aggregate_contest(df: pd.DataFrame, *, level: Level, office: str, district_
         # then re-key onto VTD20 GEOID20 using the VTD20 geometry's join keys (optionally with a crosswalk).
         if "precinct" not in sub.columns:
             raise SystemExit("VTD20 join requested but CSV is missing 'precinct' column.")
-        sub["_prec_part"] = sub["precinct"].map(extract_precinct_name)
+        if vtd20_key == "code":
+            sub["_prec_part"] = sub["precinct"].map(extract_precinct_code)
+            # A code is useful only when it clearly identifies one source precinct.
+            # Names and non-geographic buckets must continue through the name join.
+            sub = sub[sub["_prec_part"].str.fullmatch(r"\d{1,4}[A-Z]?", na=False)]
+            distinct = sub.groupby(["county_norm", "_prec_part"])["precinct"].nunique()
+            unique_codes = distinct[distinct == 1].index
+            sub = sub.set_index(["county_norm", "_prec_part"]).loc[
+                lambda frame: frame.index.isin(unique_codes)
+            ].reset_index()
+        else:
+            sub["_prec_part"] = sub["precinct"].map(extract_precinct_name)
         sub = sub[sub["_prec_part"] != ""]
         sub["_key"] = (sub["county_norm"] + " - " + sub["_prec_part"]).str.replace(r"\s+", " ", regex=True).str.strip()
     else:
@@ -389,8 +400,10 @@ def _rekey_results_to_vtd20_geoid(
     vtd20_join_prop: str,
     crosswalk_path: Path | None,
     supplemental_keymap_path: Path | None,
+    vtd20_props: list[dict[str, object]] | None = None,
+    allow_singleton_county: bool = False,
 ) -> dict[str, dict[str, object]]:
-    props = _load_geojson_props(vtd20_geojson)
+    props = vtd20_props if vtd20_props is not None else _load_geojson_props(vtd20_geojson)
     crosswalk: dict[str, dict[str, object]] = {}
     if crosswalk_path and crosswalk_path.exists():
         crosswalk = json.loads(crosswalk_path.read_text(encoding="utf-8"))
@@ -481,6 +494,25 @@ def _rekey_results_to_vtd20_geoid(
 
         if row is not None:
             out[geoid20] = row
+
+    # A county with one VTD and one geographic source precinct has an unambiguous
+    # join even when the two files use different names for that precinct.
+    if allow_singleton_county:
+        geoids_by_county: dict[str, list[str]] = {}
+        for p in props:
+            county = normalize_county_loose(str(p.get("county_norm") or ""))
+            geoid = str(p.get("GEOID20") or "").strip()
+            if county and geoid:
+                geoids_by_county.setdefault(county, []).append(geoid)
+        result_keys_by_county: dict[str, list[str]] = {}
+        for key in results_by_key:
+            county, separator, _ = str(key).partition(" - ")
+            if separator:
+                result_keys_by_county.setdefault(normalize_county_loose(county), []).append(key)
+        for county, geoids in geoids_by_county.items():
+            keys = result_keys_by_county.get(county, [])
+            if len(geoids) == 1 and len(keys) == 1:
+                out.setdefault(geoids[0], results_by_key[keys[0]])
 
     # Optional fallback: map result keys directly to VTD20 GEOID20 (e.g., via VTD10->VTD20 bridge).
     if supplemental_keymap:
@@ -604,6 +636,8 @@ def main() -> None:
         "state_senate": "Join on 3-digit district code (SLDUST-style). Only built for office 'State Senate'.",
     }
 
+    vtd20_props = _load_geojson_props(args.vtd20_geojson) if "vtd20" in levels and not args.dry_run else None
+
     for _, r in contests.iterrows():
         office = r["office"]
         district_raw = r["district_raw"]
@@ -634,30 +668,34 @@ def main() -> None:
                 continue
 
             out_path.parent.mkdir(parents=True, exist_ok=True)
-            idx = agg.set_index("_key")
-            results_map: dict[str, dict[str, object]] = {}
-            for key, row in idx.iterrows():
-                results_map[str(key)] = {
-                    "total_votes": int(row["total_votes"]),
-                    "dem_votes": int(row["dem_votes"]),
-                    "rep_votes": int(row["rep_votes"]),
-                    "other_votes": int(row["other_votes"]),
-                    "winner_candidate": str(row["winner_candidate"]),
-                    "runnerup_candidate": str(row["runnerup_candidate"]),
-                    "winner_party": str(row["winner_party"]),
-                    "winner_votes": int(row["winner_votes"]),
-                    "runnerup_votes": int(row["runnerup_votes"]),
-                    "margin_votes": int(row["margin_votes"]),
-                    "candidate_votes": dict(row["candidate_votes"]),
-                }
-                if str(row["winner_party"]) in {"OTH", "UNK"}:
-                    results_map[str(key)].update({
-                        "candidate_a": str(row["winner_candidate"]),
-                        "candidate_a_votes": int(row["winner_votes"]),
-                        "candidate_b": str(row["runnerup_candidate"]),
-                        "candidate_b_votes": int(row["runnerup_votes"]),
-                        "nonpartisan": True,
-                    })
+
+            def result_map_from_aggregate(aggregated: pd.DataFrame) -> dict[str, dict[str, object]]:
+                mapped: dict[str, dict[str, object]] = {}
+                for key, row in aggregated.set_index("_key").iterrows():
+                    mapped[str(key)] = {
+                        "total_votes": int(row["total_votes"]),
+                        "dem_votes": int(row["dem_votes"]),
+                        "rep_votes": int(row["rep_votes"]),
+                        "other_votes": int(row["other_votes"]),
+                        "winner_candidate": str(row["winner_candidate"]),
+                        "runnerup_candidate": str(row["runnerup_candidate"]),
+                        "winner_party": str(row["winner_party"]),
+                        "winner_votes": int(row["winner_votes"]),
+                        "runnerup_votes": int(row["runnerup_votes"]),
+                        "margin_votes": int(row["margin_votes"]),
+                        "candidate_votes": dict(row["candidate_votes"]),
+                    }
+                    if str(row["winner_party"]) in {"OTH", "UNK"}:
+                        mapped[str(key)].update({
+                            "candidate_a": str(row["winner_candidate"]),
+                            "candidate_a_votes": int(row["winner_votes"]),
+                            "candidate_b": str(row["runnerup_candidate"]),
+                            "candidate_b_votes": int(row["runnerup_votes"]),
+                            "nonpartisan": True,
+                        })
+                return mapped
+
+            results_map = result_map_from_aggregate(agg)
 
             if level == "vtd20":
                 if not args.vtd20_geojson.exists():
@@ -672,7 +710,25 @@ def main() -> None:
                         if args.vtd20_supplemental_keymap and args.vtd20_supplemental_keymap.exists()
                         else None
                     ),
+                    vtd20_props=vtd20_props,
+                    allow_singleton_county=not bool(district_raw),
                 )
+                code_agg = _aggregate_contest(
+                    df, level="vtd20", office=office, district_raw=district_raw, vtd20_key="code"
+                )
+                if not code_agg.empty:
+                    code_matches = _rekey_results_to_vtd20_geoid(
+                        results_by_key=result_map_from_aggregate(code_agg),
+                        vtd20_geojson=args.vtd20_geojson,
+                        vtd20_join_prop="join_key_code",
+                        crosswalk_path=None,
+                        supplemental_keymap_path=None,
+                        vtd20_props=vtd20_props,
+                        allow_singleton_county=not bool(district_raw),
+                    )
+                    # Keep a name match when one already exists; use codes to fill gaps.
+                    for geoid, result in code_matches.items():
+                        results_map.setdefault(geoid, result)
 
             payload = {
                 "office": office,

@@ -507,6 +507,11 @@ function main() {
   counties = mergeGeoJsonNames(counties, votingGeoJson);
   counties = applySeedOverrides(counties, seedPayload, displayCodesByCounty);
   counties = sortCountyCodeMap(pruneToDisplayCodes(counties, displayCodesByCounty));
+  counties = Object.fromEntries(Object.entries(counties).map(([county, names]) => [
+    county,
+    Object.fromEntries(Object.entries(names).filter(([code, label]) =>
+      String(code).trim().toUpperCase() !== String(label).trim().toUpperCase()))
+  ]).filter(([, names]) => Object.keys(names).length));
 
   const generatedFrom = [
     path.relative(repoRoot, inputPath).replace(/\\/g, '/'),
