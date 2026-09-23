@@ -10697,12 +10697,33 @@ document.addEventListener('DOMContentLoaded', function() {
       paths: {
         counties: withBase('./Data/tl_2020_13_county20.geojson'),
         precincts: withBase('./Data/Voting_Precincts.geojson'),
+        precincts_2024: withBase('./Data/Voting_Precincts_2024.geojson'),
         // Legacy contests use VTD20 geometry because the modern precinct boundaries
         // do not share stable identifiers with the 2000–2012 result exports.
         precincts_fallback_vtd20: withBase('./Data/tl_2020_13_vtd20.geojson'),
         precinct_centroids: withBase('./Data/precinct_centroids.geojson'),
+        precinct_centroids_2024: withBase('./Data/precinct_centroids_2024.geojson'),
+        precinct_contests_2024: withBase('./Data/precinct_contests_2024.json'),
+        precincts_2012: withBase('./Data/Voting_Precincts_2012.geojson'),
+        precinct_centroids_2012: withBase('./Data/precinct_centroids_2012.geojson'),
+        precinct_contests_2012: withBase('./Data/precinct_contests_2012.json'),
+        precincts_2014: withBase('./Data/Voting_Precincts_2014.geojson'),
+        precinct_centroids_2014: withBase('./Data/precinct_centroids_2014.geojson'),
+        precinct_contests_2014: withBase('./Data/precinct_contests_2014.json'),
+        precincts_2016: withBase('./Data/Voting_Precincts_2016.geojson'),
+        precinct_centroids_2016: withBase('./Data/precinct_centroids_2016.geojson'),
+        precinct_contests_2016: withBase('./Data/precinct_contests_2016.json'),
+        precincts_2018: withBase('./Data/Voting_Precincts_2018.geojson'),
+        precinct_centroids_2018: withBase('./Data/precinct_centroids_2018.geojson'),
+        precinct_contests_2018: withBase('./Data/precinct_contests_2018.json'),
+        precincts_2020: withBase('./Data/Voting_Precincts_2020.geojson'),
+        precinct_centroids_2020: withBase('./Data/precinct_centroids_2020.geojson'),
+        precinct_contests_2020: withBase('./Data/precinct_contests_2020.json'),
+        precincts_2022: withBase('./Data/Voting_Precincts_2022.geojson'),
+        precinct_centroids_2022: withBase('./Data/precinct_centroids_2022.geojson'),
+        precinct_contests_2022: withBase('./Data/precinct_contests_2022.json'),
         precinct_aliases: withBase('./Data/precinct_alias_index.json'),
-        precinct_friendly_names: withBase('./Data/precinct_friendly_names.json'),
+        precinct_friendly_names: withBase('./Data/precinct_friendly_names_latest.json'),
         districts: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2022: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2024: withBase('./Data/tl_2024_13_cd119.geojson'),
@@ -10716,6 +10737,13 @@ document.addEventListener('DOMContentLoaded', function() {
         county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         cvap_aggregates: {
           county_2020: withBase('./Data/cvap_aggregates/county_2020__cvap24.csv'),
+          precinct_shapes_2012: withBase('./Data/cvap_aggregates/precinct_shapes_2012__cvap24.csv'),
+          precinct_shapes_2014: withBase('./Data/cvap_aggregates/precinct_shapes_2014__cvap24.csv'),
+          precinct_shapes_2016: withBase('./Data/cvap_aggregates/precinct_shapes_2016__cvap24.csv'),
+          precinct_shapes_2018: withBase('./Data/cvap_aggregates/precinct_shapes_2018__cvap24.csv'),
+          precinct_shapes_2020: withBase('./Data/cvap_aggregates/precinct_shapes_2020__cvap24.csv'),
+          precinct_shapes_2022: withBase('./Data/cvap_aggregates/precinct_shapes_2022__cvap24.csv'),
+          precinct_shapes_2024: withBase('./Data/cvap_aggregates/precinct_shapes_2024__cvap24.csv'),
           cd118_2022: withBase('./Data/cvap_aggregates/cd118_2022_lines__cvap24.csv'),
           cd119_2024: withBase('./Data/cvap_aggregates/cd119_2024_lines__cvap24.csv'),
           state_house_2022: withBase('./Data/cvap_aggregates/state_house_2022_lines__cvap24.csv'),
@@ -11677,14 +11705,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let precinctDemographicsByNorm = null; // Map<string normalized "COUNTY - PREC"> -> row
     let precinctDemographicsByCountyCode = null; // Map<string countyNorm, Map<string code, row>>
     let cvapCountyTotalsByNorm = null; // Map<string countyNorm, number CVAP_TOT24>
-    let cvapPrecinctTotalsByNorm = null; // Map<string precinct_norm, number CVAP_TOT24>
+    const cvapPrecinctRowsByMode = new Map(); // geometry mode -> Map<precinct_norm, CVAP row>
     const cvapDistrictTotalsByScopeYear = {
       congressional: { '2022': null, '2024': null, '2026': null }, // Map<string districtNum, number>
       state_house: { '2022': null, '2024': null, '2026': null },
       state_senate: { '2022': null, '2024': null, '2026': null }
     };
     let cvapCountyTotalsLoadPromise = null;
-    let cvapPrecinctTotalsLoadPromise = null;
+    const cvapPrecinctLoadPromises = new Map();
     const cvapDistrictTotalsLoadPromises = new Map(); // key `${scope}|${linesYear}` -> Promise<void>
     let countyNameMap = {};
     let currentView = 'counties'; // 'counties', 'districts', 'state_house', 'state_senate'
@@ -11706,6 +11734,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastCountyFillExpr = null; // Cached fill-color expression for county layer.
     let lastAppliedPrecinctPaintExpr = null; // Tracks last expression applied to precinct fill/dots.
     let precinctPolygonNormSet = null; // Set<string precinct_norm> from polygon source (used to show centroid fallback for missing polygons).
+    let precinctCentroidsGeometryMode = null;
     let precinctCentroidsData = null; // Cached centroids GeoJSON so we can annotate with has_polygon after polygons load.
     let precinctCentroidsLoaded = false;
     let precinctCentroidsLoadInFlight = false;
@@ -20886,11 +20915,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function ensureCvapPrecinctTotalsLoaded() {
-      if (cvapPrecinctTotalsByNorm && cvapPrecinctTotalsByNorm.size) return;
-      if (cvapPrecinctTotalsLoadPromise) return cvapPrecinctTotalsLoadPromise;
-      const path = cvapAggPaths().precinct_2020;
+      const mode = getDesiredPrecinctGeometryMode();
+      const year = /^precinct(2012|2014|2016|2018|2020|2022|2024)$/.exec(mode)?.[1];
+      if (!year) return;
+      if (cvapPrecinctRowsByMode.has(mode)) return;
+      if (cvapPrecinctLoadPromises.has(mode)) return cvapPrecinctLoadPromises.get(mode);
+      const path = cvapAggPaths()[`precinct_shapes_${year}`];
       if (!path) return;
-      cvapPrecinctTotalsLoadPromise = (async () => {
+      const promise = (async () => {
         try {
           const txt = await loadCSV(path);
           const rows = parseCSV(txt);
@@ -20900,17 +20932,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const norm = normalizeContestPrecinctNorm(precId);
             const cvap = cvapTotalFromAggRow(r);
             if (!norm || !Number.isFinite(cvap)) return;
-            byNorm.set(norm, cvap);
+            byNorm.set(norm, r);
           });
-          cvapPrecinctTotalsByNorm = byNorm;
+          cvapPrecinctRowsByMode.set(mode, byNorm);
           try { if (lastPointerPoint) queueHoverRefresh(); } catch (_) {}
         } catch (err) {
-          cvapPrecinctTotalsByNorm = null;
+          console.warn('Precinct CVAP load failed:', err?.message || err);
         } finally {
-          cvapPrecinctTotalsLoadPromise = null;
+          cvapPrecinctLoadPromises.delete(mode);
         }
       })();
-      return cvapPrecinctTotalsLoadPromise;
+      cvapPrecinctLoadPromises.set(mode, promise);
+      return promise;
     }
 
     function cvapDistrictPathFor(scope, linesYear) {
@@ -20965,12 +20998,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getCvapPrecinctTotal(precinctNormRaw) {
+      const mode = getDesiredPrecinctGeometryMode();
       const norm = normalizeContestPrecinctNorm(precinctNormRaw);
       if (!norm) return null;
-      if (!cvapPrecinctTotalsByNorm && !cvapPrecinctTotalsLoadPromise) {
+      if (!cvapPrecinctRowsByMode.has(mode) && !cvapPrecinctLoadPromises.has(mode)) {
         try { void ensureCvapPrecinctTotalsLoaded(); } catch (_) {}
       }
-      const v = cvapPrecinctTotalsByNorm?.get(norm);
+      const v = cvapPrecinctRowsByMode.get(mode)?.get(norm)?.CVAP_TOT24;
       return Number.isFinite(Number(v)) ? Number(v) : null;
     }
 
@@ -21048,6 +21082,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="demo-hover-card">
           <div class="demo-hover-metric">${metricLabel} ${Math.round(metricValue).toLocaleString()}</div>
           ${races}
+          ${demo.__cvap ? '<div class="demo-hover-note">CVAP estimates are allocated from 2020 Census blocks to these precinct boundaries.</div>' : ''}
         </div>
       `;
     }
@@ -21128,6 +21163,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getPrecinctDemographicsRow(precinctNormRaw, countyNameRaw = '', precinctCodeRaw = '') {
+      const mode = getDesiredPrecinctGeometryMode();
+      if (mode !== 'precinct') {
+        const norm = normalizeContestPrecinctNorm(precinctNormRaw);
+        const row = cvapPrecinctRowsByMode.get(mode)?.get(norm);
+        if (!row) return null;
+        const total = Number(row.CVAP_TOT24) || 0;
+        const pct = key => total > 0 ? ((Number(row[key]) || 0) / total) * 100 : 0;
+        return {
+          __cvap: true, vap_18plus: total,
+          white_vap_pct: pct('CVAP_WHT24'), black_vap_pct: pct('CVAP_BLA24'),
+          hispanic_vap_pct: pct('CVAP_HSP24'), native_vap_pct: pct('CVAP_AMI24'),
+          asian_vap_pct: pct('CVAP_ASI24'), pacific_vap_pct: pct('CVAP_NHP24'),
+          multiracial_vap_pct: pct('CVAP_2OM24')
+        };
+      }
       if (!precinctDemographicsByNorm || !precinctDemographicsByCountyCode) return null;
 
       const norm = normalizeCountyToken(precinctNormRaw);
@@ -28847,6 +28897,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getDesiredPrecinctGeometryMode() {
       const year = Number(currentContestMeta?.year);
+      const contest = currentContestMeta?.contestType;
+      if (year === 2012 && currentContestMeta?.contestType === 'president') return 'precinct2012';
+      if ([2014, 2016, 2018].includes(year) && [
+        'president', 'governor', 'us_senate', 'us_house', 'state_house', 'state_senate',
+        'attorney_general', 'secretary_of_state', 'lieutenant_governor',
+        'agriculture_commissioner', 'insurance_commissioner',
+        'labor_commissioner', 'superintendent'
+      ].includes(contest)) return `precinct${year}`;
+      if (year === 2020) return 'precinct2020';
+      if (year === 2022 && [
+        'us_senate', 'governor', 'lieutenant_governor', 'secretary_of_state',
+        'attorney_general', 'agriculture_commissioner', 'insurance_commissioner',
+        'labor_commissioner', 'superintendent'
+      ].includes(contest)) return 'precinct2022';
+      if (year === 2024 && ['president', 'us_house', 'state_house', 'state_senate', 'district_attorney'].includes(currentContestMeta?.contestType)) return 'precinct2024';
       // VTD20 is only useful for truly legacy cycles; modern precinct-level contest keys (2014+)
       // are aligned to `data/Voting_Precincts.geojson` precinct IDs (including split precinct suffixes).
       if (Number.isFinite(year) && year <= 2012) return 'vtd20';
@@ -28864,9 +28929,10 @@ document.addEventListener('DOMContentLoaded', function() {
       let usedVtdFallback = desiredMode === 'vtd20';
       let precincts = null;
       try {
+        const datedYear = /^precinct(2012|2014|2016|2018|2020|2022|2024)$/.exec(desiredMode)?.[1];
         const primaryPath = desiredMode === 'vtd20'
           ? (CONFIG.paths?.precincts_fallback_vtd20 || CONFIG.paths.precincts)
-          : CONFIG.paths.precincts;
+          : (datedYear ? CONFIG.paths[`precincts_${datedYear}`] : CONFIG.paths.precincts);
         precincts = await loadJSON(primaryPath);
       } catch (err) {
         const fallbackPath = CONFIG.paths?.precincts_fallback_vtd20;
@@ -28948,7 +29014,7 @@ document.addEventListener('DOMContentLoaded', function() {
         map.addSource('precincts', { type: 'geojson', data: precincts, generateId: true });
       }
       precinctSourceLoaded = true;
-      precinctGeometryMode = usedVtdFallback ? 'vtd20' : 'precinct';
+      precinctGeometryMode = usedVtdFallback ? 'vtd20' : desiredMode;
       precinctLoadInFlight = false;
       addPrecinctLayers();
       ensureSplitTicketOverlayLayers();
@@ -29192,23 +29258,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 	    async function ensurePrecinctCentroidsLoaded() {
-	      if (precinctCentroidsLoaded && map.getSource('precinct-centroids')) {
+	      const desiredMode = getDesiredPrecinctGeometryMode();
+	      if (precinctCentroidsLoaded && map.getSource('precinct-centroids') && precinctCentroidsGeometryMode === desiredMode) {
 	        addPrecinctCentroidLayers();
-	        return true;
-	      }
-	      if (map.getSource('precinct-centroids')) {
-	        precinctCentroidsLoaded = true;
-	        addPrecinctCentroidLayers();
-	        try { updatePrecinctVisibility(); } catch (_) {}
 	        return true;
 	      }
 	      if (precinctCentroidsLoadPromise) {
 	        try { await precinctCentroidsLoadPromise; } catch (_) {}
+	        if (precinctCentroidsGeometryMode !== desiredMode) return ensurePrecinctCentroidsLoaded();
 	        return !!(precinctCentroidsLoaded && map.getSource('precinct-centroids'));
 	      }
 	      precinctCentroidsLoadInFlight = true;
 	      precinctCentroidsLoadPromise = (async () => {
-	        const pts = await loadJSON(CONFIG.paths.precinct_centroids);
+	        const datedYear = /^precinct(2012|2014|2016|2018|2020|2022|2024)$/.exec(desiredMode)?.[1];
+	        const pts = await loadJSON(datedYear ? CONFIG.paths[`precinct_centroids_${datedYear}`] : CONFIG.paths.precinct_centroids);
           precinctCentroidsData = pts;
           try {
             precinctCentroidsData.features = (precinctCentroidsData.features || []).map(f => {
@@ -29229,13 +29292,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 prec_id: prec || p.prec_id || '',
                 precinct_norm: norm,
                 precinct_full_name: full || '',
-                has_polygon: !!(norm && precinctPolygonNormSet && precinctPolygonNormSet.has(norm))
+                has_polygon: !!p.has_polygon || !!(norm && precinctPolygonNormSet && precinctPolygonNormSet.has(norm))
               };
               return f;
             });
           } catch (_) {}
-	        map.addSource('precinct-centroids', { type: 'geojson', data: pts });
+	        const existing = map.getSource('precinct-centroids');
+	        if (existing && typeof existing.setData === 'function') existing.setData(pts);
+	        else map.addSource('precinct-centroids', { type: 'geojson', data: pts });
 	        precinctCentroidsLoaded = true;
+	        precinctCentroidsGeometryMode = desiredMode;
+	        precinctCodeIndexByCounty = null;
 	        // Build a lightweight county -> precinct code index for key-variant matching.
 	        try {
 	          if (!precinctCodeIndexByCounty && pts && pts.features) {
@@ -29279,7 +29346,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	    }
 
 	    async function ensurePrecinctCodeIndex() {
-	      if (precinctCodeIndexByCounty) return precinctCodeIndexByCounty;
+	      if (precinctCodeIndexByCounty && precinctCentroidsGeometryMode === getDesiredPrecinctGeometryMode()) return precinctCodeIndexByCounty;
 	      await ensurePrecinctCentroidsLoaded();
 	      if (!precinctCodeIndexByCounty) {
 	        try {
@@ -32961,11 +33028,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const p = (async () => {
         const payloads = [];
-        for (const filename of candidates) {
-          try {
-            const payload = await loadJSON(`${CONFIG.paths.derived_vtd20_base}/${Number(year)}/contests/vtd20/${filename}`);
-            if (payload?.results && Object.keys(payload.results).length) payloads.push(payload);
-          } catch (_) {}
+        const datedYear = /^precinct(2012|2014|2016|2018|2020|2022|2024)$/.exec(getDesiredPrecinctGeometryMode())?.[1];
+        if (datedYear && Number(datedYear) === Number(year)) {
+          const collection = await loadJSON(CONFIG.paths[`precinct_contests_${datedYear}`]);
+          for (const filename of candidates) {
+            const slug = filename.replace(/\.json$/i, '');
+            const results = collection?.contests?.[slug];
+            if (results && Object.keys(results).length) payloads.push({ results });
+          }
+        } else {
+          for (const filename of candidates) {
+            try {
+              const payload = await loadJSON(`${CONFIG.paths.derived_vtd20_base}/${Number(year)}/contests/vtd20/${filename}`);
+              if (payload?.results && Object.keys(payload.results).length) payloads.push(payload);
+            } catch (_) {}
+          }
         }
         if (!payloads.length) return null;
 
@@ -33745,6 +33822,8 @@ document.addEventListener('DOMContentLoaded', function() {
           } catch (_) {}
         }
 
+        await ensureCvapPrecinctTotalsLoaded();
+        const datedCvap = cvapPrecinctRowsByMode.get(getDesiredPrecinctGeometryMode());
         const exprPrecinct = ['case'];
         if (currentPrecinctResults) {
           currentPrecinctResults.forEach((precRow, precNorm) => {
@@ -33752,7 +33831,18 @@ document.addEventListener('DOMContentLoaded', function() {
             currentPrecinctTurnoutTotals.set(precNorm, tVotes);
           });
         }
-        if (precinctDemographicsByNorm && precinctDemographicsByNorm.size) {
+        if (datedCvap && datedCvap.size) {
+          datedCvap.forEach((row, precNorm) => {
+            const total = Number(row?.CVAP_TOT24) || 0;
+            if (total <= 0) return;
+            const pct = key => ((Number(row[key]) || 0) / total) * 100;
+            exprPrecinct.push(['==', ['get', 'precinct_norm'], precNorm]);
+            exprPrecinct.push(colorForDemographicsMode(
+              pct('CVAP_WHT24'), pct('CVAP_BLA24'), pct('CVAP_HSP24'),
+              pct('CVAP_AMI24'), pct('CVAP_ASI24'), pct('CVAP_NHP24'), pct('CVAP_2OM24')
+            ));
+          });
+        } else if (getDesiredPrecinctGeometryMode() === 'precinct' && precinctDemographicsByNorm && precinctDemographicsByNorm.size) {
           precinctDemographicsByNorm.forEach((demo, precNorm) => {
             const color = colorForDemographicsMode(
               demo?.white_vap_pct,

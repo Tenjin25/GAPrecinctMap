@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import defaultdict
 from pathlib import Path
 
 
@@ -18,11 +19,14 @@ def main() -> None:
     ap.add_argument("--geojson-key", default="join_key", help="Property name in GeoJSON features")
     ap.add_argument("--results", required=True, type=Path, help="Contest JSON from scripts/build_contest_jsons.py")
     ap.add_argument("--show", type=int, default=20, help="How many sample keys to show")
+    ap.add_argument("--by-county", action="store_true", help="Show counties with the most geometry keys lacking results")
+    ap.add_argument("--county-key", default="county_norm", help="County property for --by-county")
     args = ap.parse_args()
 
     g = json.loads(args.geojson.read_text(encoding="utf-8"))
     feats = g.get("features") or []
     geo_keys: set[str] = set()
+    county_keys: dict[str, set[str]] = defaultdict(set)
     for f in feats:
         props = (f or {}).get("properties") or {}
         k = props.get(args.geojson_key)
@@ -31,6 +35,9 @@ def main() -> None:
         ks = str(k).strip()
         if ks:
             geo_keys.add(ks)
+            if args.by_county:
+                county = str(props.get(args.county_key) or "UNKNOWN").strip().upper()
+                county_keys[county].add(ks)
 
     r = json.loads(args.results.read_text(encoding="utf-8"))
     results = r.get("results") or {}
@@ -49,6 +56,16 @@ def main() -> None:
     if res_keys:
         print(f"Coverage (geometry for results): {len(inter) / len(res_keys):.1%}")
 
+    if args.by_county:
+        print("\nCounty gaps (missing / geometry keys):")
+        gaps = sorted(
+            ((len(keys - res_keys), county, len(keys)) for county, keys in county_keys.items()),
+            reverse=True,
+        )
+        for missing, county, total in gaps:
+            if missing:
+                print(f"- {county}: {missing} / {total}")
+
     show = max(0, int(args.show))
     if show:
         if only_res:
@@ -63,4 +80,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
