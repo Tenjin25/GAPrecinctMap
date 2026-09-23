@@ -4228,6 +4228,90 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     gap: 8px;
   }
 
+  .region-jumps.region-jump-layout {
+    display: block;
+  }
+
+  .region-jump-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .region-jump-grid .region-jump-btn {
+    width: 100%;
+    min-height: 40px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .region-jump-section + .region-jump-section {
+    margin-top: 13px;
+  }
+
+  .region-jump-section .region-jump-subheading {
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .region-jump-more {
+    margin-top: 13px;
+    border-top: 1px solid rgba(45, 79, 96, 0.16);
+  }
+
+  .region-jump-more summary {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 2px 2px;
+    color: var(--ui-accent, #285267);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    list-style: none;
+  }
+
+  .region-jump-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .region-jump-more summary::after {
+    content: '⌄';
+    margin-left: auto;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .region-jump-more[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .region-jump-more summary:focus-visible {
+    outline: 2px solid var(--ui-accent, #285267);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .region-jump-count {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(45, 79, 96, 0.10);
+    font-size: 10px;
+  }
+
+  .region-jump-extra {
+    padding-top: 10px;
+  }
+
+  .region-jump-subheading {
+    color: var(--ui-muted, #617381);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
   .region-jump-btn {
     border: 1px solid rgba(15, 23, 42, 0.10);
     background: rgba(248, 250, 252, 0.96);
@@ -10363,23 +10447,38 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="control-group" style="margin-bottom:12px;">
                 <span class="section-kicker">Quick Jumps</span>
-                <div class="region-jumps" id="region-jumps">
-                  <button type="button" class="region-jump-btn" data-region-jump="metro_atlanta">Metro Atlanta</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="north_georgia_mountains">North Georgia Mountains</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="coastal_georgia">Coastal Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="coastal_empire">Coastal Empire</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="golden_isles">Golden Isles</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="middle_georgia">Middle Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="south_georgia">South Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="west_georgia">West Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="chattanooga">Chattanooga Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="athens">Athens Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="savannah">Savannah Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="augusta">Augusta Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="columbus">Columbus Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="macon">Macon Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="albany">Albany Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="valdosta">Valdosta Metro</button>
+                <div class="region-jumps region-jump-layout" id="region-jumps">
+                  <div class="region-jump-section">
+                    <span class="region-jump-subheading">Regions</span>
+                    <div class="region-jump-grid" role="group" aria-label="Georgia regions">
+                      <button type="button" class="region-jump-btn" data-region-jump="metro_atlanta">Metro Atlanta</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="north_georgia_mountains">North Georgia Mountains</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="coastal_georgia">Coastal Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="middle_georgia">Middle Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="south_georgia">South Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="west_georgia">West Georgia</button>
+                    </div>
+                  </div>
+                  <div class="region-jump-section">
+                    <span class="region-jump-subheading">Coastal areas</span>
+                    <div class="region-jump-grid" role="group" aria-label="Coastal areas">
+                      <button type="button" class="region-jump-btn" data-region-jump="coastal_empire">Coastal Empire</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="golden_isles">Golden Isles</button>
+                    </div>
+                  </div>
+                  <details class="region-jump-more">
+                    <summary>Metro areas <span class="region-jump-count">8</span></summary>
+                    <div class="region-jump-grid region-jump-extra" role="group" aria-label="Metro areas">
+                      <button type="button" class="region-jump-btn" data-region-jump="chattanooga">Chattanooga Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="athens">Athens Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="savannah">Savannah Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="augusta">Augusta Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="columbus">Columbus Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="macon">Macon Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="albany">Albany Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="valdosta">Valdosta Metro</button>
+                    </div>
+                  </details>
                 </div>
             </div>
             <div class="control-group" style="margin-bottom:10px;">
