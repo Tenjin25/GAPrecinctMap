@@ -10364,12 +10364,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="control-group" style="margin-bottom:12px;">
                 <span class="section-kicker">Quick Jumps</span>
                 <div class="region-jumps" id="region-jumps">
-                  <button type="button" class="region-jump-btn" data-region-jump="triangle">Metro Atlanta</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="triad">North Georgia Mountains</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="charlotte">Coastal Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="mountains">Middle Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="coast">South Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="sandhills">West Georgia</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="metro_atlanta">Metro Atlanta</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="north_georgia_mountains">North Georgia Mountains</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="coastal_georgia">Coastal Georgia</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="coastal_empire">Coastal Empire</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="golden_isles">Golden Isles</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="middle_georgia">Middle Georgia</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="south_georgia">South Georgia</button>
+                  <button type="button" class="region-jump-btn" data-region-jump="west_georgia">West Georgia</button>
                   <button type="button" class="region-jump-btn" data-region-jump="chattanooga">Chattanooga Metro</button>
                   <button type="button" class="region-jump-btn" data-region-jump="athens">Athens Metro</button>
                   <button type="button" class="region-jump-btn" data-region-jump="savannah">Savannah Metro</button>
@@ -10873,34 +10875,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // County memberships back regional quick jumps so they can drive
     // real regional rollups instead of only camera movement.
-    // Region keys are kept stable for button wiring.
+    // Region keys match the Georgia-specific button identifiers.
     const REGION_JUMPS = {
-      triangle: {
+      metro_atlanta: {
         label: 'Metro Atlanta',
         bounds: [[-85.35, 33.20], [-83.05, 34.40]],
         counties: ['Fulton', 'DeKalb', 'Cobb', 'Gwinnett', 'Clayton', 'Henry', 'Fayette', 'Douglas', 'Cherokee', 'Forsyth', 'Rockdale']
       },
-      triad: {
+      north_georgia_mountains: {
         label: 'North Georgia Mountains',
         bounds: [[-85.70, 34.10], [-83.00, 35.05]],
         counties: ['Fannin', 'Gilmer', 'Union', 'Towns', 'Rabun', 'White', 'Lumpkin', 'Dawson', 'Pickens', 'Habersham', 'Stephens']
       },
-      charlotte: {
+      coastal_georgia: {
         label: 'Coastal Georgia',
-        bounds: [[-82.35, 30.55], [-80.70, 32.85]],
-        counties: ['Chatham', 'Bryan', 'Effingham', 'Liberty', 'McIntosh', 'Glynn', 'Camden', 'Wayne', 'Long']
+        bounds: [[-82.10, 30.65], [-80.70, 33.10]],
+        counties: ['Bryan', 'Bulloch', 'Camden', 'Chatham', 'Effingham', 'Glynn', 'Liberty', 'Long', 'McIntosh', 'Screven']
       },
-      mountains: {
+      coastal_empire: {
+        label: 'Coastal Empire',
+        bounds: [[-82.10, 31.65], [-80.70, 32.72]],
+        counties: ['Bryan', 'Bulloch', 'Chatham', 'Effingham']
+      },
+      golden_isles: {
+        label: 'Golden Isles',
+        bounds: [[-81.85, 30.90], [-81.10, 31.55]],
+        counties: ['Glynn']
+      },
+      middle_georgia: {
         label: 'Middle Georgia',
         bounds: [[-84.95, 31.55], [-82.20, 33.55]],
         counties: ['Bibb', 'Houston', 'Jones', 'Monroe', 'Baldwin', 'Crawford', 'Peach', 'Twiggs', 'Wilkinson', 'Laurens']
       },
-      coast: {
+      south_georgia: {
         label: 'South Georgia',
         bounds: [[-85.45, 30.25], [-82.00, 31.90]],
         counties: ['Lowndes', 'Thomas', 'Colquitt', 'Tift', 'Cook', 'Mitchell', 'Brooks', 'Decatur', 'Grady', 'Berrien']
       },
-      sandhills: {
+      west_georgia: {
         label: 'West Georgia',
         bounds: [[-85.70, 32.45], [-84.00, 34.40]],
         counties: ['Muscogee', 'Troup', 'Harris', 'Meriwether', 'Carroll', 'Coweta', 'Heard', 'Polk', 'Paulding', 'Haralson']
