@@ -3501,6 +3501,44 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     color: #cbd5e1;
   }
 
+  .hover-tooltip .vhr-demographics .demo-hover-card {
+    margin: 8px 0 0;
+    padding: 8px 9px;
+    background: rgba(15, 23, 42, 0.72);
+    border-color: rgba(148, 163, 184, 0.38);
+  }
+
+  .hover-tooltip .vhr-demographics .demo-hover-metric {
+    font-size: 11px;
+  }
+
+  .hover-tooltip .vhr-demographics .demo-race-row {
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .hover-tooltip .vhr-demographics .demo-race-label {
+    display: none;
+  }
+
+  .hover-tooltip .vhr-demographics .demo-race-chip {
+    padding: 3px 6px;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .hover-tooltip .vhr-demographics .demo-hover-note {
+    margin-top: 5px;
+    font-size: 9.5px;
+    line-height: 1.2;
+  }
+
+  .hover-tooltip .vhr-demographics-divider {
+    height: 1px;
+    margin: 10px 0;
+    background: rgba(148, 163, 184, 0.24);
+  }
+
   .hover-tooltip .demo-race-label {
     color: #e2e8f0;
   }
@@ -4188,6 +4226,90 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .region-jumps.region-jump-layout {
+    display: block;
+  }
+
+  .region-jump-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .region-jump-grid .region-jump-btn {
+    width: 100%;
+    min-height: 40px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .region-jump-section + .region-jump-section {
+    margin-top: 13px;
+  }
+
+  .region-jump-section .region-jump-subheading {
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .region-jump-more {
+    margin-top: 13px;
+    border-top: 1px solid rgba(45, 79, 96, 0.16);
+  }
+
+  .region-jump-more summary {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 2px 2px;
+    color: var(--ui-accent, #285267);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    list-style: none;
+  }
+
+  .region-jump-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .region-jump-more summary::after {
+    content: '⌄';
+    margin-left: auto;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .region-jump-more[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .region-jump-more summary:focus-visible {
+    outline: 2px solid var(--ui-accent, #285267);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .region-jump-count {
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(45, 79, 96, 0.10);
+    font-size: 10px;
+  }
+
+  .region-jump-extra {
+    padding-top: 10px;
+  }
+
+  .region-jump-subheading {
+    color: var(--ui-muted, #617381);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
   }
 
   .region-jump-btn {
@@ -7143,7 +7265,11 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   }
 
   .legend-spectrum.shift {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+  }
+
+  .legend-spectrum.population-change {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
   }
 
   .legend-segment.legend-color {
@@ -7187,6 +7313,13 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     letter-spacing: 0;
   }
 
+  .legend-axis.population-change {
+    grid-template-columns: repeat(13, minmax(0, 1fr));
+    gap: 1px;
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+
   .legend-axis span {
     text-align: center;
     line-height: 1.2;
@@ -7214,6 +7347,25 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     gap: 8px;
   }
 
+  .legend-scale-caption.population-change {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 1fr) minmax(0, 3fr) minmax(0, 3fr);
+    gap: 4px;
+  }
+
+  .legend-scale-caption.population-change span:nth-child(3) {
+    text-align: center;
+  }
+
+  .legend-scale-caption.population-change .dem,
+  .legend-axis.population-change .dem {
+    color: #7c4a25;
+  }
+
+  .legend-scale-caption.population-change .rep,
+  .legend-axis.population-change .rep {
+    color: #147a4b;
+  }
+
   .legend-scale-caption span {
     font-size: 11px;
     font-weight: 700;
@@ -7239,6 +7391,41 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 
   .legend-scale-caption .dem {
     color: #1d4ed8;
+  }
+
+  .legend-tier-list {
+    display: grid;
+    gap: 4px;
+    max-height: min(42vh, 320px);
+    overflow: auto;
+    padding-right: 2px;
+  }
+
+  .legend-tier-row {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    min-height: 28px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .legend-tier-row .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .legend-tier-label, .legend-tier-range {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .legend-tier-range {
+    color: #64748b;
   }
 
   .legend-chip-row {
@@ -10260,23 +10447,38 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="control-group" style="margin-bottom:12px;">
                 <span class="section-kicker">Quick Jumps</span>
-                <div class="region-jumps" id="region-jumps">
-                  <button type="button" class="region-jump-btn" data-region-jump="metro_atlanta">Metro Atlanta</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="north_georgia_mountains">North Georgia Mountains</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="coastal_georgia">Coastal Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="coastal_empire">Coastal Empire</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="golden_isles">Golden Isles</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="middle_georgia">Middle Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="south_georgia">South Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="west_georgia">West Georgia</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="chattanooga">Chattanooga Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="athens">Athens Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="savannah">Savannah Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="augusta">Augusta Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="columbus">Columbus Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="macon">Macon Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="albany">Albany Metro</button>
-                  <button type="button" class="region-jump-btn" data-region-jump="valdosta">Valdosta Metro</button>
+                <div class="region-jumps region-jump-layout" id="region-jumps">
+                  <div class="region-jump-section">
+                    <span class="region-jump-subheading">Regions</span>
+                    <div class="region-jump-grid" role="group" aria-label="Georgia regions">
+                      <button type="button" class="region-jump-btn" data-region-jump="metro_atlanta">Metro Atlanta</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="north_georgia_mountains">North Georgia Mountains</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="coastal_georgia">Coastal Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="middle_georgia">Middle Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="south_georgia">South Georgia</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="west_georgia">West Georgia</button>
+                    </div>
+                  </div>
+                  <div class="region-jump-section">
+                    <span class="region-jump-subheading">Coastal areas</span>
+                    <div class="region-jump-grid" role="group" aria-label="Coastal areas">
+                      <button type="button" class="region-jump-btn" data-region-jump="coastal_empire">Coastal Empire</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="golden_isles">Golden Isles</button>
+                    </div>
+                  </div>
+                  <details class="region-jump-more">
+                    <summary>Metro areas <span class="region-jump-count">8</span></summary>
+                    <div class="region-jump-grid region-jump-extra" role="group" aria-label="Metro areas">
+                      <button type="button" class="region-jump-btn" data-region-jump="chattanooga">Chattanooga Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="athens">Athens Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="savannah">Savannah Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="augusta">Augusta Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="columbus">Columbus Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="macon">Macon Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="albany">Albany Metro</button>
+                      <button type="button" class="region-jump-btn" data-region-jump="valdosta">Valdosta Metro</button>
+                    </div>
+                  </details>
                 </div>
             </div>
             <div class="control-group" style="margin-bottom:10px;">
@@ -10415,16 +10617,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="dem">D +10</span>
                 <span class="dem">D +40</span>
               </div>
-              <div class="legend-chip-row">
-                <span class="legend-chip">Annihilation 40+</span>
-                <span class="legend-chip">Dominant 30+</span>
-                <span class="legend-chip">Stronghold 20+</span>
-                <span class="legend-chip">Safe 10+</span>
-                <span class="legend-chip">Likely 5.5+</span>
-                <span class="legend-chip">Lean 1+</span>
-                <span class="legend-chip">Tilt 0.5+</span>
-                <span class="legend-chip">Tossup &lt;0.5</span>
-              </div>
+<div class="legend-tier-list" role="list">
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #67000d;"></span><span class="legend-tier-label rep">Annihilation</span><span class="legend-tier-range">40+</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #a50f15;"></span><span class="legend-tier-label rep">Dominant</span><span class="legend-tier-range">30–39.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #cb181d;"></span><span class="legend-tier-label rep">Stronghold</span><span class="legend-tier-range">20–29.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #e93a2d;"></span><span class="legend-tier-label rep">Safe</span><span class="legend-tier-range">10–19.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #f7634b;"></span><span class="legend-tier-label rep">Likely</span><span class="legend-tier-range">5.5–9.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #fcae91;"></span><span class="legend-tier-label rep">Lean</span><span class="legend-tier-range">1–5.49</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #f4c9c5;"></span><span class="legend-tier-label rep">Tilt</span><span class="legend-tier-range">0.5–0.99</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #f7f7f7;"></span><span class="legend-tier-label tie">Tossup</span><span class="legend-tier-range">&lt;0.5</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #c7ddf0;"></span><span class="legend-tier-label dem">Tilt</span><span class="legend-tier-range">0.5–0.99</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #9ecae1;"></span><span class="legend-tier-label dem">Lean</span><span class="legend-tier-range">1–5.49</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #5b9fd0;"></span><span class="legend-tier-label dem">Likely</span><span class="legend-tier-range">5.5–9.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #3f8fc9;"></span><span class="legend-tier-label dem">Safe</span><span class="legend-tier-range">10–19.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #2876b5;"></span><span class="legend-tier-label dem">Stronghold</span><span class="legend-tier-range">20–29.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #08519c;"></span><span class="legend-tier-label dem">Dominant</span><span class="legend-tier-range">30–39.9</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: #08306b;"></span><span class="legend-tier-label dem">Annihilation</span><span class="legend-tier-range">40+</span></div>
+          </div>
             </div>
         </div>
         <div class="legend-footer" id="legend-footer">Darker shades indicate larger two-party leads in the current contest.</div>
@@ -10659,8 +10868,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v1';
-    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v1';
+    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v3';
+    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v3';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -10733,7 +10942,7 @@ document.addEventListener('DOMContentLoaded', function() {
         state_senate: withBase('./Data/tl_2022_13_sldu.geojson'),
         state_senate_2022: withBase('./Data/tl_2022_13_sldu.geojson'),
         state_senate_2024: withBase('./Data/tl_2024_13_sldu.geojson'),
-        county_demographics: withBase('./Data/ga_county_demographics.json'),
+        county_demographics: withBase('./Data/cvap_aggregates/county_2020__demographics_cvap24.json'),
         county_population_estimates: withBase('./Data/CO-EST2025-POP-13.csv'),
         cvap_aggregates: {
           county_2020: withBase('./Data/cvap_aggregates/county_2020__cvap24.csv'),
@@ -10760,13 +10969,13 @@ document.addEventListener('DOMContentLoaded', function() {
           '2026': withBase('./Data/district_contests_2024')
         },
         district_contests_pre2014_dir: withBase('./Data/district_contests_pre2014_county_approx'),
-        districts_info: withBase('./Data/ga_congressional_districts.csv'),
-        state_house_info: withBase('./Data/ga_state_house_districts.csv'),
-        state_senate_info: withBase('./Data/ga_state_senate_districts.csv'),
-        district_descriptions: withBase('./Data/ga_district_descriptions.json'),
+        districts_info: withBase('./Data/cvap_aggregates/congressional_2022__demographics_cvap24.csv'),
+        state_house_info: withBase('./Data/cvap_aggregates/state_house_2022__demographics_cvap24.csv'),
+        state_senate_info: withBase('./Data/cvap_aggregates/state_senate_2022__demographics_cvap24.csv'),
+        district_descriptions: null,
         contests_dir: withBase('./Data/contests'),
         derived_vtd20_base: withBase('./Data/derived_vtd20'),
-        precinct_demographics: withBase('./Data/optional/ga_precinct_demographics_2020_vap.csv'),
+        precinct_demographics: null,
         reports_match_year_summary: withBase('./Data/reports/ga_precinct_match_year_summary.csv'),
         reports_top_unmatched: withBase('./Data/reports/ga_precinct_match_top_unmatched.csv'),
         crosswalks: {
@@ -11711,6 +11920,7 @@ document.addEventListener('DOMContentLoaded', function() {
       state_house: { '2022': null, '2024': null, '2026': null },
       state_senate: { '2022': null, '2024': null, '2026': null }
     };
+    const cvapDistrictDemographicsByPlan = new Map();
     let cvapCountyTotalsLoadPromise = null;
     const cvapPrecinctLoadPromises = new Map();
     const cvapDistrictTotalsLoadPromises = new Map(); // key `${scope}|${linesYear}` -> Promise<void>
@@ -13742,6 +13952,18 @@ document.addEventListener('DOMContentLoaded', function() {
         .toUpperCase();
     }
 
+    function addCountyDemographicAliases(payload) {
+      const counties = payload?.counties;
+      if (!counties || typeof counties !== 'object') return payload;
+      Object.entries(counties).forEach(([rawKey, row]) => {
+        const full = normalizeCountyToken(rawKey);
+        const short = full.replace(/\s+(COUNTY|PARISH|BOROUGH|CENSUS AREA|MUNICIPALITY)$/i, '').trim();
+        if (full && !counties[full]) counties[full] = row;
+        if (short && !counties[short]) counties[short] = row;
+      });
+      return payload;
+    }
+
     function backfillHistoricalPrecinctResultsWithCountyFallback(precinctResultsByNorm, countyAgg, contestType, year) {
       const y = Number(year);
       if (!Number.isFinite(y) || y > 2020) return 0;
@@ -14241,6 +14463,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Update button states
       setVizModeUI(mode);
       renderLegendForVizMode(mode);
+      if (mode === 'demographics' && currentView === 'counties') {
+        try { applyCountyDemographicsModeToCounties(); } catch (_) {}
+      }
       try { updatePopulationMetricLegendChip(); } catch (_) {}
 
       // Reapply current contest with new mode
@@ -14250,6 +14475,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       updateContextBanner();
       saveUIState();
+    }
+
+    function applyCountyDemographicsModeToCounties() {
+      const countyDemoRows = countyDemographics?.counties || null;
+      if (!countyDemoRows || !map.getLayer('county-fill')) return false;
+      const countyExpr = ['case'];
+      Object.keys(countyDemoRows).forEach(countyNorm => {
+        const demo = countyDemoRows[countyNorm] || {};
+        countyExpr.push(['==', ['upcase', ['coalesce', ['get', 'NAME20'], ['get', 'NAMELSAD20'], ['get', 'CountyName'], ['get', 'COUNTYNAME'], ['get', 'county_nam'], ['get', 'NAME']]], countyNorm]);
+        countyExpr.push(colorForDemographicsMode(
+          demo.white_pop_pct, demo.black_pop_pct, demo.hispanic_pop_pct, demo.native_pop_pct,
+          demo.asian_pop_pct, demo.pacific_pop_pct, demo.multiracial_pop_pct
+        ));
+      });
+      map.setPaintProperty('county-fill', 'fill-color', [...countyExpr, '#e2e8f0']);
+      try {
+        map.setPaintProperty('county-stroke', 'line-color', '#333');
+        map.setPaintProperty('county-stroke', 'line-width', 1);
+        applyLayerOpacityTuning();
+      } catch (_) {}
+      return true;
     }
 
     // Vote Counter Functions - VoteHub Style
@@ -19453,7 +19699,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        'auditor': 'State Auditor',
 	        'labor_commissioner': 'Commissioner of Labor',
 	        'insurance_commissioner': 'Commissioner of Insurance',
-	        'superintendent': 'Superintendent of Public Instruction',
+	        'superintendent': 'State School Superintendent',
 	        'agriculture_commissioner': 'Commissioner of Agriculture',
 	        'secretary_of_state': 'Secretary of State',
 	        'treasurer': 'Treasurer',
@@ -19811,16 +20057,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
 	        if (contestType === 'us_senate' || contestType === 'us_senate_special' || contestType === 'us_senate_runoff') return 'US Senate';
-	        if (contestType === 'governor') return 'GA Governor';
-	        if (contestType === 'lieutenant_governor') return 'GA Lieutenant Governor';
-	        if (contestType === 'attorney_general') return 'GA Attorney General';
-	        if (contestType === 'secretary_of_state') return 'GA Secretary of State';
-	        if (contestType === 'treasurer') return 'GA Treasurer';
+	        if (contestType === 'governor') return 'Governor';
+	        if (contestType === 'lieutenant_governor') return 'Lieutenant Governor';
+	        if (contestType === 'attorney_general') return 'Attorney General';
+	        if (contestType === 'secretary_of_state') return 'Secretary of State';
+	        if (contestType === 'treasurer') return 'Treasurer';
 	        if (contestType === 'auditor') return 'Auditor';
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
 	        if (contestType === 'agriculture_commissioner') return 'Agriculture Commissioner';
-	        if (contestType === 'superintendent') return 'Superintendent of Public Instruction';
+	        if (contestType === 'superintendent') return 'State School Superintendent';
 	        if (contestType.startsWith('ga_supreme_court_') || contestType.startsWith('nc_supreme_court_')) return 'Supreme Court';
 	        if (contestType.startsWith('ga_court_of_appeals_') || contestType.startsWith('nc_court_of_appeals_')) return 'Court of Appeals';
 	        return formatContestName(contestType, '');
@@ -19834,16 +20080,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	      const groupOrder = [
 	        'US President',
 	        'US Senate',
-	        'GA Governor',
-	        'GA Lieutenant Governor',
-	        'GA Attorney General',
-	        'GA Secretary of State',
-	        'GA Treasurer',
+	        'Governor',
+	        'Lieutenant Governor',
+	        'Attorney General',
+	        'Secretary of State',
+	        'Treasurer',
 	        'Auditor',
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
 	        'Agriculture Commissioner',
-	        'Superintendent of Public Instruction',
+	        'State School Superintendent',
 	        'Supreme Court',
 	        'Court of Appeals'
 	      ];
@@ -19989,32 +20235,32 @@ document.addEventListener('DOMContentLoaded', function() {
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
 	        if (contestType === 'us_senate') return 'US Senate';
-	        if (contestType === 'governor') return 'GA Governor';
-	        if (contestType === 'lieutenant_governor') return 'GA Lieutenant Governor';
-	        if (contestType === 'attorney_general') return 'GA Attorney General';
-	        if (contestType === 'secretary_of_state') return 'GA Secretary of State';
-	        if (contestType === 'treasurer') return 'GA Treasurer';
+	        if (contestType === 'governor') return 'Governor';
+	        if (contestType === 'lieutenant_governor') return 'Lieutenant Governor';
+	        if (contestType === 'attorney_general') return 'Attorney General';
+	        if (contestType === 'secretary_of_state') return 'Secretary of State';
+	        if (contestType === 'treasurer') return 'Treasurer';
 	        if (contestType === 'auditor') return 'Auditor';
 	        if (contestType === 'labor_commissioner') return 'Labor Commissioner';
 	        if (contestType === 'insurance_commissioner') return 'Insurance Commissioner';
 	        if (contestType === 'agriculture_commissioner') return 'Agriculture Commissioner';
-	        if (contestType === 'superintendent') return 'Superintendent of Public Instruction';
+	        if (contestType === 'superintendent') return 'State School Superintendent';
 	        return formatContestName(contestType, '');
 	      }
 
 	      const groupOrder = [
 	        'US President',
 	        'US Senate',
-	        'GA Governor',
-	        'GA Lieutenant Governor',
-	        'GA Attorney General',
-	        'GA Secretary of State',
-	        'GA Treasurer',
+	        'Governor',
+	        'Lieutenant Governor',
+	        'Attorney General',
+	        'Secretary of State',
+	        'Treasurer',
 	        'Auditor',
 	        'Labor Commissioner',
 	        'Insurance Commissioner',
 	        'Agriculture Commissioner',
-	        'Superintendent of Public Instruction'
+	        'State School Superintendent'
 	      ];
 
 	      const grouped = new Map(); // label -> Array<{contestType, year}>
@@ -20949,7 +21195,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function cvapDistrictPathFor(scope, linesYear) {
       const y = normalizeDistrictLinesYear(linesYear);
       const paths = cvapAggPaths();
-      if (scope === 'congressional') return y === 2026 ? (paths.cd119_2024 || paths.cd118_2022) : (y === 2024 ? paths.cd119_2024 : paths.cd118_2022);
+      if (scope === 'congressional') {
+        if (typeof congressionalNeutralMode !== 'undefined' && congressionalNeutralMode && paths.congressional_neutral) return paths.congressional_neutral;
+        return y === 2026 ? (paths.congressional_2026 || paths.cd119_2024 || paths.cd118_2022) : (y === 2024 ? paths.cd119_2024 : paths.cd118_2022);
+      }
       if (scope === 'state_house') return y === 2026 ? (paths.state_house_2024 || paths.state_house_2022) : (y === 2024 ? paths.state_house_2024 : paths.state_house_2022);
       if (scope === 'state_senate') return y === 2026 ? (paths.state_senate_2024 || paths.state_senate_2022) : (y === 2024 ? paths.state_senate_2024 : paths.state_senate_2022);
       return '';
@@ -20959,8 +21208,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const s = (scope || '').toString().trim();
       if (!cvapDistrictTotalsByScopeYear[s]) return;
       const y = String(normalizeDistrictLinesYear(linesYear));
-      if (cvapDistrictTotalsByScopeYear[s][y] && cvapDistrictTotalsByScopeYear[s][y].size) return;
-      const key = `${s}|${y}`;
+      const planTag = (s === 'congressional' && typeof congressionalNeutralMode !== 'undefined' && congressionalNeutralMode) ? 'neutral' : 'enacted';
+      const key = `${s}|${y}|${planTag}`;
+      if (cvapDistrictTotalsByScopeYear[s][y] && cvapDistrictTotalsByScopeYear[s][y].size && cvapDistrictDemographicsByPlan.has(key)) return;
       if (cvapDistrictTotalsLoadPromises.has(key)) return cvapDistrictTotalsLoadPromises.get(key);
       const path = cvapDistrictPathFor(s, Number(y));
       if (!path) return;
@@ -20969,13 +21219,25 @@ document.addEventListener('DOMContentLoaded', function() {
           const txt = await loadCSV(path);
           const rows = parseCSV(txt);
           const byDistrict = new Map();
+          const byDemographics = new Map();
           (rows || []).forEach(r => {
             const dKey = coerceDistrictKey(r?.district);
             const cvap = cvapTotalFromAggRow(r);
             if (!dKey || !Number.isFinite(cvap)) return;
             byDistrict.set(dKey, cvap);
+            const share = field => Number.isFinite(Number(r?.[field])) && cvap > 0 ? (Number(r[field]) / cvap) * 100 : null;
+            const demo = {
+              district: dKey, total_population: cvap,
+              white_vap_pct: share('CVAP_WHT24'), black_vap_pct: share('CVAP_BLA24'),
+              hispanic_vap_pct: share('CVAP_HSP24'), native_vap_pct: share('CVAP_AMI24'),
+              asian_vap_pct: share('CVAP_ASI24'), pacific_vap_pct: share('CVAP_NHP24'),
+              multiracial_vap_pct: share('CVAP_2OM24')
+            };
+            if (demo.white_vap_pct !== null) byDemographics.set(dKey, demo);
           });
           cvapDistrictTotalsByScopeYear[s][y] = byDistrict;
+          const planTag = (s === 'congressional' && typeof congressionalNeutralMode !== 'undefined' && congressionalNeutralMode) ? 'neutral' : 'enacted';
+          cvapDistrictDemographicsByPlan.set(`${s}|${y}|${planTag}`, byDemographics);
           try { if (lastPointerPoint) queueHoverRefresh(); } catch (_) {}
         } catch (err) {
           cvapDistrictTotalsByScopeYear[s][y] = null;
@@ -21037,25 +21299,26 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!demo) return '';
       const vap = numericOrZero(demo.vap_18plus);
       const countyNorm = normalizeCountyToken(countyNormRaw || demo.county || '');
-      const cvap = countyNorm ? getCvapCountyTotal(countyNorm) : null;
+      const cvapDirect = numericOrNull(demo.cvap_total);
+      const cvap = cvapDirect !== null ? cvapDirect : (countyNorm ? getCvapCountyTotal(countyNorm) : null);
       const metricValue = Number.isFinite(Number(cvap)) ? Number(cvap) : vap;
       const metricLabel = Number.isFinite(Number(cvap)) ? 'CVAP (18+):' : 'VAP (18+):';
       const races = buildRaceChipRowHTML(
-        demo.white_pop_pct,
-        demo.black_pop_pct,
-        demo.hispanic_pop_pct,
-        demo.native_pop_pct,
+        demo.white_cvap_pct ?? demo.white_pop_pct,
+        demo.black_cvap_pct ?? demo.black_pop_pct,
+        demo.hispanic_cvap_pct ?? demo.hispanic_pop_pct,
+        demo.native_cvap_pct ?? demo.native_pop_pct,
         {
-          asianPct: demo.asian_pop_pct,
-          pacificPct: demo.pacific_pop_pct,
-          multiracialPct: demo.multiracial_pop_pct
+          asianPct: demo.asian_cvap_pct ?? demo.asian_pop_pct,
+          pacificPct: demo.pacific_cvap_pct ?? demo.pacific_pop_pct,
+          multiracialPct: demo.multiracial_cvap_pct ?? demo.multiracial_pop_pct
         }
       );
       return `
         <div class="demo-hover-card">
           <div class="demo-hover-metric">${metricLabel} ${Math.round(metricValue).toLocaleString()}</div>
           ${races}
-          <div class="demo-hover-note">${Number.isFinite(Number(cvap)) ? 'CVAP totals from ACS special tabulation (2020–2024). ' : ''}Race/ethnicity reflects 2020 Census total population; the headline total here is VAP, not race-specific VAP.</div>
+          <div class="demo-hover-note">${numericOrNull(demo.white_cvap_pct) !== null ? 'Race/ethnicity and totals are CVAP estimates from the 2020–2024 ACS special tabulation.' : 'Race/ethnicity reflects total population; the adult total is shown separately.'}</div>
         </div>
       `;
     }
@@ -21724,16 +21987,23 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="dem">D +10</span>
             <span class="dem">D +40</span>
           </div>
-          <div class="legend-chip-row">
-            <span class="legend-chip">Annihilation 40+</span>
-            <span class="legend-chip">Dominant 30+</span>
-            <span class="legend-chip">Stronghold 20+</span>
-            <span class="legend-chip">Safe 10+</span>
-            <span class="legend-chip">Likely 5.5+</span>
-            <span class="legend-chip">Lean 1+</span>
-            <span class="legend-chip">Tilt 0.5+</span>
-            <span class="legend-chip">Tossup &lt;0.5</span>
-          </div>
+<div class="legend-tier-list" role="list">
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(40, 'R')};"></span><span class="legend-tier-label rep">Annihilation</span><span class="legend-tier-range">40+</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(30, 'R')};"></span><span class="legend-tier-label rep">Dominant</span><span class="legend-tier-range">30–39.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(20, 'R')};"></span><span class="legend-tier-label rep">Stronghold</span><span class="legend-tier-range">20–29.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(10, 'R')};"></span><span class="legend-tier-label rep">Safe</span><span class="legend-tier-range">10–19.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(5.5, 'R')};"></span><span class="legend-tier-label rep">Likely</span><span class="legend-tier-range">5.5–9.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(1, 'R')};"></span><span class="legend-tier-label rep">Lean</span><span class="legend-tier-range">1–5.49</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(0.5, 'R')};"></span><span class="legend-tier-label rep">Tilt</span><span class="legend-tier-range">0.5–0.99</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(0, 'R')};"></span><span class="legend-tier-label tie">Tossup</span><span class="legend-tier-range">&lt;0.5</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(0.5, 'D')};"></span><span class="legend-tier-label dem">Tilt</span><span class="legend-tier-range">0.5–0.99</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(1, 'D')};"></span><span class="legend-tier-label dem">Lean</span><span class="legend-tier-range">1–5.49</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(5.5, 'D')};"></span><span class="legend-tier-label dem">Likely</span><span class="legend-tier-range">5.5–9.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(10, 'D')};"></span><span class="legend-tier-label dem">Safe</span><span class="legend-tier-range">10–19.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(20, 'D')};"></span><span class="legend-tier-label dem">Stronghold</span><span class="legend-tier-range">20–29.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(30, 'D')};"></span><span class="legend-tier-label dem">Dominant</span><span class="legend-tier-range">30–39.9</span></div>
+                <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForMarginMode(40, 'D')};"></span><span class="legend-tier-label dem">Annihilation</span><span class="legend-tier-range">40+</span></div>
+              </div>
         </div>
       `;
     }
@@ -21741,10 +22011,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function buildWinnersLegendHTML() {
       return `
         ${buildColorblindLegendNote()}
-        <div class="legend-swatch-grid">
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForWinnerMode('D')};"></span><span>Democratic win</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForWinnerMode('R')};"></span><span>Republican win</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForWinnerMode('T')}; border: 1px solid rgba(15,23,42,0.18);"></span><span>Tie or no data</span></div>
+        <div class="legend-tier-list" role="list">
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForWinnerMode('D')};"></span><span class="legend-tier-label dem">Democratic win</span><span class="legend-tier-range">D leads</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForWinnerMode('R')};"></span><span class="legend-tier-label rep">Republican win</span><span class="legend-tier-range">R leads</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForWinnerMode('T')}; border: 1px solid rgba(15,23,42,0.18);"></span><span class="legend-tier-label tie">Tie or no data</span><span class="legend-tier-range">Even / missing</span></div>
         </div>
       `;
     }
@@ -21752,15 +22022,32 @@ document.addEventListener('DOMContentLoaded', function() {
     function buildFlipsLegendHTML() {
       return `
         ${buildColorblindLegendNote()}
-        <div class="legend-swatch-grid">
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForFlipMode('D')};"></span><span>Flip to Democratic</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForFlipMode('R')};"></span><span>Flip to Republican</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForFlipMode('T')}; border: 1px solid rgba(15,23,42,0.18);"></span><span>No flip or no prior</span></div>
+        <div class="legend-tier-list" role="list">
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForFlipMode('D')};"></span><span class="legend-tier-label dem">Flip to Democratic</span><span class="legend-tier-range">R → D</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForFlipMode('R')};"></span><span class="legend-tier-label rep">Flip to Republican</span><span class="legend-tier-range">D → R</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForFlipMode('T')}; border: 1px solid rgba(15,23,42,0.18);"></span><span class="legend-tier-label tie">No flip or no prior</span><span class="legend-tier-range">Unchanged / missing</span></div>
         </div>
       `;
     }
 
     function buildShiftLegendHTML() {
+      const tiers = [
+        { label: 'Extreme Democratic shift', range: '25+ pts', value: -25, party: 'dem' },
+        { label: 'Major Democratic shift', range: '20–24.9 pts', value: -20, party: 'dem' },
+        { label: 'Very strong Democratic shift', range: '15–19.9 pts', value: -15, party: 'dem' },
+        { label: 'Strong Democratic shift', range: '10–14.9 pts', value: -10, party: 'dem' },
+        { label: 'Clear Democratic shift', range: '5–9.9 pts', value: -5, party: 'dem' },
+        { label: 'Moderate Democratic shift', range: '1–4.9 pts', value: -1, party: 'dem' },
+        { label: 'Slight Democratic shift', range: '0.5–0.9 pts', value: -0.5, party: 'dem' },
+        { label: 'No notable shift', range: 'Under 0.5 pts', value: 0, party: 'tie' },
+        { label: 'Slight Republican shift', range: '0.5–0.9 pts', value: 0.5, party: 'rep' },
+        { label: 'Moderate Republican shift', range: '1–4.9 pts', value: 1, party: 'rep' },
+        { label: 'Clear Republican shift', range: '5–9.9 pts', value: 5, party: 'rep' },
+        { label: 'Strong Republican shift', range: '10–14.9 pts', value: 10, party: 'rep' },
+        { label: 'Very strong Republican shift', range: '15–19.9 pts', value: 15, party: 'rep' },
+        { label: 'Major Republican shift', range: '20–24.9 pts', value: 20, party: 'rep' },
+        { label: 'Extreme Republican shift', range: '25+ pts', value: 25, party: 'rep' }
+      ];
       const colors = [
         colorForShiftMode(-25),
         colorForShiftMode(-20),
@@ -21787,22 +22074,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <span>No change</span>
             <span class="rep">Toward Republicans</span>
           </div>
-          <div class="legend-axis shift detailed">
-            <span class="dem">D +25</span>
-            <span class="dem">20</span>
-            <span class="dem">15</span>
-            <span class="dem">D +10</span>
-            <span class="dem">D +5</span>
-            <span class="dem">D +1</span>
-            <span class="dem">0.5</span>
-            <span>0</span>
-            <span class="rep">0.5</span>
-            <span class="rep">R +1</span>
-            <span class="rep">R +5</span>
-            <span class="rep">R +10</span>
-            <span class="rep">15</span>
-            <span class="rep">20</span>
-            <span class="rep">R +25</span>
+          <div class="legend-tier-list" role="list">
+            ${tiers.map(t => `
+              <div class="legend-tier-row" role="listitem">
+                <span class="legend-color" style="background: ${colorForShiftMode(t.value)};${t.party === 'tie' ? ' border: 1px solid rgba(15,23,42,0.18);' : ''}"></span>
+                <span class="legend-tier-label ${t.party}">${t.label}</span>
+                <span class="legend-tier-range">${t.range}</span>
+              </div>
+            `).join('')}
           </div>
         </div>
       `;
@@ -21810,23 +22089,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function buildDemographicsLegendHTML() {
       return `
-        <div class="legend-swatch-grid">
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(60, 20, 20)};"></span><span>White majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(40, 30, 30)};"></span><span>White plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 60, 20)};"></span><span>Black majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(30, 40, 30)};"></span><span>Black plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 20, 60)};"></span><span>Hispanic majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(30, 30, 40)};"></span><span>Hispanic plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 15, 10, 60)};"></span><span>Native majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 15, 15, 40)};"></span><span>Native plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 15, 10, 10, 60)};"></span><span>Asian majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 15, 10, 10, 40)};"></span><span>Asian plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(10, 10, 10, 5, 5, 60, 0)};"></span><span>Pacific majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 10, 10, 5, 5, 40, 15)};"></span><span>Pacific plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(10, 10, 10, 5, 5, 0, 60)};"></span><span>Multiracial majority</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 10, 10, 5, 5, 15, 40)};"></span><span>Multiracial plurality</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(35, 35, 30)};"></span><span>Near tie / mixed</span></div>
-          <div class="legend-swatch-card"><span class="legend-color" style="background: ${colorForDemographicsMode(null, null, null, null, null, null, null)};"></span><span>No demographic data</span></div>
+        <div class="legend-tier-list" role="list">
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(60, 20, 20)};"></span><span class="legend-tier-label">White majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(52, 41, 7)};"></span><span class="legend-tier-label">Narrow White majority · strong Black second</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(41, 52, 7)};"></span><span class="legend-tier-label">Narrow Black majority · strong White second</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 60, 20)};"></span><span class="legend-tier-label">Black majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(30, 40, 30)};"></span><span class="legend-tier-label">Majority-minority · Black plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 20, 60)};"></span><span class="legend-tier-label">Hispanic majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(30, 30, 40)};"></span><span class="legend-tier-label">Majority-minority · Hispanic plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 15, 10, 60)};"></span><span class="legend-tier-label">Native majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 15, 15, 40)};"></span><span class="legend-tier-label">Majority-minority · Native plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 15, 10, 10, 60)};"></span><span class="legend-tier-label">Asian majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(20, 15, 10, 10, 40)};"></span><span class="legend-tier-label">Majority-minority · Asian plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(10, 10, 10, 5, 5, 60, 0)};"></span><span class="legend-tier-label">Pacific majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 10, 10, 5, 5, 40, 15)};"></span><span class="legend-tier-label">Majority-minority · Pacific plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(10, 10, 10, 5, 5, 0, 60)};"></span><span class="legend-tier-label">Multiracial majority</span><span class="legend-tier-range">≥50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(15, 10, 10, 5, 5, 15, 40)};"></span><span class="legend-tier-label">Majority-minority · Multiracial plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(40, 32, 14, 1, 12)};"></span><span class="legend-tier-label">Majority-minority · White plurality</span><span class="legend-tier-range">Largest, <50%</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(35, 35, 30)};"></span><span class="legend-tier-label">Near tie / mixed (gold)</span><span class="legend-tier-range">Mixed</span></div>
+          <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${colorForDemographicsMode(null, null, null, null, null, null, null)};"></span><span class="legend-tier-label">No demographic data</span><span class="legend-tier-range">Unavailable</span></div>
         </div>
       `;
     }
@@ -21835,36 +22116,63 @@ document.addEventListener('DOMContentLoaded', function() {
       const useAbs = String(populationChangeMetric || 'pct') === 'abs';
       const colors = useAbs
         ? [
+            colorForPopulationChangeAbsMode(-180000),
+            colorForPopulationChangeAbsMode(-120000),
+            colorForPopulationChangeAbsMode(-60000),
             colorForPopulationChangeAbsMode(-30000),
             colorForPopulationChangeAbsMode(-15000),
             colorForPopulationChangeAbsMode(-4000),
             colorForPopulationChangeAbsMode(0),
             colorForPopulationChangeAbsMode(4000),
             colorForPopulationChangeAbsMode(15000),
-            colorForPopulationChangeAbsMode(30000)
+            colorForPopulationChangeAbsMode(30000),
+            colorForPopulationChangeAbsMode(60000),
+            colorForPopulationChangeAbsMode(120000),
+            colorForPopulationChangeAbsMode(180000)
           ]
         : [
+            colorForPopulationChangeMode(-32),
+            colorForPopulationChangeMode(-22),
+            colorForPopulationChangeMode(-12),
             colorForPopulationChangeMode(-7),
             colorForPopulationChangeMode(-3),
             colorForPopulationChangeMode(-1),
             colorForPopulationChangeMode(0),
             colorForPopulationChangeMode(1),
             colorForPopulationChangeMode(3),
-            colorForPopulationChangeMode(7)
+            colorForPopulationChangeMode(7),
+            colorForPopulationChangeMode(12),
+            colorForPopulationChangeMode(22),
+            colorForPopulationChangeMode(32)
           ];
       return `
         <div class="legend-scale-shell">
-          ${buildLegendSpectrum(colors, 'shift')}
-          <div class="legend-scale-caption">
+          ${buildLegendSpectrum(colors, 'population-change')}
+          <div class="legend-scale-caption population-change">
             <span class="dem">Decline</span>
             <span>Near flat</span>
             <span class="rep">Growth</span>
+            <span class="rep">${useAbs ? 'Large gains' : 'Explosive growth'}</span>
           </div>
-          <div class="legend-axis shift">
+          <div class="legend-axis population-change">
             ${useAbs
-              ? '<span class="dem">-25k+</span><span class="dem">-10k</span><span class="dem">-2.5k</span><span>0</span><span>+2.5k</span><span class="rep">+10k</span><span class="rep">+25k+</span>'
-              : '<span class="dem">-5%+</span><span class="dem">-2%</span><span class="dem">-1%</span><span>0</span><span>+1%</span><span class="rep">+3%</span><span class="rep">+5%+</span>'
+              ? '<span class="dem">-150k+</span><span class="dem">-100k</span><span class="dem">-50k</span><span class="dem">-25k</span><span class="dem">-10k</span><span class="dem">-2.5k</span><span>Flat</span><span class="rep">+2.5k</span><span class="rep">+10k</span><span class="rep">+25k</span><span class="rep">+50k</span><span class="rep">+100k</span><span class="rep">+150k+</span>'
+              : '<span class="dem">-30%+</span><span class="dem">-20%</span><span class="dem">-10%</span><span class="dem">-5%</span><span class="dem">-2%</span><span class="dem">-0.5%</span><span>Flat</span><span class="rep">+1%</span><span class="rep">+2%</span><span class="rep">+5%</span><span class="rep">+10%</span><span class="rep">+20%</span><span class="rep">+30%+</span>'
             }
+          </div>
+          <div class="legend-tier-list population-tiers" role="list">
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-180000) : colorForPopulationChangeMode(-32)};"></span><span class="legend-tier-label">${useAbs ? 'Extreme loss' : 'Extreme decline'}</span><span class="legend-tier-range">${useAbs ? '≤−150k' : '≤−30%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-120000) : colorForPopulationChangeMode(-22)};"></span><span class="legend-tier-label">${useAbs ? 'Major loss' : 'Major decline'}</span><span class="legend-tier-range">${useAbs ? '−149.9k to −100k' : '−29.9 to −20%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-60000) : colorForPopulationChangeMode(-12)};"></span><span class="legend-tier-label">${useAbs ? 'Severe loss' : 'Severe decline'}</span><span class="legend-tier-range">${useAbs ? '−99.9k to −50k' : '−19.9 to −10%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-30000) : colorForPopulationChangeMode(-7)};"></span><span class="legend-tier-label">${useAbs ? 'Sharp loss' : 'Sharp decline'}</span><span class="legend-tier-range">${useAbs ? '−49.9k to −25k' : '−9.9 to −5%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-15000) : colorForPopulationChangeMode(-3)};"></span><span class="legend-tier-label">${useAbs ? 'Moderate loss' : 'Moderate decline'}</span><span class="legend-tier-range">${useAbs ? '−24.9k to −10k' : '−4.9 to −2%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(-4000) : colorForPopulationChangeMode(-1)};"></span><span class="legend-tier-label">${useAbs ? 'Mild loss' : 'Mild decline'}</span><span class="legend-tier-range">${useAbs ? '−9.9k to −2.5k' : '−1.9 to −0.5%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(4000) : colorForPopulationChangeMode(1)};"></span><span class="legend-tier-label">${useAbs ? 'Modest gain' : 'Modest growth'}</span><span class="legend-tier-range">${useAbs ? '+2.5k–9.9k' : '+1–1.9%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(15000) : colorForPopulationChangeMode(3)};"></span><span class="legend-tier-label">${useAbs ? 'Steady gain' : 'Steady growth'}</span><span class="legend-tier-range">${useAbs ? '+10k–24.9k' : '+2–4.9%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(30000) : colorForPopulationChangeMode(7)};"></span><span class="legend-tier-label">${useAbs ? 'Substantial gain' : 'Strong growth'}</span><span class="legend-tier-range">${useAbs ? '+25k–49.9k' : '+5–9.9%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(60000) : colorForPopulationChangeMode(12)};"></span><span class="legend-tier-label">${useAbs ? 'Large gain' : 'Rapid growth'}</span><span class="legend-tier-range">${useAbs ? '+50k–99.9k' : '+10–19.9%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(120000) : colorForPopulationChangeMode(22)};"></span><span class="legend-tier-label">${useAbs ? 'Major gain' : 'Boom growth'}</span><span class="legend-tier-range">${useAbs ? '+100k–149.9k' : '+20–29.9%'}</span></div>
+            <div class="legend-tier-row" role="listitem"><span class="legend-color" style="background: ${useAbs ? colorForPopulationChangeAbsMode(180000) : colorForPopulationChangeMode(32)};"></span><span class="legend-tier-label">${useAbs ? 'Extreme gain' : 'Explosive growth'}</span><span class="legend-tier-range">${useAbs ? '+150k+' : '≥30%'}</span></div>
           </div>
         </div>
       `;
@@ -26635,7 +26943,7 @@ document.addEventListener('DOMContentLoaded', function() {
         title: `${countyDisplay} County`,
         subtitle: String(currentVizMode || '') === 'population_change'
           ? 'Population change'
-          : 'County',
+          : (String(currentVizMode || '') === 'demographics' && demoLine ? 'Demographics' : 'County'),
         demName: demCandidate,
         repName: repCandidate,
         otherName: 'Other',
@@ -26654,12 +26962,15 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSignedMarginPct: signedMarginPct,
         flipYearLabel: vizPrevCache?.prevYear || null,
         districtType: 'County',
-        showWinnerLine: currentVizMode !== 'population_change',
+        showWinnerLine: currentVizMode !== 'population_change' && !(currentVizMode === 'demographics' && demoLine),
         shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
         shiftToneClass: shiftClass,
         shiftYearLabel: (vizShiftCache?.prevYear && vizShiftCache?.year) ? `${vizShiftCache.prevYear}→${vizShiftCache.year}` : '',
         showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!vizShiftCache?.prevYear,
-        popChangeCardHtml
+        popChangeCardHtml,
+        leadingContent: currentVizMode === 'demographics' && demoLine
+          ? `<div class="vhr-demographics">${demoLine}<div class="vhr-demographics-divider"></div></div>`
+          : ''
       });
       const detailLines = `
         ${finalInsight ? `<div class="tooltip-insight">${escapeHtml(finalInsight)}</div>` : ''}
@@ -26835,9 +27146,15 @@ document.addEventListener('DOMContentLoaded', function() {
           shiftClass = Math.abs(shiftDelta) < 0.01 ? 'tie' : (shiftDelta > 0 ? 'rep' : 'dem');
         }
       }
+      const precinctDemo = currentVizMode === 'demographics'
+        ? getPrecinctDemographicsRow(precinctNorm, countyName, precId)
+        : null;
+      const precinctDemoHTML = precinctDemo
+        ? buildPrecinctDemographicsHoverHTML(precinctDemo, precinctNorm)
+        : '';
       const inner = buildVotehubResultsTooltip({
         title,
-        subtitle: 'Precinct',
+        subtitle: currentVizMode === 'demographics' && precinctDemoHTML ? 'Demographics' : 'Precinct',
         demName: demCandidate,
         repName: repCandidate,
         otherName: 'Other',
@@ -26853,11 +27170,14 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSignedMarginPct: curSigned,
         flipYearLabel: vizPrevCache?.prevYear || null,
         districtType: 'Precinct',
-        showWinnerLine: true,
+        showWinnerLine: !(currentVizMode === 'demographics' && precinctDemoHTML),
         shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
         shiftToneClass: shiftClass,
         shiftYearLabel: (vizShiftCache?.prevYear && vizShiftCache?.year) ? `${vizShiftCache.prevYear}→${vizShiftCache.year}` : '',
-        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!vizShiftCache?.prevYear
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!vizShiftCache?.prevYear,
+        leadingContent: precinctDemoHTML
+          ? `<div class="vhr-demographics">${precinctDemoHTML}<div class="vhr-demographics-divider"></div></div>`
+          : ''
       });
       const pinnedShell = !!tooltipPinned;
       const copyText = (precinctNorm || title || '').toString().trim();
@@ -27142,7 +27462,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       const inner = buildVotehubResultsTooltip({
         title: districtTitle,
-        subtitle: subtitleByScope,
+        subtitle: currentVizMode === 'demographics' && _demoHTML ? 'Demographics' : subtitleByScope,
         demName: demCandidate,
         repName: repCandidate,
         otherName: 'Other',
@@ -27158,11 +27478,14 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSignedMarginPct: signedMarginPct,
         flipYearLabel: prevYearForFlip,
         districtType: subtitleByScope,
-        showWinnerLine: true,
+        showWinnerLine: !(currentVizMode === 'demographics' && _demoHTML),
         shiftLineText: Number.isFinite(shiftDelta) ? formatShiftLabel(shiftDelta) : '',
         shiftToneClass: shiftClass,
         shiftYearLabel: (prevYearForFlip && year) ? `${prevYearForFlip}→${year}` : '',
-        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!prevYearForFlip
+        showShiftLine: currentVizMode === 'shift' && Number.isFinite(shiftDelta) && !!prevYearForFlip,
+        leadingContent: currentVizMode === 'demographics' && _demoHTML
+          ? `<div class="vhr-demographics">${_demoHTML}<div class="vhr-demographics-divider"></div></div>`
+          : ''
       });
       const copyText = `${districtLabel} ${districtNum} (Lines ${currentDistrictLinesYear})`;
       showHoverTooltip(
@@ -28320,8 +28643,10 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         { extraClass: 'sidebar-demo-race-row' }
       );
-      demoHtml += `<p class="sidebar-breakdown"><b>VAP (18+):</b> ${escapeHtml(Number(demo.vap_18plus || 0).toLocaleString())}</p>`;
-      demoHtml += `<p class="sidebar-margin-details" style="margin-top:6px;">Race/ethnicity shown is 2020 Census total population; the total above is VAP (18+).</p>`;
+      const countyCvap = numericOrNull(demo.cvap_total) ?? getCvapCountyTotal(norm);
+      const hasCountyCvap = numericOrNull(countyCvap) !== null && Number(countyCvap) > 0;
+      demoHtml += `<p class="sidebar-breakdown"><b>${hasCountyCvap ? 'CVAP' : 'VAP'} (18+):</b> ${escapeHtml(Number(hasCountyCvap ? countyCvap : (demo.vap_18plus || 0)).toLocaleString())}</p>`;
+      demoHtml += `<p class="sidebar-margin-details" style="margin-top:6px;">${numericOrNull(demo.white_cvap_pct) !== null ? 'Citizen voting-age population by race/ethnicity, 2020–2024 ACS CVAP.' : 'Race/ethnicity reflects total population; the adult total is shown separately.'}</p>`;
       if (demoRaceChips) demoHtml += demoRaceChips;
     }
   } catch (_) {}
@@ -29074,7 +29399,8 @@ document.addEventListener('DOMContentLoaded', function() {
       showShiftLine,
       winnerLineToneClass,
       winnerRawLeadToneClass,
-      popChangeCardHtml
+      popChangeCardHtml,
+      leadingContent
     } = {}) {
       const dVotes = Number(demVotes || 0);
       const rVotes = Number(repVotes || 0);
@@ -29151,6 +29477,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="vhr-title">${escapeHtml((title || '').toString())}</div>
           ${(subtitle || districtType) ? `<div class="vhr-subtitle">${escapeHtml(String(subtitle || districtType || ''))}</div>` : ''}
           ${String(popChangeCardHtml || '').trim()}
+          ${String(leadingContent || '')}
           ${winnerLine}
           ${flipLine}
           ${shiftLine}
@@ -31988,6 +32315,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getDistrictDemographics(scope, districtNum) {
       try {
+        const y = String(normalizeDistrictLinesYear(currentDistrictLinesYear));
+        const planTag = (scope === 'congressional' && typeof congressionalNeutralMode !== 'undefined' && congressionalNeutralMode) ? 'neutral' : 'enacted';
+        const liveRow = cvapDistrictDemographicsByPlan.get(`${scope}|${y}|${planTag}`)?.get(coerceDistrictKey(districtNum));
+        if (liveRow) return liveRow;
         let source = null;
         if (scope === 'congressional') source = districtsInfo;
         else if (scope === 'state_house') source = stateHouseInfo;
@@ -32005,15 +32336,25 @@ document.addEventListener('DOMContentLoaded', function() {
         ? getCvapDistrictTotal(scope, districtNum, currentDistrictLinesYear)
         : null;
       const metricValue = Number.isFinite(Number(cvap)) ? Number(cvap) : Number(demoRow.total_population || 0);
-      const metricLabel = Number.isFinite(Number(cvap)) ? 'CVAP:' : 'Pop:';
-      const extras = buildDistrictExtraRaceInlineHTML(demoRow, 30);
-      return `<div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.15);font-size:12px;color:#cbd5e1;">` +
-        `<span style="font-weight:700;color:#e2e8f0;">${metricLabel}</span> ${Math.round(metricValue).toLocaleString()}` +
-        ` &nbsp;<span style="font-weight:700;color:#e2e8f0;">W:</span>${demoRow.white_vap_pct}%` +
-        ` <span style="font-weight:700;color:#e2e8f0;">B:</span>${demoRow.black_vap_pct}%` +
-        ` <span style="font-weight:700;color:#e2e8f0;">H:</span>${demoRow.hispanic_vap_pct}%` +
-        extras +
-        `</div>`;
+      const hasCvap = Number.isFinite(Number(cvap));
+      const races = buildRaceChipRowHTML(
+        demoRow.white_vap_pct,
+        demoRow.black_vap_pct,
+        demoRow.hispanic_vap_pct,
+        demoRow.native_vap_pct,
+        {
+          asianPct: demoRow.asian_vap_pct,
+          pacificPct: demoRow.pacific_vap_pct,
+          multiracialPct: demoRow.multiracial_vap_pct
+        }
+      );
+      return `
+        <div class="demo-hover-card">
+          <div class="demo-hover-metric">${hasCvap ? 'CVAP' : 'Population'}: ${Math.round(metricValue).toLocaleString()}</div>
+          ${races}
+          <div class="demo-hover-note">${hasCvap ? 'CVAP total; race/ethnicity shares reflect district VAP.' : 'Race/ethnicity shares reflect district VAP.'}</div>
+        </div>
+      `;
     }
 
     function getQuickDistrictInfo(districtNum, type) {
@@ -32180,15 +32521,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Optional descriptive district labels (manual overrides).
-      try {
-        districtDescriptions = await loadJSON(CONFIG.paths.district_descriptions);
-      } catch (_) {
-        districtDescriptions = null;
+      if (CONFIG.paths.district_descriptions) {
+        try {
+          districtDescriptions = await loadJSON(CONFIG.paths.district_descriptions);
+        } catch (_) {
+          districtDescriptions = null;
+        }
       }
 
       // Optional county demographics (2020 Census total-pop shares + repo VAP totals) for sidebar/tooltips.
       try {
-        countyDemographics = await loadJSON(CONFIG.paths.county_demographics);
+          countyDemographics = addCountyDemographicAliases(await loadJSON(CONFIG.paths.county_demographics));
+          if (currentVizMode === 'demographics' && currentView === 'counties') {
+            applyCountyDemographicsModeToCounties();
+          }
       } catch (err) {
         countyDemographics = null;
         console.warn('County demographics not loaded:', err?.message || err);
@@ -32208,16 +32554,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Optional precinct demographics (VAP by race from block aggregation).
-      try {
-        const precinctDemographicsCSV = await loadCSV(CONFIG.paths.precinct_demographics);
-        const rows = parseCSV(precinctDemographicsCSV);
-        const idx = buildPrecinctDemographicsIndexes(rows);
-        precinctDemographicsByNorm = idx.byNorm;
-        precinctDemographicsByCountyCode = idx.byCountyCode;
-      } catch (err) {
-        precinctDemographicsByNorm = null;
-        precinctDemographicsByCountyCode = null;
-        console.warn('Precinct demographics not loaded:', err?.message || err);
+      if (CONFIG.paths.precinct_demographics) {
+        try {
+          const precinctDemographicsCSV = await loadCSV(CONFIG.paths.precinct_demographics);
+          const rows = parseCSV(precinctDemographicsCSV);
+          const idx = buildPrecinctDemographicsIndexes(rows);
+          precinctDemographicsByNorm = idx.byNorm;
+          precinctDemographicsByCountyCode = idx.byCountyCode;
+        } catch (err) {
+          precinctDemographicsByNorm = null;
+          precinctDemographicsByCountyCode = null;
+          console.warn('Precinct demographics not loaded:', err?.message || err);
+        }
       }
 
       // Optional: preload RDH CVAP aggregates used for hover totals (non-blocking).
@@ -32564,25 +32912,37 @@ document.addEventListener('DOMContentLoaded', function() {
     function colorForPopulationChangeMode(changePct) {
       const v = Number(changePct);
       if (!Number.isFinite(v)) return '#e2e8f0';
+      if (v <= -30) return '#24150d';
+      if (v <= -20) return '#321e12';
+      if (v <= -10) return '#3f2818';
       if (v <= -5) return '#5a3b1f';
       if (v <= -2) return '#8c613c';
       if (v <= -0.5) return '#b08968';
       if (v < 1) return '#f8fafc';
       if (v < 2) return '#a9d6a5';
       if (v < 5) return '#52b788';
-      return '#1b7f4a';
+      if (v < 10) return '#1b7f4a';
+      if (v < 20) return '#146b42';
+      if (v < 30) return '#075c37';
+      return '#043b27';
     }
 
     function colorForPopulationChangeAbsMode(changeAbs) {
       const v = Number(changeAbs);
       if (!Number.isFinite(v)) return '#e2e8f0';
+      if (v <= -150000) return '#24150d';
+      if (v <= -100000) return '#321e12';
+      if (v <= -50000) return '#3f2818';
       if (v <= -25000) return '#5a3b1f';
       if (v <= -10000) return '#8c613c';
       if (v <= -2500) return '#b08968';
       if (v < 2500) return '#f8fafc';
       if (v < 10000) return '#a9d6a5';
       if (v < 25000) return '#52b788';
-      return '#1b7f4a';
+      if (v < 50000) return '#1b7f4a';
+      if (v < 100000) return '#146b42';
+      if (v < 150000) return '#075c37';
+      return '#043b27';
     }
 
     function classifyDemographicDominance(whitePct, blackPct, hispanicPct, nativePct = null, asianPct = null, pacificPct = null, multiracialPct = null) {
@@ -32604,13 +32964,34 @@ document.addEventListener('DOMContentLoaded', function() {
       if (second && Math.abs(Number(top.value) - Number(second.value)) < 0.15) {
         return { key: 'mixed', pct: Number(top.value), majority: false };
       }
+      if (second && Number(top.value) >= 50 && Number(top.value) < 55 && Number(second.value) >= 35) {
+        return {
+          key: 'narrow_majority',
+          pct: Number(top.value),
+          majority: true,
+          primary: top.key,
+          secondary: second.key
+        };
+      }
+      const white = entries.find(entry => entry.key === 'white');
+      if (top.key === 'white' && white && Number(white.value) < 50) {
+        return { key: 'majority_minority', pct: 100 - Number(white.value), majority: true };
+      }
       return { key: top.key, pct: Number(top.value), majority: Number(top.value) >= 50 };
     }
 
     function colorForDemographicsMode(whitePct, blackPct, hispanicPct, nativePct = null, asianPct = null, pacificPct = null, multiracialPct = null) {
       const dom = classifyDemographicDominance(whitePct, blackPct, hispanicPct, nativePct, asianPct, pacificPct, multiracialPct);
       const cb = isColorblindModeActive();
+      const narrowMajorityColor = highContrast => {
+        const pair = [dom.primary, dom.secondary].filter(Boolean).join('_');
+        const palette = highContrast
+          ? { white_black: '#4b587c', black_white: '#294a87', white_hispanic: '#8f5e4b', hispanic_white: '#9f3f26', white_asian: '#426b60', asian_white: '#236447', white_native: '#665477', native_white: '#5f287f', white_pacific: '#3d7080', pacific_white: '#17677a', white_multiracial: '#7d4d65', multiracial_white: '#85254f' }
+          : { white_black: '#6677a8', black_white: '#4169a1', white_hispanic: '#b7795b', hispanic_white: '#c65f3c', white_asian: '#4f8b78', asian_white: '#2f855a', white_native: '#8064a2', native_white: '#7e3fb2', white_pacific: '#4f92a3', pacific_white: '#23849a', white_multiracial: '#a05a7a', multiracial_white: '#b43d73' };
+        return palette[pair] || (highContrast ? '#4b5563' : '#7c8797');
+      };
       if (demographicsHighContrastEnabled) {
+        if (dom.key === 'narrow_majority') return narrowMajorityColor(true);
         if (dom.key === 'white') return dom.majority ? '#111827' : '#64748b';
         if (dom.key === 'black') return dom.majority ? '#1e40af' : '#60a5fa';
         if (dom.key === 'hispanic') return dom.majority ? (cb ? '#b45309' : '#9a3412') : (cb ? '#fbbf24' : '#fb923c');
@@ -32618,9 +32999,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dom.key === 'asian') return dom.majority ? '#166534' : '#4ade80';
         if (dom.key === 'pacific') return dom.majority ? '#155e75' : '#22d3ee';
         if (dom.key === 'multiracial') return dom.majority ? '#9d174d' : '#f472b6';
-        if (dom.key === 'mixed') return '#065f46';
+        if (dom.key === 'majority_minority') return '#075985';
+        if (dom.key === 'mixed') return '#854d0e';
         return '#475569';
       }
+      if (dom.key === 'narrow_majority') return narrowMajorityColor(false);
       if (dom.key === 'white') return dom.majority ? '#334155' : '#94a3b8';
       if (dom.key === 'black') return dom.majority ? '#1d4ed8' : '#93c5fd';
       if (dom.key === 'hispanic') return dom.majority ? '#c2410c' : '#fdba74';
@@ -32628,7 +33011,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (dom.key === 'asian') return dom.majority ? '#15803d' : '#86efac';
       if (dom.key === 'pacific') return dom.majority ? '#0e7490' : '#67e8f9';
       if (dom.key === 'multiracial') return dom.majority ? '#be185d' : '#f9a8d4';
-      if (dom.key === 'mixed') return '#0f766e';
+      if (dom.key === 'majority_minority') return '#0891b2';
+      if (dom.key === 'mixed') return '#a16207';
       return '#64748b';
     }
 
