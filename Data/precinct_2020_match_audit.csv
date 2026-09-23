@@ -10,7 +10,7 @@ COLUMBIA,040,EUBANK/BLANCHARD CTR,Eubank-Blanchard Center,name
 COLUMBIA,109,STEVENS CREEK CHURCH,Stevens Creek Church,name
 COLUMBIA,111,LAKESIDE MIDDLE,Lakeside Middle,name
 COLUMBIA,136,BLUERIDGE ELEMENTARY,Blue Ridge Elementary,name
-COLUMBIA,137,CHRIST THE KING CH,,unmatched
+COLUMBIA,137,CHRIST THE KING CH,Christ The King Luth Church,reviewed_alias
 COLUMBIA,100,AUGUSTA CHRISTIAN,Augusta Christian,name
 COLUMBIA,105,SAVANNAH RAPIDS PAVILION,Savannah Rapids Pavilion,name
 COLUMBIA,108,GENESIS CHURCH,Genesis Church,name
@@ -26,13 +26,13 @@ COLUMBIA,026,PHILADELPHIA CHURCH,Philadelphia Church,name
 COLUMBIA,010,KIOKEE BAPT CHURCH,Kiokee Baptist Church,unique_name_similarity
 COLUMBIA,033,GROVETOWN DEPT OF PUBLIC SAFETY STATION #2,Grovetown Public Safety Station 2,unique_name_similarity
 COLUMBIA,030,LIBERTY PARK - GROVETOWN,Liberty Park-Grovetown,name
-COLUMBIA,031,GROVETOWN METHODIST,,unmatched
+COLUMBIA,031,GROVETOWN METHODIST,Grovetown Methodist Church,reviewed_alias
 COLUMBIA,034,GROVE FIRST BAPTIST CHURCH,Grove First Baptist Church,name
 COLUMBIA,018,NEW LIFE CHURCH,New Life Church,name
 COLUMBIA,062,PARKWAY BAPTIST CHURCH,Parkway Baptist Church,name
 COLUMBIA,017,PATRIOTS PARK,Patriots Park,name
 COLUMBIA,016,WOODLAWN BAPT CHURCH,Woodlawn Baptist Church,unique_name_similarity
-COLUMBIA,015,LEWIS METHODIST,,unmatched
+COLUMBIA,015,LEWIS METHODIST,Lewis Methodist Church,reviewed_alias
 COLUMBIA,025,BESSIE THOMAS CENTER,Bessie Thomas Center,name
 COLUMBIA,024,SECOND MOUNT MORIAH BAPTIST CHURCH,Second Mt Moriah Baptist Church,name
 COLUMBIA,022,HARLEM SENIOR CENTER,Harlem Senior Center,name
@@ -119,8 +119,8 @@ BANKS,0011,POPLAR SPRINGS,Poplar Springs,name
 BANKS,0007,GOLDEN HILL,Golden Hill,name
 BANKS,0002,BALDWIN,Baldwin,name
 BANKS,0003,BERLIN,Berlin,name
-MORGAN,02,2. EAST MORGAN,,unmatched
-MORGAN,06,6. WEST MORGAN,,unmatched
+MORGAN,02,2. EAST MORGAN,East Morgan,reviewed_alias
+MORGAN,06,6. WEST MORGAN,West Morgan,reviewed_alias
 MORGAN,07,7. NORTH MORGAN,North Morgan,unique_name_similarity
 MORGAN,04,4. CENTRAL MORGAN,Central Morgan,unique_name_similarity
 MORGAN,03,3. BETH/SPRINGFIELD,Beth/Springfield,unique_name_similarity
@@ -1179,7 +1179,7 @@ PAULDING,0011C,DIANNE WRIGHT INNOVATION CENTER,D Wright Innovation Ctr,unique_na
 PAULDING,0001B,BURNT HICKORY PARK,Burnt Hickory Park,name
 PAULDING,0005C,PAULDING SENIOR CENTER,Paulding Sr Center,unique_name_similarity
 PAULDING,0010B,POPLAR SPRINGS BAPTIST CHURCH,Poplar Sprgs Bapt Church,unique_name_similarity
-PAULDING,0012C,TAYLOR FARM PARK MEETING ROOM,,unmatched
+PAULDING,0012C,TAYLOR FARM PARK MEETING ROOM,Taylor Farm Park,reviewed_alias
 PAULDING,0006B,LEGACY BAPTIST CHURCH,Legacy Bapt Church,unique_name_similarity
 PAULDING,0009B,THE EVENTS PLACE,Events Place,unique_name_similarity
 PAULDING,0015C,MULBERRY ROCK PARK,Mulberry Rock Park,name
@@ -1188,9 +1188,9 @@ PAULDING,0017C,PAULDING COUNTY AIRPORT,Paulding County Airport,name
 PAULDING,0007B,WATSON GOVT COMPLEX,Watson Govt Cmplx,unique_name_similarity
 PAULDING,0013B,NEBO ELEMENTARY SCHOOL,Nebo Elem School,name
 PAULDING,0014B,WHITE OAK PARK,White Oak Park,name
-PAULDING,0003C,SHELTON ELEMENTARY SCHOOL,,unmatched
+PAULDING,0003C,SHELTON ELEMENTARY SCHOOL,Shelton Elementary,reviewed_alias
 PAULDING,0018C,PICKETTS MILL BAPTIST CHURCH,Picketts Mill Baptist Church,name
-PAULDING,0004C,RUSSOM ELEMENTARY SCHOOL,,unmatched
+PAULDING,0004C,RUSSOM ELEMENTARY SCHOOL,Russom Elementary,reviewed_alias
 PAULDING,0002C,CROSSROADS LIBRARY,Crossroads Library,name
 PAULDING,0019C,DOBBINS MIDDLE SCHOOL,Dobbins Middle School,name
 PAULDING,0008C,WEST RIDGE CHURCH,West Ridge Church,name
@@ -1312,7 +1312,7 @@ CHATTOOGA,961,SEMINOLE,Seminole,name
 CHATTOOGA,1083,COLDWATER,Coldwater,name
 CHATTOOGA,925,SUMMERVILLE,Summerville,name
 CHATTOOGA,968,ALPINE,Alpine,name
-CHATTOOGA,C-968X927,CLOUDLAND-TELOGA,,unmatched
+CHATTOOGA,C-968X927,CLOUDLAND-TELOGA,Cloudland; Teloga,reviewed_split_alias
 CHATTOOGA,1484,LYERLY,Lyerly,name
 CHATTOOGA,1382,HAYWOOD,Haywood,name
 CHATTOOGA,962,SUBLIGNA,Subligna,name
@@ -2057,21 +2057,21 @@ TREUTLEN,ANNEX,ANNEX,Annex,name
 TREUTLEN,SOPE,SOPERTON,Soperton,name
 CANDLER,CAND,JACK STRICKLAND COMMUNITY CENTER,Jack Strickland Comm Center,name
 DODGE,CLARK,CLARK,Clark,name
-DODGE,RAWLI,RAWLI,,unmatched
-DODGE,YONKE,YONKE,Yonker,unique_name_similarity
-DODGE,PLAIN,PLAIN,,unmatched
-DODGE,MULLI,MULLI,Mullis,unique_name_similarity
+DODGE,RAWLI,RAWLI,Rawlins,unique_code_prefix
+DODGE,YONKE,YONKE,Yonker,unique_code_prefix
+DODGE,PLAIN,PLAIN,Plainfield,unique_code_prefix
+DODGE,MULLI,MULLI,Mullis,unique_code_prefix
 DODGE,LEE,LEE,Lee,name
 DODGE,EDDIN,EDDIN,Eddin,name
-DODGE,EMPIR,EMPIR,Empire,unique_name_similarity
+DODGE,EMPIR,EMPIR,Empire,unique_code_prefix
 DODGE,MILAN,MILAN,Milan,name
-DODGE,CHAUN,CHAUN,,unmatched
+DODGE,CHAUN,CHAUN,Chauncey,unique_code_prefix
 DODGE,JONES,JONES,Jones,name
-DODGE,JAYBI,JAYBI,,unmatched
-DODGE,MITCH,MITCH,,unmatched
-DODGE,PONDT,PONDT,,unmatched
-DODGE,VILUL,VILUL,Vilula,unique_name_similarity
-DODGE,MCCRA,MCCRA,,unmatched
+DODGE,JAYBI,JAYBI,Jaybird,unique_code_prefix
+DODGE,MITCH,MITCH,Mitchell,unique_code_prefix
+DODGE,PONDT,PONDT,Pondtown,unique_code_prefix
+DODGE,VILUL,VILUL,Vilula,unique_code_prefix
+DODGE,MCCRA,MCCRA,McCranie,unique_code_prefix
 BLECKLEY,1,1,Fairground,single_precinct_county
 JOHNSON,1266,SMITH,Smith,name
 JOHNSON,1201,WRIGHTSVILLE,Wrightsville,name

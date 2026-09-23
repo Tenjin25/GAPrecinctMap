@@ -4,7 +4,7 @@ COLUMBIA,64,GRACE BAPTIST CHURCH,Grace Baptist Church,name
 COLUMBIA,61,GREENBRIER HIGH,Greenbrier High,name
 COLUMBIA,63,RIVERSIDE ELEMENTARY,Riverside Elementary,name
 COLUMBIA,132,WESLEY METHODIST,Wesley Methodist,name
-COLUMBIA,135,"CHRIST CHURCH, PRESB",,unmatched
+COLUMBIA,135,"CHRIST CHURCH, PRESB",Christ Church,reviewed_alias
 COLUMBIA,107,GOSPEL WATER BRANCH,Gospel Water Branch,name
 COLUMBIA,40,EUBANK/BLANCHARD CTR,Eubank/Blanchard Center,name
 COLUMBIA,109,STEVENS CREEK CHURCH,Stevens Creek Church,name
@@ -18,7 +18,7 @@ COLUMBIA,137,CHRIST THE KING CH,Christ The King Luth Ch,unique_name_similarity
 COLUMBIA,65,CHRIST SANCTIFIED,Christ Sanctified,name
 COLUMBIA,60,COL CTY BOARD OF EDU,Col Cty Bd Of Edu,unique_name_similarity
 COLUMBIA,74,MTZ COL FIRE DEPT #4,Mtz Col Fire Dept #4,name
-COLUMBIA,76,MARVIN METHODIST,,unmatched
+COLUMBIA,76,MARVIN METHODIST,Marvin Methodist Church,reviewed_alias
 COLUMBIA,85,TRINITY BAPT CHURCH,Trinity Bapt Church,name
 COLUMBIA,120,GOLD CROSS EMS,Gold Cross EMS,name
 COLUMBIA,125,CHURCH OF OUR SAVIOR,Church of our Savior,name
@@ -27,15 +27,15 @@ COLUMBIA,134,COL CTY MAIN LIBRARY,Col Cty Main Library,name
 COLUMBIA,26,PHILADELPHIA CHURCH,Philadelphia Church,name
 COLUMBIA,10,KIOKEE BAPT CHURCH,Kiokee Baptist Church,unique_name_similarity
 COLUMBIA,30,GROVETOWN CITY HALL,Grovetown City Hall,name
-COLUMBIA,31,GROVETOWN METHODIST,,unmatched
+COLUMBIA,31,GROVETOWN METHODIST,Grovetown Methodist Church,reviewed_alias
 COLUMBIA,33,GROVETOWN MIDDLE SCH,Grovetown Middle School,name
 COLUMBIA,17,PATRIOTS PARK,Patriots Park,name
 COLUMBIA,16,WOODLAWN BAPT CHURCH,Woodlawn Baptist Church,unique_name_similarity
-COLUMBIA,15,LEWIS METHODIST,,unmatched
+COLUMBIA,15,LEWIS METHODIST,Lewis Methodist Church,reviewed_alias
 COLUMBIA,62,REDEEMER CHURCH,Redeemer Church,name
 COLUMBIA,20,HARLEM MIDDLE SCHOOL,Harlem Middle School,name
 COLUMBIA,25,BESSIE THOMAS CENTER,Bessie Thomas Center,name
-COLUMBIA,21,HARLEM BAPTIST,,unmatched
+COLUMBIA,21,HARLEM BAPTIST,Harlem Baptist Church,reviewed_alias
 COLUMBIA,100,AUGUSTA CHRISTIAN,Augusta Christian,name
 COLUMBIA,105,STEVENS CREEK ELEM,Stevens Creek Elem,name
 COLUMBIA,108,GENESIS CHURCH,Genesis Church,name
@@ -566,8 +566,8 @@ BANKS,2,BALDWIN,Baldwin,name
 BANKS,3,BERLIN,Berlin,name
 BANKS,9,HOLLINGSWORTH,Hollingsworth,name
 BANKS,12,WASHINGTON,Washington,name
-MORGAN,2,2. EAST MORGAN,,unmatched
-MORGAN,6,6. WEST MORGAN,,unmatched
+MORGAN,2,2. EAST MORGAN,East Morgan,reviewed_alias
+MORGAN,6,6. WEST MORGAN,West Morgan,reviewed_alias
 MORGAN,7,7. NORTH MORGAN,North Morgan,unique_name_similarity
 MORGAN,4,4. CENTRAL MORGAN,Central Morgan,unique_name_similarity
 MORGAN,3,3. BETH/SPRINGFIELD,Beth/Springfield,unique_name_similarity
@@ -616,24 +616,24 @@ NEWTON,17,OXFORD,Oxford,name
 NEWTON,12,GUM CREEK,Gum Creek,name
 NEWTON,3,ALMON,Almon,name
 NEWTON,25,HUB,Hub,name
-ROCKDALE,FI,FI,,unmatched
-ROCKDALE,FS,FS,,unmatched
-ROCKDALE,MA,MA,,unmatched
-ROCKDALE,SA,SA,,unmatched
-ROCKDALE,LO,LO,,unmatched
-ROCKDALE,ST,ST,,unmatched
-ROCKDALE,BA,BA,,unmatched
-ROCKDALE,HC,HC,,unmatched
-ROCKDALE,SM,SM,,unmatched
-ROCKDALE,MI,MI,,unmatched
-ROCKDALE,RO,RO,,unmatched
-ROCKDALE,SP,SP,,unmatched
-ROCKDALE,CO,CO,,unmatched
-ROCKDALE,SH,SH,,unmatched
-ROCKDALE,HI,HI,,unmatched
-ROCKDALE,BT,BT,,unmatched
-ROCKDALE,LA,LA,,unmatched
-ROCKDALE,OT,OT,,unmatched
+ROCKDALE,FI,FI,Fieldstone,reviewed_code_name
+ROCKDALE,FS,FS,Flat Shoals,reviewed_code_name
+ROCKDALE,MA,MA,Magnet,reviewed_code_name
+ROCKDALE,SA,SA,Salem,reviewed_code_name
+ROCKDALE,LO,LO,Lorraine,reviewed_code_name
+ROCKDALE,ST,ST,Stanton,reviewed_code_name
+ROCKDALE,BA,BA,Barksdale,reviewed_code_name
+ROCKDALE,HC,HC,Honey Creek,reviewed_code_name
+ROCKDALE,SM,SM,Smyrna,reviewed_code_name
+ROCKDALE,MI,MI,Milstead,reviewed_code_name
+ROCKDALE,RO,RO,Rockdale,reviewed_code_name
+ROCKDALE,SP,SP,St. Pius,reviewed_code_name
+ROCKDALE,CO,CO,Conyers,reviewed_code_name
+ROCKDALE,SH,SH,Sheffield,reviewed_code_name
+ROCKDALE,HI,HI,Hightower,reviewed_code_name
+ROCKDALE,BT,BT,Bethel,reviewed_code_name
+ROCKDALE,LA,LA,The Lakes,reviewed_code_name
+ROCKDALE,OT,OT,Olde Towne,reviewed_code_name
 GWINNETT,2,ROCKBRIDGE A,002 Rockbridge A,code
 GWINNETT,75,ROCKBRIDGE C,075 Rockbridge C,code
 GWINNETT,111,DULUTH H,111 Duluth H,code
@@ -791,7 +791,7 @@ GWINNETT,83,GOODWINS D,083 Goodwins D,code
 GWINNETT,106,SUWANEE C,106 Suwanee C,code
 GWINNETT,105,SUGAR HILL F,105 Sugar Hill F,code
 DEKALB,FG,FLAT ROCK ELEM,FLAT ROCK ELEM,name
-DEKALB,CF,CANDLER-MURPHEY CAND,,unmatched
+DEKALB,CF,CANDLER-MURPHEY CAND,CANDLER-MURPHEY CANDLER ELEM,reviewed_alias
 DEKALB,FE,FLAT SHOALS PARKWAY,FLAT SHOALS PARKWAY,name
 DEKALB,CG,CHAPEL HILL ELEM,CHAPEL HILL ELEM,name
 DEKALB,KD,KING-ML KING JR HIGH,KING-ML KING JR HIGH,name
@@ -800,11 +800,11 @@ DEKALB,OV,OAK VIEW ELEM,OAK VIEW ELEM,name
 DEKALB,HH,NARVIE J HARRIS ELEM,HARRIS-NARVIE J. HARRIS ELEM,unique_name_similarity
 DEKALB,FK,FLAKES MILL FIRE STA,FLAKES MILL FIRE STATION,name
 DEKALB,SB,SCOTT,SCOTT,name
-DEKALB,MG,MEDLOCK,,unmatched
+DEKALB,MG,MEDLOCK,MEDLOCK ELEM,reviewed_alias
 DEKALB,CJ,CLAIRMONT ROAD,CLAIRMONT ROAD,name
 DEKALB,DI,DUNWOODY LIBRARY (DU,DUNWOODY LIBRARY,unique_name_similarity
 DEKALB,AD,AUSTIN,AUSTIN,name
-DEKALB,MQ,MOUNT VERNON EAST (D,,unmatched
+DEKALB,MQ,MOUNT VERNON EAST (D,MT. VERNON EAST,reviewed_alias
 DEKALB,CE,CHAMBLEE (CHA),CHAMBLEE,name
 DEKALB,HF,HUNTLEY HILLS ELEM (,HUNTLEY HILLS ELEM,name
 DEKALB,PB,PEACHTREE MIDDLE (DU,PEACHTREE MIDDLE,unique_name_similarity
@@ -825,7 +825,7 @@ DEKALB,BF,BROCKETT ELEM,BROCKETT ELEM,name
 DEKALB,MN,MEMORIAL SOUTH,MEMORIAL SOUTH,name
 DEKALB,MM,MEMORIAL NORTH,MEMORIAL NORTH,name
 DEKALB,WB,WESLEY CHAPEL LIBRAR,WESLEY CHAPEL LIBRARY,unique_name_similarity
-DEKALB,SS,SNAPFINGER ROAD S,,unmatched
+DEKALB,SS,SNAPFINGER ROAD S,SNAPFINGER ROAD SOUTH,reviewed_alias
 DEKALB,MF,MCWILLIAMS,MCWILLIAMS,name
 DEKALB,MI,MIDDLE GROVE MIDDLE,MILLER GROVE MIDDLE,unique_name_similarity
 DEKALB,BM,BETHUNE MIDDLE,BETHUNE MIDDLE,name
@@ -834,8 +834,8 @@ DEKALB,WN,WYNBROOKE ELEM,WYNBROOKE ELEM,name
 DEKALB,ST,STEPHENSON MIDDLE,STEPHENSON MIDDLE,name
 DEKALB,SO,SOUTH DESHON,SOUTH DESHON,name
 DEKALB,VB,VALLEY BROOK,VALLEY BROOK,name
-DEKALB,SC,SHAW-ROBERT SHAW ELE,,unmatched
-DEKALB,CT,COVINGTON HWY,,unmatched
+DEKALB,SC,SHAW-ROBERT SHAW ELE,SHAW-ROBERT SHAW ELEM,reviewed_alias
+DEKALB,CT,COVINGTON HWY,COVINGTON HWY LIBRARY,reviewed_alias
 DEKALB,RG,ROWLAND ELEM,ROWLAND ELEM,name
 DEKALB,DE,DUNAIRE ELEM,DUNAIRE ELEM,name
 DEKALB,AA,ALLGOOD ELEM,ALLGOOD ELEM,name
@@ -867,7 +867,7 @@ DEKALB,PE,PINE LAKE (PIN),PINE LAKE,name
 DEKALB,HA,HAMBRICK ELEM,HAMBRICK ELEM,name
 DEKALB,RE,ROCKBRIDGE ELEM,ROCKBRIDGE ELEM,name
 DEKALB,SJ,STONE MILL ELEM,STONE MILL ELEM,name
-DEKALB,MA,MILLER-ELDRIDGE L MI,,unmatched
+DEKALB,MA,MILLER-ELDRIDGE L MI,MILLER-ELDRIDGE L. MILLER ELEM,reviewed_alias
 DEKALB,FB,FERNBANK ELEM,FERNBANK ELEM,name
 DEKALB,EG,EMORY SOUTH,EMORY SOUTH,name
 DEKALB,JA,JOHNSON ESTATES (ATL,JOHNSON ESTATES,unique_name_similarity
@@ -875,15 +875,15 @@ DEKALB,BC,BRIAR VISTA ELEM,BRIAR VISTA ELEM,name
 DEKALB,DH,DRUID HILLS HIGH,DRUID HILLS HIGH,name
 DEKALB,ER,EMORY ROAD,EMORY ROAD,name
 DEKALB,LB,LAVISTA ROAD,LAVISTA ROAD,name
-DEKALB,SI,STN MTN MIDDLE,,unmatched
+DEKALB,SI,STN MTN MIDDLE,STONE MOUNTAIN MIDDLE,reviewed_alias
 DEKALB,TF,TUCKER,TUCKER,name
 DEKALB,HG,HUGH HOWELL,HUGH HOWELL,name
-DEKALB,SH,SMOKE RISE,,unmatched
+DEKALB,SH,SMOKE RISE,SMOKE RISE ELEM,reviewed_alias
 DEKALB,SU,SOUTH HAIRSTON,SOUTH HAIRSTON,name
 DEKALB,PH,PANOLA,PANOLA,name
 DEKALB,SK,SHADOW ROCK ELEM,SHADOW ROCK ELEM,name
 DEKALB,SP,STONE MTN CHAMPION (,STONE MOUNTAIN CHAMPION,unique_name_similarity
-DEKALB,SQ,STONE MTN LIBRARY (S,,unmatched
+DEKALB,SQ,STONE MTN LIBRARY (S,STONE MOUNTAIN LIBRARY,reviewed_alias
 DEKALB,SN,SHAMROCK,SHAMROCK,name
 DEKALB,ND,NORTHLAKE,NORTHLAKE,name
 DEKALB,BD,BRIARLAKE ELEM,BRIARLAKE ELEM,name
@@ -917,15 +917,15 @@ DEKALB,CR,CEDAR GROVE MIDDLE,CEDAR GROVE MIDDLE,name
 DEKALB,FJ,FLAT SHOALS,FLAT SHOALS,name
 DEKALB,FC,FLAT SHOALS ELEM,FLAT SHOALS ELEM,name
 DEKALB,MP,MCNAIR ACADEMY,MCNAIR ACADEMY,name
-DEKALB,EA,EAST LAKE (ATL),,unmatched
+DEKALB,EA,EAST LAKE (ATL),EAST LAKE ELEM,reviewed_alias
 DEKALB,MD,MCNAIR MIDDLE,MCNAIR MIDDLE,name
 DEKALB,OK,OAKHURST (DEC),OAKHURST,name
 DEKALB,RN,RENFROE MIDDLE (DEC),RENFROE MIDDLE,name
 DEKALB,PG,PONCE DE LEON (DEC),PONCE DE LEON,name
-DEKALB,CV,CLAIREMONT EAST (DEC,,unmatched
+DEKALB,CV,CLAIREMONT EAST (DEC,CLAIREMONT EAST,reviewed_alias
 DEKALB,WF,WINNONA PARK ELEM (D,WINNONA PARK ELEM,unique_name_similarity
 DEKALB,GA,GLENNWOOD (DEC),GLENNWOOD,name
-DEKALB,CI,CLAIREMONT WEST (DEC,,unmatched
+DEKALB,CI,CLAIREMONT WEST (DEC,CLAIREMONT WEST,reviewed_alias
 DEKALB,GB,GLENHAVEN,GLENHAVEN,name
 DEKALB,AI,AVONDALE HIGH,AVONDALE HIGH,name
 DEKALB,AE,AVONDALE (AVO),AVONDALE,name
@@ -934,13 +934,13 @@ DEKALB,CU,COVINGTON,COVINGTON,name
 DEKALB,NB,NORTH DECATUR,NORTH DECATUR,name
 DEKALB,ME,MCLENDON,MCLENDON,name
 DEKALB,PA,PEACHCREST ELEM,PEACHCREST ELEM,name
-DEKALB,MR,MATHIS-BOB MATHIS EL,,unmatched
+DEKALB,MR,MATHIS-BOB MATHIS EL,MATHIS-BOB MATHIS ELEM,reviewed_alias
 DEKALB,RA,RAINBOW ELEM,RAINBOW ELEM,name
 DEKALB,KC,KELLEY CHAPEL ROAD,KELLEY CHAPEL ROAD,name
 DEKALB,CA,COLUMBIA DRIVE,COLUMBIA DRIVE,name
 DEKALB,AF,AUSTIN DRIVE,AUSTIN DRIVE,name
 DEKALB,CB,CANBY LANE ELEM,CANBY LANE ELEM,name
-DEKALB,SR,SNAPFINGER ROAD N,,unmatched
+DEKALB,SR,SNAPFINGER ROAD N,SNAPFINGER ROAD NORTH,reviewed_alias
 DEKALB,GF,GLENWOOD ROAD,GLENWOOD ROAD,name
 DEKALB,BL,BOULDERCREST ROAD,BOULDERCREST RD,name
 DEKALB,CS,CEDAR GROVE SOUTH,CEDAR GROVE SOUTH,name
@@ -956,7 +956,7 @@ DEKALB,GC,GRESHAM ROAD,GRESHAM ROAD,name
 DEKALB,BR,BURGESS ELEM (ATL),BURGESS ELEM,name
 DEKALB,MT,METROPOLITAN (ATL),METROPOLITAN,name
 DEKALB,PN,PINEY GROVE,PINEY GROVE,name
-DEKALB,TA,TERRY MILL,,unmatched
+DEKALB,TA,TERRY MILL,TERRY MILL ELEM,reviewed_alias
 DEKALB,KB,KINGSLEY ELEM (DUN),KINGSLEY ELEM,name
 DEKALB,DA,DORAVILLE NORTH (DOR,DORAVILLE NORTH,unique_name_similarity
 DEKALB,OB,OAKCLIFF ELEM,OAKCLIFF ELEM,name
@@ -970,11 +970,11 @@ DEKALB,LV,LIVSEY ELEM,LIVSEY ELEM,name
 DEKALB,DB,DORAVILLE SOUTH (DOR,DORAVILLE SOUTH,unique_name_similarity
 DEKALB,AG,ASHFORD DUNWOODY RD,ASHFORD DUNWOODY RD,name
 DEKALB,AH,ASHFORD PARKSIDE (BH,ASHFORD PARKSIDE,unique_name_similarity
-DEKALB,MU,MONTGOMERY  (BHAVN),,unmatched
+DEKALB,MU,MONTGOMERY  (BHAVN),MONTGOMERY ELEM,reviewed_alias
 DEKALB,KG,KITTREDGE ELEM (BHAV,KITTREDGE ELEM,unique_name_similarity
-DEKALB,GD,GEORGETOWN SQ (DUN),,unmatched
+DEKALB,GD,GEORGETOWN SQ (DUN),GEORGETOWN SQUARE,reviewed_alias
 DEKALB,DF,DUNWOODY (DUN),DUNWOODY,name
-DEKALB,MS,MOUNT VERNON WEST (D,,unmatched
+DEKALB,MS,MOUNT VERNON WEST (D,MT. VERNON WEST,reviewed_alias
 DEKALB,MZ,MILLER GROVE HIGH,MILLER GROVE HIGH,name
 DEKALB,RL,ROCK CHAPEL ROAD,ROCK CHAPEL ROAD,name
 DEKALB,RF,ROCK CHAPEL ELEM,ROCK CHAPEL ELEM,name
@@ -1199,27 +1199,27 @@ EARLY,CUBA,CUBA,Cuba,name
 EARLY,B,BLAKELY,Blakely,name
 EARLY,D,DAMASCUS,Damascus,name
 EARLY,A,ARLINGTON,Arlington,name
-SPALDING,14,14,,unmatched
+SPALDING,14,14,SUNNYSIDE METHODI,reviewed_alias
 SPALDING,9,9,,unmatched
-SPALDING,12,12,,unmatched
-SPALDING,19,19,,unmatched
+SPALDING,12,12,LIBERTY,reviewed_alias
+SPALDING,19,19,FIRST ASSEMBLY,reviewed_alias
 SPALDING,15,15,,unmatched
 SPALDING,21,21,,unmatched
-SPALDING,20,20,,unmatched
-SPALDING,13,13,,unmatched
+SPALDING,20,20,ROBERTS,reviewed_alias
+SPALDING,13,13,COUNTY LINE,reviewed_alias
 SPALDING,3,3,,unmatched
-SPALDING,2,2,,unmatched
+SPALDING,2,2,FAIRMONT,reviewed_alias
 SPALDING,18,18,,unmatched
-SPALDING,17,17,,unmatched
-SPALDING,6,6,,unmatched
-SPALDING,16,16,,unmatched
-SPALDING,7,7,,unmatched
-SPALDING,11,11,,unmatched
-SPALDING,1,1,,unmatched
+SPALDING,17,17,AMBUCS,reviewed_alias
+SPALDING,6,6,CITY PARK,reviewed_alias
+SPALDING,16,16,GARY REID,reviewed_alias
+SPALDING,7,7,FIRST METHODIST,reviewed_alias
+SPALDING,11,11,FIRST PRESBYTERIA,reviewed_alias
+SPALDING,1,1,SECOND BAPTISH CH,reviewed_alias
 SPALDING,4,4,,unmatched
-SPALDING,10,10,,unmatched
+SPALDING,10,10,CARVER,reviewed_alias
 SPALDING,8,8,,unmatched
-SPALDING,5,5,,unmatched
+SPALDING,5,5,GA EXP STATION,reviewed_alias
 HARALSON,5,CORINTH,CORINTH,name
 HARALSON,10,SEVENTH,SEVENTH,name
 HARALSON,9,MT VIEW,MT VIEW,name
@@ -1266,7 +1266,7 @@ CHATTOOGA,961,SEMINOLE,SEMINOLE,name
 CHATTOOGA,1083,COLDWATER,COLDWATER,name
 CHATTOOGA,925,SUMMERVILLE,SUMMERVILLE,name
 CHATTOOGA,968,ALPINE,ALPINE,name
-CHATTOOGA,XC-96,TELOGA-CLOUDLAND,,unmatched
+CHATTOOGA,XC-96,TELOGA-CLOUDLAND,CLOUDLAND; TELOGA,reviewed_split_alias
 CHATTOOGA,1382,HAYWOOD,HAYWOOD,name
 CHATTOOGA,962,SUBLIGNA,SUBLIGNA,name
 CHATTOOGA,940,DIRTTOWN,DIRTTOWN,name
@@ -1573,23 +1573,23 @@ LEE,4,#4 LEESBURG,Leesburg,unique_name_similarity
 LEE,1,#1 CHOKEE,Chokee,unique_name_similarity
 LEE,10,#10 REDBONE,Redbone,unique_name_similarity
 LEE,8,#8 SOVEREIGN GRACE,Sovereign Grace,unique_name_similarity
-LEE,3,#3 CJC,,unmatched
+LEE,3,#3 CJC,CJC,reviewed_alias
 LEE,2,#2 SMITHVILLE,Smithville,unique_name_similarity
 LEE,6,#6 FIRST BAPTIST,First Baptist,unique_name_similarity
 LEE,7,#7 SDA CHURCH,SDA Church,unique_name_similarity
 LEE,5,#5 FRIENDSHIP BAPT.,Friendship Bapt,unique_name_similarity
 LEE,9,#9 CENTURY FIRE STAT,Century Fire Station,unique_name_similarity
 SUMTER,15,LESLIE,15,code
-SUMTER,O-26,PLAINS,,unmatched
-SUMTER,N-26,CONCORD,,unmatched
-SUMTER,W-27,AG CENTER,,unmatched
+SUMTER,O-26,PLAINS,O-26,unique_code_prefix
+SUMTER,N-26,CONCORD,N-26,unique_code_prefix
+SUMTER,W-27,AG CENTER,W-27,unique_code_prefix
 SUMTER,17,THOMSON,17,code
 SUMTER,28,CHAMBLISS,28,code
 SUMTER,29,ANDERSONVILLE,29,code
-SUMTER,E-27,AIRPORT,,unmatched
-SUMTER,C1-27,REES PARK,,unmatched
-SUMTER,C2-27,GSW CONF CENTER,,unmatched
-SUMTER,C3-27,REC DEPT,,unmatched
+SUMTER,E-27,AIRPORT,E-27,unique_code_prefix
+SUMTER,C1-27,REES PARK,C1-27,unique_code_prefix
+SUMTER,C2-27,GSW CONF CENTER,C2-27,unique_code_prefix
+SUMTER,C3-27,REC DEPT,C3-27,unique_code_prefix
 GRADY,SH,SPRING HILL,Spring Hill,name
 GRADY,M,MIDWAY,Midway,name
 GRADY,C05,CAIRO 5TH DISTR,,unmatched
@@ -1989,17 +1989,17 @@ LIBERTY,4,WALTHOURVILLE,,unmatched
 LIBERTY,10,LYMAN HALL SCHOOL,Lyman Hall School,name
 LIBERTY,9,HINESVILLE LODGE 271,Hinesville Lodge 271,name
 LIBERTY,11,LEWIS FRASIER SCHOOL,Lewis Frasier School,name
-WARE,409,409,,unmatched
-WARE,404,404,,unmatched
-WARE,405,405,,unmatched
+WARE,409,409,Waresboro,reviewed_alias
+WARE,404,404,Beach-Bickley,reviewed_alias
+WARE,405,405,Haywood,reviewed_alias
 WARE,400,400,,unmatched
-WARE,407,407,,unmatched
+WARE,407,407,Manor,reviewed_alias
 WARE,200B,200B,,unmatched
 WARE,100,100,,unmatched
 WARE,304,304,,unmatched
-WARE,408,408,,unmatched
+WARE,408,408,Millwood,reviewed_alias
 WARE,300,300,,unmatched
-WARE,406,406,,unmatched
+WARE,406,406,Jamestown,reviewed_alias
 WARE,200A,200A,,unmatched
 EMANUEL,1502,NUNEZ,Nunez,name
 EMANUEL,58,STILLMORE,Stillmore,name
@@ -2019,21 +2019,21 @@ ATKINSON,1,PEARSON COUNTY,Pearson County,name
 ATKINSON,4,PEARSON CITY,Pearson City,name
 ATKINSON,2,AXSON,Axson,name
 DODGE,EDDIN,EDDIN,Eddin,name
-DODGE,EMPIR,EMPIR,Empire,unique_name_similarity
-DODGE,RAWLI,RAWLI,,unmatched
-DODGE,YONKE,YONKE,Yonker,unique_name_similarity
+DODGE,EMPIR,EMPIR,Empire,unique_code_prefix
+DODGE,RAWLI,RAWLI,Rawlins,unique_code_prefix
+DODGE,YONKE,YONKE,Yonker,unique_code_prefix
 DODGE,CLARK,CLARK,Clark,name
-DODGE,MITCH,MITCH,,unmatched
-DODGE,PONDT,PONDT,,unmatched
-DODGE,VILUL,VILUL,Vilula,unique_name_similarity
-DODGE,MCCRA,MCCRA,,unmatched
+DODGE,MITCH,MITCH,Mitchell,unique_code_prefix
+DODGE,PONDT,PONDT,Pondtown,unique_code_prefix
+DODGE,VILUL,VILUL,Vilula,unique_code_prefix
+DODGE,MCCRA,MCCRA,McCranie,unique_code_prefix
 DODGE,LEE,LEE,Lee,name
-DODGE,PLAIN,PLAIN,,unmatched
-DODGE,MULLI,MULLI,Mullis,unique_name_similarity
+DODGE,PLAIN,PLAIN,Plainfield,unique_code_prefix
+DODGE,MULLI,MULLI,Mullis,unique_code_prefix
 DODGE,MILAN,MILAN,Milan,name
-DODGE,CHAUN,CHAUN,,unmatched
+DODGE,CHAUN,CHAUN,Chauncey,unique_code_prefix
 DODGE,JONES,JONES,Jones,name
-DODGE,JAYBI,JAYBI,,unmatched
+DODGE,JAYBI,JAYBI,Jaybird,unique_code_prefix
 BLECKLEY,1,1,,unmatched
 TELFAIR,MC,MCRAE,McRae,name
 TELFAIR,HE,HELENA,Helena,name
@@ -2145,95 +2145,95 @@ EFFINGHAM,1C,1C,1C,name
 EFFINGHAM,1B,1B,1B,name
 EFFINGHAM,5B,5B,5B,name
 EFFINGHAM,5A,5A,5A,name
-CHATHAM,3-13C,NEW COV 7 DAY ADV CH,3-13 New Cov 7 Day Adv Ch,unique_name_similarity
-CHATHAM,1-12C,ISLE OF HOPE BAPTIST,1-12 Isle of Hope Baptist,unique_name_similarity
-CHATHAM,3-5 C,ALDERSGATE YOUTH CEN,3-05 Aldersgate Youth Cent,unique_name_similarity
-CHATHAM,3-12C,THUNDERBOLT MUN COMP,,unmatched
-CHATHAM,1-17C,ISLANDS CHRISTIAN CH,,unmatched
-CHATHAM,7-11C,SEVENTH DAY ADV CHR,7-11 Seventh Day Adv Chr,unique_name_similarity
-CHATHAM,7-1 C,GARDEN CITY SEN CTR,,unmatched
-CHATHAM,7-3 C,P B EDWARDS GYM,7-03 P B Edwards Gym,unique_name_similarity
-CHATHAM,7-4 C,LAKE SHORE COMM CTR,7-04 Lake Shore Comm Ctr,unique_name_similarity
-CHATHAM,4-8 C,WILMINGTON ISLAND PR,4-08 Wilmington Island Pr,unique_name_similarity
-CHATHAM,4-7 C,WILM IS UN METH CH,4-07 Wilm Is Un Meth Ch,unique_name_similarity
-CHATHAM,4-4 C,LIGHTHOUSE BAPT CH,,unmatched
-CHATHAM,6-8 C,ST. FRANCIS CABRINI,6-08 St. Francis Cabrini,unique_name_similarity
-CHATHAM,5-6 C,WILDWOOD UNITED METH,5-06 Wildwood United Meth,unique_name_similarity
-CHATHAM,5-7 C,ELKS LODGE,,unmatched
-CHATHAM,5-8 C,SAVANNAH PRIMITIVE,5-08 Savannah Primitive,unique_name_similarity
-CHATHAM,5-11C,LARGO-TIBET ELEMENTA,5-11 Largo-Tibet Elem,unique_name_similarity
-CHATHAM,8-13C,SAVANNAH CHRISTIAN S,,unmatched
-CHATHAM,7-14C,COASTAL CATHEDRAL,7-14 Coastal Cathedral,unique_name_similarity
-CHATHAM,7-10C,PROGRESSIVE REC CTR,7-10 Progressive Rec Ctr,unique_name_similarity
-CHATHAM,7-6 C,POOLER CITY HALL,7-06 Pooler City Hall,unique_name_similarity
-CHATHAM,7-13C,GARDEN CITY CITY HAL,7-13 Garden City City Hall,unique_name_similarity
-CHATHAM,8-3 C,SILK HOPE BAPTIST CH,,unmatched
-CHATHAM,1-10C,ISLE OF HOPE SCHOOL,,unmatched
-CHATHAM,4-14C,SKID METHODIST CH,,unmatched
-CHATHAM,4-15C,SKIDAWAY ISLAND STAT,,unmatched
-CHATHAM,4-12C,ST PETERS EPISCOPAL,4-12 St Peters Episcopal,unique_name_similarity
-CHATHAM,4-10C,GUARD HOUSE COMM CTR,4-10 Guard House Comm Ctr,unique_name_similarity
-CHATHAM,4-13C,SKID IS PRES CHURCH,4-13 Skid Is Pres Church,unique_name_similarity
-CHATHAM,6-2 C,WINDSOR FOREST BAPTI,6-02 Windsor Forest Baptist,unique_name_similarity
-CHATHAM,1-16C,FERGUSON AVE BAPTIST,1-16 Ferguson Ave Baptist,unique_name_similarity
-CHATHAM,6-1 C,WHITE BLUFF PRES CHR,6-01 White Bluff Pres Chr,unique_name_similarity
-CHATHAM,1-13C,THE SANCTUARY,,unmatched
-CHATHAM,1-14C,ST LUKE CHURCH,1-14 St Luke Church,unique_name_similarity
-CHATHAM,6-9 C,TRINITY LUTHERAN CH,6-09 Trinity Lutheran Ch,unique_name_similarity
-CHATHAM,6-3 C,CRUSADER COMM CTR,6-03 Crusader Comm Ctr,unique_name_similarity
-CHATHAM,6-5 C,WINDSOR FOREST GOLDE,6-05 Windsor Forest Golde,unique_name_similarity
-CHATHAM,6-10C,GEORGETOWN ELEMENTAR,6-10 Georgetown Elem,unique_name_similarity
-CHATHAM,4-6 C,FIRST BAPTIST CHURCH,4-06 First Baptist Church,unique_name_similarity
-CHATHAM,4-5 C,ST. FRANCIS EPISCOPA,4-05 St Francis Episcopal,unique_name_similarity
-CHATHAM,4-2 C,FRANK MURRAY COMM CT,4-02 Frank Murray Comm Ct,unique_name_similarity
-CHATHAM,4-11C,TYBEE IS SCH CAFE,,unmatched
-CHATHAM,7-5 C,WOODLAWN BAPTIST CH,,unmatched
-CHATHAM,8-12C,BEACH HIGH SCHOOL,8-12 Beach High School,unique_name_similarity
-CHATHAM,8-15C,GARDEN CITY REC CTR,8-15 Garden City Rec Ctr,unique_name_similarity
-CHATHAM,7-7 C,ROTHWELL BAPTIST CH,,unmatched
-CHATHAM,7-8 C,BLOOMINGDALE COM CTR,7-08 Bloomingdale Com Ctr,unique_name_similarity
-CHATHAM,7-12C,CHRIST PRESBYTERIAN,,unmatched
-CHATHAM,6-11C,BAMBOO FARMS,6-11 Bamboo Farms,unique_name_similarity
-CHATHAM,7-9 C,SOUTHWEST BAPTIST CH,7-09 Southwest Baptist Ch,unique_name_similarity
-CHATHAM,8-7 C,WOODVILLE-TOMPKINS,8-07 Woodville-Tompkins,unique_name_similarity
-CHATHAM,3-4 C,FIRST AFRICAN BAPTIS,3-04 First African Baptist,unique_name_similarity
-CHATHAM,3-3 C,SAVANNAH HIGH SCHOOL,3-03 Savannah High School,unique_name_similarity
-CHATHAM,3-15C,ELI WHITNEY COMPLEX,,unmatched
-CHATHAM,5-1 C,BARTLETT MIDDLE SCH,5-01 Bartlett Middle Sch,unique_name_similarity
-CHATHAM,6-6 C,SAVANNAH COMM CHURCH,,unmatched
-CHATHAM,1-9 C,IMMANUEL BAPTIST CHU,,unmatched
-CHATHAM,5-5 C,LIBERTY CITY COMM CT,5-05 Liberty City Comm Ctr,unique_name_similarity
-CHATHAM,5-10C,JONESVILLE BAPT CH,,unmatched
-CHATHAM,1-6 C,CENTRAL CH OF CHRIST,1-06 Central Chur of Christ,unique_name_similarity
-CHATHAM,1-8 C,GRACE UNITED MET CHU,1-08 Grace United Meth Chur,unique_name_similarity
-CHATHAM,3-10C,BIBLE BAPTIST CHURCH,3-10 Bible Baptist Church,unique_name_similarity
-CHATHAM,2-9 C,THE SALVATION ARMY,2-09 The Salvation Army,unique_name_similarity
-CHATHAM,8-11C,BUTLER ELEMENTARY SC,,unmatched
-CHATHAM,8-10C,CARVER HEIGHTS COMM,8-10 Carver Heights Comm,unique_name_similarity
-CHATHAM,5-3 C,BUTLER PRESBYTERIAN,5-03 Butler Presbyterian,unique_name_similarity
-CHATHAM,8-6 C,TOMPKINS REC CENTER,8-06 Tompkins Rec Ctr,unique_name_similarity
-CHATHAM,5-2 C,SENIOR CITIZENS CENT,5-02 Senior Citizens Cent,unique_name_similarity
-CHATHAM,8-5 C,WEST BROAD ST YMCA,,unmatched
-CHATHAM,8-8 C,RESUR OF OUR LORD CH,8-08 Resur Of Our Lord Ch,unique_name_similarity
-CHATHAM,8-9 C,MOSES JACKSON CENTER,8-09 Moses Jackson Ctr,unique_name_similarity
-CHATHAM,3-14C,RIVERVIEW HEALTH REH,3-14 Riverview Health Reh,unique_name_similarity
-CHATHAM,3-11C,SOUTHSIDE BAPTIST CH,,unmatched
-CHATHAM,1-5 C,JEA BUILDING,1-05 JEA Building,unique_name_similarity
-CHATHAM,1-1 C,FIRST PRESBYTERIAN C,,unmatched
-CHATHAM,2-11C,S GARDENS CHRISTIAN,2-11 S Gardens Christian,unique_name_similarity
-CHATHAM,3-9 C,COKESBURY METHODIST,3-09 Cokesbury Methodist,unique_name_similarity
-CHATHAM,3-8 C,JENKINS HIGH SCHOOL,3-08 Jenkins High School,unique_name_similarity
-CHATHAM,3-2 C,ROSE OF SHARON,3-02 Rose of Sharon,unique_name_similarity
-CHATHAM,2-3 C,W. W. LAW CENTER,2-03 W. W. Law Center,unique_name_similarity
-CHATHAM,2-4 C,FELLOWSHIP OF LOVE,2-04 Fellowship of Love,unique_name_similarity
-CHATHAM,2-7 C,CHRIST COMMUNITY CH,,unmatched
-CHATHAM,2-2 C,BLACKSHEAR COMM CTR,2-02 Blackshear Comm Ctr,unique_name_similarity
-CHATHAM,2-6 C,ELI WHITNEY COMPLEX,3-15 Eli Whitney Complex,unique_name_similarity
-CHATHAM,3-1 C,OLD COURTHOUSE,3-01 Old Courthouse,unique_name_similarity
-CHATHAM,8-1 C,CIVIC CENTER,8-01 Civic Center,unique_name_similarity
-CHATHAM,2-12C,WILLIAMS COURT APTS,2-12 Williams Court Apts,unique_name_similarity
-CHATHAM,8-2 C,BULL STREET BAPTIST,8-02 Bull Street Baptist,unique_name_similarity
-CHATHAM,2-5 C,HOLY SPIRIT LUTHERAN,2-05 Holy Spirit Lutheran,unique_name_similarity
+CHATHAM,3-13C,NEW COV 7 DAY ADV CH,3-13 New Cov 7 Day Adv Ch,chatham_code
+CHATHAM,1-12C,ISLE OF HOPE BAPTIST,1-12 Isle of Hope Baptist,chatham_code
+CHATHAM,3-5 C,ALDERSGATE YOUTH CEN,3-05 Aldersgate Youth Cent,chatham_code
+CHATHAM,3-12C,THUNDERBOLT MUN COMP,3-12 Thunderbolt Muni. Complex,chatham_code
+CHATHAM,1-17C,ISLANDS CHRISTIAN CH,1-17 Islands Christian Church,chatham_code
+CHATHAM,7-11C,SEVENTH DAY ADV CHR,7-11 Seventh Day Adv Chr,chatham_code
+CHATHAM,7-1 C,GARDEN CITY SEN CTR,7-01 Garden City Senior Ctr,chatham_code
+CHATHAM,7-3 C,P B EDWARDS GYM,7-03 P B Edwards Gym,chatham_code
+CHATHAM,7-4 C,LAKE SHORE COMM CTR,7-04 Lake Shore Comm Ctr,chatham_code
+CHATHAM,4-8 C,WILMINGTON ISLAND PR,4-08 Wilmington Island Pr,chatham_code
+CHATHAM,4-7 C,WILM IS UN METH CH,4-07 Wilm Is Un Meth Ch,chatham_code
+CHATHAM,4-4 C,LIGHTHOUSE BAPT CH,4-04 Lighthouse Baptist Ch,chatham_code
+CHATHAM,6-8 C,ST. FRANCIS CABRINI,6-08 St. Francis Cabrini,chatham_code
+CHATHAM,5-6 C,WILDWOOD UNITED METH,5-06 Wildwood United Meth,chatham_code
+CHATHAM,5-7 C,ELKS LODGE,5-07 Elks Lodge,chatham_code
+CHATHAM,5-8 C,SAVANNAH PRIMITIVE,5-08 Savannah Primitive,chatham_code
+CHATHAM,5-11C,LARGO-TIBET ELEMENTA,5-11 Largo-Tibet Elem,chatham_code
+CHATHAM,8-13C,SAVANNAH CHRISTIAN S,8-13 Savannah Christ. Sch,chatham_code
+CHATHAM,7-14C,COASTAL CATHEDRAL,7-14 Coastal Cathedral,chatham_code
+CHATHAM,7-10C,PROGRESSIVE REC CTR,7-10 Progressive Rec Ctr,chatham_code
+CHATHAM,7-6 C,POOLER CITY HALL,7-06 Pooler City Hall,chatham_code
+CHATHAM,7-13C,GARDEN CITY CITY HAL,7-13 Garden City City Hall,chatham_code
+CHATHAM,8-3 C,SILK HOPE BAPTIST CH,8-03 Silk Hope Bapt Ch,chatham_code
+CHATHAM,1-10C,ISLE OF HOPE SCHOOL,1-10 Saint Thomas Episcopal Church,chatham_code
+CHATHAM,4-14C,SKID METHODIST CH,4-14 Skidaway Island Methodist Church,chatham_code
+CHATHAM,4-15C,SKIDAWAY ISLAND STAT,4-15 Skidaway Island State Park,chatham_code
+CHATHAM,4-12C,ST PETERS EPISCOPAL,4-12 St Peters Episcopal,chatham_code
+CHATHAM,4-10C,GUARD HOUSE COMM CTR,4-10 Guard House Comm Ctr,chatham_code
+CHATHAM,4-13C,SKID IS PRES CHURCH,4-13 Skid Is Pres Church,chatham_code
+CHATHAM,6-2 C,WINDSOR FOREST BAPTI,6-02 Windsor Forest Baptist,chatham_code
+CHATHAM,1-16C,FERGUSON AVE BAPTIST,1-16 Ferguson Ave Baptist,chatham_code
+CHATHAM,6-1 C,WHITE BLUFF PRES CHR,6-01 White Bluff Pres Chr,chatham_code
+CHATHAM,1-13C,THE SANCTUARY,1-13 Cresthill Baptist,chatham_code
+CHATHAM,1-14C,ST LUKE CHURCH,1-14 St Luke Church,chatham_code
+CHATHAM,6-9 C,TRINITY LUTHERAN CH,6-09 Trinity Lutheran Ch,chatham_code
+CHATHAM,6-3 C,CRUSADER COMM CTR,6-03 Crusader Comm Ctr,chatham_code
+CHATHAM,6-5 C,WINDSOR FOREST GOLDE,6-05 Windsor Forest Golde,chatham_code
+CHATHAM,6-10C,GEORGETOWN ELEMENTAR,6-10 Georgetown Elem,chatham_code
+CHATHAM,4-6 C,FIRST BAPTIST CHURCH,4-06 First Baptist Church,chatham_code
+CHATHAM,4-5 C,ST. FRANCIS EPISCOPA,4-05 St Francis Episcopal,chatham_code
+CHATHAM,4-2 C,FRANK MURRAY COMM CT,4-02 Frank Murray Comm Ct,chatham_code
+CHATHAM,4-11C,TYBEE IS SCH CAFE,4-11 Tybee Island School Cafe,chatham_code
+CHATHAM,7-5 C,WOODLAWN BAPTIST CH,7-05 Woodlawn Bapt Ch,chatham_code
+CHATHAM,8-12C,BEACH HIGH SCHOOL,8-12 Beach High School,chatham_code
+CHATHAM,8-15C,GARDEN CITY REC CTR,8-15 Garden City Rec Ctr,chatham_code
+CHATHAM,7-7 C,ROTHWELL BAPTIST CH,7-07 Rothwell Bapt Ch,chatham_code
+CHATHAM,7-8 C,BLOOMINGDALE COM CTR,7-08 Bloomingdale Com Ctr,chatham_code
+CHATHAM,7-12C,CHRIST PRESBYTERIAN,7-12 Risen Savior Chr,chatham_code
+CHATHAM,6-11C,BAMBOO FARMS,6-11 Bamboo Farms,chatham_code
+CHATHAM,7-9 C,SOUTHWEST BAPTIST CH,7-09 Southwest Baptist Ch,chatham_code
+CHATHAM,8-7 C,WOODVILLE-TOMPKINS,8-07 Woodville-Tompkins,chatham_code
+CHATHAM,3-4 C,FIRST AFRICAN BAPTIS,3-04 First African Baptist,chatham_code
+CHATHAM,3-3 C,SAVANNAH HIGH SCHOOL,3-03 Savannah High School,chatham_code
+CHATHAM,3-15C,ELI WHITNEY COMPLEX,3-15 Eli Whitney Complex,chatham_code
+CHATHAM,5-1 C,BARTLETT MIDDLE SCH,5-01 Bartlett Middle Sch,chatham_code
+CHATHAM,6-6 C,SAVANNAH COMM CHURCH,6-06 The Light,chatham_code
+CHATHAM,1-9 C,IMMANUEL BAPTIST CHU,1-09 Immanuel Bapt Church,chatham_code
+CHATHAM,5-5 C,LIBERTY CITY COMM CT,5-05 Liberty City Comm Ctr,chatham_code
+CHATHAM,5-10C,JONESVILLE BAPT CH,5-10 Jonesville Bapt Church,chatham_code
+CHATHAM,1-6 C,CENTRAL CH OF CHRIST,1-06 Central Chur of Christ,chatham_code
+CHATHAM,1-8 C,GRACE UNITED MET CHU,1-08 Grace United Meth Chur,chatham_code
+CHATHAM,3-10C,BIBLE BAPTIST CHURCH,3-10 Bible Baptist Church,chatham_code
+CHATHAM,2-9 C,THE SALVATION ARMY,2-09 The Salvation Army,chatham_code
+CHATHAM,8-11C,BUTLER ELEMENTARY SC,8-11 Butler Elem School,chatham_code
+CHATHAM,8-10C,CARVER HEIGHTS COMM,8-10 Carver Heights Comm,chatham_code
+CHATHAM,5-3 C,BUTLER PRESBYTERIAN,5-03 Butler Presbyterian,chatham_code
+CHATHAM,8-6 C,TOMPKINS REC CENTER,8-06 Tompkins Rec Ctr,chatham_code
+CHATHAM,5-2 C,SENIOR CITIZENS CENT,5-02 Senior Citizens Cent,chatham_code
+CHATHAM,8-5 C,WEST BROAD ST YMCA,8-05 W Broad St YMCA,chatham_code
+CHATHAM,8-8 C,RESUR OF OUR LORD CH,8-08 Resur Of Our Lord Ch,chatham_code
+CHATHAM,8-9 C,MOSES JACKSON CENTER,8-09 Moses Jackson Ctr,chatham_code
+CHATHAM,3-14C,RIVERVIEW HEALTH REH,3-14 Riverview Health Reh,chatham_code
+CHATHAM,3-11C,SOUTHSIDE BAPTIST CH,3-11 Southside Bapt Church,chatham_code
+CHATHAM,1-5 C,JEA BUILDING,1-05 JEA Building,chatham_code
+CHATHAM,1-1 C,FIRST PRESBYTERIAN C,1-01 First Presbyterian Church,chatham_code
+CHATHAM,2-11C,S GARDENS CHRISTIAN,2-11 S Gardens Christian,chatham_code
+CHATHAM,3-9 C,COKESBURY METHODIST,3-09 Cokesbury Methodist,chatham_code
+CHATHAM,3-8 C,JENKINS HIGH SCHOOL,3-08 Jenkins High School,chatham_code
+CHATHAM,3-2 C,ROSE OF SHARON,3-02 Rose of Sharon,chatham_code
+CHATHAM,2-3 C,W. W. LAW CENTER,2-03 W. W. Law Center,chatham_code
+CHATHAM,2-4 C,FELLOWSHIP OF LOVE,2-04 Fellowship of Love,chatham_code
+CHATHAM,2-7 C,CHRIST COMMUNITY CH,2-07 Christ Comm. Church,chatham_code
+CHATHAM,2-2 C,BLACKSHEAR COMM CTR,2-02 Blackshear Comm Ctr,chatham_code
+CHATHAM,2-6 C,ELI WHITNEY COMPLEX,2-06 New Vision Revival Center,chatham_code
+CHATHAM,3-1 C,OLD COURTHOUSE,3-01 Old Courthouse,chatham_code
+CHATHAM,8-1 C,CIVIC CENTER,8-01 Civic Center,chatham_code
+CHATHAM,2-12C,WILLIAMS COURT APTS,2-12 Williams Court Apts,chatham_code
+CHATHAM,8-2 C,BULL STREET BAPTIST,8-02 Bull Street Baptist,chatham_code
+CHATHAM,2-5 C,HOLY SPIRIT LUTHERAN,2-05 Holy Spirit Lutheran,chatham_code
 FORSYTH,4,04 CHESTATEE,04 Chestatee,name
 FORSYTH,19,19 OLD ATLANTA,19 Old Atlanta,name
 FORSYTH,3,03 BROWNS BRIDGE,03 Browns Bridge,name
