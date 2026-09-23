@@ -57,7 +57,7 @@ def build(year: int, data_dir: Path) -> None:
         geom = geom.simplify(0.00003, preserve_topology=True)
         point = geom.representative_point()
         geoid = f"{year}-{len(polygons)}"
-        name = friendly_name(prior_names.get(county, {}).get(code) or raw_name)
+        name = friendly_name(prior_names.get(county, {}).get(code) or raw_name, code)
         props = {"id": geoid, "county_nam": county.title(), "county_norm": county,
                  "prec_id": code, "precinct_name": f"{county.title()} - {code}",
                  "precinct_norm": f"{county} - {code}", "precinct_full_name": name}
@@ -77,7 +77,7 @@ def build(year: int, data_dir: Path) -> None:
     matches, audit = match_precincts(polygons, votes, {})
     for feature in polygons:
         props = feature["properties"]
-        props["precinct_full_name"] = friendly_name(prior_names.get(props["county_norm"], {}).get(props["prec_id"]) or props["precinct_full_name"])
+        props["precinct_full_name"] = friendly_name(prior_names.get(props["county_norm"], {}).get(props["prec_id"]) or props["precinct_full_name"], props["prec_id"])
 
     by_source = {(feature["properties"]["county_norm"], matches[feature["properties"]["id"]][0]): feature["properties"]["id"]
                  for feature in polygons if feature["properties"]["id"] in matches}

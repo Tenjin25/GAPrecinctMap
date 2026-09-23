@@ -14,7 +14,7 @@ The map uses the precinct boundary vintage for each supported election year. Sha
 
 The 2024 boundary source is the [Georgia General Assembly precinct shapefile](https://www.legis.ga.gov/api/document/docs/default-source/reapportionment-document-library/precincts/gaprec_2024-website-shapefile.zip?sfvrsn=7b38ca99_2). The shapefile archives and election exports for older years were already present in this project. The 2022 official export supplies statewide Gwinnett results that are absent from the project's other 2022 export.
 
-`precinct_<year>_match_audit.csv` records each match method or an unmatched shape. `precinct_2024_aliases.csv` contains manually reviewed 2024 source names. `precinct_friendly_names_latest.json` keeps useful county/code to label mappings, preferring the latest boundary name and expanding unambiguous abbreviations. Case-only repeats are omitted. The dated polygon and centroid files retain friendly labels even when a mapping is omitted.
+`precinct_<year>_match_audit.csv` records each match method or an unmatched shape. `precinct_2024_aliases.csv` contains manually reviewed 2024 source names. `precinct_friendly_names_latest.json` keeps useful county/code to label mappings, preferring the latest boundary name and expanding unambiguous abbreviations such as UMC to United Methodist Church. Matching precinct-number prefixes are removed from display names. `precinct_friendly_overrides.csv` preserves reviewed labels when the files are rebuilt. Case-only repeats are omitted. The dated polygon and centroid files retain friendly labels even when a mapping is omitted.
 
 Different precinct codes may intentionally share a polling-place label. Those separate code mappings are retained.
 

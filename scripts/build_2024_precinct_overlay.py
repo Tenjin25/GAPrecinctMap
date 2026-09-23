@@ -43,11 +43,18 @@ def match_name(value: str) -> str:
     return compact(text)
 
 
-def friendly_name(value: str) -> str:
+def friendly_name(value: str, code: str = "") -> str:
     """Keep the latest official name, expanding only unambiguous abbreviations."""
     text = re.sub(r"\s+", " ", str(value or "").strip())
     if re.fullmatch(r"[A-Z]{1,4}[0-9]{1,5}[A-Z0-9-]*", text, flags=re.I):
         return text.upper()
+    code_number = re.match(r"^0*(\d+)", str(code or ""))
+    if code_number:
+        prefix = re.match(r"^0*(\d{1,4})(?:\s*[-._]\s*|\s+)(.+)$", text)
+        if not prefix:
+            prefix = re.match(r"^0*(\d{1,4})([A-Za-z][A-Za-z ]+)$", text)
+        if prefix and int(prefix.group(1)) == int(code_number.group(1)):
+            text = prefix.group(2).strip()
     expansions = {
         "CTY": "County", "CNTY": "County", "CTR": "Center",
         "COMM": "Community", "SCH": "School", "ELEM": "Elementary",
@@ -55,10 +62,16 @@ def friendly_name(value: str) -> str:
         "GOVT": "Government", "REC": "Recreation", "DEPT": "Department",
         "SR": "Senior", "UWG": "University of West Georgia",
         "STA": "Station", "EDU": "Education", "RM": "Room",
+        "UMC": "United Methodist Church", "UM": "United Methodist",
+        "AME": "African Methodist Episcopal", "CME": "Christian Methodist Episcopal",
+        "BOE": "Board of Education", "DFACS": "Division of Family and Children Services",
+        "ASU": "Albany State University", "ACS": "Augusta Christian Schools",
+        "ATL": "Atlanta", "DUN": "Dunwoody", "CHA": "Chamblee",
+        "TUC": "Tucker", "DEC": "Decatur", "BHAVN": "Brookhaven",
     }
     for abbreviation, expanded in expansions.items():
-        text = re.sub(rf"\b{abbreviation}\b", expanded, text, flags=re.I)
-    return text.title() if text.isupper() else text
+        text = re.sub(rf"\b{abbreviation}\b\.?", expanded, text, flags=re.I)
+    return re.sub(r"\b[A-Z]{2,}\b", lambda match: match.group().title(), text)
 
 
 def source_code(value: str) -> str:
@@ -198,6 +211,7 @@ def main() -> None:
     parser.add_argument("--shape-zip", type=Path, default=Path("Data/_external/gaprec_2024-website-shapefile.zip"))
     parser.add_argument("--results-csv", type=Path, default=Path("Data/20241105__ga__general__precinct-level.csv"))
     parser.add_argument("--aliases", type=Path, default=Path("Data/precinct_2024_aliases.csv"))
+    parser.add_argument("--friendly-overrides", type=Path, default=Path("Data/precinct_friendly_overrides.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path("Data"))
     args = parser.parse_args()
 
@@ -264,15 +278,27 @@ def main() -> None:
             contest_results[slug][geoid]["total_votes"] += count
 
     prior_names = json.loads((args.out_dir / "precinct_friendly_names.json").read_text(encoding="utf-8"))
-    latest_names = defaultdict(dict, {county: dict(names) for county, names in prior_names["counties"].items()})
+    latest_names = defaultdict(dict, {
+        county: {code: friendly_name(label, code) for code, label in names.items()}
+        for county, names in prior_names["counties"].items()
+    })
     for feature in polygons:
         props = feature["properties"]
-        name = friendly_name(props["precinct_full_name"])
+        name = friendly_name(props["precinct_full_name"], props["prec_id"])
         prior = latest_names[props["county_norm"]].get(props["prec_id"], "")
         if compact(name) == compact(props["prec_id"]) and prior and compact(prior) != compact(props["prec_id"]):
             name = prior
         props["precinct_full_name"] = name
         latest_names[props["county_norm"]][props["prec_id"]] = name
+    with args.friendly_overrides.open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            county, code = row["county"].strip().upper(), row["precinct_id"].strip().upper()
+            if code not in latest_names[county]:
+                raise ValueError(f"Friendly-name override has no precinct: {county} {code}")
+            latest_names[county][code] = friendly_name(row["friendly_name"], code)
+    for feature in polygons:
+        props = feature["properties"]
+        props["precinct_full_name"] = latest_names[props["county_norm"]][props["prec_id"]]
     for feature in centroids:
         props = feature["properties"]
         props["precinct_full_name"] = latest_names[props["county_norm"]][props["prec_id"]]
@@ -288,6 +314,7 @@ def main() -> None:
         "generated_from": [
             "Data/precinct_friendly_names.json",
             "Data/_external/gaprec_2024-website-shapefile.zip",
+            "Data/precinct_friendly_overrides.csv",
         ],
         "counties": {
             county: {code: label for code, label in sorted(names.items())
