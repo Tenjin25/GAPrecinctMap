@@ -69,6 +69,8 @@ def friendly_name(value: str, code: str = "") -> str:
         "GOVT": "Government", "REC": "Recreation", "DEPT": "Department",
         "SR": "Senior", "UWG": "University of West Georgia",
         "STA": "Station", "EDU": "Education", "RM": "Room",
+        "BLDG": "Building", "CH": "Church", "AVE": "Avenue",
+        "GOV": "Government", "HDQTR": "Headquarters", "MGT": "Management",
         "UMC": "United Methodist Church", "UM": "United Methodist",
         "AME": "African Methodist Episcopal", "CME": "Christian Methodist Episcopal",
         "BOE": "Board of Education", "DFACS": "Division of Family and Children Services",
