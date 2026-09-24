@@ -4,8 +4,8 @@ COLUMBIA,064,Grace Baptist Church,Grace Baptist Church,name
 COLUMBIA,061,Greenbrier High,Greenbrier High,name
 COLUMBIA,063,Riverview Church,Riverview Church,name
 COLUMBIA,132,Wesley Methodist Church,Wesley Methodist,prior_election_name
-COLUMBIA,135,"Christ Church, Presbyterian",Christ Church Presbyterian,name
-COLUMBIA,107,Gospel Water Branch Bapt. Church,Gospel Water Branch,prior_election_name
+COLUMBIA,135,"Christ Church, Presbyterian (PCA)",Christ Church Presbyterian,name
+COLUMBIA,107,Gospel Water Branch Baptist Church,Gospel Water Branch,prior_election_name
 COLUMBIA,040,Eubank/Blanchard Center,Eubank-Blanchard Center,name
 COLUMBIA,109,Stevens Creek Church,Stevens Creek Church,name
 COLUMBIA,111,Lakeside Middle,Lakeside Middle,name
@@ -19,7 +19,7 @@ COLUMBIA,070,Blanchard Park,Blanchard Park,name
 COLUMBIA,085,Trinity Bapt Church,Trinity Baptist Church,unique_name_similarity
 COLUMBIA,076,Marvin Methodist,Marvin Methodist,name
 COLUMBIA,120,Harvest Pointe Fellowship,Gold Cross EMS,prior_election_name
-COLUMBIA,125,Church Of Our Savior,Church of Our Savior,name
+COLUMBIA,125,Church of Our Savior (Episcopal),Church of Our Savior,name
 COLUMBIA,130,West Acres Baptist Church,West Acres Baptist,prior_election_name
 COLUMBIA,134,Col County Main Library,Col Cty Main Library,name
 COLUMBIA,026,Philadelphia Church,Philadelphia Church,name
@@ -94,7 +94,7 @@ CLARKE,1D,Whit Davis School,1D,code
 CLARKE,1B,E. Athens Baptist,1B,code
 CLARKE,2B,Howard Stroud School,2B,code
 CLARKE,1A,Winterville Train Depot,1A,code
-CLARKE,7A,Timothy Bptst Church,7A,code
+CLARKE,7A,Timothy Baptist Church,7A,code
 CLARKE,7B,Athens Regional Library,7B,code
 CLARKE,7C,Firestation #3,7C,code
 CLARKE,4B,Memorial Park,4B,code
@@ -188,13 +188,13 @@ FULTON,JC02,Northview High School,JC02,code
 FULTON,CP06A,Camp Truitt Senior Center,CP06A,code
 FULTON,11J,Junction 2800,11J,code
 FULTON,EP03B,Woodland Middle School,EP03B,code
-FULTON,SC23C,New Life Presbyterian Church,SC23C,code
-FULTON,SC23A,New Life Presbyterian Church,SC23A,code
+FULTON,SC23C,New Life Presbyterian Church (PC(USA)),SC23C,code
+FULTON,SC23A,New Life Presbyterian Church (PC(USA)),SC23A,code
 FULTON,SC27,McNair Middle,SC27,code
 FULTON,CP083,Tracey Wyatt Community Center,CP083,code
 FULTON,CP08A,Tracey Wyatt Community Center,CP08A,code
 FULTON,SC29A,Creel Park,SC29A,code
-FULTON,SC23B,New Life Presbyterian Church,SC23B,code
+FULTON,SC23B,New Life Presbyterian Church (PC(USA)),SC23B,code
 FULTON,SC09B,Burdett Park Gym,SC09B,code
 FULTON,SC11B,Creel Park,SC11B,code
 FULTON,SC11A,Creel Park,SC11A,code
@@ -245,9 +245,9 @@ FULTON,JC04A,Robert E. Fulton Ocee Library,JC04A,code
 FULTON,JC03B,Abbotts Hill Elementary School,JC03B,code
 FULTON,JC06,Northview High School,JC06,code
 FULTON,09F,Morris Brandon Primary Center School,09F,code
-FULTON,08N2,Trinity Presbyterian Church,08N2,exact_precinct_code
-FULTON,08N1,Trinity Presbyterian Church,08N1,exact_precinct_code
-FULTON,08F1,Trinity Presbyterian Church,08F1,exact_precinct_code
+FULTON,08N2,Trinity Presbyterian Church (PC(USA)),08N2,exact_precinct_code
+FULTON,08N1,Trinity Presbyterian Church (PC(USA)),08N1,exact_precinct_code
+FULTON,08F1,Trinity Presbyterian Church (PC(USA)),08F1,exact_precinct_code
 FULTON,08A,Sutton Middle Six Grade Campus,08A,code
 FULTON,08D,Northside Branch Library,08D,code
 FULTON,10K,Beecher Hills Elementary School,10K,code
@@ -372,13 +372,13 @@ FULTON,03G,Lindsay Street Baptist Church,03G,code
 FULTON,03T,Friendship Baptist Church,03T,code
 FULTON,03P2,Antioch Baptist Church Family Center,03P2,exact_precinct_code
 FULTON,04F,Saint Luke's Episcopal Church,04F,code
-FULTON,03I,North Avenue Presbyterian,03I,code
+FULTON,03I,North Avenue Presbyterian Church (PC(USA)),03I,code
 FULTON,02B,Saint Luke's Episcopal Church,02B,code
 FULTON,05C,Liberty Baptist Church,05C,code
 FULTON,05K,David T. Howard Middle School,05K,code
 FULTON,05D,Saint Luke's Episcopal Church,05D,code
 FULTON,05F,Saint Luke's Episcopal Church,05F,code
-FULTON,02L2,North Avenue Presbyterian,02L2,exact_precinct_code
+FULTON,02L2,North Avenue Presbyterian Church (PC(USA)),02L2,exact_precinct_code
 FULTON,02L1A,02L1A,02L1A,name
 FULTON,02C,Saint Luke's Episcopal Church,02C,code
 FULTON,02L1,Lutheran Church Of The Redeemer,02L1,exact_precinct_code
@@ -507,14 +507,14 @@ FULTON,06D1,06D1,06D1,name
 FULTON,06D2,06D2,06D2,name
 FULTON,06D,Morningside Baptist Church Gym,06D,code
 FULTON,08K,Northside Church,08K,code
-FULTON,08L,Christ Church Presbyterian,08L,code
+FULTON,08L,Christ Church Presbyterian (PCA),08L,code
 FULTON,02W,Peachtree Christian Church,02W,code
 FULTON,03F,Peachtree Christian Church,03F,code
 FULTON,02A1,02A1,02A1,name
 FULTON,06R,Peachtree Christian Church,06R,code
 FULTON,02A,Piedmont Park Magnolia Hall,02A,code
 FULTON,06N,Second Ponce De Leon Baptist Church,06N,code
-FULTON,06L2,Christ Church Presbyterian,06L2,exact_precinct_code
+FULTON,06L2,Christ Church Presbyterian (PCA),06L2,exact_precinct_code
 FULTON,02S,David T. Howard Middle School,02S,code
 FULTON,05J,David T. Howard Middle School,05J,code
 FULTON,01P,Dobbs Elementary School,01P,code
@@ -542,7 +542,7 @@ FULTON,06B,Virginia-Highland Elementary,06B,code
 FULTON,02E,Little 5 Point Community Center,02E,code
 FULTON,02F1,The Church On Ponce & Highland,02F1,exact_precinct_code
 FULTON,06F,Ponce De Leon Library,06F,code
-FULTON,06L1,Christ Church Presbyterian,06L1,exact_precinct_code
+FULTON,06L1,Christ Church Presbyterian (PCA),06L1,exact_precinct_code
 FULTON,JC19,Barnswell Elementary,JC19,code
 FULTON,JC13A,Northeast Spruill Oaks Library,JC13A,code
 FULTON,JC13B,Northeast Spruill Oaks Library,JC13B,code
@@ -1339,14 +1339,14 @@ RICHMOND,803,Jamestown Community Center,803,code
 RICHMOND,801B,Blythe City Hall,801B,code
 RICHMOND,210,Augusta Aquatics Center,210,code
 RICHMOND,303,Augusta Aquatics Center,303,code
-RICHMOND,108,Covenant Presbyterian Church,108,code
+RICHMOND,108,Covenant Presbyterian Church (PC(USA)),108,code
 RICHMOND,204,Charles Evans Community Center,204,code
-RICHMOND,304,Covenant Presbyterian Church,304,code
+RICHMOND,304,Covenant Presbyterian Church (PC(USA)),304,code
 RICHMOND,201,Building Worship Center,201,code
 RICHMOND,309,Friedman Branch Library,309,code
 RICHMOND,306,First Baptist Church Of Augusta,306,code
 RICHMOND,502,Trinity Christian Methodist Episcopal Church,502,code
-RICHMOND,503,Belle Terrace Presbyterian Church,503,code
+RICHMOND,503,Belle Terrace Presbyterian Church (PC(USA)),503,code
 RICHMOND,507,Friedman Branch Library,507,code
 RICHMOND,504,Burns Memorial Methodist Church,504,code
 RICHMOND,401,Trinity Christian Methodist Episcopal Church,401,code
@@ -1364,7 +1364,7 @@ RICHMOND,102,Kroc Center,102,code
 RICHMOND,701,Aldersgate United Methodist Church,701,code
 RICHMOND,305,Paine College Heal Complex,305,code
 RICHMOND,302,Friedman Branch Library,302,code
-RICHMOND,301,Covenant Presbyterian Church,301,code
+RICHMOND,301,Covenant Presbyterian Church (PC(USA)),301,code
 RICHMOND,308,First Baptist Church Of Augusta,308,code
 RICHMOND,804,Blythe Recreation Center,804,code
 RICHMOND,807,Jamestown Community Center,807,code
@@ -1593,11 +1593,11 @@ LEE,4,#4 Leesburg,Leesburg,unique_name_similarity
 LEE,1,#1 Chokee,Chokee,unique_name_similarity
 LEE,10,#10 Redbone,Redbone,unique_name_similarity
 LEE,8,#8 Flint Reformed Baptist,Flint Reformed Baptist,unique_name_similarity
-LEE,3,#3 Cjc,CJC,single_remainder
+LEE,3,#3 Cjc,CJC,prior_election_name
 LEE,2,#2 Smithville,Smithville,unique_name_similarity
 LEE,9,#9 Century Fire Stat,Century Fire Station,unique_name_similarity
 LEE,6,#6 First Baptist,First Baptist,unique_name_similarity
-LEE,7,#7 Sda Church,SDA Church,unique_name_similarity
+LEE,7,Seventh-day Adventist Church,SDA Church,prior_election_name
 LEE,5,#5 Friendship Bapt.,Friendship Baptist,unique_name_similarity
 SUMTER,15,Leslie,Leslie,name
 SUMTER,29,Andersonville,Andersonville,name
@@ -2176,7 +2176,7 @@ CHATHAM,4-12C,St Peters Episcopal,4-12C St Peters Episcopal,code
 CHATHAM,4-10C,Burke Day Public Safety Building,4-10C Guard House Comm Ctr,code
 CHATHAM,7-14C,Coastal Cathedral,7-14C Coastal Cathedral,code
 CHATHAM,7-10C,Progressive Recreation Center,7-10C Progressive Rec Center,code
-CHATHAM,6-01C,White Bluff Presbyterian Church,6-01C White Bluff Presbyterian,code
+CHATHAM,6-01C,White Bluff Presbyterian Church (PC(USA)),6-01C White Bluff Presbyterian,code
 CHATHAM,1-13C,The Sanctuary,1-13C The Sanctuary,code
 CHATHAM,1-14C,St. Luke United Methodist Church,1-14C Compassion Christian Church,code
 CHATHAM,1-10C,St. Thomas Episcopal Church,1-10C St Thomas Episcopal Church,code
@@ -2189,7 +2189,7 @@ CHATHAM,1-16C,Ferguson Avenue Baptist Church,1-16C Ferguson Ave Baptist,code
 CHATHAM,6-09C,Trinity Lutheran Church,6-09C Trinity Lutheran Church,code
 CHATHAM,6-03C,Crusader Community Center,6-03C Crusader Comm Center,code
 CHATHAM,6-05C,Windsor Hall,6-05C Windsor Hall,code
-CHATHAM,4-08C,Wilmington Island Presbyterian Church,4-08C Wilmington Island Pres Church,code
+CHATHAM,4-08C,Wilmington Island Presbyterian Church (PC(USA)),4-08C Wilmington Island Pres Church,code
 CHATHAM,4-07C,Wilmington Island United Methodist Church,4-07C Wilmington Island UMC,code
 CHATHAM,4-04C,Lighthouse Baptist Church,4-04C Lighthouse Baptist Church,code
 CHATHAM,7-11C,Savannah Fire Station #14,7-11C Seventh Day Adv Church,code
@@ -2210,7 +2210,7 @@ CHATHAM,3-14C,Oglethorpe Charter Academy,3-14C Oglethorpe Charter Academy,code
 CHATHAM,1-08C,Grace United Methodist Church,1-08C Grace United Methodist Church,code
 CHATHAM,3-11C,Southside Baptist Church,3-11C Southside Baptist Church,code
 CHATHAM,1-05C,Jewish Educational Alliance,1-05C JEA Building,code
-CHATHAM,1-01C,First Presbyterian Church,1-01C First Presbyterian Church,code
+CHATHAM,1-01C,First Presbyterian Church (PC(USA)),1-01C First Presbyterian Church,code
 CHATHAM,2-11C,Coastal Cathedral Mission Campus,2-11C Stillwell Towers,code
 CHATHAM,2-02C,River Pointe,2-02C Blackshear Community Center,code
 CHATHAM,2-06C,Eli Whitney Complex,2-06C Eli Whitney Complex,code
@@ -2219,7 +2219,7 @@ CHATHAM,3-02C,Temple Mickve Israel,3-02C Temple Mickve Israel,code
 CHATHAM,2-03C,W W Law Center,2-03C W W Law Center,code
 CHATHAM,2-04C,Fellowship Of Love Community Church,2-04C Fellowship of Love Church,code
 CHATHAM,2-07C,Christ Community Church At Morningside,2-07C Christ Community Church,code
-CHATHAM,5-03C,Butler Presbyterian Church Ed Building,5-03C Butler Presbyterian Church,code
+CHATHAM,5-03C,Butler Memorial Presbyterian Church Education Building (PC(USA)),5-03C Butler Presbyterian Church,code
 CHATHAM,8-06C,Tompkins Recreation Center,8-06C Tompkins Rec Center,code
 CHATHAM,5-02C,Senior Citizen Center,5-02C Senior Citizens Center,code
 CHATHAM,8-05C,West Broad Street Ymca,8-05C W Broad St YMCA,code
