@@ -39,10 +39,27 @@ def build(data_dir: Path) -> None:
         for code, name in names.items()
     }
     matches, audit = match_precincts(features, votes, {}, code_names)
+    with (data_dir / "precinct_2020_match_audit.csv").open(encoding="utf-8", newline="") as handle:
+        prior_names = {(row["county"], row["precinct_id"]): row["source_name"] for row in csv.DictReader(handle)}
+    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
+    # These counties use the same polling-place names in November and January,
+    # but several 2020 boundary labels name a different polling location. Carry
+    # the complete November code-to-result assignment forward as a unit.
+    for county in ("DOUGHERTY", "PAULDING"):
+        county_features = [feature for feature in features
+                           if feature["properties"]["county_norm"] == county]
+        names = [prior_names.get((county, feature["properties"]["prec_id"]), "")
+                 for feature in county_features]
+        if not all(names) or len(set(names)) != len(names) or set(names) != set(votes[county]):
+            raise ValueError(f"2020 and 2021 precinct name sets differ in {county}")
+        for feature, source_name in zip(county_features, names):
+            props = feature["properties"]
+            matches[props["id"]] = (source_name, "prior_election_name")
+            row = audit_by_shape[(county, props["prec_id"])]
+            row["source_name"], row["method"] = source_name, "prior_election_name"
     shape_counts = Counter((feature["properties"]["county_norm"], feature["properties"]["prec_id"].upper()) for feature in features)
     assigned = {(feature["properties"]["county_norm"], source_name) for feature in features
                 if (source_name := matches.get(feature["properties"]["id"], ("",))[0])}
-    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
     for feature in features:
         props = feature["properties"]
         county, code, geoid = props["county_norm"], props["prec_id"].upper(), props["id"]
@@ -54,8 +71,6 @@ def build(data_dir: Path) -> None:
             matches[geoid] = (source_name, "exact_precinct_code")
             row["source_name"], row["method"] = source_name, "exact_precinct_code"
             assigned.add((county, source_name))
-    with (data_dir / "precinct_2020_match_audit.csv").open(encoding="utf-8", newline="") as handle:
-        prior_names = {(row["county"], row["precinct_id"]): row["source_name"] for row in csv.DictReader(handle)}
     for feature in features:
         props = feature["properties"]
         county, code, geoid = props["county_norm"], props["prec_id"], props["id"]
