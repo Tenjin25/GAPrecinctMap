@@ -29,6 +29,46 @@ def build(data_dir: Path) -> None:
         if sum(int(row["total_votes"]) for row in camden_rows if row["office"] == office and row["party"] == party) != county_total:
             raise ValueError(f"Camden precinct sum differs from certified county total: {office} {party}")
     result_rows.extend(camden_rows)
+    # VEST's 2020 Georgia precinct file also carries January 2021 runoff votes.
+    # Keep its source precincts in the CSV; combine the two Chattooga precincts
+    # represented by one 2020 map shape only when joining results to geometry.
+    vest_expected = {
+        "CHATTOOGA": (6558, 1673, 6550, 1686),
+        "GRADY": (6229, 3099, 6226, 3102),
+        "GREENE": (6917, 3703, 6855, 3758),
+    }
+    vest_columns = ("perdue", "ossoff", "loeffler", "warnock")
+    vest_by_shape = defaultdict(lambda: {column: 0 for column in vest_columns})
+    vest_totals = defaultdict(lambda: {column: 0 for column in vest_columns})
+    vest_source_codes = set()
+    with (data_dir / "20210105__ga__runoff__vest_missing_precinct.csv").open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            county, source_code = row["county"].strip().upper(), row["precinct"].strip()
+            if county not in vest_expected:
+                raise ValueError(f"Unexpected VEST supplement county: {county}")
+            if (county, source_code) in vest_source_codes:
+                raise ValueError(f"Duplicate VEST precinct: {county} {source_code}")
+            vest_source_codes.add((county, source_code))
+            shape_code = "C-968X927" if county == "CHATTOOGA" and source_code in ("C-968", "927") else source_code
+            for column in vest_columns:
+                count = int(row[column])
+                vest_by_shape[(county, shape_code)][column] += count
+                vest_totals[county][column] += count
+    for county, totals in vest_expected.items():
+        observed = tuple(vest_totals[county][column] for column in vest_columns)
+        if observed != totals:
+            raise ValueError(f"VEST {county} precinct sums differ from state county totals: {observed} != {totals}")
+    expected_shapes = {(feature["properties"]["county_norm"], feature["properties"]["prec_id"])
+                       for feature in features if feature["properties"]["county_norm"] in vest_expected}
+    if set(vest_by_shape) != expected_shapes:
+        raise ValueError(f"VEST source precincts do not cover the target shapes: {set(vest_by_shape) ^ expected_shapes}")
+    for (county, shape_code), counts in vest_by_shape.items():
+        for office, parties in (("U.S. Senate", (("perdue", "Republican"), ("ossoff", "Democrat"))),
+                                ("U.S. Senate (Special)", (("loeffler", "Republican"), ("warnock", "Democrat")))):
+            for column, party in parties:
+                result_rows.append({"county": county, "precinct": shape_code, "office": office,
+                                    "district": "", "party": party, "candidate": column,
+                                    "total_votes": counts[column]})
     votes = defaultdict(dict)
     for row in result_rows:
         if row["office"] == "U.S. Senate":
@@ -39,10 +79,27 @@ def build(data_dir: Path) -> None:
         for code, name in names.items()
     }
     matches, audit = match_precincts(features, votes, {}, code_names)
+    with (data_dir / "precinct_2020_match_audit.csv").open(encoding="utf-8", newline="") as handle:
+        prior_names = {(row["county"], row["precinct_id"]): row["source_name"] for row in csv.DictReader(handle)}
+    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
+    # These counties use the same polling-place names in November and January,
+    # but several 2020 boundary labels name a different polling location. Carry
+    # the complete November code-to-result assignment forward as a unit.
+    for county in ("DOUGHERTY", "PAULDING"):
+        county_features = [feature for feature in features
+                           if feature["properties"]["county_norm"] == county]
+        names = [prior_names.get((county, feature["properties"]["prec_id"]), "")
+                 for feature in county_features]
+        if not all(names) or len(set(names)) != len(names) or set(names) != set(votes[county]):
+            raise ValueError(f"2020 and 2021 precinct name sets differ in {county}")
+        for feature, source_name in zip(county_features, names):
+            props = feature["properties"]
+            matches[props["id"]] = (source_name, "prior_election_name")
+            row = audit_by_shape[(county, props["prec_id"])]
+            row["source_name"], row["method"] = source_name, "prior_election_name"
     shape_counts = Counter((feature["properties"]["county_norm"], feature["properties"]["prec_id"].upper()) for feature in features)
     assigned = {(feature["properties"]["county_norm"], source_name) for feature in features
                 if (source_name := matches.get(feature["properties"]["id"], ("",))[0])}
-    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
     for feature in features:
         props = feature["properties"]
         county, code, geoid = props["county_norm"], props["prec_id"].upper(), props["id"]
@@ -54,8 +111,6 @@ def build(data_dir: Path) -> None:
             matches[geoid] = (source_name, "exact_precinct_code")
             row["source_name"], row["method"] = source_name, "exact_precinct_code"
             assigned.add((county, source_name))
-    with (data_dir / "precinct_2020_match_audit.csv").open(encoding="utf-8", newline="") as handle:
-        prior_names = {(row["county"], row["precinct_id"]): row["source_name"] for row in csv.DictReader(handle)}
     for feature in features:
         props = feature["properties"]
         county, code, geoid = props["county_norm"], props["prec_id"], props["id"]
