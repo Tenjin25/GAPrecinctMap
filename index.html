@@ -10868,8 +10868,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-21-ga-judicial-districts-v3';
-    const APP_BUILD_ID = '2026-09-21-ga-judicial-districts-v3';
+    const DATA_CACHE_BUSTER = '2026-09-24-ga-votehub-district-labels-v1';
+    const APP_BUILD_ID = '2026-09-24-ga-votehub-district-labels-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -27286,6 +27286,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const requestId = ++districtHoverRequestId;
       setDistrictHoverOutline(scope, districtNum);
 
+      const districtNumText = String(districtNum);
+      const paddedDistrictNum = districtNumText.padStart(2, '0');
+      const formattedDistrictLabel = scope === 'congressional'
+        ? `GA-${paddedDistrictNum}`
+        : `${scope === 'state_house' ? 'HD' : 'SD'}-${paddedDistrictNum}`;
       const contestValue = document.getElementById('contestSelect')?.value || '';
       const _demoRow = getDistrictDemographics(scope, districtNum);
       const _demoHTML = buildDemoHTML(_demoRow, scope, districtNum);
@@ -27297,7 +27302,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.point.x,
             e.point.y,
             buildTooltipShell(
-              `${districtLabel} ${districtNum}`,
+              formattedDistrictLabel,
               _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">Select a contest to see results</div>',
               { pinned: pinnedShell, copyText }
             ),
@@ -27312,7 +27317,7 @@ document.addEventListener('DOMContentLoaded', function() {
           e.point.x,
           e.point.y,
           buildTooltipShell(
-            `${districtLabel} ${districtNum}`,
+            formattedDistrictLabel,
             `${_demoHTML}<div class="tooltip-kicker">Start</div><div style="color:rgba(226,232,240,0.92);font-weight:650;margin-top:6px;">${escapeHtml(startText)}</div>`,
             { pinned: pinnedShell, copyText }
           ),
@@ -27346,7 +27351,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.point.x,
             e.point.y,
             buildTooltipShell(
-              `${districtLabel} ${districtNum}`,
+              formattedDistrictLabel,
               _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>',
               { pinned: pinnedShell, copyText }
             ),
@@ -27359,7 +27364,7 @@ document.addEventListener('DOMContentLoaded', function() {
           e.point.x,
           e.point.y,
           buildTooltipShell(
-            `${districtLabel} ${districtNum}`,
+            formattedDistrictLabel,
             _demoHTML + '<div class="tooltip-kicker" style="margin-top:6px;">No data</div><div style="color:rgba(226,232,240,0.92);margin-top:6px;">No results for this contest.</div>',
             { pinned: pinnedShell, copyText }
           ),
@@ -27384,7 +27389,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.point.x,
             e.point.y,
             buildTooltipShell(
-              `${districtLabel} ${districtNum}`,
+              formattedDistrictLabel,
               _demoHTML + '<div style="color:#94a3b8;margin-top:6px;">No data for this contest</div>',
               { pinned: pinnedShell, copyText }
             ),
@@ -27397,7 +27402,7 @@ document.addEventListener('DOMContentLoaded', function() {
           e.point.x,
           e.point.y,
           buildTooltipShell(
-            `${districtLabel} ${districtNum}`,
+            formattedDistrictLabel,
             _demoHTML + '<div class="tooltip-kicker" style="margin-top:6px;">No data</div><div style="color:rgba(226,232,240,0.92);margin-top:6px;">No results for this contest.</div>',
             { pinned: pinnedShell, copyText }
           ),
@@ -27447,9 +27452,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const subtitleByScope = scope === 'congressional'
         ? 'Congressional District'
         : (scope === 'state_senate' ? 'State Senate' : 'State House');
-      const districtTitle = scope === 'congressional'
-        ? `GA-${String(districtNum).padStart(2, '0')}`
-        : `${districtLabel} ${districtNum}`;
+      const districtTitle = formattedDistrictLabel;
       const winnerName = signedMarginPct > 0
         ? shortCandidateLabel(repCandidate, 'Republican')
         : (signedMarginPct < 0 ? shortCandidateLabel(demCandidate, 'Democratic') : 'Tie');
