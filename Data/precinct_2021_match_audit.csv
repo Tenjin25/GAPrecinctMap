@@ -65,11 +65,11 @@ MCDUFFIE,136,136,136,name
 RABUN,RABUN,Rabun County,Rabun County,name
 TALIAFERRO,172,Sharon,Sharon,name
 TALIAFERRO,601,Crawfordville,Crawfordville,name
-GREENE,004,Union Point,,unmatched
-GREENE,001,Greensboro,,unmatched
-GREENE,005,Siloam,,unmatched
-GREENE,006,White Plains,,unmatched
-GREENE,008,Old Salem,,unmatched
+GREENE,004,Union Point,004,code
+GREENE,001,Greensboro,001,code
+GREENE,005,Siloam,005,code
+GREENE,006,White Plains,006,code
+GREENE,008,Old Salem,008,code
 OCONEE,03,Antioch,Antioch,name
 OCONEE,02,Colham Ferry,Colham Ferry,name
 OCONEE,05,Bishop,Bishop,name
@@ -1307,18 +1307,18 @@ BURKE,0002,Four Points,Four Points,name
 BURKE,0007,Midville,Midville,name
 BURKE,0013,Vidette,Vidette,name
 BURKE,0010,Scotts Crossroads,Scotts Crossroads,name
-CHATTOOGA,1216,Dirtseller,,unmatched
-CHATTOOGA,961,Seminole,,unmatched
-CHATTOOGA,1083,Coldwater,,unmatched
-CHATTOOGA,925,Summerville,,unmatched
-CHATTOOGA,968,Menlo,,unmatched
-CHATTOOGA,C-968X927,Cloudland-Teloga,,unmatched
-CHATTOOGA,1484,Lyerly,,unmatched
-CHATTOOGA,1382,Haywood,,unmatched
-CHATTOOGA,962,Subligna,,unmatched
-CHATTOOGA,940,Dirttown,,unmatched
-CHATTOOGA,P-870,Pennville,,unmatched
-CHATTOOGA,870,Trion,,unmatched
+CHATTOOGA,1216,Dirtseller,1216,code
+CHATTOOGA,961,Seminole,961,code
+CHATTOOGA,1083,Coldwater,1083,code
+CHATTOOGA,925,Summerville,925,code
+CHATTOOGA,968,Menlo,968,code
+CHATTOOGA,C-968X927,Cloudland-Teloga,C-968X927,exact_precinct_code
+CHATTOOGA,1484,Lyerly,1484,code
+CHATTOOGA,1382,Haywood,1382,code
+CHATTOOGA,962,Subligna,962,code
+CHATTOOGA,940,Dirttown,940,code
+CHATTOOGA,P-870,Pennville,P-870,exact_precinct_code
+CHATTOOGA,870,Trion,870,code
 RICHMOND,707,Vineyard Church,707,code
 RICHMOND,703,National Hills Baptist Church,703,code
 RICHMOND,709,National Hills Baptist Church,709,code
@@ -1636,19 +1636,19 @@ MITCHELL,PE,Pelham,Pelham,name
 MITCHELL,CN,Camilla North,Camilla North,name
 MITCHELL,CS,Camilla South,Camilla South,name
 MITCHELL,BA,Baconton,Baconton,name
-GRADY,SH,Spring Hill,,unmatched
-GRADY,L,Limesink,,unmatched
-GRADY,B,Blowing Cave,,unmatched
-GRADY,S,Spence,,unmatched
-GRADY,M,Midway,,unmatched
-GRADY,C05,Cairo 5TH Distr,,unmatched
-GRADY,WL,Woodland,,unmatched
-GRADY,P,Pine Park,,unmatched
-GRADY,H,Higdon,,unmatched
-GRADY,W,Whigham,,unmatched
-GRADY,R,Ragan,,unmatched
-GRADY,D,Duncanville,,unmatched
-GRADY,C04,Cairo 4TH Distr,,unmatched
+GRADY,SH,Spring Hill,SH,exact_precinct_code
+GRADY,L,Limesink,L,exact_precinct_code
+GRADY,B,Blowing Cave,B,exact_precinct_code
+GRADY,S,Spence,S,exact_precinct_code
+GRADY,M,Midway,M,exact_precinct_code
+GRADY,C05,Cairo 5TH Distr,C05,code
+GRADY,WL,Woodland,WL,exact_precinct_code
+GRADY,P,Pine Park,P,exact_precinct_code
+GRADY,H,Higdon,H,exact_precinct_code
+GRADY,W,Whigham,W,exact_precinct_code
+GRADY,R,Ragan,R,exact_precinct_code
+GRADY,D,Duncanville,D,exact_precinct_code
+GRADY,C04,Cairo 4TH Distr,C04,code
 DOUGHERTY,22,Pine Bluff Baptist Church,Phoebe East,prior_election_name
 DOUGHERTY,20,International Studies Elementary,Putney 1st Baptist Church,prior_election_name
 DOUGHERTY,21,International Studie,International Studies,prior_election_name
