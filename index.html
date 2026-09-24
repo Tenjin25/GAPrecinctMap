@@ -10928,6 +10928,7 @@ document.addEventListener('DOMContentLoaded', function() {
         precincts_2020: withBase('./Data/Voting_Precincts_2020.geojson'),
         precinct_centroids_2020: withBase('./Data/precinct_centroids_2020.geojson'),
         precinct_contests_2020: withBase('./Data/precinct_contests_2020.json'),
+        precinct_contests_2021: withBase('./Data/precinct_contests_2021.json'),
         precincts_2022: withBase('./Data/Voting_Precincts_2022.geojson'),
         precinct_centroids_2022: withBase('./Data/precinct_centroids_2022.geojson'),
         precinct_contests_2022: withBase('./Data/precinct_contests_2022.json'),
@@ -29230,7 +29231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'agriculture_commissioner', 'insurance_commissioner',
         'labor_commissioner', 'superintendent'
       ].includes(contest)) return `precinct${year}`;
-      if (year === 2020) return 'precinct2020';
+      if (year === 2020 || year === 2021) return 'precinct2020';
       if (year === 2022 && [
         'us_senate', 'governor', 'lieutenant_governor', 'secretary_of_state',
         'attorney_general', 'agriculture_commissioner', 'insurance_commissioner',
@@ -33413,8 +33414,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const p = (async () => {
         const payloads = [];
         const datedYear = /^precinct(2012|2014|2016|2018|2020|2022|2024)$/.exec(getDesiredPrecinctGeometryMode())?.[1];
-        if (datedYear && Number(datedYear) === Number(year)) {
-          const collection = await loadJSON(CONFIG.paths[`precinct_contests_${datedYear}`]);
+        if (datedYear && (Number(datedYear) === Number(year) || (datedYear === '2020' && Number(year) === 2021))) {
+          const collection = await loadJSON(CONFIG.paths[`precinct_contests_${Number(year)}`]);
           for (const filename of candidates) {
             const slug = filename.replace(/\.json$/i, '');
             const results = collection?.contests?.[slug];

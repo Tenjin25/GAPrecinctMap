@@ -74,20 +74,44 @@ def build(year: int, data_dir: Path) -> None:
     # Match against the boundary's own source name; friendly labels come afterward.
     for feature, raw_name in zip(polygons, raw_names):
         feature["properties"]["precinct_full_name"] = raw_name
-    matches, audit = match_precincts(polygons, votes, {})
+    aliases = {}
+    with (data_dir / "precinct_historical_aliases.csv").open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            if int(row["year"]) == year:
+                aliases[(row["county"].strip().upper(), row["precinct_id"].strip().upper())] = row["source_name"].strip()
+    code_names = {(county, code): name for county, names in prior_names.items() for code, name in names.items()}
+    matches, audit = match_precincts(polygons, votes, aliases, code_names)
     for feature in polygons:
         props = feature["properties"]
         props["precinct_full_name"] = friendly_name(prior_names.get(props["county_norm"], {}).get(props["prec_id"]) or props["precinct_full_name"], props["prec_id"])
 
     by_source = {(feature["properties"]["county_norm"], matches[feature["properties"]["id"]][0]): feature["properties"]["id"]
                  for feature in polygons if feature["properties"]["id"] in matches}
+    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
+    shape_by_key = {(feature["properties"]["county_norm"], feature["properties"]["prec_id"]): feature["properties"]["id"]
+                    for feature in polygons}
+    with (data_dir / "precinct_historical_split_aliases.csv").open(encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            if int(row["year"]) != year:
+                continue
+            county, code = row["county"].strip().upper(), row["precinct_id"].strip().upper()
+            geoid = shape_by_key[(county, code)]
+            source_names = [name.strip() for name in row["source_names"].split("|")]
+            if not source_names or any(name not in votes[county] for name in source_names):
+                raise ValueError(f"Split alias source missing: {year} {county} {code}")
+            for source_name in source_names:
+                prior_geoid = by_source.get((county, source_name))
+                if prior_geoid and prior_geoid != geoid:
+                    raise ValueError(f"Split alias source already assigned: {year} {county} {source_name}")
+                by_source[(county, source_name)] = geoid
+            audit_by_shape[(county, code)]["source_name"] = "; ".join(source_names)
+            audit_by_shape[(county, code)]["method"] = "reviewed_split_alias"
     # Some 2016 exports split one precinct's votes into district-suffixed rows,
     # e.g. "03 Browns Bridge-7" and "03 Browns Bridge-9". Both belong to one
     # boundary when the unsuffixed name identifies exactly one shape in county.
     by_name = defaultdict(list)
     for feature, raw_name in zip(polygons, raw_names):
         by_name[(feature["properties"]["county_norm"], match_name(raw_name))].append(feature["properties"]["id"])
-    audit_by_shape = {(row["county"], row["precinct_id"]): row for row in audit}
     for county, source_names in votes.items():
         for source_name in source_names:
             if (county, source_name) in by_source:
