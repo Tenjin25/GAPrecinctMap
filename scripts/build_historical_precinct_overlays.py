@@ -43,6 +43,7 @@ def build(year: int, data_dir: Path) -> None:
     results_csv = data_dir / f"{date}__ga__general__{suffix}.csv"
     prior_names = json.loads((data_dir / "precinct_friendly_names_latest.json").read_text(encoding="utf-8"))["counties"]
     polygons, centroids, raw_names = [], [], []
+    shape_index = {}
     for record, geometry in read_shapes(data_dir / zip_name):
         county = str(record.get("COUNTY_NAM") or record.get("CTYNAME") or record.get("COUNTY") or "").strip().upper()
         code = str(record.get("PRECINCT_I") or "").strip().upper()
@@ -55,6 +56,16 @@ def build(year: int, data_dir: Path) -> None:
         if not geom.is_valid:
             geom = geom.buffer(0)
         geom = geom.simplify(0.00003, preserve_topology=True)
+        key = (county, code)
+        if key in shape_index:
+            # A few source shapefiles store disconnected pieces of one voting
+            # precinct as separate records. Keep one result and one CVAP key.
+            index = shape_index[key]
+            merged = shape(polygons[index]["geometry"]).union(geom)
+            polygons[index]["geometry"] = mapping(merged)
+            point = merged.representative_point()
+            centroids[index]["geometry"] = {"type": "Point", "coordinates": [point.x, point.y]}
+            continue
         point = geom.representative_point()
         geoid = f"{year}-{len(polygons)}"
         name = friendly_name(prior_names.get(county, {}).get(code) or raw_name, code)
@@ -62,6 +73,7 @@ def build(year: int, data_dir: Path) -> None:
                  "prec_id": code, "precinct_name": f"{county.title()} - {code}",
                  "precinct_norm": f"{county} - {code}", "precinct_full_name": name}
         polygons.append({"type": "Feature", "properties": props, "geometry": mapping(geom)})
+        shape_index[key] = len(polygons) - 1
         raw_names.append(raw_name)
         centroids.append({"type": "Feature", "properties": {**props, "has_polygon": True},
                           "geometry": {"type": "Point", "coordinates": [point.x, point.y]}})
