@@ -11960,6 +11960,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let precinctVariantOverridesByCounty = null; // Map<string countyNorm, Map<string alias, string[] codes>>
     let precinctVariantOverridesLoadInFlight = false;
     let precinctFullNameByNormCache = null; // Map<string precinct_norm, string precinct_display_name> (from precinct polygons when loaded)
+    let precinctSharedPlaceNames = new Set(); // County/name pairs used by multiple precinct codes in the current geometry.
     let precinctDotHoverWired = new Set();
     let viewportPrecinctCountRaf = null;
     let startupPrecinctCentroidPreloadScheduled = false;
@@ -27027,8 +27028,12 @@ document.addEventListener('DOMContentLoaded', function() {
         fullName: precFull,
         fallbackFullName: fallbackFull
       });
-      const title = displayPrecinct
-        ? `${displayCountyName(countyName)} - ${displayPrecinct}`
+      const sharedPlaceKey = `${normalizeCountyToken(countyName)}|${precFull.toUpperCase()}`;
+      const distinctPrecinct = displayCode && precFull && precinctSharedPlaceNames.has(sharedPlaceKey)
+        ? `${displayPrecinct} (${displayCode})`
+        : displayPrecinct;
+      const title = distinctPrecinct
+        ? `${displayCountyName(countyName)} - ${distinctPrecinct}`
         : displayCountyName(countyName);
       setPrecinctHoverFeature(feature);
 
@@ -29308,6 +29313,17 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         return feature;
       });
+      const codesByPlace = new Map();
+      (precincts.features || []).forEach(feature => {
+        const p = feature.properties || {};
+        if (!p.county_norm || !p.precinct_full_name || !p.prec_id) return;
+        const key = `${p.county_norm}|${p.precinct_full_name.toUpperCase()}`;
+        if (!codesByPlace.has(key)) codesByPlace.set(key, new Set());
+        codesByPlace.get(key).add(p.prec_id.toUpperCase());
+      });
+      precinctSharedPlaceNames = new Set(
+        [...codesByPlace].filter(([, codes]) => codes.size > 1).map(([key]) => key)
+      );
       precinctFullNameByNormCache = fullNameByNorm.size ? fullNameByNorm : precinctFullNameByNormCache;
       try {
         const s = new Set();
@@ -29821,7 +29837,12 @@ document.addEventListener('DOMContentLoaded', function() {
               }
               // If this alias is a name-only key that uniquely points to one code,
               // keep it as a fallback display name (e.g., "CREEDMOOR" -> ["CRDM"]).
-              if (codes.length === 1 && !isCodeLikeToken(alias) && !alias.startsWith(code)) {
+              // Compact aliases such as NORTHKINGSLAND are search keys for the
+              // spaced code NORTH KINGSLAND, not better display labels.
+              const aliasCompact = alias.replace(/[^A-Z0-9]/g, '');
+              const codeCompact = code.replace(/[^A-Z0-9]/g, '');
+              if (codes.length === 1 && !isCodeLikeToken(alias) && !alias.startsWith(code)
+                  && aliasCompact !== codeCompact) {
                 setBestNameForCode(county, code, alias);
               }
             });
