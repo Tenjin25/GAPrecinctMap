@@ -32,6 +32,10 @@ UI notes:
 - Precinct centroids log match stats to the console when the overlay is active (total/matched-by-norm/id/fallback/unmatched) to help validate coverage.
 - Map overlays (county/district/precinct layers) are inserted below basemap symbol layers so town/place labels remain readable and consistent.
 
+## Precinct display names
+
+The precinct overlay uses `Data/precinct_friendly_names_latest.json` for readable, county-scoped labels. A verified church affiliation in a friendly label (PCA, PCUSA, EPC, OPC, ECO, or Evangel Presbytery) takes precedence over an older venue name embedded in the map geometry. The app cache-busts this lookup so published label changes appear without changing precinct IDs, boundaries, or election-result joins.
+
 ## Geographic Layers
 
 Primary boundaries in use:
