@@ -53,7 +53,7 @@ def match_name(value: str) -> str:
 def friendly_name(value: str, code: str = "") -> str:
     """Keep the latest official name, expanding only unambiguous abbreviations."""
     text = re.sub(r"\s+", " ", str(value or "").strip())
-    denomination = re.search(r"\s+\((PCA|EPC|OPC|PC\(USA\))\)$", text, flags=re.I)
+    denomination = re.search(r"\s+\((PCA|EPC|OPC|ECO|PC\(USA\))\)$", text, flags=re.I)
     if denomination:
         text = text[:denomination.start()]
     if re.fullmatch(r"[A-Z]{1,4}[0-9]{1,5}[A-Z0-9-]*", text, flags=re.I):
