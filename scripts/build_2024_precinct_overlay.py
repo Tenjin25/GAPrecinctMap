@@ -53,7 +53,11 @@ def match_name(value: str) -> str:
 def friendly_name(value: str, code: str = "") -> str:
     """Keep the latest official name, expanding only unambiguous abbreviations."""
     text = re.sub(r"\s+", " ", str(value or "").strip())
-    denomination = re.search(r"\s+\((PCA|EPC|OPC|PC\(USA\))\)$", text, flags=re.I)
+    denomination = re.search(
+        r"(?:,\s*(PCA|EPC|OPC|ECO|PCUSA)|\s+\((PCA|EPC|OPC|ECO|PC\(USA\)|PCUSA)\))$",
+        text,
+        flags=re.I,
+    )
     if denomination:
         text = text[:denomination.start()]
     if re.fullmatch(r"[A-Z]{1,4}[0-9]{1,5}[A-Z0-9-]*", text, flags=re.I):
@@ -85,7 +89,8 @@ def friendly_name(value: str, code: str = "") -> str:
         text = re.sub(rf"\b{abbreviation}\b\.?", expanded, text, flags=re.I)
     text = re.sub(r"\b[A-Z]{2,}\b", lambda match: match.group().title(), text)
     text = re.sub(r"(?<=[A-Za-z])(['’])S\b", r"\1s", text)
-    return text + (f" ({denomination.group(1).upper()})" if denomination else "")
+    suffix = (denomination.group(1) or denomination.group(2)).upper().replace("PC(USA)", "PCUSA") if denomination else ""
+    return text + (f", {suffix}" if suffix else "")
 
 
 def source_code(value: str) -> str:
