@@ -10933,7 +10933,7 @@ document.addEventListener('DOMContentLoaded', function() {
         precinct_centroids_2022: withBase('./Data/precinct_centroids_2022.geojson'),
         precinct_contests_2022: withBase('./Data/precinct_contests_2022.json'),
         precinct_aliases: withBase('./Data/precinct_alias_index.json'),
-        precinct_friendly_names: withBase('./Data/precinct_friendly_names_latest.json'),
+        precinct_friendly_names: withCacheBuster(withBase('./Data/precinct_friendly_names_latest.json')),
         districts: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2022: withBase('./Data/tl_2022_13_cd118.geojson'),
         districts_2024: withBase('./Data/tl_2024_13_cd119.geojson'),
@@ -30064,6 +30064,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const canonicalCode = rawCode ? resolvePrecinctCanonicalCode(countyName, rawCode) : '';
       const friendly = rawCode ? getPrecinctFriendlyName(countyName, rawCode) : '';
       const friendlyLabel = friendly || '';
+      // Preserve verified affiliations even when geometry has an older venue label.
+      if (friendlyLabel && /,\s*(?:PCA|PCUSA|EPC|OPC|ECO|Evangel Presbytery)\s*$/i.test(friendlyLabel)) return friendlyLabel;
 
       const full = stripCountyPrefixFromPrecinctLabel(countyName, fullName);
       const fallbackFull = stripCountyPrefixFromPrecinctLabel(countyName, fallbackFullName);
