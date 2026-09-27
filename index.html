@@ -10868,8 +10868,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-27-ga-margin-rounding-v1';
-    const APP_BUILD_ID = '2026-09-27-ga-margin-rounding-v1';
+    const DATA_CACHE_BUSTER = '2026-09-27-ga-visible-margin-v2';
+    const APP_BUILD_ID = '2026-09-27-ga-visible-margin-v2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -15341,6 +15341,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .slice()
         .reverse()
         .map(entry => {
+          const rawMarginPct = marginPctValue(entry.repVotes, entry.demVotes, entry.totalVotes);
+          const pctFormatter = useCountyMarginPrecision ? formatPctForCountyCloseRace : formatPctForCloseRace;
           const winnerLabel = entry.winnerMeta.partyClass === 'rep'
             ? 'Republican'
             : (entry.winnerMeta.partyClass === 'dem' ? 'Democratic' : 'Tie');
@@ -15350,7 +15352,7 @@ document.addEventListener('DOMContentLoaded', function() {
             : '';
           const leadSummary = entry.leadLabel === 'Tie' ? 'Even race' : entry.leadLabel;
           const otherChip = entry.otherPct >= 0.05
-            ? `<span class="focus-trend-chip">Other ${escapeHtml(entry.otherPct.toFixed(2))}%</span>`
+            ? `<span class="focus-trend-chip">Other ${escapeHtml(pctFormatter(entry.otherPct, rawMarginPct))}%</span>`
             : '';
           return `
             <div class="focus-trend-entry">
@@ -15364,8 +15366,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   <span class="focus-trend-entry-margin">${escapeHtml(leadSummary)}</span>
                 </div>
                 <div class="focus-trend-entry-scale">
-                  <span class="dem">${escapeHtml(`${getCandidateLastName(entry.item, 'Democrat', { contestType: contestTypeHint, year: Number(entry.item?.year), office: contestTypeHint ? formatContestName(contestTypeHint, Number(entry.item?.year)) : '' })} ${entry.demPct.toFixed(2)}%`)}</span>
-                  <span class="rep">${escapeHtml(`${getCandidateLastName(entry.item, 'Republican', { contestType: contestTypeHint, year: Number(entry.item?.year), office: contestTypeHint ? formatContestName(contestTypeHint, Number(entry.item?.year)) : '' })} ${entry.repPct.toFixed(2)}%`)}</span>
+                  <span class="dem">${escapeHtml(`${getCandidateLastName(entry.item, 'Democrat', { contestType: contestTypeHint, year: Number(entry.item?.year), office: contestTypeHint ? formatContestName(contestTypeHint, Number(entry.item?.year)) : '' })} ${pctFormatter(entry.demPct, rawMarginPct)}%`)}</span>
+                  <span class="rep">${escapeHtml(`${getCandidateLastName(entry.item, 'Republican', { contestType: contestTypeHint, year: Number(entry.item?.year), office: contestTypeHint ? formatContestName(contestTypeHint, Number(entry.item?.year)) : '' })} ${pctFormatter(entry.repPct, rawMarginPct)}%`)}</span>
                 </div>
                 <div class="focus-trend-entry-bar" aria-hidden="true">
                   <span style="width:${entry.demPct.toFixed(4)}%;background:#2563eb;"></span>
@@ -20377,12 +20379,12 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     }
 
-    function buildStatewideCloseRaceAlertHTML(contestType, year, marginPct) {
+    function buildStatewideCloseRaceAlertHTML(contestType, year, marginPct, displayMarginPct = marginPct) {
       if (!isStatewideContestType(contestType)) return '';
       if (!Number.isFinite(marginPct) || marginPct > 1.0) return '';
 
       const inRecountRange = marginPct <= RECOUNT_MARGIN_THRESHOLD_PCT;
-      const marginLabel = formatMarginPctForDisplay(marginPct);
+      const marginLabel = formatMarginPctForDisplay(displayMarginPct);
       const alertLabel = inRecountRange ? 'Recount Watch' : 'Litigation Watch';
       const detail = inRecountRange
           ? `Margin ${marginLabel}% is inside the ${RECOUNT_MARGIN_THRESHOLD_PCT.toFixed(2)}-point recount range.`
@@ -20500,12 +20502,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isMobile) {
           const chips = breakdownItems.map(item => (
             `<div style="display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(15,23,42,0.12);background:#fff;white-space:nowrap;color:${item.color};font-size:14px;font-weight:700;">` +
-            `${item.label}: ${item.votes.toLocaleString()} (${item.pct.toFixed(2)}%)</div>`
+            `${item.label}: ${item.votes.toLocaleString()} (${formatPctForCloseRace(item.pct, marginPct)}%)</div>`
           )).join('');
           breakdownRow = `<div style="display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0 2px 0;margin-top:8px;">${chips}</div>`;
         } else {
           const rows = breakdownItems.map(item => (
-            `<div style="color:${item.color};font-size:15px;font-weight:700;">${item.label}: ${item.votes.toLocaleString()} (${item.pct.toFixed(2)}%)</div>`
+            `<div style="color:${item.color};font-size:15px;font-weight:700;">${item.label}: ${item.votes.toLocaleString()} (${formatPctForCloseRace(item.pct, marginPct)}%)</div>`
           )).join('');
           breakdownRow = `<div style="display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;margin-top:6px;">${rows}</div>`;
         }
@@ -21603,9 +21605,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function marginPctDisplayValue(repVotes, demVotes, totalVotes) {
       const rawMarginPct = marginPctValue(repVotes, demVotes, totalVotes);
-      if ((Number(totalVotes) || 0) <= 0) return 0;
-      // Match NCPrecinctMap: round the vote difference itself, not rounded shares.
-      return roundForDisplay(rawMarginPct, marginDisplayDigits(rawMarginPct));
+      const total = Number(totalVotes) || 0;
+      if (total <= 0) return 0;
+      // The printed lead follows the printed shares in vote breakdowns.
+      const repPct = Number(formatPctForCloseRace(repVotes / total * 100, rawMarginPct));
+      const demPct = Number(formatPctForCloseRace(demVotes / total * 100, rawMarginPct));
+      const displayMargin = Math.abs(repPct - demPct);
+      return displayMargin === 0 && rawMarginPct > 0 ? rawMarginPct : displayMargin;
     }
 
     function leadMarginPctLabel(repVotes, demVotes, totalVotes) {
@@ -21632,8 +21638,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function countyMarginPctDisplayValue(repVotes, demVotes, totalVotes) {
       const rawMarginPct = marginPctValue(repVotes, demVotes, totalVotes);
-      if ((Number(totalVotes) || 0) <= 0) return 0;
-      return roundForDisplay(rawMarginPct, countyMarginDisplayDigits(rawMarginPct));
+      const total = Number(totalVotes) || 0;
+      if (total <= 0) return 0;
+      const repPct = Number(formatPctForCountyCloseRace(repVotes / total * 100, rawMarginPct));
+      const demPct = Number(formatPctForCountyCloseRace(demVotes / total * 100, rawMarginPct));
+      const displayMargin = Math.abs(repPct - demPct);
+      return displayMargin === 0 && rawMarginPct > 0 ? rawMarginPct : displayMargin;
     }
 
 
@@ -21756,7 +21766,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const repMissingAny = repMissing || repMissingByVotes;
       const demMissingAny = demMissing || demMissingByVotes;
 
-      // Keep hover tooltip margins on the same vote-derived display pipeline as cards.
+      // Use the same rounded shares shown in vote breakdowns for the printed lead.
       const useCountyPrecision = String(options?.precision || '').toLowerCase() === 'county';
       const marginPct = useCountyPrecision
         ? countyMarginPctDisplayValue(repVotes, demVotes, totalVotes)
@@ -22687,7 +22697,9 @@ document.addEventListener('DOMContentLoaded', function() {
           if (pinnedKind && pinnedKind !== 'statewide') return '';
           return `<div class="statewide-modeled-hint">Click a county to inspect the modeled baseline.</div>`;
         })();
-        const closeRaceAlertHtml = isModeledSenate ? '' : buildStatewideCloseRaceAlertHTML(contestType, year, marginPct);
+        const closeRaceAlertHtml = isModeledSenate ? '' : buildStatewideCloseRaceAlertHTML(
+          contestType, year, marginPct, marginPctDisplayValue(repVotes, demVotes, totalVotes)
+        );
         const totalLabel = isModeledSenate ? 'Synthetic total' : 'Total votes';
         const marginLabelLabel = isModeledSenate ? 'Modeled margin' : 'Margin';
         const modeledSenateExtrasHtml = isModeledSenate
@@ -22767,6 +22779,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const demPct = (d / total) * 100.0;
       const repPct = (r / total) * 100.0;
       const otherPct = (o / total) * 100.0;
+      const rawMarginPct = marginPctValue(r, d, total);
+      const pctFormatter = useCountyPrecision ? formatPctForCountyCloseRace : formatPctForCloseRace;
 
       const marginLabel = useCountyPrecision
         ? compactCountyWinnerMarginLabel(r, d, total, repCandidate || '', demCandidate || '')
@@ -22798,15 +22812,15 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="rc-row">
             <div class="rc-chip">
               <div class="k">D: ${demFull}</div>
-              <div class="v" style="color:#1d4ed8;">${d.toLocaleString()} (${demPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#1d4ed8;">${d.toLocaleString()} (${pctFormatter(demPct, rawMarginPct)}%)</div>
             </div>
             <div class="rc-chip">
               <div class="k">OTHER</div>
-              <div class="v" style="color:#475569;">${o.toLocaleString()} (${otherPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#475569;">${o.toLocaleString()} (${pctFormatter(otherPct, rawMarginPct)}%)</div>
             </div>
             <div class="rc-chip">
               <div class="k">R: ${repFull}</div>
-              <div class="v" style="color:#b91c1c;">${r.toLocaleString()} (${repPct.toFixed(2)}%)</div>
+              <div class="v" style="color:#b91c1c;">${r.toLocaleString()} (${pctFormatter(repPct, rawMarginPct)}%)</div>
             </div>
           </div>
           <div style="margin-top:10px;font-size:12px;color:#64748b;">
@@ -25114,7 +25128,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const focusLabel = recountFocusLabelFromMeta(state.meta || null);
       const safeFocusLabel = escapeHtml(focusLabel || 'Focused race');
       const voteLabel = marginVotes === 1 ? 'vote' : 'votes';
-      const html = `<span class="recount-label">Recount Watch</span><span>${safeFocusLabel}: Margin ${marginVotes.toLocaleString()} ${voteLabel} (${formatMarginPctForDisplay(marginPct)}%)</span>`;
+      const html = `<span class="recount-label">Recount Watch</span><span>${safeFocusLabel}: Margin ${marginVotes.toLocaleString()} ${voteLabel} (${formatMarginPctForDisplay(marginPctDisplayValue(repVotes, demVotes, totalVotes))}%)</span>`;
       setRecountRadarBadgeVisible(true, html);
     }
 
@@ -28313,7 +28327,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ? signedMarginPctRaw
         : signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
       const marginPct = Math.abs(signedMarginPct);
-      const marginPctLabel = formatCountyMarginPctForDisplay(marginPct);
+      const marginPctLabel = formatCountyMarginPctForDisplay(countyMarginPctDisplayValue(repVotes, demVotes, totalVotes));
       const winner = margin > 0 ? 'Democratic' : (margin < 0 ? 'Republican' : 'Tie');
       const winnerCandidate = margin > 0 ? demCandidate : repCandidate;
       const marginText = winnerMarginLabelShortCounty(repVotes, demVotes, totalVotes, repCandidate, demCandidate);
@@ -29410,12 +29424,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const dVotes = Number(demVotes || 0);
       const rVotes = Number(repVotes || 0);
       const oVotes = Number(otherVotes || 0);
-      const total = dVotes + rVotes + oVotes;
+      const reportedTotal = Number(totalVotes);
+      const total = Number.isFinite(reportedTotal) && reportedTotal > 0
+        ? reportedTotal : dVotes + rVotes + oVotes;
       const safeTotal = total > 0 ? total : 0;
       const demPct = safeTotal > 0 ? (dVotes / safeTotal) * 100 : 0;
       const repPct = safeTotal > 0 ? (rVotes / safeTotal) * 100 : 0;
       const otherPct = safeTotal > 0 ? (oVotes / safeTotal) * 100 : 0;
       const marginAbs = Math.abs(Number(marginPct) || 0);
+      const displayedMarginAbs = marginPctDisplayValue(rVotes, dVotes, safeTotal);
       const pctFormatter = (v) => formatPctForCloseRace(v, marginAbs);
       const marginFormatter = (v) => {
         if (typeof formatMarginPctForDisplay === 'function') return formatMarginPctForDisplay(v);
@@ -29447,7 +29464,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const winnerShort = winnerPartyKey === 'rep' ? 'Trump' : (winnerPartyKey === 'dem' ? 'Harris' : 'Tie');
       const winnerText = normalizeCandidateLabel(winnerName || winnerShort, winnerShort || 'Tie');
       const winnerToneClass = winnerPartyKey === 'rep' ? 'rep' : (winnerPartyKey === 'dem' ? 'dem' : 'tie');
-      const winnerDisplayText = (winnerLineText || '').toString().trim() || `${winnerText} +${marginFormatter(marginAbs)}%`;
+      const winnerDisplayText = (winnerLineText || '').toString().trim() || `${winnerText} +${marginFormatter(displayedMarginAbs)}%`;
       const voteLeadStyle = winnerToneClass === 'rep'
         ? 'font-size:12px;font-weight:800;opacity:0.96;color:#fecaca;font-family:"JetBrains Mono","Consolas","SFMono-Regular",monospace;'
         : (winnerToneClass === 'dem'
@@ -31795,13 +31812,13 @@ document.addEventListener('DOMContentLoaded', function() {
               <div style="margin-bottom: 16px;">
                 <h5>Margin</h5>
                 <p style="color: ${winner === 'Republican' ? '#dc2626' : '#2563eb'}; font-weight: bold; font-size: 18px;">
-                  ${winner} +${toFixedForDisplay(marginPct, 2)}%
+                  ${winner} +${formatMarginPctForDisplay(marginPctDisplayValue(repVotes, demVotes, totalVotes))}%
                 </p>
               </div>
               <div style="margin-bottom: 16px;">
                 <h5>Vote Breakdown</h5>
-                <p class="tooltip-vote-line"><span style="color: #2563eb; font-weight: bold;">Democratic: </span><span class="tooltip-vote-pct">${toFixedForDisplay(demPct, 2)}%</span> (${demVotes.toLocaleString()})</p>
-                <p class="tooltip-vote-line"><span style="color: #dc2626; font-weight: bold;">Republican: </span><span class="tooltip-vote-pct">${toFixedForDisplay(repPct, 2)}%</span> (${repVotes.toLocaleString()})</p>
+                <p class="tooltip-vote-line"><span style="color: #2563eb; font-weight: bold;">Democratic: </span><span class="tooltip-vote-pct">${formatPctForCloseRace(demPct, marginPct)}%</span> (${demVotes.toLocaleString()})</p>
+                <p class="tooltip-vote-line"><span style="color: #dc2626; font-weight: bold;">Republican: </span><span class="tooltip-vote-pct">${formatPctForCloseRace(repPct, marginPct)}%</span> (${repVotes.toLocaleString()})</p>
                 <p><strong>Total Votes:</strong> ${totalVotes.toLocaleString()}</p>
               </div>
             `;
@@ -32029,9 +32046,9 @@ document.addEventListener('DOMContentLoaded', function() {
             ${marginLineText}
           </div>
           <div style="margin-top:8px;font-size:14px;">
-            <div class="tooltip-vote-line"><span style="color:#2563eb;font-weight:800;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span>: <span class="tooltip-vote-pct">${toFixedForDisplay(demPct, 2)}%</span> (${demVotes.toLocaleString()})</div>
-            <div class="tooltip-vote-line"><span style="color:#dc2626;font-weight:800;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span>: <span class="tooltip-vote-pct">${toFixedForDisplay(repPct, 2)}%</span> (${repVotes.toLocaleString()})</div>
-            ${otherVotes > 0 ? `<div class="tooltip-vote-line"><span style="color:#6b7280;font-weight:800;">Other</span>: <span class="tooltip-vote-pct">${toFixedForDisplay(othPct, 2)}%</span> (${otherVotes.toLocaleString()})</div>` : ''}
+            <div class="tooltip-vote-line"><span style="color:#2563eb;font-weight:800;">${fullCandidateLabel(demCandidate, 'Democratic')} (D)</span>: <span class="tooltip-vote-pct">${formatPctForCloseRace(demPct, marginPct)}%</span> (${demVotes.toLocaleString()})</div>
+            <div class="tooltip-vote-line"><span style="color:#dc2626;font-weight:800;">${fullCandidateLabel(repCandidate, 'Republican')} (R)</span>: <span class="tooltip-vote-pct">${formatPctForCloseRace(repPct, marginPct)}%</span> (${repVotes.toLocaleString()})</div>
+            ${otherVotes > 0 ? `<div class="tooltip-vote-line"><span style="color:#6b7280;font-weight:800;">Other</span>: <span class="tooltip-vote-pct">${formatPctForCloseRace(othPct, marginPct)}%</span> (${otherVotes.toLocaleString()})</div>` : ''}
             <div style="margin-top:6px;color:#374151;font-weight:700;">Total Votes: ${totalVotes.toLocaleString()}</div>
           </div>
           <div style="margin-top:8px;font-size:14px;font-weight:800;color:${compColor};">Competitiveness: ${compLabel}</div>
@@ -32283,11 +32300,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const repPct = (recent.president_rep / recent.president_total) * 100;
         const margin = demPct - repPct;
         const winner = margin > 0 ? 'D' : 'R';
-        const marginAbs = marginPctValue(recent.president_rep, recent.president_dem, recent.president_total);
+        const marginAbs = countyMarginPctDisplayValue(recent.president_rep, recent.president_dem, recent.president_total);
 
         return `<div class="quick-tooltip">
           <strong>${countyName} County</strong><br>
-          ${recent.year}: ${winner}+${toFixedForDisplay(marginAbs, 2)}%<br>
+          ${recent.year}: ${winner}+${formatCountyMarginPctForDisplay(marginAbs)}%<br>
           <em>Click for full trends</em>
         </div>`;
       }
@@ -32387,12 +32404,12 @@ document.addEventListener('DOMContentLoaded', function() {
           const totalVotes = Number(recent.us_house_total || 0);
           const signed = signedMarginPctFromVotes(demVotes, repVotes, totalVotes);
           const winner = signed > 0 ? 'R' : (signed < 0 ? 'D' : 'T');
-          const marginAbs = Math.abs(signed);
+          const marginAbs = marginPctDisplayValue(repVotes, demVotes, totalVotes);
 
           return `<div class="quick-tooltip">
             <strong>${displayName}</strong><br>
             ${desc ? `<span style="color:#64748b;font-weight:700;">${desc}</span><br>` : ''}
-            ${recent.year}: ${winner}+${toFixedForDisplay(marginAbs, 2)}%<br>
+            ${recent.year}: ${winner}+${formatMarginPctForDisplay(marginAbs)}%<br>
             <em>Click for full trends</em>
           </div>`;
         }
