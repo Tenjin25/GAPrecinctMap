@@ -10868,8 +10868,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-24-ga-votehub-district-labels-v1';
-    const APP_BUILD_ID = '2026-09-24-ga-votehub-district-labels-v1';
+    const DATA_CACHE_BUSTER = '2026-09-27-ga-margin-rounding-v1';
+    const APP_BUILD_ID = '2026-09-27-ga-margin-rounding-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -21603,16 +21603,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function marginPctDisplayValue(repVotes, demVotes, totalVotes) {
       const rawMarginPct = marginPctValue(repVotes, demVotes, totalVotes);
-      const t = Number(totalVotes) || 0;
-      if (t <= 0) return 0;
-      const repPctDisplay = Number(formatPctForCloseRace((Number(repVotes || 0) / t) * 100, rawMarginPct));
-      const demPctDisplay = Number(formatPctForCloseRace((Number(demVotes || 0) / t) * 100, rawMarginPct));
-      if (!Number.isFinite(repPctDisplay) || !Number.isFinite(demPctDisplay)) return rawMarginPct;
-      const diff = Math.abs(repPctDisplay - demPctDisplay);
-      // If rounding causes both sides to display equal, fall back to the true margin so we don't
-      // incorrectly show a tie (or 0.000%) when there is a non-zero lead.
-      if (diff === 0 && rawMarginPct > 0) return rawMarginPct;
-      return diff;
+      if ((Number(totalVotes) || 0) <= 0) return 0;
+      // Match NCPrecinctMap: round the vote difference itself, not rounded shares.
+      return roundForDisplay(rawMarginPct, marginDisplayDigits(rawMarginPct));
     }
 
     function leadMarginPctLabel(repVotes, demVotes, totalVotes) {
@@ -21639,14 +21632,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function countyMarginPctDisplayValue(repVotes, demVotes, totalVotes) {
       const rawMarginPct = marginPctValue(repVotes, demVotes, totalVotes);
-      const t = Number(totalVotes) || 0;
-      if (t <= 0) return 0;
-      const repPctDisplay = Number(formatPctForCountyCloseRace((Number(repVotes || 0) / t) * 100, rawMarginPct));
-      const demPctDisplay = Number(formatPctForCountyCloseRace((Number(demVotes || 0) / t) * 100, rawMarginPct));
-      if (!Number.isFinite(repPctDisplay) || !Number.isFinite(demPctDisplay)) return rawMarginPct;
-      const diff = Math.abs(repPctDisplay - demPctDisplay);
-      if (diff === 0 && rawMarginPct > 0) return rawMarginPct;
-      return diff;
+      if ((Number(totalVotes) || 0) <= 0) return 0;
+      return roundForDisplay(rawMarginPct, countyMarginDisplayDigits(rawMarginPct));
     }
 
 
@@ -21769,9 +21756,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const repMissingAny = repMissing || repMissingByVotes;
       const demMissingAny = demMissing || demMissingByVotes;
 
-      // Keep hover tooltip margins on the same display pipeline as the rest of the UI.
-      // The sign can still come from the active/derived margin, but the printed number
-      // should be derived from the same rounded vote-share display values used in cards.
+      // Keep hover tooltip margins on the same vote-derived display pipeline as cards.
       const useCountyPrecision = String(options?.precision || '').toLowerCase() === 'county';
       const marginPct = useCountyPrecision
         ? countyMarginPctDisplayValue(repVotes, demVotes, totalVotes)
@@ -29431,7 +29416,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const repPct = safeTotal > 0 ? (rVotes / safeTotal) * 100 : 0;
       const otherPct = safeTotal > 0 ? (oVotes / safeTotal) * 100 : 0;
       const marginAbs = Math.abs(Number(marginPct) || 0);
-      const pctFormatter = (v) => Number(v || 0).toFixed(2);
+      const pctFormatter = (v) => formatPctForCloseRace(v, marginAbs);
       const marginFormatter = (v) => {
         if (typeof formatMarginPctForDisplay === 'function') return formatMarginPctForDisplay(v);
         return formatVotehubPct(v, 2);
@@ -31758,7 +31743,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const demPct = totalVotes > 0 ? (demVotes / totalVotes) * 100 : 0;
             const repPct = totalVotes > 0 ? (repVotes / totalVotes) * 100 : 0;
-            const marginPct = Math.abs(demPct - repPct);
+            const marginPct = marginPctValue(repVotes, demVotes, totalVotes);
             const winner = demPct > repPct ? 'Democratic' : 'Republican';
 
             // Determine competitiveness
@@ -32298,7 +32283,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const repPct = (recent.president_rep / recent.president_total) * 100;
         const margin = demPct - repPct;
         const winner = margin > 0 ? 'D' : 'R';
-        const marginAbs = Math.abs(margin);
+        const marginAbs = marginPctValue(recent.president_rep, recent.president_dem, recent.president_total);
 
         return `<div class="quick-tooltip">
           <strong>${countyName} County</strong><br>
@@ -34675,7 +34660,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const demPct = (demVotes / totalVotes) * 100;
         const repPct = (repVotes / totalVotes) * 100;
         const winner = repPct > demPct ? 'R' : 'D';
-        const marginPct = Math.abs(repPct - demPct);
+        const marginPct = marginPctValue(repVotes, demVotes, totalVotes);
         let color = colorForMarginMode(marginPct, winner);
         if (mode === 'demographics') {
           const demoRow = getDistrictDemographics('congressional', district);
@@ -35145,7 +35130,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const totalOther = Math.max(0, totalVotes - totalDem - totalRep);
       const otherPct = ((totalVotes - totalDem - totalRep) / totalVotes) * 100;
       const winner = repPct > demPct ? 'R' : 'D';
-      const marginPct = Math.abs(repPct - demPct);
+      const marginPct = marginPctValue(totalRep, totalDem, totalVotes);
       const color = colorForMarginMode(marginPct, winner);
 
       // Apply uniform color to all districts (showing statewide result)
