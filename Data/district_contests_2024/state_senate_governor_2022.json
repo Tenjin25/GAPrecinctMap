@@ -5,10 +5,10 @@
     "year": 2022,
     "district_lines_year": 2024,
     "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-09-30T07:45:33.568227+00:00",
+    "generated_at_utc": "2026-09-30T22:04:11.377374+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 1533766,
-    "matched_input_votes": 1533766,
+    "total_input_votes": 3569304,
+    "matched_input_votes": 3569304,
     "input_files": [
       "Data/derived_vtd20/2022/contests/vtd20/Governor.json"
     ],
@@ -18,9 +18,9 @@
       "reconciled_counties": 159,
       "unresolved_county_fips": [],
       "mapped_before": {
-        "dem_votes": 956134,
-        "rep_votes": 130735,
-        "other_votes": 446897
+        "dem_votes": 1648005,
+        "rep_votes": 1895913,
+        "other_votes": 25386
       },
       "canonical_target": {
         "dem_votes": 1813673,
@@ -32,26 +32,26 @@
   "general": {
     "results": {
       "1": {
-        "total_votes": 67369,
-        "dem_votes": 26076,
-        "rep_votes": 40975,
-        "other_votes": 318,
+        "total_votes": 64392,
+        "dem_votes": 24190,
+        "rep_votes": 39737,
+        "other_votes": 465,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.115513069809555
+        "margin_pct": 24.144303640203752
       },
       "2": {
-        "total_votes": 63063,
-        "dem_votes": 43443,
-        "rep_votes": 18941,
-        "other_votes": 679,
+        "total_votes": 67089,
+        "dem_votes": 45904,
+        "rep_votes": 20699,
+        "other_votes": 486,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.853210281781706
+        "margin_pct": -37.56949723501617
       },
       "3": {
         "total_votes": 69108,
@@ -65,48 +65,48 @@
         "margin_pct": 41.04879319326272
       },
       "4": {
-        "total_votes": 64230,
-        "dem_votes": 18092,
-        "rep_votes": 45687,
-        "other_votes": 451,
+        "total_votes": 63181,
+        "dem_votes": 17517,
+        "rep_votes": 45167,
+        "other_votes": 497,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.962789973532615
+        "margin_pct": 43.763156645193966
       },
       "5": {
-        "total_votes": 35011,
-        "dem_votes": 23227,
-        "rep_votes": 11401,
-        "other_votes": 383,
+        "total_votes": 31558,
+        "dem_votes": 21964,
+        "rep_votes": 9325,
+        "other_votes": 269,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.7779554997001
+        "margin_pct": -40.05006654414095
       },
       "6": {
-        "total_votes": 80880,
-        "dem_votes": 20623,
-        "rep_votes": 59630,
-        "other_votes": 627,
+        "total_votes": 81947,
+        "dem_votes": 20695,
+        "rep_votes": 60607,
+        "other_votes": 645,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.22823936696341
+        "margin_pct": 48.704650566829784
       },
       "7": {
-        "total_votes": 61862,
-        "dem_votes": 32753,
-        "rep_votes": 28636,
-        "other_votes": 473,
+        "total_votes": 62494,
+        "dem_votes": 32863,
+        "rep_votes": 29091,
+        "other_votes": 540,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.655135624454431
+        "margin_pct": -6.035779434825743
       },
       "8": {
         "total_votes": 57649,
@@ -120,26 +120,26 @@
         "margin_pct": 38.78297975680411
       },
       "9": {
-        "total_votes": 64166,
-        "dem_votes": 35750,
-        "rep_votes": 27870,
-        "other_votes": 546,
+        "total_votes": 64857,
+        "dem_votes": 36754,
+        "rep_votes": 27608,
+        "other_votes": 495,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.280647071657889
+        "margin_pct": -14.101793175755894
       },
       "10": {
-        "total_votes": 85269,
-        "dem_votes": 69881,
-        "rep_votes": 14895,
-        "other_votes": 493,
+        "total_votes": 84464,
+        "dem_votes": 71680,
+        "rep_votes": 12337,
+        "other_votes": 447,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.48533464682357
+        "margin_pct": -70.25833491191513
       },
       "11": {
         "total_votes": 61353,
@@ -164,488 +164,488 @@
         "margin_pct": -8.935982200621716
       },
       "13": {
-        "total_votes": 63872,
-        "dem_votes": 16380,
-        "rep_votes": 47149,
+        "total_votes": 63898,
+        "dem_votes": 16397,
+        "rep_votes": 47158,
         "other_votes": 343,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.17290831663327
+        "margin_pct": 48.14078687908855
       },
       "14": {
-        "total_votes": 76125,
-        "dem_votes": 41358,
-        "rep_votes": 34421,
-        "other_votes": 346,
+        "total_votes": 77018,
+        "dem_votes": 40652,
+        "rep_votes": 35798,
+        "other_votes": 568,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.11264367816092
+        "margin_pct": -6.302422810252149
       },
       "15": {
-        "total_votes": 51329,
-        "dem_votes": 32094,
-        "rep_votes": 18878,
+        "total_votes": 48960,
+        "dem_votes": 31026,
+        "rep_votes": 17650,
+        "other_votes": 284,
+        "dem_candidate": "Stacey Abrams",
+        "rep_candidate": "Brian Kemp",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -27.320261437908496
+      },
+      "16": {
+        "total_votes": 86398,
+        "dem_votes": 27666,
+        "rep_votes": 58102,
+        "other_votes": 630,
+        "dem_candidate": "Stacey Abrams",
+        "rep_candidate": "Brian Kemp",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 35.22766730711359
+      },
+      "17": {
+        "total_votes": 68018,
+        "dem_votes": 50829,
+        "rep_votes": 16832,
         "other_votes": 357,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.747628046523406
-      },
-      "16": {
-        "total_votes": 85638,
-        "dem_votes": 27783,
-        "rep_votes": 57303,
-        "other_votes": 552,
-        "dem_candidate": "Stacey Abrams",
-        "rep_candidate": "Brian Kemp",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 34.47067890422476
-      },
-      "17": {
-        "total_votes": 69747,
-        "dem_votes": 51693,
-        "rep_votes": 17665,
-        "other_votes": 389,
-        "dem_candidate": "Stacey Abrams",
-        "rep_candidate": "Brian Kemp",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -48.78776148078053
+        "margin_pct": -49.98235761122056
       },
       "18": {
-        "total_votes": 76367,
-        "dem_votes": 27756,
-        "rep_votes": 48123,
-        "other_votes": 488,
+        "total_votes": 76499,
+        "dem_votes": 27396,
+        "rep_votes": 48616,
+        "other_votes": 487,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.66989668312229
+        "margin_pct": 27.73892469182604
       },
       "19": {
-        "total_votes": 58931,
-        "dem_votes": 12385,
-        "rep_votes": 46220,
+        "total_votes": 58905,
+        "dem_votes": 12368,
+        "rep_votes": 46211,
         "other_votes": 326,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.41460351937011
+        "margin_pct": 57.45352686529157
       },
       "20": {
-        "total_votes": 72937,
-        "dem_votes": 23283,
-        "rep_votes": 49265,
-        "other_votes": 389,
+        "total_votes": 75462,
+        "dem_votes": 23834,
+        "rep_votes": 51224,
+        "other_votes": 404,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.62252354771927
+        "margin_pct": 36.296414089210465
       },
       "21": {
-        "total_votes": 83688,
-        "dem_votes": 23093,
-        "rep_votes": 60141,
-        "other_votes": 454,
+        "total_votes": 89089,
+        "dem_votes": 24385,
+        "rep_votes": 63968,
+        "other_votes": 736,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.269190325972666
+        "margin_pct": 44.43085004882757
       },
       "22": {
-        "total_votes": 59446,
-        "dem_votes": 40225,
-        "rep_votes": 18822,
-        "other_votes": 399,
+        "total_votes": 58894,
+        "dem_votes": 40057,
+        "rep_votes": 18449,
+        "other_votes": 388,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.00410456548801
+        "margin_pct": -36.68964580432642
       },
       "23": {
-        "total_votes": 67981,
-        "dem_votes": 25348,
-        "rep_votes": 42225,
-        "other_votes": 408,
-        "dem_candidate": "Stacey Abrams",
-        "rep_candidate": "Brian Kemp",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 24.826054338712286
-      },
-      "24": {
-        "total_votes": 87613,
-        "dem_votes": 24731,
-        "rep_votes": 62249,
-        "other_votes": 633,
-        "dem_candidate": "Stacey Abrams",
-        "rep_candidate": "Brian Kemp",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 42.82241219910287
-      },
-      "25": {
-        "total_votes": 75421,
-        "dem_votes": 26705,
-        "rep_votes": 48293,
+        "total_votes": 65669,
+        "dem_votes": 24860,
+        "rep_votes": 40386,
         "other_votes": 423,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.623327720396176
+        "margin_pct": 23.64281472231951
+      },
+      "24": {
+        "total_votes": 90478,
+        "dem_votes": 25387,
+        "rep_votes": 64461,
+        "other_votes": 630,
+        "dem_candidate": "Stacey Abrams",
+        "rep_candidate": "Brian Kemp",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 43.18618890780079
+      },
+      "25": {
+        "total_votes": 76553,
+        "dem_votes": 27021,
+        "rep_votes": 49061,
+        "other_votes": 471,
+        "dem_candidate": "Stacey Abrams",
+        "rep_candidate": "Brian Kemp",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 28.790511149138503
       },
       "26": {
-        "total_votes": 60543,
-        "dem_votes": 34986,
-        "rep_votes": 25211,
-        "other_votes": 346,
+        "total_votes": 57184,
+        "dem_votes": 34574,
+        "rep_votes": 22300,
+        "other_votes": 310,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.145549444196686
+        "margin_pct": -21.46404588696139
       },
       "27": {
-        "total_votes": 79763,
-        "dem_votes": 20126,
-        "rep_votes": 58996,
-        "other_votes": 641,
+        "total_votes": 78994,
+        "dem_votes": 19270,
+        "rep_votes": 58999,
+        "other_votes": 725,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.731868159422284
+        "margin_pct": 50.29369319188799
       },
       "28": {
-        "total_votes": 73219,
-        "dem_votes": 52508,
-        "rep_votes": 20136,
-        "other_votes": 575,
+        "total_votes": 68504,
+        "dem_votes": 49489,
+        "rep_votes": 18588,
+        "other_votes": 427,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.212567776123684
+        "margin_pct": -45.108314842928884
       },
       "29": {
-        "total_votes": 72936,
-        "dem_votes": 25111,
-        "rep_votes": 47418,
-        "other_votes": 407,
+        "total_votes": 75305,
+        "dem_votes": 26179,
+        "rep_votes": 48646,
+        "other_votes": 480,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.584347921465394
+        "margin_pct": 29.83467233251444
       },
       "30": {
-        "total_votes": 70144,
-        "dem_votes": 22111,
-        "rep_votes": 47534,
-        "other_votes": 499,
+        "total_votes": 68192,
+        "dem_votes": 23064,
+        "rep_votes": 44588,
+        "other_votes": 540,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.24401231751825
+        "margin_pct": 31.563819802909432
       },
       "31": {
-        "total_votes": 73767,
-        "dem_votes": 23101,
-        "rep_votes": 49992,
-        "other_votes": 674,
+        "total_votes": 75745,
+        "dem_votes": 23407,
+        "rep_votes": 51689,
+        "other_votes": 649,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.453969932354575
+        "margin_pct": 37.338438180738
       },
       "32": {
-        "total_votes": 80150,
-        "dem_votes": 29331,
-        "rep_votes": 50005,
-        "other_votes": 814,
+        "total_votes": 78678,
+        "dem_votes": 30038,
+        "rep_votes": 47855,
+        "other_votes": 785,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.79413599500936
+        "margin_pct": 22.64546633112179
       },
       "33": {
-        "total_votes": 64861,
-        "dem_votes": 37783,
-        "rep_votes": 26477,
-        "other_votes": 601,
+        "total_votes": 66109,
+        "dem_votes": 39318,
+        "rep_votes": 26255,
+        "other_votes": 536,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.43112193768212
+        "margin_pct": -19.75979064877702
       },
       "34": {
-        "total_votes": 58183,
-        "dem_votes": 46896,
-        "rep_votes": 10865,
-        "other_votes": 422,
+        "total_votes": 55997,
+        "dem_votes": 46209,
+        "rep_votes": 9469,
+        "other_votes": 319,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.92702335733805
+        "margin_pct": -65.61065771380609
       },
       "35": {
-        "total_votes": 73168,
-        "dem_votes": 53975,
-        "rep_votes": 18562,
-        "other_votes": 631,
+        "total_votes": 74610,
+        "dem_votes": 56641,
+        "rep_votes": 17468,
+        "other_votes": 501,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.39957358408047
+        "margin_pct": -52.50368583299826
       },
       "36": {
-        "total_votes": 71811,
-        "dem_votes": 60496,
-        "rep_votes": 10580,
-        "other_votes": 735,
+        "total_votes": 76943,
+        "dem_votes": 68046,
+        "rep_votes": 8453,
+        "other_votes": 444,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.51024216345685
+        "margin_pct": -77.45084023237982
       },
       "37": {
-        "total_votes": 90073,
-        "dem_votes": 37819,
-        "rep_votes": 51634,
-        "other_votes": 620,
+        "total_votes": 88706,
+        "dem_votes": 35262,
+        "rep_votes": 52697,
+        "other_votes": 747,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.337559535043798
+        "margin_pct": 19.654814781412757
       },
       "38": {
-        "total_votes": 77778,
-        "dem_votes": 57845,
-        "rep_votes": 19471,
-        "other_votes": 462,
+        "total_votes": 77158,
+        "dem_votes": 56700,
+        "rep_votes": 20052,
+        "other_votes": 406,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.33785903468848
+        "margin_pct": -47.49734311412945
       },
       "39": {
-        "total_votes": 70885,
-        "dem_votes": 57524,
-        "rep_votes": 12789,
-        "other_votes": 572,
+        "total_votes": 62877,
+        "dem_votes": 51450,
+        "rep_votes": 11077,
+        "other_votes": 350,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.10926147986174
+        "margin_pct": -64.20948836617522
       },
       "40": {
-        "total_votes": 59997,
-        "dem_votes": 38383,
-        "rep_votes": 21263,
-        "other_votes": 351,
+        "total_votes": 68071,
+        "dem_votes": 39610,
+        "rep_votes": 27895,
+        "other_votes": 566,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.5347600713369
+        "margin_pct": -17.20997194106154
       },
       "41": {
-        "total_votes": 64443,
-        "dem_votes": 52416,
-        "rep_votes": 11597,
-        "other_votes": 430,
+        "total_votes": 61218,
+        "dem_votes": 50245,
+        "rep_votes": 10582,
+        "other_votes": 391,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.34124730381888
+        "margin_pct": -64.78976771537783
       },
       "42": {
-        "total_votes": 80932,
-        "dem_votes": 32616,
-        "rep_votes": 47818,
-        "other_votes": 498,
+        "total_votes": 81948,
+        "dem_votes": 32933,
+        "rep_votes": 48467,
+        "other_votes": 548,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.783670241684376
+        "margin_pct": 18.955923268414114
       },
       "43": {
-        "total_votes": 70790,
-        "dem_votes": 52156,
-        "rep_votes": 18115,
-        "other_votes": 519,
+        "total_votes": 69335,
+        "dem_votes": 51911,
+        "rep_votes": 17053,
+        "other_votes": 371,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.087300466167534
+        "margin_pct": -50.27475301074493
       },
       "44": {
-        "total_votes": 78340,
-        "dem_votes": 67320,
-        "rep_votes": 10560,
-        "other_votes": 460,
+        "total_votes": 78305,
+        "dem_votes": 69329,
+        "rep_votes": 8575,
+        "other_votes": 401,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -72.45340822057697
+        "margin_pct": -77.58636102420024
       },
       "45": {
-        "total_votes": 66794,
-        "dem_votes": 25842,
-        "rep_votes": 40526,
-        "other_votes": 426,
+        "total_votes": 69455,
+        "dem_votes": 25845,
+        "rep_votes": 43025,
+        "other_votes": 585,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.98401053986885
+        "margin_pct": 24.73544021308761
       },
       "46": {
-        "total_votes": 76121,
-        "dem_votes": 27185,
-        "rep_votes": 48395,
-        "other_votes": 541,
+        "total_votes": 76526,
+        "dem_votes": 26976,
+        "rep_votes": 48991,
+        "other_votes": 559,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.86353305920837
+        "margin_pct": 28.768000418158536
       },
       "47": {
-        "total_votes": 72834,
-        "dem_votes": 26506,
-        "rep_votes": 45734,
-        "other_votes": 594,
+        "total_votes": 73088,
+        "dem_votes": 26702,
+        "rep_votes": 45803,
+        "other_votes": 583,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.399758354614605
+        "margin_pct": 26.134249124343256
       },
       "48": {
-        "total_votes": 74447,
-        "dem_votes": 31974,
-        "rep_votes": 41985,
-        "other_votes": 488,
+        "total_votes": 72945,
+        "dem_votes": 30179,
+        "rep_votes": 42215,
+        "other_votes": 551,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 13.447150321705376
+        "margin_pct": 16.500102817191035
       },
       "49": {
-        "total_votes": 70008,
-        "dem_votes": 15376,
-        "rep_votes": 54031,
-        "other_votes": 601,
+        "total_votes": 70265,
+        "dem_votes": 15425,
+        "rep_votes": 54218,
+        "other_votes": 622,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.21511827219746
+        "margin_pct": 55.20956379420764
       },
       "50": {
-        "total_votes": 74804,
-        "dem_votes": 10613,
-        "rep_votes": 63532,
-        "other_votes": 659,
+        "total_votes": 73904,
+        "dem_votes": 10570,
+        "rep_votes": 62698,
+        "other_votes": 636,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.74354312603604
+        "margin_pct": 70.53474778090496
       },
       "51": {
-        "total_votes": 89192,
-        "dem_votes": 12619,
-        "rep_votes": 75796,
-        "other_votes": 777,
+        "total_votes": 89617,
+        "dem_votes": 12630,
+        "rep_votes": 76205,
+        "other_votes": 782,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.8325858821419
+        "margin_pct": 70.94078132497182
       },
       "52": {
-        "total_votes": 67960,
-        "dem_votes": 15041,
-        "rep_votes": 52329,
+        "total_votes": 67491,
+        "dem_votes": 14987,
+        "rep_votes": 51946,
+        "other_votes": 558,
+        "dem_candidate": "Stacey Abrams",
+        "rep_candidate": "Brian Kemp",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 54.76137559081952
+      },
+      "53": {
+        "total_votes": 63776,
+        "dem_votes": 10302,
+        "rep_votes": 52884,
         "other_votes": 590,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.867569158328436
-      },
-      "53": {
-        "total_votes": 63536,
-        "dem_votes": 10284,
-        "rep_votes": 52676,
-        "other_votes": 576,
-        "dem_candidate": "Stacey Abrams",
-        "rep_candidate": "Brian Kemp",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 66.72122890959457
+        "margin_pct": 66.76806322127446
       },
       "54": {
-        "total_votes": 54422,
-        "dem_votes": 9448,
-        "rep_votes": 44533,
-        "other_votes": 441,
+        "total_votes": 54396,
+        "dem_votes": 9413,
+        "rep_votes": 44535,
+        "other_votes": 448,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.46841350924258
+        "margin_pct": 64.56724759173468
       },
       "55": {
-        "total_votes": 77007,
-        "dem_votes": 58435,
-        "rep_votes": 18050,
-        "other_votes": 522,
+        "total_votes": 75646,
+        "dem_votes": 57710,
+        "rep_votes": 17461,
+        "other_votes": 475,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.44328437674497
+        "margin_pct": -53.20704333342147
       },
       "56": {
-        "total_votes": 92072,
-        "dem_votes": 34658,
-        "rep_votes": 56652,
-        "other_votes": 762,
+        "total_votes": 95114,
+        "dem_votes": 35304,
+        "rep_votes": 58875,
+        "other_votes": 935,
         "dem_candidate": "Stacey Abrams",
         "rep_candidate": "Brian Kemp",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.88782691806412
+        "margin_pct": 24.78184073848224
       }
     }
   }

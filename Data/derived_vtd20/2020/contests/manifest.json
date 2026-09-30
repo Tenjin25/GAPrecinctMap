@@ -11,8 +11,24 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/President.json",
-          "rows": 2407
+          "rows": 2512
         }
+      },
+      "coverage": {
+        "source_votes": 4998482,
+        "matched_vtd10_votes": 3959565,
+        "fallback_vtd20_votes": 687846,
+        "dropped_votes": 351071,
+        "precincts": 2656,
+        "matched_exact": 1941,
+        "matched_fuzzy": 232,
+        "matched_alias": 0,
+        "fallback": 328,
+        "dropped": 152,
+        "vtd10_missing_shares": 0,
+        "output_votes": 4647411,
+        "output_vtd20": 2512,
+        "slug": "President"
       }
     },
     {
@@ -2794,8 +2810,24 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._Senate.json",
-          "rows": 2407
+          "rows": 2512
         }
+      },
+      "coverage": {
+        "source_votes": 4952175,
+        "matched_vtd10_votes": 3923736,
+        "fallback_vtd20_votes": 681081,
+        "dropped_votes": 347358,
+        "precincts": 2656,
+        "matched_exact": 1941,
+        "matched_fuzzy": 232,
+        "matched_alias": 0,
+        "fallback": 328,
+        "dropped": 152,
+        "vtd10_missing_shares": 0,
+        "output_votes": 4604817,
+        "output_vtd20": 2512,
+        "slug": "U.S._Senate"
       }
     },
     {
@@ -2805,8 +2837,24 @@
       "outputs": {
         "vtd20": {
           "path": "Data/derived_vtd20/2020/contests/vtd20/U.S._Senate_Special.json",
-          "rows": 2407
+          "rows": 2512
         }
+      },
+      "coverage": {
+        "source_votes": 4914361,
+        "matched_vtd10_votes": 3891866,
+        "fallback_vtd20_votes": 677470,
+        "dropped_votes": 345025,
+        "precincts": 2656,
+        "matched_exact": 1941,
+        "matched_fuzzy": 232,
+        "matched_alias": 0,
+        "fallback": 328,
+        "dropped": 152,
+        "vtd10_missing_shares": 0,
+        "output_votes": 4569336,
+        "output_vtd20": 2512,
+        "slug": "U.S._Senate_Special"
       }
     }
   ]
