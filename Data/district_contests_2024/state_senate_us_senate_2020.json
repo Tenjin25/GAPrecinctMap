@@ -5,12 +5,12 @@
     "year": 2020,
     "district_lines_year": 2024,
     "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-08-22T05:33:35.829533+00:00",
+    "generated_at_utc": "2026-09-30T15:15:16.923209+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 4604817,
-    "matched_input_votes": 4604817,
+    "total_input_votes": 2139581,
+    "matched_input_votes": 2139581,
     "input_files": [
-      "Data/derived_vtd20_blockpath/2020/contests/vtd20/U.S._Senate.json"
+      "Data/derived_vtd20/2020/contests/vtd20/U.S._Senate.json"
     ],
     "county_reconciliation": {
       "method": "county_constrained_party_scaling",
@@ -18,9 +18,9 @@
       "reconciled_counties": 159,
       "unresolved_county_fips": [],
       "mapped_before": {
-        "dem_votes": 2224294,
-        "rep_votes": 2273929,
-        "other_votes": 106594
+        "dem_votes": 1091588,
+        "rep_votes": 334991,
+        "other_votes": 713002
       },
       "canonical_target": {
         "dem_votes": 2374519,
@@ -32,114 +32,114 @@
   "general": {
     "results": {
       "1": {
-        "total_votes": 79451,
-        "dem_votes": 32533,
-        "rep_votes": 45054,
-        "other_votes": 1864,
+        "total_votes": 82812,
+        "dem_votes": 35823,
+        "rep_votes": 45149,
+        "other_votes": 1840,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.759398874778165
+        "margin_pct": 11.261652900545814
       },
       "2": {
-        "total_votes": 85459,
-        "dem_votes": 58763,
-        "rep_votes": 24600,
-        "other_votes": 2096,
+        "total_votes": 81281,
+        "dem_votes": 54499,
+        "rep_votes": 24589,
+        "other_votes": 2193,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.975894873565096
+        "margin_pct": -36.79826773784771
       },
       "3": {
-        "total_votes": 87846,
-        "dem_votes": 28217,
-        "rep_votes": 57327,
-        "other_votes": 2302,
+        "total_votes": 87625,
+        "dem_votes": 28009,
+        "rep_votes": 57290,
+        "other_votes": 2326,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.13753614279535
+        "margin_pct": 33.41626248216833
       },
       "4": {
-        "total_votes": 78829,
-        "dem_votes": 24766,
-        "rep_votes": 52161,
-        "other_votes": 1902,
+        "total_votes": 79646,
+        "dem_votes": 25741,
+        "rep_votes": 52076,
+        "other_votes": 1829,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.752438823275696
+        "margin_pct": 33.06506290334731
       },
       "5": {
-        "total_votes": 50301,
-        "dem_votes": 35940,
-        "rep_votes": 12893,
-        "other_votes": 1468,
+        "total_votes": 57148,
+        "dem_votes": 36832,
+        "rep_votes": 18840,
+        "other_votes": 1476,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.81817458897437
+        "margin_pct": -31.48316651501365
       },
       "6": {
-        "total_votes": 97796,
-        "dem_votes": 27093,
-        "rep_votes": 68315,
-        "other_votes": 2388,
+        "total_votes": 96820,
+        "dem_votes": 26855,
+        "rep_votes": 67606,
+        "other_votes": 2359,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.15100822119514
+        "margin_pct": 42.08944432968395
       },
       "7": {
-        "total_votes": 86619,
-        "dem_votes": 48196,
-        "rep_votes": 36132,
-        "other_votes": 2291,
+        "total_votes": 83892,
+        "dem_votes": 45994,
+        "rep_votes": 35348,
+        "other_votes": 2550,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.927660213117216
+        "margin_pct": -12.690125399322937
       },
       "8": {
-        "total_votes": 75189,
-        "dem_votes": 24992,
-        "rep_votes": 48627,
-        "other_votes": 1570,
+        "total_votes": 75409,
+        "dem_votes": 25200,
+        "rep_votes": 48663,
+        "other_votes": 1546,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.43411935256487
+        "margin_pct": 31.114323224018353
       },
       "9": {
-        "total_votes": 88371,
-        "dem_votes": 51372,
-        "rep_votes": 34751,
-        "other_votes": 2248,
+        "total_votes": 88350,
+        "dem_votes": 51509,
+        "rep_votes": 34464,
+        "other_votes": 2377,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.808206312025437
+        "margin_pct": -19.292586304470856
       },
       "10": {
-        "total_votes": 103090,
-        "dem_votes": 86251,
-        "rep_votes": 14827,
-        "other_votes": 2012,
+        "total_votes": 105436,
+        "dem_votes": 84359,
+        "rep_votes": 18848,
+        "other_votes": 2229,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.28315064506741
+        "margin_pct": -62.13342691300884
       },
       "11": {
         "total_votes": 77306,
@@ -164,488 +164,488 @@
         "margin_pct": -13.95867953074233
       },
       "13": {
-        "total_votes": 79207,
-        "dem_votes": 22404,
-        "rep_votes": 55422,
-        "other_votes": 1381,
+        "total_votes": 79220,
+        "dem_votes": 22390,
+        "rep_votes": 55452,
+        "other_votes": 1378,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.68570959637406
+        "margin_pct": 41.73441050239838
       },
       "14": {
-        "total_votes": 98112,
-        "dem_votes": 54548,
-        "rep_votes": 41340,
-        "other_votes": 2224,
+        "total_votes": 93773,
+        "dem_votes": 56124,
+        "rep_votes": 35786,
+        "other_votes": 1863,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.462165688193087
+        "margin_pct": -21.688545743444276
       },
       "15": {
-        "total_votes": 62843,
-        "dem_votes": 40902,
-        "rep_votes": 20597,
-        "other_votes": 1344,
+        "total_votes": 68223,
+        "dem_votes": 42447,
+        "rep_votes": 24201,
+        "other_votes": 1575,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.310678993682664
+        "margin_pct": -26.744646233674864
       },
       "16": {
-        "total_votes": 102045,
-        "dem_votes": 34540,
-        "rep_votes": 65281,
-        "other_votes": 2224,
+        "total_votes": 101362,
+        "dem_votes": 34924,
+        "rep_votes": 64464,
+        "other_votes": 1974,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.124944877260035
+        "margin_pct": 29.143071367968272
       },
       "17": {
-        "total_votes": 89823,
-        "dem_votes": 65593,
-        "rep_votes": 22353,
-        "other_votes": 1877,
+        "total_votes": 88777,
+        "dem_votes": 65093,
+        "rep_votes": 21538,
+        "other_votes": 2146,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.13911804326286
+        "margin_pct": -49.06113069826644
       },
       "18": {
-        "total_votes": 92277,
-        "dem_votes": 34538,
-        "rep_votes": 55957,
-        "other_votes": 1782,
+        "total_votes": 91467,
+        "dem_votes": 35548,
+        "rep_votes": 54138,
+        "other_votes": 1781,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.211634535149603
+        "margin_pct": 20.324269955284418
       },
       "19": {
-        "total_votes": 73617,
-        "dem_votes": 18084,
-        "rep_votes": 54169,
-        "other_votes": 1364,
+        "total_votes": 73606,
+        "dem_votes": 18099,
+        "rep_votes": 54140,
+        "other_votes": 1367,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.01721069861581
+        "margin_pct": 48.964758307746656
       },
       "20": {
-        "total_votes": 87742,
-        "dem_votes": 28658,
-        "rep_votes": 57394,
-        "other_votes": 1690,
+        "total_votes": 86824,
+        "dem_votes": 29006,
+        "rep_votes": 56148,
+        "other_votes": 1670,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.75056415399695
+        "margin_pct": 31.260941675112875
       },
       "21": {
-        "total_votes": 105503,
-        "dem_votes": 32870,
-        "rep_votes": 70078,
-        "other_votes": 2555,
+        "total_votes": 95672,
+        "dem_votes": 29888,
+        "rep_votes": 63859,
+        "other_votes": 1925,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.26724358549046
+        "margin_pct": 35.50777656994732
       },
       "22": {
-        "total_votes": 78461,
-        "dem_votes": 53460,
-        "rep_votes": 23022,
-        "other_votes": 1979,
+        "total_votes": 80595,
+        "dem_votes": 54346,
+        "rep_votes": 24222,
+        "other_votes": 2027,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.793795643695596
+        "margin_pct": -37.37700849928656
       },
       "23": {
-        "total_votes": 81301,
-        "dem_votes": 32832,
-        "rep_votes": 46866,
-        "other_votes": 1603,
+        "total_votes": 84238,
+        "dem_votes": 34367,
+        "rep_votes": 48414,
+        "other_votes": 1457,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.261780297905315
+        "margin_pct": 16.675372159832854
       },
       "24": {
-        "total_votes": 109332,
-        "dem_votes": 34872,
-        "rep_votes": 72280,
-        "other_votes": 2180,
+        "total_votes": 104262,
+        "dem_votes": 32451,
+        "rep_votes": 69533,
+        "other_votes": 2278,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.21505140306589
+        "margin_pct": 35.56616984136119
       },
       "25": {
-        "total_votes": 92807,
-        "dem_votes": 33977,
-        "rep_votes": 56911,
-        "other_votes": 1919,
+        "total_votes": 91066,
+        "dem_votes": 33863,
+        "rep_votes": 55474,
+        "other_votes": 1729,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.711498055103604
+        "margin_pct": 23.731140052269783
       },
       "26": {
-        "total_votes": 78871,
-        "dem_votes": 48540,
-        "rep_votes": 28509,
-        "other_votes": 1822,
+        "total_votes": 81482,
+        "dem_votes": 47370,
+        "rep_votes": 32216,
+        "other_votes": 1896,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.39716752672085
+        "margin_pct": -18.597972558356446
       },
       "27": {
-        "total_votes": 98530,
-        "dem_votes": 27956,
-        "rep_votes": 67764,
-        "other_votes": 2810,
+        "total_votes": 99074,
+        "dem_votes": 28348,
+        "rep_votes": 68248,
+        "other_votes": 2478,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.40190804831016
+        "margin_pct": 40.27292730686154
       },
       "28": {
-        "total_votes": 87597,
-        "dem_votes": 62508,
-        "rep_votes": 23052,
-        "other_votes": 2037,
+        "total_votes": 97552,
+        "dem_votes": 68623,
+        "rep_votes": 26250,
+        "other_votes": 2679,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.04263844652214
+        "margin_pct": -43.43632114154502
       },
       "29": {
-        "total_votes": 96368,
-        "dem_votes": 35482,
-        "rep_votes": 58955,
-        "other_votes": 1931,
+        "total_votes": 90988,
+        "dem_votes": 33937,
+        "rep_votes": 55351,
+        "other_votes": 1700,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.357670596048482
+        "margin_pct": 23.534971644612476
       },
       "30": {
-        "total_votes": 80243,
-        "dem_votes": 29037,
-        "rep_votes": 49091,
-        "other_votes": 2115,
+        "total_votes": 87475,
+        "dem_votes": 29533,
+        "rep_votes": 55979,
+        "other_votes": 1963,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.991588051294194
+        "margin_pct": 30.23263789654187
       },
       "31": {
-        "total_votes": 101420,
-        "dem_votes": 32137,
-        "rep_votes": 66568,
-        "other_votes": 2715,
+        "total_votes": 93438,
+        "dem_votes": 30122,
+        "rep_votes": 60606,
+        "other_votes": 2710,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.94892526128969
+        "margin_pct": 32.62484214131295
       },
       "32": {
-        "total_votes": 99284,
-        "dem_votes": 40734,
-        "rep_votes": 55570,
-        "other_votes": 2980,
+        "total_votes": 99474,
+        "dem_votes": 39611,
+        "rep_votes": 57047,
+        "other_votes": 2816,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.94299182144152
+        "margin_pct": 17.52819832317993
       },
       "33": {
-        "total_votes": 85532,
-        "dem_votes": 52664,
-        "rep_votes": 30583,
-        "other_votes": 2285,
+        "total_votes": 84584,
+        "dem_votes": 50417,
+        "rep_votes": 31974,
+        "other_votes": 2193,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.816068839732498
+        "margin_pct": -21.80436016267852
       },
       "34": {
-        "total_votes": 71580,
-        "dem_votes": 58095,
-        "rep_votes": 11864,
-        "other_votes": 1621,
+        "total_votes": 76939,
+        "dem_votes": 59048,
+        "rep_votes": 15928,
+        "other_votes": 1963,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.58647666946075
+        "margin_pct": -56.04439880944645
       },
       "35": {
-        "total_votes": 91780,
-        "dem_votes": 69681,
-        "rep_votes": 19965,
-        "other_votes": 2134,
+        "total_votes": 96941,
+        "dem_votes": 69614,
+        "rep_votes": 24832,
+        "other_votes": 2495,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.16866419699281
+        "margin_pct": -46.19510836488173
       },
       "36": {
-        "total_votes": 95930,
-        "dem_votes": 83595,
-        "rep_votes": 10108,
-        "other_votes": 2227,
+        "total_votes": 93743,
+        "dem_votes": 75834,
+        "rep_votes": 15698,
+        "other_votes": 2211,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.60481601167518
+        "margin_pct": -64.14985652262035
       },
       "37": {
-        "total_votes": 108964,
-        "dem_votes": 45632,
-        "rep_votes": 60446,
-        "other_votes": 2886,
+        "total_votes": 108100,
+        "dem_votes": 47957,
+        "rep_votes": 57729,
+        "other_votes": 2414,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 13.595315884145224
+        "margin_pct": 9.03977798334875
       },
       "38": {
-        "total_votes": 93361,
-        "dem_votes": 69065,
-        "rep_votes": 22494,
-        "other_votes": 1802,
+        "total_votes": 95125,
+        "dem_votes": 70345,
+        "rep_votes": 22719,
+        "other_votes": 2061,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.882713338546075
+        "margin_pct": -50.06675427069646
       },
       "39": {
-        "total_votes": 77919,
-        "dem_votes": 63390,
-        "rep_votes": 12827,
-        "other_votes": 1702,
+        "total_votes": 90264,
+        "dem_votes": 69927,
+        "rep_votes": 18187,
+        "other_votes": 2150,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.89174655732235
+        "margin_pct": -57.32074802800674
       },
       "40": {
-        "total_votes": 86190,
-        "dem_votes": 52104,
-        "rep_votes": 32149,
-        "other_votes": 1937,
+        "total_votes": 73522,
+        "dem_votes": 50565,
+        "rep_votes": 21554,
+        "other_votes": 1403,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.15233785822021
+        "margin_pct": -39.45893746089606
       },
       "41": {
-        "total_votes": 79095,
-        "dem_votes": 65033,
-        "rep_votes": 12402,
-        "other_votes": 1660,
+        "total_votes": 83606,
+        "dem_votes": 66834,
+        "rep_votes": 15131,
+        "other_votes": 1641,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.5415007269739
+        "margin_pct": -61.841255412290984
       },
       "42": {
-        "total_votes": 100616,
-        "dem_votes": 40244,
-        "rep_votes": 58165,
-        "other_votes": 2207,
+        "total_votes": 97745,
+        "dem_votes": 40034,
+        "rep_votes": 55696,
+        "other_votes": 2015,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.811282499801223
+        "margin_pct": 16.02332600132999
       },
       "43": {
-        "total_votes": 87945,
-        "dem_votes": 64665,
-        "rep_votes": 21432,
-        "other_votes": 1848,
+        "total_votes": 93420,
+        "dem_votes": 66798,
+        "rep_votes": 24515,
+        "other_votes": 2107,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.15913354937745
+        "margin_pct": -45.261186041532866
       },
       "44": {
-        "total_votes": 93648,
-        "dem_votes": 81996,
-        "rep_votes": 9772,
-        "other_votes": 1880,
+        "total_votes": 93823,
+        "dem_votes": 81070,
+        "rep_votes": 10705,
+        "other_votes": 2048,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.12284298650265
+        "margin_pct": -74.99760186734596
       },
       "45": {
-        "total_votes": 90390,
-        "dem_votes": 35569,
-        "rep_votes": 52296,
-        "other_votes": 2525,
+        "total_votes": 84889,
+        "dem_votes": 35546,
+        "rep_votes": 47311,
+        "other_votes": 2032,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.50536563779179
+        "margin_pct": 13.859275053304904
       },
       "46": {
-        "total_votes": 92779,
-        "dem_votes": 35026,
-        "rep_votes": 55507,
-        "other_votes": 2246,
+        "total_votes": 91597,
+        "dem_votes": 35637,
+        "rep_votes": 53688,
+        "other_votes": 2272,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.075038532426518
+        "margin_pct": 19.70697730275009
       },
       "47": {
-        "total_votes": 88323,
-        "dem_votes": 34669,
-        "rep_votes": 51288,
-        "other_votes": 2366,
+        "total_votes": 89112,
+        "dem_votes": 34426,
+        "rep_votes": 52395,
+        "other_votes": 2291,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.816163400246822
+        "margin_pct": 20.164512074692524
       },
       "48": {
-        "total_votes": 93853,
-        "dem_votes": 42194,
-        "rep_votes": 49660,
-        "other_votes": 1999,
+        "total_votes": 90347,
+        "dem_votes": 42565,
+        "rep_votes": 45542,
+        "other_votes": 2240,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.954993447199343
+        "margin_pct": 3.2950734390737932
       },
       "49": {
-        "total_votes": 85172,
-        "dem_votes": 21925,
-        "rep_votes": 60912,
-        "other_votes": 2335,
+        "total_votes": 85025,
+        "dem_votes": 21922,
+        "rep_votes": 60772,
+        "other_votes": 2331,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.774432912224675
+        "margin_pct": 45.6924433990003
       },
       "50": {
-        "total_votes": 89086,
-        "dem_votes": 15460,
-        "rep_votes": 71552,
-        "other_votes": 2074,
+        "total_votes": 89289,
+        "dem_votes": 15417,
+        "rep_votes": 71788,
+        "other_votes": 2084,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.96387760141885
+        "margin_pct": 63.1331966983615
       },
       "51": {
-        "total_votes": 102077,
+        "total_votes": 101908,
         "dem_votes": 16728,
-        "rep_votes": 82795,
-        "other_votes": 2554,
+        "rep_votes": 82642,
+        "other_votes": 2538,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.72270932727255
+        "margin_pct": 64.67990736742945
       },
       "52": {
-        "total_votes": 85232,
-        "dem_votes": 21640,
-        "rep_votes": 61354,
-        "other_votes": 2238,
+        "total_votes": 86072,
+        "dem_votes": 21751,
+        "rep_votes": 62040,
+        "other_votes": 2281,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.5951755209311
+        "margin_pct": 46.80848591876568
       },
       "53": {
-        "total_votes": 83126,
-        "dem_votes": 16053,
-        "rep_votes": 64600,
-        "other_votes": 2473,
+        "total_votes": 82681,
+        "dem_votes": 16003,
+        "rep_votes": 64236,
+        "other_votes": 2442,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.40170343815413
+        "margin_pct": 58.33625621364038
       },
       "54": {
-        "total_votes": 71446,
-        "dem_votes": 16116,
-        "rep_votes": 53517,
+        "total_votes": 71473,
+        "dem_votes": 16163,
+        "rep_votes": 53497,
         "other_votes": 1813,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.34862693502785
+        "margin_pct": 52.235109761728204
       },
       "55": {
-        "total_votes": 97748,
-        "dem_votes": 74675,
-        "rep_votes": 20925,
-        "other_votes": 2148,
+        "total_votes": 100074,
+        "dem_votes": 74602,
+        "rep_votes": 23201,
+        "other_votes": 2271,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.988337357286085
+        "margin_pct": -51.36299138637408
       },
       "56": {
-        "total_votes": 114105,
-        "dem_votes": 45185,
-        "rep_votes": 65967,
-        "other_votes": 2953,
+        "total_votes": 106965,
+        "dem_votes": 43085,
+        "rep_votes": 60727,
+        "other_votes": 3153,
         "dem_candidate": "Jon Ossoff",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.213049384338987
+        "margin_pct": 16.493245454120505
       }
     }
   }
