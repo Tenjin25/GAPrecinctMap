@@ -4,38 +4,54 @@
     "contest_type": "governor",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:20.391418+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:43.624478+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2371870,
     "matched_input_votes": 2371870,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Governor.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1077291,
+        "rep_votes": 1233641,
+        "other_votes": 60938
+      },
+      "canonical_target": {
+        "dem_votes": 1144794,
+        "rep_votes": 1345237,
+        "other_votes": 60185
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10685,
-        "dem_votes": 2868,
-        "rep_votes": 7460,
-        "other_votes": 357,
+        "total_votes": 12965,
+        "dem_votes": 3473,
+        "rep_votes": 9048,
+        "other_votes": 444,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.97613476836687
+        "margin_pct": 43.00038565368299
       },
       "2": {
-        "total_votes": 9677,
-        "dem_votes": 2416,
-        "rep_votes": 6883,
-        "other_votes": 378,
+        "total_votes": 10350,
+        "dem_votes": 2565,
+        "rep_votes": 7380,
+        "other_votes": 405,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.161000310013435
+        "margin_pct": 46.52173913043478
       },
       "3": {
         "total_votes": 11990,
@@ -60,26 +76,26 @@
         "margin_pct": 29.585798816568047
       },
       "5": {
-        "total_votes": 10743,
-        "dem_votes": 2565,
-        "rep_votes": 7789,
+        "total_votes": 10732,
+        "dem_votes": 2562,
+        "rep_votes": 7781,
         "other_votes": 389,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.627012938657735
+        "margin_pct": 48.63026462914648
       },
       "6": {
-        "total_votes": 10018,
+        "total_votes": 10017,
         "dem_votes": 2587,
-        "rep_votes": 7003,
+        "rep_votes": 7002,
         "other_votes": 428,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.080654821321616
+        "margin_pct": 44.07507237695917
       },
       "7": {
         "total_votes": 15926,
@@ -93,37 +109,37 @@
         "margin_pct": 54.778349868140154
       },
       "8": {
-        "total_votes": 18294,
+        "total_votes": 18295,
         "dem_votes": 3853,
-        "rep_votes": 13951,
+        "rep_votes": 13952,
         "other_votes": 490,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.19842571334864
+        "margin_pct": 55.20087455588959
       },
       "9": {
-        "total_votes": 8434,
-        "dem_votes": 1330,
-        "rep_votes": 6836,
-        "other_votes": 269,
+        "total_votes": 14540,
+        "dem_votes": 2561,
+        "rep_votes": 11500,
+        "other_votes": 479,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.28337680815746
+        "margin_pct": 61.4786795048143
       },
       "10": {
-        "total_votes": 12984,
+        "total_votes": 12981,
         "dem_votes": 2620,
-        "rep_votes": 9997,
+        "rep_votes": 9995,
         "other_votes": 366,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.81608133086876
+        "margin_pct": 56.813804791618516
       },
       "11": {
         "total_votes": 15011,
@@ -137,18 +153,18 @@
         "margin_pct": 63.32689361135168
       },
       "12": {
-        "total_votes": 11845,
-        "dem_votes": 3699,
-        "rep_votes": 7694,
-        "other_votes": 451,
+        "total_votes": 11985,
+        "dem_votes": 3762,
+        "rep_votes": 7765,
+        "other_votes": 458,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.72731110173069
+        "margin_pct": 33.40008343763037
       },
       "13": {
-        "total_votes": 12542,
+        "total_votes": 12543,
         "dem_votes": 4524,
         "rep_votes": 7591,
         "other_votes": 428,
@@ -156,117 +172,117 @@
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.453835114016904
+        "margin_pct": 24.451885513832416
       },
       "14": {
-        "total_votes": 13355,
-        "dem_votes": 2879,
-        "rep_votes": 10050,
+        "total_votes": 13366,
+        "dem_votes": 2882,
+        "rep_votes": 10058,
         "other_votes": 426,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.69524522650693
+        "margin_pct": 53.68846326500075
       },
       "15": {
-        "total_votes": 12004,
-        "dem_votes": 3215,
-        "rep_votes": 8404,
+        "total_votes": 12015,
+        "dem_votes": 3218,
+        "rep_votes": 8412,
         "other_votes": 385,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.2272575808064
+        "margin_pct": 43.229296712442775
       },
       "16": {
         "total_votes": 7991,
         "dem_votes": 2387,
-        "rep_votes": 0,
-        "other_votes": 5603,
+        "rep_votes": 5323,
+        "other_votes": 281,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
-        "winner": "Other",
-        "winner_party": "OTH",
-        "margin_pct": -29.87110499311726
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 36.74133400075085
       },
       "17": {
-        "total_votes": 5662,
-        "dem_votes": 1546,
-        "rep_votes": 3922,
-        "other_votes": 194,
+        "total_votes": 10594,
+        "dem_votes": 2786,
+        "rep_votes": 7449,
+        "other_votes": 359,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.96397032850583
+        "margin_pct": 44.015480460638095
       },
       "18": {
-        "total_votes": 10990,
-        "dem_votes": 2345,
-        "rep_votes": 8273,
-        "other_votes": 372,
+        "total_votes": 16348,
+        "dem_votes": 3465,
+        "rep_votes": 12365,
+        "other_votes": 518,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.93994540491356
+        "margin_pct": 54.44091020308295
       },
       "19": {
-        "total_votes": 5230,
-        "dem_votes": 1670,
-        "rep_votes": 3388,
-        "other_votes": 172,
+        "total_votes": 9762,
+        "dem_votes": 3008,
+        "rep_votes": 6435,
+        "other_votes": 319,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.848948374760994
+        "margin_pct": 35.10551116574472
       },
       "20": {
-        "total_votes": 16919,
-        "dem_votes": 3866,
-        "rep_votes": 12490,
+        "total_votes": 16926,
+        "dem_votes": 3868,
+        "rep_votes": 12494,
         "other_votes": 564,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.972279685560615
+        "margin_pct": 50.96301547914452
       },
       "21": {
-        "total_votes": 16468,
-        "dem_votes": 3058,
-        "rep_votes": 12807,
-        "other_votes": 603,
+        "total_votes": 16475,
+        "dem_votes": 3060,
+        "rep_votes": 12811,
+        "other_votes": 604,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.19965994656303
+        "margin_pct": 59.186646433990894
       },
       "22": {
-        "total_votes": 15644,
-        "dem_votes": 4793,
-        "rep_votes": 10238,
-        "other_votes": 613,
+        "total_votes": 15717,
+        "dem_votes": 4812,
+        "rep_votes": 10289,
+        "other_votes": 616,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.80567629762209
+        "margin_pct": 34.84761722975123
       },
       "23": {
-        "total_votes": 12584,
-        "dem_votes": 2493,
-        "rep_votes": 9682,
+        "total_votes": 12589,
+        "dem_votes": 2495,
+        "rep_votes": 9685,
         "other_votes": 409,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.128099173553714
+        "margin_pct": 57.11335292715864
       },
       "24": {
         "total_votes": 12729,
@@ -302,249 +318,249 @@
         "margin_pct": 62.766461392704876
       },
       "27": {
-        "total_votes": 11718,
-        "dem_votes": 1569,
-        "rep_votes": 9888,
-        "other_votes": 260,
+        "total_votes": 13788,
+        "dem_votes": 1818,
+        "rep_votes": 11661,
+        "other_votes": 309,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.99334357398874
+        "margin_pct": 71.3881636205396
       },
       "28": {
-        "total_votes": 11741,
-        "dem_votes": 1859,
-        "rep_votes": 9513,
-        "other_votes": 369,
+        "total_votes": 11938,
+        "dem_votes": 1889,
+        "rep_votes": 9674,
+        "other_votes": 375,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.19035857252364
+        "margin_pct": 65.21192829619702
       },
       "29": {
-        "total_votes": 7343,
-        "dem_votes": 2380,
-        "rep_votes": 4758,
-        "other_votes": 205,
+        "total_votes": 8268,
+        "dem_votes": 2607,
+        "rep_votes": 5431,
+        "other_votes": 230,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.38458395751056
+        "margin_pct": 34.15578132559265
       },
       "30": {
-        "total_votes": 14716,
-        "dem_votes": 2622,
-        "rep_votes": 11695,
-        "other_votes": 399,
+        "total_votes": 16409,
+        "dem_votes": 2835,
+        "rep_votes": 13134,
+        "other_votes": 440,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.653982060342486
+        "margin_pct": 62.76433664452434
       },
       "31": {
-        "total_votes": 6791,
-        "dem_votes": 1213,
-        "rep_votes": 5378,
-        "other_votes": 200,
+        "total_votes": 10238,
+        "dem_votes": 1882,
+        "rep_votes": 8041,
+        "other_votes": 315,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.3311736121337
+        "margin_pct": 60.158234030084
       },
       "32": {
-        "total_votes": 7511,
-        "dem_votes": 1147,
-        "rep_votes": 6148,
-        "other_votes": 216,
+        "total_votes": 13241,
+        "dem_votes": 2426,
+        "rep_votes": 10426,
+        "other_votes": 389,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.58234589269073
+        "margin_pct": 60.418397402008914
       },
       "33": {
-        "total_votes": 14182,
-        "dem_votes": 3321,
-        "rep_votes": 10496,
+        "total_votes": 14186,
+        "dem_votes": 3322,
+        "rep_votes": 10499,
         "other_votes": 365,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.59230009871668
+        "margin_pct": 50.59213308896094
       },
       "34": {
-        "total_votes": 18509,
-        "dem_votes": 5038,
-        "rep_votes": 12970,
+        "total_votes": 18664,
+        "dem_votes": 5066,
+        "rep_votes": 13094,
+        "other_votes": 504,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 43.01328761251607
+      },
+      "35": {
+        "total_votes": 13904,
+        "dem_votes": 5628,
+        "rep_votes": 7776,
         "other_votes": 500,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.85482738127398
-      },
-      "35": {
-        "total_votes": 13796,
-        "dem_votes": 5597,
-        "rep_votes": 7702,
-        "other_votes": 496,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 15.25804581037982
+        "margin_pct": 15.448791714614499
       },
       "36": {
-        "total_votes": 21036,
-        "dem_votes": 5699,
-        "rep_votes": 14814,
-        "other_votes": 523,
+        "total_votes": 21212,
+        "dem_votes": 5730,
+        "rep_votes": 14955,
+        "other_votes": 527,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.33048108005324
+        "margin_pct": 43.489534225909864
       },
       "37": {
-        "total_votes": 14064,
-        "dem_votes": 6180,
-        "rep_votes": 7493,
-        "other_votes": 391,
+        "total_votes": 14173,
+        "dem_votes": 6215,
+        "rep_votes": 7564,
+        "other_votes": 394,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.335893060295792
+        "margin_pct": 9.518097791575531
       },
       "38": {
-        "total_votes": 15472,
-        "dem_votes": 9638,
-        "rep_votes": 5488,
-        "other_votes": 346,
+        "total_votes": 15581,
+        "dem_votes": 9692,
+        "rep_votes": 5541,
+        "other_votes": 348,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.822647362978287
+        "margin_pct": -26.64142224504204
       },
       "39": {
-        "total_votes": 12752,
-        "dem_votes": 9066,
-        "rep_votes": 3427,
-        "other_votes": 259,
+        "total_votes": 12836,
+        "dem_votes": 9116,
+        "rep_votes": 3459,
+        "other_votes": 261,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.22051442910916
+        "margin_pct": -44.0713617949517
       },
       "40": {
-        "total_votes": 17866,
-        "dem_votes": 8739,
-        "rep_votes": 8674,
-        "other_votes": 453,
+        "total_votes": 18001,
+        "dem_votes": 8788,
+        "rep_votes": 8757,
+        "other_votes": 456,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -0.36381954550542933
+        "margin_pct": -0.1722126548525082
       },
       "41": {
-        "total_votes": 11761,
-        "dem_votes": 7063,
-        "rep_votes": 4395,
-        "other_votes": 303,
+        "total_votes": 11844,
+        "dem_votes": 7102,
+        "rep_votes": 4437,
+        "other_votes": 305,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.685145820933595
+        "margin_pct": -22.500844309354946
       },
       "42": {
-        "total_votes": 10958,
-        "dem_votes": 6451,
-        "rep_votes": 4154,
-        "other_votes": 354,
+        "total_votes": 11036,
+        "dem_votes": 6487,
+        "rep_votes": 4193,
+        "other_votes": 356,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.961854352984123
+        "margin_pct": -20.786516853932586
       },
       "43": {
-        "total_votes": 11423,
-        "dem_votes": 5083,
-        "rep_votes": 5962,
-        "other_votes": 378,
+        "total_votes": 11511,
+        "dem_votes": 5112,
+        "rep_votes": 6018,
+        "other_votes": 381,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.695001313140155
+        "margin_pct": 7.870732342976283
       },
       "44": {
-        "total_votes": 16592,
-        "dem_votes": 5207,
-        "rep_votes": 10744,
-        "other_votes": 641,
+        "total_votes": 16696,
+        "dem_votes": 5231,
+        "rep_votes": 10820,
+        "other_votes": 645,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.37150433944069
+        "margin_pct": 33.47508385241974
       },
       "45": {
-        "total_votes": 27151,
-        "dem_votes": 7626,
-        "rep_votes": 18734,
-        "other_votes": 791,
+        "total_votes": 27379,
+        "dem_votes": 7669,
+        "rep_votes": 18913,
+        "other_votes": 797,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.91193694523222
+        "margin_pct": 41.06797180320684
       },
       "46": {
-        "total_votes": 19604,
-        "dem_votes": 5604,
-        "rep_votes": 13399,
-        "other_votes": 601,
+        "total_votes": 19737,
+        "dem_votes": 5630,
+        "rep_votes": 13502,
+        "other_votes": 605,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.76229340950827
+        "margin_pct": 39.884480924152605
       },
       "47": {
-        "total_votes": 14661,
-        "dem_votes": 4087,
+        "total_votes": 14662,
+        "dem_votes": 4088,
         "rep_votes": 10193,
         "other_votes": 381,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.64790941954846
+        "margin_pct": 41.638248533624335
       },
       "48": {
-        "total_votes": 20059,
-        "dem_votes": 6630,
+        "total_votes": 20061,
+        "dem_votes": 6631,
         "rep_votes": 12870,
         "other_votes": 560,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.108230719377833
+        "margin_pct": 31.100144559094762
       },
       "49": {
-        "total_votes": 16202,
+        "total_votes": 16203,
         "dem_votes": 4697,
         "rep_votes": 11039,
         "other_votes": 467,
@@ -552,7 +568,7 @@
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.14331564004444
+        "margin_pct": 39.14089983336419
       },
       "50": {
         "total_votes": 12955,
@@ -566,37 +582,37 @@
         "margin_pct": 25.27981474334234
       },
       "51": {
-        "total_votes": 15259,
-        "dem_votes": 6328,
+        "total_votes": 15260,
+        "dem_votes": 6329,
         "rep_votes": 8531,
         "other_votes": 400,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.437381217642049
+        "margin_pct": 14.429882044560943
       },
       "52": {
-        "total_votes": 14268,
-        "dem_votes": 6072,
-        "rep_votes": 7753,
-        "other_votes": 443,
+        "total_votes": 14594,
+        "dem_votes": 6145,
+        "rep_votes": 7998,
+        "other_votes": 451,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.781609195402298
+        "margin_pct": 12.696998766616419
       },
       "53": {
         "total_votes": 19697,
-        "dem_votes": 6763,
-        "rep_votes": 12477,
+        "dem_votes": 6764,
+        "rep_votes": 12476,
         "other_votes": 457,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.00949383154795
+        "margin_pct": 28.999340001015383
       },
       "54": {
         "total_votes": 13484,
@@ -610,117 +626,117 @@
         "margin_pct": 15.29961435775734
       },
       "55": {
-        "total_votes": 15120,
-        "dem_votes": 11113,
+        "total_votes": 15121,
+        "dem_votes": 11114,
         "rep_votes": 3796,
         "other_votes": 211,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.392857142857146
+        "margin_pct": -48.39627008795714
       },
       "56": {
-        "total_votes": 10185,
-        "dem_votes": 9012,
+        "total_votes": 10186,
+        "dem_votes": 9013,
         "rep_votes": 951,
         "other_votes": 222,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.1458026509573
+        "margin_pct": -79.1478499901826
       },
       "57": {
-        "total_votes": 14745,
-        "dem_votes": 9961,
+        "total_votes": 14746,
+        "dem_votes": 9962,
         "rep_votes": 4464,
         "other_votes": 320,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.28043404543913
+        "margin_pct": -37.284687372846875
       },
       "58": {
-        "total_votes": 16208,
-        "dem_votes": 14480,
+        "total_votes": 16209,
+        "dem_votes": 14481,
         "rep_votes": 1447,
         "other_votes": 281,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.4109081934847
+        "margin_pct": -80.41211672527608
       },
       "59": {
-        "total_votes": 13023,
-        "dem_votes": 12054,
+        "total_votes": 13025,
+        "dem_votes": 12055,
         "rep_votes": 754,
         "other_votes": 216,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -86.76956154495892
+        "margin_pct": -86.76391554702495
       },
       "60": {
-        "total_votes": 18421,
-        "dem_votes": 13592,
+        "total_votes": 18423,
+        "dem_votes": 13593,
         "rep_votes": 4575,
         "other_votes": 255,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.94956842733836
+        "margin_pct": -48.94968246213971
       },
       "61": {
         "total_votes": 15507,
-        "dem_votes": 12418,
+        "dem_votes": 12419,
         "rep_votes": 2899,
         "other_votes": 189,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.38518088605146
+        "margin_pct": -61.391629586638295
       },
       "62": {
-        "total_votes": 13556,
-        "dem_votes": 12342,
+        "total_votes": 13557,
+        "dem_votes": 12343,
         "rep_votes": 1016,
         "other_votes": 198,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.54971968132192
+        "margin_pct": -83.55093309729291
       },
       "63": {
-        "total_votes": 13846,
-        "dem_votes": 12207,
+        "total_votes": 13848,
+        "dem_votes": 12208,
         "rep_votes": 1412,
         "other_votes": 228,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.96475516394626
+        "margin_pct": -77.96071634893126
       },
       "64": {
-        "total_votes": 16287,
-        "dem_votes": 5516,
-        "rep_votes": 10334,
-        "other_votes": 437,
+        "total_votes": 21557,
+        "dem_votes": 7251,
+        "rep_votes": 13732,
+        "other_votes": 574,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.581875115122493
+        "margin_pct": 30.06448021524331
       },
       "65": {
-        "total_votes": 17262,
+        "total_votes": 17261,
         "dem_votes": 11153,
         "rep_votes": 5835,
         "other_votes": 273,
@@ -728,7 +744,7 @@
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.8075541652184
+        "margin_pct": -30.809338972249577
       },
       "66": {
         "total_votes": 14933,
@@ -742,323 +758,323 @@
         "margin_pct": -13.118596397241008
       },
       "67": {
-        "total_votes": 13292,
-        "dem_votes": 7847,
+        "total_votes": 13291,
+        "dem_votes": 7846,
         "rep_votes": 5215,
         "other_votes": 230,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.80138429130304
+        "margin_pct": -19.79535023700248
       },
       "68": {
-        "total_votes": 16071,
-        "dem_votes": 8773,
+        "total_votes": 16072,
+        "dem_votes": 8774,
         "rep_votes": 6978,
         "other_votes": 320,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.169186733868457
+        "margin_pct": -11.174713787954206
       },
       "69": {
-        "total_votes": 19451,
-        "dem_votes": 13041,
+        "total_votes": 19452,
+        "dem_votes": 13042,
         "rep_votes": 6087,
         "other_votes": 323,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.751375250629785
+        "margin_pct": -35.75467818219206
       },
       "70": {
-        "total_votes": 11644,
-        "dem_votes": 4347,
+        "total_votes": 11640,
+        "dem_votes": 4343,
         "rep_votes": 6973,
         "other_votes": 324,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.552387495705943
+        "margin_pct": 22.59450171821306
       },
       "71": {
-        "total_votes": 6267,
-        "dem_votes": 2081,
-        "rep_votes": 3984,
-        "other_votes": 202,
+        "total_votes": 17735,
+        "dem_votes": 5838,
+        "rep_votes": 11351,
+        "other_votes": 546,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.365406095420454
+        "margin_pct": 31.08542430222723
       },
       "72": {
-        "total_votes": 6028,
-        "dem_votes": 1733,
-        "rep_votes": 4152,
-        "other_votes": 143,
+        "total_votes": 8175,
+        "dem_votes": 2356,
+        "rep_votes": 5633,
+        "other_votes": 186,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.12939615129396
+        "margin_pct": 40.08562691131499
       },
       "73": {
-        "total_votes": 18426,
-        "dem_votes": 4571,
+        "total_votes": 18424,
+        "dem_votes": 4569,
         "rep_votes": 13317,
         "other_votes": 538,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.46553782698361
+        "margin_pct": 47.481545809813284
       },
       "74": {
-        "total_votes": 17786,
-        "dem_votes": 5407,
-        "rep_votes": 11914,
-        "other_votes": 464,
+        "total_votes": 19684,
+        "dem_votes": 5889,
+        "rep_votes": 13275,
+        "other_votes": 520,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.58495445856291
+        "margin_pct": 37.522861207071735
       },
       "75": {
-        "total_votes": 12282,
-        "dem_votes": 10255,
-        "rep_votes": 1826,
+        "total_votes": 12271,
+        "dem_votes": 10248,
+        "rep_votes": 1822,
         "other_votes": 201,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.62888780328936
+        "margin_pct": -68.66596039442588
       },
       "76": {
-        "total_votes": 12472,
-        "dem_votes": 10388,
-        "rep_votes": 1901,
-        "other_votes": 183,
+        "total_votes": 12461,
+        "dem_votes": 10382,
+        "rep_votes": 1897,
+        "other_votes": 182,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.04842847979474
+        "margin_pct": -68.09244843913008
       },
       "77": {
-        "total_votes": 11678,
-        "dem_votes": 10280,
-        "rep_votes": 1239,
+        "total_votes": 11668,
+        "dem_votes": 10273,
+        "rep_votes": 1236,
         "other_votes": 159,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.4190786093509
+        "margin_pct": -77.45114844017826
       },
       "78": {
-        "total_votes": 16325,
-        "dem_votes": 12315,
-        "rep_votes": 3796,
+        "total_votes": 16350,
+        "dem_votes": 12345,
+        "rep_votes": 3791,
         "other_votes": 214,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.18376722817764
+        "margin_pct": -52.318042813455655
       },
       "79": {
-        "total_votes": 10419,
-        "dem_votes": 9013,
-        "rep_votes": 1271,
+        "total_votes": 10409,
+        "dem_votes": 9007,
+        "rep_votes": 1268,
         "other_votes": 134,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.30655533160572
+        "margin_pct": -74.34912095302141
       },
       "80": {
-        "total_votes": 13699,
-        "dem_votes": 5584,
-        "rep_votes": 7736,
-        "other_votes": 379,
+        "total_votes": 14298,
+        "dem_votes": 5709,
+        "rep_votes": 8196,
+        "other_votes": 393,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.709175852251988
+        "margin_pct": 17.394041124632817
       },
       "81": {
-        "total_votes": 15389,
-        "dem_votes": 8330,
-        "rep_votes": 6661,
-        "other_votes": 397,
+        "total_votes": 15986,
+        "dem_votes": 8517,
+        "rep_votes": 7057,
+        "other_votes": 412,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.845409058418351
+        "margin_pct": -9.132991367446516
       },
       "82": {
-        "total_votes": 17240,
-        "dem_votes": 11710,
-        "rep_votes": 5097,
-        "other_votes": 433,
+        "total_votes": 17822,
+        "dem_votes": 11973,
+        "rep_votes": 5400,
+        "other_votes": 449,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.3584686774942
+        "margin_pct": -36.881382560879814
       },
       "83": {
-        "total_votes": 10778,
-        "dem_votes": 5320,
-        "rep_votes": 5087,
-        "other_votes": 372,
+        "total_votes": 11213,
+        "dem_votes": 5439,
+        "rep_votes": 5389,
+        "other_votes": 385,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -2.161811096678419
+        "margin_pct": -0.44591099616516544
       },
       "84": {
-        "total_votes": 22311,
-        "dem_votes": 20332,
-        "rep_votes": 1715,
-        "other_votes": 264,
+        "total_votes": 22878,
+        "dem_votes": 20788,
+        "rep_votes": 1817,
+        "other_votes": 273,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.4431446371745
+        "margin_pct": -82.92245825684064
       },
       "85": {
-        "total_votes": 11672,
-        "dem_votes": 10330,
-        "rep_votes": 1142,
-        "other_votes": 199,
+        "total_votes": 11979,
+        "dem_votes": 10562,
+        "rep_votes": 1210,
+        "other_votes": 207,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.71830020562028
+        "margin_pct": -78.06995575590618
       },
       "86": {
-        "total_votes": 12113,
-        "dem_votes": 10424,
-        "rep_votes": 1518,
-        "other_votes": 171,
+        "total_votes": 12443,
+        "dem_votes": 10658,
+        "rep_votes": 1608,
+        "other_votes": 177,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.52431272186907
+        "margin_pct": -72.73165635296954
       },
       "87": {
-        "total_votes": 15092,
-        "dem_votes": 12800,
-        "rep_votes": 2077,
-        "other_votes": 215,
+        "total_votes": 15511,
+        "dem_votes": 13088,
+        "rep_votes": 2201,
+        "other_votes": 222,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.05088788762258
+        "margin_pct": -70.18889820127652
       },
       "88": {
-        "total_votes": 14458,
-        "dem_votes": 11313,
-        "rep_votes": 2907,
-        "other_votes": 238,
+        "total_votes": 14847,
+        "dem_votes": 11548,
+        "rep_votes": 3053,
+        "other_votes": 246,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.14082169041362
+        "margin_pct": -57.21694618441436
       },
       "89": {
-        "total_votes": 17927,
-        "dem_votes": 15869,
-        "rep_votes": 1844,
-        "other_votes": 214,
+        "total_votes": 18401,
+        "dem_votes": 16225,
+        "rep_votes": 1954,
+        "other_votes": 222,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.23394879232443
+        "margin_pct": -77.5555676321939
       },
       "90": {
-        "total_votes": 20881,
-        "dem_votes": 19115,
-        "rep_votes": 1457,
-        "other_votes": 309,
+        "total_votes": 21407,
+        "dem_votes": 19544,
+        "rep_votes": 1543,
+        "other_votes": 320,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -84.56491547339688
+        "margin_pct": -84.0893165786892
       },
       "91": {
-        "total_votes": 19967,
-        "dem_votes": 15001,
-        "rep_votes": 4677,
+        "total_votes": 20448,
+        "dem_votes": 15401,
+        "rep_votes": 4752,
+        "other_votes": 295,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -52.07844287949922
+      },
+      "92": {
+        "total_votes": 18037,
+        "dem_votes": 11465,
+        "rep_votes": 6289,
+        "other_votes": 283,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -28.696568165437714
+      },
+      "93": {
+        "total_votes": 13859,
+        "dem_votes": 9489,
+        "rep_votes": 4160,
+        "other_votes": 210,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -38.4515477307165
+      },
+      "94": {
+        "total_votes": 17777,
+        "dem_votes": 13321,
+        "rep_votes": 4167,
         "other_votes": 289,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.70531376771673
-      },
-      "92": {
-        "total_votes": 17944,
-        "dem_votes": 11388,
-        "rep_votes": 6274,
-        "other_votes": 282,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -28.499777084262153
-      },
-      "93": {
-        "total_votes": 13802,
-        "dem_votes": 9439,
-        "rep_votes": 4154,
-        "other_votes": 209,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -38.2915519489929
-      },
-      "94": {
-        "total_votes": 17548,
-        "dem_votes": 13121,
-        "rep_votes": 4140,
-        "other_votes": 287,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -51.179621609300206
+        "margin_pct": -51.49350284074929
       },
       "95": {
-        "total_votes": 16229,
-        "dem_votes": 11562,
-        "rep_votes": 4438,
-        "other_votes": 228,
+        "total_votes": 16331,
+        "dem_votes": 11651,
+        "rep_votes": 4451,
+        "other_votes": 229,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.8967280793641
+        "margin_pct": -44.08793092890821
       },
       "96": {
         "total_votes": 7779,
@@ -1072,158 +1088,158 @@
         "margin_pct": -5.784805244890088
       },
       "97": {
-        "total_votes": 10991,
-        "dem_votes": 5253,
-        "rep_votes": 5390,
+        "total_votes": 10993,
+        "dem_votes": 5254,
+        "rep_votes": 5391,
         "other_votes": 348,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.2464743881357474
+        "margin_pct": 1.2462476121168016
       },
       "98": {
-        "total_votes": 4962,
-        "dem_votes": 3372,
-        "rep_votes": 1466,
+        "total_votes": 4964,
+        "dem_votes": 3373,
+        "rep_votes": 1467,
         "other_votes": 124,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.41193067311568
+        "margin_pct": -38.396454472199835
       },
       "99": {
-        "total_votes": 13423,
+        "total_votes": 13425,
         "dem_votes": 4462,
-        "rep_votes": 8586,
+        "rep_votes": 8587,
         "other_votes": 376,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.72338523429934
+        "margin_pct": 30.726256983240223
       },
       "100": {
-        "total_votes": 12741,
-        "dem_votes": 2908,
-        "rep_votes": 9493,
-        "other_votes": 339,
+        "total_votes": 13012,
+        "dem_votes": 2945,
+        "rep_votes": 9721,
+        "other_votes": 346,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.68354132328703
+        "margin_pct": 52.07500768521365
       },
       "101": {
-        "total_votes": 14093,
-        "dem_votes": 5565,
-        "rep_votes": 8063,
+        "total_votes": 14095,
+        "dem_votes": 5566,
+        "rep_votes": 8064,
         "other_votes": 465,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.72511175761016
+        "margin_pct": 17.722596665484215
       },
       "102": {
-        "total_votes": 11453,
-        "dem_votes": 5906,
+        "total_votes": 11454,
+        "dem_votes": 5907,
         "rep_votes": 5280,
         "other_votes": 267,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.465816816554614
+        "margin_pct": -5.474070193818753
       },
       "103": {
-        "total_votes": 13059,
-        "dem_votes": 3790,
-        "rep_votes": 8861,
-        "other_votes": 409,
+        "total_votes": 13360,
+        "dem_votes": 3825,
+        "rep_votes": 9119,
+        "other_votes": 416,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.83145723255992
+        "margin_pct": 39.625748502994014
       },
       "104": {
-        "total_votes": 8586,
-        "dem_votes": 2087,
-        "rep_votes": 6259,
-        "other_votes": 240,
+        "total_votes": 13152,
+        "dem_votes": 3149,
+        "rep_votes": 9602,
+        "other_votes": 401,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.59072909387375
+        "margin_pct": 49.06478102189781
       },
       "105": {
-        "total_votes": 12651,
-        "dem_votes": 4785,
+        "total_votes": 12653,
+        "dem_votes": 4786,
         "rep_votes": 7538,
         "other_votes": 329,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.761125602719154
+        "margin_pct": 21.74978266023868
       },
       "106": {
-        "total_votes": 17055,
-        "dem_votes": 6737,
-        "rep_votes": 9927,
+        "total_votes": 17057,
+        "dem_votes": 6738,
+        "rep_votes": 9928,
         "other_votes": 391,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.704192318968044
+        "margin_pct": 18.701999179222607
       },
       "107": {
-        "total_votes": 8830,
-        "dem_votes": 5026,
-        "rep_votes": 3577,
+        "total_votes": 8832,
+        "dem_votes": 5027,
+        "rep_votes": 3578,
         "other_votes": 227,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.40996602491506
+        "margin_pct": -16.40625
       },
       "108": {
-        "total_votes": 16579,
-        "dem_votes": 6053,
-        "rep_votes": 10019,
+        "total_votes": 16581,
+        "dem_votes": 6054,
+        "rep_votes": 10020,
         "other_votes": 507,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.92182881959105
+        "margin_pct": 23.918943368916228
       },
       "109": {
-        "total_votes": 7344,
-        "dem_votes": 5098,
+        "total_votes": 7346,
+        "dem_votes": 5099,
         "rep_votes": 2065,
         "other_votes": 182,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.299019607843135
+        "margin_pct": -41.30138851075415
       },
       "110": {
-        "total_votes": 14441,
-        "dem_votes": 6238,
-        "rep_votes": 7930,
+        "total_votes": 14442,
+        "dem_votes": 6239,
+        "rep_votes": 7931,
         "other_votes": 272,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.716640121875216
+        "margin_pct": 11.715828832571667
       },
       "111": {
         "total_votes": 15581,
@@ -1248,246 +1264,246 @@
         "margin_pct": 50.63992611162422
       },
       "113": {
-        "total_votes": 13253,
-        "dem_votes": 8338,
-        "rep_votes": 4704,
+        "total_votes": 13246,
+        "dem_votes": 8332,
+        "rep_votes": 4703,
         "other_votes": 211,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.420206745642496
+        "margin_pct": -27.396950022648348
       },
       "114": {
-        "total_votes": 16913,
-        "dem_votes": 5026,
-        "rep_votes": 11499,
+        "total_votes": 16910,
+        "dem_votes": 5024,
+        "rep_votes": 11498,
         "other_votes": 388,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.272334890321055
+        "margin_pct": 38.28503843879361
       },
       "115": {
-        "total_votes": 16140,
-        "dem_votes": 7847,
-        "rep_votes": 7978,
-        "other_votes": 315,
+        "total_votes": 16559,
+        "dem_votes": 8119,
+        "rep_votes": 8119,
+        "other_votes": 321,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 0.8116480793060719
+        "winner": "Tie",
+        "winner_party": "TIE",
+        "margin_pct": 0.0
       },
       "116": {
-        "total_votes": 12765,
-        "dem_votes": 6967,
-        "rep_votes": 5551,
-        "other_votes": 247,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -11.092831962397181
-      },
-      "117": {
-        "total_votes": 13944,
-        "dem_votes": 4861,
-        "rep_votes": 8758,
-        "other_votes": 325,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 27.947504302925992
-      },
-      "118": {
-        "total_votes": 12128,
-        "dem_votes": 3657,
-        "rep_votes": 8176,
-        "other_votes": 295,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 37.260883905013195
-      },
-      "119": {
-        "total_votes": 529,
-        "dem_votes": 73,
-        "rep_votes": 440,
-        "other_votes": 17,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 69.37618147448015
-      },
-      "120": {
-        "total_votes": 12827,
-        "dem_votes": 5326,
-        "rep_votes": 7199,
-        "other_votes": 302,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 14.602011382240587
-      },
-      "121": {
-        "total_votes": 15782,
-        "dem_votes": 6110,
-        "rep_votes": 9219,
-        "other_votes": 452,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 19.69965783804334
-      },
-      "122": {
-        "total_votes": 3717,
-        "dem_votes": 2437,
-        "rep_votes": 1192,
-        "other_votes": 88,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -33.49475383373689
-      },
-      "123": {
-        "total_votes": 14527,
-        "dem_votes": 4833,
-        "rep_votes": 9314,
-        "other_votes": 380,
-        "dem_candidate": "Jason J. Carter",
-        "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 30.846010876299307
-      },
-      "124": {
-        "total_votes": 11292,
-        "dem_votes": 4419,
-        "rep_votes": 6622,
+        "total_votes": 13091,
+        "dem_votes": 7193,
+        "rep_votes": 5647,
         "other_votes": 251,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 19.50938717676231
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -11.80964021083187
       },
-      "125": {
-        "total_votes": 11010,
-        "dem_votes": 2834,
-        "rep_votes": 7902,
-        "other_votes": 274,
+      "117": {
+        "total_votes": 14273,
+        "dem_votes": 5029,
+        "rep_votes": 8913,
+        "other_votes": 331,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.030881017257045
+        "margin_pct": 27.212218874798573
+      },
+      "118": {
+        "total_votes": 15081,
+        "dem_votes": 4514,
+        "rep_votes": 10224,
+        "other_votes": 343,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 37.86221072873152
+      },
+      "119": {
+        "total_votes": 11037,
+        "dem_votes": 2503,
+        "rep_votes": 8146,
+        "other_votes": 388,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 51.12802391954335
+      },
+      "120": {
+        "total_votes": 19357,
+        "dem_votes": 8592,
+        "rep_votes": 10296,
+        "other_votes": 469,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 8.803016996435398
+      },
+      "121": {
+        "total_votes": 18299,
+        "dem_votes": 8021,
+        "rep_votes": 9754,
+        "other_votes": 524,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 9.470462866823324
+      },
+      "122": {
+        "total_votes": 5620,
+        "dem_votes": 3937,
+        "rep_votes": 1550,
+        "other_votes": 133,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -42.47330960854093
+      },
+      "123": {
+        "total_votes": 15813,
+        "dem_votes": 5410,
+        "rep_votes": 9989,
+        "other_votes": 414,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 28.9571871245178
+      },
+      "124": {
+        "total_votes": 16302,
+        "dem_votes": 6036,
+        "rep_votes": 9925,
+        "other_votes": 341,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 23.855968592810697
+      },
+      "125": {
+        "total_votes": 12414,
+        "dem_votes": 3308,
+        "rep_votes": 8803,
+        "other_votes": 303,
+        "dem_candidate": "Jason J. Carter",
+        "rep_candidate": "J. Nathan Deal",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 44.26454003544386
       },
       "126": {
-        "total_votes": 13707,
-        "dem_votes": 8135,
+        "total_votes": 13709,
+        "dem_votes": 8137,
         "rep_votes": 5375,
         "other_votes": 197,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.135697089078572
+        "margin_pct": -20.147348457217888
       },
       "127": {
-        "total_votes": 18496,
-        "dem_votes": 5120,
-        "rep_votes": 12959,
-        "other_votes": 417,
+        "total_votes": 20153,
+        "dem_votes": 5642,
+        "rep_votes": 14058,
+        "other_votes": 453,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.382136678200695
+        "margin_pct": 41.76053193072992
       },
       "128": {
-        "total_votes": 16209,
-        "dem_votes": 8118,
-        "rep_votes": 7801,
-        "other_votes": 290,
+        "total_votes": 16961,
+        "dem_votes": 8686,
+        "rep_votes": 7976,
+        "other_votes": 299,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.9557036214448764
+        "margin_pct": -4.18607393431991
       },
       "129": {
-        "total_votes": 13870,
-        "dem_votes": 8748,
-        "rep_votes": 4844,
+        "total_votes": 13875,
+        "dem_votes": 8752,
+        "rep_votes": 4845,
         "other_votes": 278,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.147080028839223
+        "margin_pct": -28.15855855855856
       },
       "130": {
-        "total_votes": 13480,
-        "dem_votes": 8751,
-        "rep_votes": 4519,
+        "total_votes": 13485,
+        "dem_votes": 8755,
+        "rep_votes": 4520,
         "other_votes": 210,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.394658753709198
+        "margin_pct": -31.405265109380792
       },
       "131": {
-        "total_votes": 13168,
-        "dem_votes": 3261,
-        "rep_votes": 9568,
-        "other_votes": 339,
+        "total_votes": 15064,
+        "dem_votes": 3850,
+        "rep_votes": 10833,
+        "other_votes": 381,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.89641555285541
+        "margin_pct": 46.35554965480616
       },
       "132": {
-        "total_votes": 11930,
-        "dem_votes": 7967,
+        "total_votes": 11932,
+        "dem_votes": 7970,
         "rep_votes": 3811,
         "other_votes": 151,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.836546521374686
+        "margin_pct": -34.85584981562186
       },
       "133": {
-        "total_votes": 14367,
-        "dem_votes": 6908,
-        "rep_votes": 7201,
+        "total_votes": 14338,
+        "dem_votes": 6890,
+        "rep_votes": 7190,
         "other_votes": 258,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.0393958376835806
+        "margin_pct": 2.0923420281768728
       },
       "134": {
-        "total_votes": 11527,
-        "dem_votes": 4310,
-        "rep_votes": 6909,
-        "other_votes": 307,
+        "total_votes": 14534,
+        "dem_votes": 5412,
+        "rep_votes": 8731,
+        "other_votes": 391,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.547063416326885
+        "margin_pct": 22.83610843539287
       },
       "135": {
         "total_votes": 16182,
@@ -1501,103 +1517,103 @@
         "margin_pct": 36.68891360771227
       },
       "136": {
-        "total_votes": 14358,
-        "dem_votes": 5382,
-        "rep_votes": 8606,
-        "other_votes": 370,
+        "total_votes": 15326,
+        "dem_votes": 5725,
+        "rep_votes": 9209,
+        "other_votes": 392,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.454380832985095
+        "margin_pct": 22.732611248858152
       },
       "137": {
-        "total_votes": 13258,
-        "dem_votes": 8159,
-        "rep_votes": 4890,
-        "other_votes": 210,
+        "total_votes": 14715,
+        "dem_votes": 9126,
+        "rep_votes": 5353,
+        "other_votes": 236,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.656810982048576
+        "margin_pct": -25.64050288820931
       },
       "138": {
-        "total_votes": 17287,
-        "dem_votes": 4920,
-        "rep_votes": 11949,
-        "other_votes": 418,
+        "total_votes": 18022,
+        "dem_votes": 5108,
+        "rep_votes": 12476,
+        "other_votes": 438,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.66061202059351
+        "margin_pct": 40.88336477638442
       },
       "139": {
-        "total_votes": 11220,
-        "dem_votes": 3805,
-        "rep_votes": 7137,
-        "other_votes": 278,
+        "total_votes": 12537,
+        "dem_votes": 4268,
+        "rep_votes": 7945,
+        "other_votes": 324,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.6969696969697
+        "margin_pct": 29.329185610592646
       },
       "140": {
-        "total_votes": 5672,
-        "dem_votes": 4239,
-        "rep_votes": 1338,
-        "other_votes": 96,
+        "total_votes": 6683,
+        "dem_votes": 4990,
+        "rep_votes": 1575,
+        "other_votes": 118,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.1459802538787
+        "margin_pct": -51.099805476582375
       },
       "141": {
-        "total_votes": 10607,
-        "dem_votes": 7683,
-        "rep_votes": 2772,
-        "other_votes": 152,
+        "total_votes": 12497,
+        "dem_votes": 9045,
+        "rep_votes": 3265,
+        "other_votes": 187,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.299613462807585
+        "margin_pct": -46.251100264063375
       },
       "142": {
-        "total_votes": 17053,
-        "dem_votes": 10319,
-        "rep_votes": 6521,
-        "other_votes": 213,
+        "total_votes": 17026,
+        "dem_votes": 10318,
+        "rep_votes": 6496,
+        "other_votes": 212,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.271741042631795
+        "margin_pct": -22.448020674262892
       },
       "143": {
-        "total_votes": 14533,
-        "dem_votes": 10288,
-        "rep_votes": 4048,
-        "other_votes": 197,
+        "total_votes": 14516,
+        "dem_votes": 10287,
+        "rep_votes": 4033,
+        "other_votes": 196,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.93676460469277
+        "margin_pct": -43.08349407550289
       },
       "144": {
-        "total_votes": 17949,
-        "dem_votes": 6114,
-        "rep_votes": 11557,
-        "other_votes": 278,
+        "total_votes": 17971,
+        "dem_votes": 6116,
+        "rep_votes": 11576,
+        "other_votes": 279,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.324809181570007
+        "margin_pct": 30.38228256635691
       },
       "145": {
         "total_votes": 13875,
@@ -1633,7 +1649,7 @@
         "margin_pct": 18.4993059107182
       },
       "148": {
-        "total_votes": 16123,
+        "total_votes": 16122,
         "dem_votes": 5465,
         "rep_votes": 10317,
         "other_votes": 340,
@@ -1641,84 +1657,84 @@
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.093655026980095
+        "margin_pct": 30.095521647438282
       },
       "149": {
-        "total_votes": 15474,
-        "dem_votes": 6161,
-        "rep_votes": 8967,
-        "other_votes": 346,
+        "total_votes": 16272,
+        "dem_votes": 6709,
+        "rep_votes": 9209,
+        "other_votes": 354,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.133643531084402
+        "margin_pct": 15.363815142576204
       },
       "150": {
-        "total_votes": 12434,
-        "dem_votes": 7393,
-        "rep_votes": 4888,
-        "other_votes": 154,
+        "total_votes": 14623,
+        "dem_votes": 8354,
+        "rep_votes": 6072,
+        "other_votes": 197,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.146372848640823
+        "margin_pct": -15.605552896122546
       },
       "151": {
-        "total_votes": 15221,
-        "dem_votes": 8035,
-        "rep_votes": 6971,
-        "other_votes": 216,
+        "total_votes": 16614,
+        "dem_votes": 8660,
+        "rep_votes": 7695,
+        "other_votes": 259,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.990342290256882
+        "margin_pct": -5.8083543999036955
       },
       "152": {
-        "total_votes": 13634,
-        "dem_votes": 3852,
-        "rep_votes": 9433,
-        "other_votes": 349,
+        "total_votes": 14855,
+        "dem_votes": 4190,
+        "rep_votes": 10286,
+        "other_votes": 379,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.93442863429661
+        "margin_pct": 41.03668798384382
       },
       "153": {
-        "total_votes": 12999,
-        "dem_votes": 8605,
-        "rep_votes": 4220,
-        "other_votes": 174,
+        "total_votes": 15456,
+        "dem_votes": 9850,
+        "rep_votes": 5377,
+        "other_votes": 229,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.73336410493115
+        "margin_pct": -28.940217391304344
       },
       "154": {
-        "total_votes": 16708,
-        "dem_votes": 9249,
-        "rep_votes": 7237,
-        "other_votes": 223,
+        "total_votes": 17332,
+        "dem_votes": 9727,
+        "rep_votes": 7372,
+        "other_votes": 233,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.042135503950204
+        "margin_pct": -13.58758366028156
       },
       "155": {
-        "total_votes": 13329,
-        "dem_votes": 5077,
-        "rep_votes": 7994,
-        "other_votes": 258,
+        "total_votes": 15168,
+        "dem_votes": 5658,
+        "rep_votes": 9220,
+        "other_votes": 290,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.884612499062193
+        "margin_pct": 23.48364978902954
       },
       "156": {
         "total_votes": 11947,
@@ -1743,7 +1759,7 @@
         "margin_pct": 38.42434347644852
       },
       "158": {
-        "total_votes": 12646,
+        "total_votes": 12645,
         "dem_votes": 4732,
         "rep_votes": 7687,
         "other_votes": 226,
@@ -1751,7 +1767,7 @@
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.367072592123993
+        "margin_pct": 23.368920521945434
       },
       "159": {
         "total_votes": 14600,
@@ -1765,103 +1781,103 @@
         "margin_pct": 35.74657534246575
       },
       "160": {
-        "total_votes": 8928,
-        "dem_votes": 2705,
-        "rep_votes": 6019,
-        "other_votes": 204,
+        "total_votes": 9110,
+        "dem_votes": 2774,
+        "rep_votes": 6128,
+        "other_votes": 208,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.11917562724014
+        "margin_pct": 36.816684961580684
       },
       "161": {
-        "total_votes": 6534,
-        "dem_votes": 2255,
-        "rep_votes": 4110,
-        "other_votes": 169,
+        "total_votes": 7818,
+        "dem_votes": 2963,
+        "rep_votes": 4638,
+        "other_votes": 217,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.38996020814203
+        "margin_pct": 21.424916858531592
       },
       "162": {
-        "total_votes": 5804,
-        "dem_votes": 3709,
-        "rep_votes": 1967,
-        "other_votes": 128,
+        "total_votes": 9879,
+        "dem_votes": 6045,
+        "rep_votes": 3606,
+        "other_votes": 228,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.01378359751895
+        "margin_pct": -24.688733677497723
       },
       "163": {
-        "total_votes": 10285,
-        "dem_votes": 7273,
-        "rep_votes": 2819,
-        "other_votes": 194,
+        "total_votes": 17367,
+        "dem_votes": 11854,
+        "rep_votes": 5167,
+        "other_votes": 346,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.30578512396694
+        "margin_pct": -38.5040594230437
       },
       "164": {
-        "total_votes": 5806,
-        "dem_votes": 1653,
-        "rep_votes": 3988,
-        "other_votes": 164,
+        "total_votes": 8249,
+        "dem_votes": 2257,
+        "rep_votes": 5763,
+        "other_votes": 229,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.21701687909059
+        "margin_pct": 42.502121469269
       },
       "165": {
-        "total_votes": 9035,
-        "dem_votes": 6570,
-        "rep_votes": 2295,
-        "other_votes": 170,
+        "total_votes": 15220,
+        "dem_votes": 10709,
+        "rep_votes": 4207,
+        "other_votes": 304,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.315993359158824
+        "margin_pct": -42.72010512483575
       },
       "166": {
-        "total_votes": 12494,
-        "dem_votes": 3311,
-        "rep_votes": 8952,
-        "other_votes": 230,
+        "total_votes": 20634,
+        "dem_votes": 5124,
+        "rep_votes": 15140,
+        "other_votes": 370,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.14967184248439
+        "margin_pct": 48.541242609285646
       },
       "167": {
-        "total_votes": 10621,
-        "dem_votes": 3649,
-        "rep_votes": 6699,
-        "other_votes": 273,
+        "total_votes": 10784,
+        "dem_votes": 3685,
+        "rep_votes": 6822,
+        "other_votes": 277,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.71669334337633
+        "margin_pct": 29.08939169139466
       },
       "168": {
-        "total_votes": 8171,
-        "dem_votes": 4856,
-        "rep_votes": 3158,
-        "other_votes": 157,
+        "total_votes": 8831,
+        "dem_votes": 5355,
+        "rep_votes": 3309,
+        "other_votes": 167,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.780810182352223
+        "margin_pct": -23.168384101460763
       },
       "169": {
         "total_votes": 12524,
@@ -1875,15 +1891,15 @@
         "margin_pct": 34.98083679335676
       },
       "170": {
-        "total_votes": 11071,
-        "dem_votes": 3517,
-        "rep_votes": 7266,
-        "other_votes": 288,
+        "total_votes": 12190,
+        "dem_votes": 3707,
+        "rep_votes": 8159,
+        "other_votes": 324,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.86324631921236
+        "margin_pct": 36.52173913043478
       },
       "171": {
         "total_votes": 12861,
@@ -1897,70 +1913,70 @@
         "margin_pct": 11.873104735246093
       },
       "172": {
-        "total_votes": 10322,
-        "dem_votes": 3063,
-        "rep_votes": 7005,
-        "other_votes": 254,
+        "total_votes": 10566,
+        "dem_votes": 3128,
+        "rep_votes": 7180,
+        "other_votes": 258,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.190273202867665
+        "margin_pct": 38.34942267650956
       },
       "173": {
-        "total_votes": 12840,
-        "dem_votes": 5332,
-        "rep_votes": 7264,
-        "other_votes": 244,
+        "total_votes": 13513,
+        "dem_votes": 5587,
+        "rep_votes": 7664,
+        "other_votes": 262,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.046728971962617
+        "margin_pct": 15.370384074594835
       },
       "174": {
-        "total_votes": 10862,
-        "dem_votes": 3141,
-        "rep_votes": 7420,
-        "other_votes": 301,
+        "total_votes": 13840,
+        "dem_votes": 4247,
+        "rep_votes": 9229,
+        "other_votes": 364,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.39421837598969
+        "margin_pct": 35.99710982658959
       },
       "175": {
-        "total_votes": 6549,
-        "dem_votes": 2995,
-        "rep_votes": 3446,
-        "other_votes": 108,
+        "total_votes": 13579,
+        "dem_votes": 6045,
+        "rep_votes": 7299,
+        "other_votes": 235,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 6.886547564513666
+        "margin_pct": 9.23484792694602
       },
       "176": {
-        "total_votes": 10278,
-        "dem_votes": 3397,
-        "rep_votes": 6630,
-        "other_votes": 251,
+        "total_votes": 11265,
+        "dem_votes": 3909,
+        "rep_votes": 7084,
+        "other_votes": 272,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.455536096516834
+        "margin_pct": 28.184642698624057
       },
       "177": {
-        "total_votes": 2304,
-        "dem_votes": 908,
-        "rep_votes": 1354,
-        "other_votes": 42,
+        "total_votes": 6123,
+        "dem_votes": 2842,
+        "rep_votes": 3176,
+        "other_votes": 105,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.35763888888889
+        "margin_pct": 5.454842397517557
       },
       "178": {
         "total_votes": 12527,
@@ -1974,26 +1990,26 @@
         "margin_pct": 53.05340464596472
       },
       "179": {
-        "total_votes": 13969,
-        "dem_votes": 4903,
-        "rep_votes": 8790,
-        "other_votes": 276,
+        "total_votes": 14600,
+        "dem_votes": 5092,
+        "rep_votes": 9219,
+        "other_votes": 289,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.82590020760255
+        "margin_pct": 28.267123287671232
       },
       "180": {
-        "total_votes": 11513,
-        "dem_votes": 3585,
-        "rep_votes": 7608,
-        "other_votes": 320,
+        "total_votes": 11594,
+        "dem_votes": 3605,
+        "rep_votes": 7667,
+        "other_votes": 322,
         "dem_candidate": "Jason J. Carter",
         "rep_candidate": "J. Nathan Deal",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.94310779119256
+        "margin_pct": 35.035363118854576
       }
     }
   }

@@ -4,38 +4,54 @@
     "contest_type": "lieutenant_governor",
     "year": 2018,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:20.910392+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:44.491045+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3567801,
-    "matched_input_votes": 3567801,
+    "total_input_votes": 3576309,
+    "matched_input_votes": 3576309,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/Lieutenant_Governor.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1738292,
+        "rep_votes": 1838017,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1828566,
+        "rep_votes": 1951738,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 17018,
-        "dem_votes": 3489,
-        "rep_votes": 13529,
+        "total_votes": 20905,
+        "dem_votes": 4080,
+        "rep_votes": 16825,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.99635679868375
+        "margin_pct": 60.9662760105238
       },
       "2": {
-        "total_votes": 15478,
-        "dem_votes": 2838,
-        "rep_votes": 12640,
+        "total_votes": 16657,
+        "dem_votes": 2961,
+        "rep_votes": 13696,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.3285954257656
+        "margin_pct": 64.44737948009845
       },
       "3": {
         "total_votes": 19740,
@@ -60,26 +76,26 @@
         "margin_pct": 29.071953512220134
       },
       "5": {
-        "total_votes": 17738,
-        "dem_votes": 3195,
-        "rep_votes": 14543,
+        "total_votes": 17717,
+        "dem_votes": 3191,
+        "rep_votes": 14526,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.97564550682151
+        "margin_pct": 63.97810012981881
       },
       "6": {
-        "total_votes": 16917,
+        "total_votes": 16916,
         "dem_votes": 2580,
-        "rep_votes": 14337,
+        "rep_votes": 14336,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.49813796772477
+        "margin_pct": 69.4963348309293
       },
       "7": {
         "total_votes": 24462,
@@ -93,59 +109,59 @@
         "margin_pct": 65.81636824462431
       },
       "8": {
-        "total_votes": 26427,
+        "total_votes": 26429,
         "dem_votes": 4494,
-        "rep_votes": 21933,
+        "rep_votes": 21935,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.9893290952435
+        "margin_pct": 65.9919028340081
       },
       "9": {
-        "total_votes": 21975,
+        "total_votes": 21973,
         "dem_votes": 3414,
-        "rep_votes": 18561,
+        "rep_votes": 18559,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.92832764505118
+        "margin_pct": 68.92549947663042
       },
       "10": {
-        "total_votes": 20372,
-        "dem_votes": 3509,
-        "rep_votes": 16863,
+        "total_votes": 20379,
+        "dem_votes": 3510,
+        "rep_votes": 16869,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.55075593952483
+        "margin_pct": 65.55277491535404
       },
       "11": {
-        "total_votes": 23571,
-        "dem_votes": 3765,
-        "rep_votes": 19805,
+        "total_votes": 23572,
+        "dem_votes": 3766,
+        "rep_votes": 19806,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.04972211615969
+        "margin_pct": 68.04683522823689
       },
       "12": {
-        "total_votes": 16894,
-        "dem_votes": 3514,
-        "rep_votes": 13380,
+        "total_votes": 17101,
+        "dem_votes": 3575,
+        "rep_votes": 13526,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.399431750917486
+        "margin_pct": 58.18957955675107
       },
       "13": {
         "total_votes": 17398,
@@ -159,114 +175,114 @@
         "margin_pct": 32.7853776296126
       },
       "14": {
-        "total_votes": 21956,
-        "dem_votes": 4049,
-        "rep_votes": 17906,
+        "total_votes": 21975,
+        "dem_votes": 4053,
+        "rep_votes": 17922,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.11258881399162
+        "margin_pct": 63.11262798634812
       },
       "15": {
-        "total_votes": 18801,
-        "dem_votes": 5234,
-        "rep_votes": 13568,
+        "total_votes": 18820,
+        "dem_votes": 5238,
+        "rep_votes": 13582,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.32742939205362
+        "margin_pct": 44.33581296493092
       },
       "16": {
-        "total_votes": 18899,
-        "dem_votes": 3989,
-        "rep_votes": 14910,
+        "total_votes": 19506,
+        "dem_votes": 4160,
+        "rep_votes": 15346,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.78612625006614
+        "margin_pct": 57.346457500256335
       },
       "17": {
-        "total_votes": 13324,
-        "dem_votes": 3916,
-        "rep_votes": 9408,
+        "total_votes": 14558,
+        "dem_votes": 4363,
+        "rep_votes": 10195,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.21885319723806
+        "margin_pct": 40.06044786371754
       },
       "18": {
-        "total_votes": 17235,
-        "dem_votes": 2598,
-        "rep_votes": 14636,
+        "total_votes": 22628,
+        "dem_votes": 3530,
+        "rep_votes": 19098,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.84624310995068
+        "margin_pct": 68.79971716457486
       },
       "19": {
-        "total_votes": 21494,
-        "dem_votes": 7525,
-        "rep_votes": 13970,
+        "total_votes": 23521,
+        "dem_votes": 8384,
+        "rep_votes": 15137,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.985112124313762
+        "margin_pct": 28.710514008758132
       },
       "20": {
-        "total_votes": 24705,
-        "dem_votes": 7174,
-        "rep_votes": 17531,
+        "total_votes": 24717,
+        "dem_votes": 7180,
+        "rep_votes": 17537,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.92268771503744
+        "margin_pct": 41.90233442569891
       },
       "21": {
-        "total_votes": 25168,
-        "dem_votes": 5950,
-        "rep_votes": 19218,
+        "total_votes": 25180,
+        "dem_votes": 5955,
+        "rep_votes": 19225,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.717736808645896
+        "margin_pct": 52.70055599682287
       },
       "22": {
-        "total_votes": 24172,
-        "dem_votes": 10091,
-        "rep_votes": 14080,
+        "total_votes": 24178,
+        "dem_votes": 10094,
+        "rep_votes": 14084,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.50256495118319
+        "margin_pct": 16.5026056745802
       },
       "23": {
-        "total_votes": 20277,
-        "dem_votes": 4438,
-        "rep_votes": 15839,
+        "total_votes": 20286,
+        "dem_votes": 4442,
+        "rep_votes": 15844,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.226266212950634
+        "margin_pct": 56.206250616188505
       },
       "24": {
         "total_votes": 22159,
@@ -280,7 +296,7 @@
         "margin_pct": 35.971839884471315
       },
       "25": {
-        "total_votes": 22551,
+        "total_votes": 22552,
         "dem_votes": 8362,
         "rep_votes": 14190,
         "other_votes": 0,
@@ -288,7 +304,7 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.843643297414747
+        "margin_pct": 25.842497339482083
       },
       "26": {
         "total_votes": 22281,
@@ -302,246 +318,246 @@
         "margin_pct": 49.8406714240833
       },
       "27": {
-        "total_votes": 15929,
-        "dem_votes": 2471,
-        "rep_votes": 13458,
+        "total_votes": 18864,
+        "dem_votes": 2763,
+        "rep_votes": 16101,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.97482578944064
+        "margin_pct": 70.70610687022901
       },
       "28": {
-        "total_votes": 19024,
-        "dem_votes": 3955,
-        "rep_votes": 15068,
+        "total_votes": 19496,
+        "dem_votes": 4042,
+        "rep_votes": 15454,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.41568544995794
+        "margin_pct": 58.535084119819444
       },
       "29": {
-        "total_votes": 11638,
-        "dem_votes": 4907,
-        "rep_votes": 6731,
+        "total_votes": 13654,
+        "dem_votes": 5530,
+        "rep_votes": 8124,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.672796013060664
+        "margin_pct": 18.998095796103705
       },
       "30": {
-        "total_votes": 20435,
-        "dem_votes": 5256,
-        "rep_votes": 15179,
+        "total_votes": 23660,
+        "dem_votes": 5794,
+        "rep_votes": 17866,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.558845118668955
+        "margin_pct": 51.02282333051564
       },
       "31": {
-        "total_votes": 18974,
-        "dem_votes": 3952,
-        "rep_votes": 15022,
+        "total_votes": 19334,
+        "dem_votes": 4090,
+        "rep_votes": 15244,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.34299567829662
+        "margin_pct": 57.691114099513804
       },
       "32": {
-        "total_votes": 11824,
-        "dem_votes": 1612,
-        "rep_votes": 10212,
+        "total_votes": 20558,
+        "dem_votes": 3265,
+        "rep_votes": 17293,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 72.73342354533153
+        "margin_pct": 68.23620974802996
       },
       "33": {
-        "total_votes": 19596,
-        "dem_votes": 3553,
-        "rep_votes": 16043,
+        "total_votes": 20909,
+        "dem_votes": 3657,
+        "rep_votes": 17252,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.73749744845887
+        "margin_pct": 65.01984791238222
       },
       "34": {
-        "total_votes": 25888,
+        "total_votes": 25891,
         "dem_votes": 9479,
-        "rep_votes": 16409,
+        "rep_votes": 16412,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.769159456118665
+        "margin_pct": 26.777644741415934
       },
       "35": {
-        "total_votes": 20813,
-        "dem_votes": 10962,
-        "rep_votes": 9850,
+        "total_votes": 20815,
+        "dem_votes": 10963,
+        "rep_votes": 9852,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.342814587036948
+        "margin_pct": -5.3374969973576745
       },
       "36": {
-        "total_votes": 28353,
-        "dem_votes": 9994,
-        "rep_votes": 18359,
+        "total_votes": 28358,
+        "dem_votes": 9995,
+        "rep_votes": 18363,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.503050823546005
+        "margin_pct": 29.508427956837576
       },
       "37": {
-        "total_votes": 20745,
+        "total_votes": 20747,
         "dem_votes": 11589,
-        "rep_votes": 9156,
+        "rep_votes": 9158,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.72812725958062
+        "margin_pct": -11.717356726273678
       },
       "38": {
-        "total_votes": 22517,
-        "dem_votes": 16023,
-        "rep_votes": 6494,
+        "total_votes": 22519,
+        "dem_votes": 16024,
+        "rep_votes": 6495,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.319136652307144
+        "margin_pct": -42.31537812513877
       },
       "39": {
-        "total_votes": 18522,
-        "dem_votes": 14630,
-        "rep_votes": 3891,
+        "total_votes": 18523,
+        "dem_votes": 14631,
+        "rep_votes": 3892,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.97969981643452
+        "margin_pct": -57.976569670139824
       },
       "40": {
-        "total_votes": 25624,
+        "total_votes": 25627,
         "dem_votes": 16163,
-        "rep_votes": 9462,
+        "rep_votes": 9464,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.151264439587884
+        "margin_pct": -26.140398798142584
       },
       "41": {
-        "total_votes": 17407,
+        "total_votes": 17409,
         "dem_votes": 12271,
-        "rep_votes": 5137,
+        "rep_votes": 5138,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.98351238007698
+        "margin_pct": -40.97305991154001
       },
       "42": {
-        "total_votes": 21499,
+        "total_votes": 21501,
         "dem_votes": 15065,
-        "rep_votes": 6435,
+        "rep_votes": 6436,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.14140192567096
+        "margin_pct": -40.13301706897354
       },
       "43": {
-        "total_votes": 17252,
-        "dem_votes": 10200,
-        "rep_votes": 7052,
+        "total_votes": 17254,
+        "dem_votes": 10201,
+        "rep_votes": 7053,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.24715974959425
+        "margin_pct": -18.245044627332792
       },
       "44": {
-        "total_votes": 24946,
-        "dem_votes": 10399,
-        "rep_votes": 14547,
+        "total_votes": 24952,
+        "dem_votes": 10402,
+        "rep_votes": 14550,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.627916299206287
+        "margin_pct": 16.62391792241103
       },
       "45": {
-        "total_votes": 33179,
-        "dem_votes": 13491,
-        "rep_votes": 19688,
+        "total_votes": 33183,
+        "dem_votes": 13492,
+        "rep_votes": 19691,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.67747671720064
+        "margin_pct": 18.681252448542928
       },
       "46": {
-        "total_votes": 27797,
-        "dem_votes": 11042,
-        "rep_votes": 16755,
+        "total_votes": 27803,
+        "dem_votes": 11044,
+        "rep_votes": 16759,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.55257761628953
+        "margin_pct": 20.555335755134337
       },
       "47": {
-        "total_votes": 23863,
-        "dem_votes": 9258,
-        "rep_votes": 14604,
+        "total_votes": 23864,
+        "dem_votes": 9259,
+        "rep_votes": 14605,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.402883124502367
+        "margin_pct": 22.401944351324172
       },
       "48": {
-        "total_votes": 29524,
-        "dem_votes": 13919,
-        "rep_votes": 15605,
+        "total_votes": 29536,
+        "dem_votes": 13925,
+        "rep_votes": 15611,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.710608318656009
+        "margin_pct": 5.708288190682556
       },
       "49": {
         "total_votes": 24377,
@@ -566,7 +582,7 @@
         "margin_pct": -7.464198554128103
       },
       "51": {
-        "total_votes": 23061,
+        "total_votes": 23062,
         "dem_votes": 12612,
         "rep_votes": 10450,
         "other_votes": 0,
@@ -574,29 +590,29 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.375135510168683
+        "margin_pct": -9.374728991414448
       },
       "52": {
-        "total_votes": 23942,
-        "dem_votes": 13554,
-        "rep_votes": 10388,
+        "total_votes": 24515,
+        "dem_votes": 13945,
+        "rep_votes": 10570,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.22362375741375
+        "margin_pct": -13.767081378747706
       },
       "53": {
         "total_votes": 27453,
-        "dem_votes": 13037,
+        "dem_votes": 13038,
         "rep_votes": 14415,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.019487851965177
+        "margin_pct": 5.015845262812808
       },
       "54": {
         "total_votes": 21848,
@@ -621,40 +637,40 @@
         "margin_pct": -56.05388961321165
       },
       "56": {
-        "total_votes": 17954,
-        "dem_votes": 16246,
+        "total_votes": 17955,
+        "dem_votes": 16247,
         "rep_votes": 1708,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.97359919795032
+        "margin_pct": -80.97465886939571
       },
       "57": {
-        "total_votes": 23520,
-        "dem_votes": 17940,
+        "total_votes": 23521,
+        "dem_votes": 17941,
         "rep_votes": 5580,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.55102040816326
+        "margin_pct": -52.55303771098168
       },
       "58": {
-        "total_votes": 26258,
-        "dem_votes": 24072,
+        "total_votes": 26259,
+        "dem_votes": 24073,
         "rep_votes": 2186,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.34983624038388
+        "margin_pct": -83.35047031493964
       },
       "59": {
-        "total_votes": 20417,
+        "total_votes": 20418,
         "dem_votes": 19247,
         "rep_votes": 1171,
         "other_votes": 0,
@@ -662,7 +678,7 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -88.53406474996326
+        "margin_pct": -88.52972867078068
       },
       "60": {
         "total_votes": 25146,
@@ -676,18 +692,18 @@
         "margin_pct": -56.83607730851825
       },
       "61": {
-        "total_votes": 22080,
-        "dem_votes": 18688,
-        "rep_votes": 3392,
+        "total_votes": 22588,
+        "dem_votes": 18838,
+        "rep_votes": 3750,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.27536231884058
+        "margin_pct": -66.79652913051177
       },
       "62": {
-        "total_votes": 21892,
+        "total_votes": 21893,
         "dem_votes": 20458,
         "rep_votes": 1435,
         "other_votes": 0,
@@ -695,10 +711,10 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -86.89475607527865
+        "margin_pct": -86.89078700954643
       },
       "63": {
-        "total_votes": 18140,
+        "total_votes": 18141,
         "dem_votes": 16564,
         "rep_votes": 1577,
         "other_votes": 0,
@@ -706,40 +722,40 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.61852260198457
+        "margin_pct": -82.61396835896588
       },
       "64": {
-        "total_votes": 19884,
-        "dem_votes": 8118,
-        "rep_votes": 11766,
+        "total_votes": 21609,
+        "dem_votes": 8625,
+        "rep_votes": 12984,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.346409173204588
+        "margin_pct": 20.172150492850204
       },
       "65": {
-        "total_votes": 25739,
-        "dem_votes": 17955,
-        "rep_votes": 7784,
+        "total_votes": 26135,
+        "dem_votes": 18092,
+        "rep_votes": 8043,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.5159097090019
+        "margin_pct": -38.45035393150947
       },
       "66": {
-        "total_votes": 21154,
-        "dem_votes": 13824,
-        "rep_votes": 7330,
+        "total_votes": 22333,
+        "dem_votes": 14135,
+        "rep_votes": 8198,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.698685827739435
+        "margin_pct": -26.5839788653562
       },
       "67": {
         "total_votes": 18347,
@@ -753,18 +769,18 @@
         "margin_pct": -22.30882433095329
       },
       "68": {
-        "total_votes": 25472,
-        "dem_votes": 16508,
+        "total_votes": 25473,
+        "dem_votes": 16509,
         "rep_votes": 8964,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.616834170854272
+        "margin_pct": -29.619597220586503
       },
       "69": {
-        "total_votes": 25479,
+        "total_votes": 25480,
         "dem_votes": 18518,
         "rep_votes": 6962,
         "other_votes": 0,
@@ -772,472 +788,472 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.35499823383963
+        "margin_pct": -45.35321821036107
       },
       "70": {
-        "total_votes": 17858,
-        "dem_votes": 7041,
+        "total_votes": 17856,
+        "dem_votes": 7039,
         "rep_votes": 10817,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.144585059917123
+        "margin_pct": 21.1581541218638
       },
       "71": {
-        "total_votes": 10193,
-        "dem_votes": 3351,
-        "rep_votes": 6842,
+        "total_votes": 27738,
+        "dem_votes": 9243,
+        "rep_votes": 18495,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.24899440792701
+        "margin_pct": 33.35496430889033
       },
       "72": {
-        "total_votes": 9254,
-        "dem_votes": 2124,
-        "rep_votes": 7130,
+        "total_votes": 12158,
+        "dem_votes": 2894,
+        "rep_votes": 9264,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.09552625891506
+        "margin_pct": 52.39348577068596
       },
       "73": {
-        "total_votes": 26153,
-        "dem_votes": 7691,
+        "total_votes": 26152,
+        "dem_votes": 7690,
         "rep_votes": 18462,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.18456773601499
+        "margin_pct": 41.18996635056592
       },
       "74": {
-        "total_votes": 25220,
-        "dem_votes": 8898,
-        "rep_votes": 16322,
+        "total_votes": 25442,
+        "dem_votes": 9075,
+        "rep_votes": 16367,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.436954797779542
+        "margin_pct": 28.661268768178605
       },
       "75": {
-        "total_votes": 16988,
-        "dem_votes": 15023,
-        "rep_votes": 1965,
+        "total_votes": 16973,
+        "dem_votes": 15013,
+        "rep_votes": 1960,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.86602307511184
+        "margin_pct": -76.90449537500737
       },
       "76": {
-        "total_votes": 17600,
-        "dem_votes": 15406,
-        "rep_votes": 2194,
+        "total_votes": 17587,
+        "dem_votes": 15399,
+        "rep_votes": 2188,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.06818181818183
+        "margin_pct": -75.1179848751919
       },
       "77": {
-        "total_votes": 16539,
-        "dem_votes": 15148,
-        "rep_votes": 1390,
+        "total_votes": 16524,
+        "dem_votes": 15138,
+        "rep_votes": 1386,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.18519862144024
+        "margin_pct": -83.2244008714597
       },
       "78": {
-        "total_votes": 22799,
-        "dem_votes": 18598,
-        "rep_votes": 4201,
+        "total_votes": 22861,
+        "dem_votes": 18666,
+        "rep_votes": 4195,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.147506469582005
+        "margin_pct": -63.299943134596035
       },
       "79": {
-        "total_votes": 14618,
-        "dem_votes": 13214,
-        "rep_votes": 1404,
+        "total_votes": 14605,
+        "dem_votes": 13205,
+        "rep_votes": 1400,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.79080585579422
+        "margin_pct": -80.82848339609723
       },
       "80": {
-        "total_votes": 19331,
-        "dem_votes": 10765,
-        "rep_votes": 8566,
+        "total_votes": 20193,
+        "dem_votes": 11360,
+        "rep_votes": 8833,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.375510837514872
+        "margin_pct": -12.514237607091566
       },
       "81": {
-        "total_votes": 23458,
-        "dem_votes": 15702,
-        "rep_votes": 7757,
+        "total_votes": 24568,
+        "dem_votes": 16569,
+        "rep_votes": 7999,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.869042544121406
+        "margin_pct": -34.882774340605664
       },
       "82": {
-        "total_votes": 24243,
-        "dem_votes": 18717,
-        "rep_votes": 5526,
+        "total_votes": 25450,
+        "dem_votes": 19752,
+        "rep_votes": 5698,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.41158272491028
+        "margin_pct": -55.222003929273086
       },
       "83": {
-        "total_votes": 17187,
-        "dem_votes": 10300,
-        "rep_votes": 6887,
+        "total_votes": 17972,
+        "dem_votes": 10870,
+        "rep_votes": 7102,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.85803223366498
+        "margin_pct": -20.96594702871133
       },
       "84": {
-        "total_votes": 23232,
-        "dem_votes": 21758,
-        "rep_votes": 1474,
+        "total_votes": 24481,
+        "dem_votes": 22961,
+        "rep_votes": 1520,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -87.31060606060606
+        "margin_pct": -87.58220660920713
       },
       "85": {
-        "total_votes": 16067,
-        "dem_votes": 14626,
-        "rep_votes": 1440,
+        "total_votes": 16920,
+        "dem_votes": 15435,
+        "rep_votes": 1485,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.0688367461256
+        "margin_pct": -82.4468085106383
       },
       "86": {
-        "total_votes": 17271,
-        "dem_votes": 15614,
-        "rep_votes": 1657,
+        "total_votes": 18186,
+        "dem_votes": 16477,
+        "rep_votes": 1709,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.81176538706502
+        "margin_pct": -81.20532277576157
       },
       "87": {
-        "total_votes": 20682,
-        "dem_votes": 18410,
-        "rep_votes": 2272,
+        "total_votes": 21770,
+        "dem_votes": 19427,
+        "rep_votes": 2343,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.02920413886471
+        "margin_pct": -78.47496554892052
       },
       "88": {
-        "total_votes": 21289,
-        "dem_votes": 17424,
-        "rep_votes": 3865,
+        "total_votes": 22272,
+        "dem_votes": 18302,
+        "rep_votes": 3970,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.690168631687726
+        "margin_pct": -64.34985632183908
       },
       "89": {
-        "total_votes": 27630,
-        "dem_votes": 25144,
-        "rep_votes": 2486,
+        "total_votes": 29097,
+        "dem_votes": 26533,
+        "rep_votes": 2564,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.00506695620702
+        "margin_pct": -82.37618998522184
       },
       "90": {
-        "total_votes": 28607,
-        "dem_votes": 26810,
-        "rep_votes": 1797,
+        "total_votes": 30145,
+        "dem_votes": 28292,
+        "rep_votes": 1853,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -87.43664138148006
+        "margin_pct": -87.70608724498258
       },
       "91": {
-        "total_votes": 26807,
-        "dem_votes": 21364,
-        "rep_votes": 5443,
+        "total_votes": 27907,
+        "dem_votes": 22393,
+        "rep_votes": 5514,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.39120379005484
+        "margin_pct": -60.48303293080589
       },
       "92": {
-        "total_votes": 22701,
-        "dem_votes": 16169,
-        "rep_votes": 6533,
+        "total_votes": 22914,
+        "dem_votes": 16373,
+        "rep_votes": 6541,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.4474692744813
+        "margin_pct": -42.90826568909837
       },
       "93": {
-        "total_votes": 19316,
-        "dem_votes": 14181,
-        "rep_votes": 5134,
+        "total_votes": 19471,
+        "dem_votes": 14333,
+        "rep_votes": 5138,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.83681921722924
+        "margin_pct": -47.224076832212006
       },
       "94": {
-        "total_votes": 24147,
-        "dem_votes": 19545,
-        "rep_votes": 4602,
+        "total_votes": 24866,
+        "dem_votes": 20244,
+        "rep_votes": 4622,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.88346378432104
+        "margin_pct": -62.82474060966782
       },
       "95": {
-        "total_votes": 23339,
-        "dem_votes": 18339,
-        "rep_votes": 5000,
+        "total_votes": 23679,
+        "dem_votes": 18667,
+        "rep_votes": 5012,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.15326277903937
+        "margin_pct": -57.66713121331137
       },
       "96": {
-        "total_votes": 13221,
-        "dem_votes": 8678,
-        "rep_votes": 4543,
+        "total_votes": 13238,
+        "dem_votes": 8690,
+        "rep_votes": 4548,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.276000302548972
+        "margin_pct": -31.288714307297177
       },
       "97": {
-        "total_votes": 18189,
-        "dem_votes": 11274,
-        "rep_votes": 6915,
+        "total_votes": 18213,
+        "dem_votes": 11289,
+        "rep_votes": 6924,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.9650338116444
+        "margin_pct": -23.966397628067863
       },
       "98": {
-        "total_votes": 8702,
-        "dem_votes": 6822,
-        "rep_votes": 1881,
+        "total_votes": 8714,
+        "dem_votes": 6831,
+        "rep_votes": 1883,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.78005056308895
+        "margin_pct": -56.78218957998623
       },
       "99": {
-        "total_votes": 20916,
-        "dem_votes": 9936,
-        "rep_votes": 10980,
+        "total_votes": 20942,
+        "dem_votes": 9949,
+        "rep_votes": 10993,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 4.991394148020654
+        "margin_pct": 4.985197211345621
       },
       "100": {
-        "total_votes": 19797,
-        "dem_votes": 6670,
-        "rep_votes": 13127,
+        "total_votes": 20380,
+        "dem_votes": 6754,
+        "rep_votes": 13626,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.61605293731373
+        "margin_pct": 33.71933267909715
       },
       "101": {
-        "total_votes": 20616,
-        "dem_votes": 11029,
-        "rep_votes": 9587,
+        "total_votes": 20643,
+        "dem_votes": 11044,
+        "rep_votes": 9599,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.994567326348468
+        "margin_pct": -6.999951557428669
       },
       "102": {
-        "total_votes": 17763,
-        "dem_votes": 11529,
-        "rep_votes": 6234,
+        "total_votes": 17786,
+        "dem_votes": 11545,
+        "rep_votes": 6241,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.809153859145415
+        "margin_pct": -29.82120769144271
       },
       "103": {
-        "total_votes": 20660,
-        "dem_votes": 8158,
-        "rep_votes": 12502,
+        "total_votes": 21294,
+        "dem_votes": 8260,
+        "rep_votes": 13034,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.026137463697967
+        "margin_pct": 22.419460880999342
       },
       "104": {
-        "total_votes": 12938,
-        "dem_votes": 4458,
-        "rep_votes": 8480,
+        "total_votes": 20420,
+        "dem_votes": 6361,
+        "rep_votes": 14059,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.086721286133866
+        "margin_pct": 37.69833496571988
       },
       "105": {
-        "total_votes": 19336,
-        "dem_votes": 9533,
-        "rep_votes": 9803,
+        "total_votes": 19360,
+        "dem_votes": 9545,
+        "rep_votes": 9815,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.3963591228796028
+        "margin_pct": 1.3946280991735538
       },
       "106": {
-        "total_votes": 23160,
-        "dem_votes": 12424,
-        "rep_votes": 10736,
+        "total_votes": 23190,
+        "dem_votes": 12441,
+        "rep_votes": 10749,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.288428324697755
+        "margin_pct": -7.296248382923674
       },
       "107": {
-        "total_votes": 14081,
-        "dem_votes": 9899,
-        "rep_votes": 4182,
+        "total_votes": 14099,
+        "dem_votes": 9912,
+        "rep_votes": 4187,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.6008096015908
+        "margin_pct": -40.6057167174977
       },
       "108": {
-        "total_votes": 22775,
-        "dem_votes": 11568,
-        "rep_votes": 11207,
+        "total_votes": 22805,
+        "dem_votes": 11584,
+        "rep_votes": 11221,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.5850713501646543
+        "margin_pct": -1.5917561938171454
       },
       "109": {
-        "total_votes": 12405,
-        "dem_votes": 9782,
-        "rep_votes": 2624,
+        "total_votes": 12422,
+        "dem_votes": 9795,
+        "rep_votes": 2627,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.70253929866988
+        "margin_pct": -57.70407341812912
       },
       "110": {
-        "total_votes": 23195,
-        "dem_votes": 13718,
-        "rep_votes": 9476,
+        "total_votes": 23224,
+        "dem_votes": 13736,
+        "rep_votes": 9488,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.288424229359777
+        "margin_pct": -18.29142266620737
       },
       "111": {
-        "total_votes": 23515,
-        "dem_votes": 7039,
-        "rep_votes": 16476,
+        "total_votes": 23525,
+        "dem_votes": 7043,
+        "rep_votes": 16482,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.13183074633213
+        "margin_pct": 40.12327311370882
       },
       "112": {
-        "total_votes": 21927,
+        "total_votes": 21926,
         "dem_votes": 4914,
         "rep_votes": 17012,
         "other_votes": 0,
@@ -1245,249 +1261,249 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.17398640944954
+        "margin_pct": 55.176502782085194
       },
       "113": {
-        "total_votes": 19651,
-        "dem_votes": 13431,
-        "rep_votes": 6220,
+        "total_votes": 19640,
+        "dem_votes": 13421,
+        "rep_votes": 6219,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.69533357081065
+        "margin_pct": -36.670061099796335
       },
       "114": {
-        "total_votes": 24336,
-        "dem_votes": 7186,
-        "rep_votes": 17150,
+        "total_votes": 24331,
+        "dem_votes": 7183,
+        "rep_votes": 17148,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.94345825115056
+        "margin_pct": 40.95598208047347
       },
       "115": {
-        "total_votes": 23623,
-        "dem_votes": 13302,
-        "rep_votes": 10321,
+        "total_votes": 24417,
+        "dem_votes": 13937,
+        "rep_votes": 10480,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.61905769800618
+        "margin_pct": -14.158168489167384
       },
       "116": {
-        "total_votes": 19230,
-        "dem_votes": 12673,
-        "rep_votes": 6557,
+        "total_votes": 19893,
+        "dem_votes": 13236,
+        "rep_votes": 6657,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.804472178887156
+        "margin_pct": -33.07193485145529
       },
       "117": {
-        "total_votes": 24972,
-        "dem_votes": 10660,
-        "rep_votes": 14312,
+        "total_votes": 25626,
+        "dem_votes": 11120,
+        "rep_votes": 14506,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.6243793048214
+        "margin_pct": 13.21314290174042
       },
       "118": {
-        "total_votes": 13484,
-        "dem_votes": 3458,
-        "rep_votes": 10026,
+        "total_votes": 22097,
+        "dem_votes": 5819,
+        "rep_votes": 16278,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.70958172649066
+        "margin_pct": 47.33221704303752
       },
       "119": {
-        "total_votes": 860,
-        "dem_votes": 139,
-        "rep_votes": 721,
+        "total_votes": 17533,
+        "dem_votes": 4376,
+        "rep_votes": 13157,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.67441860465117
+        "margin_pct": 50.082701192037874
       },
       "120": {
-        "total_votes": 16663,
-        "dem_votes": 6603,
-        "rep_votes": 10060,
+        "total_votes": 24383,
+        "dem_votes": 10969,
+        "rep_votes": 13414,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.746564244133708
+        "margin_pct": 10.027478161013821
       },
       "121": {
-        "total_votes": 24233,
-        "dem_votes": 10205,
-        "rep_votes": 14028,
+        "total_votes": 30932,
+        "dem_votes": 15236,
+        "rep_votes": 15696,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.7760079230801
+        "margin_pct": 1.4871330660804345
       },
       "122": {
-        "total_votes": 5907,
-        "dem_votes": 4167,
-        "rep_votes": 1739,
+        "total_votes": 10653,
+        "dem_votes": 7881,
+        "rep_votes": 2772,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.10377518198747
+        "margin_pct": -47.95832159954942
       },
       "123": {
-        "total_votes": 21121,
-        "dem_votes": 6010,
-        "rep_votes": 15111,
+        "total_votes": 22850,
+        "dem_votes": 6664,
+        "rep_votes": 16186,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.089815823114435
+        "margin_pct": 41.671772428884026
       },
       "124": {
-        "total_votes": 22271,
-        "dem_votes": 7659,
-        "rep_votes": 14612,
+        "total_votes": 23699,
+        "dem_votes": 8788,
+        "rep_votes": 14911,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.219972161106373
+        "margin_pct": 25.836533187054307
       },
       "125": {
-        "total_votes": 19126,
-        "dem_votes": 6167,
-        "rep_votes": 12959,
+        "total_votes": 20982,
+        "dem_votes": 6874,
+        "rep_votes": 14108,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.5118686604622
+        "margin_pct": 34.477170908397675
       },
       "126": {
-        "total_votes": 18996,
-        "dem_votes": 11187,
-        "rep_votes": 7809,
+        "total_votes": 19518,
+        "dem_votes": 11503,
+        "rep_votes": 8015,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.782691092861654
+        "margin_pct": -17.870683471667178
       },
       "127": {
-        "total_votes": 24258,
-        "dem_votes": 8184,
-        "rep_votes": 16074,
+        "total_votes": 25879,
+        "dem_votes": 8742,
+        "rep_votes": 17137,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.52535246104378
+        "margin_pct": 32.43942965338692
       },
       "128": {
-        "total_votes": 23034,
-        "dem_votes": 11130,
-        "rep_votes": 11904,
+        "total_votes": 23372,
+        "dem_votes": 11296,
+        "rep_votes": 12076,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 3.360250065121125
+        "margin_pct": 3.337326715728222
       },
       "129": {
-        "total_votes": 20584,
-        "dem_votes": 14434,
-        "rep_votes": 6150,
+        "total_votes": 20589,
+        "dem_votes": 14438,
+        "rep_votes": 6151,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.24485036921881
+        "margin_pct": -40.24964787022196
       },
       "130": {
-        "total_votes": 18802,
-        "dem_votes": 12816,
-        "rep_votes": 5986,
+        "total_votes": 18806,
+        "dem_votes": 12819,
+        "rep_votes": 5987,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.32592277417296
+        "margin_pct": -36.328831224077426
       },
       "131": {
-        "total_votes": 20639,
-        "dem_votes": 6580,
-        "rep_votes": 14059,
+        "total_votes": 22832,
+        "dem_votes": 7366,
+        "rep_votes": 15466,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.23722079558118
+        "margin_pct": 35.47652417659425
       },
       "132": {
-        "total_votes": 15896,
-        "dem_votes": 10591,
+        "total_votes": 15898,
+        "dem_votes": 10593,
         "rep_votes": 5305,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.253648716658276
+        "margin_pct": -33.262045540319534
       },
       "133": {
-        "total_votes": 18643,
-        "dem_votes": 8135,
-        "rep_votes": 10508,
+        "total_votes": 20254,
+        "dem_votes": 9063,
+        "rep_votes": 11191,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.728638094727243
+        "margin_pct": 10.506566604127581
       },
       "134": {
-        "total_votes": 19980,
-        "dem_votes": 7000,
-        "rep_votes": 12980,
+        "total_votes": 20040,
+        "dem_votes": 7008,
+        "rep_votes": 13032,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.929929929929934
+        "margin_pct": 30.059880239520957
       },
       "135": {
         "total_votes": 23094,
@@ -1501,114 +1517,114 @@
         "margin_pct": 48.506105481943365
       },
       "136": {
-        "total_votes": 21495,
-        "dem_votes": 7425,
-        "rep_votes": 14069,
+        "total_votes": 22741,
+        "dem_votes": 7798,
+        "rep_votes": 14943,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.909513840428005
+        "margin_pct": 31.419022910162266
       },
       "137": {
-        "total_votes": 18867,
-        "dem_votes": 11354,
-        "rep_votes": 7513,
+        "total_votes": 19615,
+        "dem_votes": 11664,
+        "rep_votes": 7951,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.358297556580276
+        "margin_pct": -18.929390772368084
       },
       "138": {
-        "total_votes": 24373,
-        "dem_votes": 6478,
-        "rep_votes": 17895,
+        "total_votes": 24792,
+        "dem_votes": 6524,
+        "rep_votes": 18268,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.84281787223567
+        "margin_pct": 47.370119393352695
       },
       "139": {
-        "total_votes": 17342,
-        "dem_votes": 5949,
-        "rep_votes": 11392,
+        "total_votes": 18121,
+        "dem_votes": 6081,
+        "rep_votes": 12040,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.386229961942107
+        "margin_pct": 32.88449864797748
       },
       "140": {
-        "total_votes": 12122,
-        "dem_votes": 9265,
-        "rep_votes": 2857,
+        "total_votes": 12662,
+        "dem_votes": 9542,
+        "rep_votes": 3120,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.86256393334433
+        "margin_pct": -50.71868583162218
       },
       "141": {
-        "total_votes": 16797,
-        "dem_votes": 11985,
-        "rep_votes": 4812,
+        "total_votes": 17598,
+        "dem_votes": 12343,
+        "rep_votes": 5255,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.7040542954099
+        "margin_pct": -40.27730423911808
       },
       "142": {
-        "total_votes": 21119,
-        "dem_votes": 13282,
-        "rep_votes": 7837,
+        "total_votes": 21050,
+        "dem_votes": 13268,
+        "rep_votes": 7782,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.78247076092618
+        "margin_pct": -26.06175771971496
       },
       "143": {
-        "total_votes": 20996,
-        "dem_votes": 15279,
-        "rep_votes": 5717,
+        "total_votes": 20940,
+        "dem_votes": 15263,
+        "rep_votes": 5677,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.542008001524096
+        "margin_pct": -45.77841451766953
       },
       "144": {
-        "total_votes": 25537,
-        "dem_votes": 9171,
-        "rep_votes": 16366,
+        "total_votes": 25600,
+        "dem_votes": 9191,
+        "rep_votes": 16409,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.17480518463406
+        "margin_pct": 28.195312500000004
       },
       "145": {
         "total_votes": 19734,
-        "dem_votes": 7957,
-        "rep_votes": 11777,
+        "dem_votes": 7958,
+        "rep_votes": 11776,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.357454140062835
+        "margin_pct": 19.34731934731935
       },
       "146": {
         "total_votes": 21372,
@@ -1623,14 +1639,14 @@
       },
       "147": {
         "total_votes": 20747,
-        "dem_votes": 9255,
+        "dem_votes": 9256,
         "rep_votes": 11491,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.77746180170627
+        "margin_pct": 10.77264182773413
       },
       "148": {
         "total_votes": 23447,
@@ -1644,81 +1660,81 @@
         "margin_pct": 39.932613980466584
       },
       "149": {
-        "total_votes": 20118,
-        "dem_votes": 6257,
-        "rep_votes": 13861,
+        "total_votes": 20993,
+        "dem_votes": 6801,
+        "rep_votes": 14192,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.796997713490406
+        "margin_pct": 35.206973753155815
       },
       "150": {
-        "total_votes": 15894,
-        "dem_votes": 8987,
-        "rep_votes": 6907,
+        "total_votes": 18991,
+        "dem_votes": 10109,
+        "rep_votes": 8882,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.086699383415127
+        "margin_pct": -6.460955189300195
       },
       "151": {
-        "total_votes": 19163,
-        "dem_votes": 9119,
-        "rep_votes": 10044,
+        "total_votes": 21201,
+        "dem_votes": 9928,
+        "rep_votes": 11273,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 4.827010384595313
+        "margin_pct": 6.3440403754539885
       },
       "152": {
-        "total_votes": 19559,
-        "dem_votes": 5030,
-        "rep_votes": 14529,
+        "total_votes": 21503,
+        "dem_votes": 5641,
+        "rep_votes": 15862,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.565877601104354
+        "margin_pct": 47.53290238571362
       },
       "153": {
-        "total_votes": 16443,
-        "dem_votes": 11371,
-        "rep_votes": 5072,
+        "total_votes": 19548,
+        "dem_votes": 13027,
+        "rep_votes": 6521,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.308094629933706
+        "margin_pct": -33.28217720482914
       },
       "154": {
-        "total_votes": 21076,
-        "dem_votes": 10693,
-        "rep_votes": 10383,
+        "total_votes": 21810,
+        "dem_votes": 11242,
+        "rep_votes": 10568,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.4708673372556462
+        "margin_pct": -3.0903255387436954
       },
       "155": {
-        "total_votes": 18702,
-        "dem_votes": 6064,
-        "rep_votes": 12638,
+        "total_votes": 21161,
+        "dem_votes": 6869,
+        "rep_votes": 14292,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.1513207143621
+        "margin_pct": 35.0786824819243
       },
       "156": {
         "total_votes": 17566,
@@ -1754,117 +1770,117 @@
         "margin_pct": 33.04079820299848
       },
       "159": {
-        "total_votes": 23284,
-        "dem_votes": 6280,
-        "rep_votes": 17004,
+        "total_votes": 23425,
+        "dem_votes": 6376,
+        "rep_votes": 17049,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.05737845730974
+        "margin_pct": 45.5624332977588
       },
       "160": {
-        "total_votes": 15631,
-        "dem_votes": 4773,
-        "rep_votes": 10858,
+        "total_votes": 16001,
+        "dem_votes": 4902,
+        "rep_votes": 11099,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.92905124432218
+        "margin_pct": 38.72882944815949
       },
       "161": {
-        "total_votes": 12974,
-        "dem_votes": 5148,
-        "rep_votes": 7827,
+        "total_votes": 16495,
+        "dem_votes": 7399,
+        "rep_votes": 9096,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.648990288268845
+        "margin_pct": 10.287966050318278
       },
       "162": {
-        "total_votes": 9928,
-        "dem_votes": 7029,
-        "rep_votes": 2899,
+        "total_votes": 17861,
+        "dem_votes": 12245,
+        "rep_votes": 5616,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.59951651893634
+        "margin_pct": -37.11438329320867
       },
       "163": {
-        "total_votes": 13851,
-        "dem_votes": 10066,
-        "rep_votes": 3785,
+        "total_votes": 24867,
+        "dem_votes": 17536,
+        "rep_votes": 7331,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.346906360551586
+        "margin_pct": -41.03832388305787
       },
       "164": {
-        "total_votes": 7647,
-        "dem_votes": 2479,
-        "rep_votes": 5168,
+        "total_votes": 10441,
+        "dem_votes": 3407,
+        "rep_votes": 7034,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.16411664705113
+        "margin_pct": 34.738051910736516
       },
       "165": {
-        "total_votes": 10602,
-        "dem_votes": 7923,
-        "rep_votes": 2679,
+        "total_votes": 18991,
+        "dem_votes": 13802,
+        "rep_votes": 5189,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.46236559139785
+        "margin_pct": -45.35306197672582
       },
       "166": {
-        "total_votes": 17412,
-        "dem_votes": 5414,
-        "rep_votes": 11999,
+        "total_votes": 29217,
+        "dem_votes": 8696,
+        "rep_votes": 20521,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.818745692625775
+        "margin_pct": 40.47301228736694
       },
       "167": {
-        "total_votes": 16943,
-        "dem_votes": 5362,
-        "rep_votes": 11581,
+        "total_votes": 17800,
+        "dem_votes": 5579,
+        "rep_votes": 12221,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.70542406893703
+        "margin_pct": 37.31460674157304
       },
       "168": {
-        "total_votes": 13356,
-        "dem_votes": 8235,
-        "rep_votes": 5121,
+        "total_votes": 14487,
+        "dem_votes": 9136,
+        "rep_votes": 5351,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.31536388140162
+        "margin_pct": -26.12687236833023
       },
       "169": {
-        "total_votes": 17840,
+        "total_votes": 17839,
         "dem_votes": 4411,
         "rep_votes": 13428,
         "other_votes": 0,
@@ -1872,18 +1888,18 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.54372197309417
+        "margin_pct": 50.54655530018499
       },
       "170": {
-        "total_votes": 17627,
-        "dem_votes": 4517,
-        "rep_votes": 13110,
+        "total_votes": 18674,
+        "dem_votes": 4591,
+        "rep_votes": 14083,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.74907811879503
+        "margin_pct": 50.830031059226734
       },
       "171": {
         "total_votes": 18313,
@@ -1897,26 +1913,26 @@
         "margin_pct": 26.40200950144706
       },
       "172": {
-        "total_votes": 15953,
-        "dem_votes": 4011,
-        "rep_votes": 11942,
+        "total_votes": 16381,
+        "dem_votes": 4093,
+        "rep_votes": 12288,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.71478718736288
+        "margin_pct": 50.02747085037543
       },
       "173": {
-        "total_votes": 18867,
-        "dem_votes": 7330,
-        "rep_votes": 11537,
+        "total_votes": 19911,
+        "dem_votes": 7712,
+        "rep_votes": 12199,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.298192611437962
+        "margin_pct": 22.535282004921903
       },
       "174": {
         "total_votes": 18864,
@@ -1930,7 +1946,7 @@
         "margin_pct": 60.25233248515691
       },
       "175": {
-        "total_votes": 22409,
+        "total_votes": 22408,
         "dem_votes": 8246,
         "rep_votes": 14162,
         "other_votes": 0,
@@ -1938,7 +1954,7 @@
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.400107099825966
+        "margin_pct": 26.40128525526598
       },
       "176": {
         "total_votes": 18180,
@@ -1974,26 +1990,26 @@
         "margin_pct": 70.9761214906584
       },
       "179": {
-        "total_votes": 18650,
-        "dem_votes": 7353,
-        "rep_votes": 11297,
+        "total_votes": 21283,
+        "dem_votes": 8303,
+        "rep_votes": 12980,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.14745308310992
+        "margin_pct": 21.975285439082835
       },
       "180": {
-        "total_votes": 19333,
-        "dem_votes": 6387,
-        "rep_votes": 12946,
+        "total_votes": 19748,
+        "dem_votes": 6502,
+        "rep_votes": 13246,
         "other_votes": 0,
         "dem_candidate": "Sarah Riggs Amico",
         "rep_candidate": "Geoff Duncan",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.926447007707026
+        "margin_pct": 34.15029370062791
       }
     }
   }

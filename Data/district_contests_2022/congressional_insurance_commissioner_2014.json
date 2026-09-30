@@ -4,170 +4,186 @@
     "contest_type": "insurance_commissioner",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:18.931123+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:41.543156+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2342904,
     "matched_input_votes": 2342904,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Commissioner_Of_Insurance.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 989430,
+        "rep_votes": 1273208,
+        "other_votes": 80266
+      },
+      "canonical_target": {
+        "dem_votes": 1050883,
+        "rep_votes": 1382551,
+        "other_votes": 86427
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 125952,
-        "dem_votes": 47225,
-        "rep_votes": 74962,
-        "other_votes": 3766,
+        "total_votes": 156719,
+        "dem_votes": 61648,
+        "rep_votes": 90323,
+        "other_votes": 4748,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.021881351626014
+        "margin_pct": 18.29707948621418
       },
       "2": {
-        "total_votes": 166886,
-        "dem_votes": 87963,
-        "rep_votes": 75627,
-        "other_votes": 3297,
+        "total_votes": 180526,
+        "dem_votes": 94719,
+        "rep_votes": 82185,
+        "other_votes": 3622,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.391872296058387
+        "margin_pct": -6.943044215237694
       },
       "3": {
-        "total_votes": 173976,
-        "dem_votes": 49125,
-        "rep_votes": 118827,
-        "other_votes": 6024,
+        "total_votes": 197784,
+        "dem_votes": 55498,
+        "rep_votes": 135432,
+        "other_votes": 6854,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.064146778866046
+        "margin_pct": 40.414795939004165
       },
       "4": {
-        "total_votes": 192441,
-        "dem_votes": 131803,
-        "rep_votes": 54903,
-        "other_votes": 5736,
+        "total_votes": 197143,
+        "dem_votes": 134086,
+        "rep_votes": 57114,
+        "other_votes": 5943,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.96029952037248
+        "margin_pct": -39.04373982337694
       },
       "5": {
-        "total_votes": 190371,
-        "dem_votes": 138933,
-        "rep_votes": 44528,
-        "other_votes": 6910,
+        "total_votes": 191694,
+        "dem_votes": 139811,
+        "rep_votes": 44895,
+        "other_votes": 6988,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.59001108362093
+        "margin_pct": -49.51433013031185
       },
       "6": {
-        "total_votes": 202474,
-        "dem_votes": 48381,
-        "rep_votes": 144281,
-        "other_votes": 9812,
+        "total_votes": 202977,
+        "dem_votes": 48466,
+        "rep_votes": 144673,
+        "other_votes": 9838,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.36410600867272
+        "margin_pct": 47.39798105204038
       },
       "7": {
-        "total_votes": 157943,
-        "dem_votes": 68036,
-        "rep_votes": 83534,
-        "other_votes": 6373,
+        "total_votes": 157965,
+        "dem_votes": 68050,
+        "rep_votes": 83541,
+        "other_votes": 6374,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.81240067619331
+        "margin_pct": 9.806602728452505
       },
       "8": {
-        "total_votes": 156058,
-        "dem_votes": 50080,
-        "rep_votes": 102025,
-        "other_votes": 3953,
+        "total_votes": 172949,
+        "dem_votes": 56910,
+        "rep_votes": 111689,
+        "other_votes": 4350,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.28570146996629
+        "margin_pct": 31.673499124019223
       },
       "9": {
-        "total_votes": 159121,
-        "dem_votes": 34761,
-        "rep_votes": 117977,
-        "other_votes": 6383,
+        "total_votes": 175789,
+        "dem_votes": 37592,
+        "rep_votes": 131138,
+        "other_votes": 7059,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.29730833768013
+        "margin_pct": 53.2149338126959
       },
       "10": {
-        "total_votes": 147757,
-        "dem_votes": 44476,
-        "rep_votes": 98286,
-        "other_votes": 4996,
+        "total_votes": 186777,
+        "dem_votes": 57299,
+        "rep_votes": 123013,
+        "other_votes": 6465,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.417902366723744
+        "margin_pct": 35.18313282684699
       },
       "11": {
-        "total_votes": 181082,
-        "dem_votes": 50445,
-        "rep_votes": 121729,
-        "other_votes": 8908,
+        "total_votes": 181887,
+        "dem_votes": 50630,
+        "rep_votes": 122308,
+        "other_votes": 8949,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.36559127908903
+        "margin_pct": 39.407984078026466
       },
       "12": {
-        "total_votes": 171928,
-        "dem_votes": 69011,
-        "rep_votes": 98800,
-        "other_votes": 4118,
+        "total_votes": 179878,
+        "dem_votes": 71550,
+        "rep_votes": 104001,
+        "other_votes": 4327,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.326438974454422
+        "margin_pct": 18.040560824558867
       },
       "13": {
-        "total_votes": 184764,
-        "dem_votes": 132144,
-        "rep_votes": 47871,
-        "other_votes": 4749,
+        "total_votes": 185660,
+        "dem_votes": 132750,
+        "rep_votes": 48140,
+        "other_votes": 4770,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.611158017795674
+        "margin_pct": -45.57255197673166
       },
       "14": {
-        "total_votes": 132150,
-        "dem_votes": 37048,
-        "rep_votes": 89860,
-        "other_votes": 5242,
+        "total_votes": 152113,
+        "dem_votes": 41874,
+        "rep_votes": 104099,
+        "other_votes": 6140,
         "dem_candidate": "Elizabeth N. \"Liz\" Johnson",
         "rep_candidate": "Ralph T. Hudgens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.96367763904654
+        "margin_pct": 40.90708880897754
       }
     }
   }
