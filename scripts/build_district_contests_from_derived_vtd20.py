@@ -370,6 +370,8 @@ def load_canonical_county_totals(
             "rep_votes": float(rep),
             "other_votes": float(other),
             "total_votes": float(dem + rep + other),
+            "dem_candidate": clean_candidate_label(str(row.get("dem_candidate") or "")),
+            "rep_candidate": clean_candidate_label(str(row.get("rep_candidate") or "")),
         }
     return out
 
@@ -790,6 +792,17 @@ def aggregate_group(
 
     reconciliation: dict[str, Any] | None = None
     if canonical_counties:
+        # Canonical county slices are also the authoritative label fallback.
+        # Some derived VTD files retain party vote buckets while omitting one
+        # candidate name; weight labels by their certified county vote totals
+        # so a complete canonical label wins over partial derived metadata.
+        for county in canonical_counties.values():
+            dem_name = clean_candidate_label(str(county.get("dem_candidate") or ""))
+            rep_name = clean_candidate_label(str(county.get("rep_candidate") or ""))
+            if dem_name:
+                contest_dem_votes[dem_name] += max(1.0, float(county.get("dem_votes", 0.0)))
+            if rep_name:
+                contest_rep_votes[rep_name] += max(1.0, float(county.get("rep_votes", 0.0)))
         reconciliation = reconcile_numeric_totals_to_counties(
             by_district=by_district,
             by_county_district=by_county_district,
