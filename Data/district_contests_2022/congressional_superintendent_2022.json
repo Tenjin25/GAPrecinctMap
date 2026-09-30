@@ -4,167 +4,186 @@
     "contest_type": "superintendent",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "rdh_2022_precinct_archive",
-    "generated_at_utc": "2026-08-05T22:01:21.449142+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:42.768192+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3904399,
-    "matched_input_votes": 3904399
+    "total_input_votes": 1066223,
+    "matched_input_votes": 1066223,
+    "input_files": [
+      "Data/derived_vtd20/2022/contests/vtd20/State_School_Superintendent.json"
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 938498,
+        "rep_votes": 127725,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1788671,
+        "rep_votes": 2115728,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 262557,
-        "dem_votes": 103157,
-        "rep_votes": 159400,
+        "total_votes": 261237,
+        "dem_votes": 103018,
+        "rep_votes": 158219,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.421253289761843
+        "margin_pct": 21.13062085386067
       },
       "2": {
-        "total_votes": 239805,
-        "dem_votes": 123412,
-        "rep_votes": 116393,
+        "total_votes": 246723,
+        "dem_votes": 119656,
+        "rep_votes": 127067,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -2.9269614895435874
+        "rep_candidate": "Richard Woods",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 3.0037734625470667
       },
       "3": {
-        "total_votes": 310681,
-        "dem_votes": 96710,
-        "rep_votes": 213971,
+        "total_votes": 294585,
+        "dem_votes": 95660,
+        "rep_votes": 198925,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.7432157100048
+        "margin_pct": 35.05439856068707
       },
       "4": {
-        "total_votes": 275927,
-        "dem_votes": 210306,
-        "rep_votes": 65621,
+        "total_votes": 279483,
+        "dem_votes": 214155,
+        "rep_votes": 65328,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.43597038347099
+        "margin_pct": -53.250823842595075
       },
       "5": {
-        "total_votes": 294828,
-        "dem_votes": 233114,
-        "rep_votes": 61714,
+        "total_votes": 329169,
+        "dem_votes": 231829,
+        "rep_votes": 97340,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.13559092080807
+        "margin_pct": -40.85712810137042
       },
       "6": {
-        "total_votes": 331814,
-        "dem_votes": 118064,
-        "rep_votes": 213750,
+        "total_votes": 280902,
+        "dem_votes": 113339,
+        "rep_votes": 167563,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.837240140560677
+        "margin_pct": 19.303529344753688
       },
       "7": {
-        "total_votes": 234221,
-        "dem_votes": 135896,
-        "rep_votes": 98325,
+        "total_votes": 239470,
+        "dem_votes": 135548,
+        "rep_votes": 103922,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.040833230154426
+        "margin_pct": -13.206664717918738
       },
       "8": {
-        "total_votes": 260450,
-        "dem_votes": 82018,
-        "rep_votes": 178432,
+        "total_votes": 256008,
+        "dem_votes": 84527,
+        "rep_votes": 171481,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.01823766557881
+        "margin_pct": 33.96534483297397
       },
       "9": {
-        "total_votes": 293992,
-        "dem_votes": 75739,
-        "rep_votes": 218253,
+        "total_votes": 281079,
+        "dem_votes": 75564,
+        "rep_votes": 205515,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.47546872023729
+        "margin_pct": 46.2329096090423
       },
       "10": {
-        "total_votes": 307115,
-        "dem_votes": 105401,
-        "rep_votes": 201714,
+        "total_votes": 291768,
+        "dem_votes": 102994,
+        "rep_votes": 188774,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.360565260570144
+        "margin_pct": 29.400071289517697
       },
       "11": {
-        "total_votes": 303258,
-        "dem_votes": 112059,
-        "rep_votes": 191199,
+        "total_votes": 298032,
+        "dem_votes": 111036,
+        "rep_votes": 186996,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.096591021506438
+        "margin_pct": 25.487196005798037
       },
       "12": {
-        "total_votes": 264365,
-        "dem_votes": 105827,
-        "rep_votes": 158538,
+        "total_votes": 265829,
+        "dem_votes": 105995,
+        "rep_votes": 159834,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.93872108637679
+        "margin_pct": 20.25324550745028
       },
       "13": {
-        "total_votes": 265394,
-        "dem_votes": 213426,
-        "rep_votes": 51968,
+        "total_votes": 316729,
+        "dem_votes": 220696,
+        "rep_votes": 96033,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.837095036059594
+        "margin_pct": -39.35951554799213
       },
       "14": {
-        "total_votes": 259993,
-        "dem_votes": 73542,
-        "rep_votes": 186451,
+        "total_votes": 263385,
+        "dem_votes": 74654,
+        "rep_votes": 188731,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.42770766905263
+        "margin_pct": 43.31188184596693
       }
     }
   }

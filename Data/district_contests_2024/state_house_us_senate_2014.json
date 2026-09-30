@@ -4,38 +4,54 @@
     "contest_type": "us_senate",
     "year": 2014,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:42.439696+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:55.277841+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2387985,
     "matched_input_votes": 2387985,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/United_States_Senator.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1092682,
+        "rep_votes": 1250267,
+        "other_votes": 45036
+      },
+      "canonical_target": {
+        "dem_votes": 1160811,
+        "rep_votes": 1358088,
+        "other_votes": 48862
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10722,
-        "dem_votes": 2413,
-        "rep_votes": 7966,
-        "other_votes": 343,
+        "total_votes": 13001,
+        "dem_votes": 2885,
+        "rep_votes": 9683,
+        "other_votes": 433,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.79071068830442
+        "margin_pct": 52.28828551649873
       },
       "2": {
-        "total_votes": 9696,
-        "dem_votes": 2005,
-        "rep_votes": 7427,
-        "other_votes": 264,
+        "total_votes": 10364,
+        "dem_votes": 2115,
+        "rep_votes": 7965,
+        "other_votes": 284,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.919966996699664
+        "margin_pct": 56.445387881126976
       },
       "3": {
         "total_votes": 12021,
@@ -60,26 +76,26 @@
         "margin_pct": 40.157706093189965
       },
       "5": {
-        "total_votes": 10739,
-        "dem_votes": 2268,
-        "rep_votes": 8096,
+        "total_votes": 10727,
+        "dem_votes": 2265,
+        "rep_votes": 8087,
         "other_votes": 375,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.269485054474345
+        "margin_pct": 54.27426121003076
       },
       "6": {
-        "total_votes": 10019,
+        "total_votes": 10017,
         "dem_votes": 2006,
-        "rep_votes": 7673,
+        "rep_votes": 7672,
         "other_votes": 339,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.562531190737594
+        "margin_pct": 56.56384146950185
       },
       "7": {
         "total_votes": 16026,
@@ -93,37 +109,37 @@
         "margin_pct": 55.52851616123798
       },
       "8": {
-        "total_votes": 18377,
+        "total_votes": 18378,
         "dem_votes": 4108,
-        "rep_votes": 13843,
+        "rep_votes": 13844,
         "other_votes": 426,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.973825978124836
+        "margin_pct": 52.976384807922514
       },
       "9": {
-        "total_votes": 8470,
-        "dem_votes": 1346,
-        "rep_votes": 6938,
-        "other_votes": 186,
+        "total_votes": 14601,
+        "dem_votes": 2587,
+        "rep_votes": 11634,
+        "other_votes": 380,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.02125147579693
+        "margin_pct": 61.96150948565167
       },
       "10": {
-        "total_votes": 13026,
+        "total_votes": 13025,
         "dem_votes": 2766,
-        "rep_votes": 9911,
+        "rep_votes": 9910,
         "other_votes": 349,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.85183479195456
+        "margin_pct": 54.84836852207293
       },
       "11": {
         "total_votes": 15113,
@@ -137,136 +153,136 @@
         "margin_pct": 65.06980745053927
       },
       "12": {
-        "total_votes": 11863,
-        "dem_votes": 3261,
-        "rep_votes": 8173,
-        "other_votes": 429,
+        "total_votes": 12000,
+        "dem_votes": 3312,
+        "rep_votes": 8254,
+        "other_votes": 434,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.406052431931215
+        "margin_pct": 41.18333333333333
       },
       "13": {
-        "total_votes": 12630,
+        "total_votes": 12629,
         "dem_votes": 4402,
         "rep_votes": 7899,
-        "other_votes": 329,
+        "other_votes": 328,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.688044338875695
+        "margin_pct": 27.690236756671155
       },
       "14": {
-        "total_votes": 13409,
-        "dem_votes": 2758,
-        "rep_votes": 10292,
+        "total_votes": 13421,
+        "dem_votes": 2760,
+        "rep_votes": 10301,
         "other_votes": 360,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.186143634872096
+        "margin_pct": 56.18806348260189
       },
       "15": {
-        "total_votes": 12076,
-        "dem_votes": 3143,
-        "rep_votes": 8611,
+        "total_votes": 12087,
+        "dem_votes": 3146,
+        "rep_votes": 8620,
         "other_votes": 321,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.27989400463729
+        "margin_pct": 45.28832630098453
       },
       "16": {
         "total_votes": 8065,
         "dem_votes": 2197,
-        "rep_votes": 5540,
+        "rep_votes": 5541,
         "other_votes": 327,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.45071295722257
+        "margin_pct": 41.46311221326721
       },
       "17": {
-        "total_votes": 5712,
-        "dem_votes": 1530,
-        "rep_votes": 4025,
-        "other_votes": 158,
+        "total_votes": 10677,
+        "dem_votes": 2747,
+        "rep_votes": 7639,
+        "other_votes": 291,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.679971988795515
+        "margin_pct": 45.81811370235085
       },
       "18": {
-        "total_votes": 11017,
-        "dem_votes": 2174,
-        "rep_votes": 8472,
-        "other_votes": 371,
+        "total_votes": 16385,
+        "dem_votes": 3224,
+        "rep_votes": 12646,
+        "other_votes": 515,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.166197694472174
+        "margin_pct": 57.503814464449185
       },
       "19": {
-        "total_votes": 8171,
-        "dem_votes": 2692,
-        "rep_votes": 5321,
-        "other_votes": 158,
+        "total_votes": 11153,
+        "dem_votes": 3798,
+        "rep_votes": 7128,
+        "other_votes": 227,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.17476441072084
+        "margin_pct": 29.857437460772886
       },
       "20": {
-        "total_votes": 17004,
-        "dem_votes": 3761,
-        "rep_votes": 12810,
+        "total_votes": 17011,
+        "dem_votes": 3763,
+        "rep_votes": 12815,
         "other_votes": 433,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.21689014349565
+        "margin_pct": 53.212627123625886
       },
       "21": {
-        "total_votes": 16505,
-        "dem_votes": 3010,
-        "rep_votes": 13052,
+        "total_votes": 16511,
+        "dem_votes": 3012,
+        "rep_votes": 13056,
         "other_votes": 443,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.84216903968495
+        "margin_pct": 60.83217249106656
       },
       "22": {
-        "total_votes": 15694,
-        "dem_votes": 4845,
-        "rep_votes": 10332,
-        "other_votes": 517,
+        "total_votes": 15765,
+        "dem_votes": 4864,
+        "rep_votes": 10382,
+        "other_votes": 519,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.962406015037594
+        "margin_pct": 35.001585791309864
       },
       "23": {
-        "total_votes": 12618,
-        "dem_votes": 2396,
-        "rep_votes": 9916,
+        "total_votes": 12623,
+        "dem_votes": 2397,
+        "rep_votes": 9920,
         "other_votes": 306,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.59740053891266
+        "margin_pct": 59.59756000950646
       },
       "24": {
         "total_votes": 12771,
@@ -280,7 +296,7 @@
         "margin_pct": 55.70433012293478
       },
       "25": {
-        "total_votes": 14571,
+        "total_votes": 14570,
         "dem_votes": 3398,
         "rep_votes": 10950,
         "other_votes": 222,
@@ -288,7 +304,7 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.828975362020444
+        "margin_pct": 51.832532601235414
       },
       "26": {
         "total_votes": 14840,
@@ -302,260 +318,260 @@
         "margin_pct": 62.11590296495957
       },
       "27": {
-        "total_votes": 11725,
-        "dem_votes": 1825,
-        "rep_votes": 9646,
-        "other_votes": 253,
+        "total_votes": 13783,
+        "dem_votes": 2110,
+        "rep_votes": 11371,
+        "other_votes": 302,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.70362473347548
+        "margin_pct": 67.19146775012696
       },
       "28": {
-        "total_votes": 11793,
-        "dem_votes": 1905,
-        "rep_votes": 9562,
-        "other_votes": 326,
+        "total_votes": 11990,
+        "dem_votes": 1938,
+        "rep_votes": 9720,
+        "other_votes": 332,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.92834732468413
+        "margin_pct": 64.90408673894913
       },
       "29": {
-        "total_votes": 7344,
-        "dem_votes": 2593,
-        "rep_votes": 4540,
-        "other_votes": 211,
+        "total_votes": 8267,
+        "dem_votes": 2855,
+        "rep_votes": 5173,
+        "other_votes": 239,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.51143790849673
+        "margin_pct": 28.0391919680658
       },
       "30": {
-        "total_votes": 14776,
-        "dem_votes": 2803,
-        "rep_votes": 11565,
-        "other_votes": 407,
+        "total_votes": 16473,
+        "dem_votes": 3047,
+        "rep_votes": 12971,
+        "other_votes": 455,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.298863021115324
+        "margin_pct": 60.24403569477327
       },
       "31": {
-        "total_votes": 6811,
-        "dem_votes": 1235,
-        "rep_votes": 5418,
-        "other_votes": 158,
+        "total_votes": 10259,
+        "dem_votes": 1881,
+        "rep_votes": 8128,
+        "other_votes": 250,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.41535750991044
+        "margin_pct": 60.892874549176334
       },
       "32": {
-        "total_votes": 7515,
-        "dem_votes": 1163,
-        "rep_votes": 6154,
-        "other_votes": 198,
+        "total_votes": 13301,
+        "dem_votes": 2421,
+        "rep_votes": 10524,
+        "other_votes": 356,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.41383898868929
+        "margin_pct": 60.92023156153673
       },
       "33": {
-        "total_votes": 14196,
-        "dem_votes": 3280,
-        "rep_votes": 10585,
+        "total_votes": 14200,
+        "dem_votes": 3281,
+        "rep_votes": 10588,
         "other_votes": 331,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.458157227388
+        "margin_pct": 51.45774647887323
       },
       "34": {
-        "total_votes": 19172,
-        "dem_votes": 5733,
-        "rep_votes": 13050,
-        "other_votes": 389,
+        "total_votes": 19331,
+        "dem_votes": 5765,
+        "rep_votes": 13174,
+        "other_votes": 392,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.16503233882746
+        "margin_pct": 38.327039470280894
       },
       "35": {
-        "total_votes": 11948,
-        "dem_votes": 5005,
-        "rep_votes": 6597,
-        "other_votes": 345,
+        "total_votes": 12041,
+        "dem_votes": 5034,
+        "rep_votes": 6659,
+        "other_votes": 348,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 13.324405758285906
+        "margin_pct": 13.49555684743792
       },
       "36": {
-        "total_votes": 19351,
-        "dem_votes": 5363,
-        "rep_votes": 13561,
-        "other_votes": 428,
+        "total_votes": 19513,
+        "dem_votes": 5393,
+        "rep_votes": 13689,
+        "other_votes": 431,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.36473567257506
+        "margin_pct": 42.515246246092346
       },
       "37": {
-        "total_votes": 15212,
-        "dem_votes": 6726,
-        "rep_votes": 8135,
-        "other_votes": 351,
+        "total_votes": 15329,
+        "dem_votes": 6764,
+        "rep_votes": 8212,
+        "other_votes": 353,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.262424401788062
+        "margin_pct": 9.446147824385152
       },
       "38": {
-        "total_votes": 15488,
-        "dem_votes": 9796,
-        "rep_votes": 5407,
-        "other_votes": 285,
+        "total_votes": 15598,
+        "dem_votes": 9852,
+        "rep_votes": 5459,
+        "other_votes": 287,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.338068181818183
+        "margin_pct": -28.163867162456725
       },
       "39": {
-        "total_votes": 12794,
-        "dem_votes": 9249,
-        "rep_votes": 3351,
-        "other_votes": 194,
+        "total_votes": 12878,
+        "dem_votes": 9301,
+        "rep_votes": 3382,
+        "other_votes": 195,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.09973425042989
+        "margin_pct": -45.962105917067866
       },
       "40": {
-        "total_votes": 14891,
-        "dem_votes": 4632,
-        "rep_votes": 9885,
-        "other_votes": 374,
+        "total_votes": 21799,
+        "dem_votes": 6562,
+        "rep_votes": 14691,
+        "other_votes": 546,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.27634141427708
+        "margin_pct": 37.29070140832148
       },
       "41": {
-        "total_votes": 11793,
-        "dem_votes": 7180,
-        "rep_votes": 4363,
-        "other_votes": 249,
+        "total_votes": 11877,
+        "dem_votes": 7221,
+        "rep_votes": 4405,
+        "other_votes": 251,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.887051640803865
+        "margin_pct": -23.709690999410626
       },
       "42": {
-        "total_votes": 12925,
-        "dem_votes": 7242,
-        "rep_votes": 5345,
-        "other_votes": 338,
+        "total_votes": 13019,
+        "dem_votes": 7283,
+        "rep_votes": 5396,
+        "other_votes": 340,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.67698259187621
+        "margin_pct": -14.494200783470312
       },
       "43": {
-        "total_votes": 9969,
-        "dem_votes": 5054,
-        "rep_votes": 4678,
-        "other_votes": 237,
+        "total_votes": 10044,
+        "dem_votes": 5082,
+        "rep_votes": 4723,
+        "other_votes": 239,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.771692245962484
+        "margin_pct": -3.574273197929112
       },
       "44": {
-        "total_votes": 16663,
-        "dem_votes": 5389,
-        "rep_votes": 10772,
-        "other_votes": 502,
+        "total_votes": 16765,
+        "dem_votes": 5413,
+        "rep_votes": 10848,
+        "other_votes": 504,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.30510712356718
+        "margin_pct": 32.41872949597375
       },
       "45": {
-        "total_votes": 27212,
-        "dem_votes": 8060,
-        "rep_votes": 18615,
-        "other_votes": 538,
+        "total_votes": 27438,
+        "dem_votes": 8105,
+        "rep_votes": 18791,
+        "other_votes": 542,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.78803469057769
+        "margin_pct": 38.94598731685983
       },
       "46": {
-        "total_votes": 19643,
-        "dem_votes": 5804,
-        "rep_votes": 13418,
-        "other_votes": 422,
+        "total_votes": 19775,
+        "dem_votes": 5831,
+        "rep_votes": 13520,
+        "other_votes": 424,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.761899913455174
+        "margin_pct": 38.88242730720607
       },
       "47": {
-        "total_votes": 14746,
-        "dem_votes": 4267,
+        "total_votes": 14747,
+        "dem_votes": 4268,
         "rep_votes": 10216,
         "other_votes": 263,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.34314390343144
+        "margin_pct": 40.33362717840917
       },
       "48": {
-        "total_votes": 20170,
-        "dem_votes": 6936,
+        "total_votes": 20171,
+        "dem_votes": 6937,
         "rep_votes": 12850,
         "other_votes": 384,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.32077342588002
+        "margin_pct": 29.314362203162958
       },
       "49": {
         "total_votes": 16293,
-        "dem_votes": 4941,
+        "dem_votes": 4942,
         "rep_votes": 11038,
         "other_votes": 313,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.420978334253974
+        "margin_pct": 37.414840729147485
       },
       "50": {
-        "total_votes": 13061,
+        "total_votes": 13062,
         "dem_votes": 4955,
         "rep_votes": 7885,
         "other_votes": 222,
@@ -563,150 +579,150 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.43319807059184
+        "margin_pct": 22.431480630837545
       },
       "51": {
-        "total_votes": 15365,
-        "dem_votes": 6620,
+        "total_votes": 15366,
+        "dem_votes": 6621,
         "rep_votes": 8484,
         "other_votes": 261,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.131467621217052
+        "margin_pct": 12.124170245997657
       },
       "52": {
-        "total_votes": 14362,
-        "dem_votes": 6518,
-        "rep_votes": 7579,
-        "other_votes": 265,
+        "total_votes": 14690,
+        "dem_votes": 6596,
+        "rep_votes": 7823,
+        "other_votes": 271,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.387550480434479
+        "margin_pct": 8.352620830496937
       },
       "53": {
-        "total_votes": 19795,
-        "dem_votes": 7236,
+        "total_votes": 19796,
+        "dem_votes": 7237,
         "rep_votes": 12249,
         "other_votes": 310,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.324576913361962
+        "margin_pct": 25.318246110325322
       },
       "54": {
-        "total_votes": 13578,
-        "dem_votes": 5905,
-        "rep_votes": 7498,
+        "total_votes": 13580,
+        "dem_votes": 5906,
+        "rep_votes": 7499,
         "other_votes": 175,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.732213875386655
+        "margin_pct": 11.730486008836523
       },
       "55": {
-        "total_votes": 15514,
-        "dem_votes": 11756,
+        "total_votes": 15515,
+        "dem_votes": 11757,
         "rep_votes": 3603,
         "other_votes": 155,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.55253319582312
+        "margin_pct": -52.55559136319691
       },
       "56": {
         "total_votes": 11075,
-        "dem_votes": 9983,
+        "dem_votes": 9984,
         "rep_votes": 929,
         "other_votes": 162,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -81.75169300225734
+        "margin_pct": -81.7607223476298
       },
       "57": {
-        "total_votes": 14546,
-        "dem_votes": 10099,
+        "total_votes": 14547,
+        "dem_votes": 10100,
         "rep_votes": 4211,
         "other_votes": 236,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.478482056922864
+        "margin_pct": -40.48257372654155
       },
       "58": {
-        "total_votes": 15854,
-        "dem_votes": 14301,
+        "total_votes": 15855,
+        "dem_votes": 14302,
         "rep_votes": 1342,
         "other_votes": 211,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -81.73962406963543
+        "margin_pct": -81.74077578051087
       },
       "59": {
-        "total_votes": 13163,
-        "dem_votes": 12370,
+        "total_votes": 13164,
+        "dem_votes": 12371,
         "rep_votes": 635,
         "other_votes": 158,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -89.15140925320976
+        "margin_pct": -89.15223336371923
       },
       "60": {
-        "total_votes": 17127,
-        "dem_votes": 10987,
-        "rep_votes": 5917,
+        "total_votes": 17149,
+        "dem_votes": 10993,
+        "rep_votes": 5933,
         "other_votes": 223,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.602382203538273
+        "margin_pct": -29.506093649775494
       },
       "61": {
-        "total_votes": 19526,
-        "dem_votes": 13860,
-        "rep_votes": 5404,
-        "other_votes": 262,
+        "total_votes": 19615,
+        "dem_votes": 13897,
+        "rep_votes": 5454,
+        "other_votes": 264,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.30636074976954
+        "margin_pct": -43.043589089982156
       },
       "62": {
-        "total_votes": 13685,
-        "dem_votes": 12640,
-        "rep_votes": 896,
+        "total_votes": 13686,
+        "dem_votes": 12641,
+        "rep_votes": 895,
         "other_votes": 150,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -85.81658750456704
+        "margin_pct": -85.82493058600029
       },
       "63": {
-        "total_votes": 14005,
-        "dem_votes": 12505,
+        "total_votes": 14007,
+        "dem_votes": 12506,
         "rep_votes": 1307,
         "other_votes": 194,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.95715815780079
+        "margin_pct": -79.9528807025059
       },
       "64": {
         "total_votes": 17084,
@@ -753,7 +769,7 @@
         "margin_pct": -20.769000149902563
       },
       "68": {
-        "total_votes": 16213,
+        "total_votes": 16214,
         "dem_votes": 9036,
         "rep_votes": 6953,
         "other_votes": 225,
@@ -761,472 +777,472 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.847714796768026
+        "margin_pct": -12.84692241272974
       },
       "69": {
-        "total_votes": 19589,
-        "dem_votes": 13279,
+        "total_votes": 19590,
+        "dem_votes": 13280,
         "rep_votes": 6058,
         "other_votes": 252,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.86252488641585
+        "margin_pct": -36.86574783052578
       },
       "70": {
-        "total_votes": 11758,
-        "dem_votes": 4391,
+        "total_votes": 11754,
+        "dem_votes": 4387,
         "rep_votes": 7080,
         "other_votes": 287,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.869535635312126
+        "margin_pct": 22.911349327888377
       },
       "71": {
-        "total_votes": 6297,
-        "dem_votes": 2067,
-        "rep_votes": 4036,
-        "other_votes": 194,
+        "total_votes": 17872,
+        "dem_votes": 5897,
+        "rep_votes": 11465,
+        "other_votes": 510,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.26885818643799
+        "margin_pct": 31.15487914055506
       },
       "72": {
-        "total_votes": 6057,
-        "dem_votes": 1682,
-        "rep_votes": 4229,
-        "other_votes": 146,
+        "total_votes": 8217,
+        "dem_votes": 2308,
+        "rep_votes": 5729,
+        "other_votes": 180,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.050520059435364
+        "margin_pct": 41.633199464524765
       },
       "73": {
-        "total_votes": 18529,
-        "dem_votes": 4670,
+        "total_votes": 18527,
+        "dem_votes": 4668,
         "rep_votes": 13446,
         "other_votes": 413,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.36359220681094
+        "margin_pct": 47.379500188913475
       },
       "74": {
-        "total_votes": 15195,
-        "dem_votes": 10588,
-        "rep_votes": 4396,
-        "other_votes": 210,
+        "total_votes": 15295,
+        "dem_votes": 10655,
+        "rep_votes": 4429,
+        "other_votes": 211,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.7502467917078
+        "margin_pct": -40.70611310885911
       },
       "75": {
-        "total_votes": 12425,
-        "dem_votes": 10536,
-        "rep_votes": 1751,
-        "other_votes": 139,
+        "total_votes": 12412,
+        "dem_votes": 10528,
+        "rep_votes": 1746,
+        "other_votes": 138,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.70422535211267
+        "margin_pct": -70.75410892684499
       },
       "76": {
-        "total_votes": 12579,
-        "dem_votes": 10646,
-        "rep_votes": 1780,
+        "total_votes": 12568,
+        "dem_votes": 10640,
+        "rep_votes": 1775,
         "other_votes": 153,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.4825502822164
+        "margin_pct": -70.53628262253342
       },
       "77": {
-        "total_votes": 11799,
-        "dem_votes": 10530,
-        "rep_votes": 1140,
+        "total_votes": 11789,
+        "dem_votes": 10523,
+        "rep_votes": 1137,
         "other_votes": 129,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.58301550978896
+        "margin_pct": -79.6165917380609
       },
       "78": {
-        "total_votes": 14226,
-        "dem_votes": 8771,
-        "rep_votes": 5250,
-        "other_votes": 206,
+        "total_votes": 14477,
+        "dem_votes": 8954,
+        "rep_votes": 5315,
+        "other_votes": 208,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.75045690988331
+        "margin_pct": -25.136423292118533
       },
       "79": {
-        "total_votes": 10536,
-        "dem_votes": 9284,
-        "rep_votes": 1134,
+        "total_votes": 10527,
+        "dem_votes": 9277,
+        "rep_votes": 1131,
         "other_votes": 119,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.3538344722855
+        "margin_pct": -77.38197017193882
       },
       "80": {
-        "total_votes": 13732,
-        "dem_votes": 5829,
-        "rep_votes": 7617,
-        "other_votes": 287,
+        "total_votes": 14332,
+        "dem_votes": 5960,
+        "rep_votes": 8075,
+        "other_votes": 297,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 13.020681619574717
+        "margin_pct": 14.757186715043261
       },
       "81": {
-        "total_votes": 16616,
-        "dem_votes": 4019,
-        "rep_votes": 12256,
-        "other_votes": 341,
+        "total_votes": 16978,
+        "dem_votes": 4159,
+        "rep_votes": 12473,
+        "other_votes": 346,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.57270101107367
+        "margin_pct": 48.969254329131815
       },
       "82": {
-        "total_votes": 16411,
-        "dem_votes": 5208,
-        "rep_votes": 10880,
-        "other_votes": 322,
+        "total_votes": 19288,
+        "dem_votes": 6236,
+        "rep_votes": 12674,
+        "other_votes": 378,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.56218390104198
+        "margin_pct": 33.37826627955206
       },
       "83": {
-        "total_votes": 10778,
-        "dem_votes": 5519,
-        "rep_votes": 4983,
-        "other_votes": 275,
+        "total_votes": 11213,
+        "dem_votes": 5644,
+        "rep_votes": 5283,
+        "other_votes": 286,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.973093338281685
+        "margin_pct": -3.219477392312495
       },
       "84": {
-        "total_votes": 16961,
-        "dem_votes": 14884,
-        "rep_votes": 1849,
+        "total_votes": 17418,
+        "dem_votes": 15221,
+        "rep_votes": 1960,
+        "other_votes": 237,
+        "dem_candidate": "M. Michelle Nunn",
+        "rep_candidate": "David A. Perdue",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -76.13388448731197
+      },
+      "85": {
+        "total_votes": 13081,
+        "dem_votes": 10750,
+        "rep_votes": 2103,
         "other_votes": 228,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.85277990684511
-      },
-      "85": {
-        "total_votes": 12715,
-        "dem_votes": 10512,
-        "rep_votes": 1983,
-        "other_votes": 220,
-        "dem_candidate": "M. Michelle Nunn",
-        "rep_candidate": "David A. Perdue",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -67.07825403067244
+        "margin_pct": -66.10350890604694
       },
       "86": {
-        "total_votes": 15263,
-        "dem_votes": 11941,
-        "rep_votes": 3109,
-        "other_votes": 213,
+        "total_votes": 15728,
+        "dem_votes": 12211,
+        "rep_votes": 3296,
+        "other_votes": 221,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.86542619406407
+        "margin_pct": -56.6823499491353
       },
       "87": {
-        "total_votes": 16761,
-        "dem_votes": 12110,
-        "rep_votes": 4400,
-        "other_votes": 250,
+        "total_votes": 17309,
+        "dem_votes": 12384,
+        "rep_votes": 4665,
+        "other_votes": 260,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.99964202613209
+        "margin_pct": -44.59529724420822
       },
       "88": {
-        "total_votes": 14551,
-        "dem_votes": 11579,
-        "rep_votes": 2808,
-        "other_votes": 164,
+        "total_votes": 14941,
+        "dem_votes": 11822,
+        "rep_votes": 2950,
+        "other_votes": 169,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.277644148168505
+        "margin_pct": -59.38022890034135
       },
       "89": {
-        "total_votes": 19476,
-        "dem_votes": 17707,
-        "rep_votes": 1534,
-        "other_votes": 235,
+        "total_votes": 19978,
+        "dem_votes": 18107,
+        "rep_votes": 1627,
+        "other_votes": 244,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.04066543438078
+        "margin_pct": -82.49073981379517
       },
       "90": {
-        "total_votes": 18018,
-        "dem_votes": 16046,
-        "rep_votes": 1752,
-        "other_votes": 220,
+        "total_votes": 18491,
+        "dem_votes": 16407,
+        "rep_votes": 1856,
+        "other_votes": 228,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.33177933177933
+        "margin_pct": -78.69233681250338
       },
       "91": {
-        "total_votes": 19599,
-        "dem_votes": 14360,
-        "rep_votes": 5053,
-        "other_votes": 186,
+        "total_votes": 19859,
+        "dem_votes": 14594,
+        "rep_votes": 5077,
+        "other_votes": 188,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.48711668962702
+        "margin_pct": -47.92285613575709
       },
       "92": {
-        "total_votes": 15461,
-        "dem_votes": 10657,
-        "rep_votes": 4620,
+        "total_votes": 15468,
+        "dem_votes": 10664,
+        "rep_votes": 4621,
         "other_votes": 183,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.046633464847034
+        "margin_pct": -39.06775277993276
       },
       "93": {
-        "total_votes": 15139,
-        "dem_votes": 9999,
-        "rep_votes": 4936,
-        "other_votes": 205,
+        "total_votes": 15240,
+        "dem_votes": 10091,
+        "rep_votes": 4943,
+        "other_votes": 206,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.44342426844574
+        "margin_pct": -33.77952755905512
       },
       "94": {
-        "total_votes": 18223,
-        "dem_votes": 12268,
-        "rep_votes": 5707,
-        "other_votes": 248,
+        "total_votes": 18418,
+        "dem_votes": 12441,
+        "rep_votes": 5728,
+        "other_votes": 249,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.00395105086978
+        "margin_pct": -36.448039960907806
       },
       "95": {
-        "total_votes": 14373,
-        "dem_votes": 10654,
-        "rep_votes": 3506,
-        "other_votes": 213,
+        "total_votes": 14479,
+        "dem_votes": 10747,
+        "rep_votes": 3518,
+        "other_votes": 214,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.73213664509844
+        "margin_pct": -49.92748117963948
       },
       "96": {
-        "total_votes": 7818,
-        "dem_votes": 4113,
-        "rep_votes": 3532,
+        "total_votes": 7819,
+        "dem_votes": 4114,
+        "rep_votes": 3533,
         "other_votes": 172,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.431568176004093
+        "margin_pct": -7.430617726051924
       },
       "97": {
-        "total_votes": 11027,
-        "dem_votes": 5420,
+        "total_votes": 11028,
+        "dem_votes": 5421,
         "rep_votes": 5346,
         "other_votes": 261,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -0.6710800761766573
+        "margin_pct": -0.6800870511425462
       },
       "98": {
         "total_votes": 4985,
-        "dem_votes": 3421,
+        "dem_votes": 3422,
         "rep_votes": 1452,
-        "other_votes": 112,
+        "other_votes": 111,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.498495486459376
+        "margin_pct": -39.518555667001
       },
       "99": {
-        "total_votes": 13445,
-        "dem_votes": 4552,
-        "rep_votes": 8598,
+        "total_votes": 13448,
+        "dem_votes": 4553,
+        "rep_votes": 8599,
         "other_votes": 296,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.092971364819636
+        "margin_pct": 30.08625817965497
       },
       "100": {
-        "total_votes": 12789,
-        "dem_votes": 3045,
-        "rep_votes": 9478,
-        "other_votes": 266,
+        "total_votes": 13058,
+        "dem_votes": 3086,
+        "rep_votes": 9700,
+        "other_votes": 272,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.30103995621237
+        "margin_pct": 50.65094195129423
       },
       "101": {
-        "total_votes": 14050,
-        "dem_votes": 8430,
-        "rep_votes": 5347,
-        "other_votes": 273,
+        "total_votes": 14572,
+        "dem_votes": 8620,
+        "rep_votes": 5669,
+        "other_votes": 283,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.94306049822064
+        "margin_pct": -20.251166620916827
       },
       "102": {
-        "total_votes": 10815,
-        "dem_votes": 5685,
+        "total_votes": 10817,
+        "dem_votes": 5686,
         "rep_votes": 4918,
         "other_votes": 213,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.0920018492834025
+        "margin_pct": -7.099935287048165
       },
       "103": {
-        "total_votes": 13130,
-        "dem_votes": 3877,
-        "rep_votes": 8911,
-        "other_votes": 342,
+        "total_votes": 13434,
+        "dem_votes": 3916,
+        "rep_votes": 9168,
+        "other_votes": 350,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.339680121858336
+        "margin_pct": 39.09483400327527
       },
       "104": {
-        "total_votes": 8634,
-        "dem_votes": 2149,
-        "rep_votes": 6296,
-        "other_votes": 188,
+        "total_votes": 13230,
+        "dem_votes": 3211,
+        "rep_votes": 9695,
+        "other_votes": 324,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.031040074125556
+        "margin_pct": 49.009826152683296
       },
       "105": {
-        "total_votes": 14587,
-        "dem_votes": 5023,
-        "rep_votes": 9220,
+        "total_votes": 14589,
+        "dem_votes": 5024,
+        "rep_votes": 9221,
         "other_votes": 344,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.772194419688763
+        "margin_pct": 28.768250051408593
       },
       "106": {
-        "total_votes": 13133,
-        "dem_votes": 6189,
-        "rep_votes": 6694,
+        "total_votes": 13135,
+        "dem_votes": 6190,
+        "rep_votes": 6695,
         "other_votes": 250,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 3.845275260793421
+        "margin_pct": 3.844689760182718
       },
       "107": {
-        "total_votes": 11735,
-        "dem_votes": 5234,
+        "total_votes": 11736,
+        "dem_votes": 5235,
         "rep_votes": 6190,
         "other_votes": 311,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.146570089475928
+        "margin_pct": 8.137355146557601
       },
       "108": {
-        "total_votes": 17504,
-        "dem_votes": 6120,
-        "rep_votes": 10965,
+        "total_votes": 17507,
+        "dem_votes": 6122,
+        "rep_votes": 10966,
         "other_votes": 419,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.679387568555757
+        "margin_pct": 27.668932427029187
       },
       "109": {
-        "total_votes": 6529,
-        "dem_votes": 4889,
+        "total_votes": 6530,
+        "dem_votes": 4890,
         "rep_votes": 1510,
         "other_votes": 130,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.75371419819268
+        "margin_pct": -51.76110260336907
       },
       "110": {
-        "total_votes": 13822,
-        "dem_votes": 5673,
-        "rep_votes": 7900,
+        "total_votes": 13824,
+        "dem_votes": 5674,
+        "rep_votes": 7901,
         "other_votes": 249,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.111995369700477
+        "margin_pct": 16.10966435185185
       },
       "111": {
-        "total_votes": 15547,
+        "total_votes": 15548,
         "dem_votes": 3766,
         "rep_votes": 11430,
         "other_votes": 352,
@@ -1234,7 +1250,7 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.29568405480157
+        "margin_pct": 49.29251350656033
       },
       "112": {
         "total_votes": 15436,
@@ -1248,235 +1264,235 @@
         "margin_pct": 44.37030318735424
       },
       "113": {
-        "total_votes": 12720,
-        "dem_votes": 8446,
-        "rep_votes": 4080,
+        "total_votes": 12713,
+        "dem_votes": 8440,
+        "rep_votes": 4079,
         "other_votes": 194,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.32389937106918
+        "margin_pct": -34.303468890112484
       },
       "114": {
-        "total_votes": 18378,
-        "dem_votes": 5540,
+        "total_votes": 18375,
+        "dem_votes": 5538,
         "rep_votes": 12483,
         "other_votes": 354,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.7788660354772
+        "margin_pct": 37.795918367346935
       },
       "115": {
-        "total_votes": 20387,
-        "dem_votes": 16316,
-        "rep_votes": 3893,
-        "other_votes": 178,
+        "total_votes": 20900,
+        "dem_votes": 16744,
+        "rep_votes": 3975,
+        "other_votes": 181,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.93589051846765
+        "margin_pct": -61.0956937799043
       },
       "116": {
-        "total_votes": 18861,
-        "dem_votes": 14680,
-        "rep_votes": 3950,
-        "other_votes": 232,
+        "total_votes": 19357,
+        "dem_votes": 15095,
+        "rep_votes": 4026,
+        "other_votes": 236,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.889878585440854
+        "margin_pct": -57.183447848323596
       },
       "117": {
-        "total_votes": 12294,
-        "dem_votes": 7371,
-        "rep_votes": 4713,
-        "other_votes": 211,
+        "total_votes": 12638,
+        "dem_votes": 7628,
+        "rep_votes": 4796,
+        "other_votes": 214,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.620302586627623
+        "margin_pct": -22.40860895711347
       },
       "118": {
-        "total_votes": 15645,
-        "dem_votes": 5438,
-        "rep_votes": 9874,
+        "total_votes": 15670,
+        "dem_votes": 5437,
+        "rep_votes": 9900,
         "other_votes": 333,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.35410674336849
+        "margin_pct": 28.481174218251436
       },
       "119": {
-        "total_votes": 529,
-        "dem_votes": 74,
-        "rep_votes": 442,
-        "other_votes": 12,
+        "total_votes": 11101,
+        "dem_votes": 2503,
+        "rep_votes": 8274,
+        "other_votes": 324,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.56521739130434
+        "margin_pct": 51.98630753986128
       },
       "120": {
-        "total_votes": 12879,
-        "dem_votes": 5393,
-        "rep_votes": 7228,
-        "other_votes": 258,
+        "total_votes": 19445,
+        "dem_votes": 8677,
+        "rep_votes": 10354,
+        "other_votes": 414,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.24800062116624
+        "margin_pct": 8.624325019285163
       },
       "121": {
-        "total_votes": 15834,
-        "dem_votes": 6146,
-        "rep_votes": 9303,
-        "other_votes": 385,
+        "total_votes": 18371,
+        "dem_votes": 8084,
+        "rep_votes": 9837,
+        "other_votes": 450,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.938107869142353
+        "margin_pct": 9.542213270916118
       },
       "122": {
-        "total_votes": 3742,
-        "dem_votes": 2465,
-        "rep_votes": 1193,
-        "other_votes": 84,
+        "total_votes": 5666,
+        "dem_votes": 3986,
+        "rep_votes": 1550,
+        "other_votes": 130,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.99251737039017
+        "margin_pct": -42.9932933286269
       },
       "123": {
-        "total_votes": 14665,
-        "dem_votes": 4787,
-        "rep_votes": 9568,
-        "other_votes": 310,
+        "total_votes": 15959,
+        "dem_votes": 5354,
+        "rep_votes": 10274,
+        "other_votes": 331,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.601431980906916
+        "margin_pct": 30.828999310733757
       },
       "124": {
-        "total_votes": 11372,
-        "dem_votes": 4539,
-        "rep_votes": 6625,
-        "other_votes": 208,
+        "total_votes": 16413,
+        "dem_votes": 6223,
+        "rep_votes": 9904,
+        "other_votes": 286,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.343299331691874
+        "margin_pct": 22.427344178395174
       },
       "125": {
-        "total_votes": 11083,
-        "dem_votes": 2937,
-        "rep_votes": 7937,
-        "other_votes": 210,
+        "total_votes": 12501,
+        "dem_votes": 3432,
+        "rep_votes": 8837,
+        "other_votes": 232,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.114138771090865
+        "margin_pct": 43.23654107671386
       },
       "126": {
-        "total_votes": 13895,
-        "dem_votes": 8422,
+        "total_votes": 13897,
+        "dem_votes": 8424,
         "rep_votes": 5276,
         "other_votes": 197,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.64123785534365
+        "margin_pct": -22.65237101532705
       },
       "127": {
-        "total_votes": 18672,
-        "dem_votes": 5293,
-        "rep_votes": 13059,
-        "other_votes": 320,
+        "total_votes": 20353,
+        "dem_votes": 5836,
+        "rep_votes": 14169,
+        "other_votes": 348,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.5916880891174
+        "margin_pct": 40.942367218591855
       },
       "128": {
-        "total_votes": 16438,
-        "dem_votes": 8382,
-        "rep_votes": 7799,
-        "other_votes": 257,
+        "total_votes": 17201,
+        "dem_votes": 8961,
+        "rep_votes": 7978,
+        "other_votes": 262,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.546660177637182
+        "margin_pct": -5.71478402418464
       },
       "129": {
-        "total_votes": 14072,
-        "dem_votes": 9082,
-        "rep_votes": 4786,
+        "total_votes": 14076,
+        "dem_votes": 9086,
+        "rep_votes": 4787,
         "other_votes": 203,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.528709494030696
+        "margin_pct": -30.541346973572036
       },
       "130": {
-        "total_votes": 13630,
-        "dem_votes": 9037,
-        "rep_votes": 4401,
+        "total_votes": 13635,
+        "dem_votes": 9041,
+        "rep_votes": 4402,
         "other_votes": 192,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.01320616287601
+        "margin_pct": -34.022735606894024
       },
       "131": {
-        "total_votes": 13269,
-        "dem_votes": 3357,
-        "rep_votes": 9668,
-        "other_votes": 243,
+        "total_votes": 15183,
+        "dem_votes": 3968,
+        "rep_votes": 10941,
+        "other_votes": 274,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.56198658527395
+        "margin_pct": 45.92636501350194
       },
       "132": {
-        "total_votes": 12084,
-        "dem_votes": 8176,
+        "total_votes": 12086,
+        "dem_votes": 8178,
         "rep_votes": 3774,
         "other_votes": 134,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.428334988414434
+        "margin_pct": -36.43885487340725
       },
       "133": {
-        "total_votes": 15719,
-        "dem_votes": 5968,
-        "rep_votes": 9408,
-        "other_votes": 343,
+        "total_votes": 16535,
+        "dem_votes": 6540,
+        "rep_votes": 9642,
+        "other_votes": 353,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.88434378777276
+        "margin_pct": 18.76020562443302
       },
       "134": {
         "total_votes": 15736,
@@ -1490,125 +1506,125 @@
         "margin_pct": 29.168784951703103
       },
       "135": {
-        "total_votes": 13053,
-        "dem_votes": 3301,
-        "rep_votes": 9417,
-        "other_votes": 335,
+        "total_votes": 14991,
+        "dem_votes": 3823,
+        "rep_votes": 10785,
+        "other_votes": 383,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.85512908909829
+        "margin_pct": 46.44119805216464
       },
       "136": {
-        "total_votes": 14429,
-        "dem_votes": 5482,
-        "rep_votes": 8603,
-        "other_votes": 345,
+        "total_votes": 15406,
+        "dem_votes": 5810,
+        "rep_votes": 9232,
+        "other_votes": 364,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.630050592556657
+        "margin_pct": 22.212125146046997
       },
       "137": {
-        "total_votes": 13381,
-        "dem_votes": 8164,
-        "rep_votes": 4990,
-        "other_votes": 228,
+        "total_votes": 14859,
+        "dem_votes": 9133,
+        "rep_votes": 5471,
+        "other_votes": 255,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.720200283984756
+        "margin_pct": -24.644996298539606
       },
       "138": {
-        "total_votes": 17458,
-        "dem_votes": 4843,
-        "rep_votes": 12311,
-        "other_votes": 304,
+        "total_votes": 18204,
+        "dem_votes": 5029,
+        "rep_votes": 12858,
+        "other_votes": 317,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.77695039523427
+        "margin_pct": 43.00703142166557
       },
       "139": {
-        "total_votes": 11329,
-        "dem_votes": 3663,
-        "rep_votes": 7452,
-        "other_votes": 214,
+        "total_votes": 12665,
+        "dem_votes": 4113,
+        "rep_votes": 8303,
+        "other_votes": 249,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.445140789125254
+        "margin_pct": 33.08330043426766
       },
       "140": {
-        "total_votes": 5752,
-        "dem_votes": 4269,
-        "rep_votes": 1392,
-        "other_votes": 91,
+        "total_votes": 6781,
+        "dem_votes": 5028,
+        "rep_votes": 1641,
+        "other_votes": 112,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.017385257301804
+        "margin_pct": -49.9483851939242
       },
       "141": {
-        "total_votes": 10725,
-        "dem_votes": 7758,
-        "rep_votes": 2847,
-        "other_votes": 120,
+        "total_votes": 12642,
+        "dem_votes": 9137,
+        "rep_votes": 3357,
+        "other_votes": 148,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.79020979020979
+        "margin_pct": -45.72061382692612
       },
       "142": {
-        "total_votes": 17288,
-        "dem_votes": 8373,
-        "rep_votes": 8685,
+        "total_votes": 17253,
+        "dem_votes": 8372,
+        "rep_votes": 8651,
         "other_votes": 230,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.8047200370198981
+        "margin_pct": 1.6171100678142931
       },
       "143": {
-        "total_votes": 13581,
+        "total_votes": 13571,
         "dem_votes": 8505,
-        "rep_votes": 4895,
-        "other_votes": 182,
+        "rep_votes": 4885,
+        "other_votes": 181,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.581253221412265
+        "margin_pct": -26.674526563996757
       },
       "144": {
-        "total_votes": 13130,
-        "dem_votes": 4326,
-        "rep_votes": 8574,
-        "other_votes": 231,
+        "total_votes": 16047,
+        "dem_votes": 5187,
+        "rep_votes": 10582,
+        "other_votes": 278,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.35338918507235
+        "margin_pct": 33.61999127562784
       },
       "145": {
-        "total_votes": 16982,
+        "total_votes": 16996,
         "dem_votes": 8968,
-        "rep_votes": 7846,
+        "rep_votes": 7859,
         "other_votes": 169,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.606995642444942
+        "margin_pct": -6.52506472111085
       },
       "146": {
         "total_votes": 13838,
@@ -1622,7 +1638,7 @@
         "margin_pct": 33.12617430264489
       },
       "147": {
-        "total_votes": 14480,
+        "total_votes": 14479,
         "dem_votes": 5334,
         "rep_votes": 8897,
         "other_votes": 248,
@@ -1630,7 +1646,7 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.60635359116022
+        "margin_pct": 24.60805304233718
       },
       "148": {
         "total_votes": 16393,
@@ -1644,84 +1660,84 @@
         "margin_pct": 32.29427194534252
       },
       "149": {
-        "total_votes": 13982,
-        "dem_votes": 8654,
-        "rep_votes": 5124,
+        "total_votes": 13951,
+        "dem_votes": 8635,
+        "rep_votes": 5113,
         "other_votes": 203,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.246745816049206
+        "margin_pct": -25.24550211454376
       },
       "150": {
-        "total_votes": 12575,
-        "dem_votes": 7438,
-        "rep_votes": 4994,
-        "other_votes": 142,
+        "total_votes": 14782,
+        "dem_votes": 8355,
+        "rep_votes": 6254,
+        "other_votes": 173,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.43538767395626
+        "margin_pct": -14.213232309565688
       },
       "151": {
-        "total_votes": 15343,
-        "dem_votes": 7930,
-        "rep_votes": 7210,
-        "other_votes": 204,
+        "total_votes": 16761,
+        "dem_votes": 8537,
+        "rep_votes": 7988,
+        "other_votes": 236,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.692693736557388
+        "margin_pct": -3.275460891354931
       },
       "152": {
-        "total_votes": 13741,
-        "dem_votes": 3759,
-        "rep_votes": 9724,
-        "other_votes": 258,
+        "total_votes": 14969,
+        "dem_votes": 4095,
+        "rep_votes": 10601,
+        "other_votes": 273,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.410232151954006
+        "margin_pct": 43.46315719152916
       },
       "153": {
-        "total_votes": 13144,
-        "dem_votes": 8780,
-        "rep_votes": 4222,
-        "other_votes": 142,
+        "total_votes": 15637,
+        "dem_votes": 10049,
+        "rep_votes": 5408,
+        "other_votes": 180,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.67741935483871
+        "margin_pct": -29.679606062543968
       },
       "154": {
-        "total_votes": 16889,
-        "dem_votes": 9274,
-        "rep_votes": 7401,
-        "other_votes": 215,
+        "total_votes": 17519,
+        "dem_votes": 9760,
+        "rep_votes": 7536,
+        "other_votes": 223,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.090058618035407
+        "margin_pct": -12.694788515326216
       },
       "155": {
-        "total_votes": 13433,
-        "dem_votes": 5031,
-        "rep_votes": 8199,
-        "other_votes": 203,
+        "total_votes": 15294,
+        "dem_votes": 5619,
+        "rep_votes": 9452,
+        "other_votes": 223,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.58371175463411
+        "margin_pct": 25.062115862429714
       },
       "156": {
-        "total_votes": 12063,
+        "total_votes": 12064,
         "dem_votes": 3993,
         "rep_votes": 7848,
         "other_votes": 223,
@@ -1729,7 +1745,7 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.95722457100224
+        "margin_pct": 31.954575596816976
       },
       "157": {
         "total_votes": 12052,
@@ -1765,106 +1781,106 @@
         "margin_pct": 33.90452876376989
       },
       "160": {
-        "total_votes": 8959,
-        "dem_votes": 2734,
-        "rep_votes": 6059,
-        "other_votes": 166,
+        "total_votes": 9143,
+        "dem_votes": 2803,
+        "rep_votes": 6170,
+        "other_votes": 170,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.11351713360867
+        "margin_pct": 36.82598709395165
       },
       "161": {
-        "total_votes": 6540,
-        "dem_votes": 2288,
-        "rep_votes": 4103,
-        "other_votes": 149,
+        "total_votes": 7832,
+        "dem_votes": 3024,
+        "rep_votes": 4624,
+        "other_votes": 184,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.75229357798165
+        "margin_pct": 20.42900919305414
       },
       "162": {
-        "total_votes": 5848,
-        "dem_votes": 3817,
-        "rep_votes": 1925,
-        "other_votes": 106,
+        "total_votes": 9962,
+        "dem_votes": 6234,
+        "rep_votes": 3539,
+        "other_votes": 189,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.35294117647059
+        "margin_pct": -27.052800642441277
       },
       "163": {
-        "total_votes": 10426,
-        "dem_votes": 7621,
-        "rep_votes": 2652,
-        "other_votes": 153,
+        "total_votes": 17596,
+        "dem_votes": 12447,
+        "rep_votes": 4875,
+        "other_votes": 274,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.65969691156723
+        "margin_pct": -43.03250738804273
       },
       "164": {
-        "total_votes": 5862,
-        "dem_votes": 1687,
-        "rep_votes": 4042,
-        "other_votes": 132,
+        "total_votes": 8345,
+        "dem_votes": 2310,
+        "rep_votes": 5846,
+        "other_votes": 189,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.17400204708291
+        "margin_pct": 42.37267825044937
       },
       "165": {
-        "total_votes": 9200,
-        "dem_votes": 6817,
-        "rep_votes": 2241,
-        "other_votes": 142,
+        "total_votes": 15507,
+        "dem_votes": 11134,
+        "rep_votes": 4119,
+        "other_votes": 254,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.73913043478261
+        "margin_pct": -45.23763461662475
       },
       "166": {
-        "total_votes": 12622,
-        "dem_votes": 3497,
-        "rep_votes": 8968,
-        "other_votes": 157,
+        "total_votes": 20860,
+        "dem_votes": 5440,
+        "rep_votes": 15170,
+        "other_votes": 250,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.3449532562193
+        "margin_pct": 46.644295302013425
       },
       "167": {
-        "total_votes": 10730,
-        "dem_votes": 3638,
-        "rep_votes": 6856,
-        "other_votes": 235,
+        "total_votes": 10895,
+        "dem_votes": 3672,
+        "rep_votes": 6985,
+        "other_votes": 238,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.990680335507925
+        "margin_pct": 30.408444240477284
       },
       "168": {
-        "total_votes": 8295,
-        "dem_votes": 5066,
-        "rep_votes": 3097,
-        "other_votes": 132,
+        "total_votes": 8958,
+        "dem_votes": 5579,
+        "rep_votes": 3238,
+        "other_votes": 141,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.737191078963228
+        "margin_pct": -26.133065416387584
       },
       "169": {
-        "total_votes": 12623,
+        "total_votes": 12624,
         "dem_votes": 3754,
         "rep_votes": 8613,
         "other_votes": 257,
@@ -1872,18 +1888,18 @@
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.4932266497663
+        "margin_pct": 38.490177439797215
       },
       "170": {
-        "total_votes": 11195,
-        "dem_votes": 3363,
-        "rep_votes": 7610,
-        "other_votes": 222,
+        "total_votes": 12321,
+        "dem_votes": 3533,
+        "rep_votes": 8537,
+        "other_votes": 251,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.93657882983475
+        "margin_pct": 40.61358655953251
       },
       "171": {
         "total_votes": 12942,
@@ -1897,70 +1913,70 @@
         "margin_pct": 16.17987946221604
       },
       "172": {
-        "total_votes": 10491,
-        "dem_votes": 3013,
-        "rep_votes": 7275,
-        "other_votes": 203,
+        "total_votes": 10741,
+        "dem_votes": 3077,
+        "rep_votes": 7458,
+        "other_votes": 206,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.625297874368506
+        "margin_pct": 40.787636160506466
       },
       "173": {
-        "total_votes": 12923,
-        "dem_votes": 5108,
-        "rep_votes": 7628,
-        "other_votes": 187,
+        "total_votes": 13602,
+        "dem_votes": 5335,
+        "rep_votes": 8071,
+        "other_votes": 196,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.50011607211948
+        "margin_pct": 20.11468901632113
       },
       "174": {
-        "total_votes": 10925,
-        "dem_votes": 2740,
-        "rep_votes": 7981,
-        "other_votes": 203,
+        "total_votes": 13877,
+        "dem_votes": 3739,
+        "rep_votes": 9897,
+        "other_votes": 241,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.97254004576659
+        "margin_pct": 44.37558550118902
       },
       "175": {
-        "total_votes": 6584,
-        "dem_votes": 2866,
-        "rep_votes": 3626,
-        "other_votes": 92,
+        "total_votes": 13684,
+        "dem_votes": 5802,
+        "rep_votes": 7701,
+        "other_votes": 181,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.543134872417983
+        "margin_pct": 13.877521192633733
       },
       "176": {
-        "total_votes": 10332,
-        "dem_votes": 3142,
-        "rep_votes": 6984,
-        "other_votes": 207,
+        "total_votes": 11337,
+        "dem_votes": 3653,
+        "rep_votes": 7459,
+        "other_votes": 225,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.18544328300426
+        "margin_pct": 33.57149157625474
       },
       "177": {
-        "total_votes": 2332,
-        "dem_votes": 858,
-        "rep_votes": 1442,
-        "other_votes": 32,
+        "total_votes": 6209,
+        "dem_votes": 2764,
+        "rep_votes": 3366,
+        "other_votes": 79,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.04288164665523
+        "margin_pct": 9.695603156708005
       },
       "178": {
         "total_votes": 12690,
@@ -1974,26 +1990,26 @@
         "margin_pct": 57.43892828999212
       },
       "179": {
-        "total_votes": 14143,
-        "dem_votes": 4961,
-        "rep_votes": 9019,
-        "other_votes": 163,
+        "total_votes": 14780,
+        "dem_votes": 5144,
+        "rep_votes": 9465,
+        "other_votes": 171,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.6926394682882
+        "margin_pct": 29.235453315290933
       },
       "180": {
-        "total_votes": 11669,
-        "dem_votes": 3578,
-        "rep_votes": 7904,
-        "other_votes": 187,
+        "total_votes": 11752,
+        "dem_votes": 3597,
+        "rep_votes": 7967,
+        "other_votes": 188,
         "dem_candidate": "M. Michelle Nunn",
         "rep_candidate": "David A. Perdue",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.07258548290342
+        "margin_pct": 37.18515997277059
       }
     }
   }

@@ -4,38 +4,54 @@
     "contest_type": "lieutenant_governor",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:20.866809+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:44.399507+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2351527,
     "matched_input_votes": 2351527,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Lieutenant_Governor.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1000615,
+        "rep_votes": 1350912,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1062557,
+        "rep_votes": 1466505,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10520,
-        "dem_votes": 2613,
-        "rep_votes": 7907,
+        "total_votes": 12772,
+        "dem_votes": 3108,
+        "rep_votes": 9664,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.32319391634981
+        "margin_pct": 51.33103664265582
       },
       "2": {
-        "total_votes": 9554,
-        "dem_votes": 1993,
-        "rep_votes": 7561,
+        "total_votes": 10224,
+        "dem_votes": 2103,
+        "rep_votes": 8121,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.27925476240318
+        "margin_pct": 58.86150234741784
       },
       "3": {
         "total_votes": 11802,
@@ -60,26 +76,26 @@
         "margin_pct": 43.12977099236641
       },
       "5": {
-        "total_votes": 10560,
-        "dem_votes": 1818,
-        "rep_votes": 8742,
+        "total_votes": 10548,
+        "dem_votes": 1815,
+        "rep_votes": 8733,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.56818181818181
+        "margin_pct": 65.58589306029579
       },
       "6": {
-        "total_votes": 9838,
+        "total_votes": 9837,
         "dem_votes": 2059,
-        "rep_votes": 7779,
+        "rep_votes": 7778,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.141898759910546
+        "margin_pct": 58.13764359052557
       },
       "7": {
         "total_votes": 15753,
@@ -93,37 +109,37 @@
         "margin_pct": 64.54008760236145
       },
       "8": {
-        "total_votes": 18108,
+        "total_votes": 18109,
         "dem_votes": 3313,
-        "rep_votes": 14795,
+        "rep_votes": 14796,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.40843825933289
+        "margin_pct": 63.41045888784582
       },
       "9": {
-        "total_votes": 8342,
-        "dem_votes": 1075,
-        "rep_votes": 7267,
+        "total_votes": 14427,
+        "dem_votes": 2130,
+        "rep_votes": 12297,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 74.22680412371135
+        "margin_pct": 70.47203160740278
       },
       "10": {
-        "total_votes": 12799,
+        "total_votes": 12798,
         "dem_votes": 2132,
-        "rep_votes": 10667,
+        "rep_votes": 10666,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.68489725759825
+        "margin_pct": 66.68229410845444
       },
       "11": {
         "total_votes": 14942,
@@ -137,48 +153,48 @@
         "margin_pct": 74.62187123544372
       },
       "12": {
-        "total_votes": 11703,
-        "dem_votes": 2792,
-        "rep_votes": 8912,
+        "total_votes": 11842,
+        "dem_votes": 2845,
+        "rep_votes": 8997,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.294283517046914
+        "margin_pct": 51.95068400608005
       },
       "13": {
         "total_votes": 12450,
         "dem_votes": 3647,
-        "rep_votes": 8802,
+        "rep_votes": 8803,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.40562248995984
+        "margin_pct": 41.41365461847389
       },
       "14": {
-        "total_votes": 13262,
-        "dem_votes": 2305,
-        "rep_votes": 10957,
+        "total_votes": 13274,
+        "dem_votes": 2308,
+        "rep_votes": 10966,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.23902880410195
+        "margin_pct": 65.22525237306012
       },
       "15": {
-        "total_votes": 11945,
-        "dem_votes": 2690,
-        "rep_votes": 9255,
+        "total_votes": 11957,
+        "dem_votes": 2693,
+        "rep_votes": 9264,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.96023440770197
+        "margin_pct": 54.95525633520114
       },
       "16": {
         "total_votes": 7941,
@@ -192,84 +208,84 @@
         "margin_pct": 53.05377156529404
       },
       "17": {
-        "total_votes": 5672,
-        "dem_votes": 1369,
-        "rep_votes": 4304,
+        "total_votes": 10605,
+        "dem_votes": 2458,
+        "rep_votes": 8147,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.74541607898448
+        "margin_pct": 53.644507307873646
       },
       "18": {
-        "total_votes": 10916,
-        "dem_votes": 1792,
-        "rep_votes": 9124,
+        "total_votes": 16240,
+        "dem_votes": 2670,
+        "rep_votes": 13570,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.16746060828143
+        "margin_pct": 67.11822660098522
       },
       "19": {
-        "total_votes": 5238,
-        "dem_votes": 1516,
-        "rep_votes": 3722,
+        "total_votes": 9768,
+        "dem_votes": 2722,
+        "rep_votes": 7046,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.11531118747614
+        "margin_pct": 44.26699426699427
       },
       "20": {
-        "total_votes": 16795,
-        "dem_votes": 3148,
-        "rep_votes": 13647,
+        "total_votes": 16802,
+        "dem_votes": 3150,
+        "rep_votes": 13652,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.51265257517118
+        "margin_pct": 62.50446375431496
       },
       "21": {
-        "total_votes": 16336,
-        "dem_votes": 2405,
-        "rep_votes": 13931,
+        "total_votes": 16343,
+        "dem_votes": 2407,
+        "rep_votes": 13936,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.55582761998042
+        "margin_pct": 70.54396377654042
       },
       "22": {
-        "total_votes": 15456,
-        "dem_votes": 4315,
-        "rep_votes": 11142,
+        "total_votes": 15527,
+        "dem_votes": 4330,
+        "rep_votes": 11197,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.17054865424431
+        "margin_pct": 44.22618664262253
       },
       "23": {
-        "total_votes": 12445,
-        "dem_votes": 1885,
-        "rep_votes": 10560,
+        "total_votes": 12450,
+        "dem_votes": 1887,
+        "rep_votes": 10563,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.70670952189634
+        "margin_pct": 69.6867469879518
       },
       "24": {
-        "total_votes": 12624,
+        "total_votes": 12625,
         "dem_votes": 2261,
         "rep_votes": 10364,
         "other_votes": 0,
@@ -277,7 +293,7 @@
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.18726235741445
+        "margin_pct": 64.18217821782179
       },
       "25": {
         "total_votes": 14395,
@@ -302,224 +318,224 @@
         "margin_pct": 70.5858254813601
       },
       "27": {
-        "total_votes": 11636,
-        "dem_votes": 1286,
-        "rep_votes": 10350,
+        "total_votes": 13683,
+        "dem_votes": 1492,
+        "rep_votes": 12191,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 77.89618425575799
+        "margin_pct": 78.19191697727106
       },
       "28": {
-        "total_votes": 11688,
-        "dem_votes": 1507,
-        "rep_votes": 10181,
+        "total_votes": 11885,
+        "dem_votes": 1531,
+        "rep_votes": 10354,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 74.21286789869951
+        "margin_pct": 74.23643247791334
       },
       "29": {
-        "total_votes": 7232,
-        "dem_votes": 2084,
-        "rep_votes": 5148,
+        "total_votes": 8143,
+        "dem_votes": 2281,
+        "rep_votes": 5862,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.36725663716815
+        "margin_pct": 43.97642146629007
       },
       "30": {
-        "total_votes": 14639,
-        "dem_votes": 2245,
-        "rep_votes": 12394,
+        "total_votes": 16317,
+        "dem_votes": 2425,
+        "rep_votes": 13892,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.3285060454949
+        "margin_pct": 70.27639884782741
       },
       "31": {
-        "total_votes": 6772,
-        "dem_votes": 996,
-        "rep_votes": 5776,
+        "total_votes": 10203,
+        "dem_votes": 1526,
+        "rep_votes": 8677,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.58476077968105
+        "margin_pct": 70.08722924630011
       },
       "32": {
-        "total_votes": 7450,
-        "dem_votes": 867,
-        "rep_votes": 6583,
+        "total_votes": 13174,
+        "dem_votes": 1969,
+        "rep_votes": 11205,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 76.7248322147651
+        "margin_pct": 70.1077880674055
       },
       "33": {
-        "total_votes": 14088,
-        "dem_votes": 2891,
-        "rep_votes": 11197,
+        "total_votes": 14092,
+        "dem_votes": 2892,
+        "rep_votes": 11200,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.95797842135151
+        "margin_pct": 58.95543570820324
       },
       "34": {
-        "total_votes": 18269,
-        "dem_votes": 4395,
-        "rep_votes": 13874,
+        "total_votes": 18424,
+        "dem_votes": 4417,
+        "rep_votes": 14007,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.88570802999617
+        "margin_pct": 52.0516717325228
       },
       "35": {
-        "total_votes": 13597,
-        "dem_votes": 5081,
-        "rep_votes": 8516,
+        "total_votes": 13704,
+        "dem_votes": 5106,
+        "rep_votes": 8598,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.262925645362948
+        "margin_pct": 25.481611208406306
       },
       "36": {
-        "total_votes": 20802,
-        "dem_votes": 5039,
-        "rep_votes": 15763,
+        "total_votes": 20979,
+        "dem_votes": 5065,
+        "rep_votes": 15914,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.55273531391212
+        "margin_pct": 51.71361838028504
       },
       "37": {
-        "total_votes": 13816,
-        "dem_votes": 5566,
-        "rep_votes": 8251,
+        "total_votes": 13923,
+        "dem_votes": 5593,
+        "rep_votes": 8330,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.43398957730168
+        "margin_pct": 19.65811965811966
       },
       "38": {
-        "total_votes": 15276,
-        "dem_votes": 9115,
-        "rep_votes": 6162,
+        "total_votes": 15382,
+        "dem_votes": 9161,
+        "rep_votes": 6221,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.330976695470017
+        "margin_pct": -19.113249252372906
       },
       "39": {
-        "total_votes": 12544,
-        "dem_votes": 8656,
-        "rep_votes": 3888,
+        "total_votes": 12624,
+        "dem_votes": 8699,
+        "rep_votes": 3925,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.01020408163265
+        "margin_pct": -37.81685678073511
       },
       "40": {
-        "total_votes": 17620,
-        "dem_votes": 8021,
-        "rep_votes": 9599,
+        "total_votes": 17752,
+        "dem_votes": 8061,
+        "rep_votes": 9691,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.95573212258797
+        "margin_pct": 9.182063992789544
       },
       "41": {
-        "total_votes": 11548,
-        "dem_votes": 6616,
-        "rep_votes": 4932,
+        "total_votes": 11628,
+        "dem_votes": 6649,
+        "rep_votes": 4979,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.582611707655005
+        "margin_pct": -14.361885104919162
       },
       "42": {
-        "total_votes": 10766,
-        "dem_votes": 6045,
-        "rep_votes": 4721,
+        "total_votes": 10841,
+        "dem_votes": 6075,
+        "rep_votes": 4766,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.29797510681776
+        "margin_pct": -12.074531869753713
       },
       "43": {
-        "total_votes": 11208,
-        "dem_votes": 4694,
-        "rep_votes": 6514,
+        "total_votes": 11294,
+        "dem_votes": 4717,
+        "rep_votes": 6577,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.238401142041397
+        "margin_pct": 16.468921551266156
       },
       "44": {
-        "total_votes": 16360,
-        "dem_votes": 4622,
-        "rep_votes": 11739,
+        "total_votes": 16462,
+        "dem_votes": 4640,
+        "rep_votes": 11822,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.502444987775064
+        "margin_pct": 43.62774875470781
       },
       "45": {
-        "total_votes": 26712,
-        "dem_votes": 6567,
-        "rep_votes": 20145,
+        "total_votes": 26938,
+        "dem_votes": 6600,
+        "rep_votes": 20338,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.83108715184187
+        "margin_pct": 50.99858935332987
       },
       "46": {
-        "total_votes": 19343,
-        "dem_votes": 4930,
-        "rep_votes": 14412,
+        "total_votes": 19475,
+        "dem_votes": 4951,
+        "rep_votes": 14524,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.02031742749315
+        "margin_pct": 49.155327342747114
       },
       "47": {
         "total_votes": 14500,
@@ -533,26 +549,26 @@
         "margin_pct": 50.4551724137931
       },
       "48": {
-        "total_votes": 19821,
-        "dem_votes": 6036,
+        "total_votes": 19822,
+        "dem_votes": 6037,
         "rep_votes": 13785,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.094899349175115
+        "margin_pct": 39.087882151145195
       },
       "49": {
         "total_votes": 16043,
-        "dem_votes": 4121,
+        "dem_votes": 4122,
         "rep_votes": 11921,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.61933553574767
+        "margin_pct": 48.61310228760207
       },
       "50": {
         "total_votes": 12854,
@@ -567,157 +583,157 @@
       },
       "51": {
         "total_votes": 15100,
-        "dem_votes": 5877,
-        "rep_votes": 9223,
+        "dem_votes": 5878,
+        "rep_votes": 9222,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.158940397350992
+        "margin_pct": 22.14569536423841
       },
       "52": {
-        "total_votes": 13973,
-        "dem_votes": 5464,
-        "rep_votes": 8509,
+        "total_votes": 14294,
+        "dem_votes": 5526,
+        "rep_votes": 8768,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.7920274815716
+        "margin_pct": 22.680845109836294
       },
       "53": {
         "total_votes": 19355,
-        "dem_votes": 5951,
-        "rep_votes": 13404,
+        "dem_votes": 5952,
+        "rep_votes": 13403,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.506845776285196
+        "margin_pct": 38.49651252906226
       },
       "54": {
-        "total_votes": 13207,
-        "dem_votes": 4931,
+        "total_votes": 13208,
+        "dem_votes": 4932,
         "rep_votes": 8276,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.327477852653896
+        "margin_pct": 25.31798909751666
       },
       "55": {
-        "total_votes": 14789,
-        "dem_votes": 10401,
+        "total_votes": 14790,
+        "dem_votes": 10402,
         "rep_votes": 4388,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.658597606329025
+        "margin_pct": -40.66260987153482
       },
       "56": {
-        "total_votes": 9963,
-        "dem_votes": 8635,
+        "total_votes": 9964,
+        "dem_votes": 8636,
         "rep_votes": 1328,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.34136304326006
+        "margin_pct": -73.34403853873947
       },
       "57": {
-        "total_votes": 14347,
-        "dem_votes": 9037,
+        "total_votes": 14348,
+        "dem_votes": 9038,
         "rep_votes": 5310,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.977556283543596
+        "margin_pct": -25.982715361025928
       },
       "58": {
-        "total_votes": 15891,
-        "dem_votes": 13935,
+        "total_votes": 15892,
+        "dem_votes": 13936,
         "rep_votes": 1956,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.38229186331887
+        "margin_pct": -75.3838409262522
       },
       "59": {
-        "total_votes": 12786,
-        "dem_votes": 11647,
+        "total_votes": 12787,
+        "dem_votes": 11648,
         "rep_votes": 1139,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.18363835445018
+        "margin_pct": -82.18503167279269
       },
       "60": {
-        "total_votes": 18115,
-        "dem_votes": 12813,
+        "total_votes": 18116,
+        "dem_votes": 12815,
         "rep_votes": 5301,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.46839635661054
+        "margin_pct": -41.47714727312873
       },
       "61": {
         "total_votes": 15478,
-        "dem_votes": 12137,
+        "dem_votes": 12138,
         "rep_votes": 3340,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.83550846362579
+        "margin_pct": -56.8419692466727
       },
       "62": {
         "total_votes": 13341,
-        "dem_votes": 11920,
+        "dem_votes": 11921,
         "rep_votes": 1420,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.70474477175624
+        "margin_pct": -78.71224046173451
       },
       "63": {
-        "total_votes": 13676,
-        "dem_votes": 11740,
+        "total_votes": 13678,
+        "dem_votes": 11741,
         "rep_votes": 1937,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.6803158818368
+        "margin_pct": -71.67714578154701
       },
       "64": {
-        "total_votes": 16266,
-        "dem_votes": 4999,
-        "rep_votes": 11267,
+        "total_votes": 21519,
+        "dem_votes": 6582,
+        "rep_votes": 14937,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.53436616254765
+        "margin_pct": 38.82615363167433
       },
       "65": {
         "total_votes": 17228,
@@ -754,476 +770,476 @@
       },
       "68": {
         "total_votes": 16016,
-        "dem_votes": 8415,
+        "dem_votes": 8416,
         "rep_votes": 7600,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.088661338661338
+        "margin_pct": -5.094905094905095
       },
       "69": {
-        "total_votes": 19366,
-        "dem_votes": 12541,
+        "total_votes": 19367,
+        "dem_votes": 12542,
         "rep_votes": 6825,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.515645977486315
+        "margin_pct": -29.519285382351423
       },
       "70": {
-        "total_votes": 11607,
-        "dem_votes": 3953,
+        "total_votes": 11603,
+        "dem_votes": 3949,
         "rep_votes": 7654,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.88593090376497
+        "margin_pct": 31.931397052486428
       },
       "71": {
-        "total_votes": 6249,
-        "dem_votes": 1838,
-        "rep_votes": 4411,
+        "total_votes": 17692,
+        "dem_votes": 5144,
+        "rep_votes": 12548,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.17458793406945
+        "margin_pct": 41.84942346823423
       },
       "72": {
-        "total_votes": 5995,
-        "dem_votes": 1444,
-        "rep_votes": 4551,
+        "total_votes": 8125,
+        "dem_votes": 1960,
+        "rep_votes": 6165,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.82652210175146
+        "margin_pct": 51.75384615384615
       },
       "73": {
-        "total_votes": 18282,
-        "dem_votes": 4017,
+        "total_votes": 18280,
+        "dem_votes": 4016,
         "rep_votes": 14264,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.049666338475
+        "margin_pct": 56.06126914660832
       },
       "74": {
-        "total_votes": 17672,
-        "dem_votes": 4859,
-        "rep_votes": 12814,
+        "total_votes": 19553,
+        "dem_votes": 5284,
+        "rep_votes": 14269,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.014712539610684
+        "margin_pct": 45.95202782181762
       },
       "75": {
-        "total_votes": 12271,
-        "dem_votes": 10061,
-        "rep_votes": 2211,
+        "total_votes": 12259,
+        "dem_votes": 10054,
+        "rep_votes": 2205,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.971966424904245
+        "margin_pct": -64.02642956195447
       },
       "76": {
-        "total_votes": 12427,
-        "dem_votes": 10164,
-        "rep_votes": 2263,
+        "total_votes": 12416,
+        "dem_votes": 10158,
+        "rep_votes": 2258,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.57930313028084
+        "margin_pct": -63.62757731958762
       },
       "77": {
-        "total_votes": 11692,
-        "dem_votes": 10125,
-        "rep_votes": 1567,
+        "total_votes": 11681,
+        "dem_votes": 10118,
+        "rep_votes": 1563,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.19534724598016
+        "margin_pct": -73.23859258625117
       },
       "78": {
-        "total_votes": 16312,
-        "dem_votes": 11957,
-        "rep_votes": 4355,
+        "total_votes": 16338,
+        "dem_votes": 11988,
+        "rep_votes": 4350,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.60372731731241
+        "margin_pct": -46.74990818949688
       },
       "79": {
-        "total_votes": 10441,
-        "dem_votes": 8887,
-        "rep_votes": 1554,
+        "total_votes": 10431,
+        "dem_votes": 8881,
+        "rep_votes": 1550,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.23273632793794
+        "margin_pct": -70.28089349055699
       },
       "80": {
-        "total_votes": 13465,
-        "dem_votes": 5001,
-        "rep_votes": 8464,
+        "total_votes": 14057,
+        "dem_votes": 5108,
+        "rep_votes": 8949,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.718529520980322
+        "margin_pct": 27.3244646795191
       },
       "81": {
-        "total_votes": 15087,
-        "dem_votes": 7612,
-        "rep_votes": 7475,
-        "other_votes": 0,
-        "dem_candidate": "Connie J. Stokes",
-        "rep_candidate": "L. S. \"Casey\" Cagle",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -0.9080665473586531
-      },
-      "82": {
-        "total_votes": 16844,
-        "dem_votes": 10839,
-        "rep_votes": 6004,
-        "other_votes": 0,
-        "dem_candidate": "Connie J. Stokes",
-        "rep_candidate": "L. S. \"Casey\" Cagle",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -28.70458323438613
-      },
-      "83": {
-        "total_votes": 10534,
-        "dem_votes": 4796,
-        "rep_votes": 5738,
+        "total_votes": 15679,
+        "dem_votes": 7775,
+        "rep_votes": 7904,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.942471995443327
+        "margin_pct": 0.8227565533516168
+      },
+      "82": {
+        "total_votes": 17420,
+        "dem_votes": 11071,
+        "rep_votes": 6349,
+        "other_votes": 0,
+        "dem_candidate": "Connie J. Stokes",
+        "rep_candidate": "L. S. \"Casey\" Cagle",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -27.10677382319173
+      },
+      "83": {
+        "total_votes": 10965,
+        "dem_votes": 4898,
+        "rep_votes": 6067,
+        "other_votes": 0,
+        "dem_candidate": "Connie J. Stokes",
+        "rep_candidate": "L. S. \"Casey\" Cagle",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 10.661194710442317
       },
       "84": {
-        "total_votes": 22099,
-        "dem_votes": 19836,
-        "rep_votes": 2263,
+        "total_votes": 22654,
+        "dem_votes": 20261,
+        "rep_votes": 2393,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.51943526856418
+        "margin_pct": -78.87348812571732
       },
       "85": {
-        "total_votes": 11612,
-        "dem_votes": 10214,
-        "rep_votes": 1397,
+        "total_votes": 11910,
+        "dem_votes": 10433,
+        "rep_votes": 1477,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.9300723389597
+        "margin_pct": -75.19731318219984
       },
       "86": {
-        "total_votes": 12053,
-        "dem_votes": 10265,
-        "rep_votes": 1788,
+        "total_votes": 12375,
+        "dem_votes": 10485,
+        "rep_votes": 1890,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.33103791587156
+        "margin_pct": -69.45454545454545
       },
       "87": {
-        "total_votes": 15017,
-        "dem_votes": 12569,
-        "rep_votes": 2447,
+        "total_votes": 15426,
+        "dem_votes": 12839,
+        "rep_votes": 2587,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -67.4036092428581
+        "margin_pct": -66.45922468559576
       },
       "88": {
-        "total_votes": 14343,
-        "dem_votes": 11056,
-        "rep_votes": 3287,
+        "total_votes": 14722,
+        "dem_votes": 11275,
+        "rep_votes": 3447,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.16579516140278
+        "margin_pct": -53.17212335280532
       },
       "89": {
-        "total_votes": 17714,
-        "dem_votes": 15380,
-        "rep_votes": 2334,
+        "total_votes": 18178,
+        "dem_votes": 15710,
+        "rep_votes": 2468,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.64796206390426
+        "margin_pct": -72.84629772252173
       },
       "90": {
-        "total_votes": 20521,
-        "dem_votes": 18435,
-        "rep_votes": 2086,
+        "total_votes": 21036,
+        "dem_votes": 18830,
+        "rep_votes": 2206,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.66960674431071
+        "margin_pct": -79.02643088039551
       },
       "91": {
-        "total_votes": 19977,
-        "dem_votes": 14669,
-        "rep_votes": 5308,
+        "total_votes": 20455,
+        "dem_votes": 15056,
+        "rep_votes": 5399,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.85888772087901
+        "margin_pct": -47.21095086775849
       },
       "92": {
-        "total_votes": 17889,
-        "dem_votes": 10884,
-        "rep_votes": 7005,
+        "total_votes": 17981,
+        "dem_votes": 10957,
+        "rep_votes": 7024,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.683716250209624
+        "margin_pct": -21.87308825982982
       },
       "93": {
-        "total_votes": 13733,
-        "dem_votes": 9073,
-        "rep_votes": 4660,
+        "total_votes": 13787,
+        "dem_votes": 9119,
+        "rep_votes": 4668,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.13427510376465
+        "margin_pct": -32.28403568579096
       },
       "94": {
-        "total_votes": 17480,
-        "dem_votes": 12847,
-        "rep_votes": 4634,
+        "total_votes": 17704,
+        "dem_votes": 13038,
+        "rep_votes": 4666,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.985125858123574
+        "margin_pct": -47.28874830546769
       },
       "95": {
-        "total_votes": 16196,
-        "dem_votes": 11274,
-        "rep_votes": 4922,
+        "total_votes": 16296,
+        "dem_votes": 11358,
+        "rep_votes": 4938,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.21956038528032
+        "margin_pct": -39.39617083946981
       },
       "96": {
-        "total_votes": 7717,
-        "dem_votes": 3835,
+        "total_votes": 7718,
+        "dem_votes": 3836,
         "rep_votes": 3882,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.6090449656602307
+        "margin_pct": 0.5960093288416689
       },
       "97": {
-        "total_votes": 10916,
-        "dem_votes": 4974,
+        "total_votes": 10917,
+        "dem_votes": 4975,
         "rep_votes": 5942,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.86771711249542
+        "margin_pct": 8.857744801685445
       },
       "98": {
-        "total_votes": 4878,
-        "dem_votes": 3209,
+        "total_votes": 4879,
+        "dem_votes": 3210,
         "rep_votes": 1669,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.570315703157032
+        "margin_pct": -31.58434105349457
       },
       "99": {
-        "total_votes": 13296,
-        "dem_votes": 4040,
-        "rep_votes": 9256,
+        "total_votes": 13298,
+        "dem_votes": 4041,
+        "rep_votes": 9257,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.229843561973524
+        "margin_pct": 39.223943450142876
       },
       "100": {
-        "total_votes": 12655,
-        "dem_votes": 2592,
-        "rep_votes": 10063,
+        "total_votes": 12923,
+        "dem_votes": 2622,
+        "rep_votes": 10301,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.03595416831292
+        "margin_pct": 59.42118703087519
       },
       "101": {
-        "total_votes": 13976,
-        "dem_votes": 5161,
-        "rep_votes": 8815,
+        "total_votes": 13978,
+        "dem_votes": 5162,
+        "rep_votes": 8816,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.144819690898686
+        "margin_pct": 26.141078838174277
       },
       "102": {
-        "total_votes": 11391,
-        "dem_votes": 5531,
+        "total_votes": 11393,
+        "dem_votes": 5532,
         "rep_votes": 5861,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.8970239662891757
+        "margin_pct": 2.8877380847889054
       },
       "103": {
-        "total_votes": 12987,
-        "dem_votes": 3423,
-        "rep_votes": 9564,
+        "total_votes": 13285,
+        "dem_votes": 3453,
+        "rep_votes": 9832,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.285747285747284
+        "margin_pct": 48.01656003010915
       },
       "104": {
-        "total_votes": 8552,
-        "dem_votes": 1874,
-        "rep_votes": 6678,
+        "total_votes": 13102,
+        "dem_votes": 2790,
+        "rep_votes": 10312,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.17399438727782
+        "margin_pct": 57.41108227751488
       },
       "105": {
-        "total_votes": 12589,
-        "dem_votes": 4428,
+        "total_votes": 12591,
+        "dem_votes": 4429,
         "rep_votes": 8162,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.6608149972198
+        "margin_pct": 29.64816138511635
       },
       "106": {
-        "total_votes": 16975,
-        "dem_votes": 6270,
-        "rep_votes": 10704,
+        "total_votes": 16977,
+        "dem_votes": 6272,
+        "rep_votes": 10705,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.12076583210604
+        "margin_pct": 26.11179831536785
       },
       "107": {
-        "total_votes": 8796,
-        "dem_votes": 4877,
+        "total_votes": 8797,
+        "dem_votes": 4878,
         "rep_votes": 3919,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.89131423374261
+        "margin_pct": -10.901443673979767
       },
       "108": {
-        "total_votes": 16399,
-        "dem_votes": 5493,
-        "rep_votes": 10906,
+        "total_votes": 16401,
+        "dem_votes": 5494,
+        "rep_votes": 10907,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.00811025062504
+        "margin_pct": 33.004085116761175
       },
       "109": {
-        "total_votes": 7305,
-        "dem_votes": 4955,
+        "total_votes": 7307,
+        "dem_votes": 4956,
         "rep_votes": 2351,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.64681724845996
+        "margin_pct": -35.65074586013412
       },
       "110": {
-        "total_votes": 14355,
-        "dem_votes": 5838,
-        "rep_votes": 8517,
+        "total_votes": 14357,
+        "dem_votes": 5839,
+        "rep_votes": 8518,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.66248693834901
+        "margin_pct": 18.65988716305635
       },
       "111": {
         "total_votes": 15534,
@@ -1248,246 +1264,246 @@
         "margin_pct": 59.063705279957446
       },
       "113": {
-        "total_votes": 13215,
-        "dem_votes": 7996,
-        "rep_votes": 5219,
+        "total_votes": 13208,
+        "dem_votes": 7990,
+        "rep_votes": 5218,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.013999243284147
+        "margin_pct": -20.987280436099333
       },
       "114": {
-        "total_votes": 16864,
-        "dem_votes": 4510,
-        "rep_votes": 12354,
+        "total_votes": 16861,
+        "dem_votes": 4508,
+        "rep_votes": 12353,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.51328273244782
+        "margin_pct": 46.52748947274776
       },
       "115": {
-        "total_votes": 16126,
-        "dem_votes": 7342,
-        "rep_votes": 8783,
+        "total_votes": 16544,
+        "dem_votes": 7602,
+        "rep_votes": 8942,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.935879945429742
+        "margin_pct": 8.099613152804643
       },
       "116": {
-        "total_votes": 12766,
-        "dem_votes": 6660,
-        "rep_votes": 6106,
+        "total_votes": 13094,
+        "dem_votes": 6880,
+        "rep_votes": 6214,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.339652201159329
+        "margin_pct": -5.086299068275546
       },
       "117": {
-        "total_votes": 13953,
-        "dem_votes": 4497,
-        "rep_votes": 9456,
+        "total_votes": 14283,
+        "dem_votes": 4656,
+        "rep_votes": 9627,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.54074392603741
+        "margin_pct": 34.80361268641042
       },
       "118": {
-        "total_votes": 12071,
-        "dem_votes": 3186,
-        "rep_votes": 8885,
+        "total_votes": 15019,
+        "dem_votes": 3941,
+        "rep_votes": 11078,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.21232706486621
+        "margin_pct": 47.51980824289234
       },
       "119": {
-        "total_votes": 527,
-        "dem_votes": 58,
-        "rep_votes": 470,
+        "total_votes": 10999,
+        "dem_votes": 2150,
+        "rep_votes": 8849,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 78.17836812144212
+        "margin_pct": 60.90553686698791
       },
       "120": {
-        "total_votes": 12634,
-        "dem_votes": 4674,
-        "rep_votes": 7960,
+        "total_votes": 19062,
+        "dem_votes": 7654,
+        "rep_votes": 11408,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.00918157353174
+        "margin_pct": 19.693631308362185
       },
       "121": {
-        "total_votes": 15533,
-        "dem_votes": 5269,
-        "rep_votes": 10265,
+        "total_votes": 17999,
+        "dem_votes": 7093,
+        "rep_votes": 10906,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.16378033863387
+        "margin_pct": 21.184510250569478
       },
       "122": {
-        "total_votes": 3657,
-        "dem_votes": 2252,
-        "rep_votes": 1404,
+        "total_votes": 5527,
+        "dem_votes": 3693,
+        "rep_votes": 1834,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.18840579710145
+        "margin_pct": -33.63488330016284
       },
       "123": {
-        "total_votes": 14461,
-        "dem_votes": 4330,
-        "rep_votes": 10131,
+        "total_votes": 15726,
+        "dem_votes": 4871,
+        "rep_votes": 10855,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.11479150819445
+        "margin_pct": 38.05163423629658
       },
       "124": {
-        "total_votes": 11214,
-        "dem_votes": 4039,
-        "rep_votes": 7175,
+        "total_votes": 16202,
+        "dem_votes": 5503,
+        "rep_votes": 10699,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.965043695380775
+        "margin_pct": 32.070114800641896
       },
       "125": {
-        "total_votes": 11015,
-        "dem_votes": 2680,
-        "rep_votes": 8335,
+        "total_votes": 12422,
+        "dem_votes": 3143,
+        "rep_votes": 9279,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.3390830685429
+        "margin_pct": 49.39623249074223
       },
       "126": {
-        "total_votes": 13682,
-        "dem_votes": 8031,
+        "total_votes": 13683,
+        "dem_votes": 8032,
         "rep_votes": 5651,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.395117672854845
+        "margin_pct": -17.401154717532705
       },
       "127": {
-        "total_votes": 18454,
-        "dem_votes": 4616,
-        "rep_votes": 13838,
+        "total_votes": 20110,
+        "dem_votes": 5097,
+        "rep_votes": 15013,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.972905603121276
+        "margin_pct": 49.308801591248134
       },
       "128": {
-        "total_votes": 16030,
-        "dem_votes": 7719,
-        "rep_votes": 8311,
+        "total_votes": 16760,
+        "dem_votes": 8257,
+        "rep_votes": 8503,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 3.6930754834684962
+        "margin_pct": 1.467780429594272
       },
       "129": {
-        "total_votes": 13722,
-        "dem_votes": 8576,
-        "rep_votes": 5146,
+        "total_votes": 13726,
+        "dem_votes": 8579,
+        "rep_votes": 5147,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.996356216295002
+        "margin_pct": -25.00364272184176
       },
       "130": {
-        "total_votes": 13405,
-        "dem_votes": 8575,
+        "total_votes": 13409,
+        "dem_votes": 8579,
         "rep_votes": 4830,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.93733681462141
+        "margin_pct": -27.958833619210978
       },
       "131": {
-        "total_votes": 13165,
-        "dem_votes": 2970,
-        "rep_votes": 10195,
+        "total_votes": 15059,
+        "dem_votes": 3522,
+        "rep_votes": 11537,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.880364603114316
+        "margin_pct": 53.223985656418094
       },
       "132": {
-        "total_votes": 11874,
-        "dem_votes": 7827,
-        "rep_votes": 4047,
+        "total_votes": 11877,
+        "dem_votes": 7829,
+        "rep_votes": 4048,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.834259727134917
+        "margin_pct": -31.834638376694453
       },
       "133": {
-        "total_votes": 14290,
-        "dem_votes": 6302,
-        "rep_votes": 7988,
+        "total_votes": 14261,
+        "dem_votes": 6285,
+        "rep_votes": 7976,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.798460461861442
+        "margin_pct": 11.85751349835215
       },
       "134": {
-        "total_votes": 11431,
-        "dem_votes": 3905,
-        "rep_votes": 7526,
+        "total_votes": 14395,
+        "dem_votes": 4873,
+        "rep_votes": 9522,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.67701863354037
+        "margin_pct": 32.29593608891976
       },
       "135": {
         "total_votes": 16068,
@@ -1501,106 +1517,106 @@
         "margin_pct": 47.722180731889466
       },
       "136": {
-        "total_votes": 14200,
-        "dem_votes": 4828,
-        "rep_votes": 9372,
+        "total_votes": 15154,
+        "dem_votes": 5113,
+        "rep_votes": 10041,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.0
+        "margin_pct": 32.51946680744358
       },
       "137": {
-        "total_votes": 13140,
-        "dem_votes": 7725,
-        "rep_votes": 5415,
+        "total_votes": 14592,
+        "dem_votes": 8649,
+        "rep_votes": 5943,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.579908675799086
+        "margin_pct": -18.544407894736842
       },
       "138": {
-        "total_votes": 17221,
-        "dem_votes": 4209,
-        "rep_votes": 13012,
+        "total_votes": 17961,
+        "dem_votes": 4367,
+        "rep_votes": 13594,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.11782126473492
+        "margin_pct": 51.3724180168142
       },
       "139": {
-        "total_votes": 11148,
-        "dem_votes": 3299,
-        "rep_votes": 7849,
+        "total_votes": 12458,
+        "dem_votes": 3698,
+        "rep_votes": 8760,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.81449587369932
+        "margin_pct": 40.63252528495745
       },
       "140": {
-        "total_votes": 5587,
-        "dem_votes": 4042,
-        "rep_votes": 1545,
+        "total_votes": 6581,
+        "dem_votes": 4757,
+        "rep_votes": 1824,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.6930374082692
+        "margin_pct": -44.56769487919769
       },
       "141": {
-        "total_votes": 10531,
-        "dem_votes": 7462,
-        "rep_votes": 3069,
+        "total_votes": 12406,
+        "dem_votes": 8783,
+        "rep_votes": 3623,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.71493685310037
+        "margin_pct": -41.592777688215385
       },
       "142": {
-        "total_votes": 16847,
+        "total_votes": 16821,
         "dem_votes": 9728,
-        "rep_votes": 7119,
+        "rep_votes": 7093,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -15.486436754318275
+        "margin_pct": -15.664942631234766
       },
       "143": {
-        "total_votes": 14294,
-        "dem_votes": 9780,
-        "rep_votes": 4514,
+        "total_votes": 14278,
+        "dem_votes": 9781,
+        "rep_votes": 4497,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.84063243318875
+        "margin_pct": -37.007984311528226
       },
       "144": {
-        "total_votes": 17831,
-        "dem_votes": 5398,
-        "rep_votes": 12433,
+        "total_votes": 17852,
+        "dem_votes": 5397,
+        "rep_votes": 12455,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.45376030508665
+        "margin_pct": 39.53618642168944
       },
       "145": {
-        "total_votes": 13785,
+        "total_votes": 13784,
         "dem_votes": 5225,
         "rep_votes": 8559,
         "other_votes": 0,
@@ -1608,10 +1624,10 @@
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.185709104098656
+        "margin_pct": 24.1874637260592
       },
       "146": {
-        "total_votes": 13614,
+        "total_votes": 13615,
         "dem_votes": 4123,
         "rep_votes": 9492,
         "other_votes": 0,
@@ -1619,7 +1635,7 @@
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.437343910680184
+        "margin_pct": 39.43444730077121
       },
       "147": {
         "total_votes": 13609,
@@ -1644,81 +1660,81 @@
         "margin_pct": 40.11271133375078
       },
       "149": {
-        "total_votes": 15246,
-        "dem_votes": 5299,
-        "rep_votes": 9947,
+        "total_votes": 16035,
+        "dem_votes": 5823,
+        "rep_votes": 10212,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.486685032139576
+        "margin_pct": 27.371375116931713
       },
       "150": {
-        "total_votes": 12237,
-        "dem_votes": 6830,
-        "rep_votes": 5407,
+        "total_votes": 14398,
+        "dem_votes": 7709,
+        "rep_votes": 6689,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.628667156982921
+        "margin_pct": -7.084317266286984
       },
       "151": {
-        "total_votes": 14937,
-        "dem_votes": 7409,
-        "rep_votes": 7528,
+        "total_votes": 16330,
+        "dem_votes": 7979,
+        "rep_votes": 8351,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.7966793867577158
+        "margin_pct": 2.2780159216166567
       },
       "152": {
-        "total_votes": 13616,
-        "dem_votes": 3467,
-        "rep_votes": 10149,
+        "total_votes": 14835,
+        "dem_votes": 3776,
+        "rep_votes": 11059,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.07461809635723
+        "margin_pct": 49.09336029659589
       },
       "153": {
-        "total_votes": 12947,
-        "dem_votes": 8360,
-        "rep_votes": 4587,
+        "total_votes": 15403,
+        "dem_votes": 9541,
+        "rep_votes": 5862,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.141886151231944
+        "margin_pct": -23.8849574758164
       },
       "154": {
-        "total_votes": 16571,
-        "dem_votes": 8825,
-        "rep_votes": 7745,
+        "total_votes": 17184,
+        "dem_votes": 9281,
+        "rep_votes": 7903,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.51740993301551
+        "margin_pct": -8.019087523277467
       },
       "155": {
-        "total_votes": 13163,
-        "dem_votes": 4558,
-        "rep_votes": 8605,
+        "total_votes": 15006,
+        "dem_votes": 5066,
+        "rep_votes": 9940,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.745270834916056
+        "margin_pct": 32.48034119685459
       },
       "156": {
         "total_votes": 11822,
@@ -1743,18 +1759,18 @@
         "margin_pct": 48.55549923973644
       },
       "158": {
-        "total_votes": 12565,
+        "total_votes": 12566,
         "dem_votes": 4282,
-        "rep_votes": 8283,
+        "rep_votes": 8284,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.84241941902109
+        "margin_pct": 31.84784338691708
       },
       "159": {
-        "total_votes": 14608,
+        "total_votes": 14609,
         "dem_votes": 4117,
         "rep_votes": 10492,
         "other_votes": 0,
@@ -1762,106 +1778,106 @@
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.64047097480832
+        "margin_pct": 43.63748374289821
       },
       "160": {
-        "total_votes": 8848,
-        "dem_votes": 2328,
-        "rep_votes": 6520,
+        "total_votes": 9030,
+        "dem_votes": 2391,
+        "rep_votes": 6639,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.377938517179025
+        "margin_pct": 47.04318936877077
       },
       "161": {
-        "total_votes": 6523,
-        "dem_votes": 2083,
-        "rep_votes": 4440,
+        "total_votes": 7804,
+        "dem_votes": 2770,
+        "rep_votes": 5034,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.133680821707806
+        "margin_pct": 29.01076371091748
       },
       "162": {
-        "total_votes": 5806,
-        "dem_votes": 3678,
-        "rep_votes": 2128,
+        "total_votes": 9880,
+        "dem_votes": 5973,
+        "rep_votes": 3907,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.69652084050982
+        "margin_pct": -20.91093117408907
       },
       "163": {
-        "total_votes": 10222,
-        "dem_votes": 7200,
-        "rep_votes": 3022,
+        "total_votes": 17241,
+        "dem_votes": 11692,
+        "rep_votes": 5549,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.872627665818825
+        "margin_pct": -35.63018386404501
       },
       "164": {
-        "total_votes": 5811,
-        "dem_votes": 1492,
-        "rep_votes": 4320,
+        "total_votes": 8282,
+        "dem_votes": 2044,
+        "rep_votes": 6238,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.666322491825845
+        "margin_pct": 50.639942042984785
       },
       "165": {
-        "total_votes": 9021,
-        "dem_votes": 6537,
-        "rep_votes": 2484,
+        "total_votes": 15176,
+        "dem_votes": 10615,
+        "rep_votes": 4561,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.92850016627868
+        "margin_pct": -39.89193463363205
       },
       "166": {
-        "total_votes": 12461,
-        "dem_votes": 2909,
-        "rep_votes": 9551,
+        "total_votes": 20653,
+        "dem_votes": 4500,
+        "rep_votes": 16153,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.30230318594013
+        "margin_pct": 56.42279571975016
       },
       "167": {
-        "total_votes": 10614,
-        "dem_votes": 3335,
-        "rep_votes": 7279,
+        "total_votes": 10780,
+        "dem_votes": 3369,
+        "rep_votes": 7411,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.15846994535519
+        "margin_pct": 37.49536178107606
       },
       "168": {
-        "total_votes": 8193,
-        "dem_votes": 4806,
-        "rep_votes": 3387,
+        "total_votes": 8855,
+        "dem_votes": 5307,
+        "rep_votes": 3548,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.319663127059684
+        "margin_pct": -19.86448334274421
       },
       "169": {
         "total_votes": 12399,
@@ -1875,15 +1891,15 @@
         "margin_pct": 45.25364948786192
       },
       "170": {
-        "total_votes": 10993,
-        "dem_votes": 2992,
-        "rep_votes": 8001,
+        "total_votes": 12106,
+        "dem_votes": 3138,
+        "rep_votes": 8968,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.56535977440189
+        "margin_pct": 48.157938212456635
       },
       "171": {
         "total_votes": 12842,
@@ -1897,73 +1913,73 @@
         "margin_pct": 19.046877433421585
       },
       "172": {
-        "total_votes": 10285,
-        "dem_votes": 2709,
-        "rep_votes": 7576,
+        "total_votes": 10530,
+        "dem_votes": 2765,
+        "rep_votes": 7765,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.32134175984443
+        "margin_pct": 47.483380816714146
       },
       "173": {
-        "total_votes": 12818,
-        "dem_votes": 4957,
-        "rep_votes": 7861,
+        "total_votes": 13487,
+        "dem_votes": 5180,
+        "rep_votes": 8307,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.655640505539086
+        "margin_pct": 23.1852895380737
       },
       "174": {
-        "total_votes": 10807,
-        "dem_votes": 2759,
-        "rep_votes": 8048,
+        "total_votes": 13756,
+        "dem_votes": 3731,
+        "rep_votes": 10025,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.940501526788196
+        "margin_pct": 45.75457981971503
       },
       "175": {
-        "total_votes": 6523,
-        "dem_votes": 2784,
-        "rep_votes": 3739,
+        "total_votes": 13569,
+        "dem_votes": 5621,
+        "rep_votes": 7948,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.64050283611835
+        "margin_pct": 17.14938462672268
       },
       "176": {
-        "total_votes": 10168,
-        "dem_votes": 3013,
-        "rep_votes": 7154,
+        "total_votes": 11170,
+        "dem_votes": 3522,
+        "rep_votes": 7648,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.725806451612904
+        "margin_pct": 36.93822739480752
       },
       "177": {
-        "total_votes": 2311,
-        "dem_votes": 840,
-        "rep_votes": 1471,
+        "total_votes": 6159,
+        "dem_votes": 2699,
+        "rep_votes": 3460,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.30419731717871
+        "margin_pct": 12.35590193213184
       },
       "178": {
-        "total_votes": 12502,
+        "total_votes": 12501,
         "dem_votes": 2292,
         "rep_votes": 10209,
         "other_votes": 0,
@@ -1971,29 +1987,29 @@
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.325867861142214
+        "margin_pct": 63.33093352531798
       },
       "179": {
-        "total_votes": 13949,
-        "dem_votes": 4650,
-        "rep_votes": 9299,
+        "total_votes": 14585,
+        "dem_votes": 4828,
+        "rep_votes": 9757,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.32855401820919
+        "margin_pct": 33.79499485773054
       },
       "180": {
-        "total_votes": 11559,
-        "dem_votes": 3481,
-        "rep_votes": 8078,
+        "total_votes": 11641,
+        "dem_votes": 3499,
+        "rep_votes": 8142,
         "other_votes": 0,
         "dem_candidate": "Connie J. Stokes",
         "rep_candidate": "L. S. \"Casey\" Cagle",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.76987628687603
+        "margin_pct": 39.88488961429431
       }
     }
   }

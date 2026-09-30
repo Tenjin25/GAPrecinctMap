@@ -4,93 +4,109 @@
     "contest_type": "labor_commissioner",
     "year": 2018,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:22.347522+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:46.765281+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3632496,
-    "matched_input_votes": 3632496,
+    "total_input_votes": 3641186,
+    "matched_input_votes": 3641186,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/Commissioner_Of_Labor.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1739638,
+        "rep_votes": 1901548,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1830061,
+        "rep_votes": 2019389,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 44867,
-        "dem_votes": 18020,
-        "rep_votes": 26847,
+        "total_votes": 62833,
+        "dem_votes": 23916,
+        "rep_votes": 38917,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.673702275614595
+        "margin_pct": 23.874397211656294
       },
       "2": {
-        "total_votes": 36243,
-        "dem_votes": 26677,
-        "rep_votes": 9566,
+        "total_votes": 64963,
+        "dem_votes": 46441,
+        "rep_votes": 18522,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.211875396628315
+        "margin_pct": -42.97677139294676
       },
       "3": {
-        "total_votes": 61965,
-        "dem_votes": 19969,
-        "rep_votes": 41996,
+        "total_votes": 65985,
+        "dem_votes": 21291,
+        "rep_votes": 44694,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.54748648430566
+        "margin_pct": 35.467151625369404
       },
       "4": {
-        "total_votes": 54489,
-        "dem_votes": 15802,
-        "rep_votes": 38687,
+        "total_votes": 55894,
+        "dem_votes": 16356,
+        "rep_votes": 39538,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.99930261153627
+        "margin_pct": 41.47493469782088
       },
       "5": {
-        "total_votes": 37295,
-        "dem_votes": 28227,
-        "rep_votes": 9068,
+        "total_votes": 37344,
+        "dem_votes": 28265,
+        "rep_votes": 9079,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.37149751977476
+        "margin_pct": -51.37639245929735
       },
       "6": {
-        "total_votes": 78321,
-        "dem_votes": 41316,
-        "rep_votes": 37005,
+        "total_votes": 78325,
+        "dem_votes": 41318,
+        "rep_votes": 37007,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.504270885203202
+        "margin_pct": -5.5039897861474625
       },
       "7": {
-        "total_votes": 64431,
-        "dem_votes": 34413,
-        "rep_votes": 30018,
+        "total_votes": 64513,
+        "dem_votes": 34458,
+        "rep_votes": 30055,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.82125064021977
+        "margin_pct": -6.824981011579062
       },
       "8": {
         "total_votes": 57660,
@@ -104,81 +120,81 @@
         "margin_pct": 34.34269857787027
       },
       "9": {
-        "total_votes": 67849,
-        "dem_votes": 37521,
-        "rep_votes": 30328,
+        "total_votes": 67935,
+        "dem_votes": 37570,
+        "rep_votes": 30365,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.601482704240299
+        "margin_pct": -10.605726061676602
       },
       "10": {
-        "total_votes": 81142,
-        "dem_votes": 64230,
-        "rep_votes": 16911,
+        "total_votes": 84753,
+        "dem_votes": 67551,
+        "rep_votes": 17202,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.3162850311799
+        "margin_pct": -59.40674666383491
       },
       "11": {
-        "total_votes": 59049,
-        "dem_votes": 19445,
-        "rep_votes": 39604,
+        "total_votes": 60958,
+        "dem_votes": 19936,
+        "rep_votes": 41022,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.13944351301462
+        "margin_pct": 34.591029889432065
       },
       "12": {
-        "total_votes": 64145,
-        "dem_votes": 36197,
-        "rep_votes": 27948,
+        "total_votes": 68935,
+        "dem_votes": 38874,
+        "rep_votes": 30061,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.85992672850573
+        "margin_pct": -12.784507144411403
       },
       "13": {
-        "total_votes": 62874,
-        "dem_votes": 17103,
-        "rep_votes": 45771,
+        "total_votes": 65335,
+        "dem_votes": 17675,
+        "rep_votes": 47660,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.59595381238668
+        "margin_pct": 45.89423739190327
       },
       "14": {
-        "total_votes": 75007,
-        "dem_votes": 39123,
+        "total_votes": 75008,
+        "dem_votes": 39124,
         "rep_votes": 35884,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.318263628727985
+        "margin_pct": -4.319539249146757
       },
       "15": {
-        "total_votes": 49389,
-        "dem_votes": 33775,
-        "rep_votes": 15614,
+        "total_votes": 55815,
+        "dem_votes": 36336,
+        "rep_votes": 19479,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.77134584624107
+        "margin_pct": -30.201558720773985
       },
       "16": {
         "total_votes": 80644,
@@ -192,26 +208,26 @@
         "margin_pct": 36.339963295471456
       },
       "17": {
-        "total_votes": 77567,
-        "dem_votes": 27598,
-        "rep_votes": 49969,
+        "total_votes": 78563,
+        "dem_votes": 28314,
+        "rep_votes": 50249,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.84087305168435
+        "margin_pct": 27.92026781054695
       },
       "18": {
-        "total_votes": 75631,
-        "dem_votes": 27654,
-        "rep_votes": 47976,
+        "total_votes": 75728,
+        "dem_votes": 27680,
+        "rep_votes": 48048,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.869934286205392
+        "margin_pct": 26.89626030002113
       },
       "19": {
         "total_votes": 58622,
@@ -225,81 +241,81 @@
         "margin_pct": 53.137047524820034
       },
       "20": {
-        "total_votes": 68420,
-        "dem_votes": 21437,
-        "rep_votes": 46983,
+        "total_votes": 70946,
+        "dem_votes": 22249,
+        "rep_votes": 48697,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.3370359543993
+        "margin_pct": 37.27905731119443
       },
       "21": {
-        "total_votes": 76564,
-        "dem_votes": 21458,
-        "rep_votes": 55106,
+        "total_votes": 76583,
+        "dem_votes": 21465,
+        "rep_votes": 55118,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.947547150096646
+        "margin_pct": 43.94317276680203
       },
       "22": {
-        "total_votes": 62859,
-        "dem_votes": 43322,
-        "rep_votes": 19537,
+        "total_votes": 62874,
+        "dem_votes": 43334,
+        "rep_votes": 19540,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.83865476701825
+        "margin_pct": -37.84394185195789
       },
       "23": {
-        "total_votes": 66072,
-        "dem_votes": 26512,
-        "rep_votes": 39560,
+        "total_votes": 68653,
+        "dem_votes": 27729,
+        "rep_votes": 40924,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.74815352948299
+        "margin_pct": 19.21984472637758
       },
       "24": {
-        "total_votes": 75177,
-        "dem_votes": 21461,
-        "rep_votes": 53716,
+        "total_votes": 80837,
+        "dem_votes": 23378,
+        "rep_votes": 57459,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.90540989930431
+        "margin_pct": 42.160149436520406
       },
       "25": {
-        "total_votes": 62552,
-        "dem_votes": 24807,
-        "rep_votes": 37744,
+        "total_votes": 73691,
+        "dem_votes": 28624,
+        "rep_votes": 45067,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.68199258217163
+        "margin_pct": 22.313443975519398
       },
       "26": {
-        "total_votes": 65458,
-        "dem_votes": 41024,
-        "rep_votes": 24434,
+        "total_votes": 66316,
+        "dem_votes": 41591,
+        "rep_votes": 24725,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.34449570717101
+        "margin_pct": -25.432776403884432
       },
       "27": {
         "total_votes": 70086,
@@ -313,323 +329,323 @@
         "margin_pct": 51.23419798533231
       },
       "28": {
-        "total_votes": 71178,
-        "dem_votes": 20724,
-        "rep_votes": 50454,
+        "total_votes": 71827,
+        "dem_votes": 20772,
+        "rep_votes": 51055,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.76852398212931
+        "margin_pct": 42.16102579809821
       },
       "29": {
-        "total_votes": 66553,
-        "dem_votes": 22958,
-        "rep_votes": 43595,
+        "total_votes": 69510,
+        "dem_votes": 23653,
+        "rep_votes": 45857,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.008369269604675
+        "margin_pct": 31.943605236656598
       },
       "30": {
-        "total_votes": 41261,
-        "dem_votes": 12600,
-        "rep_votes": 28661,
+        "total_votes": 68358,
+        "dem_votes": 20289,
+        "rep_votes": 48069,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.92537747509755
+        "margin_pct": 40.63898885280435
       },
       "31": {
-        "total_votes": 60221,
-        "dem_votes": 17972,
-        "rep_votes": 42249,
+        "total_votes": 64687,
+        "dem_votes": 19753,
+        "rep_votes": 44934,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.31317978778167
+        "margin_pct": 38.92745064696152
       },
       "32": {
-        "total_votes": 75068,
-        "dem_votes": 28668,
-        "rep_votes": 46400,
+        "total_votes": 75090,
+        "dem_votes": 28677,
+        "rep_votes": 46413,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.62125006660628
+        "margin_pct": 23.619656412305233
       },
       "33": {
-        "total_votes": 64164,
-        "dem_votes": 44333,
-        "rep_votes": 19831,
+        "total_votes": 64170,
+        "dem_votes": 44335,
+        "rep_votes": 19835,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.18652203727947
+        "margin_pct": -38.17983481377591
       },
       "34": {
-        "total_votes": 59251,
-        "dem_votes": 49365,
-        "rep_votes": 9886,
+        "total_votes": 59214,
+        "dem_votes": 49339,
+        "rep_votes": 9875,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.6300990700579
+        "margin_pct": -66.64640118890803
       },
       "35": {
-        "total_votes": 70768,
-        "dem_votes": 56731,
-        "rep_votes": 14037,
+        "total_votes": 72641,
+        "dem_votes": 57248,
+        "rep_votes": 15393,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.329527470042954
+        "margin_pct": -57.61897550969838
       },
       "36": {
-        "total_votes": 78184,
-        "dem_votes": 69295,
+        "total_votes": 78186,
+        "dem_votes": 69297,
         "rep_votes": 8889,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.26133224189093
+        "margin_pct": -77.26191389762873
       },
       "37": {
-        "total_votes": 83080,
-        "dem_votes": 32421,
-        "rep_votes": 50660,
+        "total_votes": 83094,
+        "dem_votes": 32423,
+        "rep_votes": 50671,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.953538757823786
+        "margin_pct": 21.960671047247697
       },
       "38": {
-        "total_votes": 74215,
-        "dem_votes": 60292,
-        "rep_votes": 13923,
+        "total_votes": 74220,
+        "dem_votes": 60295,
+        "rep_votes": 13925,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.479283163780906
+        "margin_pct": -62.476421449744
       },
       "39": {
-        "total_votes": 63272,
-        "dem_votes": 53477,
+        "total_votes": 63273,
+        "dem_votes": 53479,
         "rep_votes": 9794,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.04001770135288
+        "margin_pct": -69.0420874622667
       },
       "40": {
-        "total_votes": 66622,
-        "dem_votes": 38254,
-        "rep_votes": 28367,
+        "total_votes": 69244,
+        "dem_votes": 40044,
+        "rep_votes": 29200,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.840443096874905
+        "margin_pct": -15.660562648027266
       },
       "41": {
-        "total_votes": 65224,
-        "dem_votes": 52347,
-        "rep_votes": 12878,
+        "total_votes": 68390,
+        "dem_votes": 55144,
+        "rep_votes": 13246,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.513001349196614
+        "margin_pct": -61.263342593946476
       },
       "42": {
-        "total_votes": 74071,
-        "dem_votes": 58762,
-        "rep_votes": 15309,
+        "total_votes": 77818,
+        "dem_votes": 61996,
+        "rep_votes": 15822,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.66398455535905
+        "margin_pct": -59.335886298799764
       },
       "43": {
-        "total_votes": 70336,
-        "dem_votes": 49744,
-        "rep_votes": 20592,
+        "total_votes": 70877,
+        "dem_votes": 50265,
+        "rep_votes": 20612,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.44676979071883
+        "margin_pct": -41.83726737869831
       },
       "44": {
-        "total_votes": 69262,
-        "dem_votes": 60410,
-        "rep_votes": 8852,
+        "total_votes": 70430,
+        "dem_votes": 61555,
+        "rep_votes": 8875,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.43908636770523
+        "margin_pct": -74.79767144682664
       },
       "45": {
-        "total_votes": 53222,
-        "dem_votes": 20650,
-        "rep_votes": 32572,
+        "total_votes": 65576,
+        "dem_votes": 23715,
+        "rep_votes": 41861,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.40051106685205
+        "margin_pct": 27.671709161888497
       },
       "46": {
-        "total_votes": 63426,
-        "dem_votes": 22224,
-        "rep_votes": 41202,
+        "total_votes": 78330,
+        "dem_votes": 30422,
+        "rep_votes": 47908,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.921483303377165
+        "margin_pct": 22.32350312779267
       },
       "47": {
-        "total_votes": 42189,
-        "dem_votes": 13193,
-        "rep_votes": 28996,
+        "total_votes": 60560,
+        "dem_votes": 22256,
+        "rep_votes": 38304,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.45763113607812
+        "margin_pct": 26.499339498018493
       },
       "48": {
-        "total_votes": 69042,
-        "dem_votes": 27876,
-        "rep_votes": 41166,
+        "total_votes": 69063,
+        "dem_votes": 27884,
+        "rep_votes": 41179,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.24915268966716
+        "margin_pct": 19.25053936261095
       },
       "49": {
-        "total_votes": 53518,
-        "dem_votes": 13484,
-        "rep_votes": 40034,
+        "total_votes": 63463,
+        "dem_votes": 15157,
+        "rep_votes": 48306,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.609477185246085
+        "margin_pct": 52.23358492349873
       },
       "50": {
-        "total_votes": 55868,
-        "dem_votes": 9257,
-        "rep_votes": 46610,
+        "total_votes": 66420,
+        "dem_votes": 11132,
+        "rep_votes": 55288,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.8593828309587
+        "margin_pct": 66.47997591087021
       },
       "51": {
-        "total_votes": 76008,
+        "total_votes": 76009,
         "dem_votes": 11881,
-        "rep_votes": 64127,
+        "rep_votes": 64128,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.73750131565099
+        "margin_pct": 68.73791261561131
       },
       "52": {
-        "total_votes": 62256,
-        "dem_votes": 15439,
-        "rep_votes": 46818,
+        "total_votes": 62286,
+        "dem_votes": 15445,
+        "rep_votes": 46841,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.40317399126189
+        "margin_pct": 50.406190797289916
       },
       "53": {
-        "total_votes": 54667,
-        "dem_votes": 10603,
-        "rep_votes": 44065,
+        "total_votes": 60097,
+        "dem_votes": 11361,
+        "rep_votes": 48736,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.21060237437577
+        "margin_pct": 62.19112434896916
       },
       "54": {
-        "total_votes": 51918,
-        "dem_votes": 11161,
-        "rep_votes": 40758,
+        "total_votes": 51900,
+        "dem_votes": 11157,
+        "rep_votes": 40743,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.00720366732155
+        "margin_pct": 57.00578034682081
       },
       "55": {
-        "total_votes": 76039,
-        "dem_votes": 59096,
-        "rep_votes": 16943,
+        "total_votes": 77664,
+        "dem_votes": 60659,
+        "rep_votes": 17005,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -55.436026249687664
+        "margin_pct": -56.208796868562004
       },
       "56": {
-        "total_votes": 87235,
-        "dem_votes": 31523,
-        "rep_votes": 55712,
+        "total_votes": 87254,
+        "dem_votes": 31530,
+        "rep_votes": 55724,
         "other_votes": 0,
         "dem_candidate": "Richard Keatley",
         "rep_candidate": "Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.728549320800138
+        "margin_pct": 27.72824168519495
       }
     }
   }

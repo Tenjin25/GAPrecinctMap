@@ -4,38 +4,54 @@
     "contest_type": "attorney_general",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:20.247878+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:43.364238+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2347143,
     "matched_input_votes": 2347143,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Attorney_General.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1023548,
+        "rep_votes": 1319743,
+        "other_votes": 3852
+      },
+      "canonical_target": {
+        "dem_votes": 1087268,
+        "rep_votes": 1436987,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10474,
-        "dem_votes": 2546,
-        "rep_votes": 7928,
+        "total_votes": 12734,
+        "dem_votes": 3033,
+        "rep_votes": 9701,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.38438037044109
+        "margin_pct": 52.3637505889744
       },
       "2": {
-        "total_votes": 9507,
-        "dem_votes": 1956,
-        "rep_votes": 7552,
+        "total_votes": 10177,
+        "dem_votes": 2065,
+        "rep_votes": 8112,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.861891238035135
+        "margin_pct": 59.418296158003336
       },
       "3": {
         "total_votes": 11825,
@@ -60,26 +76,26 @@
         "margin_pct": 43.19752904838947
       },
       "5": {
-        "total_votes": 10506,
-        "dem_votes": 1962,
-        "rep_votes": 8544,
+        "total_votes": 10494,
+        "dem_votes": 1959,
+        "rep_votes": 8535,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.6499143346659
+        "margin_pct": 62.66437964551172
       },
       "6": {
-        "total_votes": 9788,
+        "total_votes": 9787,
         "dem_votes": 2062,
-        "rep_votes": 7726,
+        "rep_votes": 7725,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.86677564364528
+        "margin_pct": 57.862470624297536
       },
       "7": {
         "total_votes": 15618,
@@ -93,37 +109,37 @@
         "margin_pct": 60.66077602766039
       },
       "8": {
-        "total_votes": 18014,
+        "total_votes": 18015,
         "dem_votes": 3632,
-        "rep_votes": 14382,
+        "rep_votes": 14383,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.675807705118245
+        "margin_pct": 59.67804607271718
       },
       "9": {
-        "total_votes": 8287,
-        "dem_votes": 1238,
-        "rep_votes": 7049,
+        "total_votes": 14309,
+        "dem_votes": 2397,
+        "rep_votes": 11912,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.1218776396766
+        "margin_pct": 66.4966105248445
       },
       "10": {
-        "total_votes": 12675,
+        "total_votes": 12674,
         "dem_votes": 2374,
-        "rep_votes": 10301,
+        "rep_votes": 10300,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.540433925049314
+        "margin_pct": 62.537478302035666
       },
       "11": {
         "total_votes": 14847,
@@ -137,15 +153,15 @@
         "margin_pct": 71.22651040614265
       },
       "12": {
-        "total_votes": 11682,
-        "dem_votes": 3033,
-        "rep_votes": 8649,
+        "total_votes": 11820,
+        "dem_votes": 3088,
+        "rep_votes": 8732,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.07395993836672
+        "margin_pct": 47.74957698815567
       },
       "13": {
         "total_votes": 12421,
@@ -159,114 +175,114 @@
         "margin_pct": 37.95990660977377
       },
       "14": {
-        "total_votes": 13260,
-        "dem_votes": 2517,
-        "rep_votes": 10744,
+        "total_votes": 13272,
+        "dem_votes": 2519,
+        "rep_votes": 10753,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.04374057315234
+        "margin_pct": 62.04038577456299
       },
       "15": {
-        "total_votes": 11923,
-        "dem_votes": 2884,
-        "rep_votes": 9038,
+        "total_votes": 11934,
+        "dem_votes": 2887,
+        "rep_votes": 9047,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.61452654533255
+        "margin_pct": 51.61722808781632
       },
       "16": {
         "total_votes": 7903,
         "dem_votes": 2125,
-        "rep_votes": 5777,
+        "rep_votes": 5778,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.210299886119195
+        "margin_pct": 46.22295330887005
       },
       "17": {
-        "total_votes": 5666,
-        "dem_votes": 1455,
-        "rep_votes": 4210,
+        "total_votes": 10588,
+        "dem_votes": 2595,
+        "rep_votes": 7993,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.62336745499471
+        "margin_pct": 50.982244049867774
       },
       "18": {
-        "total_votes": 10906,
-        "dem_votes": 1999,
-        "rep_votes": 8907,
+        "total_votes": 16229,
+        "dem_votes": 2944,
+        "rep_votes": 13285,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.341280029341654
+        "margin_pct": 63.719267977078076
       },
       "19": {
-        "total_votes": 5232,
-        "dem_votes": 1572,
-        "rep_votes": 3660,
+        "total_votes": 9751,
+        "dem_votes": 2802,
+        "rep_votes": 6949,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.908256880733944
+        "margin_pct": 42.528971387549994
       },
       "20": {
-        "total_votes": 16717,
-        "dem_votes": 3326,
-        "rep_votes": 13391,
+        "total_votes": 16724,
+        "dem_votes": 3328,
+        "rep_votes": 13396,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.20817132260573
+        "margin_pct": 60.20090887347524
       },
       "21": {
-        "total_votes": 16259,
-        "dem_votes": 2629,
-        "rep_votes": 13629,
+        "total_votes": 16265,
+        "dem_votes": 2631,
+        "rep_votes": 13634,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.65483732086844
+        "margin_pct": 67.64832462342453
       },
       "22": {
-        "total_votes": 15421,
-        "dem_votes": 4480,
-        "rep_votes": 10942,
+        "total_votes": 15492,
+        "dem_votes": 4496,
+        "rep_votes": 10996,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.903897282925875
+        "margin_pct": 41.95713916860315
       },
       "23": {
-        "total_votes": 12364,
-        "dem_votes": 2022,
-        "rep_votes": 10342,
+        "total_votes": 12368,
+        "dem_votes": 2023,
+        "rep_votes": 10345,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.2921384665157
+        "margin_pct": 67.28654592496765
       },
       "24": {
         "total_votes": 12570,
@@ -302,224 +318,224 @@
         "margin_pct": 68.0635442344563
       },
       "27": {
-        "total_votes": 11544,
-        "dem_votes": 1522,
-        "rep_votes": 10022,
+        "total_votes": 13569,
+        "dem_votes": 1764,
+        "rep_votes": 11805,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.63132363132362
+        "margin_pct": 73.99955781560911
       },
       "28": {
-        "total_votes": 11612,
-        "dem_votes": 1693,
-        "rep_votes": 9919,
+        "total_votes": 11806,
+        "dem_votes": 1722,
+        "rep_votes": 10084,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.84050981743025
+        "margin_pct": 70.8283923428765
       },
       "29": {
-        "total_votes": 7190,
-        "dem_votes": 2302,
-        "rep_votes": 4888,
+        "total_votes": 8093,
+        "dem_votes": 2526,
+        "rep_votes": 5567,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.96662030598053
+        "margin_pct": 37.575682688743356
       },
       "30": {
-        "total_votes": 14563,
-        "dem_votes": 2487,
-        "rep_votes": 12076,
+        "total_votes": 16231,
+        "dem_votes": 2694,
+        "rep_votes": 13537,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.84494952962989
+        "margin_pct": 66.80426344649129
       },
       "31": {
-        "total_votes": 6739,
-        "dem_votes": 1113,
-        "rep_votes": 5625,
+        "total_votes": 10160,
+        "dem_votes": 1698,
+        "rep_votes": 8462,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.95355393975368
+        "margin_pct": 66.5748031496063
       },
       "32": {
-        "total_votes": 7381,
-        "dem_votes": 1027,
-        "rep_votes": 6354,
+        "total_votes": 13084,
+        "dem_votes": 2205,
+        "rep_votes": 10879,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 72.17179244004878
+        "margin_pct": 66.2947110975237
       },
       "33": {
-        "total_votes": 14031,
-        "dem_votes": 2996,
-        "rep_votes": 11035,
+        "total_votes": 14035,
+        "dem_votes": 2997,
+        "rep_votes": 11038,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.294562041194496
+        "margin_pct": 57.29248307801924
       },
       "34": {
-        "total_votes": 18276,
-        "dem_votes": 4492,
-        "rep_votes": 13784,
+        "total_votes": 18429,
+        "dem_votes": 4515,
+        "rep_votes": 13914,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.842635149923396
+        "margin_pct": 51.00113950838353
       },
       "35": {
-        "total_votes": 13586,
-        "dem_votes": 5210,
-        "rep_votes": 8376,
+        "total_votes": 13691,
+        "dem_votes": 5237,
+        "rep_votes": 8454,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.303400559399382
+        "margin_pct": 23.497187933679058
       },
       "36": {
-        "total_votes": 20783,
-        "dem_votes": 5131,
-        "rep_votes": 15652,
+        "total_votes": 20957,
+        "dem_votes": 5158,
+        "rep_votes": 15799,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.623105422701244
+        "margin_pct": 50.77539724197165
       },
       "37": {
-        "total_votes": 13867,
-        "dem_votes": 5624,
-        "rep_votes": 8243,
+        "total_votes": 13974,
+        "dem_votes": 5653,
+        "rep_votes": 8321,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.886565226797433
+        "margin_pct": 19.09260054386718
       },
       "38": {
-        "total_votes": 15335,
-        "dem_votes": 9301,
-        "rep_votes": 6034,
+        "total_votes": 15440,
+        "dem_votes": 9349,
+        "rep_votes": 6091,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.3042060645582
+        "margin_pct": -21.10103626943005
       },
       "39": {
-        "total_votes": 12602,
-        "dem_votes": 8751,
-        "rep_votes": 3851,
+        "total_votes": 12683,
+        "dem_votes": 8796,
+        "rep_votes": 3887,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.88271702904301
+        "margin_pct": -38.70535362295986
       },
       "40": {
-        "total_votes": 17577,
-        "dem_votes": 8101,
-        "rep_votes": 9476,
+        "total_votes": 17708,
+        "dem_votes": 8143,
+        "rep_votes": 9565,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.822722876486317
+        "margin_pct": 8.03026880505986
       },
       "41": {
-        "total_votes": 11626,
-        "dem_votes": 6731,
-        "rep_votes": 4895,
+        "total_votes": 11706,
+        "dem_votes": 6765,
+        "rep_votes": 4941,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -15.79218991914674
+        "margin_pct": -15.581752947206562
       },
       "42": {
-        "total_votes": 10772,
-        "dem_votes": 6143,
-        "rep_votes": 4629,
+        "total_votes": 10848,
+        "dem_votes": 6175,
+        "rep_votes": 4673,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.054957296695136
+        "margin_pct": -13.845870206489675
       },
       "43": {
-        "total_votes": 11246,
-        "dem_votes": 4668,
-        "rep_votes": 6578,
+        "total_votes": 11332,
+        "dem_votes": 4692,
+        "rep_votes": 6640,
         "other_votes": 0,
         "dem_candidate": "Gregory Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.98381646807754
+        "margin_pct": 17.190257677373808
       },
       "44": {
-        "total_votes": 16361,
-        "dem_votes": 4734,
-        "rep_votes": 11627,
+        "total_votes": 16462,
+        "dem_votes": 4754,
+        "rep_votes": 11708,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.13067660900923
+        "margin_pct": 42.24274085773296
       },
       "45": {
-        "total_votes": 26769,
-        "dem_votes": 6223,
-        "rep_votes": 20546,
+        "total_votes": 26995,
+        "dem_votes": 6255,
+        "rep_votes": 20740,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.505921028054836
+        "margin_pct": 53.65808483052417
       },
       "46": {
-        "total_votes": 19331,
-        "dem_votes": 4896,
-        "rep_votes": 14435,
+        "total_votes": 19461,
+        "dem_votes": 4916,
+        "rep_votes": 14545,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.345610677150695
+        "margin_pct": 49.478444067622426
       },
       "47": {
         "total_votes": 14446,
@@ -533,26 +549,26 @@
         "margin_pct": 47.70870829295307
       },
       "48": {
-        "total_votes": 19759,
-        "dem_votes": 6286,
+        "total_votes": 19760,
+        "dem_votes": 6287,
         "rep_votes": 13473,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.373298243838256
+        "margin_pct": 36.3663967611336
       },
       "49": {
-        "total_votes": 15981,
+        "total_votes": 15980,
         "dem_votes": 4339,
-        "rep_votes": 11642,
+        "rep_votes": 11641,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.69801639446843
+        "margin_pct": 45.694618272841055
       },
       "50": {
         "total_votes": 12780,
@@ -566,26 +582,26 @@
         "margin_pct": 30.719874804381845
       },
       "51": {
-        "total_votes": 15084,
-        "dem_votes": 5998,
+        "total_votes": 15085,
+        "dem_votes": 5999,
         "rep_votes": 9086,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.472023335985153
+        "margin_pct": 20.464037122969838
       },
       "52": {
-        "total_votes": 13938,
-        "dem_votes": 5601,
-        "rep_votes": 8337,
+        "total_votes": 14256,
+        "dem_votes": 5665,
+        "rep_votes": 8591,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.629789065863108
+        "margin_pct": 20.52469135802469
       },
       "53": {
         "total_votes": 19390,
@@ -599,128 +615,128 @@
         "margin_pct": 36.95719443011862
       },
       "54": {
-        "total_votes": 13167,
-        "dem_votes": 5094,
+        "total_votes": 13168,
+        "dem_votes": 5095,
         "rep_votes": 8073,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.624743677375257
+        "margin_pct": 22.61543134872418
       },
       "55": {
         "total_votes": 14763,
-        "dem_votes": 10537,
-        "rep_votes": 4226,
+        "dem_votes": 10538,
+        "rep_votes": 4225,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.74876380139538
+        "margin_pct": -42.76231118336381
       },
       "56": {
-        "total_votes": 9926,
-        "dem_votes": 8682,
+        "total_votes": 9927,
+        "dem_votes": 8683,
         "rep_votes": 1244,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.93451541406408
+        "margin_pct": -74.93704039488264
       },
       "57": {
-        "total_votes": 14281,
-        "dem_votes": 9134,
+        "total_votes": 14282,
+        "dem_votes": 9135,
         "rep_votes": 5147,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.918213010293396
+        "margin_pct": -27.92326004761238
       },
       "58": {
-        "total_votes": 15854,
-        "dem_votes": 13994,
+        "total_votes": 15855,
+        "dem_votes": 13995,
         "rep_votes": 1860,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.53588999621547
+        "margin_pct": -76.53736991485336
       },
       "59": {
-        "total_votes": 12755,
-        "dem_votes": 11707,
+        "total_votes": 12756,
+        "dem_votes": 11708,
         "rep_votes": 1048,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.5672285378283
+        "margin_pct": -83.56851677641895
       },
       "60": {
-        "total_votes": 18099,
-        "dem_votes": 13021,
+        "total_votes": 18100,
+        "dem_votes": 13022,
         "rep_votes": 5078,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.88640256367755
+        "margin_pct": -43.889502762430936
       },
       "61": {
-        "total_votes": 15488,
-        "dem_votes": 12314,
+        "total_votes": 15489,
+        "dem_votes": 12315,
         "rep_votes": 3174,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.013429752066116
+        "margin_pct": -59.0160759248499
       },
       "62": {
-        "total_votes": 13348,
-        "dem_votes": 12035,
+        "total_votes": 13349,
+        "dem_votes": 12036,
         "rep_votes": 1313,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.32664069523524
+        "margin_pct": -80.32811446550303
       },
       "63": {
-        "total_votes": 13620,
-        "dem_votes": 11865,
+        "total_votes": 13622,
+        "dem_votes": 11866,
         "rep_votes": 1756,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.22173274596182
+        "margin_pct": -74.21817647922478
       },
       "64": {
-        "total_votes": 16256,
-        "dem_votes": 5228,
-        "rep_votes": 11028,
+        "total_votes": 21489,
+        "dem_votes": 6863,
+        "rep_votes": 14626,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.67913385826771
+        "margin_pct": 36.12545953743776
       },
       "65": {
-        "total_votes": 17228,
+        "total_votes": 17227,
         "dem_votes": 10988,
         "rep_votes": 6239,
         "other_votes": 0,
@@ -728,7 +744,7 @@
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.565590898537263
+        "margin_pct": -27.567191037325127
       },
       "66": {
         "total_votes": 14924,
@@ -754,476 +770,476 @@
       },
       "68": {
         "total_votes": 15987,
-        "dem_votes": 8701,
+        "dem_votes": 8702,
         "rep_votes": 7285,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -8.857196472133609
+        "margin_pct": -8.86345155438794
       },
       "69": {
-        "total_votes": 19321,
-        "dem_votes": 12836,
+        "total_votes": 19322,
+        "dem_votes": 12837,
         "rep_votes": 6485,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.870969411521145
+        "margin_pct": -32.8744436393748
       },
       "70": {
-        "total_votes": 11588,
-        "dem_votes": 4134,
+        "total_votes": 11584,
+        "dem_votes": 4130,
         "rep_votes": 7454,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.65032792544011
+        "margin_pct": 28.69475138121547
       },
       "71": {
-        "total_votes": 6254,
-        "dem_votes": 1962,
-        "rep_votes": 4292,
+        "total_votes": 17670,
+        "dem_votes": 5457,
+        "rep_votes": 12213,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.25615606012152
+        "margin_pct": 38.23429541595925
       },
       "72": {
-        "total_votes": 5977,
-        "dem_votes": 1552,
-        "rep_votes": 4425,
+        "total_votes": 8091,
+        "dem_votes": 2101,
+        "rep_votes": 5990,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.06759243767777
+        "margin_pct": 48.065752070201455
       },
       "73": {
-        "total_votes": 18282,
-        "dem_votes": 4329,
+        "total_votes": 18280,
+        "dem_votes": 4328,
         "rep_votes": 13952,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.63647303358495
+        "margin_pct": 52.647702407002186
       },
       "74": {
-        "total_votes": 17629,
-        "dem_votes": 5191,
-        "rep_votes": 12437,
+        "total_votes": 19502,
+        "dem_votes": 5649,
+        "rep_votes": 13853,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.10272845878949
+        "margin_pct": 42.06748025843503
       },
       "75": {
-        "total_votes": 12304,
-        "dem_votes": 10342,
-        "rep_votes": 1962,
+        "total_votes": 12292,
+        "dem_votes": 10335,
+        "rep_votes": 1957,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.10793237971392
+        "margin_pct": -68.15815164334526
       },
       "76": {
-        "total_votes": 12413,
-        "dem_votes": 10358,
-        "rep_votes": 2055,
+        "total_votes": 12402,
+        "dem_votes": 10352,
+        "rep_votes": 2050,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.88955127688713
+        "margin_pct": -66.94081599741976
       },
       "77": {
-        "total_votes": 11707,
-        "dem_votes": 10309,
-        "rep_votes": 1398,
+        "total_votes": 11696,
+        "dem_votes": 10302,
+        "rep_votes": 1394,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.11685316477322
+        "margin_pct": -76.16279069767442
       },
       "78": {
-        "total_votes": 16340,
-        "dem_votes": 12549,
-        "rep_votes": 3790,
+        "total_votes": 16367,
+        "dem_votes": 12581,
+        "rep_votes": 3786,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.604651162790695
+        "margin_pct": -53.73617645261807
       },
       "79": {
-        "total_votes": 10457,
-        "dem_votes": 9048,
-        "rep_votes": 1409,
+        "total_votes": 10447,
+        "dem_votes": 9041,
+        "rep_votes": 1406,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.05154442000574
+        "margin_pct": -73.08318177467216
       },
       "80": {
-        "total_votes": 13406,
-        "dem_votes": 5177,
-        "rep_votes": 8229,
+        "total_votes": 13990,
+        "dem_votes": 5289,
+        "rep_votes": 8701,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.76592570490825
+        "margin_pct": 24.388849177984273
       },
       "81": {
-        "total_votes": 15015,
-        "dem_votes": 7796,
-        "rep_votes": 7219,
+        "total_votes": 15599,
+        "dem_votes": 7965,
+        "rep_votes": 7634,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.842823842823843
+        "margin_pct": -2.121930893005962
       },
       "82": {
-        "total_votes": 16725,
-        "dem_votes": 10946,
-        "rep_votes": 5779,
+        "total_votes": 17294,
+        "dem_votes": 11183,
+        "rep_votes": 6111,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.893871449925264
+        "margin_pct": -29.32809066728345
       },
       "83": {
-        "total_votes": 10476,
-        "dem_votes": 4981,
-        "rep_votes": 5496,
+        "total_votes": 10900,
+        "dem_votes": 5089,
+        "rep_votes": 5811,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 4.915998472699504
+        "margin_pct": 6.623853211009174
       },
       "84": {
-        "total_votes": 21963,
-        "dem_votes": 19676,
-        "rep_votes": 2287,
+        "total_votes": 22522,
+        "dem_votes": 20103,
+        "rep_votes": 2419,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.17406547375131
+        "margin_pct": -78.51878163573394
       },
       "85": {
-        "total_votes": 11552,
-        "dem_votes": 10179,
-        "rep_votes": 1373,
+        "total_votes": 11852,
+        "dem_votes": 10400,
+        "rep_votes": 1452,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.2292243767313
+        "margin_pct": -75.49780627742153
       },
       "86": {
-        "total_votes": 12033,
-        "dem_votes": 10265,
-        "rep_votes": 1768,
+        "total_votes": 12357,
+        "dem_votes": 10487,
+        "rep_votes": 1870,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.61414443613397
+        "margin_pct": -69.73375414744679
       },
       "87": {
-        "total_votes": 14997,
-        "dem_votes": 12615,
-        "rep_votes": 2382,
+        "total_votes": 15408,
+        "dem_votes": 12889,
+        "rep_votes": 2519,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.23364672934586
+        "margin_pct": -67.30269989615783
       },
       "88": {
-        "total_votes": 14302,
-        "dem_votes": 11019,
-        "rep_votes": 3283,
+        "total_votes": 14685,
+        "dem_votes": 11241,
+        "rep_votes": 3444,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.09033701580198
+        "margin_pct": -53.09499489274771
       },
       "89": {
-        "total_votes": 17605,
-        "dem_votes": 15338,
-        "rep_votes": 2267,
+        "total_votes": 18067,
+        "dem_votes": 15670,
+        "rep_votes": 2397,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.24595285430276
+        "margin_pct": -73.46543421708085
       },
       "90": {
-        "total_votes": 20405,
-        "dem_votes": 18399,
-        "rep_votes": 2006,
+        "total_votes": 20919,
+        "dem_votes": 18798,
+        "rep_votes": 2121,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.33815241362412
+        "margin_pct": -79.72178402409294
       },
       "91": {
-        "total_votes": 19920,
-        "dem_votes": 14789,
-        "rep_votes": 5132,
+        "total_votes": 20401,
+        "dem_votes": 15183,
+        "rep_votes": 5218,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.4789156626506
+        "margin_pct": -48.84564482133229
       },
       "92": {
-        "total_votes": 17865,
-        "dem_votes": 11034,
-        "rep_votes": 6832,
+        "total_votes": 17956,
+        "dem_votes": 11107,
+        "rep_votes": 6849,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.520850825636717
+        "margin_pct": -23.713521942526175
       },
       "93": {
-        "total_votes": 13719,
-        "dem_votes": 9203,
-        "rep_votes": 4516,
+        "total_votes": 13774,
+        "dem_votes": 9250,
+        "rep_votes": 4524,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.16429768933596
+        "margin_pct": -34.3110207637578
       },
       "94": {
-        "total_votes": 17431,
-        "dem_votes": 12925,
-        "rep_votes": 4506,
+        "total_votes": 17657,
+        "dem_votes": 13118,
+        "rep_votes": 4539,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.29900751534622
+        "margin_pct": -48.58696267769157
       },
       "95": {
-        "total_votes": 16161,
-        "dem_votes": 11369,
-        "rep_votes": 4792,
+        "total_votes": 16261,
+        "dem_votes": 11453,
+        "rep_votes": 4808,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.696739063176786
+        "margin_pct": -40.864645470758255
       },
       "96": {
-        "total_votes": 7708,
-        "dem_votes": 3900,
+        "total_votes": 7709,
+        "dem_votes": 3901,
         "rep_votes": 3808,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.1935651271406331
+        "margin_pct": -1.2063821507329096
       },
       "97": {
-        "total_votes": 10878,
-        "dem_votes": 5128,
+        "total_votes": 10879,
+        "dem_votes": 5129,
         "rep_votes": 5750,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.717962860820004
+        "margin_pct": 5.708245243128964
       },
       "98": {
-        "total_votes": 4881,
-        "dem_votes": 3282,
+        "total_votes": 4882,
+        "dem_votes": 3283,
         "rep_votes": 1599,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.480639213275964
+        "margin_pct": -34.49405981155264
       },
       "99": {
-        "total_votes": 13258,
-        "dem_votes": 4192,
+        "total_votes": 13259,
+        "dem_votes": 4193,
         "rep_votes": 9066,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.76270930758787
+        "margin_pct": 36.75239459989441
       },
       "100": {
-        "total_votes": 12602,
-        "dem_votes": 2704,
-        "rep_votes": 9898,
+        "total_votes": 12870,
+        "dem_votes": 2739,
+        "rep_votes": 10131,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.086176797333756
+        "margin_pct": 57.43589743589743
       },
       "101": {
-        "total_votes": 13934,
-        "dem_votes": 5349,
-        "rep_votes": 8585,
+        "total_votes": 13936,
+        "dem_votes": 5350,
+        "rep_votes": 8586,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.223769197646046
+        "margin_pct": 23.220436280137775
       },
       "102": {
-        "total_votes": 11372,
-        "dem_votes": 5699,
-        "rep_votes": 5673,
+        "total_votes": 11374,
+        "dem_votes": 5700,
+        "rep_votes": 5674,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -0.22863172704889204
+        "margin_pct": -0.22859152452962897
       },
       "103": {
-        "total_votes": 12946,
-        "dem_votes": 3612,
-        "rep_votes": 9334,
+        "total_votes": 13243,
+        "dem_votes": 3646,
+        "rep_votes": 9597,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.19898038004016
+        "margin_pct": 44.9369478214906
       },
       "104": {
-        "total_votes": 8516,
-        "dem_votes": 1974,
-        "rep_votes": 6542,
+        "total_votes": 13057,
+        "dem_votes": 2973,
+        "rep_votes": 10084,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.64020666979803
+        "margin_pct": 54.461208547139464
       },
       "105": {
-        "total_votes": 12559,
-        "dem_votes": 4599,
-        "rep_votes": 7960,
+        "total_votes": 12561,
+        "dem_votes": 4600,
+        "rep_votes": 7961,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.761684847519707
+        "margin_pct": 26.757423771992677
       },
       "106": {
-        "total_votes": 16902,
-        "dem_votes": 6537,
-        "rep_votes": 10365,
+        "total_votes": 16905,
+        "dem_votes": 6539,
+        "rep_votes": 10366,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.648207312744052
+        "margin_pct": 22.6382727003845
       },
       "107": {
-        "total_votes": 8800,
-        "dem_votes": 4984,
-        "rep_votes": 3815,
+        "total_votes": 8801,
+        "dem_votes": 4985,
+        "rep_votes": 3816,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.28409090909091
+        "margin_pct": -13.282581524826725
       },
       "108": {
-        "total_votes": 16325,
-        "dem_votes": 5703,
-        "rep_votes": 10621,
+        "total_votes": 16326,
+        "dem_votes": 5704,
+        "rep_votes": 10622,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.125574272588057
+        "margin_pct": 30.123729021193192
       },
       "109": {
-        "total_votes": 7300,
-        "dem_votes": 5060,
+        "total_votes": 7301,
+        "dem_votes": 5061,
         "rep_votes": 2240,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.63013698630137
+        "margin_pct": -38.6385426653883
       },
       "110": {
-        "total_votes": 14327,
-        "dem_votes": 6009,
+        "total_votes": 14329,
+        "dem_votes": 6011,
         "rep_votes": 8318,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.116423535981014
+        "margin_pct": 16.100216344476237
       },
       "111": {
         "total_votes": 15459,
@@ -1248,246 +1264,246 @@
         "margin_pct": 55.42689824981699
       },
       "113": {
-        "total_votes": 13220,
-        "dem_votes": 8135,
-        "rep_votes": 5084,
+        "total_votes": 13212,
+        "dem_votes": 8129,
+        "rep_votes": 5083,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.078668683812406
+        "margin_pct": -23.054798667877687
       },
       "114": {
-        "total_votes": 16815,
-        "dem_votes": 4752,
-        "rep_votes": 12063,
+        "total_votes": 16812,
+        "dem_votes": 4750,
+        "rep_votes": 12062,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.47903657448707
+        "margin_pct": 43.49274327861052
       },
       "115": {
-        "total_votes": 16105,
-        "dem_votes": 7681,
-        "rep_votes": 8423,
+        "total_votes": 16524,
+        "dem_votes": 7952,
+        "rep_votes": 8572,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 4.607264824588637
+        "margin_pct": 3.7521181312030985
       },
       "116": {
-        "total_votes": 12755,
-        "dem_votes": 6958,
-        "rep_votes": 5798,
+        "total_votes": 13085,
+        "dem_votes": 7187,
+        "rep_votes": 5898,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.094472755782046
+        "margin_pct": -9.850974398165839
       },
       "117": {
-        "total_votes": 13935,
-        "dem_votes": 4818,
-        "rep_votes": 9117,
+        "total_votes": 14266,
+        "dem_votes": 4988,
+        "rep_votes": 9278,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.85037674919268
+        "margin_pct": 30.07149866816206
       },
       "118": {
-        "total_votes": 12065,
-        "dem_votes": 3478,
-        "rep_votes": 8587,
+        "total_votes": 14999,
+        "dem_votes": 4284,
+        "rep_votes": 10715,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.34562784915043
+        "margin_pct": 42.87619174611641
       },
       "119": {
-        "total_votes": 525,
-        "dem_votes": 63,
-        "rep_votes": 462,
+        "total_votes": 10977,
+        "dem_votes": 2346,
+        "rep_votes": 8631,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 76.0
+        "margin_pct": 57.25608089641979
       },
       "120": {
-        "total_votes": 12574,
-        "dem_votes": 4852,
-        "rep_votes": 7722,
+        "total_votes": 18993,
+        "dem_votes": 7939,
+        "rep_votes": 11054,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.824876729759822
+        "margin_pct": 16.4007792344548
       },
       "121": {
-        "total_votes": 15436,
-        "dem_votes": 5454,
-        "rep_votes": 9982,
+        "total_votes": 17891,
+        "dem_votes": 7300,
+        "rep_votes": 10591,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.334024358642136
+        "margin_pct": 18.394723604046728
       },
       "122": {
-        "total_votes": 3640,
-        "dem_votes": 2300,
-        "rep_votes": 1341,
+        "total_votes": 5507,
+        "dem_votes": 3759,
+        "rep_votes": 1748,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.346153846153847
+        "margin_pct": -36.51715997820955
       },
       "123": {
-        "total_votes": 14411,
-        "dem_votes": 4445,
-        "rep_votes": 9966,
+        "total_votes": 15680,
+        "dem_votes": 4985,
+        "rep_votes": 10695,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.31101242106724
+        "margin_pct": 36.41581632653062
       },
       "124": {
-        "total_votes": 11170,
-        "dem_votes": 4218,
-        "rep_votes": 6952,
+        "total_votes": 16137,
+        "dem_votes": 5773,
+        "rep_votes": 10364,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.476275738585496
+        "margin_pct": 28.450145628059737
       },
       "125": {
-        "total_votes": 10970,
-        "dem_votes": 2664,
-        "rep_votes": 8306,
+        "total_votes": 12370,
+        "dem_votes": 3124,
+        "rep_votes": 9246,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.43117593436646
+        "margin_pct": 49.490703314470494
       },
       "126": {
-        "total_votes": 13711,
-        "dem_votes": 8007,
+        "total_votes": 13713,
+        "dem_votes": 8009,
         "rep_votes": 5704,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.796732550506892
+        "margin_pct": -16.808867497994605
       },
       "127": {
-        "total_votes": 18416,
-        "dem_votes": 4605,
-        "rep_votes": 13810,
+        "total_votes": 20071,
+        "dem_votes": 5091,
+        "rep_votes": 14980,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.98370981754995
+        "margin_pct": 49.27009117632405
       },
       "128": {
-        "total_votes": 16022,
-        "dem_votes": 7842,
-        "rep_votes": 8180,
+        "total_votes": 16750,
+        "dem_votes": 8379,
+        "rep_votes": 8371,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 2.1095993009611784
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -0.04776119402985075
       },
       "129": {
-        "total_votes": 13743,
-        "dem_votes": 8541,
-        "rep_votes": 5202,
+        "total_votes": 13748,
+        "dem_votes": 8545,
+        "rep_votes": 5203,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.29600523903078
+        "margin_pct": -24.308990398603434
       },
       "130": {
-        "total_votes": 13466,
-        "dem_votes": 8622,
-        "rep_votes": 4844,
+        "total_votes": 13470,
+        "dem_votes": 8625,
+        "rep_votes": 4845,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.055844348730137
+        "margin_pct": -28.06236080178174
       },
       "131": {
-        "total_votes": 13125,
-        "dem_votes": 2968,
-        "rep_votes": 10157,
+        "total_votes": 15013,
+        "dem_votes": 3520,
+        "rep_votes": 11493,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.773333333333326
+        "margin_pct": 53.10730700059948
       },
       "132": {
-        "total_votes": 11909,
-        "dem_votes": 7838,
+        "total_votes": 11912,
+        "dem_votes": 7840,
         "rep_votes": 4072,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.623142161390543
+        "margin_pct": -31.631967763599732
       },
       "133": {
-        "total_votes": 14267,
-        "dem_votes": 6527,
-        "rep_votes": 7740,
+        "total_votes": 14238,
+        "dem_votes": 6510,
+        "rep_votes": 7728,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.502137800518678
+        "margin_pct": 8.55457227138643
       },
       "134": {
-        "total_votes": 11393,
-        "dem_votes": 4080,
-        "rep_votes": 7314,
+        "total_votes": 14360,
+        "dem_votes": 5114,
+        "rep_votes": 9246,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.385850961116475
+        "margin_pct": 28.774373259052926
       },
       "135": {
         "total_votes": 16063,
@@ -1501,114 +1517,114 @@
         "margin_pct": 44.25698810931956
       },
       "136": {
-        "total_votes": 14218,
-        "dem_votes": 5077,
-        "rep_votes": 9141,
+        "total_votes": 15164,
+        "dem_votes": 5362,
+        "rep_votes": 9802,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.583485722323815
+        "margin_pct": 29.27987338433131
       },
       "137": {
-        "total_votes": 13173,
-        "dem_votes": 7785,
-        "rep_votes": 5388,
+        "total_votes": 14627,
+        "dem_votes": 8706,
+        "rep_votes": 5921,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.19631063539057
+        "margin_pct": -19.040131264100634
       },
       "138": {
-        "total_votes": 17201,
-        "dem_votes": 4336,
-        "rep_votes": 12865,
+        "total_votes": 17940,
+        "dem_votes": 4500,
+        "rep_votes": 13440,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.58432649264577
+        "margin_pct": 49.83277591973244
       },
       "139": {
-        "total_votes": 11172,
-        "dem_votes": 3359,
-        "rep_votes": 7813,
+        "total_votes": 12486,
+        "dem_votes": 3767,
+        "rep_votes": 8719,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.86752595775152
+        "margin_pct": 39.660419670030436
       },
       "140": {
-        "total_votes": 5629,
-        "dem_votes": 4074,
-        "rep_votes": 1556,
+        "total_votes": 6631,
+        "dem_votes": 4793,
+        "rep_votes": 1838,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.732634570971754
+        "margin_pct": -44.563414266324834
       },
       "141": {
-        "total_votes": 10575,
-        "dem_votes": 7469,
-        "rep_votes": 3106,
+        "total_votes": 12457,
+        "dem_votes": 8788,
+        "rep_votes": 3669,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.25768321513002
+        "margin_pct": -41.09336116239865
       },
       "142": {
-        "total_votes": 16868,
+        "total_votes": 16841,
         "dem_votes": 9938,
-        "rep_votes": 6930,
+        "rep_votes": 6903,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.832582404552998
+        "margin_pct": -18.021495160619917
       },
       "143": {
-        "total_votes": 14386,
+        "total_votes": 14369,
         "dem_votes": 10001,
-        "rep_votes": 4385,
+        "rep_votes": 4368,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.03795356596691
+        "margin_pct": -39.20244971814322
       },
       "144": {
-        "total_votes": 17764,
+        "total_votes": 17785,
         "dem_votes": 5616,
-        "rep_votes": 12148,
+        "rep_votes": 12169,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.77099752308039
+        "margin_pct": 36.84565645206635
       },
       "145": {
-        "total_votes": 13815,
+        "total_votes": 13242,
         "dem_votes": 5448,
-        "rep_votes": 5503,
-        "other_votes": 2864,
+        "rep_votes": 7794,
+        "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.39811798769453494
+        "margin_pct": 17.71635704576348
       },
       "146": {
         "total_votes": 13600,
@@ -1633,7 +1649,7 @@
         "margin_pct": 24.013230429988973
       },
       "148": {
-        "total_votes": 15930,
+        "total_votes": 15929,
         "dem_votes": 4940,
         "rep_votes": 10989,
         "other_votes": 0,
@@ -1641,84 +1657,84 @@
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.972379158819834
+        "margin_pct": 37.9747630108607
       },
       "149": {
-        "total_votes": 15139,
-        "dem_votes": 5549,
-        "rep_votes": 9590,
+        "total_votes": 15931,
+        "dem_votes": 6088,
+        "rep_votes": 9843,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.69264812735319
+        "margin_pct": 23.57039733852238
       },
       "150": {
-        "total_votes": 12207,
-        "dem_votes": 6997,
-        "rep_votes": 4223,
-        "other_votes": 988,
+        "total_votes": 14932,
+        "dem_votes": 7887,
+        "rep_votes": 7045,
+        "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.72466617514541
+        "margin_pct": -5.638896330029467
       },
       "151": {
-        "total_votes": 14941,
-        "dem_votes": 7501,
-        "rep_votes": 7440,
+        "total_votes": 16332,
+        "dem_votes": 8091,
+        "rep_votes": 8241,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -0.4082725386520313
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 0.9184423218221895
       },
       "152": {
-        "total_votes": 13619,
-        "dem_votes": 3648,
-        "rep_votes": 9971,
+        "total_votes": 14828,
+        "dem_votes": 3963,
+        "rep_votes": 10865,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.427784712533956
+        "margin_pct": 46.5470731049366
       },
       "153": {
-        "total_votes": 12941,
-        "dem_votes": 8486,
-        "rep_votes": 4455,
+        "total_votes": 15396,
+        "dem_votes": 9702,
+        "rep_votes": 5694,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.149061123560777
+        "margin_pct": -26.03273577552611
       },
       "154": {
-        "total_votes": 16555,
-        "dem_votes": 8867,
-        "rep_votes": 7688,
+        "total_votes": 17175,
+        "dem_votes": 9330,
+        "rep_votes": 7845,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.121715493808517
+        "margin_pct": -8.646288209606986
       },
       "155": {
-        "total_votes": 13195,
-        "dem_votes": 4811,
-        "rep_votes": 8384,
+        "total_votes": 15036,
+        "dem_votes": 5347,
+        "rep_votes": 9689,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.07843880257673
+        "margin_pct": 28.877361000266028
       },
       "156": {
         "total_votes": 11819,
@@ -1765,106 +1781,106 @@
         "margin_pct": 41.90097380331916
       },
       "160": {
-        "total_votes": 8822,
-        "dem_votes": 2402,
-        "rep_votes": 6420,
+        "total_votes": 9004,
+        "dem_votes": 2466,
+        "rep_votes": 6538,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.54522783949218
+        "margin_pct": 45.224344735673036
       },
       "161": {
-        "total_votes": 6512,
-        "dem_votes": 2130,
-        "rep_votes": 4382,
+        "total_votes": 7794,
+        "dem_votes": 2825,
+        "rep_votes": 4969,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.582309582309584
+        "margin_pct": 27.508339748524506
       },
       "162": {
-        "total_votes": 5805,
-        "dem_votes": 3695,
-        "rep_votes": 2110,
+        "total_votes": 9872,
+        "dem_votes": 6011,
+        "rep_votes": 3861,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.304048234280792
+        "margin_pct": -21.778768233387357
       },
       "163": {
-        "total_votes": 10203,
-        "dem_votes": 7145,
-        "rep_votes": 3058,
+        "total_votes": 17220,
+        "dem_votes": 11624,
+        "rep_votes": 5596,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.05684602567872
+        "margin_pct": -35.00580720092915
       },
       "164": {
-        "total_votes": 5784,
-        "dem_votes": 1522,
-        "rep_votes": 4262,
+        "total_votes": 8223,
+        "dem_votes": 2083,
+        "rep_votes": 6140,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.37206085753803
+        "margin_pct": 49.33722485710811
       },
       "165": {
-        "total_votes": 9043,
-        "dem_votes": 6545,
-        "rep_votes": 2498,
+        "total_votes": 15218,
+        "dem_votes": 10647,
+        "rep_votes": 4571,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.75284750635851
+        "margin_pct": -39.926402943882245
       },
       "166": {
-        "total_votes": 12436,
-        "dem_votes": 2965,
-        "rep_votes": 9471,
+        "total_votes": 20565,
+        "dem_votes": 4591,
+        "rep_votes": 15974,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.31585718880669
+        "margin_pct": 55.351325066861165
       },
       "167": {
-        "total_votes": 10616,
-        "dem_votes": 3417,
-        "rep_votes": 7199,
+        "total_votes": 10780,
+        "dem_votes": 3452,
+        "rep_votes": 7328,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.62547098718915
+        "margin_pct": 35.955473098330245
       },
       "168": {
-        "total_votes": 8178,
-        "dem_votes": 4810,
-        "rep_votes": 3368,
+        "total_votes": 8839,
+        "dem_votes": 5306,
+        "rep_votes": 3533,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.632673025189533
+        "margin_pct": -20.058830184410002
       },
       "169": {
-        "total_votes": 12345,
+        "total_votes": 12346,
         "dem_votes": 3576,
         "rep_votes": 8770,
         "other_votes": 0,
@@ -1872,18 +1888,18 @@
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.07371405427299
+        "margin_pct": 42.07030617203953
       },
       "170": {
-        "total_votes": 10996,
-        "dem_votes": 3123,
-        "rep_votes": 7873,
+        "total_votes": 12116,
+        "dem_votes": 3274,
+        "rep_votes": 8842,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.19752637322663
+        "margin_pct": 45.95576097722021
       },
       "171": {
         "total_votes": 12854,
@@ -1897,70 +1913,70 @@
         "margin_pct": 19.02909600124475
       },
       "172": {
-        "total_votes": 10301,
-        "dem_votes": 2802,
-        "rep_votes": 7499,
+        "total_votes": 10551,
+        "dem_votes": 2862,
+        "rep_votes": 7689,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.59751480438792
+        "margin_pct": 45.74921808359397
       },
       "173": {
-        "total_votes": 12829,
-        "dem_votes": 4963,
-        "rep_votes": 7866,
+        "total_votes": 13505,
+        "dem_votes": 5190,
+        "rep_votes": 8315,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.628419985969288
+        "margin_pct": 23.139577934098483
       },
       "174": {
-        "total_votes": 10759,
-        "dem_votes": 2745,
-        "rep_votes": 8015,
+        "total_votes": 13722,
+        "dem_votes": 3772,
+        "rep_votes": 9950,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.98224742076401
+        "margin_pct": 45.02259145897099
       },
       "175": {
-        "total_votes": 6514,
-        "dem_votes": 2774,
-        "rep_votes": 3740,
+        "total_votes": 13555,
+        "dem_votes": 5604,
+        "rep_votes": 7951,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.829597789376727
+        "margin_pct": 17.314644042788636
       },
       "176": {
-        "total_votes": 10162,
-        "dem_votes": 3060,
-        "rep_votes": 7102,
+        "total_votes": 11160,
+        "dem_votes": 3566,
+        "rep_votes": 7594,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.77563471757528
+        "margin_pct": 36.09318996415771
       },
       "177": {
-        "total_votes": 2321,
-        "dem_votes": 836,
-        "rep_votes": 1485,
+        "total_votes": 6161,
+        "dem_votes": 2680,
+        "rep_votes": 3481,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.96208530805687
+        "margin_pct": 13.001136179191688
       },
       "178": {
         "total_votes": 12465,
@@ -1974,26 +1990,26 @@
         "margin_pct": 61.9414360208584
       },
       "179": {
-        "total_votes": 13959,
-        "dem_votes": 4718,
-        "rep_votes": 9241,
+        "total_votes": 14593,
+        "dem_votes": 4902,
+        "rep_votes": 9691,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.4020345296941
+        "margin_pct": 32.817104091002534
       },
       "180": {
-        "total_votes": 11542,
-        "dem_votes": 3426,
-        "rep_votes": 8116,
+        "total_votes": 11624,
+        "dem_votes": 3445,
+        "rep_votes": 8179,
         "other_votes": 0,
         "dem_candidate": "Gregory K. \"Greg\" Hecht",
         "rep_candidate": "Samuel S. Olens",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.634205510310174
+        "margin_pct": 40.72608396421197
       }
     }
   }

@@ -4,38 +4,54 @@
     "contest_type": "agriculture_commissioner",
     "year": 2014,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:37.963156+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:52.653774+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2333011,
     "matched_input_votes": 2333011,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Commissioner_Of_Agriculture.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 985877,
+        "rep_votes": 1347134,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1047339,
+        "rep_votes": 1462039,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10494,
-        "dem_votes": 2453,
-        "rep_votes": 8041,
+        "total_votes": 12748,
+        "dem_votes": 2898,
+        "rep_votes": 9850,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.24947589098532
+        "margin_pct": 54.53404455600879
       },
       "2": {
-        "total_votes": 9569,
-        "dem_votes": 1853,
-        "rep_votes": 7716,
+        "total_votes": 10245,
+        "dem_votes": 1951,
+        "rep_votes": 8294,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.27077019542272
+        "margin_pct": 61.913128355295264
       },
       "3": {
         "total_votes": 11821,
@@ -49,7 +65,7 @@
         "margin_pct": 61.10312156331952
       },
       "4": {
-        "total_votes": 6777,
+        "total_votes": 6778,
         "dem_votes": 1858,
         "rep_votes": 4920,
         "other_votes": 0,
@@ -57,21 +73,21 @@
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.18223402685554
+        "margin_pct": 45.17556801416347
       },
       "5": {
-        "total_votes": 10543,
-        "dem_votes": 1791,
-        "rep_votes": 8752,
+        "total_votes": 10531,
+        "dem_votes": 1788,
+        "rep_votes": 8743,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.02485061178032
+        "margin_pct": 66.04311081568703
       },
       "6": {
-        "total_votes": 9842,
+        "total_votes": 9841,
         "dem_votes": 1950,
         "rep_votes": 7891,
         "other_votes": 0,
@@ -79,7 +95,7 @@
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.36374720585247
+        "margin_pct": 60.36988110964333
       },
       "7": {
         "total_votes": 15636,
@@ -93,37 +109,37 @@
         "margin_pct": 63.596827833205424
       },
       "8": {
-        "total_votes": 18019,
+        "total_votes": 18020,
         "dem_votes": 3375,
-        "rep_votes": 14644,
+        "rep_votes": 14645,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.53954159498307
+        "margin_pct": 62.541620421753606
       },
       "9": {
-        "total_votes": 8323,
-        "dem_votes": 1110,
-        "rep_votes": 7213,
+        "total_votes": 14355,
+        "dem_votes": 2178,
+        "rep_votes": 12177,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.32692538748049
+        "margin_pct": 69.6551724137931
       },
       "10": {
-        "total_votes": 12780,
+        "total_votes": 12779,
         "dem_votes": 2432,
-        "rep_votes": 10348,
+        "rep_votes": 10347,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.94053208137716
+        "margin_pct": 61.937553799201815
       },
       "11": {
         "total_votes": 14802,
@@ -137,15 +153,15 @@
         "margin_pct": 73.9629779759492
       },
       "12": {
-        "total_votes": 11682,
-        "dem_votes": 2810,
-        "rep_votes": 8872,
+        "total_votes": 11819,
+        "dem_votes": 2855,
+        "rep_votes": 8964,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.89179934942647
+        "margin_pct": 51.68796006430324
       },
       "13": {
         "total_votes": 12321,
@@ -159,114 +175,114 @@
         "margin_pct": 39.6315234153072
       },
       "14": {
-        "total_votes": 13228,
-        "dem_votes": 2326,
-        "rep_votes": 10901,
+        "total_votes": 13239,
+        "dem_votes": 2328,
+        "rep_votes": 10911,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.8246144541881
+        "margin_pct": 64.83118060276456
       },
       "15": {
-        "total_votes": 11859,
-        "dem_votes": 2728,
-        "rep_votes": 9131,
+        "total_votes": 11871,
+        "dem_votes": 2731,
+        "rep_votes": 9140,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.992748123787834
+        "margin_pct": 53.98871198719569
       },
       "16": {
         "total_votes": 7883,
         "dem_votes": 1958,
-        "rep_votes": 5924,
+        "rep_votes": 5925,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.3107953824686
+        "margin_pct": 50.32348090828365
       },
       "17": {
-        "total_votes": 5648,
-        "dem_votes": 1417,
-        "rep_votes": 4230,
+        "total_votes": 10542,
+        "dem_votes": 2506,
+        "rep_votes": 8036,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.805240793201136
+        "margin_pct": 52.45683930942895
       },
       "18": {
-        "total_votes": 10919,
-        "dem_votes": 1815,
-        "rep_votes": 9103,
+        "total_votes": 16239,
+        "dem_votes": 2678,
+        "rep_votes": 13561,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.74603901456177
+        "margin_pct": 67.01767350206293
       },
       "19": {
-        "total_votes": 8042,
-        "dem_votes": 2444,
-        "rep_votes": 5598,
+        "total_votes": 10962,
+        "dem_votes": 3458,
+        "rep_votes": 7504,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.219099726436205
+        "margin_pct": 36.90932311621967
       },
       "20": {
-        "total_votes": 16570,
-        "dem_votes": 3142,
-        "rep_votes": 13428,
+        "total_votes": 16577,
+        "dem_votes": 3144,
+        "rep_votes": 13433,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.07604103802053
+        "margin_pct": 62.067925438861074
       },
       "21": {
-        "total_votes": 16141,
-        "dem_votes": 2470,
-        "rep_votes": 13671,
+        "total_votes": 16147,
+        "dem_votes": 2471,
+        "rep_votes": 13676,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.39470912582864
+        "margin_pct": 69.39369542329844
       },
       "22": {
-        "total_votes": 15339,
-        "dem_votes": 4284,
-        "rep_votes": 11055,
+        "total_votes": 15410,
+        "dem_votes": 4300,
+        "rep_votes": 11110,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.14238216311363
+        "margin_pct": 44.19208306294614
       },
       "23": {
-        "total_votes": 12284,
-        "dem_votes": 1931,
-        "rep_votes": 10352,
+        "total_votes": 12289,
+        "dem_votes": 1933,
+        "rep_votes": 10356,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.55258873331162
+        "margin_pct": 68.54097160061843
       },
       "24": {
         "total_votes": 12463,
@@ -280,7 +296,7 @@
         "margin_pct": 65.33739870015245
       },
       "25": {
-        "total_votes": 14225,
+        "total_votes": 14224,
         "dem_votes": 2735,
         "rep_votes": 11489,
         "other_votes": 0,
@@ -288,7 +304,7 @@
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.53954305799648
+        "margin_pct": 61.54386951631046
       },
       "26": {
         "total_votes": 14515,
@@ -302,433 +318,433 @@
         "margin_pct": 70.62349293833965
       },
       "27": {
-        "total_votes": 11555,
-        "dem_votes": 1366,
-        "rep_votes": 10189,
+        "total_votes": 13587,
+        "dem_votes": 1587,
+        "rep_votes": 12000,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 76.35655560363479
+        "margin_pct": 76.63943475380879
       },
       "28": {
-        "total_votes": 11569,
-        "dem_votes": 1519,
-        "rep_votes": 10050,
+        "total_votes": 11761,
+        "dem_votes": 1546,
+        "rep_votes": 10215,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.74016768951508
+        "margin_pct": 73.70971856134683
       },
       "29": {
-        "total_votes": 7188,
-        "dem_votes": 2189,
-        "rep_votes": 4998,
+        "total_votes": 8096,
+        "dem_votes": 2406,
+        "rep_votes": 5690,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.07902058987201
+        "margin_pct": 40.56324110671937
       },
       "30": {
-        "total_votes": 14497,
-        "dem_votes": 2320,
-        "rep_votes": 12177,
+        "total_votes": 16162,
+        "dem_votes": 2517,
+        "rep_votes": 13645,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.9933779402635
+        "margin_pct": 68.85286474446232
       },
       "31": {
-        "total_votes": 6739,
-        "dem_votes": 992,
-        "rep_votes": 5747,
+        "total_votes": 10176,
+        "dem_votes": 1505,
+        "rep_votes": 8671,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.55943018251966
+        "margin_pct": 70.42059748427673
       },
       "32": {
-        "total_votes": 7455,
-        "dem_votes": 986,
-        "rep_votes": 6469,
+        "total_votes": 13212,
+        "dem_votes": 2545,
+        "rep_votes": 10667,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.54795439302481
+        "margin_pct": 61.47441719648804
       },
       "33": {
-        "total_votes": 14088,
-        "dem_votes": 2982,
-        "rep_votes": 11106,
+        "total_votes": 14092,
+        "dem_votes": 2983,
+        "rep_votes": 11109,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.666098807495736
+        "margin_pct": 57.663922793074086
       },
       "34": {
-        "total_votes": 18717,
-        "dem_votes": 4802,
-        "rep_votes": 13915,
+        "total_votes": 18875,
+        "dem_votes": 4827,
+        "rep_votes": 14048,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.68835817705829
+        "margin_pct": 48.85298013245033
       },
       "35": {
-        "total_votes": 11666,
-        "dem_votes": 4453,
-        "rep_votes": 7213,
+        "total_votes": 11758,
+        "dem_votes": 4476,
+        "rep_votes": 7282,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.658494771129778
+        "margin_pct": 23.864602823609456
       },
       "36": {
-        "total_votes": 18942,
-        "dem_votes": 4622,
-        "rep_votes": 14319,
+        "total_votes": 19102,
+        "dem_votes": 4646,
+        "rep_votes": 14456,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.19311582726217
+        "margin_pct": 51.355878965553345
       },
       "37": {
-        "total_votes": 14779,
-        "dem_votes": 5847,
-        "rep_votes": 8932,
+        "total_votes": 14894,
+        "dem_votes": 5876,
+        "rep_votes": 9018,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.874213410920902
+        "margin_pct": 21.095743252316367
       },
       "38": {
-        "total_votes": 15240,
-        "dem_votes": 9089,
-        "rep_votes": 6151,
+        "total_votes": 15345,
+        "dem_votes": 9136,
+        "rep_votes": 6209,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.27821522309711
+        "margin_pct": -19.074617139133267
       },
       "39": {
-        "total_votes": 12549,
-        "dem_votes": 8568,
-        "rep_votes": 3981,
+        "total_votes": 12630,
+        "dem_votes": 8611,
+        "rep_votes": 4019,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.55271336361463
+        "margin_pct": -36.35787806809184
       },
       "40": {
-        "total_votes": 14750,
-        "dem_votes": 4236,
-        "rep_votes": 10514,
+        "total_votes": 21564,
+        "dem_votes": 5974,
+        "rep_votes": 15590,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.56271186440678
+        "margin_pct": 44.59283991838249
       },
       "41": {
-        "total_votes": 11571,
-        "dem_votes": 6605,
-        "rep_votes": 4967,
+        "total_votes": 11652,
+        "dem_votes": 6638,
+        "rep_votes": 5014,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.156079854809436
+        "margin_pct": -13.937521455544113
       },
       "42": {
-        "total_votes": 12587,
-        "dem_votes": 6425,
-        "rep_votes": 6162,
+        "total_votes": 12678,
+        "dem_votes": 6457,
+        "rep_votes": 6221,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -2.0894573766584568
+        "margin_pct": -1.8614923489509387
       },
       "43": {
-        "total_votes": 9688,
-        "dem_votes": 4466,
-        "rep_votes": 5221,
+        "total_votes": 9760,
+        "dem_votes": 4489,
+        "rep_votes": 5271,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.793146160198184
+        "margin_pct": 8.012295081967213
       },
       "44": {
-        "total_votes": 16188,
-        "dem_votes": 4540,
-        "rep_votes": 11648,
+        "total_votes": 16289,
+        "dem_votes": 4559,
+        "rep_votes": 11730,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.909068445762294
+        "margin_pct": 44.02357419117195
       },
       "45": {
-        "total_votes": 26301,
-        "dem_votes": 6344,
-        "rep_votes": 19956,
+        "total_votes": 26522,
+        "dem_votes": 6376,
+        "rep_votes": 20146,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.75468613360709
+        "margin_pct": 51.91916145087097
       },
       "46": {
-        "total_votes": 19115,
-        "dem_votes": 4769,
-        "rep_votes": 14346,
+        "total_votes": 19245,
+        "dem_votes": 4789,
+        "rep_votes": 14456,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.1020141250327
+        "margin_pct": 50.23122889062094
       },
       "47": {
-        "total_votes": 14363,
-        "dem_votes": 3516,
+        "total_votes": 14364,
+        "dem_votes": 3517,
         "rep_votes": 10847,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.04086889925503
+        "margin_pct": 51.030353661932615
       },
       "48": {
-        "total_votes": 19600,
-        "dem_votes": 5881,
+        "total_votes": 19601,
+        "dem_votes": 5882,
         "rep_votes": 13719,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.98979591836735
+        "margin_pct": 39.98265394622723
       },
       "49": {
-        "total_votes": 15844,
-        "dem_votes": 4049,
+        "total_votes": 15845,
+        "dem_votes": 4050,
         "rep_votes": 11795,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.889169401666244
+        "margin_pct": 48.87977279899022
       },
       "50": {
-        "total_votes": 12692,
-        "dem_votes": 4169,
+        "total_votes": 12693,
+        "dem_votes": 4170,
         "rep_votes": 8523,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.305074062401516
+        "margin_pct": 34.29449302765304
       },
       "51": {
-        "total_votes": 14882,
-        "dem_votes": 5666,
+        "total_votes": 14883,
+        "dem_votes": 5667,
         "rep_votes": 9216,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.85432065582583
+        "margin_pct": 23.845998790566416
       },
       "52": {
-        "total_votes": 13706,
-        "dem_votes": 5193,
-        "rep_votes": 8512,
+        "total_votes": 14016,
+        "dem_votes": 5251,
+        "rep_votes": 8765,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.215671968480954
+        "margin_pct": 25.07134703196347
       },
       "53": {
         "total_votes": 19051,
-        "dem_votes": 5760,
-        "rep_votes": 13291,
+        "dem_votes": 5761,
+        "rep_votes": 13290,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.53073329484017
+        "margin_pct": 39.52023515825941
       },
       "54": {
-        "total_votes": 12967,
-        "dem_votes": 4720,
+        "total_votes": 12968,
+        "dem_votes": 4721,
         "rep_votes": 8247,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.199814914783683
+        "margin_pct": 27.19000616903146
       },
       "55": {
-        "total_votes": 14834,
-        "dem_votes": 10433,
+        "total_votes": 14835,
+        "dem_votes": 10434,
         "rep_votes": 4401,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.6633409734394
+        "margin_pct": -40.66734074823054
       },
       "56": {
-        "total_votes": 10635,
-        "dem_votes": 9079,
+        "total_votes": 10636,
+        "dem_votes": 9080,
         "rep_votes": 1556,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.73812881993418
+        "margin_pct": -70.7408800300865
       },
       "57": {
         "total_votes": 13831,
-        "dem_votes": 8513,
+        "dem_votes": 8514,
         "rep_votes": 5317,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.107512110476467
+        "margin_pct": -23.114742245679995
       },
       "58": {
-        "total_votes": 15104,
-        "dem_votes": 12911,
+        "total_votes": 15105,
+        "dem_votes": 12912,
         "rep_votes": 2193,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.96133474576271
+        "margin_pct": -70.96325719960278
       },
       "59": {
-        "total_votes": 12645,
-        "dem_votes": 11331,
+        "total_votes": 12646,
+        "dem_votes": 11332,
         "rep_votes": 1314,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.21708185053382
+        "margin_pct": -79.2187252886288
       },
       "60": {
-        "total_votes": 16433,
-        "dem_votes": 9557,
-        "rep_votes": 6876,
+        "total_votes": 16455,
+        "dem_votes": 9562,
+        "rep_votes": 6893,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.31473255035599
+        "margin_pct": -16.21999392281981
       },
       "61": {
-        "total_votes": 19027,
-        "dem_votes": 12568,
-        "rep_votes": 6460,
+        "total_votes": 19114,
+        "dem_votes": 12597,
+        "rep_votes": 6517,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.10175014453146
+        "margin_pct": -31.809145129224653
       },
       "62": {
         "total_votes": 13175,
-        "dem_votes": 11625,
+        "dem_votes": 11626,
         "rep_votes": 1549,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.47817836812145
+        "margin_pct": -76.48576850094877
       },
       "63": {
-        "total_votes": 13481,
-        "dem_votes": 11484,
+        "total_votes": 13482,
+        "dem_votes": 11485,
         "rep_votes": 1997,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.37311772123729
+        "margin_pct": -70.37531523512833
       },
       "64": {
-        "total_votes": 16837,
+        "total_votes": 16838,
         "dem_votes": 8455,
-        "rep_votes": 8382,
+        "rep_votes": 8383,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -0.4335689255805666
+        "margin_pct": -0.42760422853070434
       },
       "65": {
         "total_votes": 16244,
-        "dem_votes": 11616,
+        "dem_votes": 11617,
         "rep_votes": 4627,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.02511696626446
+        "margin_pct": -43.031273085446934
       },
       "66": {
         "total_votes": 13549,
@@ -753,477 +769,477 @@
         "margin_pct": -13.42532591293741
       },
       "68": {
-        "total_votes": 15865,
-        "dem_votes": 8319,
+        "total_votes": 15866,
+        "dem_votes": 8320,
         "rep_votes": 7546,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.872360542073747
+        "margin_pct": -4.878356233455188
       },
       "69": {
-        "total_votes": 19183,
-        "dem_votes": 12314,
+        "total_votes": 19184,
+        "dem_votes": 12315,
         "rep_votes": 6869,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.38450711567534
+        "margin_pct": -28.388240200166802
       },
       "70": {
-        "total_votes": 11518,
-        "dem_votes": 3898,
+        "total_votes": 11514,
+        "dem_votes": 3894,
         "rep_votes": 7620,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.31463795797882
+        "margin_pct": 32.36060448150078
       },
       "71": {
-        "total_votes": 6236,
-        "dem_votes": 1848,
-        "rep_votes": 4388,
+        "total_votes": 17621,
+        "dem_votes": 5137,
+        "rep_votes": 12484,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.731237973059656
+        "margin_pct": 41.694568980194084
       },
       "72": {
-        "total_votes": 5958,
-        "dem_votes": 1390,
-        "rep_votes": 4568,
+        "total_votes": 8060,
+        "dem_votes": 1881,
+        "rep_votes": 6179,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.340046995636115
+        "margin_pct": 53.32506203473946
       },
       "73": {
-        "total_votes": 18115,
-        "dem_votes": 3958,
+        "total_votes": 18114,
+        "dem_votes": 3957,
         "rep_votes": 14157,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.30140767319901
+        "margin_pct": 56.31003643590593
       },
       "74": {
-        "total_votes": 14916,
-        "dem_votes": 9934,
-        "rep_votes": 4983,
+        "total_votes": 15015,
+        "dem_votes": 9996,
+        "rep_votes": 5019,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.19254491820863
+        "margin_pct": -33.14685314685315
       },
       "75": {
-        "total_votes": 12211,
-        "dem_votes": 9947,
-        "rep_votes": 2265,
+        "total_votes": 12199,
+        "dem_votes": 9940,
+        "rep_votes": 2259,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.91049054131521
+        "margin_pct": -62.96417739158947
       },
       "76": {
-        "total_votes": 12343,
-        "dem_votes": 10020,
-        "rep_votes": 2323,
+        "total_votes": 12332,
+        "dem_votes": 10014,
+        "rep_votes": 2318,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.35923195333387
+        "margin_pct": -62.40674667531625
       },
       "77": {
-        "total_votes": 11585,
-        "dem_votes": 9941,
-        "rep_votes": 1644,
+        "total_votes": 11574,
+        "dem_votes": 9934,
+        "rep_votes": 1640,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.6184721622788
+        "margin_pct": -71.66061862795921
       },
       "78": {
-        "total_votes": 13965,
-        "dem_votes": 8100,
-        "rep_votes": 5865,
+        "total_votes": 14210,
+        "dem_votes": 8271,
+        "rep_votes": 5939,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.004296455424274
+        "margin_pct": -16.410978184377196
       },
       "79": {
-        "total_votes": 10369,
-        "dem_votes": 8768,
-        "rep_votes": 1601,
+        "total_votes": 10359,
+        "dem_votes": 8762,
+        "rep_votes": 1597,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.11949078985438
+        "margin_pct": -69.16690800270297
       },
       "80": {
-        "total_votes": 13197,
-        "dem_votes": 4819,
-        "rep_votes": 8377,
+        "total_votes": 13761,
+        "dem_votes": 4922,
+        "rep_votes": 8839,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.960672880200043
+        "margin_pct": 28.464501126371626
       },
       "81": {
-        "total_votes": 16446,
-        "dem_votes": 3644,
-        "rep_votes": 12802,
+        "total_votes": 16807,
+        "dem_votes": 3773,
+        "rep_votes": 13034,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.685273014714824
+        "margin_pct": 55.10204081632652
       },
       "82": {
-        "total_votes": 16034,
-        "dem_votes": 4541,
-        "rep_votes": 11493,
+        "total_votes": 18812,
+        "dem_votes": 5436,
+        "rep_votes": 13376,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.357864537857054
+        "margin_pct": 42.20710184988305
       },
       "83": {
-        "total_votes": 10360,
-        "dem_votes": 4603,
-        "rep_votes": 5757,
+        "total_votes": 10775,
+        "dem_votes": 4701,
+        "rep_votes": 6074,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.13899613899614
+        "margin_pct": 12.742459396751741
       },
       "84": {
-        "total_votes": 16284,
-        "dem_votes": 13452,
-        "rep_votes": 2833,
+        "total_votes": 16728,
+        "dem_votes": 13739,
+        "rep_votes": 2989,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.21125030704987
+        "margin_pct": -64.26351028216163
       },
       "85": {
-        "total_votes": 12323,
-        "dem_votes": 9633,
-        "rep_votes": 2690,
+        "total_votes": 12677,
+        "dem_votes": 9839,
+        "rep_votes": 2838,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.3417998863913
+        "margin_pct": -55.22599984223396
       },
       "86": {
-        "total_votes": 14744,
-        "dem_votes": 10787,
-        "rep_votes": 3957,
+        "total_votes": 15193,
+        "dem_votes": 11018,
+        "rep_votes": 4175,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.323928377645146
+        "margin_pct": -45.04047916803791
       },
       "87": {
-        "total_votes": 16289,
-        "dem_votes": 11008,
-        "rep_votes": 5281,
+        "total_votes": 16815,
+        "dem_votes": 11243,
+        "rep_votes": 5572,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.1586960525508
+        "margin_pct": -33.72584002378829
       },
       "88": {
-        "total_votes": 14193,
-        "dem_votes": 10782,
-        "rep_votes": 3411,
+        "total_votes": 14567,
+        "dem_votes": 10996,
+        "rep_votes": 3571,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.934051997463534
+        "margin_pct": -50.97137365277682
       },
       "89": {
-        "total_votes": 18633,
-        "dem_votes": 16053,
-        "rep_votes": 2580,
+        "total_votes": 19118,
+        "dem_votes": 16396,
+        "rep_votes": 2722,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -72.30719690871035
+        "margin_pct": -71.52421801443666
       },
       "90": {
-        "total_votes": 17301,
-        "dem_votes": 14606,
-        "rep_votes": 2695,
+        "total_votes": 17759,
+        "dem_votes": 14917,
+        "rep_votes": 2842,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.84573146060922
+        "margin_pct": -67.99369333858888
       },
       "91": {
-        "total_votes": 19217,
-        "dem_votes": 13328,
-        "rep_votes": 5888,
+        "total_votes": 19470,
+        "dem_votes": 13538,
+        "rep_votes": 5932,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.71572045584639
+        "margin_pct": -39.06522855675398
       },
       "92": {
-        "total_votes": 15230,
-        "dem_votes": 9902,
-        "rep_votes": 5328,
+        "total_votes": 15238,
+        "dem_votes": 9909,
+        "rep_votes": 5329,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.032829940906108
+        "margin_pct": -30.05643785273658
       },
       "93": {
-        "total_votes": 14822,
-        "dem_votes": 9302,
-        "rep_votes": 5520,
+        "total_votes": 14920,
+        "dem_votes": 9385,
+        "rep_votes": 5535,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.516124679530428
+        "margin_pct": -25.804289544235925
       },
       "94": {
-        "total_votes": 17820,
-        "dem_votes": 11368,
-        "rep_votes": 6452,
+        "total_votes": 18011,
+        "dem_votes": 11523,
+        "rep_votes": 6488,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.586980920314254
+        "margin_pct": -27.955138526456054
       },
       "95": {
-        "total_votes": 14031,
-        "dem_votes": 9930,
-        "rep_votes": 4102,
+        "total_votes": 14133,
+        "dem_votes": 10012,
+        "rep_votes": 4121,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.53659753403179
+        "margin_pct": -41.682586853463526
       },
       "96": {
-        "total_votes": 7627,
-        "dem_votes": 3733,
+        "total_votes": 7628,
+        "dem_votes": 3734,
         "rep_votes": 3894,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.1109217254490624
+        "margin_pct": 2.097535395909806
       },
       "97": {
-        "total_votes": 10737,
-        "dem_votes": 4845,
+        "total_votes": 10739,
+        "dem_votes": 4846,
         "rep_votes": 5893,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.760640774890565
+        "margin_pct": 9.749511127665517
       },
       "98": {
-        "total_votes": 4855,
-        "dem_votes": 3169,
+        "total_votes": 4856,
+        "dem_votes": 3170,
         "rep_votes": 1686,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.545829042224508
+        "margin_pct": -30.56013179571664
       },
       "99": {
-        "total_votes": 13126,
-        "dem_votes": 3937,
-        "rep_votes": 9189,
+        "total_votes": 13128,
+        "dem_votes": 3938,
+        "rep_votes": 9190,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.01218954746305
+        "margin_pct": 40.006093845216334
       },
       "100": {
-        "total_votes": 12513,
-        "dem_votes": 2544,
-        "rep_votes": 9969,
+        "total_votes": 12777,
+        "dem_votes": 2576,
+        "rep_votes": 10201,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.338288180292494
+        "margin_pct": 59.67754558973155
       },
       "101": {
-        "total_votes": 13459,
-        "dem_votes": 7154,
-        "rep_votes": 6305,
+        "total_votes": 13959,
+        "dem_votes": 7307,
+        "rep_votes": 6652,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.308046660227356
+        "margin_pct": -4.6923132029515005
       },
       "102": {
-        "total_votes": 10541,
-        "dem_votes": 5192,
+        "total_votes": 10542,
+        "dem_votes": 5193,
         "rep_votes": 5349,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.4894222559529455
+        "margin_pct": 1.479795105293113
       },
       "103": {
-        "total_votes": 12879,
-        "dem_votes": 3407,
-        "rep_votes": 9473,
+        "total_votes": 13178,
+        "dem_votes": 3438,
+        "rep_votes": 9740,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.09993011879804
+        "margin_pct": 47.822127788738804
       },
       "104": {
-        "total_votes": 8461,
-        "dem_votes": 1866,
-        "rep_votes": 6595,
+        "total_votes": 12995,
+        "dem_votes": 2782,
+        "rep_votes": 10213,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.89173856518143
+        "margin_pct": 57.183532127741444
       },
       "105": {
-        "total_votes": 14305,
-        "dem_votes": 4435,
-        "rep_votes": 9870,
+        "total_votes": 14307,
+        "dem_votes": 4436,
+        "rep_votes": 9871,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.99370849353373
+        "margin_pct": 37.98839728804082
       },
       "106": {
-        "total_votes": 12843,
-        "dem_votes": 5591,
-        "rep_votes": 7252,
+        "total_votes": 12845,
+        "dem_votes": 5592,
+        "rep_votes": 7253,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.933115315736199
+        "margin_pct": 12.931101595951732
       },
       "107": {
-        "total_votes": 11455,
-        "dem_votes": 4682,
-        "rep_votes": 6773,
+        "total_votes": 11457,
+        "dem_votes": 4683,
+        "rep_votes": 6774,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.25403753819293
+        "margin_pct": 18.25085100811731
       },
       "108": {
-        "total_votes": 17045,
-        "dem_votes": 5295,
-        "rep_votes": 11750,
+        "total_votes": 17047,
+        "dem_votes": 5296,
+        "rep_votes": 11751,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.870343209152246
+        "margin_pct": 37.86590015838564
       },
       "109": {
-        "total_votes": 6422,
-        "dem_votes": 4645,
+        "total_votes": 6423,
+        "dem_votes": 4646,
         "rep_votes": 1777,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.658984739956395
+        "margin_pct": -44.66760080959054
       },
       "110": {
-        "total_votes": 13551,
-        "dem_votes": 5129,
-        "rep_votes": 8422,
+        "total_votes": 13553,
+        "dem_votes": 5130,
+        "rep_votes": 8423,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.300789609622907
+        "margin_pct": 24.297203571165056
       },
       "111": {
         "total_votes": 15272,
@@ -1248,235 +1264,235 @@
         "margin_pct": 52.32006327445294
       },
       "113": {
-        "total_votes": 12531,
-        "dem_votes": 7920,
-        "rep_votes": 4610,
+        "total_votes": 12523,
+        "dem_votes": 7914,
+        "rep_votes": 4609,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.414492059691963
+        "margin_pct": -26.39143975085842
       },
       "114": {
-        "total_votes": 18085,
-        "dem_votes": 4804,
-        "rep_votes": 13281,
+        "total_votes": 18082,
+        "dem_votes": 4802,
+        "rep_votes": 13280,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.87309925352502
+        "margin_pct": 46.886406370976665
       },
       "115": {
-        "total_votes": 19987,
-        "dem_votes": 15294,
-        "rep_votes": 4693,
+        "total_votes": 20488,
+        "dem_votes": 15682,
+        "rep_votes": 4806,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.03947565917847
+        "margin_pct": -53.084732526356895
       },
       "116": {
-        "total_votes": 18500,
-        "dem_votes": 13849,
-        "rep_votes": 4651,
+        "total_votes": 18984,
+        "dem_votes": 14233,
+        "rep_votes": 4751,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.71891891891892
+        "margin_pct": -49.94732406236831
       },
       "117": {
-        "total_votes": 12077,
-        "dem_votes": 6885,
-        "rep_votes": 5193,
+        "total_votes": 12415,
+        "dem_votes": 7128,
+        "rep_votes": 5287,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.010101846485053
+        "margin_pct": -14.828836085380587
       },
       "118": {
-        "total_votes": 15413,
-        "dem_votes": 4988,
-        "rep_votes": 10425,
+        "total_votes": 15437,
+        "dem_votes": 4986,
+        "rep_votes": 10451,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.275416855900865
+        "margin_pct": 35.40195633866684
       },
       "119": {
-        "total_votes": 522,
-        "dem_votes": 55,
-        "rep_votes": 468,
+        "total_votes": 10956,
+        "dem_votes": 2147,
+        "rep_votes": 8809,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 79.11877394636015
+        "margin_pct": 60.806863818912014
       },
       "120": {
-        "total_votes": 12581,
-        "dem_votes": 4422,
-        "rep_votes": 8159,
+        "total_votes": 18999,
+        "dem_votes": 7307,
+        "rep_votes": 11692,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.70352118273587
+        "margin_pct": 23.080162113795463
       },
       "121": {
-        "total_votes": 15465,
-        "dem_votes": 4915,
-        "rep_votes": 10550,
+        "total_votes": 17903,
+        "dem_votes": 6667,
+        "rep_votes": 11236,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.43711606854187
+        "margin_pct": 25.520862425291853
       },
       "122": {
-        "total_votes": 3631,
-        "dem_votes": 2156,
-        "rep_votes": 1475,
+        "total_votes": 5495,
+        "dem_votes": 3563,
+        "rep_votes": 1932,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.755163866703388
+        "margin_pct": -29.68152866242038
       },
       "123": {
-        "total_votes": 14423,
-        "dem_votes": 4315,
-        "rep_votes": 10108,
+        "total_votes": 15692,
+        "dem_votes": 4866,
+        "rep_votes": 10826,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.16501421340914
+        "margin_pct": 37.98113688503696
       },
       "124": {
-        "total_votes": 11168,
-        "dem_votes": 3987,
-        "rep_votes": 7181,
+        "total_votes": 16118,
+        "dem_votes": 5418,
+        "rep_votes": 10700,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.599570200573066
+        "margin_pct": 32.770815237622536
       },
       "125": {
-        "total_votes": 10936,
-        "dem_votes": 2661,
-        "rep_votes": 8275,
+        "total_votes": 12331,
+        "dem_votes": 3123,
+        "rep_votes": 9208,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.33504023408925
+        "margin_pct": 49.34717378963588
       },
       "126": {
-        "total_votes": 13661,
-        "dem_votes": 8017,
+        "total_votes": 13662,
+        "dem_votes": 8018,
         "rep_votes": 5644,
         "other_votes": 0,
         "dem_candidate": "Chris Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.37061708513286
+        "margin_pct": -17.376665202752157
       },
       "127": {
-        "total_votes": 18291,
-        "dem_votes": 4639,
-        "rep_votes": 13652,
+        "total_votes": 19935,
+        "dem_votes": 5128,
+        "rep_votes": 14807,
         "other_votes": 0,
         "dem_candidate": "Chris Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.27560002186868
+        "margin_pct": 48.55279658891397
       },
       "128": {
-        "total_votes": 15995,
-        "dem_votes": 7768,
-        "rep_votes": 8227,
+        "total_votes": 16718,
+        "dem_votes": 8298,
+        "rep_votes": 8420,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.869646764613942
+        "margin_pct": 0.7297523627228137
       },
       "129": {
-        "total_votes": 13623,
-        "dem_votes": 8570,
-        "rep_votes": 5053,
+        "total_votes": 13627,
+        "dem_votes": 8573,
+        "rep_votes": 5054,
         "other_votes": 0,
         "dem_candidate": "Chris Irvin",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.816633634294945
+        "margin_pct": -25.82373229617671
       },
       "130": {
-        "total_votes": 13340,
-        "dem_votes": 8629,
-        "rep_votes": 4711,
+        "total_votes": 13345,
+        "dem_votes": 8633,
+        "rep_votes": 4712,
         "other_votes": 0,
         "dem_candidate": "Chris Irvin",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.37031484257871
+        "margin_pct": -29.381790932933683
       },
       "131": {
-        "total_votes": 13054,
-        "dem_votes": 2945,
-        "rep_votes": 10109,
+        "total_votes": 14930,
+        "dem_votes": 3496,
+        "rep_votes": 11434,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.87973035085031
+        "margin_pct": 53.168117883456134
       },
       "132": {
-        "total_votes": 11864,
-        "dem_votes": 7794,
+        "total_votes": 11867,
+        "dem_votes": 7797,
         "rep_votes": 4070,
         "other_votes": 0,
         "dem_candidate": "Chris Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.38907619689818
+        "margin_pct": -31.40642116794472
       },
       "133": {
-        "total_votes": 15215,
-        "dem_votes": 5541,
-        "rep_votes": 9674,
+        "total_votes": 16000,
+        "dem_votes": 6082,
+        "rep_votes": 9918,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.163982911600392
+        "margin_pct": 23.974999999999998
       },
       "134": {
         "total_votes": 15413,
@@ -1490,128 +1506,128 @@
         "margin_pct": 37.28670602737949
       },
       "135": {
-        "total_votes": 12850,
-        "dem_votes": 2855,
-        "rep_votes": 9995,
+        "total_votes": 14745,
+        "dem_votes": 3298,
+        "rep_votes": 11447,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.56420233463035
+        "margin_pct": 55.26619192946761
       },
       "136": {
-        "total_votes": 14187,
-        "dem_votes": 4830,
-        "rep_votes": 9357,
+        "total_votes": 15142,
+        "dem_votes": 5102,
+        "rep_votes": 10040,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.90949460773948
+        "margin_pct": 32.61127988376701
       },
       "137": {
-        "total_votes": 13103,
-        "dem_votes": 7669,
-        "rep_votes": 5433,
+        "total_votes": 14539,
+        "dem_votes": 8571,
+        "rep_votes": 5968,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.064794321911013
+        "margin_pct": -17.903569709058395
       },
       "138": {
-        "total_votes": 17121,
-        "dem_votes": 4190,
-        "rep_votes": 12931,
+        "total_votes": 17851,
+        "dem_votes": 4346,
+        "rep_votes": 13505,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.05426084924945
+        "margin_pct": 51.308049969189405
       },
       "139": {
-        "total_votes": 10907,
-        "dem_votes": 3208,
-        "rep_votes": 7698,
+        "total_votes": 12205,
+        "dem_votes": 3600,
+        "rep_votes": 8605,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.16622352617585
+        "margin_pct": 41.00778369520688
       },
       "140": {
-        "total_votes": 5546,
-        "dem_votes": 4048,
-        "rep_votes": 1499,
+        "total_votes": 6527,
+        "dem_votes": 4757,
+        "rep_votes": 1770,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.961053011179224
+        "margin_pct": -45.76375057453654
       },
       "141": {
-        "total_votes": 10471,
-        "dem_votes": 7417,
-        "rep_votes": 3054,
+        "total_votes": 12324,
+        "dem_votes": 8717,
+        "rep_votes": 3607,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.667462515519055
+        "margin_pct": -41.46381045115222
       },
       "142": {
-        "total_votes": 16778,
+        "total_votes": 16743,
         "dem_votes": 7517,
-        "rep_votes": 9261,
+        "rep_votes": 9226,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.394564310406484
+        "margin_pct": 10.2072507913755
       },
       "143": {
-        "total_votes": 13191,
-        "dem_votes": 8001,
-        "rep_votes": 5189,
+        "total_votes": 13180,
+        "dem_votes": 8002,
+        "rep_votes": 5178,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.317565006443786
+        "margin_pct": -21.426403641881638
       },
       "144": {
-        "total_votes": 12907,
-        "dem_votes": 3854,
-        "rep_votes": 9053,
+        "total_votes": 15779,
+        "dem_votes": 4579,
+        "rep_votes": 11200,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.280467963120785
+        "margin_pct": 41.96083401989987
       },
       "145": {
-        "total_votes": 16601,
-        "dem_votes": 8410,
-        "rep_votes": 8191,
+        "total_votes": 16613,
+        "dem_votes": 8409,
+        "rep_votes": 8204,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.3191976386964641
+        "margin_pct": -1.2339733943297417
       },
       "146": {
-        "total_votes": 13552,
+        "total_votes": 13553,
         "dem_votes": 4071,
         "rep_votes": 9482,
         "other_votes": 0,
@@ -1619,7 +1635,7 @@
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.92768595041322
+        "margin_pct": 39.92473990998303
       },
       "147": {
         "total_votes": 14153,
@@ -1644,81 +1660,81 @@
         "margin_pct": 40.43459202204271
       },
       "149": {
-        "total_votes": 13673,
-        "dem_votes": 7983,
-        "rep_votes": 5690,
+        "total_votes": 13643,
+        "dem_votes": 7966,
+        "rep_votes": 5677,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.770277188619907
+        "margin_pct": -16.777834787070294
       },
       "150": {
-        "total_votes": 12190,
-        "dem_votes": 6800,
-        "rep_votes": 5390,
+        "total_votes": 14349,
+        "dem_votes": 7649,
+        "rep_votes": 6700,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.566858080393766
+        "margin_pct": -6.613701303226706
       },
       "151": {
-        "total_votes": 14923,
-        "dem_votes": 7394,
-        "rep_votes": 7529,
+        "total_votes": 16310,
+        "dem_votes": 7967,
+        "rep_votes": 8343,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.9046438383703009
+        "margin_pct": 2.305334150827713
       },
       "152": {
-        "total_votes": 13559,
-        "dem_votes": 3576,
-        "rep_votes": 9983,
+        "total_votes": 14758,
+        "dem_votes": 3885,
+        "rep_votes": 10873,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.25274725274725
+        "margin_pct": 47.350589510773816
       },
       "153": {
-        "total_votes": 12847,
-        "dem_votes": 8368,
-        "rep_votes": 4480,
+        "total_votes": 15292,
+        "dem_votes": 9560,
+        "rep_votes": 5732,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.263874834591732
+        "margin_pct": -25.03269683494638
       },
       "154": {
-        "total_votes": 16603,
-        "dem_votes": 8820,
-        "rep_votes": 7783,
+        "total_votes": 17215,
+        "dem_votes": 9277,
+        "rep_votes": 7938,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.245859182075528
+        "margin_pct": -7.778100493755445
       },
       "155": {
-        "total_votes": 13175,
-        "dem_votes": 4638,
-        "rep_votes": 8537,
+        "total_votes": 14997,
+        "dem_votes": 5131,
+        "rep_votes": 9866,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.593927893738144
+        "margin_pct": 31.572981262919253
       },
       "156": {
         "total_votes": 11862,
@@ -1743,7 +1759,7 @@
         "margin_pct": 46.73434856175973
       },
       "158": {
-        "total_votes": 12502,
+        "total_votes": 12503,
         "dem_votes": 4323,
         "rep_votes": 8180,
         "other_votes": 0,
@@ -1751,7 +1767,7 @@
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.851063829787233
+        "margin_pct": 30.848596336879147
       },
       "159": {
         "total_votes": 14563,
@@ -1765,103 +1781,103 @@
         "margin_pct": 43.294650827439405
       },
       "160": {
-        "total_votes": 8805,
-        "dem_votes": 2282,
-        "rep_votes": 6523,
+        "total_votes": 8987,
+        "dem_votes": 2346,
+        "rep_votes": 6641,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.16581487791028
+        "margin_pct": 47.7912540336041
       },
       "161": {
-        "total_votes": 6466,
-        "dem_votes": 2089,
-        "rep_votes": 4376,
+        "total_votes": 7737,
+        "dem_votes": 2766,
+        "rep_votes": 4971,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.369625734611816
+        "margin_pct": 28.499418379216753
       },
       "162": {
-        "total_votes": 5759,
-        "dem_votes": 3629,
-        "rep_votes": 2131,
+        "total_votes": 9800,
+        "dem_votes": 5889,
+        "rep_votes": 3911,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.01146032297274
+        "margin_pct": -20.183673469387756
       },
       "163": {
-        "total_votes": 10080,
-        "dem_votes": 7068,
-        "rep_votes": 3012,
+        "total_votes": 17000,
+        "dem_votes": 11470,
+        "rep_votes": 5530,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.23809523809524
+        "margin_pct": -34.94117647058824
       },
       "164": {
-        "total_votes": 5749,
-        "dem_votes": 1493,
-        "rep_votes": 4256,
+        "total_votes": 8187,
+        "dem_votes": 2047,
+        "rep_votes": 6140,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.060532266481125
+        "margin_pct": 49.99389275680958
       },
       "165": {
-        "total_votes": 8933,
-        "dem_votes": 6469,
-        "rep_votes": 2464,
+        "total_votes": 15021,
+        "dem_votes": 10498,
+        "rep_votes": 4523,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.83376245382291
+        "margin_pct": -39.77764463085015
       },
       "166": {
-        "total_votes": 12299,
-        "dem_votes": 2903,
-        "rep_votes": 9395,
+        "total_votes": 20370,
+        "dem_votes": 4491,
+        "rep_votes": 15879,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.78477925034556
+        "margin_pct": 55.90574374079529
       },
       "167": {
-        "total_votes": 10533,
-        "dem_votes": 3381,
-        "rep_votes": 7152,
+        "total_votes": 10698,
+        "dem_votes": 3416,
+        "rep_votes": 7282,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.80176587866705
+        "margin_pct": 36.13759581230136
       },
       "168": {
-        "total_votes": 8117,
-        "dem_votes": 4741,
-        "rep_votes": 3376,
+        "total_votes": 8774,
+        "dem_votes": 5231,
+        "rep_votes": 3543,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.816557841567082
+        "margin_pct": -19.238659676316388
       },
       "169": {
         "total_votes": 12427,
@@ -1875,15 +1891,15 @@
         "margin_pct": 41.99726402188782
       },
       "170": {
-        "total_votes": 11036,
-        "dem_votes": 3065,
-        "rep_votes": 7971,
+        "total_votes": 12156,
+        "dem_votes": 3206,
+        "rep_votes": 8950,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.454512504530626
+        "margin_pct": 47.25238565317539
       },
       "171": {
         "total_votes": 12851,
@@ -1897,70 +1913,70 @@
         "margin_pct": 21.251264493035563
       },
       "172": {
-        "total_votes": 10343,
-        "dem_votes": 2717,
-        "rep_votes": 7626,
+        "total_votes": 10589,
+        "dem_votes": 2770,
+        "rep_votes": 7819,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.46205162912114
+        "margin_pct": 47.68155633204268
       },
       "173": {
-        "total_votes": 12801,
-        "dem_votes": 4833,
-        "rep_votes": 7968,
+        "total_votes": 13476,
+        "dem_votes": 5056,
+        "rep_votes": 8420,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.490274197328336
+        "margin_pct": 24.96289700207777
       },
       "174": {
-        "total_votes": 10810,
-        "dem_votes": 2667,
-        "rep_votes": 8143,
+        "total_votes": 13772,
+        "dem_votes": 3639,
+        "rep_votes": 10133,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.6567992599445
+        "margin_pct": 47.15364507696776
       },
       "175": {
-        "total_votes": 6542,
-        "dem_votes": 2689,
-        "rep_votes": 3853,
+        "total_votes": 13581,
+        "dem_votes": 5433,
+        "rep_votes": 8148,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.79272393763375
+        "margin_pct": 19.99116412635299
       },
       "176": {
-        "total_votes": 10183,
-        "dem_votes": 3012,
-        "rep_votes": 7170,
+        "total_votes": 11174,
+        "dem_votes": 3500,
+        "rep_votes": 7674,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.832760483158204
+        "margin_pct": 37.35457311616252
       },
       "177": {
-        "total_votes": 2311,
-        "dem_votes": 810,
-        "rep_votes": 1501,
+        "total_votes": 6135,
+        "dem_votes": 2605,
+        "rep_votes": 3530,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.900475984422325
+        "margin_pct": 15.077424612876936
       },
       "178": {
         "total_votes": 12500,
@@ -1974,26 +1990,26 @@
         "margin_pct": 61.72800000000001
       },
       "179": {
-        "total_votes": 13788,
-        "dem_votes": 4618,
-        "rep_votes": 9170,
+        "total_votes": 14418,
+        "dem_votes": 4799,
+        "rep_votes": 9619,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.014215259646065
+        "margin_pct": 33.43043417949785
       },
       "180": {
-        "total_votes": 11474,
-        "dem_votes": 3356,
-        "rep_votes": 8118,
+        "total_votes": 11555,
+        "dem_votes": 3374,
+        "rep_votes": 8181,
         "other_votes": 0,
         "dem_candidate": "Christopher James Irvin",
         "rep_candidate": "Gary W. Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.50252745337284
+        "margin_pct": 41.601038511466896
       }
     }
   }

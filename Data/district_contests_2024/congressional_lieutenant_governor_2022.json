@@ -4,176 +4,186 @@
     "contest_type": "lieutenant_governor",
     "year": 2022,
     "district_lines_year": 2024,
-    "source": "derived_vtd20_party_rescaled_to_2022_official_statewide_totals",
-    "generated_at_utc": "2026-07-20T21:09:36.813135+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:51.623774+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3550883,
-    "matched_input_votes": 3550883,
+    "total_input_votes": 1536135,
+    "matched_input_votes": 1536135,
     "input_files": [
       "Data/derived_vtd20/2022/contests/vtd20/Lieutenant_Governor.json"
     ],
-    "coverage_adjusted": true,
-    "official_statewide_totals": {
-      "dem_votes": 1815524,
-      "rep_votes": 2009617,
-      "other_votes": 74704
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 956284,
+        "rep_votes": 133391,
+        "other_votes": 446460
+      },
+      "canonical_target": {
+        "dem_votes": 1815524,
+        "rep_votes": 2009617,
+        "other_votes": 85207
+      }
     }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 179119,
-        "dem_votes": 63901,
-        "rep_votes": 112054,
-        "other_votes": 3164,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 261673,
+        "dem_votes": 103548,
+        "rep_votes": 152653,
+        "other_votes": 5472,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.883245216866996
+        "margin_pct": 18.76578783443458
       },
       "2": {
-        "total_votes": 220911,
-        "dem_votes": 109486,
-        "rep_votes": 108477,
-        "other_votes": 2948,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 244869,
+        "dem_votes": 119032,
+        "rep_votes": 122094,
+        "other_votes": 3743,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -0.45674502401419576
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 1.2504645340978238
       },
       "3": {
-        "total_votes": 318687,
-        "dem_votes": 99162,
-        "rep_votes": 213736,
-        "other_votes": 5789,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 295651,
+        "dem_votes": 97661,
+        "rep_votes": 191817,
+        "other_votes": 6173,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.951890099062716
+        "margin_pct": 31.847008804299666
       },
       "4": {
-        "total_votes": 262959,
-        "dem_votes": 199998,
-        "rep_votes": 57465,
-        "other_votes": 5496,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 249516,
+        "dem_votes": 187839,
+        "rep_votes": 55647,
+        "other_votes": 6030,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.20350701059861
+        "margin_pct": -52.9793680565575
       },
       "5": {
-        "total_votes": 289697,
-        "dem_votes": 245218,
-        "rep_votes": 38178,
-        "other_votes": 6301,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 305464,
+        "dem_votes": 229320,
+        "rep_votes": 68070,
+        "other_votes": 8074,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.46777495106956
+        "margin_pct": -52.78854464028494
       },
       "6": {
-        "total_votes": 305322,
-        "dem_votes": 219835,
-        "rep_votes": 79262,
-        "other_votes": 6225,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 336821,
+        "dem_votes": 214539,
+        "rep_votes": 114570,
+        "other_votes": 7712,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.04090108148119
+        "margin_pct": -29.6801565223071
       },
       "7": {
-        "total_votes": 324391,
-        "dem_votes": 113856,
-        "rep_votes": 203589,
-        "other_votes": 6946,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 275523,
+        "dem_votes": 111585,
+        "rep_votes": 157749,
+        "other_votes": 6189,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.661988156268208
+        "margin_pct": 16.75504404350998
       },
       "8": {
-        "total_votes": 260194,
-        "dem_votes": 79250,
-        "rep_votes": 177482,
-        "other_votes": 3462,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 256502,
+        "dem_votes": 84801,
+        "rep_votes": 167753,
+        "other_votes": 3948,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.75336864032222
+        "margin_pct": 32.33970885217269
       },
       "9": {
-        "total_votes": 302510,
-        "dem_votes": 88162,
-        "rep_votes": 208389,
-        "other_votes": 5959,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 272129,
+        "dem_votes": 83235,
+        "rep_votes": 182852,
+        "other_votes": 6042,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.743148986810354
+        "margin_pct": 36.60653587085537
       },
       "10": {
-        "total_votes": 306783,
-        "dem_votes": 113418,
-        "rep_votes": 187787,
-        "other_votes": 5578,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 289260,
+        "dem_votes": 109122,
+        "rep_votes": 174087,
+        "other_votes": 6051,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.241564884625287
+        "margin_pct": 22.459033395561086
       },
       "11": {
-        "total_votes": 340369,
-        "dem_votes": 118558,
-        "rep_votes": 213490,
-        "other_votes": 8321,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 305356,
+        "dem_votes": 102862,
+        "rep_votes": 193921,
+        "other_votes": 8573,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.890906633682853
+        "margin_pct": 29.82060283734395
       },
       "12": {
-        "total_votes": 264515,
-        "dem_votes": 104995,
-        "rep_votes": 155361,
-        "other_votes": 4159,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 265438,
+        "dem_votes": 105417,
+        "rep_votes": 155187,
+        "other_votes": 4834,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.04088615012381
+        "margin_pct": 18.75014127592884
       },
       "13": {
-        "total_votes": 281855,
-        "dem_votes": 194937,
-        "rep_votes": 81345,
-        "other_votes": 5573,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 290159,
+        "dem_votes": 185360,
+        "rep_votes": 98331,
+        "other_votes": 6468,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.30157350410672
+        "margin_pct": -29.993555257634608
       },
       "14": {
-        "total_votes": 242533,
-        "dem_votes": 64748,
-        "rep_votes": 173002,
-        "other_votes": 4783,
-        "dem_candidate": "Charlie Bailey",
+        "total_votes": 261987,
+        "dem_votes": 81203,
+        "rep_votes": 174886,
+        "other_votes": 5898,
+        "dem_candidate": "",
         "rep_candidate": "Burt Jones",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.63475073495153
+        "margin_pct": 35.75864451289568
       }
     }
   }

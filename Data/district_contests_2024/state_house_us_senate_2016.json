@@ -4,38 +4,54 @@
     "contest_type": "us_senate",
     "year": 2016,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-08-05T21:42:40.333256+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:55.391327+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 3588439,
     "matched_input_votes": 3588439,
     "input_files": [
       "Data/derived_vtd20/2016/contests/vtd20/United_States_Senator.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1495030,
+        "rep_votes": 1945143,
+        "other_votes": 148266
+      },
+      "canonical_target": {
+        "dem_votes": 1599726,
+        "rep_votes": 2135806,
+        "other_votes": 162260
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 18618,
-        "dem_votes": 3384,
-        "rep_votes": 14165,
-        "other_votes": 1069,
+        "total_votes": 22720,
+        "dem_votes": 4004,
+        "rep_votes": 17475,
+        "other_votes": 1241,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.906327210226664
+        "margin_pct": 59.291373239436616
       },
       "2": {
-        "total_votes": 16528,
-        "dem_votes": 2752,
-        "rep_votes": 12980,
-        "other_votes": 795,
+        "total_votes": 17725,
+        "dem_votes": 2876,
+        "rep_votes": 14011,
+        "other_votes": 838,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.88286544046466
+        "margin_pct": 62.82087447108604
       },
       "3": {
         "total_votes": 21068,
@@ -49,7 +65,7 @@
         "margin_pct": 59.82058097588761
       },
       "4": {
-        "total_votes": 12690,
+        "total_votes": 12691,
         "dem_votes": 4042,
         "rep_votes": 7998,
         "other_votes": 651,
@@ -57,29 +73,29 @@
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.174152876280537
+        "margin_pct": 31.171696477818926
       },
       "5": {
-        "total_votes": 18535,
-        "dem_votes": 2950,
-        "rep_votes": 14754,
-        "other_votes": 831,
+        "total_votes": 18515,
+        "dem_votes": 2947,
+        "rep_votes": 14738,
+        "other_votes": 830,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.68492042082546
+        "margin_pct": 63.683499864974344
       },
       "6": {
-        "total_votes": 17944,
+        "total_votes": 17941,
         "dem_votes": 2822,
-        "rep_votes": 14350,
-        "other_votes": 772,
+        "rep_votes": 14348,
+        "other_votes": 771,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.2443156486848
+        "margin_pct": 64.24391059584192
       },
       "7": {
         "total_votes": 24575,
@@ -93,59 +109,59 @@
         "margin_pct": 63.96337741607324
       },
       "8": {
-        "total_votes": 27024,
+        "total_votes": 27026,
         "dem_votes": 4273,
-        "rep_votes": 21628,
+        "rep_votes": 21630,
         "other_votes": 1123,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.22069271758437
+        "margin_pct": 64.22334048693851
       },
       "9": {
-        "total_votes": 22749,
+        "total_votes": 22748,
         "dem_votes": 3011,
-        "rep_votes": 18317,
+        "rep_votes": 18316,
         "other_votes": 1421,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.28207833311355
+        "margin_pct": 67.28064005626868
       },
       "10": {
-        "total_votes": 20963,
-        "dem_votes": 3108,
-        "rep_votes": 16897,
+        "total_votes": 20970,
+        "dem_votes": 3109,
+        "rep_votes": 16904,
         "other_votes": 957,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.77779897915374
+        "margin_pct": 65.78445398187888
       },
       "11": {
-        "total_votes": 18645,
-        "dem_votes": 2355,
-        "rep_votes": 15317,
-        "other_votes": 972,
+        "total_votes": 22029,
+        "dem_votes": 2690,
+        "rep_votes": 18168,
+        "other_votes": 1171,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.51997854652721
+        "margin_pct": 70.26192745925826
       },
       "12": {
-        "total_votes": 18911,
-        "dem_votes": 3746,
-        "rep_votes": 14415,
-        "other_votes": 750,
+        "total_votes": 19127,
+        "dem_votes": 3818,
+        "rep_votes": 14549,
+        "other_votes": 760,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.41690021680503
+        "margin_pct": 56.103936843205936
       },
       "13": {
         "total_votes": 19318,
@@ -159,213 +175,213 @@
         "margin_pct": 40.35096800911067
       },
       "14": {
-        "total_votes": 21714,
-        "dem_votes": 3425,
-        "rep_votes": 17152,
-        "other_votes": 1137,
+        "total_votes": 21733,
+        "dem_votes": 3428,
+        "rep_votes": 17167,
+        "other_votes": 1138,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.21727917472598
+        "margin_pct": 63.21722725808678
       },
       "15": {
-        "total_votes": 19557,
-        "dem_votes": 4382,
-        "rep_votes": 14096,
-        "other_votes": 1079,
+        "total_votes": 19577,
+        "dem_votes": 4386,
+        "rep_votes": 14110,
+        "other_votes": 1081,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.670194815155696
+        "margin_pct": 49.67053174643715
       },
       "16": {
-        "total_votes": 13352,
-        "dem_votes": 2613,
+        "total_votes": 13353,
+        "dem_votes": 2614,
         "rep_votes": 10220,
         "other_votes": 519,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.972738166566806
+        "margin_pct": 56.96098255073766
       },
       "17": {
-        "total_votes": 10122,
-        "dem_votes": 2270,
-        "rep_votes": 7302,
-        "other_votes": 550,
+        "total_votes": 19017,
+        "dem_votes": 4131,
+        "rep_votes": 13852,
+        "other_votes": 1034,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.713495356648885
+        "margin_pct": 51.11742125466687
       },
       "18": {
-        "total_votes": 17401,
-        "dem_votes": 2570,
-        "rep_votes": 14060,
-        "other_votes": 771,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 66.03068789150048
-      },
-      "19": {
-        "total_votes": 12567,
-        "dem_votes": 3896,
-        "rep_votes": 8075,
-        "other_votes": 597,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 33.25375984721891
-      },
-      "20": {
-        "total_votes": 26743,
-        "dem_votes": 5514,
-        "rep_votes": 19704,
-        "other_votes": 1524,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 53.060613992446626
-      },
-      "21": {
-        "total_votes": 25511,
-        "dem_votes": 4228,
-        "rep_votes": 19759,
-        "other_votes": 1524,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 60.879620555838656
-      },
-      "22": {
-        "total_votes": 25907,
-        "dem_votes": 7965,
-        "rep_votes": 16153,
-        "other_votes": 1789,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 31.60535762535222
-      },
-      "23": {
-        "total_votes": 20367,
-        "dem_votes": 3441,
-        "rep_votes": 15803,
+        "total_votes": 25628,
+        "dem_votes": 3960,
+        "rep_votes": 20545,
         "other_votes": 1123,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.69622428438159
+        "margin_pct": 64.71437490245044
+      },
+      "19": {
+        "total_votes": 17616,
+        "dem_votes": 5667,
+        "rep_votes": 11102,
+        "other_votes": 847,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 30.85263396911898
+      },
+      "20": {
+        "total_votes": 26755,
+        "dem_votes": 5518,
+        "rep_votes": 19712,
+        "other_votes": 1525,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 53.05176602504205
+      },
+      "21": {
+        "total_votes": 25522,
+        "dem_votes": 4231,
+        "rep_votes": 19766,
+        "other_votes": 1525,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 60.86905414936133
+      },
+      "22": {
+        "total_votes": 26019,
+        "dem_votes": 7994,
+        "rep_votes": 16228,
+        "other_votes": 1797,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 31.646104769591453
+      },
+      "23": {
+        "total_votes": 20376,
+        "dem_votes": 3443,
+        "rep_votes": 15810,
+        "other_votes": 1123,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 60.693953670985465
       },
       "24": {
-        "total_votes": 8424,
-        "dem_votes": 2493,
-        "rep_votes": 5455,
-        "other_votes": 476,
+        "total_votes": 12189,
+        "dem_votes": 3396,
+        "rep_votes": 8056,
+        "other_votes": 737,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.161443494776826
+        "margin_pct": 38.23119205841332
       },
       "25": {
-        "total_votes": 24083,
-        "dem_votes": 6209,
-        "rep_votes": 16803,
-        "other_votes": 1071,
+        "total_votes": 32446,
+        "dem_votes": 7794,
+        "rep_votes": 23112,
+        "other_votes": 1540,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.98953618735207
+        "margin_pct": 47.21075016951242
       },
       "26": {
-        "total_votes": 16575,
-        "dem_votes": 3269,
-        "rep_votes": 12441,
-        "other_votes": 865,
+        "total_votes": 24167,
+        "dem_votes": 4454,
+        "rep_votes": 18374,
+        "other_votes": 1339,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.336349924585214
+        "margin_pct": 57.59920552819962
       },
       "27": {
-        "total_votes": 16563,
-        "dem_votes": 2109,
-        "rep_votes": 13628,
-        "other_votes": 827,
+        "total_votes": 19608,
+        "dem_votes": 2360,
+        "rep_votes": 16267,
+        "other_votes": 981,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.54657972589506
+        "margin_pct": 70.92513259893921
       },
       "28": {
-        "total_votes": 14264,
-        "dem_votes": 2118,
-        "rep_votes": 11327,
-        "other_votes": 820,
+        "total_votes": 20244,
+        "dem_votes": 2760,
+        "rep_votes": 16253,
+        "other_votes": 1231,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.5611329220415
+        "margin_pct": 66.65184746097609
       },
       "29": {
-        "total_votes": 12096,
-        "dem_votes": 4129,
-        "rep_votes": 7298,
-        "other_votes": 669,
+        "total_votes": 14248,
+        "dem_votes": 4658,
+        "rep_votes": 8787,
+        "other_votes": 803,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.198743386243383
+        "margin_pct": 28.97950589556429
       },
       "30": {
-        "total_votes": 20749,
-        "dem_votes": 4071,
-        "rep_votes": 15603,
-        "other_votes": 1075,
+        "total_votes": 24081,
+        "dem_votes": 4500,
+        "rep_votes": 18321,
+        "other_votes": 1260,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.57858210034219
+        "margin_pct": 57.39379593870686
       },
       "31": {
-        "total_votes": 11128,
-        "dem_votes": 2067,
-        "rep_votes": 8532,
-        "other_votes": 529,
+        "total_votes": 17275,
+        "dem_votes": 3056,
+        "rep_votes": 13389,
+        "other_votes": 830,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.09669302659957
+        "margin_pct": 59.81476121562952
       },
       "32": {
-        "total_votes": 10231,
-        "dem_votes": 1187,
-        "rep_votes": 8559,
-        "other_votes": 485,
+        "total_votes": 20358,
+        "dem_votes": 2878,
+        "rep_votes": 16601,
+        "other_votes": 879,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 72.05551754471703
+        "margin_pct": 67.40838982218293
       },
       "33": {
         "total_votes": 21232,
@@ -379,1038 +395,1038 @@
         "margin_pct": 59.77298417483045
       },
       "34": {
-        "total_votes": 27096,
-        "dem_votes": 7654,
-        "rep_votes": 18070,
-        "other_votes": 1371,
+        "total_votes": 27311,
+        "dem_votes": 7693,
+        "rep_votes": 18236,
+        "other_votes": 1382,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.44109831709478
+        "margin_pct": 38.603493098019115
       },
       "35": {
-        "total_votes": 19810,
-        "dem_votes": 8291,
-        "rep_votes": 10307,
-        "other_votes": 1212,
+        "total_votes": 19956,
+        "dem_votes": 8333,
+        "rep_votes": 10402,
+        "other_votes": 1221,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.176678445229683
+        "margin_pct": 10.367809180196433
       },
       "36": {
-        "total_votes": 28996,
-        "dem_votes": 7882,
-        "rep_votes": 19625,
-        "other_votes": 1489,
+        "total_votes": 29229,
+        "dem_votes": 7922,
+        "rep_votes": 19806,
+        "other_votes": 1501,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.49868947441026
+        "margin_pct": 40.65825036778542
       },
       "37": {
-        "total_votes": 23524,
-        "dem_votes": 10438,
-        "rep_votes": 11772,
-        "other_votes": 1314,
+        "total_votes": 23696,
+        "dem_votes": 10491,
+        "rep_votes": 11880,
+        "other_votes": 1325,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.670804284985547
+        "margin_pct": 5.861748818365968
       },
       "38": {
-        "total_votes": 23044,
-        "dem_votes": 14115,
-        "rep_votes": 8020,
-        "other_votes": 909,
+        "total_votes": 23197,
+        "dem_votes": 14186,
+        "rep_votes": 8094,
+        "other_votes": 917,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.44940114563444
+        "margin_pct": -26.26201664008277
       },
       "39": {
-        "total_votes": 18728,
-        "dem_votes": 12992,
-        "rep_votes": 4962,
-        "other_votes": 775,
+        "total_votes": 18846,
+        "dem_votes": 13058,
+        "rep_votes": 5007,
+        "other_votes": 781,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.87697565143101
+        "margin_pct": -42.719940570943436
       },
       "40": {
-        "total_votes": 23339,
-        "dem_votes": 6585,
-        "rep_votes": 15702,
-        "other_votes": 1052,
+        "total_votes": 35551,
+        "dem_votes": 9736,
+        "rep_votes": 24169,
+        "other_votes": 1646,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.0633703243498
+        "margin_pct": 40.59801412055919
       },
       "41": {
-        "total_votes": 18152,
-        "dem_votes": 10935,
-        "rep_votes": 6335,
-        "other_votes": 882,
+        "total_votes": 18272,
+        "dem_votes": 10990,
+        "rep_votes": 6393,
+        "other_votes": 889,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.341560158660204
+        "margin_pct": -25.158712784588445
       },
       "42": {
-        "total_votes": 25045,
-        "dem_votes": 13490,
-        "rep_votes": 10017,
-        "other_votes": 1538,
+        "total_votes": 25217,
+        "dem_votes": 13558,
+        "rep_votes": 10109,
+        "other_votes": 1550,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.867039329207426
+        "margin_pct": -13.677281199191022
       },
       "43": {
-        "total_votes": 16729,
-        "dem_votes": 8540,
-        "rep_votes": 7094,
-        "other_votes": 1094,
+        "total_votes": 16845,
+        "dem_votes": 8583,
+        "rep_votes": 7159,
+        "other_votes": 1103,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -8.643672664235758
+        "margin_pct": -8.453547046601367
       },
       "44": {
-        "total_votes": 25365,
-        "dem_votes": 7738,
-        "rep_votes": 15898,
-        "other_votes": 1729,
+        "total_votes": 25506,
+        "dem_votes": 7768,
+        "rep_votes": 16000,
+        "other_votes": 1738,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.170313424009464
+        "margin_pct": 32.27475888026346
       },
       "45": {
-        "total_votes": 35695,
-        "dem_votes": 9808,
-        "rep_votes": 24219,
-        "other_votes": 1668,
+        "total_votes": 35980,
+        "dem_votes": 9858,
+        "rep_votes": 24441,
+        "other_votes": 1681,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.37260120465051
+        "margin_pct": 40.530850472484715
       },
       "46": {
-        "total_votes": 28338,
-        "dem_votes": 7956,
-        "rep_votes": 18878,
-        "other_votes": 1504,
+        "total_votes": 28514,
+        "dem_votes": 7988,
+        "rep_votes": 19012,
+        "other_votes": 1514,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.541887218575766
+        "margin_pct": 38.66171003717472
       },
       "47": {
-        "total_votes": 24375,
-        "dem_votes": 6969,
-        "rep_votes": 16269,
-        "other_votes": 1136,
+        "total_votes": 24496,
+        "dem_votes": 7058,
+        "rep_votes": 16296,
+        "other_votes": 1142,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.15384615384615
+        "margin_pct": 37.71227955584585
       },
       "48": {
-        "total_votes": 30305,
-        "dem_votes": 10638,
-        "rep_votes": 18207,
-        "other_votes": 1460,
+        "total_votes": 30439,
+        "dem_votes": 10739,
+        "rep_votes": 18234,
+        "other_votes": 1466,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.976076555023923
+        "margin_pct": 24.623016524852982
       },
       "49": {
-        "total_votes": 25663,
-        "dem_votes": 7609,
-        "rep_votes": 16841,
-        "other_votes": 1213,
+        "total_votes": 25794,
+        "dem_votes": 7708,
+        "rep_votes": 16867,
+        "other_votes": 1219,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.97397030744652
+        "margin_pct": 35.50825773435683
       },
       "50": {
-        "total_votes": 22695,
-        "dem_votes": 8926,
-        "rep_votes": 12670,
-        "other_votes": 1099,
+        "total_votes": 22837,
+        "dem_votes": 9042,
+        "rep_votes": 12690,
+        "other_votes": 1105,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.497025776602776
+        "margin_pct": 15.97407715549328
       },
       "51": {
-        "total_votes": 24072,
-        "dem_votes": 10209,
-        "rep_votes": 12544,
-        "other_votes": 1319,
+        "total_votes": 24231,
+        "dem_votes": 10341,
+        "rep_votes": 12564,
+        "other_votes": 1326,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.700066467264872
+        "margin_pct": 9.174198340968182
       },
       "52": {
-        "total_votes": 22623,
-        "dem_votes": 9510,
-        "rep_votes": 11957,
-        "other_votes": 1157,
+        "total_votes": 23343,
+        "dem_votes": 9779,
+        "rep_votes": 12370,
+        "other_votes": 1194,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.816425761393273
+        "margin_pct": 11.099687272415713
       },
       "53": {
-        "total_votes": 28592,
-        "dem_votes": 9689,
-        "rep_votes": 17658,
-        "other_votes": 1245,
+        "total_votes": 28751,
+        "dem_votes": 9814,
+        "rep_votes": 17686,
+        "other_votes": 1251,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.87143256855064
+        "margin_pct": 27.3799172202706
       },
       "54": {
-        "total_votes": 22625,
-        "dem_votes": 8770,
-        "rep_votes": 12913,
-        "other_votes": 941,
+        "total_votes": 22765,
+        "dem_votes": 8885,
+        "rep_votes": 12934,
+        "other_votes": 946,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.311602209944752
+        "margin_pct": 17.786075115308588
       },
       "55": {
-        "total_votes": 23304,
-        "dem_votes": 15463,
-        "rep_votes": 6955,
-        "other_votes": 886,
+        "total_votes": 23520,
+        "dem_votes": 15664,
+        "rep_votes": 6965,
+        "other_votes": 891,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.50875386199794
+        "margin_pct": -36.98554421768708
       },
       "56": {
-        "total_votes": 18624,
-        "dem_votes": 14790,
-        "rep_votes": 2943,
-        "other_votes": 892,
+        "total_votes": 18825,
+        "dem_votes": 14982,
+        "rep_votes": 2947,
+        "other_votes": 896,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.61146907216495
+        "margin_pct": -63.93094289508632
       },
       "57": {
-        "total_votes": 24415,
-        "dem_votes": 14956,
-        "rep_votes": 8244,
-        "other_votes": 1216,
+        "total_votes": 24629,
+        "dem_votes": 15151,
+        "rep_votes": 8256,
+        "other_votes": 1222,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.491296334220767
+        "margin_pct": -27.995452515327457
       },
       "58": {
-        "total_votes": 25481,
-        "dem_votes": 20357,
-        "rep_votes": 3928,
-        "other_votes": 1197,
+        "total_votes": 25757,
+        "dem_votes": 20621,
+        "rep_votes": 3933,
+        "other_votes": 1203,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.4754915427181
+        "margin_pct": -64.7901541328571
       },
       "59": {
-        "total_votes": 20629,
-        "dem_votes": 17425,
-        "rep_votes": 2283,
-        "other_votes": 921,
+        "total_votes": 20864,
+        "dem_votes": 17652,
+        "rep_votes": 2287,
+        "other_votes": 925,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.40152212904164
+        "margin_pct": -73.64359662576688
       },
       "60": {
-        "total_votes": 24950,
-        "dem_votes": 14647,
-        "rep_votes": 9368,
-        "other_votes": 935,
+        "total_votes": 25165,
+        "dem_votes": 14825,
+        "rep_votes": 9400,
+        "other_votes": 940,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.158316633266534
+        "margin_pct": -21.557719054242003
       },
       "61": {
-        "total_votes": 26404,
-        "dem_votes": 17557,
-        "rep_votes": 7788,
-        "other_votes": 1060,
+        "total_votes": 26638,
+        "dem_votes": 17717,
+        "rep_votes": 7854,
+        "other_votes": 1067,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.99818209362218
+        "margin_pct": -37.02605300698251
       },
       "62": {
-        "total_votes": 16596,
-        "dem_votes": 13843,
-        "rep_votes": 2083,
-        "other_votes": 670,
+        "total_votes": 16783,
+        "dem_votes": 14023,
+        "rep_votes": 2086,
+        "other_votes": 674,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -70.86044830079537
+        "margin_pct": -71.12554370493952
       },
       "63": {
-        "total_votes": 20717,
-        "dem_votes": 17023,
-        "rep_votes": 2851,
-        "other_votes": 843,
+        "total_votes": 20947,
+        "dem_votes": 17244,
+        "rep_votes": 2856,
+        "other_votes": 847,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.40758797123135
+        "margin_pct": -68.6876402348785
       },
       "64": {
-        "total_votes": 21130,
-        "dem_votes": 11051,
-        "rep_votes": 9261,
-        "other_votes": 818,
+        "total_votes": 22641,
+        "dem_votes": 11939,
+        "rep_votes": 9833,
+        "other_votes": 869,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -8.471367723615712
+        "margin_pct": -9.301709288458989
       },
       "65": {
-        "total_votes": 24136,
-        "dem_votes": 16770,
-        "rep_votes": 6711,
-        "other_votes": 655,
+        "total_votes": 24344,
+        "dem_votes": 16972,
+        "rep_votes": 6715,
+        "other_votes": 657,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.67633410672854
+        "margin_pct": -42.13358527768649
       },
       "66": {
-        "total_votes": 20367,
-        "dem_votes": 11993,
-        "rep_votes": 7654,
-        "other_votes": 720,
+        "total_votes": 21848,
+        "dem_votes": 12957,
+        "rep_votes": 8126,
+        "other_votes": 765,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.304070309814897
+        "margin_pct": -22.111863786158917
       },
       "67": {
-        "total_votes": 21040,
-        "dem_votes": 11842,
-        "rep_votes": 8452,
-        "other_votes": 745,
+        "total_votes": 21178,
+        "dem_votes": 11976,
+        "rep_votes": 8455,
+        "other_votes": 747,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.11216730038023
+        "margin_pct": -16.625743696288602
       },
       "68": {
-        "total_votes": 21243,
-        "dem_votes": 11812,
-        "rep_votes": 8697,
-        "other_votes": 734,
+        "total_votes": 21778,
+        "dem_votes": 12024,
+        "rep_votes": 9000,
+        "other_votes": 754,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.663653909523136
+        "margin_pct": -13.885572596197997
       },
       "69": {
-        "total_votes": 26322,
-        "dem_votes": 16783,
-        "rep_votes": 8683,
-        "other_votes": 856,
+        "total_votes": 27014,
+        "dem_votes": 17135,
+        "rep_votes": 8996,
+        "other_votes": 883,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.772737633918396
+        "margin_pct": -30.128822092248463
       },
       "70": {
-        "total_votes": 18917,
-        "dem_votes": 6456,
+        "total_votes": 18911,
+        "dem_votes": 6450,
         "rep_votes": 11574,
         "other_votes": 887,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.05502986731511
+        "margin_pct": 27.095341335730527
       },
       "71": {
-        "total_votes": 10711,
-        "dem_votes": 2932,
-        "rep_votes": 7248,
-        "other_votes": 531,
+        "total_votes": 29581,
+        "dem_votes": 8409,
+        "rep_votes": 19727,
+        "other_votes": 1445,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.29502380730091
+        "margin_pct": 38.26104594165173
       },
       "72": {
-        "total_votes": 9547,
-        "dem_votes": 2052,
-        "rep_votes": 7081,
-        "other_votes": 414,
+        "total_votes": 12610,
+        "dem_votes": 2822,
+        "rep_votes": 9224,
+        "other_votes": 564,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.67623337173981
+        "margin_pct": 50.76923076923077
       },
       "73": {
-        "total_votes": 27666,
-        "dem_votes": 6236,
-        "rep_votes": 20053,
-        "other_votes": 1377,
+        "total_votes": 28142,
+        "dem_votes": 6321,
+        "rep_votes": 20419,
+        "other_votes": 1402,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.942167281139305
+        "margin_pct": 50.09594200838604
       },
       "74": {
-        "total_votes": 21440,
-        "dem_votes": 14219,
-        "rep_votes": 6624,
-        "other_votes": 597,
+        "total_votes": 21838,
+        "dem_votes": 14382,
+        "rep_votes": 6845,
+        "other_votes": 611,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.42444029850746
+        "margin_pct": -34.5132338126202
       },
       "75": {
-        "total_votes": 16970,
-        "dem_votes": 13700,
-        "rep_votes": 2764,
-        "other_votes": 506,
+        "total_votes": 16954,
+        "dem_votes": 13691,
+        "rep_votes": 2758,
+        "other_votes": 505,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.44313494401885
+        "margin_pct": -64.48625693051787
       },
       "76": {
-        "total_votes": 17163,
-        "dem_votes": 13832,
-        "rep_votes": 2851,
+        "total_votes": 17151,
+        "dem_votes": 13826,
+        "rep_votes": 2845,
         "other_votes": 480,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.98065606245994
+        "margin_pct": -64.02542125823567
       },
       "77": {
-        "total_votes": 16423,
-        "dem_votes": 13868,
-        "rep_votes": 2095,
+        "total_votes": 16410,
+        "dem_votes": 13860,
+        "rep_votes": 2090,
         "other_votes": 460,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.68605005175668
+        "margin_pct": -71.72455819622182
       },
       "78": {
-        "total_votes": 19867,
-        "dem_votes": 11947,
-        "rep_votes": 7197,
-        "other_votes": 724,
+        "total_votes": 20665,
+        "dem_votes": 12352,
+        "rep_votes": 7561,
+        "other_votes": 752,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.90899481552323
+        "margin_pct": -23.184127752238084
       },
       "79": {
-        "total_votes": 14875,
-        "dem_votes": 12425,
-        "rep_votes": 2034,
+        "total_votes": 14863,
+        "dem_votes": 12417,
+        "rep_votes": 2030,
         "other_votes": 416,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.85546218487396
+        "margin_pct": -69.88494920271816
       },
       "80": {
-        "total_votes": 19756,
-        "dem_votes": 8242,
-        "rep_votes": 10581,
-        "other_votes": 933,
+        "total_votes": 20846,
+        "dem_votes": 8596,
+        "rep_votes": 11264,
+        "other_votes": 986,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.839441182425592
+        "margin_pct": 12.798618439988488
       },
       "81": {
-        "total_votes": 21859,
-        "dem_votes": 5051,
-        "rep_votes": 15874,
-        "other_votes": 934,
+        "total_votes": 23292,
+        "dem_votes": 5329,
+        "rep_votes": 16975,
+        "other_votes": 988,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.51278649526511
+        "margin_pct": 50.0
       },
       "82": {
-        "total_votes": 25852,
-        "dem_votes": 7456,
-        "rep_votes": 17354,
-        "other_votes": 1042,
+        "total_votes": 28358,
+        "dem_votes": 8226,
+        "rep_votes": 18987,
+        "other_votes": 1145,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.28717313940894
+        "margin_pct": 37.94696381973341
       },
       "83": {
-        "total_votes": 18483,
-        "dem_votes": 8612,
-        "rep_votes": 8892,
-        "other_votes": 979,
+        "total_votes": 19482,
+        "dem_votes": 8981,
+        "rep_votes": 9466,
+        "other_votes": 1035,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.5149055889195477
+        "margin_pct": 2.489477466379222
       },
       "84": {
-        "total_votes": 19323,
-        "dem_votes": 15690,
-        "rep_votes": 2922,
-        "other_votes": 710,
+        "total_votes": 20225,
+        "dem_votes": 16363,
+        "rep_votes": 3111,
+        "other_votes": 751,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.07669616519173
+        "margin_pct": -65.52286773794809
       },
       "85": {
-        "total_votes": 18939,
-        "dem_votes": 14574,
-        "rep_votes": 3551,
-        "other_votes": 815,
+        "total_votes": 19841,
+        "dem_votes": 15199,
+        "rep_votes": 3780,
+        "other_votes": 862,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.20265061513279
+        "margin_pct": -57.55254271458092
       },
       "86": {
-        "total_votes": 20913,
-        "dem_votes": 15211,
-        "rep_votes": 4849,
-        "other_votes": 853,
+        "total_votes": 21927,
+        "dem_votes": 15863,
+        "rep_votes": 5162,
+        "other_votes": 902,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.54812795868598
+        "margin_pct": -48.80284580653988
       },
       "87": {
-        "total_votes": 23661,
-        "dem_votes": 16429,
-        "rep_votes": 6279,
-        "other_votes": 953,
+        "total_votes": 24824,
+        "dem_votes": 17133,
+        "rep_votes": 6684,
+        "other_votes": 1007,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.89759519885043
+        "margin_pct": -42.09233000322269
       },
       "88": {
-        "total_votes": 20398,
-        "dem_votes": 15338,
-        "rep_votes": 4312,
-        "other_votes": 748,
+        "total_votes": 21267,
+        "dem_votes": 15934,
+        "rep_votes": 4549,
+        "other_votes": 784,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.054319050887344
+        "margin_pct": -53.53364367329666
       },
       "89": {
-        "total_votes": 24314,
-        "dem_votes": 19994,
-        "rep_votes": 3361,
-        "other_votes": 959,
+        "total_votes": 25443,
+        "dem_votes": 20851,
+        "rep_votes": 3578,
+        "other_votes": 1014,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.4091469935017
+        "margin_pct": -67.88900679951264
       },
       "90": {
-        "total_votes": 27502,
-        "dem_votes": 21950,
-        "rep_votes": 4260,
-        "other_votes": 1292,
+        "total_votes": 28786,
+        "dem_votes": 22889,
+        "rep_votes": 4532,
+        "other_votes": 1365,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.32259472038398
+        "margin_pct": -63.77058292225387
       },
       "91": {
-        "total_votes": 26577,
-        "dem_votes": 19072,
-        "rep_votes": 6815,
-        "other_votes": 690,
+        "total_votes": 27255,
+        "dem_votes": 19666,
+        "rep_votes": 6882,
+        "other_votes": 707,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.11882454754111
+        "margin_pct": -46.905155017427994
       },
       "92": {
-        "total_votes": 21657,
-        "dem_votes": 14645,
-        "rep_votes": 6390,
-        "other_votes": 621,
+        "total_votes": 21670,
+        "dem_votes": 14656,
+        "rep_votes": 6392,
+        "other_votes": 622,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.117006048852566
+        "margin_pct": -38.13567143516382
       },
       "93": {
-        "total_votes": 21608,
-        "dem_votes": 14168,
-        "rep_votes": 6713,
-        "other_votes": 726,
+        "total_votes": 21898,
+        "dem_votes": 14418,
+        "rep_votes": 6745,
+        "other_votes": 735,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.50111069974084
+        "margin_pct": -35.03972965567632
       },
       "94": {
-        "total_votes": 25132,
-        "dem_votes": 16575,
-        "rep_votes": 7631,
-        "other_votes": 926,
+        "total_votes": 25636,
+        "dem_votes": 17003,
+        "rep_votes": 7692,
+        "other_votes": 941,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.58809485914372
+        "margin_pct": -36.32001872366984
       },
       "95": {
-        "total_votes": 20971,
-        "dem_votes": 15214,
-        "rep_votes": 5000,
-        "other_votes": 757,
+        "total_votes": 21254,
+        "dem_votes": 15455,
+        "rep_votes": 5034,
+        "other_votes": 765,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.705355014067045
+        "margin_pct": -49.03077067846052
       },
       "96": {
-        "total_votes": 13403,
-        "dem_votes": 7310,
-        "rep_votes": 5344,
-        "other_votes": 749,
+        "total_votes": 13422,
+        "dem_votes": 7320,
+        "rep_votes": 5351,
+        "other_votes": 751,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.668357830336493
+        "margin_pct": -14.669944866636865
       },
       "97": {
-        "total_votes": 18050,
-        "dem_votes": 9101,
-        "rep_votes": 7877,
+        "total_votes": 18075,
+        "dem_votes": 9114,
+        "rep_votes": 7887,
+        "other_votes": 1074,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -6.788381742738589
+      },
+      "98": {
+        "total_votes": 9217,
+        "dem_votes": 6444,
+        "rep_votes": 2302,
+        "other_votes": 471,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -44.93870022783986
+      },
+      "99": {
+        "total_votes": 21178,
+        "dem_votes": 7458,
+        "rep_votes": 12654,
+        "other_votes": 1066,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 24.534894702049296
+      },
+      "100": {
+        "total_votes": 23655,
+        "dem_votes": 5529,
+        "rep_votes": 16873,
+        "other_votes": 1253,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 47.9560346649757
+      },
+      "101": {
+        "total_votes": 21901,
+        "dem_votes": 12402,
+        "rep_votes": 8382,
+        "other_votes": 1117,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -18.35532624081092
+      },
+      "102": {
+        "total_votes": 17631,
+        "dem_votes": 9538,
+        "rep_votes": 7250,
+        "other_votes": 843,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -12.9771425330384
+      },
+      "103": {
+        "total_votes": 21886,
+        "dem_votes": 6336,
+        "rep_votes": 14350,
+        "other_votes": 1200,
+        "dem_candidate": "Jim Barksdale",
+        "rep_candidate": "Johnny Isakson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 36.617015443662616
+      },
+      "104": {
+        "total_votes": 21009,
+        "dem_votes": 4968,
+        "rep_votes": 14969,
         "other_votes": 1072,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -6.781163434903046
-      },
-      "98": {
-        "total_votes": 9204,
-        "dem_votes": 6435,
-        "rep_votes": 2299,
-        "other_votes": 470,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -44.93698392003477
-      },
-      "99": {
-        "total_votes": 21150,
-        "dem_votes": 7448,
-        "rep_votes": 12638,
-        "other_votes": 1065,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.53900709219858
-      },
-      "100": {
-        "total_votes": 20563,
-        "dem_votes": 5022,
-        "rep_votes": 14466,
-        "other_votes": 1076,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 45.927150707581575
-      },
-      "101": {
-        "total_votes": 20824,
-        "dem_votes": 11893,
-        "rep_votes": 7875,
-        "other_votes": 1056,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -19.295044179792548
-      },
-      "102": {
-        "total_votes": 17607,
-        "dem_votes": 9525,
-        "rep_votes": 7240,
-        "other_votes": 842,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -12.977792923269154
-      },
-      "103": {
-        "total_votes": 21202,
-        "dem_votes": 6256,
-        "rep_votes": 13788,
-        "other_votes": 1159,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 35.52495047637015
-      },
-      "104": {
-        "total_votes": 13172,
-        "dem_votes": 3350,
-        "rep_votes": 9207,
-        "other_votes": 615,
-        "dem_candidate": "Jim Barksdale",
-        "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 44.46553294867901
+        "margin_pct": 47.603408063211006
       },
       "105": {
-        "total_votes": 22891,
-        "dem_votes": 8022,
-        "rep_votes": 13713,
-        "other_votes": 1156,
+        "total_votes": 22922,
+        "dem_votes": 8033,
+        "rep_votes": 13731,
+        "other_votes": 1158,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.861299200559174
+        "margin_pct": 24.858214815461128
       },
       "106": {
-        "total_votes": 19813,
-        "dem_votes": 9890,
-        "rep_votes": 9048,
-        "other_votes": 875,
+        "total_votes": 19840,
+        "dem_votes": 9904,
+        "rep_votes": 9060,
+        "other_votes": 876,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.249735022460001
+        "margin_pct": -4.254032258064516
       },
       "107": {
-        "total_votes": 18557,
-        "dem_votes": 8666,
-        "rep_votes": 8907,
-        "other_votes": 984,
+        "total_votes": 18582,
+        "dem_votes": 8678,
+        "rep_votes": 8919,
+        "other_votes": 985,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.2987012987012987
+        "margin_pct": 1.2969540415455818
       },
       "108": {
-        "total_votes": 24588,
-        "dem_votes": 9158,
-        "rep_votes": 14039,
-        "other_votes": 1391,
+        "total_votes": 24621,
+        "dem_votes": 9171,
+        "rep_votes": 14057,
+        "other_votes": 1393,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.851146900927283
+        "margin_pct": 19.844847894074164
       },
       "109": {
-        "total_votes": 11895,
-        "dem_votes": 8627,
-        "rep_votes": 2711,
-        "other_votes": 557,
+        "total_votes": 11912,
+        "dem_votes": 8639,
+        "rep_votes": 2715,
+        "other_votes": 558,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.73518284993695
+        "margin_pct": -49.7313633310947
       },
       "110": {
-        "total_votes": 21240,
-        "dem_votes": 9545,
-        "rep_votes": 10828,
-        "other_votes": 868,
+        "total_votes": 21270,
+        "dem_votes": 9559,
+        "rep_votes": 10842,
+        "other_votes": 869,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 6.040489642184557
+        "margin_pct": 6.031969910672308
       },
       "111": {
-        "total_votes": 24271,
-        "dem_votes": 6085,
-        "rep_votes": 17032,
-        "other_votes": 1154,
+        "total_votes": 24285,
+        "dem_votes": 6090,
+        "rep_votes": 17040,
+        "other_votes": 1155,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.10320959169379
+        "margin_pct": 45.08956145768993
       },
       "112": {
-        "total_votes": 22920,
-        "dem_votes": 5673,
-        "rep_votes": 16307,
+        "total_votes": 22924,
+        "dem_votes": 5675,
+        "rep_votes": 16309,
         "other_votes": 940,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.396160558464224
+        "margin_pct": 46.38806491013785
       },
       "113": {
-        "total_votes": 19120,
-        "dem_votes": 12118,
-        "rep_votes": 6440,
-        "other_votes": 563,
+        "total_votes": 19203,
+        "dem_votes": 12135,
+        "rep_votes": 6502,
+        "other_votes": 566,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.696652719665273
+        "margin_pct": -29.333958235692343
       },
       "114": {
-        "total_votes": 25738,
-        "dem_votes": 6771,
-        "rep_votes": 18084,
-        "other_votes": 882,
+        "total_votes": 25829,
+        "dem_votes": 6776,
+        "rep_votes": 18168,
+        "other_votes": 885,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.954464216333825
+        "margin_pct": 44.10546285183321
       },
       "115": {
-        "total_votes": 27042,
-        "dem_votes": 20256,
-        "rep_votes": 6084,
-        "other_votes": 702,
+        "total_votes": 28446,
+        "dem_votes": 21202,
+        "rep_votes": 6501,
+        "other_votes": 743,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.40736631905924
+        "margin_pct": -51.68037685439077
       },
       "116": {
-        "total_votes": 25367,
-        "dem_votes": 18642,
-        "rep_votes": 5994,
-        "other_votes": 731,
+        "total_votes": 26727,
+        "dem_votes": 19547,
+        "rep_votes": 6407,
+        "other_votes": 773,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.86005440138763
+        "margin_pct": -49.16376697721405
       },
       "117": {
-        "total_votes": 19076,
-        "dem_votes": 11032,
-        "rep_votes": 7318,
-        "other_votes": 725,
+        "total_votes": 20232,
+        "dem_votes": 11639,
+        "rep_votes": 7826,
+        "other_votes": 767,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.46949045921577
+        "margin_pct": -18.84638196915777
       },
       "118": {
-        "total_votes": 22897,
-        "dem_votes": 6881,
-        "rep_votes": 15125,
-        "other_votes": 891,
+        "total_votes": 23032,
+        "dem_votes": 6895,
+        "rep_votes": 15241,
+        "other_votes": 896,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.00471677512338
+        "margin_pct": 36.23654046543939
       },
       "119": {
-        "total_votes": 839,
-        "dem_votes": 103,
-        "rep_votes": 695,
-        "other_votes": 41,
+        "total_votes": 18839,
+        "dem_votes": 3787,
+        "rep_votes": 13966,
+        "other_votes": 1086,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.56019070321811
+        "margin_pct": 54.0315303360051
       },
       "120": {
-        "total_votes": 14191,
-        "dem_votes": 4486,
-        "rep_votes": 9085,
-        "other_votes": 621,
+        "total_votes": 23724,
+        "dem_votes": 8023,
+        "rep_votes": 14643,
+        "other_votes": 1058,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.40786413924318
+        "margin_pct": 27.904232001348845
       },
       "121": {
-        "total_votes": 24148,
-        "dem_votes": 8301,
-        "rep_votes": 14648,
-        "other_votes": 1199,
+        "total_votes": 31189,
+        "dem_votes": 12612,
+        "rep_votes": 17006,
+        "other_votes": 1571,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.28375020705648
+        "margin_pct": 14.088300362307224
       },
       "122": {
-        "total_votes": 6010,
-        "dem_votes": 3702,
-        "rep_votes": 1993,
-        "other_votes": 315,
+        "total_votes": 10898,
+        "dem_votes": 6998,
+        "rep_votes": 3357,
+        "other_votes": 543,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.435940099833612
+        "margin_pct": -33.40979996329602
       },
       "123": {
-        "total_votes": 22033,
-        "dem_votes": 6023,
-        "rep_votes": 15325,
-        "other_votes": 685,
+        "total_votes": 23887,
+        "dem_votes": 6722,
+        "rep_votes": 16444,
+        "other_votes": 721,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.21849044614896
+        "margin_pct": 40.69996232260225
       },
       "124": {
-        "total_votes": 18278,
-        "dem_votes": 6711,
-        "rep_votes": 10948,
-        "other_votes": 619,
+        "total_votes": 27472,
+        "dem_votes": 10129,
+        "rep_votes": 16395,
+        "other_votes": 948,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.18087318087318
+        "margin_pct": 22.80867792661619
       },
       "125": {
-        "total_votes": 18185,
-        "dem_votes": 4708,
-        "rep_votes": 12754,
-        "other_votes": 724,
+        "total_votes": 20388,
+        "dem_votes": 5379,
+        "rep_votes": 14204,
+        "other_votes": 805,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.245257080010994
+        "margin_pct": 43.28526584265254
       },
       "126": {
-        "total_votes": 20147,
-        "dem_votes": 11082,
+        "total_votes": 20149,
+        "dem_votes": 11084,
         "rep_votes": 8594,
         "other_votes": 471,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.349233136447113
+        "margin_pct": -12.357933396198323
       },
       "127": {
-        "total_votes": 25709,
-        "dem_votes": 7029,
-        "rep_votes": 17688,
-        "other_votes": 992,
+        "total_votes": 27918,
+        "dem_votes": 7648,
+        "rep_votes": 19199,
+        "other_votes": 1071,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.46018903885798
+        "margin_pct": 41.374740310910525
       },
       "128": {
         "total_votes": 23262,
@@ -1424,191 +1440,191 @@
         "margin_pct": 5.321984352162325
       },
       "129": {
-        "total_votes": 21954,
-        "dem_votes": 13803,
-        "rep_votes": 7399,
+        "total_votes": 21959,
+        "dem_votes": 13807,
+        "rep_votes": 7400,
         "other_votes": 752,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.170082900610367
+        "margin_pct": -29.17710278245822
       },
       "130": {
-        "total_votes": 20192,
-        "dem_votes": 12429,
-        "rep_votes": 7189,
+        "total_votes": 20197,
+        "dem_votes": 12433,
+        "rep_votes": 7190,
         "other_votes": 574,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.950871632329637
+        "margin_pct": -25.95930088627024
       },
       "131": {
-        "total_votes": 20356,
-        "dem_votes": 4934,
-        "rep_votes": 14572,
-        "other_votes": 849,
+        "total_votes": 23116,
+        "dem_votes": 5684,
+        "rep_votes": 16479,
+        "other_votes": 953,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.34721949302417
+        "margin_pct": 46.699255926630904
       },
       "132": {
-        "total_votes": 16352,
-        "dem_votes": 10034,
+        "total_votes": 16354,
+        "dem_votes": 10035,
         "rep_votes": 5891,
         "other_votes": 428,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.336350293542075
+        "margin_pct": -25.339366515837103
       },
       "133": {
-        "total_votes": 20188,
-        "dem_votes": 5774,
-        "rep_votes": 13900,
-        "other_votes": 514,
+        "total_votes": 21162,
+        "dem_votes": 6363,
+        "rep_votes": 14266,
+        "other_votes": 533,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.2516346344363
+        "margin_pct": 37.34524147056044
       },
       "134": {
-        "total_votes": 20231,
-        "dem_votes": 5694,
-        "rep_votes": 13877,
-        "other_votes": 660,
+        "total_votes": 22810,
+        "dem_votes": 6564,
+        "rep_votes": 15504,
+        "other_votes": 742,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.44782759132025
+        "margin_pct": 39.193336256028054
       },
       "135": {
-        "total_votes": 19840,
-        "dem_votes": 3991,
-        "rep_votes": 15080,
-        "other_votes": 769,
+        "total_votes": 21054,
+        "dem_votes": 4300,
+        "rep_votes": 15931,
+        "other_votes": 823,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.8921370967742
+        "margin_pct": 55.24365916215446
       },
       "136": {
-        "total_votes": 22256,
-        "dem_votes": 6903,
-        "rep_votes": 14453,
-        "other_votes": 900,
+        "total_votes": 23599,
+        "dem_votes": 7270,
+        "rep_votes": 15385,
+        "other_votes": 944,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.92343637670741
+        "margin_pct": 34.38705029874147
       },
       "137": {
-        "total_votes": 20078,
-        "dem_votes": 10993,
-        "rep_votes": 8502,
-        "other_votes": 583,
+        "total_votes": 22301,
+        "dem_votes": 12253,
+        "rep_votes": 9386,
+        "other_votes": 662,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.406614204602052
+        "margin_pct": -12.855925743240212
       },
       "138": {
-        "total_votes": 25512,
-        "dem_votes": 5946,
-        "rep_votes": 18672,
-        "other_votes": 894,
+        "total_votes": 26635,
+        "dem_votes": 6165,
+        "rep_votes": 19530,
+        "other_votes": 940,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.8824082784572
+        "margin_pct": 50.17833677492022
       },
       "139": {
-        "total_votes": 17260,
-        "dem_votes": 4840,
-        "rep_votes": 11707,
-        "other_votes": 712,
+        "total_votes": 19389,
+        "dem_votes": 5423,
+        "rep_votes": 13120,
+        "other_votes": 846,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.7856315179606
+        "margin_pct": 39.6977667749755
       },
       "140": {
-        "total_votes": 8372,
-        "dem_votes": 5814,
-        "rep_votes": 2275,
-        "other_votes": 283,
+        "total_votes": 9879,
+        "dem_votes": 6800,
+        "rep_votes": 2721,
+        "other_votes": 358,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.2718585762064
+        "margin_pct": -41.289604210952525
       },
       "141": {
-        "total_votes": 17826,
-        "dem_votes": 11344,
-        "rep_votes": 5938,
-        "other_votes": 544,
+        "total_votes": 21056,
+        "dem_votes": 13267,
+        "rep_votes": 7101,
+        "other_votes": 688,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.326489397509253
+        "margin_pct": -29.283814589665653
       },
       "142": {
-        "total_votes": 18885,
-        "dem_votes": 10060,
-        "rep_votes": 8206,
-        "other_votes": 619,
+        "total_votes": 19713,
+        "dem_votes": 10273,
+        "rep_votes": 8802,
+        "other_votes": 638,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.81731532962669
+        "margin_pct": -7.462080860345964
       },
       "143": {
-        "total_votes": 18964,
-        "dem_votes": 10909,
-        "rep_votes": 7448,
-        "other_votes": 607,
+        "total_votes": 19420,
+        "dem_votes": 11054,
+        "rep_votes": 7749,
+        "other_votes": 617,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.250369120438727
+        "margin_pct": -17.018537590113286
       },
       "144": {
-        "total_votes": 21286,
-        "dem_votes": 5526,
-        "rep_votes": 15048,
-        "other_votes": 713,
+        "total_votes": 25740,
+        "dem_votes": 6638,
+        "rep_votes": 18256,
+        "other_votes": 846,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.73362773654045
+        "margin_pct": 45.13597513597514
       },
       "145": {
-        "total_votes": 21782,
-        "dem_votes": 9881,
-        "rep_votes": 11369,
-        "other_votes": 532,
+        "total_votes": 22593,
+        "dem_votes": 10070,
+        "rep_votes": 11977,
+        "other_votes": 546,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 6.831328619961435
+        "margin_pct": 8.440667463373611
       },
       "146": {
         "total_votes": 20701,
@@ -1622,7 +1638,7 @@
         "margin_pct": 38.8000579682141
       },
       "147": {
-        "total_votes": 22073,
+        "total_votes": 22074,
         "dem_votes": 7494,
         "rep_votes": 13720,
         "other_votes": 860,
@@ -1630,7 +1646,7 @@
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.206406016400127
+        "margin_pct": 28.205128205128204
       },
       "148": {
         "total_votes": 23620,
@@ -1644,81 +1660,81 @@
         "margin_pct": 42.58255715495343
       },
       "149": {
-        "total_votes": 21058,
-        "dem_votes": 11434,
-        "rep_votes": 9015,
-        "other_votes": 609,
+        "total_votes": 21237,
+        "dem_votes": 11526,
+        "rep_votes": 9098,
+        "other_votes": 613,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.48732073321303
+        "margin_pct": -11.432876583321562
       },
       "150": {
-        "total_votes": 16545,
-        "dem_votes": 8592,
-        "rep_votes": 7612,
-        "other_votes": 340,
+        "total_votes": 19690,
+        "dem_votes": 9683,
+        "rep_votes": 9586,
+        "other_votes": 421,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.9232396494409185
+        "margin_pct": -0.4926358557643474
       },
       "151": {
-        "total_votes": 19951,
-        "dem_votes": 8901,
-        "rep_votes": 10668,
-        "other_votes": 382,
+        "total_votes": 22262,
+        "dem_votes": 9728,
+        "rep_votes": 12049,
+        "other_votes": 485,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.856698912335222
+        "margin_pct": 10.425837750426737
       },
       "152": {
-        "total_votes": 20535,
-        "dem_votes": 4918,
-        "rep_votes": 15152,
-        "other_votes": 465,
+        "total_votes": 22560,
+        "dem_votes": 5453,
+        "rep_votes": 16595,
+        "other_votes": 512,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.83686389091794
+        "margin_pct": 49.388297872340424
       },
       "153": {
-        "total_votes": 18137,
-        "dem_votes": 11617,
-        "rep_votes": 6207,
-        "other_votes": 313,
+        "total_votes": 21513,
+        "dem_votes": 13249,
+        "rep_votes": 7866,
+        "other_votes": 398,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.828527319843413
+        "margin_pct": -25.02207967275601
       },
       "154": {
-        "total_votes": 22710,
-        "dem_votes": 11105,
-        "rep_votes": 11127,
-        "other_votes": 477,
+        "total_votes": 23509,
+        "dem_votes": 11659,
+        "rep_votes": 11356,
+        "other_votes": 494,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 0.09687362395420519
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -1.288868093070739
       },
       "155": {
-        "total_votes": 19186,
-        "dem_votes": 5769,
-        "rep_votes": 12997,
-        "other_votes": 420,
+        "total_votes": 21779,
+        "dem_votes": 6451,
+        "rep_votes": 14822,
+        "other_votes": 506,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.673303450432606
+        "margin_pct": 38.43610817760228
       },
       "156": {
         "total_votes": 17829,
@@ -1743,26 +1759,26 @@
         "margin_pct": 54.983154004999456
       },
       "158": {
-        "total_votes": 19620,
-        "dem_votes": 5925,
+        "total_votes": 19619,
+        "dem_votes": 5924,
         "rep_votes": 13100,
         "other_votes": 595,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.569826707441386
+        "margin_pct": 36.5767878077374
       },
       "159": {
-        "total_votes": 21763,
-        "dem_votes": 5355,
-        "rep_votes": 15675,
-        "other_votes": 733,
+        "total_votes": 23342,
+        "dem_votes": 5695,
+        "rep_votes": 16857,
+        "other_votes": 790,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.4199329136608
+        "margin_pct": 47.819381372633025
       },
       "160": {
         "total_votes": 16875,
@@ -1776,84 +1792,84 @@
         "margin_pct": 41.04888888888889
       },
       "161": {
-        "total_votes": 11233,
-        "dem_votes": 3197,
-        "rep_votes": 7603,
-        "other_votes": 433,
+        "total_votes": 14284,
+        "dem_votes": 4534,
+        "rep_votes": 9203,
+        "other_votes": 547,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.223715837265196
+        "margin_pct": 32.68692243069168
       },
       "162": {
-        "total_votes": 10422,
-        "dem_votes": 6078,
-        "rep_votes": 3914,
-        "other_votes": 430,
+        "total_votes": 17098,
+        "dem_votes": 10264,
+        "rep_votes": 6153,
+        "other_votes": 681,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.763768950297447
+        "margin_pct": -24.043747806761022
       },
       "163": {
-        "total_votes": 14391,
-        "dem_votes": 7539,
-        "rep_votes": 6240,
-        "other_votes": 613,
+        "total_votes": 23511,
+        "dem_votes": 12731,
+        "rep_votes": 9810,
+        "other_votes": 970,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.026474880133417
+        "margin_pct": -12.423971757900556
       },
       "164": {
-        "total_votes": 10952,
-        "dem_votes": 2908,
-        "rep_votes": 7523,
-        "other_votes": 521,
+        "total_votes": 13879,
+        "dem_votes": 3884,
+        "rep_votes": 9355,
+        "other_votes": 640,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.13842220598977
+        "margin_pct": 39.41926651776065
       },
       "165": {
-        "total_votes": 12797,
-        "dem_votes": 9387,
-        "rep_votes": 2878,
-        "other_votes": 532,
+        "total_votes": 21219,
+        "dem_votes": 15852,
+        "rep_votes": 4525,
+        "other_votes": 842,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.86348362897554
+        "margin_pct": -53.381403459163955
       },
       "166": {
-        "total_votes": 23956,
-        "dem_votes": 5763,
-        "rep_votes": 17306,
-        "other_votes": 887,
+        "total_votes": 35578,
+        "dem_votes": 9055,
+        "rep_votes": 25249,
+        "other_votes": 1274,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.18417098013023
+        "margin_pct": 45.516892461633596
       },
       "167": {
-        "total_votes": 17578,
-        "dem_votes": 4801,
-        "rep_votes": 12136,
-        "other_votes": 641,
+        "total_votes": 17883,
+        "dem_votes": 4862,
+        "rep_votes": 12369,
+        "other_votes": 652,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.728296734554554
+        "margin_pct": 41.97841525471118
       },
       "168": {
-        "total_votes": 14861,
+        "total_votes": 14862,
         "dem_votes": 7975,
         "rep_votes": 6337,
         "other_votes": 550,
@@ -1861,10 +1877,10 @@
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.022138483278379
+        "margin_pct": -11.02139685102947
       },
       "169": {
-        "total_votes": 18700,
+        "total_votes": 18701,
         "dem_votes": 4539,
         "rep_votes": 13652,
         "other_votes": 510,
@@ -1872,18 +1888,18 @@
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.73262032085562
+        "margin_pct": 48.7300144377306
       },
       "170": {
-        "total_votes": 18338,
-        "dem_votes": 4375,
-        "rep_votes": 13401,
-        "other_votes": 562,
+        "total_votes": 19420,
+        "dem_votes": 4456,
+        "rep_votes": 14363,
+        "other_votes": 601,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.22019849492856
+        "margin_pct": 51.014418125643665
       },
       "171": {
         "total_votes": 19640,
@@ -1897,70 +1913,70 @@
         "margin_pct": 25.310590631364562
       },
       "172": {
-        "total_votes": 16625,
-        "dem_votes": 3897,
-        "rep_votes": 12245,
-        "other_votes": 483,
+        "total_votes": 17087,
+        "dem_votes": 3980,
+        "rep_votes": 12612,
+        "other_votes": 495,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.213533834586464
+        "margin_pct": 50.517937613390295
       },
       "173": {
-        "total_votes": 20063,
-        "dem_votes": 7421,
-        "rep_votes": 12045,
-        "other_votes": 597,
+        "total_votes": 21211,
+        "dem_votes": 7791,
+        "rep_votes": 12798,
+        "other_votes": 622,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.047400687833324
+        "margin_pct": 23.605676300033
       },
       "174": {
-        "total_votes": 19023,
-        "dem_votes": 3788,
-        "rep_votes": 14507,
-        "other_votes": 727,
+        "total_votes": 19664,
+        "dem_votes": 3890,
+        "rep_votes": 15017,
+        "other_votes": 757,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.347579246175684
+        "margin_pct": 56.58563873067535
       },
       "175": {
-        "total_votes": 21254,
-        "dem_votes": 7084,
-        "rep_votes": 13404,
-        "other_votes": 766,
+        "total_votes": 24615,
+        "dem_votes": 8186,
+        "rep_votes": 15511,
+        "other_votes": 918,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.73557918509457
+        "margin_pct": 29.758277473085514
       },
       "176": {
-        "total_votes": 15747,
-        "dem_votes": 3985,
-        "rep_votes": 11209,
-        "other_votes": 553,
+        "total_votes": 16080,
+        "dem_votes": 4057,
+        "rep_votes": 11452,
+        "other_votes": 571,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.87540483901695
+        "margin_pct": 45.98880597014926
       },
       "177": {
-        "total_votes": 10456,
-        "dem_votes": 5270,
-        "rep_votes": 4817,
-        "other_votes": 369,
+        "total_votes": 12737,
+        "dem_votes": 6433,
+        "rep_votes": 5838,
+        "other_votes": 466,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.332440703902066
+        "margin_pct": -4.671429693020334
       },
       "178": {
         "total_votes": 20149,
@@ -1974,26 +1990,26 @@
         "margin_pct": 69.303687527917
       },
       "179": {
-        "total_votes": 21353,
-        "dem_votes": 7065,
-        "rep_votes": 13497,
-        "other_votes": 791,
+        "total_votes": 22461,
+        "dem_votes": 7408,
+        "rep_votes": 14219,
+        "other_votes": 834,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.122231068233972
+        "margin_pct": 30.32367214282534
       },
       "180": {
-        "total_votes": 20321,
-        "dem_votes": 5769,
-        "rep_votes": 13426,
-        "other_votes": 1126,
+        "total_votes": 20466,
+        "dem_votes": 5802,
+        "rep_votes": 13532,
+        "other_votes": 1132,
         "dem_candidate": "Jim Barksdale",
         "rep_candidate": "Johnny Isakson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.68023227203386
+        "margin_pct": 37.76995993354832
       }
     }
   }

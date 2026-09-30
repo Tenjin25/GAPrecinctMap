@@ -4,93 +4,109 @@
     "contest_type": "agriculture_commissioner",
     "year": 2018,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:21.773403+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:45.815730+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3627103,
-    "matched_input_votes": 3627103,
+    "total_input_votes": 3635735,
+    "matched_input_votes": 3635735,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/Commissioner_Of_Agriculture.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1714565,
+        "rep_votes": 1921170,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1803383,
+        "rep_votes": 2040097,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 44702,
-        "dem_votes": 17787,
-        "rep_votes": 26915,
+        "total_votes": 62587,
+        "dem_votes": 23637,
+        "rep_votes": 38950,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.419668023802068
+        "margin_pct": 24.46674229472574
       },
       "2": {
-        "total_votes": 36054,
-        "dem_votes": 26243,
-        "rep_votes": 9811,
+        "total_votes": 64658,
+        "dem_votes": 45704,
+        "rep_votes": 18954,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.57608032395851
+        "margin_pct": -41.37152401868291
       },
       "3": {
-        "total_votes": 61776,
-        "dem_votes": 19781,
-        "rep_votes": 41995,
+        "total_votes": 65765,
+        "dem_votes": 21095,
+        "rep_votes": 44670,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.958948458948456
+        "margin_pct": 35.847335208697636
       },
       "4": {
-        "total_votes": 54364,
-        "dem_votes": 15257,
-        "rep_votes": 39107,
+        "total_votes": 55757,
+        "dem_votes": 15800,
+        "rep_votes": 39957,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.8709440070635
+        "margin_pct": 43.32550173072439
       },
       "5": {
-        "total_votes": 37116,
-        "dem_votes": 27867,
-        "rep_votes": 9249,
+        "total_votes": 37164,
+        "dem_votes": 27905,
+        "rep_votes": 9259,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.16165535079211
+        "margin_pct": -50.17220966526747
       },
       "6": {
-        "total_votes": 78484,
-        "dem_votes": 40625,
-        "rep_votes": 37860,
+        "total_votes": 78488,
+        "dem_votes": 40626,
+        "rep_votes": 37862,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.5230110595790225
+        "margin_pct": -3.5215574355315464
       },
       "7": {
-        "total_votes": 64366,
-        "dem_votes": 33990,
-        "rep_votes": 30376,
+        "total_votes": 64448,
+        "dem_votes": 34036,
+        "rep_votes": 30412,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.614765559456856
+        "margin_pct": -5.623138033763654
       },
       "8": {
         "total_votes": 57571,
@@ -104,81 +120,81 @@
         "margin_pct": 35.669000017369854
       },
       "9": {
-        "total_votes": 67684,
-        "dem_votes": 37092,
-        "rep_votes": 30592,
+        "total_votes": 67770,
+        "dem_votes": 37143,
+        "rep_votes": 30627,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.603451332663553
+        "margin_pct": -9.614873837981408
       },
       "10": {
-        "total_votes": 80821,
-        "dem_votes": 63599,
-        "rep_votes": 17221,
+        "total_votes": 84410,
+        "dem_votes": 66887,
+        "rep_votes": 17523,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.383600796822606
+        "margin_pct": -58.48122260395687
       },
       "11": {
-        "total_votes": 58935,
-        "dem_votes": 18889,
-        "rep_votes": 40046,
+        "total_votes": 60846,
+        "dem_votes": 19371,
+        "rep_votes": 41475,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.898871638245524
+        "margin_pct": 36.32777832560892
       },
       "12": {
-        "total_votes": 63855,
-        "dem_votes": 35616,
-        "rep_votes": 28239,
+        "total_votes": 68626,
+        "dem_votes": 38255,
+        "rep_votes": 30371,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.552736669015738
+        "margin_pct": -11.488357182408999
       },
       "13": {
-        "total_votes": 62798,
-        "dem_votes": 16688,
-        "rep_votes": 46109,
+        "total_votes": 65249,
+        "dem_votes": 17243,
+        "rep_votes": 48006,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.850218159814006
+        "margin_pct": 47.147082713911324
       },
       "14": {
-        "total_votes": 75161,
-        "dem_votes": 38644,
+        "total_votes": 75162,
+        "dem_votes": 38645,
         "rep_votes": 36517,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -2.829925094131265
+        "margin_pct": -2.83121790266358
       },
       "15": {
-        "total_votes": 49053,
-        "dem_votes": 33421,
-        "rep_votes": 15631,
+        "total_votes": 55446,
+        "dem_votes": 35936,
+        "rep_votes": 19510,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.26689499113204
+        "margin_pct": -29.62522093568517
       },
       "16": {
         "total_votes": 80430,
@@ -192,114 +208,114 @@
         "margin_pct": 37.12793733681462
       },
       "17": {
-        "total_votes": 77400,
-        "dem_votes": 27135,
-        "rep_votes": 50265,
+        "total_votes": 78390,
+        "dem_votes": 27841,
+        "rep_votes": 50549,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.88372093023256
+        "margin_pct": 28.967980609771654
       },
       "18": {
-        "total_votes": 75491,
-        "dem_votes": 27205,
-        "rep_votes": 48286,
+        "total_votes": 75591,
+        "dem_votes": 27231,
+        "rep_votes": 48360,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.925183134413373
+        "margin_pct": 27.951740286542048
       },
       "19": {
         "total_votes": 58567,
         "dem_votes": 13446,
-        "rep_votes": 45122,
+        "rep_votes": 45121,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.08506496832687
+        "margin_pct": 54.08335752215412
       },
       "20": {
-        "total_votes": 68426,
-        "dem_votes": 20965,
-        "rep_votes": 47461,
+        "total_votes": 70946,
+        "dem_votes": 21764,
+        "rep_votes": 49182,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.72212316955543
+        "margin_pct": 38.6462943647281
       },
       "21": {
-        "total_votes": 76598,
-        "dem_votes": 21310,
-        "rep_votes": 55288,
+        "total_votes": 76617,
+        "dem_votes": 21317,
+        "rep_votes": 55300,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.35886054466174
+        "margin_pct": 44.354386102301056
       },
       "22": {
-        "total_votes": 62484,
-        "dem_votes": 42808,
-        "rep_votes": 19676,
+        "total_votes": 62499,
+        "dem_votes": 42820,
+        "rep_votes": 19679,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.0206772933871
+        "margin_pct": -37.026192419078704
       },
       "23": {
-        "total_votes": 65817,
-        "dem_votes": 26021,
-        "rep_votes": 39796,
+        "total_votes": 68391,
+        "dem_votes": 27226,
+        "rep_votes": 41165,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.92924320464318
+        "margin_pct": 20.38133672559255
       },
       "24": {
-        "total_votes": 75089,
-        "dem_votes": 20913,
-        "rep_votes": 54176,
+        "total_votes": 80738,
+        "dem_votes": 22792,
+        "rep_votes": 57946,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.29809958848833
+        "margin_pct": 43.54083578983874
       },
       "25": {
-        "total_votes": 62507,
-        "dem_votes": 24354,
-        "rep_votes": 38153,
+        "total_votes": 73586,
+        "dem_votes": 28057,
+        "rep_votes": 45529,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.075927496120435
+        "margin_pct": 23.743646889353954
       },
       "26": {
-        "total_votes": 65144,
-        "dem_votes": 40384,
-        "rep_votes": 24760,
+        "total_votes": 65992,
+        "dem_votes": 40934,
+        "rep_votes": 25058,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.98378975807442
+        "margin_pct": -24.05746151048612
       },
       "27": {
         "total_votes": 70072,
@@ -313,323 +329,323 @@
         "margin_pct": 51.46135403584884
       },
       "28": {
-        "total_votes": 71007,
-        "dem_votes": 20439,
-        "rep_votes": 50568,
+        "total_votes": 71652,
+        "dem_votes": 20487,
+        "rep_votes": 51165,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.431027926824115
+        "margin_pct": 42.815273823480155
       },
       "29": {
-        "total_votes": 66264,
-        "dem_votes": 22613,
-        "rep_votes": 43652,
+        "total_votes": 69224,
+        "dem_votes": 23289,
+        "rep_votes": 45935,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.750271640709887
+        "margin_pct": 32.71408759967641
       },
       "30": {
-        "total_votes": 41149,
-        "dem_votes": 12506,
-        "rep_votes": 28643,
+        "total_votes": 68171,
+        "dem_votes": 20150,
+        "rep_votes": 48021,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.21601983037255
+        "margin_pct": 40.88395358730252
       },
       "31": {
-        "total_votes": 60069,
-        "dem_votes": 17693,
-        "rep_votes": 42376,
+        "total_votes": 64532,
+        "dem_votes": 19456,
+        "rep_votes": 45076,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.09107859295144
+        "margin_pct": 39.701233496559844
       },
       "32": {
-        "total_votes": 75058,
-        "dem_votes": 28436,
-        "rep_votes": 46621,
+        "total_votes": 75079,
+        "dem_votes": 28445,
+        "rep_votes": 46634,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.227930400490287
+        "margin_pct": 24.22648143955034
       },
       "33": {
-        "total_votes": 64018,
-        "dem_votes": 43897,
-        "rep_votes": 20121,
+        "total_votes": 64023,
+        "dem_votes": 43898,
+        "rep_votes": 20125,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.13955450029679
+        "margin_pct": -37.13196819892851
       },
       "34": {
-        "total_votes": 59022,
-        "dem_votes": 48923,
-        "rep_votes": 10099,
+        "total_votes": 58985,
+        "dem_votes": 48897,
+        "rep_votes": 10088,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.77886211920979
+        "margin_pct": -65.79469356616089
       },
       "35": {
-        "total_votes": 70544,
-        "dem_votes": 56283,
-        "rep_votes": 14261,
+        "total_votes": 72415,
+        "dem_votes": 56798,
+        "rep_votes": 15617,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.5684962576548
+        "margin_pct": -56.86805219913001
       },
       "36": {
-        "total_votes": 78229,
-        "dem_votes": 68186,
+        "total_votes": 78231,
+        "dem_votes": 68187,
         "rep_votes": 10044,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.32282146007235
+        "margin_pct": -74.32219963952909
       },
       "37": {
-        "total_votes": 83079,
-        "dem_votes": 32187,
-        "rep_votes": 50893,
+        "total_votes": 83093,
+        "dem_votes": 32189,
+        "rep_votes": 50904,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.515918583516896
+        "margin_pct": 22.52295620569723
       },
       "38": {
-        "total_votes": 74032,
-        "dem_votes": 59626,
-        "rep_votes": 14406,
+        "total_votes": 74037,
+        "dem_votes": 59628,
+        "rep_votes": 14409,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.081694402420574
+        "margin_pct": -61.076218647433045
       },
       "39": {
-        "total_votes": 63240,
-        "dem_votes": 52500,
+        "total_votes": 63242,
+        "dem_votes": 52502,
         "rep_votes": 10740,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.03415559772297
+        "margin_pct": -66.03522975237975
       },
       "40": {
-        "total_votes": 66770,
-        "dem_votes": 37748,
-        "rep_votes": 29021,
+        "total_votes": 69402,
+        "dem_votes": 39513,
+        "rep_votes": 29889,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.070241126254306
+        "margin_pct": -13.86703553211723
       },
       "41": {
-        "total_votes": 65076,
-        "dem_votes": 51654,
-        "rep_votes": 13423,
+        "total_votes": 68229,
+        "dem_votes": 54414,
+        "rep_votes": 13815,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.748232835453926
+        "margin_pct": -59.50402321593457
       },
       "42": {
-        "total_votes": 74213,
-        "dem_votes": 57496,
-        "rep_votes": 16717,
+        "total_votes": 77946,
+        "dem_votes": 60660,
+        "rep_votes": 17286,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.94859391211783
+        "margin_pct": -55.646216611500265
       },
       "43": {
-        "total_votes": 70140,
-        "dem_votes": 49217,
-        "rep_votes": 20923,
+        "total_votes": 70680,
+        "dem_votes": 49736,
+        "rep_votes": 20944,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.33932135728543
+        "margin_pct": -40.73571024335031
       },
       "44": {
-        "total_votes": 69046,
-        "dem_votes": 59825,
-        "rep_votes": 9220,
+        "total_votes": 70210,
+        "dem_votes": 60961,
+        "rep_votes": 9249,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.2917185644353
+        "margin_pct": -73.6533257370745
       },
       "45": {
-        "total_votes": 53181,
-        "dem_votes": 20354,
-        "rep_votes": 32827,
+        "total_votes": 65524,
+        "dem_votes": 23344,
+        "rep_votes": 42180,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.453865102198154
+        "margin_pct": 28.746718759538492
       },
       "46": {
-        "total_votes": 63515,
-        "dem_votes": 21540,
-        "rep_votes": 41974,
+        "total_votes": 78441,
+        "dem_votes": 29487,
+        "rep_votes": 48954,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.17192789104936
+        "margin_pct": 24.817378666768654
       },
       "47": {
-        "total_votes": 42189,
-        "dem_votes": 12685,
-        "rep_votes": 29504,
+        "total_votes": 60531,
+        "dem_votes": 21511,
+        "rep_votes": 39020,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.865841807106115
+        "margin_pct": 28.92567444780361
       },
       "48": {
-        "total_votes": 69167,
-        "dem_votes": 27916,
-        "rep_votes": 41250,
+        "total_votes": 69187,
+        "dem_votes": 27925,
+        "rep_votes": 41262,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.277979383231887
+        "margin_pct": 19.27674274068828
       },
       "49": {
-        "total_votes": 53402,
-        "dem_votes": 13180,
-        "rep_votes": 40222,
+        "total_votes": 63322,
+        "dem_votes": 14791,
+        "rep_votes": 48531,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.63855286318864
+        "margin_pct": 53.283219102365685
       },
       "50": {
-        "total_votes": 55949,
-        "dem_votes": 8770,
-        "rep_votes": 47179,
+        "total_votes": 66509,
+        "dem_votes": 10574,
+        "rep_votes": 55935,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.6500205544335
+        "margin_pct": 68.20279962110392
       },
       "51": {
-        "total_votes": 76039,
+        "total_votes": 76040,
         "dem_votes": 11521,
-        "rep_votes": 64518,
+        "rep_votes": 64519,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.69712910480148
+        "margin_pct": 69.69752761704366
       },
       "52": {
-        "total_votes": 62221,
-        "dem_votes": 15163,
-        "rep_votes": 47058,
+        "total_votes": 62250,
+        "dem_votes": 15169,
+        "rep_votes": 47081,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.26082833769949
+        "margin_pct": 51.264257028112446
       },
       "53": {
-        "total_votes": 54705,
-        "dem_votes": 10165,
-        "rep_votes": 44540,
+        "total_votes": 60127,
+        "dem_votes": 10893,
+        "rep_votes": 49234,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.837035005940955
+        "margin_pct": 63.76669383139022
       },
       "54": {
-        "total_votes": 51870,
-        "dem_votes": 10941,
-        "rep_votes": 40928,
+        "total_votes": 51851,
+        "dem_votes": 10938,
+        "rep_votes": 40913,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.81183728552149
+        "margin_pct": 57.80987830514358
       },
       "55": {
-        "total_votes": 75811,
-        "dem_votes": 58614,
-        "rep_votes": 17197,
+        "total_votes": 77430,
+        "dem_votes": 60167,
+        "rep_votes": 17263,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.631913574547234
+        "margin_pct": -55.41004778509622
       },
       "56": {
-        "total_votes": 87333,
-        "dem_votes": 31327,
-        "rep_votes": 56006,
+        "total_votes": 87351,
+        "dem_votes": 31334,
+        "rep_votes": 56017,
         "other_votes": 0,
         "dem_candidate": "Fred Swann",
         "rep_candidate": "Gary Black",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.258504803453448
+        "margin_pct": 28.257260935764904
       }
     }
   }
