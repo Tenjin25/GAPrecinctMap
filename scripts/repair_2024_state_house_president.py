@@ -23,6 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Data" / "20241105__ga__general__precinct-level.csv"
+CANONICAL = ROOT / "Data" / "contests" / "president_2024.json"
 RESULT_FIELDS = ("total_votes", "dem_votes", "rep_votes", "other_votes")
 SCOPE_CONFIGS = {
     "state_house": {
@@ -111,6 +112,40 @@ def allocate_integer_shares(total: int, weights: dict[str, object]) -> dict[str,
     for district in order[:remainder]:
         allocated[district] += 1
     return allocated
+
+
+def canonical_party_totals() -> dict[str, int]:
+    payload = json.loads(CANONICAL.read_text(encoding="utf-8"))
+    rows = payload.get("rows") or []
+    return {
+        field: sum(int(row.get(field, 0)) for row in rows)
+        for field in ("dem_votes", "rep_votes", "other_votes")
+    }
+
+
+def reconcile_to_canonical(
+    results: dict[str, dict[str, object]],
+    targets: dict[str, int],
+) -> dict[str, dict[str, object]]:
+    """Match certified party totals while preserving the direct SOS district pattern."""
+    reconciled = {district: dict(row) for district, row in results.items()}
+    for field, target in targets.items():
+        allocation = allocate_integer_shares(
+            target,
+            {district: int(row[field]) for district, row in reconciled.items()},
+        )
+        for district, votes in allocation.items():
+            reconciled[district][field] = votes
+    for row in reconciled.values():
+        row["total_votes"] = sum(int(row[field]) for field in targets)
+        dem = int(row["dem_votes"])
+        rep = int(row["rep_votes"])
+        other = int(row["other_votes"])
+        winner = "Democratic" if dem > rep and dem >= other else "Republican"
+        row["winner"] = winner
+        row["winner_party"] = "DEM" if winner == "Democratic" else "REP"
+        row["margin_pct"] = ((rep - dem) / int(row["total_votes"]) * 100) if row["total_votes"] else 0
+    return reconciled
 
 
 def build_2022_lines(
@@ -258,6 +293,7 @@ def write_scope_results(
     statewide: dict[tuple[str, str], dict[str, int]],
     district_buckets: dict[tuple[str, str], dict[str, int]],
     statewide_total: int,
+    canonical_totals: dict[str, int],
 ) -> None:
     label = str(config["label"])
     file_name = str(config["file"])
@@ -270,6 +306,7 @@ def write_scope_results(
         raise RuntimeError(
             f"{label} bucket allocation covers {input_total:,} of {statewide_total:,} presidential votes"
         )
+    final_2024 = reconcile_to_canonical(final_2024, canonical_totals)
 
     output_2024 = ROOT / "Data" / "district_contests_2024" / file_name
     payload_2024 = {
@@ -281,9 +318,12 @@ def write_scope_results(
             "source": f"2024 SOS precinct export allocated by {label} precinct buckets",
             "generated_by": "scripts/repair_2024_state_house_president.py",
             "match_coverage_pct": 100.0,
-            "total_input_votes": input_total,
+            "total_input_votes": sum(canonical_totals.values()),
             "matched_input_votes": input_total,
-            "input_files": ["Data/20241105__ga__general__precinct-level.csv"],
+            "input_files": [
+                "Data/20241105__ga__general__precinct-level.csv",
+                "Data/contests/president_2024.json",
+            ],
         },
         "general": {"results": final_2024},
     }
@@ -308,7 +348,7 @@ def write_scope_results(
             "unchanged_geometry_districts": remap_meta.get("unchanged_districts", []),
             "spatially_remapped_districts": remap_meta.get("changed_districts", []),
             "match_coverage_pct": 100.0,
-            "total_input_votes": input_total,
+            "total_input_votes": sum(canonical_totals.values()),
             "matched_input_votes": input_total,
             "allocated_output_votes": sum(
                 int(row["total_votes"])
@@ -316,6 +356,7 @@ def write_scope_results(
             ),
             "input_files": [
                 "Data/20241105__ga__general__precinct-level.csv",
+                "Data/contests/president_2024.json",
                 str(config["remap_file"]),
                 remap_meta.get("district_map_2022"),
                 remap_meta.get("district_map_2024"),
@@ -356,6 +397,7 @@ def main() -> None:
                 district_buckets[scope][bucket][district] += num(row["total_votes"])
 
     statewide_total = sum(sum(parties.values()) for parties in statewide.values())
+    canonical_totals = canonical_party_totals()
     for scope, config in SCOPE_CONFIGS.items():
         write_scope_results(
             scope,
@@ -363,6 +405,7 @@ def main() -> None:
             statewide,
             district_buckets[scope],
             statewide_total,
+            canonical_totals,
         )
 
 
