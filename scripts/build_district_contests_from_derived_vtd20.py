@@ -370,12 +370,14 @@ def load_canonical_county_totals(
             "rep_votes": float(rep),
             "other_votes": float(other),
             "total_votes": float(dem + rep + other),
+            "dem_candidate": clean_candidate_label(str(row.get("dem_candidate") or "")),
+            "rep_candidate": clean_candidate_label(str(row.get("rep_candidate") or "")),
         }
     return out
 
 
-def load_vtd20_turnout_weights(path: Path) -> dict[str, float]:
-    """Load VEST 2020 VTD turnout as a spatial fallback for wholly unmatched counties."""
+def load_vtd20_turnout_weights(path: Path) -> dict[str, dict[str, float]]:
+    """Load party-specific VEST 2020 VTD votes as spatial fallback weights."""
     if not path.exists():
         return {}
     with zipfile.ZipFile(path) as zf:
@@ -384,19 +386,27 @@ def load_vtd20_turnout_weights(path: Path) -> dict[str, float]:
             return {}
         with zf.open(members[0]) as raw, io.TextIOWrapper(raw, encoding="utf-8-sig", newline="") as fh:
             reader = csv.DictReader(fh)
-            out: dict[str, float] = {}
+            out: dict[str, dict[str, float]] = {}
             for row in reader:
                 geoid = normalize_precinct_key(str(row.get("GEOID20") or ""))
                 if not geoid:
                     continue
-                turnout = 0.0
-                for field in ("G20PREDBID", "G20PRERTRU", "G20PRELJOR"):
+                def vote(field: str) -> float:
                     try:
-                        turnout += max(0.0, float(row.get(field) or 0.0))
+                        return max(0.0, float(row.get(field) or 0.0))
                     except (TypeError, ValueError):
-                        pass
-                if turnout > 0:
-                    out[geoid] = turnout
+                        return 0.0
+
+                dem = vote("G20PREDBID")
+                rep = vote("G20PRERTRU")
+                other = vote("G20PRELJOR")
+                if dem + rep + other > 0:
+                    out[geoid] = {
+                        "dem_votes": dem,
+                        "rep_votes": rep,
+                        "other_votes": other,
+                        "total_votes": dem + rep + other,
+                    }
             return out
 
 
@@ -431,7 +441,7 @@ def reconcile_numeric_totals_to_counties(
     by_district: dict[str, dict[str, float]],
     by_county_district: dict[str, dict[str, dict[str, float]]],
     canonical_counties: dict[str, dict[str, float]],
-    county_district_fallback_weights: dict[str, dict[str, float]],
+    county_district_fallback_weights: dict[str, dict[str, dict[str, float]]],
 ) -> dict[str, Any]:
     """
     Scale each county's mapped district pieces to authoritative county totals.
@@ -477,26 +487,36 @@ def reconcile_numeric_totals_to_counties(
                 continue
 
         configured_fallback = county_district_fallback_weights.get(county_fips) or {}
-        fallback_weights = {
-            district: max(
-                0.0,
-                float(configured_fallback.get(district, 0.0)),
-                float(node.get("total_votes", 0.0)),
-            )
-            for district, node in county_nodes.items()
-        }
-        fallback_total = sum(fallback_weights.values())
-        if fallback_total <= 0:
-            fallback_weights = {district: 1.0 for district in county_nodes}
-            fallback_total = float(len(fallback_weights))
-
         for field in fields:
+            fallback_weights = {
+                district: max(
+                    0.0,
+                    float((configured_fallback.get(district) or {}).get(field, 0.0)),
+                    float(node.get(field, 0.0)),
+                )
+                for district, node in county_nodes.items()
+            }
+            fallback_total = sum(fallback_weights.values())
+            if fallback_total <= 0:
+                fallback_weights = {district: 1.0 for district in county_nodes}
+                fallback_total = float(len(fallback_weights))
             field_target = max(0.0, float(target.get(field, 0.0)))
             field_current = sum(max(0.0, float(node.get(field, 0.0))) for node in county_nodes.values())
+            residual = max(0.0, field_target - field_current)
             for district, county_node in county_nodes.items():
                 old_value = max(0.0, float(county_node.get(field, 0.0)))
-                if field_current > 0:
+                if field_current > field_target and field_current > 0:
+                    # The mapped source overcounts the certified county total;
+                    # contract the observed distribution proportionally.
                     new_value = field_target * (old_value / field_current)
+                elif field_current > 0:
+                    # Preserve every geographically observed vote and allocate
+                    # only the unmatched residual with party-specific VTD weights.
+                    # Scaling the observed party shares themselves can amplify
+                    # a partisan subset of successfully matched precincts.
+                    new_value = old_value + residual * (
+                        fallback_weights[district] / fallback_total
+                    )
                 else:
                     new_value = field_target * (fallback_weights[district] / fallback_total)
                 county_node[field] = new_value
@@ -664,7 +684,7 @@ def aggregate_group(
     geoid_to_district: dict[str, list[tuple[str, float]]],
     supplemental_assignments: dict[str, list[tuple[str, float]]] | None = None,
     canonical_counties: dict[str, dict[str, float]] | None = None,
-    vtd20_turnout_weights: dict[str, float] | None = None,
+    vtd20_turnout_weights: dict[str, dict[str, float]] | None = None,
 ) -> dict[str, Any]:
     by_district: dict[str, dict[str, float]] = {}
     by_county_district: dict[str, dict[str, dict[str, float]]] = defaultdict(dict)
@@ -674,19 +694,28 @@ def aggregate_group(
     contest_dem_votes: dict[str, float] = defaultdict(float)
     contest_rep_votes: dict[str, float] = defaultdict(float)
 
-    county_district_fallback_weights: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    county_district_fallback_weights: dict[str, dict[str, dict[str, float]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(float))
+    )
     for geoid_key, assignments in geoid_to_district.items():
         county_fips = geoid_key[:5] if re.match(r"^13\d{3}", geoid_key) else ""
         if not county_fips or not assignments:
             continue
-        base_weight = max(0.0, float((vtd20_turnout_weights or {}).get(geoid_key, 1.0)))
+        base_weights = (vtd20_turnout_weights or {}).get(geoid_key) or {
+            "dem_votes": 1.0,
+            "rep_votes": 1.0,
+            "other_votes": 1.0,
+            "total_votes": 1.0,
+        }
         assignment_total = sum(max(0.0, float(weight)) for _, weight in assignments)
-        if base_weight <= 0 or assignment_total <= 0:
+        if assignment_total <= 0:
             continue
         for district_num, weight in assignments:
-            county_district_fallback_weights[county_fips][district_num] += (
-                base_weight * max(0.0, float(weight)) / assignment_total
-            )
+            share = max(0.0, float(weight)) / assignment_total
+            for field in ("dem_votes", "rep_votes", "other_votes", "total_votes"):
+                county_district_fallback_weights[county_fips][district_num][field] += (
+                    max(0.0, float(base_weights.get(field, 0.0))) * share
+                )
 
     for e in entries:
         payload = load_json(e.path)
@@ -790,6 +819,17 @@ def aggregate_group(
 
     reconciliation: dict[str, Any] | None = None
     if canonical_counties:
+        # Canonical county slices are also the authoritative label fallback.
+        # Some derived VTD files retain party vote buckets while omitting one
+        # candidate name; weight labels by their certified county vote totals
+        # so a complete canonical label wins over partial derived metadata.
+        for county in canonical_counties.values():
+            dem_name = clean_candidate_label(str(county.get("dem_candidate") or ""))
+            rep_name = clean_candidate_label(str(county.get("rep_candidate") or ""))
+            if dem_name:
+                contest_dem_votes[dem_name] += max(1.0, float(county.get("dem_votes", 0.0)))
+            if rep_name:
+                contest_rep_votes[rep_name] += max(1.0, float(county.get("rep_votes", 0.0)))
         reconciliation = reconcile_numeric_totals_to_counties(
             by_district=by_district,
             by_county_district=by_county_district,
