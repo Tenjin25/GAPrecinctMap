@@ -4,170 +4,186 @@
     "contest_type": "labor_commissioner",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:19.055396+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:41.755163+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2331195,
     "matched_input_votes": 2331195,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/Commissioner_Of_Labor.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1016579,
+        "rep_votes": 1313541,
+        "other_votes": 1075
+      },
+      "canonical_target": {
+        "dem_votes": 1079898,
+        "rep_votes": 1427662,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 125772,
-        "dem_votes": 47757,
-        "rep_votes": 78015,
+        "total_votes": 156458,
+        "dem_votes": 62353,
+        "rep_votes": 94105,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.057818910409313
+        "margin_pct": 20.294264275396593
       },
       "2": {
-        "total_votes": 167060,
-        "dem_votes": 89643,
-        "rep_votes": 77417,
+        "total_votes": 180716,
+        "dem_votes": 96526,
+        "rep_votes": 84190,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.318328744163774
+        "margin_pct": -6.826180305008964
       },
       "3": {
-        "total_votes": 173362,
-        "dem_votes": 50988,
-        "rep_votes": 122374,
+        "total_votes": 197174,
+        "dem_votes": 57631,
+        "rep_votes": 139543,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.17742065735282
+        "margin_pct": 41.543002627121226
       },
       "4": {
-        "total_votes": 191351,
-        "dem_votes": 134540,
-        "rep_votes": 56811,
+        "total_votes": 195998,
+        "dem_votes": 136887,
+        "rep_votes": 59111,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.62116215750113
+        "margin_pct": -39.682037571811954
       },
       "5": {
-        "total_votes": 189121,
-        "dem_votes": 142679,
-        "rep_votes": 46442,
+        "total_votes": 190421,
+        "dem_votes": 143587,
+        "rep_votes": 46834,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.886469508938724
+        "margin_pct": -50.810047211179445
       },
       "6": {
-        "total_votes": 200272,
-        "dem_votes": 50208,
-        "rep_votes": 150064,
+        "total_votes": 200770,
+        "dem_votes": 50299,
+        "rep_votes": 150471,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.860190141407685
+        "margin_pct": 49.893908452458035
       },
       "7": {
-        "total_votes": 156905,
-        "dem_votes": 69935,
-        "rep_votes": 86970,
+        "total_votes": 156925,
+        "dem_votes": 69949,
+        "rep_votes": 86976,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.856887925814984
+        "margin_pct": 10.850406245021507
       },
       "8": {
-        "total_votes": 156091,
-        "dem_votes": 51047,
-        "rep_votes": 103969,
-        "other_votes": 1075,
+        "total_votes": 172985,
+        "dem_votes": 57940,
+        "rep_votes": 115045,
+        "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.90458130193284
+        "margin_pct": 33.01153279186057
       },
       "9": {
-        "total_votes": 157791,
-        "dem_votes": 36705,
-        "rep_votes": 121087,
+        "total_votes": 174326,
+        "dem_votes": 39718,
+        "rep_votes": 134608,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.47706776685616
+        "margin_pct": 54.43250002868189
       },
       "10": {
-        "total_votes": 146687,
-        "dem_votes": 46237,
-        "rep_votes": 100450,
+        "total_votes": 185483,
+        "dem_votes": 59691,
+        "rep_votes": 125792,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.958285328624896
+        "margin_pct": 35.63722820959333
       },
       "11": {
-        "total_votes": 179210,
-        "dem_votes": 52909,
-        "rep_votes": 126300,
+        "total_votes": 180007,
+        "dem_votes": 53106,
+        "rep_votes": 126901,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.95251381061325
+        "margin_pct": 40.995627947802035
       },
       "12": {
-        "total_votes": 171786,
-        "dem_votes": 69793,
-        "rep_votes": 101993,
+        "total_votes": 179742,
+        "dem_votes": 72334,
+        "rep_votes": 107408,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.74425156881236
+        "margin_pct": 19.51352494130476
       },
       "13": {
-        "total_votes": 184343,
-        "dem_votes": 135387,
-        "rep_votes": 48956,
+        "total_votes": 185234,
+        "dem_votes": 136002,
+        "rep_votes": 49232,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.88596800529447
+        "margin_pct": -46.84345206603539
       },
       "14": {
-        "total_votes": 131445,
-        "dem_votes": 38751,
-        "rep_votes": 92693,
+        "total_votes": 151321,
+        "dem_votes": 43875,
+        "rep_votes": 107446,
         "other_votes": 0,
         "dem_candidate": "Robbin K. Shipp",
         "rep_candidate": "J. Mark Butler",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.03769637490966
+        "margin_pct": 42.01069250137125
       }
     }
   }

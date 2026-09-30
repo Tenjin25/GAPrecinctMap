@@ -4,49 +4,65 @@
     "contest_type": "superintendent",
     "year": 2014,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:21.325876+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:45.074028+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2346746,
     "matched_input_votes": 2346746,
     "input_files": [
       "Data/derived_vtd20/2014/contests/vtd20/State_School_Superintendent.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 979358,
+        "rep_votes": 1356754,
+        "other_votes": 10634
+      },
+      "canonical_target": {
+        "dem_votes": 1132886,
+        "rep_votes": 1391005,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 10530,
-        "dem_votes": 2751,
-        "rep_votes": 7779,
+        "total_votes": 12799,
+        "dem_votes": 3265,
+        "rep_votes": 9534,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.74928774928775
+        "margin_pct": 48.98038909289788
       },
       "2": {
-        "total_votes": 9543,
-        "dem_votes": 2174,
-        "rep_votes": 5877,
-        "other_votes": 1493,
+        "total_votes": 10128,
+        "dem_votes": 2296,
+        "rep_votes": 7832,
+        "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.803311327674734
+        "margin_pct": 54.66034755134282
       },
       "3": {
-        "total_votes": 11878,
+        "total_votes": 11968,
         "dem_votes": 2737,
-        "rep_votes": 0,
-        "other_votes": 9141,
+        "rep_votes": 9231,
+        "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
-        "winner": "Other",
-        "winner_party": "OTH",
-        "margin_pct": -23.04259976427008
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 54.26136363636363
       },
       "4": {
         "total_votes": 6844,
@@ -60,26 +76,26 @@
         "margin_pct": 39.47983635300994
       },
       "5": {
-        "total_votes": 10481,
-        "dem_votes": 2249,
-        "rep_votes": 8232,
+        "total_votes": 10469,
+        "dem_votes": 2246,
+        "rep_votes": 8223,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.08424768628948
+        "margin_pct": 57.092367943452096
       },
       "6": {
-        "total_votes": 9864,
+        "total_votes": 9863,
         "dem_votes": 2249,
-        "rep_votes": 7615,
+        "rep_votes": 7614,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.39983779399837
+        "margin_pct": 54.39521443779783
       },
       "7": {
         "total_votes": 15575,
@@ -93,37 +109,37 @@
         "margin_pct": 59.216693418940615
       },
       "8": {
-        "total_votes": 17931,
+        "total_votes": 17932,
         "dem_votes": 3907,
-        "rep_votes": 14024,
+        "rep_votes": 14025,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.42183927276784
+        "margin_pct": 56.42426946241357
       },
       "9": {
-        "total_votes": 8268,
-        "dem_votes": 1271,
-        "rep_votes": 6997,
+        "total_votes": 14279,
+        "dem_votes": 2458,
+        "rep_votes": 11821,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.25495887760039
+        "margin_pct": 65.57181875481476
       },
       "10": {
-        "total_votes": 12619,
+        "total_votes": 12617,
         "dem_votes": 2530,
-        "rep_votes": 10089,
+        "rep_votes": 10087,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.90173547824709
+        "margin_pct": 59.895379250217964
       },
       "11": {
         "total_votes": 14795,
@@ -137,15 +153,15 @@
         "margin_pct": 69.04359580939506
       },
       "12": {
-        "total_votes": 11732,
-        "dem_votes": 3475,
-        "rep_votes": 8257,
+        "total_votes": 11871,
+        "dem_votes": 3536,
+        "rep_votes": 8335,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.76031367200818
+        "margin_pct": 40.42624884171511
       },
       "13": {
         "total_votes": 12411,
@@ -159,117 +175,117 @@
         "margin_pct": 31.49625332366449
       },
       "14": {
-        "total_votes": 13219,
-        "dem_votes": 2773,
-        "rep_votes": 10446,
+        "total_votes": 13230,
+        "dem_votes": 2775,
+        "rep_votes": 10455,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.04523791512217
+        "margin_pct": 58.049886621315196
       },
       "15": {
-        "total_votes": 11872,
-        "dem_votes": 3137,
-        "rep_votes": 8735,
+        "total_votes": 11883,
+        "dem_votes": 3140,
+        "rep_votes": 8743,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.152964959568735
+        "margin_pct": 47.15139274593958
       },
       "16": {
         "total_votes": 7895,
         "dem_votes": 2219,
-        "rep_votes": 5675,
+        "rep_votes": 5676,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.774540848638374
+        "margin_pct": 43.787207093096896
       },
       "17": {
-        "total_votes": 5646,
-        "dem_votes": 1510,
-        "rep_votes": 4136,
+        "total_votes": 10536,
+        "dem_votes": 2714,
+        "rep_votes": 7822,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.510804109103795
+        "margin_pct": 48.48139711465452
       },
       "18": {
-        "total_votes": 10885,
-        "dem_votes": 2167,
-        "rep_votes": 8718,
+        "total_votes": 16177,
+        "dem_votes": 3208,
+        "rep_votes": 12969,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.18373909049151
+        "margin_pct": 60.33875254991655
       },
       "19": {
-        "total_votes": 5228,
-        "dem_votes": 1625,
-        "rep_votes": 3603,
+        "total_votes": 9733,
+        "dem_votes": 2920,
+        "rep_votes": 6813,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.834736036725324
+        "margin_pct": 39.997945135107365
       },
       "20": {
-        "total_votes": 16615,
-        "dem_votes": 3662,
-        "rep_votes": 12952,
+        "total_votes": 16622,
+        "dem_votes": 3665,
+        "rep_votes": 12957,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.91333132711406
+        "margin_pct": 55.90181686920948
       },
       "21": {
-        "total_votes": 16182,
-        "dem_votes": 2889,
-        "rep_votes": 13293,
+        "total_votes": 16188,
+        "dem_votes": 2891,
+        "rep_votes": 13297,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.29365962180201
+        "margin_pct": 64.28218433407463
       },
       "22": {
-        "total_votes": 15336,
-        "dem_votes": 1636,
-        "rep_votes": 13699,
+        "total_votes": 11860,
+        "dem_votes": 1638,
+        "rep_votes": 10222,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 78.65805946791862
+        "margin_pct": 72.37774030354132
       },
       "23": {
-        "total_votes": 12297,
-        "dem_votes": 2302,
-        "rep_votes": 9995,
+        "total_votes": 12302,
+        "dem_votes": 2304,
+        "rep_votes": 9998,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.55997397739286
+        "margin_pct": 62.54267598764428
       },
       "24": {
-        "total_votes": 12496,
+        "total_votes": 12497,
         "dem_votes": 2543,
         "rep_votes": 9954,
         "other_votes": 0,
@@ -277,10 +293,10 @@
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.30697823303457
+        "margin_pct": 59.3022325358086
       },
       "25": {
-        "total_votes": 14264,
+        "total_votes": 14263,
         "dem_votes": 3151,
         "rep_votes": 11112,
         "other_votes": 0,
@@ -288,7 +304,7 @@
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.81183398766124
+        "margin_pct": 55.81574703779009
       },
       "26": {
         "total_votes": 14534,
@@ -302,86 +318,86 @@
         "margin_pct": 65.39149580294482
       },
       "27": {
-        "total_votes": 11515,
-        "dem_votes": 1674,
-        "rep_votes": 9841,
+        "total_votes": 13534,
+        "dem_votes": 1937,
+        "rep_votes": 11597,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.92488059053409
+        "margin_pct": 71.3757942958475
       },
       "28": {
-        "total_votes": 11573,
-        "dem_votes": 1830,
-        "rep_votes": 9743,
+        "total_votes": 11766,
+        "dem_votes": 1861,
+        "rep_votes": 9905,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.37466516892768
+        "margin_pct": 68.3664796872344
       },
       "29": {
-        "total_votes": 7188,
-        "dem_votes": 2451,
-        "rep_votes": 4738,
+        "total_votes": 8092,
+        "dem_votes": 2696,
+        "rep_votes": 5396,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.81691708402894
+        "margin_pct": 33.36628769154721
       },
       "30": {
-        "total_votes": 14513,
-        "dem_votes": 2699,
-        "rep_votes": 11814,
+        "total_votes": 16173,
+        "dem_votes": 2930,
+        "rep_votes": 13243,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.80576035278715
+        "margin_pct": 63.76677178012737
       },
       "31": {
-        "total_votes": 6736,
-        "dem_votes": 1193,
-        "rep_votes": 5543,
+        "total_votes": 10151,
+        "dem_votes": 1832,
+        "rep_votes": 8319,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.57838479809976
+        "margin_pct": 63.90503398679933
       },
       "32": {
-        "total_votes": 7351,
-        "dem_votes": 1119,
-        "rep_votes": 6231,
+        "total_votes": 13076,
+        "dem_votes": 2374,
+        "rep_votes": 10702,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.54155897156849
+        "margin_pct": 63.68920159070052
       },
       "33": {
-        "total_votes": 14042,
-        "dem_votes": 3300,
-        "rep_votes": 10742,
+        "total_votes": 14046,
+        "dem_votes": 3301,
+        "rep_votes": 10745,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.99814841190713
+        "margin_pct": 52.99729460344582
       },
       "34": {
-        "total_votes": 18089,
+        "total_votes": 10607,
         "dem_votes": 0,
-        "rep_votes": 18089,
+        "rep_votes": 10607,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
@@ -390,31 +406,31 @@
         "margin_pct": 100.0
       },
       "35": {
-        "total_votes": 13528,
-        "dem_votes": 11,
-        "rep_votes": 13517,
+        "total_votes": 93781,
+        "dem_votes": 85855,
+        "rep_votes": 7926,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 99.83737433471319
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -83.09678932832877
       },
       "36": {
-        "total_votes": 20654,
-        "dem_votes": 0,
-        "rep_votes": 20654,
+        "total_votes": 13393,
+        "dem_votes": 1282,
+        "rep_votes": 12111,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 100.0
+        "margin_pct": 80.85567087284402
       },
       "37": {
-        "total_votes": 13716,
+        "total_votes": 8043,
         "dem_votes": 0,
-        "rep_votes": 13716,
+        "rep_votes": 8043,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
@@ -423,20 +439,20 @@
         "margin_pct": 100.0
       },
       "38": {
-        "total_votes": 15293,
+        "total_votes": 8969,
         "dem_votes": 1,
-        "rep_votes": 15293,
+        "rep_votes": 8968,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Valarie D. Wilson D)",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 99.99346106061597
+        "margin_pct": 99.97770097000782
       },
       "39": {
-        "total_votes": 12578,
+        "total_votes": 7376,
         "dem_votes": 0,
-        "rep_votes": 12578,
+        "rep_votes": 7376,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Valarie D. Wilson D)",
@@ -445,9 +461,9 @@
         "margin_pct": 100.0
       },
       "40": {
-        "total_votes": 17397,
+        "total_votes": 10201,
         "dem_votes": 0,
-        "rep_votes": 17397,
+        "rep_votes": 10201,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Valarie D. Wilson D)",
@@ -456,9 +472,9 @@
         "margin_pct": 100.0
       },
       "41": {
-        "total_votes": 11571,
+        "total_votes": 6785,
         "dem_votes": 0,
-        "rep_votes": 11571,
+        "rep_votes": 6785,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Valarie D. Wilson D)",
@@ -467,9 +483,9 @@
         "margin_pct": 100.0
       },
       "42": {
-        "total_votes": 10717,
+        "total_votes": 6284,
         "dem_votes": 0,
-        "rep_votes": 10717,
+        "rep_votes": 6284,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Valarie D. Wilson D)",
@@ -478,9 +494,9 @@
         "margin_pct": 100.0
       },
       "43": {
-        "total_votes": 11121,
+        "total_votes": 6521,
         "dem_votes": 0,
-        "rep_votes": 11121,
+        "rep_votes": 6521,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
@@ -489,20 +505,20 @@
         "margin_pct": 100.0
       },
       "44": {
-        "total_votes": 16208,
-        "dem_votes": 1171,
-        "rep_votes": 15037,
+        "total_votes": 11231,
+        "dem_votes": 1172,
+        "rep_votes": 10059,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 85.55034550839092
+        "margin_pct": 79.12919597542516
       },
       "45": {
-        "total_votes": 26360,
+        "total_votes": 15457,
         "dem_votes": 0,
-        "rep_votes": 26360,
+        "rep_votes": 15457,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
@@ -511,15 +527,15 @@
         "margin_pct": 100.0
       },
       "46": {
-        "total_votes": 19139,
-        "dem_votes": 1110,
-        "rep_votes": 18029,
+        "total_votes": 12821,
+        "dem_votes": 1111,
+        "rep_votes": 11710,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 88.40064789173938
+        "margin_pct": 82.66905857577413
       },
       "47": {
         "total_votes": 14359,
@@ -534,25 +550,25 @@
       },
       "48": {
         "total_votes": 19614,
-        "dem_votes": 6550,
+        "dem_votes": 6551,
         "rep_votes": 13063,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.20587335576629
+        "margin_pct": 33.20077495666361
       },
       "49": {
         "total_votes": 15854,
         "dem_votes": 4529,
-        "rep_votes": 11326,
+        "rep_votes": 11325,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.87246120852782
+        "margin_pct": 42.866153652075184
       },
       "50": {
         "total_votes": 12738,
@@ -567,157 +583,157 @@
       },
       "51": {
         "total_votes": 14962,
-        "dem_votes": 6277,
-        "rep_votes": 8685,
+        "dem_votes": 6278,
+        "rep_votes": 8684,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.094105066167625
+        "margin_pct": 16.080737869268813
       },
       "52": {
-        "total_votes": 13764,
-        "dem_votes": 5884,
-        "rep_votes": 7880,
+        "total_votes": 14083,
+        "dem_votes": 5952,
+        "rep_votes": 8131,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.501598372566116
+        "margin_pct": 15.47255556344529
       },
       "53": {
         "total_votes": 19009,
-        "dem_votes": 6488,
-        "rep_votes": 12521,
+        "dem_votes": 6489,
+        "rep_votes": 12520,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.73759797990426
+        "margin_pct": 31.727076647903623
       },
       "54": {
-        "total_votes": 12927,
-        "dem_votes": 5309,
+        "total_votes": 12928,
+        "dem_votes": 5310,
         "rep_votes": 7618,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.861839560609578
+        "margin_pct": 17.852722772277225
       },
       "55": {
-        "total_votes": 14729,
-        "dem_votes": 10925,
+        "total_votes": 14731,
+        "dem_votes": 10926,
         "rep_votes": 3805,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.34000950505805
+        "margin_pct": -48.34023487882696
       },
       "56": {
-        "total_votes": 9963,
-        "dem_votes": 8918,
+        "total_votes": 9964,
+        "dem_votes": 8919,
         "rep_votes": 1045,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.02238281642076
+        "margin_pct": -79.02448815736652
       },
       "57": {
-        "total_votes": 14141,
-        "dem_votes": 9464,
+        "total_votes": 14142,
+        "dem_votes": 9465,
         "rep_votes": 4677,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.85191994908423
+        "margin_pct": -33.85659736953755
       },
       "58": {
-        "total_votes": 15895,
-        "dem_votes": 14379,
+        "total_votes": 15896,
+        "dem_votes": 14380,
         "rep_votes": 1516,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.92481912551118
+        "margin_pct": -80.926019124308
       },
       "59": {
-        "total_votes": 12841,
-        "dem_votes": 12014,
+        "total_votes": 12842,
+        "dem_votes": 12015,
         "rep_votes": 827,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -87.11938322560549
+        "margin_pct": -87.12038623267404
       },
       "60": {
-        "total_votes": 18083,
-        "dem_votes": 13503,
-        "rep_votes": 4580,
+        "total_votes": 18084,
+        "dem_votes": 13505,
+        "rep_votes": 4579,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.344688381352654
+        "margin_pct": -49.35854899358549
       },
       "61": {
-        "total_votes": 15518,
-        "dem_votes": 12590,
+        "total_votes": 15519,
+        "dem_votes": 12591,
         "rep_votes": 2928,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.263178244619155
+        "margin_pct": -62.26560989754495
       },
       "62": {
-        "total_votes": 13393,
-        "dem_votes": 12305,
+        "total_votes": 13394,
+        "dem_votes": 12306,
         "rep_votes": 1088,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.75270663779585
+        "margin_pct": -83.75391966552188
       },
       "63": {
-        "total_votes": 13675,
-        "dem_votes": 12160,
-        "rep_votes": 1516,
+        "total_votes": 13676,
+        "dem_votes": 12161,
+        "rep_votes": 1515,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.83546617915906
+        "margin_pct": -77.84439894706054
       },
       "64": {
-        "total_votes": 16238,
-        "dem_votes": 5410,
-        "rep_votes": 10828,
+        "total_votes": 21459,
+        "dem_votes": 7128,
+        "rep_votes": 14331,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.36617810075133
+        "margin_pct": 33.56633580315951
       },
       "65": {
         "total_votes": 17225,
@@ -744,16 +760,16 @@
       "67": {
         "total_votes": 13233,
         "dem_votes": 7867,
-        "rep_votes": 5365,
+        "rep_votes": 5366,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.907277261391975
+        "margin_pct": -18.899720395979745
       },
       "68": {
-        "total_votes": 15963,
+        "total_votes": 15964,
         "dem_votes": 8846,
         "rep_votes": 7118,
         "other_votes": 0,
@@ -761,469 +777,469 @@
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.825032888554784
+        "margin_pct": -10.824354798296167
       },
       "69": {
-        "total_votes": 19357,
-        "dem_votes": 13077,
+        "total_votes": 19358,
+        "dem_votes": 13078,
         "rep_votes": 6280,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.11391227979542
+        "margin_pct": -35.1172641801839
       },
       "70": {
-        "total_votes": 11580,
-        "dem_votes": 4275,
-        "rep_votes": 7304,
+        "total_votes": 11577,
+        "dem_votes": 4272,
+        "rep_votes": 7305,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.157167530224523
+        "margin_pct": 26.198497019953354
       },
       "71": {
-        "total_votes": 6239,
-        "dem_votes": 2015,
-        "rep_votes": 4224,
+        "total_votes": 17666,
+        "dem_votes": 5739,
+        "rep_votes": 11927,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.406315114601696
+        "margin_pct": 35.02773689573191
       },
       "72": {
-        "total_votes": 5996,
-        "dem_votes": 1603,
-        "rep_votes": 4393,
+        "total_votes": 8118,
+        "dem_votes": 2181,
+        "rep_votes": 5937,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.531020680453636
+        "margin_pct": 46.267553584626754
       },
       "73": {
-        "total_votes": 18198,
-        "dem_votes": 4457,
+        "total_votes": 18196,
+        "dem_votes": 4455,
         "rep_votes": 13741,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.01659523024507
+        "margin_pct": 51.03319410859529
       },
       "74": {
-        "total_votes": 17597,
-        "dem_votes": 5229,
-        "rep_votes": 12367,
+        "total_votes": 19465,
+        "dem_votes": 5696,
+        "rep_votes": 13769,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.563732454395634
+        "margin_pct": 41.47444130490624
       },
       "75": {
-        "total_votes": 12338,
-        "dem_votes": 10433,
-        "rep_votes": 1905,
+        "total_votes": 12326,
+        "dem_votes": 10426,
+        "rep_votes": 1900,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.1197925109418
+        "margin_pct": -69.17085834820705
       },
       "76": {
-        "total_votes": 12474,
-        "dem_votes": 10502,
-        "rep_votes": 1972,
+        "total_votes": 12463,
+        "dem_votes": 10496,
+        "rep_votes": 1967,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.38223504890172
+        "margin_pct": -68.43456631629624
       },
       "77": {
-        "total_votes": 11758,
-        "dem_votes": 10477,
+        "total_votes": 11748,
+        "dem_votes": 10470,
+        "rep_votes": 1278,
+        "other_votes": 0,
+        "dem_candidate": "Valarie D. Wilson",
+        "rep_candidate": "Richard L. Woods",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -78.24310520939734
+      },
+      "78": {
+        "total_votes": 16329,
+        "dem_votes": 12486,
+        "rep_votes": 3843,
+        "other_votes": 0,
+        "dem_candidate": "Valarie D. Wilson",
+        "rep_candidate": "Richard L. Woods",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -52.93036928164615
+      },
+      "79": {
+        "total_votes": 10489,
+        "dem_votes": 9208,
         "rep_votes": 1281,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.21058003061745
-      },
-      "78": {
-        "total_votes": 16302,
-        "dem_votes": 12455,
-        "rep_votes": 3848,
-        "other_votes": 0,
-        "dem_candidate": "Valarie D. Wilson",
-        "rep_candidate": "Richard L. Woods",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -52.7972027972028
-      },
-      "79": {
-        "total_votes": 10498,
-        "dem_votes": 9214,
-        "rep_votes": 1284,
-        "other_votes": 0,
-        "dem_candidate": "Valarie D. Wilson",
-        "rep_candidate": "Richard L. Woods",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -75.53819775195275
+        "margin_pct": -75.57441128801602
       },
       "80": {
-        "total_votes": 13245,
-        "dem_votes": 5391,
-        "rep_votes": 7854,
+        "total_votes": 13830,
+        "dem_votes": 5510,
+        "rep_votes": 8320,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.595696489241224
+        "margin_pct": 20.31814895155459
       },
       "81": {
-        "total_votes": 14949,
-        "dem_votes": 8146,
-        "rep_votes": 6804,
+        "total_votes": 15532,
+        "dem_votes": 8325,
+        "rep_votes": 7207,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -8.977189109639442
+        "margin_pct": -7.198042750450682
       },
       "82": {
-        "total_votes": 16667,
-        "dem_votes": 11537,
-        "rep_votes": 5130,
+        "total_votes": 17225,
+        "dem_votes": 11791,
+        "rep_votes": 5434,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.441231175376494
+        "margin_pct": -36.90566037735849
       },
       "83": {
-        "total_votes": 10342,
-        "dem_votes": 5096,
-        "rep_votes": 5246,
+        "total_votes": 10765,
+        "dem_votes": 5208,
+        "rep_votes": 5557,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.4503964416940631
+        "margin_pct": 3.241987923827218
       },
       "84": {
-        "total_votes": 22177,
-        "dem_votes": 20505,
-        "rep_votes": 1672,
+        "total_votes": 22728,
+        "dem_votes": 20957,
+        "rep_votes": 1771,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -84.9213148757722
+        "margin_pct": -84.41569869764167
       },
       "85": {
-        "total_votes": 11619,
-        "dem_votes": 10443,
-        "rep_votes": 1176,
+        "total_votes": 11919,
+        "dem_votes": 10673,
+        "rep_votes": 1246,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.75729408727085
+        "margin_pct": -79.09220572195655
       },
       "86": {
-        "total_votes": 12070,
-        "dem_votes": 10521,
-        "rep_votes": 1549,
+        "total_votes": 12394,
+        "dem_votes": 10753,
+        "rep_votes": 1641,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.33305716652858
+        "margin_pct": -73.51944489269002
       },
       "87": {
-        "total_votes": 15028,
-        "dem_votes": 12876,
-        "rep_votes": 2152,
+        "total_votes": 15439,
+        "dem_votes": 13159,
+        "rep_votes": 2280,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -71.36012776151185
+        "margin_pct": -70.46440831660081
       },
       "88": {
-        "total_votes": 14378,
-        "dem_votes": 11394,
-        "rep_votes": 2983,
+        "total_votes": 14760,
+        "dem_votes": 11627,
+        "rep_votes": 3133,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.49909584086799
+        "margin_pct": -57.547425474254744
       },
       "89": {
-        "total_votes": 17720,
-        "dem_votes": 15921,
-        "rep_votes": 1799,
+        "total_votes": 18177,
+        "dem_votes": 16271,
+        "rep_votes": 1906,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.69525959367945
+        "margin_pct": -79.02844253727238
       },
       "90": {
-        "total_votes": 20516,
-        "dem_votes": 18878,
-        "rep_votes": 1638,
+        "total_votes": 21029,
+        "dem_votes": 19294,
+        "rep_votes": 1735,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -84.0319750438682
+        "margin_pct": -83.49897760235865
       },
       "91": {
-        "total_votes": 19967,
-        "dem_votes": 15145,
-        "rep_votes": 4822,
+        "total_votes": 20447,
+        "dem_votes": 15550,
+        "rep_votes": 4897,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.70030550408173
+        "margin_pct": -52.10055264831026
       },
       "92": {
-        "total_votes": 17911,
-        "dem_votes": 11338,
-        "rep_votes": 6573,
+        "total_votes": 18002,
+        "dem_votes": 11415,
+        "rep_votes": 6587,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.603763050639273
+        "margin_pct": -26.819242306410402
       },
       "93": {
-        "total_votes": 13756,
-        "dem_votes": 9418,
-        "rep_votes": 4338,
+        "total_votes": 13811,
+        "dem_votes": 9467,
+        "rep_votes": 4344,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.92933992439663
+        "margin_pct": -37.093621026717834
       },
       "94": {
-        "total_votes": 17465,
-        "dem_votes": 13229,
-        "rep_votes": 4236,
+        "total_votes": 17690,
+        "dem_votes": 13428,
+        "rep_votes": 4262,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.49155453764672
+        "margin_pct": -51.81458451102318
       },
       "95": {
-        "total_votes": 16186,
-        "dem_votes": 11585,
-        "rep_votes": 4601,
+        "total_votes": 16287,
+        "dem_votes": 11673,
+        "rep_votes": 4614,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.14839985172371
+        "margin_pct": -43.341315159329525
       },
       "96": {
-        "total_votes": 7681,
-        "dem_votes": 4026,
-        "rep_votes": 3654,
+        "total_votes": 7682,
+        "dem_votes": 4027,
+        "rep_votes": 3655,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.8431193854966805
+        "margin_pct": -4.842488935173132
       },
       "97": {
-        "total_votes": 10830,
-        "dem_votes": 5325,
+        "total_votes": 10831,
+        "dem_votes": 5326,
         "rep_votes": 5505,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.662049861495845
+        "margin_pct": 1.652663650632444
       },
       "98": {
-        "total_votes": 4893,
-        "dem_votes": 3354,
+        "total_votes": 4894,
+        "dem_votes": 3355,
         "rep_votes": 1539,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.09380748007358
+        "margin_pct": -37.10666121781774
       },
       "99": {
-        "total_votes": 13192,
-        "dem_votes": 4382,
-        "rep_votes": 8811,
+        "total_votes": 13195,
+        "dem_votes": 4383,
+        "rep_votes": 8812,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.573377804730136
+        "margin_pct": 33.56574460022736
       },
       "100": {
-        "total_votes": 12548,
-        "dem_votes": 2888,
-        "rep_votes": 9659,
+        "total_votes": 12814,
+        "dem_votes": 2925,
+        "rep_votes": 9889,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.96079056423334
+        "margin_pct": 54.34680817855471
       },
       "101": {
-        "total_votes": 13916,
-        "dem_votes": 5536,
-        "rep_votes": 8380,
+        "total_votes": 13918,
+        "dem_votes": 5537,
+        "rep_votes": 8381,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.43690715722909
+        "margin_pct": 20.433970398045695
       },
       "102": {
-        "total_votes": 11385,
-        "dem_votes": 5912,
-        "rep_votes": 5472,
+        "total_votes": 11387,
+        "dem_votes": 5914,
+        "rep_votes": 5473,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.864734299516908
+        "margin_pct": -3.8728374462105912
       },
       "103": {
-        "total_votes": 12902,
-        "dem_votes": 3811,
-        "rep_votes": 9091,
+        "total_votes": 13197,
+        "dem_votes": 3850,
+        "rep_votes": 9347,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.92388776933809
+        "margin_pct": 41.65340607713874
       },
       "104": {
-        "total_votes": 8480,
-        "dem_votes": 2086,
-        "rep_votes": 6394,
+        "total_votes": 13006,
+        "dem_votes": 3136,
+        "rep_votes": 9870,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.801886792452834
+        "margin_pct": 51.77610333692142
       },
       "105": {
-        "total_votes": 12524,
-        "dem_votes": 4814,
-        "rep_votes": 7710,
+        "total_votes": 12526,
+        "dem_votes": 4815,
+        "rep_votes": 7711,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.12360268284893
+        "margin_pct": 23.11991058598116
       },
       "106": {
-        "total_votes": 16893,
-        "dem_votes": 6725,
-        "rep_votes": 10168,
+        "total_votes": 16895,
+        "dem_votes": 6726,
+        "rep_votes": 10169,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.38122299177174
+        "margin_pct": 20.378810298905
       },
       "107": {
-        "total_votes": 8766,
-        "dem_votes": 5084,
-        "rep_votes": 3681,
+        "total_votes": 8767,
+        "dem_votes": 5085,
+        "rep_votes": 3682,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.00501939310974
+        "margin_pct": -16.00319379491274
       },
       "108": {
-        "total_votes": 16307,
-        "dem_votes": 5855,
-        "rep_votes": 10452,
+        "total_votes": 16309,
+        "dem_votes": 5856,
+        "rep_votes": 10453,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.19034770344024
+        "margin_pct": 28.186890673861058
       },
       "109": {
-        "total_votes": 7296,
-        "dem_votes": 5135,
+        "total_votes": 7297,
+        "dem_votes": 5136,
         "rep_votes": 2161,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.76206140350877
+        "margin_pct": -40.77017952583253
       },
       "110": {
-        "total_votes": 14352,
-        "dem_votes": 6265,
-        "rep_votes": 8087,
+        "total_votes": 14354,
+        "dem_votes": 6266,
+        "rep_votes": 8088,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.69509476031215
+        "margin_pct": 12.693325902187544
       },
       "111": {
         "total_votes": 15451,
@@ -1248,246 +1264,246 @@
         "margin_pct": 53.87277082778813
       },
       "113": {
-        "total_votes": 13274,
-        "dem_votes": 8370,
+        "total_votes": 13268,
+        "dem_votes": 8364,
         "rep_votes": 4904,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.111194816935363
+        "margin_pct": -26.077781127524872
       },
       "114": {
-        "total_votes": 16826,
-        "dem_votes": 4942,
-        "rep_votes": 11884,
+        "total_votes": 16823,
+        "dem_votes": 4940,
+        "rep_votes": 11883,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.257577558540355
+        "margin_pct": 41.270879153539795
       },
       "115": {
-        "total_votes": 16127,
-        "dem_votes": 7718,
-        "rep_votes": 8409,
+        "total_votes": 16546,
+        "dem_votes": 7990,
+        "rep_votes": 8556,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 4.28473987722453
+        "margin_pct": 3.420766348362142
       },
       "116": {
-        "total_votes": 12750,
-        "dem_votes": 7003,
-        "rep_votes": 5747,
+        "total_votes": 13078,
+        "dem_votes": 7234,
+        "rep_votes": 5844,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.850980392156863
+        "margin_pct": -10.628536473466891
       },
       "117": {
-        "total_votes": 13893,
-        "dem_votes": 4773,
-        "rep_votes": 9120,
+        "total_votes": 14221,
+        "dem_votes": 4942,
+        "rep_votes": 9279,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.28913841502915
+        "margin_pct": 30.497152099008506
       },
       "118": {
-        "total_votes": 12033,
-        "dem_votes": 3501,
-        "rep_votes": 8532,
+        "total_votes": 14963,
+        "dem_votes": 4341,
+        "rep_votes": 10622,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.810022438294695
+        "margin_pct": 41.97687629486065
       },
       "119": {
-        "total_votes": 524,
-        "dem_votes": 68,
-        "rep_votes": 456,
+        "total_votes": 10939,
+        "dem_votes": 2468,
+        "rep_votes": 8471,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 74.04580152671755
+        "margin_pct": 54.87704543376908
       },
       "120": {
-        "total_votes": 12544,
-        "dem_votes": 5163,
-        "rep_votes": 7381,
+        "total_votes": 18985,
+        "dem_votes": 8414,
+        "rep_votes": 10571,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.68176020408163
+        "margin_pct": 11.361601264155913
       },
       "121": {
-        "total_votes": 15327,
-        "dem_votes": 5768,
-        "rep_votes": 9559,
+        "total_votes": 17783,
+        "dem_votes": 7663,
+        "rep_votes": 10120,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.734129314281986
+        "margin_pct": 13.81656638362481
       },
       "122": {
-        "total_votes": 3653,
-        "dem_votes": 2407,
-        "rep_votes": 1247,
+        "total_votes": 5536,
+        "dem_votes": 3914,
+        "rep_votes": 1622,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.75472214618122
+        "margin_pct": -41.40173410404625
       },
       "123": {
-        "total_votes": 14453,
-        "dem_votes": 4686,
-        "rep_votes": 9767,
+        "total_votes": 15739,
+        "dem_votes": 5262,
+        "rep_votes": 10477,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.1553310731336
+        "margin_pct": 33.1342524938052
       },
       "124": {
-        "total_votes": 11155,
-        "dem_votes": 4324,
-        "rep_votes": 6831,
+        "total_votes": 16104,
+        "dem_votes": 5926,
+        "rep_votes": 10178,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.474226804123713
+        "margin_pct": 26.403378042722302
       },
       "125": {
-        "total_votes": 11005,
-        "dem_votes": 2910,
-        "rep_votes": 8095,
+        "total_votes": 12410,
+        "dem_votes": 3408,
+        "rep_votes": 9002,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.114947751022264
+        "margin_pct": 45.07655116841257
       },
       "126": {
-        "total_votes": 13831,
-        "dem_votes": 8444,
+        "total_votes": 13833,
+        "dem_votes": 8446,
         "rep_votes": 5387,
         "other_votes": 0,
         "dem_candidate": "Valarie Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.102523317186034
+        "margin_pct": -22.11378587435842
       },
       "127": {
-        "total_votes": 18427,
-        "dem_votes": 5049,
-        "rep_votes": 13378,
+        "total_votes": 20082,
+        "dem_votes": 5577,
+        "rep_votes": 14505,
         "other_votes": 0,
         "dem_candidate": "Valarie Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.19997829272263
+        "margin_pct": 44.45772333432925
       },
       "128": {
-        "total_votes": 16196,
-        "dem_votes": 8229,
-        "rep_votes": 7967,
+        "total_votes": 16943,
+        "dem_votes": 8790,
+        "rep_votes": 8153,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.6176833786120028
+        "margin_pct": -3.7596647583072658
       },
       "129": {
-        "total_votes": 13830,
-        "dem_votes": 8946,
+        "total_votes": 13834,
+        "dem_votes": 8950,
         "rep_votes": 4884,
         "other_votes": 0,
         "dem_candidate": "Valarie Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.370932754880698
+        "margin_pct": -29.39135463351164
       },
       "130": {
-        "total_votes": 13529,
-        "dem_votes": 8996,
-        "rep_votes": 4532,
+        "total_votes": 13533,
+        "dem_votes": 9000,
+        "rep_votes": 4533,
         "other_votes": 0,
         "dem_candidate": "Valarie Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.995786828294776
+        "margin_pct": -33.00820217246731
       },
       "131": {
-        "total_votes": 13122,
-        "dem_votes": 3250,
-        "rep_votes": 9872,
+        "total_votes": 15009,
+        "dem_votes": 3850,
+        "rep_votes": 11159,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.46486816034141
+        "margin_pct": 48.69744819774802
       },
       "132": {
-        "total_votes": 12009,
-        "dem_votes": 8173,
+        "total_votes": 12011,
+        "dem_votes": 8175,
         "rep_votes": 3836,
         "other_votes": 0,
         "dem_candidate": "Valarie Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.11458073111833
+        "margin_pct": -36.125218549662804
       },
       "133": {
-        "total_votes": 14329,
-        "dem_votes": 6788,
-        "rep_votes": 7542,
+        "total_votes": 14299,
+        "dem_votes": 6769,
+        "rep_votes": 7530,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.262055970409659
+        "margin_pct": 5.322050493041472
       },
       "134": {
-        "total_votes": 11453,
-        "dem_votes": 4267,
-        "rep_votes": 7186,
+        "total_votes": 14400,
+        "dem_votes": 5334,
+        "rep_votes": 9066,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.486772024796995
+        "margin_pct": 25.916666666666664
       },
       "135": {
         "total_votes": 16078,
@@ -1501,103 +1517,103 @@
         "margin_pct": 41.47282000248787
       },
       "136": {
-        "total_votes": 14271,
-        "dem_votes": 5270,
-        "rep_votes": 9002,
+        "total_votes": 15228,
+        "dem_votes": 5601,
+        "rep_votes": 9627,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.150935463527436
+        "margin_pct": 26.4381402679275
       },
       "137": {
-        "total_votes": 13274,
-        "dem_votes": 8086,
-        "rep_votes": 5188,
+        "total_votes": 14740,
+        "dem_votes": 9055,
+        "rep_votes": 5685,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.83215308121139
+        "margin_pct": -22.862957937584802
       },
       "138": {
-        "total_votes": 17195,
-        "dem_votes": 4534,
-        "rep_votes": 12661,
+        "total_votes": 17929,
+        "dem_votes": 4708,
+        "rep_votes": 13221,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.2637394591451
+        "margin_pct": 47.48173350437838
       },
       "139": {
-        "total_votes": 11155,
-        "dem_votes": 3535,
-        "rep_votes": 7620,
+        "total_votes": 12467,
+        "dem_votes": 3964,
+        "rep_votes": 8503,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.620349619004934
+        "margin_pct": 36.40811743001524
       },
       "140": {
-        "total_votes": 5668,
-        "dem_votes": 4222,
-        "rep_votes": 1445,
+        "total_votes": 6679,
+        "dem_votes": 4972,
+        "rep_votes": 1707,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.99435426958363
+        "margin_pct": -48.88456355741877
       },
       "141": {
-        "total_votes": 10625,
-        "dem_votes": 7722,
-        "rep_votes": 2904,
+        "total_votes": 12523,
+        "dem_votes": 9094,
+        "rep_votes": 3429,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.345882352941175
+        "margin_pct": -45.2367643535894
       },
       "142": {
-        "total_votes": 16934,
+        "total_votes": 16908,
         "dem_votes": 10275,
-        "rep_votes": 6659,
+        "rep_votes": 6633,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.35349002007795
+        "margin_pct": -21.540099361249112
       },
       "143": {
-        "total_votes": 14440,
+        "total_votes": 14424,
         "dem_votes": 10272,
-        "rep_votes": 4168,
+        "rep_votes": 4152,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.27146814404432
+        "margin_pct": -42.42928452579035
       },
       "144": {
-        "total_votes": 17752,
-        "dem_votes": 5933,
-        "rep_votes": 11818,
+        "total_votes": 17772,
+        "dem_votes": 5934,
+        "rep_votes": 11838,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.15119423163587
+        "margin_pct": 33.220796758946655
       },
       "145": {
         "total_votes": 13849,
@@ -1644,81 +1660,81 @@
         "margin_pct": 35.069790628115655
       },
       "149": {
-        "total_votes": 15276,
-        "dem_votes": 5847,
-        "rep_votes": 9429,
+        "total_votes": 16082,
+        "dem_votes": 6410,
+        "rep_votes": 9672,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.448546739984288
+        "margin_pct": 20.28354682253451
       },
       "150": {
-        "total_votes": 12310,
-        "dem_votes": 7214,
-        "rep_votes": 5096,
+        "total_votes": 14484,
+        "dem_votes": 8148,
+        "rep_votes": 6336,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.205523964256702
+        "margin_pct": -12.510356255178129
       },
       "151": {
-        "total_votes": 15063,
-        "dem_votes": 7829,
-        "rep_votes": 7234,
+        "total_votes": 16460,
+        "dem_votes": 8425,
+        "rep_votes": 8035,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.9500763460134105
+        "margin_pct": -2.3693803159173754
       },
       "152": {
-        "total_votes": 13645,
-        "dem_votes": 3820,
-        "rep_votes": 9825,
+        "total_votes": 14859,
+        "dem_votes": 4148,
+        "rep_votes": 10711,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.00879443019421
+        "margin_pct": 44.168517396863855
       },
       "153": {
-        "total_votes": 12995,
-        "dem_votes": 8702,
-        "rep_votes": 4293,
+        "total_votes": 15452,
+        "dem_votes": 9960,
+        "rep_votes": 5492,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.928434013081954
+        "margin_pct": -28.91535076365519
       },
       "154": {
-        "total_votes": 16743,
-        "dem_votes": 9254,
-        "rep_votes": 7489,
+        "total_votes": 17366,
+        "dem_votes": 9736,
+        "rep_votes": 7630,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.541718927312907
+        "margin_pct": -12.127144995969136
       },
       "155": {
-        "total_votes": 13264,
-        "dem_votes": 4981,
-        "rep_votes": 8283,
+        "total_votes": 15101,
+        "dem_votes": 5548,
+        "rep_votes": 9553,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.89445114595899
+        "margin_pct": 26.52142242235613
       },
       "156": {
         "total_votes": 11913,
@@ -1743,7 +1759,7 @@
         "margin_pct": 41.966992253283934
       },
       "158": {
-        "total_votes": 12653,
+        "total_votes": 12654,
         "dem_votes": 4923,
         "rep_votes": 7731,
         "other_votes": 0,
@@ -1751,7 +1767,7 @@
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.192365446929582
+        "margin_pct": 22.190611664295876
       },
       "159": {
         "total_votes": 14633,
@@ -1765,103 +1781,103 @@
         "margin_pct": 36.5133602132167
       },
       "160": {
-        "total_votes": 8853,
-        "dem_votes": 2658,
-        "rep_votes": 6195,
+        "total_votes": 9037,
+        "dem_votes": 2727,
+        "rep_votes": 6310,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.9525584547611
+        "margin_pct": 39.6481133119398
       },
       "161": {
-        "total_votes": 6502,
-        "dem_votes": 2284,
-        "rep_votes": 4218,
+        "total_votes": 7783,
+        "dem_votes": 3018,
+        "rep_votes": 4765,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.744693940326055
+        "margin_pct": 22.44635744571502
       },
       "162": {
-        "total_votes": 5837,
-        "dem_votes": 3848,
-        "rep_votes": 1989,
+        "total_votes": 9930,
+        "dem_votes": 6275,
+        "rep_votes": 3655,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.848552338530066
+        "margin_pct": -26.384692849949648
       },
       "163": {
-        "total_votes": 10243,
-        "dem_votes": 7433,
-        "rep_votes": 2810,
+        "total_votes": 17285,
+        "dem_votes": 12121,
+        "rep_votes": 5164,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.13326173972469
+        "margin_pct": -40.2487706103558
       },
       "164": {
-        "total_votes": 5789,
-        "dem_votes": 1621,
-        "rep_votes": 4167,
+        "total_votes": 8236,
+        "dem_votes": 2226,
+        "rep_votes": 6010,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.97996199689065
+        "margin_pct": 45.944633317144245
       },
       "165": {
-        "total_votes": 9084,
-        "dem_votes": 6756,
-        "rep_votes": 2328,
+        "total_votes": 15295,
+        "dem_votes": 11017,
+        "rep_votes": 4278,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.74504623513871
+        "margin_pct": -44.06015037593985
       },
       "166": {
-        "total_votes": 12357,
-        "dem_votes": 3298,
-        "rep_votes": 9058,
+        "total_votes": 20434,
+        "dem_votes": 5128,
+        "rep_votes": 15306,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.613255644573925
+        "margin_pct": 49.8091416267006
       },
       "167": {
-        "total_votes": 10610,
-        "dem_votes": 3577,
-        "rep_votes": 7033,
+        "total_votes": 10775,
+        "dem_votes": 3613,
+        "rep_votes": 7162,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.57304429783223
+        "margin_pct": 32.93735498839907
       },
       "168": {
-        "total_votes": 8233,
-        "dem_votes": 5000,
-        "rep_votes": 3233,
+        "total_votes": 8895,
+        "dem_votes": 5514,
+        "rep_votes": 3381,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.46240738491437
+        "margin_pct": -23.979763912310286
       },
       "169": {
         "total_votes": 12537,
@@ -1875,15 +1891,15 @@
         "margin_pct": 44.03764856026163
       },
       "170": {
-        "total_votes": 11099,
-        "dem_votes": 3197,
-        "rep_votes": 7902,
+        "total_votes": 12219,
+        "dem_votes": 3351,
+        "rep_votes": 8868,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.39120641499235
+        "margin_pct": 45.15099435305672
       },
       "171": {
         "total_votes": 12937,
@@ -1897,73 +1913,73 @@
         "margin_pct": 16.59581046610497
       },
       "172": {
-        "total_votes": 10380,
-        "dem_votes": 2930,
-        "rep_votes": 7450,
+        "total_votes": 10629,
+        "dem_votes": 2991,
+        "rep_votes": 7638,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.54527938342967
+        "margin_pct": 43.720011289867344
       },
       "173": {
-        "total_votes": 12910,
-        "dem_votes": 5151,
-        "rep_votes": 7759,
+        "total_votes": 13587,
+        "dem_votes": 5381,
+        "rep_votes": 8206,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.201394268009295
+        "margin_pct": 20.79193346581291
       },
       "174": {
-        "total_votes": 10883,
-        "dem_votes": 2895,
-        "rep_votes": 7988,
+        "total_votes": 13846,
+        "dem_votes": 3923,
+        "rep_votes": 9923,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.79775797114766
+        "margin_pct": 43.33381482016467
       },
       "175": {
-        "total_votes": 6548,
-        "dem_votes": 2872,
-        "rep_votes": 3677,
+        "total_votes": 13592,
+        "dem_votes": 5778,
+        "rep_votes": 7814,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.29383017715333
+        "margin_pct": 14.979399646851089
       },
       "176": {
-        "total_votes": 10279,
-        "dem_votes": 3222,
-        "rep_votes": 7056,
+        "total_votes": 11281,
+        "dem_votes": 3744,
+        "rep_votes": 7537,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.29934818562117
+        "margin_pct": 33.622905770765
       },
       "177": {
-        "total_votes": 2323,
-        "dem_votes": 870,
-        "rep_votes": 1453,
+        "total_votes": 6170,
+        "dem_votes": 2772,
+        "rep_votes": 3398,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.096857511838138
+        "margin_pct": 10.145867098865478
       },
       "178": {
-        "total_votes": 12577,
+        "total_votes": 12576,
         "dem_votes": 2467,
         "rep_votes": 10109,
         "other_votes": 0,
@@ -1971,29 +1987,29 @@
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.76170787946251
+        "margin_pct": 60.76653944020356
       },
       "179": {
-        "total_votes": 13969,
-        "dem_votes": 4879,
-        "rep_votes": 9090,
+        "total_votes": 14607,
+        "dem_votes": 5069,
+        "rep_votes": 9538,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.145321783950173
+        "margin_pct": 30.594920243718764
       },
       "180": {
-        "total_votes": 11577,
-        "dem_votes": 3568,
-        "rep_votes": 8009,
+        "total_votes": 11659,
+        "dem_votes": 3587,
+        "rep_votes": 8072,
         "other_votes": 0,
         "dem_candidate": "Valarie D. Wilson",
         "rep_candidate": "Richard L. Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.36054245486741
+        "margin_pct": 38.46813620379106
       }
     }
   }

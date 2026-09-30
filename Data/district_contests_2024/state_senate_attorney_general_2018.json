@@ -4,96 +4,112 @@
     "contest_type": "attorney_general",
     "year": 2018,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:43.757683+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:56.025720+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3644985,
-    "matched_input_votes": 3644985,
+    "total_input_votes": 3653646,
+    "matched_input_votes": 3653646,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/Attorney_General.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1787683,
+        "rep_votes": 1865963,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1880807,
+        "rep_votes": 1981563,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 44971,
-        "dem_votes": 18704,
-        "rep_votes": 26267,
+        "total_votes": 62976,
+        "dem_votes": 24901,
+        "rep_votes": 38075,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.817504614084633
+        "margin_pct": 20.919080284552845
       },
       "2": {
-        "total_votes": 36358,
-        "dem_votes": 27017,
-        "rep_votes": 9341,
+        "total_votes": 65131,
+        "dem_votes": 47013,
+        "rep_votes": 18118,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.61653556301226
+        "margin_pct": -44.364434754571555
       },
       "3": {
-        "total_votes": 62148,
-        "dem_votes": 20416,
-        "rep_votes": 41733,
+        "total_votes": 66164,
+        "dem_votes": 21748,
+        "rep_votes": 44416,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.30037973868829
+        "margin_pct": 34.260322834169635
       },
       "4": {
-        "total_votes": 54502,
-        "dem_votes": 16338,
-        "rep_votes": 38164,
+        "total_votes": 55908,
+        "dem_votes": 16909,
+        "rep_votes": 38999,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.046236835345496
+        "margin_pct": 39.51134005866781
       },
       "5": {
-        "total_votes": 37302,
-        "dem_votes": 28493,
-        "rep_votes": 8809,
+        "total_votes": 37350,
+        "dem_votes": 28530,
+        "rep_votes": 8820,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.76928850999947
+        "margin_pct": -52.77108433734939
       },
       "6": {
-        "total_votes": 62001,
-        "dem_votes": 17743,
-        "rep_votes": 44258,
+        "total_votes": 63512,
+        "dem_votes": 18061,
+        "rep_votes": 45451,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.7654392671086
+        "margin_pct": 43.12570852752236
       },
       "7": {
-        "total_votes": 64591,
-        "dem_votes": 35340,
-        "rep_votes": 29250,
+        "total_votes": 64673,
+        "dem_votes": 35387,
+        "rep_votes": 29286,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.428558158257342
+        "margin_pct": -9.433612172003773
       },
       "8": {
-        "total_votes": 57673,
+        "total_votes": 57672,
         "dem_votes": 19225,
         "rep_votes": 38447,
         "other_votes": 0,
@@ -101,84 +117,84 @@
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.329287534895016
+        "margin_pct": 33.32986544597031
       },
       "9": {
-        "total_votes": 68007,
-        "dem_votes": 38418,
-        "rep_votes": 29589,
+        "total_votes": 68094,
+        "dem_votes": 38469,
+        "rep_votes": 29625,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.982487096916495
+        "margin_pct": -12.98792845184598
       },
       "10": {
-        "total_votes": 81056,
-        "dem_votes": 68347,
-        "rep_votes": 12709,
+        "total_votes": 84999,
+        "dem_votes": 72001,
+        "rep_votes": 12998,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.64143308330043
+        "margin_pct": -69.41611077777385
       },
       "11": {
-        "total_votes": 59023,
-        "dem_votes": 19871,
-        "rep_votes": 39152,
+        "total_votes": 60939,
+        "dem_votes": 20392,
+        "rep_votes": 40547,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.66692645239991
+        "margin_pct": 33.0740576642216
       },
       "12": {
-        "total_votes": 64182,
-        "dem_votes": 36834,
-        "rep_votes": 27348,
+        "total_votes": 68983,
+        "dem_votes": 39550,
+        "rep_votes": 29433,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -14.779844816303637
+        "margin_pct": -14.6659321861908
       },
       "13": {
-        "total_votes": 62829,
-        "dem_votes": 17636,
-        "rep_votes": 45193,
+        "total_votes": 65293,
+        "dem_votes": 18233,
+        "rep_votes": 47060,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.86031927931369
+        "margin_pct": 44.15021518386351
       },
       "14": {
-        "total_votes": 75947,
-        "dem_votes": 40964,
-        "rep_votes": 34982,
+        "total_votes": 75952,
+        "dem_votes": 40968,
+        "rep_votes": 34984,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.876545485667637
+        "margin_pct": -7.878660206446177
       },
       "15": {
-        "total_votes": 49403,
-        "dem_votes": 34326,
-        "rep_votes": 15077,
+        "total_votes": 55841,
+        "dem_votes": 36985,
+        "rep_votes": 18856,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.96322085703298
+        "margin_pct": -32.46539281173331
       },
       "16": {
         "total_votes": 80975,
@@ -192,26 +208,26 @@
         "margin_pct": 33.74745291756715
       },
       "17": {
-        "total_votes": 68869,
-        "dem_votes": 49955,
-        "rep_votes": 18914,
+        "total_votes": 70395,
+        "dem_votes": 51276,
+        "rep_votes": 19119,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.072529004341575
+        "margin_pct": -45.68080119326657
       },
       "18": {
-        "total_votes": 75747,
-        "dem_votes": 28682,
-        "rep_votes": 47065,
+        "total_votes": 75844,
+        "dem_votes": 28710,
+        "rep_votes": 47134,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.26894794513314
+        "margin_pct": 24.29196772322135
       },
       "19": {
         "total_votes": 58513,
@@ -225,84 +241,84 @@
         "margin_pct": 51.22793225437082
       },
       "20": {
-        "total_votes": 68486,
-        "dem_votes": 22266,
-        "rep_votes": 46220,
+        "total_votes": 71004,
+        "dem_votes": 23119,
+        "rep_votes": 47885,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.97649154571737
+        "margin_pct": 34.87972508591065
       },
       "21": {
-        "total_votes": 77099,
-        "dem_votes": 22802,
-        "rep_votes": 54298,
+        "total_votes": 77120,
+        "dem_votes": 22809,
+        "rep_votes": 54311,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.851372910154474
+        "margin_pct": 40.84802904564315
       },
       "22": {
-        "total_votes": 62878,
-        "dem_votes": 43868,
-        "rep_votes": 19010,
+        "total_votes": 62893,
+        "dem_votes": 43880,
+        "rep_votes": 19013,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.53370018130348
+        "margin_pct": -39.53858140015582
       },
       "23": {
-        "total_votes": 66088,
-        "dem_votes": 27089,
-        "rep_votes": 38999,
+        "total_votes": 68670,
+        "dem_votes": 28324,
+        "rep_votes": 40346,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.021425977484565
+        "margin_pct": 17.506917139944665
       },
       "24": {
-        "total_votes": 75422,
-        "dem_votes": 22365,
-        "rep_votes": 53057,
+        "total_votes": 81099,
+        "dem_votes": 24350,
+        "rep_votes": 56749,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.69369679934237
+        "margin_pct": 39.94993773042824
       },
       "25": {
-        "total_votes": 62219,
-        "dem_votes": 23351,
-        "rep_votes": 38868,
+        "total_votes": 73263,
+        "dem_votes": 27148,
+        "rep_votes": 46115,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.939327215159356
+        "margin_pct": 25.888920737616534
       },
       "26": {
-        "total_votes": 65576,
-        "dem_votes": 41708,
-        "rep_votes": 23868,
+        "total_votes": 66435,
+        "dem_votes": 42272,
+        "rep_votes": 24163,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.205075027449066
+        "margin_pct": -27.258222322570937
       },
       "27": {
-        "total_votes": 70475,
+        "total_votes": 70474,
         "dem_votes": 18242,
         "rep_votes": 52232,
         "other_votes": 0,
@@ -310,326 +326,326 @@
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.2298687477829
+        "margin_pct": 48.23055311178591
       },
       "28": {
-        "total_votes": 68817,
-        "dem_votes": 50261,
-        "rep_votes": 18556,
+        "total_votes": 70548,
+        "dem_votes": 50758,
+        "rep_votes": 19790,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.07146489966142
+        "margin_pct": -43.89635425525883
       },
       "29": {
-        "total_votes": 66642,
-        "dem_votes": 24712,
-        "rep_votes": 41930,
+        "total_votes": 69593,
+        "dem_votes": 25506,
+        "rep_votes": 44087,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.836559527025
+        "margin_pct": 26.699524377451755
       },
       "30": {
-        "total_votes": 50778,
-        "dem_votes": 17412,
-        "rep_votes": 33366,
+        "total_votes": 77163,
+        "dem_votes": 25359,
+        "rep_votes": 51804,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.41911851589271
+        "margin_pct": 34.271606858209246
       },
       "31": {
-        "total_votes": 60387,
-        "dem_votes": 18601,
-        "rep_votes": 41785,
+        "total_votes": 64864,
+        "dem_votes": 20429,
+        "rep_votes": 44435,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.39236921854041
+        "margin_pct": 37.009743463246174
       },
       "32": {
-        "total_votes": 75568,
-        "dem_votes": 29981,
-        "rep_votes": 45587,
+        "total_votes": 75590,
+        "dem_votes": 29990,
+        "rep_votes": 45600,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.651598560237137
+        "margin_pct": 20.65087974599815
       },
       "33": {
-        "total_votes": 68490,
-        "dem_votes": 42848,
-        "rep_votes": 25643,
+        "total_votes": 68497,
+        "dem_votes": 42850,
+        "rep_votes": 25647,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -25.120455540954882
+        "margin_pct": -25.114968538768125
       },
       "34": {
-        "total_votes": 59326,
-        "dem_votes": 49683,
-        "rep_votes": 9643,
+        "total_votes": 59288,
+        "dem_votes": 49656,
+        "rep_votes": 9632,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -67.49148771196441
+        "margin_pct": -67.50775873701255
       },
       "35": {
-        "total_votes": 77414,
-        "dem_votes": 59892,
-        "rep_votes": 17522,
+        "total_votes": 77420,
+        "dem_votes": 59895,
+        "rep_votes": 17525,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.73170227607409
+        "margin_pct": -54.72746060449496
       },
       "36": {
-        "total_votes": 78798,
-        "dem_votes": 70459,
+        "total_votes": 78800,
+        "dem_votes": 70461,
         "rep_votes": 8339,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.8344881849793
+        "margin_pct": -78.83502538071066
       },
       "37": {
-        "total_votes": 83620,
-        "dem_votes": 33941,
-        "rep_votes": 49678,
+        "total_votes": 83634,
+        "dem_votes": 33944,
+        "rep_votes": 49690,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.819660368332936
+        "margin_pct": 18.82727120549059
       },
       "38": {
-        "total_votes": 75122,
-        "dem_votes": 55837,
+        "total_votes": 75124,
+        "dem_votes": 55839,
         "rep_votes": 19285,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.656851521524985
+        "margin_pct": -48.658218412225125
       },
       "39": {
-        "total_votes": 62594,
-        "dem_votes": 51884,
+        "total_votes": 62596,
+        "dem_votes": 51886,
         "rep_votes": 10710,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.77946768060836
+        "margin_pct": -65.78056105821459
       },
       "40": {
-        "total_votes": 67357,
-        "dem_votes": 39768,
-        "rep_votes": 27590,
+        "total_votes": 70000,
+        "dem_votes": 41628,
+        "rep_votes": 28372,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.079783838353848
+        "margin_pct": -18.93714285714286
       },
       "41": {
-        "total_votes": 63876,
-        "dem_votes": 53576,
-        "rep_votes": 10300,
+        "total_votes": 67148,
+        "dem_votes": 56515,
+        "rep_votes": 10633,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -67.7500156553322
+        "margin_pct": -68.32965985584083
       },
       "42": {
-        "total_votes": 78728,
-        "dem_votes": 30789,
-        "rep_votes": 47939,
+        "total_votes": 79165,
+        "dem_votes": 31077,
+        "rep_votes": 48088,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.78386342851336
+        "margin_pct": 21.488031326975303
       },
       "43": {
-        "total_votes": 68221,
-        "dem_votes": 48960,
-        "rep_votes": 19260,
+        "total_votes": 68512,
+        "dem_votes": 49232,
+        "rep_votes": 19280,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.53498189706982
+        "margin_pct": -43.71788883699206
       },
       "44": {
-        "total_votes": 77337,
-        "dem_votes": 68800,
-        "rep_votes": 8537,
+        "total_votes": 80332,
+        "dem_votes": 71606,
+        "rep_votes": 8726,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.92259849748503
+        "margin_pct": -78.27515809391026
       },
       "45": {
-        "total_votes": 53478,
-        "dem_votes": 21306,
-        "rep_votes": 32172,
+        "total_votes": 65880,
+        "dem_votes": 24547,
+        "rep_votes": 41333,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.318635700661954
+        "margin_pct": 25.479659987856706
       },
       "46": {
-        "total_votes": 63701,
-        "dem_votes": 23155,
-        "rep_votes": 40547,
+        "total_votes": 78683,
+        "dem_votes": 31581,
+        "rep_votes": 47102,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.302554120029516
+        "margin_pct": 19.72598909548441
       },
       "47": {
-        "total_votes": 42267,
-        "dem_votes": 13765,
-        "rep_votes": 28501,
+        "total_votes": 60704,
+        "dem_votes": 23090,
+        "rep_votes": 37614,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.86407835900348
+        "margin_pct": 23.925935687928305
       },
       "48": {
-        "total_votes": 69751,
-        "dem_votes": 29327,
-        "rep_votes": 40424,
+        "total_votes": 69778,
+        "dem_votes": 29336,
+        "rep_votes": 40442,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.90944932689137
+        "margin_pct": 15.916191349709077
       },
       "49": {
-        "total_votes": 53517,
-        "dem_votes": 14372,
-        "rep_votes": 39145,
+        "total_votes": 63472,
+        "dem_votes": 16195,
+        "rep_votes": 47277,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.28996393669301
+        "margin_pct": 48.96962440131081
       },
       "50": {
-        "total_votes": 55985,
-        "dem_votes": 9970,
-        "rep_votes": 46015,
+        "total_votes": 66553,
+        "dem_votes": 11898,
+        "rep_votes": 54655,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.38331695989997
+        "margin_pct": 64.24503778943098
       },
       "51": {
-        "total_votes": 76235,
+        "total_votes": 76237,
         "dem_votes": 12945,
-        "rep_votes": 63291,
+        "rep_votes": 63292,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.04053256378305
+        "margin_pct": 66.04011175675852
       },
       "52": {
-        "total_votes": 62276,
-        "dem_votes": 16325,
-        "rep_votes": 45951,
+        "total_votes": 62305,
+        "dem_votes": 16332,
+        "rep_votes": 45973,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.572098400668
+        "margin_pct": 47.574030976647144
       },
       "53": {
-        "total_votes": 54733,
-        "dem_votes": 10836,
-        "rep_votes": 43897,
+        "total_votes": 60174,
+        "dem_votes": 11633,
+        "rep_votes": 48541,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.40414375239801
+        "margin_pct": 61.33546049788945
       },
       "54": {
-        "total_votes": 51948,
-        "dem_votes": 11681,
-        "rep_votes": 40267,
+        "total_votes": 51930,
+        "dem_votes": 11678,
+        "rep_votes": 40252,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.028105028105024
+        "margin_pct": 55.024070864625465
       },
       "55": {
-        "total_votes": 77662,
-        "dem_votes": 59481,
-        "rep_votes": 18182,
+        "total_votes": 80172,
+        "dem_votes": 61755,
+        "rep_votes": 18417,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.177873348613225
+        "margin_pct": -54.05627900014968
       },
       "56": {
-        "total_votes": 88017,
-        "dem_votes": 33584,
-        "rep_votes": 54433,
+        "total_votes": 88036,
+        "dem_votes": 33591,
+        "rep_votes": 54445,
         "other_votes": 0,
         "dem_candidate": "Charlie Bailey",
         "rep_candidate": "Chris Carr",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.68746946612586
+        "margin_pct": 23.68803671225408
       }
     }
   }

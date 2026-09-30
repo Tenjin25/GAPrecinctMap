@@ -4,167 +4,186 @@
     "contest_type": "labor_commissioner",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "rdh_2022_precinct_archive",
-    "generated_at_utc": "2026-08-05T22:01:21.449142+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:41.917859+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3898024,
-    "matched_input_votes": 3898024
+    "total_input_votes": 1494291,
+    "matched_input_votes": 1494291,
+    "input_files": [
+      "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Labor.json"
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 933510,
+        "rep_votes": 128439,
+        "other_votes": 432342
+      },
+      "canonical_target": {
+        "dem_votes": 1766894,
+        "rep_votes": 2030170,
+        "other_votes": 100960
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 262116,
-        "dem_votes": 101668,
-        "rep_votes": 153763,
-        "other_votes": 6685,
+        "total_votes": 260822,
+        "dem_votes": 101530,
+        "rep_votes": 152651,
+        "other_votes": 6641,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.874788261685666
+        "margin_pct": 19.599957058837063
       },
       "2": {
-        "total_votes": 239327,
-        "dem_votes": 122254,
-        "rep_votes": 112742,
-        "other_votes": 4331,
+        "total_votes": 245801,
+        "dem_votes": 118539,
+        "rep_votes": 122891,
+        "other_votes": 4371,
         "dem_candidate": "",
-        "rep_candidate": "",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -3.974478433273304
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 1.7705379555005878
       },
       "3": {
-        "total_votes": 310386,
-        "dem_votes": 95305,
-        "rep_votes": 207519,
-        "other_votes": 7562,
+        "total_votes": 294333,
+        "dem_votes": 94284,
+        "rep_votes": 192898,
+        "other_votes": 7151,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.15304814005786
+        "margin_pct": 33.50422820410895
       },
       "4": {
-        "total_votes": 275534,
-        "dem_votes": 208440,
-        "rep_votes": 59422,
-        "other_votes": 7672,
+        "total_votes": 279125,
+        "dem_votes": 212467,
+        "rep_votes": 58797,
+        "other_votes": 7861,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.083343616395794
+        "margin_pct": -55.054187192118235
       },
       "5": {
-        "total_votes": 294170,
-        "dem_votes": 231993,
-        "rep_votes": 53599,
-        "other_votes": 8578,
+        "total_votes": 329231,
+        "dem_votes": 230522,
+        "rep_votes": 88632,
+        "other_votes": 10077,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.643165516538055
+        "margin_pct": -43.097399698084324
       },
       "6": {
-        "total_votes": 330706,
-        "dem_votes": 116318,
-        "rep_votes": 204160,
-        "other_votes": 10228,
+        "total_votes": 279440,
+        "dem_votes": 111854,
+        "rep_votes": 159287,
+        "other_votes": 8299,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.561961379593956
+        "margin_pct": 16.974305754365876
       },
       "7": {
-        "total_votes": 233704,
-        "dem_votes": 134673,
-        "rep_votes": 91979,
-        "other_votes": 7052,
+        "total_votes": 239166,
+        "dem_votes": 134175,
+        "rep_votes": 97750,
+        "other_votes": 7241,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.2684079005922
+        "margin_pct": -15.23000760977731
       },
       "8": {
-        "total_votes": 260119,
-        "dem_votes": 81643,
-        "rep_votes": 173742,
-        "other_votes": 4734,
+        "total_votes": 255941,
+        "dem_votes": 84112,
+        "rep_votes": 167130,
+        "other_votes": 4699,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.40648703093584
+        "margin_pct": 32.43638182237312
       },
       "9": {
-        "total_votes": 293706,
-        "dem_votes": 74557,
-        "rep_votes": 211600,
-        "other_votes": 7549,
+        "total_votes": 280417,
+        "dem_votes": 74489,
+        "rep_votes": 198894,
+        "other_votes": 7034,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.6599252313538
+        "margin_pct": 44.3642860454252
       },
       "10": {
-        "total_votes": 306928,
-        "dem_votes": 105090,
-        "rep_votes": 194247,
-        "other_votes": 7591,
+        "total_votes": 291798,
+        "dem_votes": 102687,
+        "rep_votes": 181759,
+        "other_votes": 7352,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.048180680811136
+        "margin_pct": 27.09819806852686
       },
       "11": {
-        "total_votes": 302529,
-        "dem_votes": 109256,
-        "rep_votes": 183408,
-        "other_votes": 9865,
+        "total_votes": 298305,
+        "dem_votes": 108323,
+        "rep_votes": 179984,
+        "other_votes": 9998,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.510708064350855
+        "margin_pct": 24.022728415547846
       },
       "12": {
-        "total_votes": 264098,
-        "dem_votes": 104238,
-        "rep_votes": 154290,
-        "other_votes": 5570,
+        "total_votes": 265518,
+        "dem_votes": 104397,
+        "rep_votes": 155508,
+        "other_votes": 5613,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.952055676301978
+        "margin_pct": 19.249542403904822
       },
       "13": {
-        "total_votes": 265159,
-        "dem_votes": 209476,
-        "rep_votes": 48485,
-        "other_votes": 7198,
+        "total_votes": 315368,
+        "dem_votes": 216497,
+        "rep_votes": 90619,
+        "other_votes": 8252,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.71489181962521
+        "margin_pct": -39.91463940539307
       },
       "14": {
-        "total_votes": 259548,
-        "dem_votes": 71985,
-        "rep_votes": 181216,
-        "other_votes": 6347,
+        "total_votes": 262759,
+        "dem_votes": 73018,
+        "rep_votes": 183370,
+        "other_votes": 6371,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.08508638093917
+        "margin_pct": 41.99741968876423
       }
     }
   }

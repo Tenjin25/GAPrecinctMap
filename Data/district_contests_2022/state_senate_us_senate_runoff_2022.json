@@ -4,63 +4,79 @@
     "contest_type": "us_senate_runoff",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-08-05T21:06:46.024723+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:48.096712+00:00",
     "match_coverage_pct": 100.0,
     "total_input_votes": 2701818,
     "matched_input_votes": 2701818,
     "input_files": [
       "Data/derived_vtd20/2022/contests/vtd20/U.S._Senate_Runoff.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1366073,
+        "rep_votes": 1335745,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1795735,
+        "rep_votes": 1694173,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 8907,
-        "dem_votes": 4211,
-        "rep_votes": 4696,
+        "total_votes": 29669,
+        "dem_votes": 14404,
+        "rep_votes": 15265,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.4451554956775565
+        "margin_pct": 2.9020189423303786
       },
       "2": {
-        "total_votes": 2878,
-        "dem_votes": 2309,
-        "rep_votes": 569,
+        "total_votes": 96513,
+        "dem_votes": 59759,
+        "rep_votes": 36754,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.45865184155663
+        "margin_pct": -23.836167148467048
       },
       "3": {
-        "total_votes": 20970,
-        "dem_votes": 5683,
-        "rep_votes": 15287,
+        "total_votes": 63437,
+        "dem_votes": 21074,
+        "rep_votes": 42363,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.79876013352408
+        "margin_pct": 33.55927928495988
       },
       "4": {
-        "total_votes": 40907,
-        "dem_votes": 12903,
-        "rep_votes": 28004,
+        "total_votes": 50372,
+        "dem_votes": 15630,
+        "rep_votes": 34742,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.91544234483096
+        "margin_pct": 37.941713650440725
       },
       "5": {
-        "total_votes": 28855,
+        "total_votes": 28856,
         "dem_votes": 22054,
         "rep_votes": 6802,
         "other_votes": 0,
@@ -68,18 +84,18 @@
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.85739040027725
+        "margin_pct": -52.85555863598559
       },
       "6": {
-        "total_votes": 64122,
-        "dem_votes": 41934,
-        "rep_votes": 22188,
+        "total_votes": 72289,
+        "dem_votes": 47057,
+        "rep_votes": 25232,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.79442313090671
+        "margin_pct": -30.191315414516733
       },
       "7": {
         "total_votes": 55350,
@@ -93,15 +109,15 @@
         "margin_pct": -21.846431797651313
       },
       "8": {
-        "total_votes": 20753,
-        "dem_votes": 5285,
-        "rep_votes": 15468,
+        "total_votes": 52651,
+        "dem_votes": 17661,
+        "rep_votes": 34990,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.06760468366019
+        "margin_pct": 32.912955119560884
       },
       "9": {
         "total_votes": 57734,
@@ -115,411 +131,411 @@
         "margin_pct": -27.76526829944227
       },
       "10": {
-        "total_votes": 65633,
-        "dem_votes": 54610,
-        "rep_votes": 11023,
+        "total_votes": 80758,
+        "dem_votes": 68589,
+        "rep_votes": 12169,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.41018999588621
+        "margin_pct": -69.86304762376483
       },
       "11": {
-        "total_votes": 48597,
-        "dem_votes": 15845,
-        "rep_votes": 32752,
+        "total_votes": 55363,
+        "dem_votes": 18453,
+        "rep_votes": 36910,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.79021338765767
+        "margin_pct": 33.33815002799704
       },
       "12": {
-        "total_votes": 40835,
-        "dem_votes": 22291,
-        "rep_votes": 18544,
+        "total_votes": 58669,
+        "dem_votes": 34100,
+        "rep_votes": 24569,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.175952001959104
+        "margin_pct": -16.2453766043396
       },
       "13": {
-        "total_votes": 46556,
-        "dem_votes": 13665,
-        "rep_votes": 32891,
+        "total_votes": 58621,
+        "dem_votes": 16996,
+        "rep_votes": 41625,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.29650313600825
+        "margin_pct": 42.01395404377271
       },
       "14": {
-        "total_votes": 55465,
-        "dem_votes": 35085,
-        "rep_votes": 20380,
+        "total_votes": 65316,
+        "dem_votes": 40672,
+        "rep_votes": 24644,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.512214910303793
+        "margin_pct": -24.539163451527955
       },
       "15": {
-        "total_votes": 23794,
-        "dem_votes": 14488,
-        "rep_votes": 9306,
+        "total_votes": 49461,
+        "dem_votes": 35089,
+        "rep_votes": 14372,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.778599646969823
+        "margin_pct": -41.88552596995613
       },
       "16": {
-        "total_votes": 33953,
-        "dem_votes": 11533,
-        "rep_votes": 22420,
+        "total_votes": 38106,
+        "dem_votes": 13108,
+        "rep_votes": 24998,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.064913262451036
+        "margin_pct": 31.202435312024352
       },
       "17": {
-        "total_votes": 43385,
-        "dem_votes": 20395,
-        "rep_votes": 22990,
+        "total_votes": 70108,
+        "dem_votes": 32941,
+        "rep_votes": 37167,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.981329952748646
+        "margin_pct": 6.02784275688937
       },
       "18": {
-        "total_votes": 65812,
-        "dem_votes": 26780,
-        "rep_votes": 39032,
+        "total_votes": 71616,
+        "dem_votes": 29029,
+        "rep_votes": 42587,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.61666565368018
+        "margin_pct": 18.931523681858803
       },
       "19": {
-        "total_votes": 47028,
-        "dem_votes": 10843,
-        "rep_votes": 36185,
+        "total_votes": 54402,
+        "dem_votes": 13131,
+        "rep_votes": 41271,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.887046015139916
+        "margin_pct": 51.7260394838425
       },
       "20": {
-        "total_votes": 56348,
-        "dem_votes": 19822,
-        "rep_votes": 36526,
+        "total_votes": 70309,
+        "dem_votes": 25033,
+        "rep_votes": 45276,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.644352949527935
+        "margin_pct": 28.791477620219318
       },
       "21": {
-        "total_votes": 65226,
-        "dem_votes": 21349,
-        "rep_votes": 43878,
+        "total_votes": 68766,
+        "dem_votes": 22930,
+        "rep_votes": 45836,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.539907398890016
+        "margin_pct": 33.310066020998754
       },
       "22": {
-        "total_votes": 51476,
-        "dem_votes": 36775,
-        "rep_votes": 14701,
+        "total_votes": 54912,
+        "dem_votes": 39657,
+        "rep_votes": 15255,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.882119822830056
+        "margin_pct": -44.43837412587413
       },
       "23": {
-        "total_votes": 47841,
-        "dem_votes": 19209,
-        "rep_votes": 28632,
+        "total_votes": 60090,
+        "dem_votes": 24614,
+        "rep_votes": 35476,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.696494638489998
+        "margin_pct": 18.076219004826093
       },
       "24": {
-        "total_votes": 64494,
-        "dem_votes": 20148,
-        "rep_votes": 44346,
+        "total_votes": 82822,
+        "dem_votes": 27693,
+        "rep_votes": 55129,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.519769280863336
+        "margin_pct": 33.12646398299969
       },
       "25": {
-        "total_votes": 56781,
-        "dem_votes": 24885,
-        "rep_votes": 31896,
+        "total_votes": 68502,
+        "dem_votes": 28826,
+        "rep_votes": 39676,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.347440164843874
+        "margin_pct": 15.83895360719395
       },
       "26": {
-        "total_votes": 48601,
-        "dem_votes": 31453,
-        "rep_votes": 17148,
+        "total_votes": 51252,
+        "dem_votes": 33063,
+        "rep_votes": 18189,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.433550749984565
+        "margin_pct": -29.02130648560056
       },
       "27": {
-        "total_votes": 41134,
-        "dem_votes": 12372,
-        "rep_votes": 28763,
+        "total_votes": 72344,
+        "dem_votes": 22938,
+        "rep_votes": 49406,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.84781446005737
+        "margin_pct": 36.58630985292491
       },
       "28": {
-        "total_votes": 55627,
-        "dem_votes": 17491,
-        "rep_votes": 38136,
+        "total_votes": 67554,
+        "dem_votes": 23321,
+        "rep_votes": 44233,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.113272331781324
+        "margin_pct": 30.955975959972765
       },
       "29": {
-        "total_votes": 47551,
-        "dem_votes": 17019,
-        "rep_votes": 30532,
+        "total_votes": 64882,
+        "dem_votes": 23099,
+        "rep_votes": 41783,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.417909192235708
+        "margin_pct": 28.79689282081317
       },
       "30": {
-        "total_votes": 55872,
-        "dem_votes": 17918,
-        "rep_votes": 37954,
+        "total_votes": 60339,
+        "dem_votes": 20145,
+        "rep_votes": 40194,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.86053837342497
+        "margin_pct": 33.22726594739721
       },
       "31": {
-        "total_votes": 16947,
-        "dem_votes": 3690,
-        "rep_votes": 13257,
+        "total_votes": 69531,
+        "dem_votes": 24239,
+        "rep_votes": 45292,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.45246946362188
+        "margin_pct": 30.278580776919643
       },
       "32": {
-        "total_votes": 66964,
-        "dem_votes": 30250,
-        "rep_votes": 36713,
+        "total_votes": 69134,
+        "dem_votes": 31578,
+        "rep_votes": 37556,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.651454512872588
+        "margin_pct": 8.646975439002517
       },
       "33": {
-        "total_votes": 49606,
-        "dem_votes": 36657,
-        "rep_votes": 12949,
+        "total_votes": 52948,
+        "dem_votes": 39265,
+        "rep_votes": 13683,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.79260573317744
+        "margin_pct": -48.31532824658155
       },
       "34": {
-        "total_votes": 31425,
-        "dem_votes": 28776,
-        "rep_votes": 2649,
+        "total_votes": 38706,
+        "dem_votes": 35677,
+        "rep_votes": 3029,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.14081145584726
+        "margin_pct": -84.34867979124684
       },
       "35": {
-        "total_votes": 51287,
-        "dem_votes": 42695,
-        "rep_votes": 8593,
+        "total_votes": 59909,
+        "dem_votes": 49690,
+        "rep_votes": 10219,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.49248347534463
+        "margin_pct": -65.88492547029662
       },
       "36": {
-        "total_votes": 57885,
-        "dem_votes": 53918,
-        "rep_votes": 3967,
+        "total_votes": 67301,
+        "dem_votes": 62504,
+        "rep_votes": 4797,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -86.29351299991363
+        "margin_pct": -85.74463975275256
       },
       "37": {
-        "total_votes": 80747,
-        "dem_votes": 37963,
-        "rep_votes": 42783,
+        "total_votes": 86099,
+        "dem_votes": 40716,
+        "rep_votes": 45383,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.969262015926288
+        "margin_pct": 5.420504303185868
       },
       "38": {
-        "total_votes": 57048,
-        "dem_votes": 48347,
-        "rep_votes": 8700,
+        "total_votes": 63117,
+        "dem_votes": 53837,
+        "rep_votes": 9280,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -69.49761604263077
+        "margin_pct": -70.59429313814027
       },
       "39": {
-        "total_votes": 54034,
-        "dem_votes": 49273,
-        "rep_votes": 4761,
+        "total_votes": 62878,
+        "dem_votes": 57121,
+        "rep_votes": 5757,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.37776214975756
+        "margin_pct": -81.68834886605808
       },
       "40": {
-        "total_votes": 19039,
-        "dem_votes": 13783,
-        "rep_votes": 5256,
+        "total_votes": 28796,
+        "dem_votes": 19148,
+        "rep_votes": 9648,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.787016124796466
+        "margin_pct": -32.99069315182665
       },
       "41": {
-        "total_votes": 38923,
-        "dem_votes": 34282,
-        "rep_votes": 4641,
+        "total_votes": 63320,
+        "dem_votes": 53252,
+        "rep_votes": 10068,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.15291729825553
+        "margin_pct": -68.19962097283639
       },
       "42": {
-        "total_votes": 40978,
-        "dem_votes": 35672,
-        "rep_votes": 5306,
+        "total_votes": 70534,
+        "dem_votes": 56473,
+        "rep_votes": 14061,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.10317731465665
+        "margin_pct": -60.12986644738707
       },
       "43": {
-        "total_votes": 9458,
-        "dem_votes": 9050,
-        "rep_votes": 408,
+        "total_votes": 68818,
+        "dem_votes": 51021,
+        "rep_votes": 17797,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -91.37238316768872
+        "margin_pct": -48.278066784852804
       },
       "44": {
-        "total_votes": 45199,
-        "dem_votes": 40366,
-        "rep_votes": 4832,
+        "total_votes": 61707,
+        "dem_votes": 55511,
+        "rep_votes": 6196,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.61678355715834
+        "margin_pct": -79.91799957865396
       },
       "45": {
         "total_votes": 59788,
         "dem_votes": 26447,
-        "rep_votes": 33340,
+        "rep_votes": 33341,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.529069378470597
+        "margin_pct": 11.53074195490734
       },
       "46": {
-        "total_votes": 65692,
-        "dem_votes": 27473,
-        "rep_votes": 38219,
+        "total_votes": 69838,
+        "dem_votes": 28893,
+        "rep_votes": 40945,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.358156244291543
+        "margin_pct": 17.2570806724133
       },
       "47": {
         "total_votes": 64881,
@@ -533,15 +549,15 @@
         "margin_pct": 15.69180499684037
       },
       "48": {
-        "total_votes": 52430,
-        "dem_votes": 27383,
-        "rep_votes": 25047,
+        "total_votes": 64548,
+        "dem_votes": 33379,
+        "rep_votes": 31169,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.455464428762159
+        "margin_pct": -3.423808638532565
       },
       "49": {
         "total_votes": 62542,
@@ -555,81 +571,81 @@
         "margin_pct": 45.81561190879729
       },
       "50": {
-        "total_votes": 57803,
-        "dem_votes": 10390,
-        "rep_votes": 47412,
+        "total_votes": 66416,
+        "dem_votes": 12115,
+        "rep_votes": 54301,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.04857879348823
+        "margin_pct": 63.51782702963141
       },
       "51": {
-        "total_votes": 77131,
-        "dem_votes": 14187,
-        "rep_votes": 62944,
+        "total_votes": 79486,
+        "dem_votes": 14614,
+        "rep_votes": 64872,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.21323462680375
+        "margin_pct": 63.228744684598546
       },
       "52": {
-        "total_votes": 55906,
-        "dem_votes": 14838,
-        "rep_votes": 41068,
+        "total_votes": 59493,
+        "dem_votes": 15731,
+        "rep_votes": 43762,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.918040997388474
+        "margin_pct": 47.116467483569494
       },
       "53": {
-        "total_votes": 50611,
-        "dem_votes": 10750,
-        "rep_votes": 39862,
+        "total_votes": 56299,
+        "dem_votes": 11590,
+        "rep_votes": 44709,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.52109225267235
+        "margin_pct": 58.826977388585945
       },
       "54": {
-        "total_votes": 28833,
-        "dem_votes": 6072,
-        "rep_votes": 22761,
+        "total_votes": 48250,
+        "dem_votes": 10029,
+        "rep_votes": 38221,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.88159400686713
+        "margin_pct": 58.42901554404145
       },
       "55": {
-        "total_votes": 65599,
-        "dem_votes": 54280,
-        "rep_votes": 11319,
+        "total_votes": 80835,
+        "dem_votes": 68115,
+        "rep_votes": 12720,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.49032759645726
+        "margin_pct": -68.52848394878455
       },
       "56": {
-        "total_votes": 78578,
-        "dem_votes": 36280,
-        "rep_votes": 42297,
+        "total_votes": 83671,
+        "dem_votes": 38827,
+        "rep_votes": 44844,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Herschel Junior Walker",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.657359566290819
+        "margin_pct": 7.191261010385916
       }
     }
   }

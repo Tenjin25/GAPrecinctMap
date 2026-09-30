@@ -4,167 +4,186 @@
     "contest_type": "insurance_commissioner",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "rdh_2022_precinct_archive",
-    "generated_at_utc": "2026-08-05T22:01:21.449142+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:41.681565+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3895524,
-    "matched_input_votes": 3895524
+    "total_input_votes": 1069571,
+    "matched_input_votes": 1069571,
+    "input_files": [
+      "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Insurance.json"
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 940909,
+        "rep_votes": 128662,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1788136,
+        "rep_votes": 2107388,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 261982,
-        "dem_votes": 103266,
-        "rep_votes": 158716,
+        "total_votes": 260806,
+        "dem_votes": 103119,
+        "rep_votes": 157687,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.165576260964496
+        "margin_pct": 20.922831529949466
       },
       "2": {
-        "total_votes": 239174,
-        "dem_votes": 123376,
-        "rep_votes": 115798,
+        "total_votes": 245802,
+        "dem_votes": 119628,
+        "rep_votes": 126174,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -3.1684045924724256
+        "rep_candidate": "John King",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 2.6631190958576414
       },
       "3": {
-        "total_votes": 310080,
-        "dem_votes": 96803,
-        "rep_votes": 213277,
+        "total_votes": 294006,
+        "dem_votes": 95746,
+        "rep_votes": 198260,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.562564499484004
+        "margin_pct": 34.86799589124032
       },
       "4": {
-        "total_votes": 275305,
-        "dem_votes": 209920,
-        "rep_votes": 65385,
+        "total_votes": 278503,
+        "dem_votes": 213854,
+        "rep_votes": 64649,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.499954595811914
+        "margin_pct": -53.573929185682026
       },
       "5": {
-        "total_votes": 294269,
-        "dem_votes": 233395,
-        "rep_votes": 60874,
+        "total_votes": 328975,
+        "dem_votes": 232016,
+        "rep_votes": 96959,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.62697056094933
+        "margin_pct": -41.05387947412417
       },
       "6": {
-        "total_votes": 330878,
-        "dem_votes": 117204,
-        "rep_votes": 213674,
+        "total_votes": 279436,
+        "dem_votes": 112682,
+        "rep_votes": 166754,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.15576133801582
+        "margin_pct": 19.350405817432257
       },
       "7": {
-        "total_votes": 233598,
-        "dem_votes": 136367,
-        "rep_votes": 97231,
+        "total_votes": 239090,
+        "dem_votes": 135918,
+        "rep_votes": 103172,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.753568095617258
+        "margin_pct": -13.69609770379355
       },
       "8": {
-        "total_votes": 259821,
-        "dem_votes": 82554,
-        "rep_votes": 177267,
+        "total_votes": 255598,
+        "dem_votes": 85054,
+        "rep_votes": 170544,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.453173531007884
+        "margin_pct": 33.447053576319064
       },
       "9": {
-        "total_votes": 293492,
-        "dem_votes": 75928,
-        "rep_votes": 217564,
+        "total_votes": 280374,
+        "dem_votes": 75845,
+        "rep_votes": 204529,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.25889632426097
+        "margin_pct": 45.897265794973855
       },
       "10": {
-        "total_votes": 306579,
-        "dem_votes": 106631,
-        "rep_votes": 199948,
+        "total_votes": 291339,
+        "dem_votes": 104226,
+        "rep_votes": 187113,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.438157864693927
+        "margin_pct": 28.450361949481533
       },
       "11": {
-        "total_votes": 302483,
-        "dem_votes": 111032,
-        "rep_votes": 191451,
+        "total_votes": 297406,
+        "dem_votes": 110072,
+        "rep_votes": 187334,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.58628749384263
+        "margin_pct": 25.978628541455116
       },
       "12": {
-        "total_votes": 263735,
-        "dem_votes": 105625,
-        "rep_votes": 158110,
+        "total_votes": 265031,
+        "dem_votes": 105795,
+        "rep_votes": 159236,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.900657857318897
+        "margin_pct": 20.16405628020873
       },
       "13": {
-        "total_votes": 264752,
-        "dem_votes": 212688,
-        "rep_votes": 52064,
+        "total_votes": 316184,
+        "dem_votes": 219778,
+        "rep_votes": 96406,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.66960778388831
+        "margin_pct": -39.01905219745465
       },
       "14": {
-        "total_votes": 259374,
-        "dem_votes": 73345,
-        "rep_votes": 186029,
+        "total_votes": 262974,
+        "dem_votes": 74403,
+        "rep_votes": 188571,
         "other_votes": 0,
         "dem_candidate": "",
-        "rep_candidate": "",
+        "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.44460123219752
+        "margin_pct": 43.414177827465835
       }
     }
   }

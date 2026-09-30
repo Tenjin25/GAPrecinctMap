@@ -4,38 +4,54 @@
     "contest_type": "superintendent",
     "year": 2018,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:42.080513+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:55.091167+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3644848,
-    "matched_input_votes": 3644848,
+    "total_input_votes": 3653531,
+    "matched_input_votes": 3653531,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/State_School_Superintendent.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1724372,
+        "rep_votes": 1929159,
+        "other_votes": 0
+      },
+      "canonical_target": {
+        "dem_votes": 1814461,
+        "rep_votes": 2048003,
+        "other_votes": 0
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 17549,
-        "dem_votes": 3435,
-        "rep_votes": 14114,
+        "total_votes": 21585,
+        "dem_votes": 4016,
+        "rep_votes": 17569,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.85247022622372
+        "margin_pct": 62.78897382441511
       },
       "2": {
-        "total_votes": 15918,
-        "dem_votes": 2760,
-        "rep_votes": 13158,
+        "total_votes": 17134,
+        "dem_votes": 2879,
+        "rep_votes": 14255,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.3222766679231
+        "margin_pct": 66.39430372359053
       },
       "3": {
         "total_votes": 20181,
@@ -49,7 +65,7 @@
         "margin_pct": 61.14166790545562
       },
       "4": {
-        "total_votes": 12142,
+        "total_votes": 12143,
         "dem_votes": 4190,
         "rep_votes": 7953,
         "other_votes": 0,
@@ -57,29 +73,29 @@
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.991599407016967
+        "margin_pct": 30.989047187680146
       },
       "5": {
-        "total_votes": 18010,
-        "dem_votes": 3034,
-        "rep_votes": 14976,
+        "total_votes": 17989,
+        "dem_votes": 3030,
+        "rep_votes": 14959,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.30760688506385
+        "margin_pct": 66.31274667852577
       },
       "6": {
-        "total_votes": 17444,
-        "dem_votes": 2592,
-        "rep_votes": 14852,
+        "total_votes": 17442,
+        "dem_votes": 2591,
+        "rep_votes": 14851,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.28204540243064
+        "margin_pct": 70.2901043458319
       },
       "7": {
         "total_votes": 24918,
@@ -93,40 +109,40 @@
         "margin_pct": 68.50469540091501
       },
       "8": {
-        "total_votes": 26766,
+        "total_votes": 26768,
         "dem_votes": 4217,
-        "rep_votes": 22549,
+        "rep_votes": 22551,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.48987521482478
+        "margin_pct": 68.49222952779438
       },
       "9": {
-        "total_votes": 22229,
+        "total_votes": 22227,
         "dem_votes": 3264,
-        "rep_votes": 18965,
+        "rep_votes": 18963,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.63295694813083
+        "margin_pct": 70.6303144823863
       },
       "10": {
-        "total_votes": 20622,
-        "dem_votes": 3265,
-        "rep_votes": 17357,
+        "total_votes": 20630,
+        "dem_votes": 3266,
+        "rep_votes": 17364,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.33478809038891
+        "margin_pct": 68.33737275811924
       },
       "11": {
-        "total_votes": 23815,
+        "total_votes": 23816,
         "dem_votes": 3456,
         "rep_votes": 20360,
         "other_votes": 0,
@@ -134,18 +150,18 @@
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.9804744908671
+        "margin_pct": 70.97749412159892
       },
       "12": {
-        "total_votes": 17259,
-        "dem_votes": 3387,
-        "rep_votes": 13872,
+        "total_votes": 17464,
+        "dem_votes": 3442,
+        "rep_votes": 14022,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.75091256735617
+        "margin_pct": 60.58176820888686
       },
       "13": {
         "total_votes": 17801,
@@ -159,114 +175,114 @@
         "margin_pct": 36.09347789450031
       },
       "14": {
-        "total_votes": 21842,
-        "dem_votes": 3759,
-        "rep_votes": 18083,
+        "total_votes": 21861,
+        "dem_votes": 3762,
+        "rep_votes": 18099,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.5800750846992
+        "margin_pct": 65.58254425689584
       },
       "15": {
-        "total_votes": 18640,
-        "dem_votes": 4926,
-        "rep_votes": 13713,
+        "total_votes": 18658,
+        "dem_votes": 4931,
+        "rep_votes": 13727,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.14055793991416
+        "margin_pct": 47.14331653982206
       },
       "16": {
-        "total_votes": 19423,
-        "dem_votes": 4015,
-        "rep_votes": 15408,
+        "total_votes": 20034,
+        "dem_votes": 4184,
+        "rep_votes": 15850,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.657262008958455
+        "margin_pct": 58.23100728761106
       },
       "17": {
-        "total_votes": 13550,
-        "dem_votes": 3916,
-        "rep_votes": 9633,
+        "total_votes": 14800,
+        "dem_votes": 4372,
+        "rep_votes": 10428,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.19188191881919
+        "margin_pct": 40.91891891891892
       },
       "18": {
-        "total_votes": 17541,
-        "dem_votes": 2441,
-        "rep_votes": 15100,
+        "total_votes": 22999,
+        "dem_votes": 3311,
+        "rep_votes": 19688,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 72.16806339433329
+        "margin_pct": 71.20744380190443
       },
       "19": {
-        "total_votes": 24466,
-        "dem_votes": 9103,
-        "rep_votes": 15363,
+        "total_votes": 26161,
+        "dem_votes": 9902,
+        "rep_votes": 16259,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.586528243276383
+        "margin_pct": 24.29952983448645
       },
       "20": {
-        "total_votes": 24903,
-        "dem_votes": 6698,
-        "rep_votes": 18205,
+        "total_votes": 24916,
+        "dem_votes": 6704,
+        "rep_votes": 18212,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.207284262940206
+        "margin_pct": 46.18718895488843
       },
       "21": {
-        "total_votes": 25347,
-        "dem_votes": 5447,
-        "rep_votes": 19900,
+        "total_votes": 25359,
+        "dem_votes": 5451,
+        "rep_votes": 19908,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.02055470075354
+        "margin_pct": 57.009345794392516
       },
       "22": {
-        "total_votes": 24463,
-        "dem_votes": 9686,
-        "rep_votes": 14777,
+        "total_votes": 24470,
+        "dem_votes": 9689,
+        "rep_votes": 14781,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.8110207251768
+        "margin_pct": 20.809154066203515
       },
       "23": {
-        "total_votes": 20485,
-        "dem_votes": 4179,
-        "rep_votes": 16306,
+        "total_votes": 20495,
+        "dem_votes": 4182,
+        "rep_votes": 16313,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.199414205516234
+        "margin_pct": 59.19004635276897
       },
       "24": {
         "total_votes": 22272,
@@ -302,224 +318,224 @@
         "margin_pct": 53.11816436766216
       },
       "27": {
-        "total_votes": 16083,
-        "dem_votes": 2252,
-        "rep_votes": 13831,
+        "total_votes": 19055,
+        "dem_votes": 2507,
+        "rep_votes": 16548,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 71.99527451346141
+        "margin_pct": 73.68669640514301
       },
       "28": {
-        "total_votes": 19210,
-        "dem_votes": 3717,
-        "rep_votes": 15493,
+        "total_votes": 19691,
+        "dem_votes": 3797,
+        "rep_votes": 15894,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.301405517959395
+        "margin_pct": 61.43415773703722
       },
       "29": {
-        "total_votes": 11904,
-        "dem_votes": 4914,
-        "rep_votes": 6990,
+        "total_votes": 13950,
+        "dem_votes": 5514,
+        "rep_votes": 8436,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.43951612903226
+        "margin_pct": 20.946236559139784
       },
       "30": {
-        "total_votes": 20743,
-        "dem_votes": 5047,
-        "rep_votes": 15696,
+        "total_votes": 24016,
+        "dem_votes": 5542,
+        "rep_votes": 18474,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.3378007038519
+        "margin_pct": 53.84743504330446
       },
       "31": {
-        "total_votes": 19347,
-        "dem_votes": 3875,
-        "rep_votes": 15472,
+        "total_votes": 19712,
+        "dem_votes": 4008,
+        "rep_votes": 15704,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 59.9421098878379
+        "margin_pct": 59.33441558441559
       },
       "32": {
-        "total_votes": 12039,
-        "dem_votes": 1567,
-        "rep_votes": 10472,
+        "total_votes": 20933,
+        "dem_votes": 3211,
+        "rep_votes": 17722,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.96793753634022
+        "margin_pct": 69.32116753451488
       },
       "33": {
-        "total_votes": 20092,
-        "dem_votes": 3680,
-        "rep_votes": 16412,
+        "total_votes": 21432,
+        "dem_votes": 3784,
+        "rep_votes": 17648,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.36850487756321
+        "margin_pct": 64.6883165360209
       },
       "34": {
-        "total_votes": 26199,
-        "dem_votes": 9430,
-        "rep_votes": 16769,
+        "total_votes": 26203,
+        "dem_votes": 9431,
+        "rep_votes": 16772,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.012519561815335
+        "margin_pct": 28.015876044727705
       },
       "35": {
-        "total_votes": 18270,
+        "total_votes": 18272,
         "dem_votes": 9474,
-        "rep_votes": 8796,
+        "rep_votes": 8798,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.7110016420361247
+        "margin_pct": -3.699649737302977
       },
       "36": {
-        "total_votes": 26963,
-        "dem_votes": 9180,
-        "rep_votes": 17783,
+        "total_votes": 26967,
+        "dem_votes": 9181,
+        "rep_votes": 17786,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.906686941364093
+        "margin_pct": 31.909370712352136
       },
       "37": {
-        "total_votes": 22610,
+        "total_votes": 22612,
         "dem_votes": 12105,
-        "rep_votes": 10506,
+        "rep_votes": 10507,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.072091994692614
+        "margin_pct": -7.067044047408455
       },
       "38": {
-        "total_votes": 22983,
-        "dem_votes": 16107,
-        "rep_votes": 6876,
+        "total_votes": 22985,
+        "dem_votes": 16108,
+        "rep_votes": 6877,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.16446939041901
+        "margin_pct": -40.16097454861867
       },
       "39": {
-        "total_votes": 18910,
-        "dem_votes": 14693,
-        "rep_votes": 4217,
+        "total_votes": 18912,
+        "dem_votes": 14694,
+        "rep_votes": 4218,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -55.399259650978316
+        "margin_pct": -55.39340101522843
       },
       "40": {
-        "total_votes": 19818,
-        "dem_votes": 7028,
-        "rep_votes": 12790,
+        "total_votes": 21562,
+        "dem_votes": 7582,
+        "rep_votes": 13980,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.07457866585932
+        "margin_pct": 29.672572117614322
       },
       "41": {
-        "total_votes": 17765,
-        "dem_votes": 12259,
-        "rep_votes": 5506,
+        "total_votes": 17767,
+        "dem_votes": 12260,
+        "rep_votes": 5507,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.01294680551647
+        "margin_pct": -38.00866775482636
       },
       "42": {
-        "total_votes": 24430,
-        "dem_votes": 15778,
-        "rep_votes": 8652,
+        "total_votes": 24432,
+        "dem_votes": 15779,
+        "rep_votes": 8653,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.169054441260744
+        "margin_pct": -29.166666666666668
       },
       "43": {
-        "total_votes": 16102,
-        "dem_votes": 9811,
-        "rep_votes": 6291,
+        "total_votes": 16104,
+        "dem_votes": 9812,
+        "rep_votes": 6292,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.860638430008695
+        "margin_pct": -21.85792349726776
       },
       "44": {
-        "total_votes": 25144,
-        "dem_votes": 9834,
-        "rep_votes": 15310,
+        "total_votes": 25151,
+        "dem_votes": 9837,
+        "rep_votes": 15314,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.77855552020363
+        "margin_pct": 21.776470120472347
       },
       "45": {
-        "total_votes": 33120,
+        "total_votes": 33123,
         "dem_votes": 12099,
-        "rep_votes": 21021,
+        "rep_votes": 21024,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.93840579710145
+        "margin_pct": 26.945023095734083
       },
       "46": {
-        "total_votes": 27866,
-        "dem_votes": 10246,
-        "rep_votes": 17620,
+        "total_votes": 27872,
+        "dem_votes": 10248,
+        "rep_votes": 17624,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.462355558745426
+        "margin_pct": 26.4638346727899
       },
       "47": {
         "total_votes": 24011,
@@ -533,15 +549,15 @@
         "margin_pct": 28.749323226854358
       },
       "48": {
-        "total_votes": 29826,
-        "dem_votes": 13105,
-        "rep_votes": 16722,
+        "total_votes": 29838,
+        "dem_votes": 13110,
+        "rep_votes": 16728,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.127003285723866
+        "margin_pct": 12.125477578926201
       },
       "49": {
         "total_votes": 24510,
@@ -577,15 +593,15 @@
         "margin_pct": -3.8591682014819892
       },
       "52": {
-        "total_votes": 23949,
-        "dem_votes": 12489,
-        "rep_votes": 11460,
+        "total_votes": 24520,
+        "dem_votes": 12842,
+        "rep_votes": 11678,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.296630339471377
+        "margin_pct": -4.747145187601958
       },
       "53": {
         "total_votes": 27515,
@@ -599,26 +615,26 @@
         "margin_pct": 14.650190805015445
       },
       "54": {
-        "total_votes": 21779,
-        "dem_votes": 10656,
-        "rep_votes": 11123,
+        "total_votes": 21782,
+        "dem_votes": 10658,
+        "rep_votes": 11124,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.1442674135635245
+        "margin_pct": 2.1393811403911487
       },
       "55": {
-        "total_votes": 23624,
-        "dem_votes": 17858,
+        "total_votes": 23625,
+        "dem_votes": 17859,
         "rep_votes": 5766,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.18523535387741
+        "margin_pct": -51.18730158730159
       },
       "56": {
         "total_votes": 19235,
@@ -633,17 +649,17 @@
       },
       "57": {
         "total_votes": 24216,
-        "dem_votes": 17132,
+        "dem_votes": 17133,
         "rep_votes": 7083,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.497357119259995
+        "margin_pct": -41.50148662041626
       },
       "58": {
-        "total_votes": 24855,
+        "total_votes": 24856,
         "dem_votes": 22032,
         "rep_votes": 2824,
         "other_votes": 0,
@@ -651,7 +667,7 @@
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.28022530677931
+        "margin_pct": -77.27711618925008
       },
       "59": {
         "total_votes": 20996,
@@ -676,81 +692,81 @@
         "margin_pct": -34.72176759410802
       },
       "61": {
-        "total_votes": 26347,
-        "dem_votes": 20206,
-        "rep_votes": 6142,
+        "total_votes": 26350,
+        "dem_votes": 20207,
+        "rep_votes": 6143,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.37989144874179
+        "margin_pct": -53.373814041745725
       },
       "62": {
-        "total_votes": 22511,
-        "dem_votes": 20659,
+        "total_votes": 22512,
+        "dem_votes": 20660,
         "rep_votes": 1852,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.54582204255698
+        "margin_pct": -83.54655294953803
       },
       "63": {
         "total_votes": 18697,
-        "dem_votes": 16741,
+        "dem_votes": 16742,
         "rep_votes": 1955,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.08220570144942
+        "margin_pct": -79.08755415307269
       },
       "64": {
-        "total_votes": 24515,
-        "dem_votes": 14901,
-        "rep_votes": 9613,
+        "total_votes": 25943,
+        "dem_votes": 15222,
+        "rep_votes": 10721,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.570467060983074
+        "margin_pct": -17.3495740662221
       },
       "65": {
-        "total_votes": 25212,
+        "total_votes": 25214,
         "dem_votes": 19035,
-        "rep_votes": 6178,
+        "rep_votes": 6179,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.99555767095034
+        "margin_pct": -50.987546601094635
       },
       "66": {
-        "total_votes": 20105,
-        "dem_votes": 13410,
-        "rep_votes": 6694,
+        "total_votes": 21164,
+        "dem_votes": 13699,
+        "rep_votes": 7465,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.40462571499627
+        "margin_pct": -29.455679455679455
       },
       "67": {
-        "total_votes": 18800,
-        "dem_votes": 11352,
+        "total_votes": 18799,
+        "dem_votes": 11351,
         "rep_votes": 7448,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.76595744680851
+        "margin_pct": -20.76174264588542
       },
       "68": {
         "total_votes": 26022,
@@ -775,136 +791,136 @@
         "margin_pct": -43.59072035351034
       },
       "70": {
-        "total_votes": 18317,
-        "dem_votes": 6988,
-        "rep_votes": 11328,
+        "total_votes": 18315,
+        "dem_votes": 6986,
+        "rep_votes": 11329,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.69383632690943
+        "margin_pct": 23.712803712803712
       },
       "71": {
-        "total_votes": 10445,
-        "dem_votes": 3336,
-        "rep_votes": 7109,
+        "total_votes": 28373,
+        "dem_votes": 9169,
+        "rep_votes": 19204,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.12254667304931
+        "margin_pct": 35.36813167447926
       },
       "72": {
-        "total_votes": 9463,
-        "dem_votes": 2055,
-        "rep_votes": 7408,
+        "total_votes": 12401,
+        "dem_votes": 2803,
+        "rep_votes": 9598,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.56768466659622
+        "margin_pct": 54.79396822836868
       },
       "73": {
-        "total_votes": 26421,
-        "dem_votes": 7264,
+        "total_votes": 26419,
+        "dem_votes": 7262,
         "rep_votes": 19157,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.013436281745584
+        "margin_pct": 45.02441424732201
       },
       "74": {
-        "total_votes": 22743,
-        "dem_votes": 16836,
-        "rep_votes": 5907,
+        "total_votes": 22958,
+        "dem_votes": 17009,
+        "rep_votes": 5949,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.05434639229653
+        "margin_pct": -48.174928129628015
       },
       "75": {
-        "total_votes": 17654,
-        "dem_votes": 15442,
-        "rep_votes": 2212,
+        "total_votes": 17637,
+        "dem_votes": 15431,
+        "rep_votes": 2206,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.94052339413165
+        "margin_pct": -74.98440777910076
       },
       "76": {
-        "total_votes": 18211,
-        "dem_votes": 15754,
-        "rep_votes": 2457,
+        "total_votes": 18198,
+        "dem_votes": 15747,
+        "rep_votes": 2451,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.01630882433695
+        "margin_pct": -73.06297395318167
       },
       "77": {
-        "total_votes": 17170,
-        "dem_votes": 15594,
-        "rep_votes": 1576,
+        "total_votes": 17156,
+        "dem_votes": 15584,
+        "rep_votes": 1572,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -81.64239953407105
+        "margin_pct": -81.67404989508043
       },
       "78": {
-        "total_votes": 20280,
-        "dem_votes": 13895,
-        "rep_votes": 6386,
+        "total_votes": 20774,
+        "dem_votes": 14316,
+        "rep_votes": 6458,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.02662721893491
+        "margin_pct": -37.82612881486473
       },
       "79": {
-        "total_votes": 15156,
-        "dem_votes": 13606,
-        "rep_votes": 1549,
+        "total_votes": 15142,
+        "dem_votes": 13597,
+        "rep_votes": 1545,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.55265241488519
+        "margin_pct": -79.59318451987848
       },
       "80": {
-        "total_votes": 19484,
-        "dem_votes": 10127,
-        "rep_votes": 9357,
+        "total_votes": 20358,
+        "dem_votes": 10683,
+        "rep_votes": 9675,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.9519605830424966
+        "margin_pct": -4.951370468611848
       },
       "81": {
-        "total_votes": 25176,
-        "dem_votes": 7156,
-        "rep_votes": 18020,
+        "total_votes": 25808,
+        "dem_votes": 7502,
+        "rep_votes": 18306,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.15220845249444
+        "margin_pct": 41.86298822070676
       },
       "82": {
         "total_votes": 25766,
@@ -918,565 +934,565 @@
         "margin_pct": 34.10696266397578
       },
       "83": {
-        "total_votes": 17173,
-        "dem_votes": 9611,
-        "rep_votes": 7562,
+        "total_votes": 17958,
+        "dem_votes": 10139,
+        "rep_votes": 7819,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.931520409945845
+        "margin_pct": -12.91903329992204
       },
       "84": {
-        "total_votes": 17049,
-        "dem_votes": 14928,
-        "rep_votes": 2121,
+        "total_votes": 17941,
+        "dem_votes": 15748,
+        "rep_votes": 2193,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.1187752947387
+        "margin_pct": -75.55320216264421
       },
       "85": {
-        "total_votes": 19852,
-        "dem_votes": 16716,
-        "rep_votes": 3136,
+        "total_votes": 20877,
+        "dem_votes": 17634,
+        "rep_votes": 3243,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.4062059238364
+        "margin_pct": -68.93231786176175
       },
       "86": {
-        "total_votes": 20878,
-        "dem_votes": 16845,
-        "rep_votes": 4033,
+        "total_votes": 21940,
+        "dem_votes": 17770,
+        "rep_votes": 4170,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.36603122904493
+        "margin_pct": -61.987237921604375
       },
       "87": {
-        "total_votes": 22989,
-        "dem_votes": 17674,
-        "rep_votes": 5315,
+        "total_votes": 24140,
+        "dem_votes": 18644,
+        "rep_votes": 5496,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.760494149375795
+        "margin_pct": -54.46561723280862
       },
       "88": {
-        "total_votes": 21789,
-        "dem_votes": 17568,
-        "rep_votes": 4220,
+        "total_votes": 22793,
+        "dem_votes": 18448,
+        "rep_votes": 4345,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.26026894304466
+        "margin_pct": -61.87425964111789
       },
       "89": {
-        "total_votes": 25092,
-        "dem_votes": 22453,
-        "rep_votes": 2639,
+        "total_votes": 26414,
+        "dem_votes": 23686,
+        "rep_votes": 2728,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.96540730113185
+        "margin_pct": -79.34428712046642
       },
       "90": {
-        "total_votes": 28798,
-        "dem_votes": 25262,
-        "rep_votes": 3536,
+        "total_votes": 30300,
+        "dem_votes": 26644,
+        "rep_votes": 3656,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.44273907910272
+        "margin_pct": -75.86798679867987
       },
       "91": {
-        "total_votes": 25380,
-        "dem_votes": 19659,
-        "rep_votes": 5720,
+        "total_votes": 26151,
+        "dem_votes": 20410,
+        "rep_votes": 5741,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.92119779353823
+        "margin_pct": -56.093457229169054
       },
       "92": {
-        "total_votes": 21916,
-        "dem_votes": 16348,
-        "rep_votes": 5568,
+        "total_votes": 21929,
+        "dem_votes": 16359,
+        "rep_votes": 5570,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -49.18780799415951
+        "margin_pct": -49.19968990834055
       },
       "93": {
-        "total_votes": 21800,
-        "dem_votes": 15956,
-        "rep_votes": 5845,
+        "total_votes": 22156,
+        "dem_votes": 16298,
+        "rep_votes": 5858,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.38073394495413
+        "margin_pct": -47.12041884816754
       },
       "94": {
-        "total_votes": 25482,
-        "dem_votes": 18841,
-        "rep_votes": 6641,
+        "total_votes": 26104,
+        "dem_votes": 19438,
+        "rep_votes": 6666,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.876932736833844
+        "margin_pct": -48.92736745326387
       },
       "95": {
-        "total_votes": 21653,
-        "dem_votes": 17308,
-        "rep_votes": 4344,
+        "total_votes": 22012,
+        "dem_votes": 17652,
+        "rep_votes": 4360,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.87161132406595
+        "margin_pct": -60.38524441213884
       },
       "96": {
-        "total_votes": 13577,
-        "dem_votes": 8630,
-        "rep_votes": 4946,
+        "total_votes": 13594,
+        "dem_votes": 8642,
+        "rep_votes": 4952,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.134123885983648
+        "margin_pct": -27.14432838016772
       },
       "97": {
-        "total_votes": 18480,
-        "dem_votes": 10994,
-        "rep_votes": 7487,
+        "total_votes": 18504,
+        "dem_votes": 11008,
+        "rep_votes": 7496,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.977272727272727
+        "margin_pct": -18.979680069174233
       },
       "98": {
-        "total_votes": 8987,
-        "dem_votes": 6880,
-        "rep_votes": 2107,
+        "total_votes": 8999,
+        "dem_votes": 6889,
+        "rep_votes": 2110,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.110047846889955
+        "margin_pct": -53.1059006556284
       },
       "99": {
-        "total_votes": 21119,
-        "dem_votes": 9448,
-        "rep_votes": 11671,
+        "total_votes": 21146,
+        "dem_votes": 9460,
+        "rep_votes": 11686,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.526066575121929
+        "margin_pct": 10.526813581764873
       },
       "100": {
-        "total_votes": 19989,
-        "dem_votes": 6309,
-        "rep_votes": 13680,
+        "total_votes": 20581,
+        "dem_votes": 6389,
+        "rep_votes": 14192,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.87528140477262
+        "margin_pct": 37.91360963995918
       },
       "101": {
-        "total_votes": 23005,
-        "dem_votes": 15163,
-        "rep_votes": 7842,
+        "total_votes": 24103,
+        "dem_votes": 15994,
+        "rep_votes": 8109,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.823516626820258
+        "margin_pct": -32.71377007011576
       },
       "102": {
-        "total_votes": 17650,
-        "dem_votes": 11204,
-        "rep_votes": 6446,
+        "total_votes": 17673,
+        "dem_votes": 11219,
+        "rep_votes": 6454,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.957507082152976
+        "margin_pct": -26.962032478922648
       },
       "103": {
-        "total_votes": 21089,
-        "dem_votes": 7948,
-        "rep_votes": 13141,
+        "total_votes": 21738,
+        "dem_votes": 8044,
+        "rep_votes": 13694,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.624211674332592
+        "margin_pct": 25.991351550280616
       },
       "104": {
-        "total_votes": 13159,
-        "dem_votes": 4282,
-        "rep_votes": 8877,
+        "total_votes": 20813,
+        "dem_votes": 6138,
+        "rep_votes": 14675,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.91906679838894
+        "margin_pct": 41.017633210012974
       },
       "105": {
-        "total_votes": 22188,
-        "dem_votes": 9771,
-        "rep_votes": 12417,
+        "total_votes": 22217,
+        "dem_votes": 9784,
+        "rep_votes": 12433,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 11.925365062195782
+        "margin_pct": 11.923301975964351
       },
       "106": {
-        "total_votes": 19568,
-        "dem_votes": 11489,
-        "rep_votes": 8079,
+        "total_votes": 19593,
+        "dem_votes": 11503,
+        "rep_votes": 8090,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.42641046606705
+        "margin_pct": -17.41948655131935
       },
       "107": {
-        "total_votes": 17887,
-        "dem_votes": 10096,
-        "rep_votes": 7791,
+        "total_votes": 17910,
+        "dem_votes": 10109,
+        "rep_votes": 7801,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.886453849164198
+        "margin_pct": -12.886655499720826
       },
       "108": {
-        "total_votes": 24002,
-        "dem_votes": 10993,
-        "rep_votes": 13010,
+        "total_votes": 24033,
+        "dem_votes": 11007,
+        "rep_votes": 13026,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.403466377801848
+        "margin_pct": 8.400948695543628
       },
       "109": {
-        "total_votes": 11861,
-        "dem_votes": 9561,
-        "rep_votes": 2300,
+        "total_votes": 11876,
+        "dem_votes": 9573,
+        "rep_votes": 2303,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.217435292133885
+        "margin_pct": -61.21589760862243
       },
       "110": {
-        "total_votes": 22061,
-        "dem_votes": 12291,
-        "rep_votes": 9770,
+        "total_votes": 22089,
+        "dem_votes": 12306,
+        "rep_votes": 9783,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.427405829291509
+        "margin_pct": -11.421974738557653
       },
       "111": {
-        "total_votes": 24090,
-        "dem_votes": 7705,
-        "rep_votes": 16385,
+        "total_votes": 24102,
+        "dem_votes": 7711,
+        "rep_votes": 16391,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.03154836031548
+        "margin_pct": 36.01360882914281
       },
       "112": {
-        "total_votes": 22965,
-        "dem_votes": 6508,
-        "rep_votes": 16457,
+        "total_votes": 22969,
+        "dem_votes": 6511,
+        "rep_votes": 16458,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.322447202264314
+        "margin_pct": 43.30619530671775
       },
       "113": {
-        "total_votes": 19741,
-        "dem_votes": 14013,
-        "rep_votes": 5728,
+        "total_votes": 19731,
+        "dem_votes": 14004,
+        "rep_votes": 5727,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.96849197102477
+        "margin_pct": -41.94921696822259
       },
       "114": {
-        "total_votes": 26349,
-        "dem_votes": 7489,
-        "rep_votes": 18860,
+        "total_votes": 26344,
+        "dem_votes": 7486,
+        "rep_votes": 18858,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.155337963490076
+        "margin_pct": 43.16732462799879
       },
       "115": {
-        "total_votes": 28037,
-        "dem_votes": 22758,
-        "rep_votes": 5280,
+        "total_votes": 29329,
+        "dem_votes": 23956,
+        "rep_votes": 5373,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.339051967043545
+        "margin_pct": -63.36049643697365
       },
       "116": {
-        "total_votes": 26201,
-        "dem_votes": 21014,
-        "rep_votes": 5187,
+        "total_votes": 27374,
+        "dem_votes": 22099,
+        "rep_votes": 5275,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.40609137055838
+        "margin_pct": -61.45977935267042
       },
       "117": {
-        "total_votes": 20416,
-        "dem_votes": 13811,
-        "rep_votes": 6605,
+        "total_votes": 21188,
+        "dem_votes": 14479,
+        "rep_votes": 6709,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.29584639498432
+        "margin_pct": -36.67170096280914
       },
       "118": {
-        "total_votes": 14258,
-        "dem_votes": 5282,
-        "rep_votes": 8976,
+        "total_votes": 23014,
+        "dem_votes": 7633,
+        "rep_votes": 15381,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.90826202833497
+        "margin_pct": 33.66646389154428
       },
       "119": {
-        "total_votes": 869,
-        "dem_votes": 131,
-        "rep_votes": 738,
+        "total_votes": 17920,
+        "dem_votes": 4264,
+        "rep_votes": 13656,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.85040276179517
+        "margin_pct": 52.41071428571429
       },
       "120": {
-        "total_votes": 16848,
-        "dem_votes": 6372,
-        "rep_votes": 10476,
+        "total_votes": 24714,
+        "dem_votes": 10720,
+        "rep_votes": 13994,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.358974358974358
+        "margin_pct": 13.24755199482075
       },
       "121": {
-        "total_votes": 24385,
-        "dem_votes": 9701,
-        "rep_votes": 14684,
+        "total_votes": 31206,
+        "dem_votes": 14721,
+        "rep_votes": 16485,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.434693459093705
+        "margin_pct": 5.652759084791386
       },
       "122": {
-        "total_votes": 6034,
-        "dem_votes": 4188,
-        "rep_votes": 1846,
+        "total_votes": 10952,
+        "dem_votes": 8005,
+        "rep_votes": 2947,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.813390785548556
+        "margin_pct": -46.183345507669834
       },
       "123": {
-        "total_votes": 21796,
-        "dem_votes": 6625,
-        "rep_votes": 15171,
+        "total_votes": 23597,
+        "dem_votes": 7306,
+        "rep_votes": 16291,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.209029179666
+        "margin_pct": 38.07687417892105
       },
       "124": {
-        "total_votes": 22762,
-        "dem_votes": 7664,
-        "rep_votes": 15098,
+        "total_votes": 24213,
+        "dem_votes": 8779,
+        "rep_votes": 15434,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.65969598453563
+        "margin_pct": 27.48523520422913
       },
       "125": {
-        "total_votes": 19514,
-        "dem_votes": 6112,
-        "rep_votes": 13402,
+        "total_votes": 21413,
+        "dem_votes": 6825,
+        "rep_votes": 14588,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.35779440401763
+        "margin_pct": 36.253677672441974
       },
       "126": {
-        "total_votes": 19661,
-        "dem_votes": 11556,
-        "rep_votes": 8105,
+        "total_votes": 20203,
+        "dem_votes": 11867,
+        "rep_votes": 8336,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.55251513147856
+        "margin_pct": -17.47760233628669
       },
       "127": {
-        "total_votes": 24676,
-        "dem_votes": 7924,
-        "rep_votes": 16752,
+        "total_votes": 26331,
+        "dem_votes": 8473,
+        "rep_votes": 17858,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.775652455827526
+        "margin_pct": 35.64239869355513
       },
       "128": {
-        "total_votes": 23890,
-        "dem_votes": 11515,
-        "rep_votes": 12375,
+        "total_votes": 24241,
+        "dem_votes": 11679,
+        "rep_votes": 12562,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 3.599832565927166
+        "margin_pct": 3.6425890021038736
       },
       "129": {
-        "total_votes": 21302,
-        "dem_votes": 14746,
+        "total_votes": 21307,
+        "dem_votes": 14750,
         "rep_votes": 6557,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.44239977466904
+        "margin_pct": -38.45215187497067
       },
       "130": {
-        "total_votes": 19561,
-        "dem_votes": 13184,
-        "rep_votes": 6377,
+        "total_votes": 19566,
+        "dem_votes": 13188,
+        "rep_votes": 6378,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -34.79883441541843
+        "margin_pct": -34.80527445568844
       },
       "131": {
-        "total_votes": 20953,
-        "dem_votes": 6328,
-        "rep_votes": 14625,
+        "total_votes": 23182,
+        "dem_votes": 7095,
+        "rep_votes": 16087,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.598148236529376
+        "margin_pct": 38.78871538262445
       },
       "132": {
-        "total_votes": 16559,
-        "dem_votes": 10957,
-        "rep_votes": 5601,
+        "total_votes": 16562,
+        "dem_votes": 10960,
+        "rep_votes": 5602,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.34494836644725
+        "margin_pct": -32.351165318198284
       },
       "133": {
-        "total_votes": 20692,
-        "dem_votes": 6277,
-        "rep_votes": 14415,
+        "total_votes": 21625,
+        "dem_votes": 6868,
+        "rep_votes": 14757,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.329209356272955
+        "margin_pct": 36.48092485549133
       },
       "134": {
         "total_votes": 22969,
@@ -1501,114 +1517,114 @@
         "margin_pct": 52.914305793473005
       },
       "136": {
-        "total_votes": 22055,
-        "dem_votes": 7487,
-        "rep_votes": 14568,
+        "total_votes": 23340,
+        "dem_votes": 7849,
+        "rep_votes": 15491,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.106098390387665
+        "margin_pct": 32.74207369323051
       },
       "137": {
-        "total_votes": 19753,
-        "dem_votes": 11792,
-        "rep_votes": 7961,
+        "total_votes": 20534,
+        "dem_votes": 12106,
+        "rep_votes": 8428,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -19.394522351035288
+        "margin_pct": -17.91175611181455
       },
       "138": {
-        "total_votes": 24996,
-        "dem_votes": 6370,
-        "rep_votes": 18626,
+        "total_votes": 25426,
+        "dem_votes": 6413,
+        "rep_votes": 19013,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.03184509521523
+        "margin_pct": 49.5555730354755
       },
       "139": {
-        "total_votes": 17859,
-        "dem_votes": 5878,
-        "rep_votes": 11981,
+        "total_votes": 18662,
+        "dem_votes": 6004,
+        "rep_votes": 12658,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.173245982417825
+        "margin_pct": 35.655342407030325
       },
       "140": {
-        "total_votes": 12924,
-        "dem_votes": 9839,
-        "rep_votes": 3085,
+        "total_votes": 13491,
+        "dem_votes": 10126,
+        "rep_votes": 3365,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.25936242649335
+        "margin_pct": -50.114891409087534
       },
       "141": {
-        "total_votes": 17726,
-        "dem_votes": 12520,
-        "rep_votes": 5206,
+        "total_votes": 18563,
+        "dem_votes": 12885,
+        "rep_votes": 5678,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.2614238971003
+        "margin_pct": -38.82454344664117
       },
       "142": {
-        "total_votes": 21825,
-        "dem_votes": 12217,
-        "rep_votes": 9608,
+        "total_votes": 21748,
+        "dem_votes": 12205,
+        "rep_votes": 9543,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.95418098510882
+        "margin_pct": -12.240205995953652
       },
       "143": {
-        "total_votes": 19045,
-        "dem_votes": 12264,
-        "rep_votes": 6781,
+        "total_votes": 19012,
+        "dem_votes": 12257,
+        "rep_votes": 6755,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.78970858493043
+        "margin_pct": -28.939617083946985
       },
       "144": {
-        "total_votes": 25790,
-        "dem_votes": 7228,
+        "total_votes": 25791,
+        "dem_votes": 7229,
         "rep_votes": 18562,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.94726638231873
+        "margin_pct": 43.94168508394401
       },
       "145": {
-        "total_votes": 22142,
-        "dem_votes": 10932,
-        "rep_votes": 11210,
+        "total_votes": 22185,
+        "dem_votes": 10946,
+        "rep_votes": 11239,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.2555324722247312
+        "margin_pct": 1.3207121929231462
       },
       "146": {
         "total_votes": 21875,
@@ -1644,81 +1660,81 @@
         "margin_pct": 41.164775080772095
       },
       "149": {
-        "total_votes": 19331,
-        "dem_votes": 11429,
-        "rep_votes": 7902,
+        "total_votes": 20983,
+        "dem_votes": 12345,
+        "rep_votes": 8638,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.2453054679013
+        "margin_pct": -17.666682552542532
       },
       "150": {
-        "total_votes": 16543,
-        "dem_votes": 9353,
-        "rep_votes": 7190,
+        "total_votes": 19762,
+        "dem_votes": 10501,
+        "rep_votes": 9261,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.07501662334522
+        "margin_pct": -6.2746685558141895
       },
       "151": {
-        "total_votes": 19840,
-        "dem_votes": 9382,
-        "rep_votes": 10457,
+        "total_votes": 21951,
+        "dem_votes": 10209,
+        "rep_votes": 11742,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 5.418346774193548
+        "margin_pct": 6.9837365040317065
       },
       "152": {
-        "total_votes": 20151,
-        "dem_votes": 5152,
-        "rep_votes": 14999,
+        "total_votes": 22137,
+        "dem_votes": 5772,
+        "rep_votes": 16365,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.8660612376557
+        "margin_pct": 47.85201246781406
       },
       "153": {
-        "total_votes": 17205,
-        "dem_votes": 11847,
-        "rep_votes": 5358,
+        "total_votes": 20456,
+        "dem_votes": 13560,
+        "rep_votes": 6896,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.71578029642546
+        "margin_pct": -32.57723895189675
       },
       "154": {
-        "total_votes": 22000,
-        "dem_votes": 11291,
-        "rep_votes": 10709,
+        "total_votes": 22778,
+        "dem_votes": 11877,
+        "rep_votes": 10901,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -2.6454545454545455
+        "margin_pct": -4.284836245500044
       },
       "155": {
-        "total_votes": 19275,
-        "dem_votes": 6180,
-        "rep_votes": 13095,
+        "total_votes": 21808,
+        "dem_votes": 6992,
+        "rep_votes": 14816,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.87548638132296
+        "margin_pct": 35.87674247982392
       },
       "156": {
         "total_votes": 18008,
@@ -1754,114 +1770,114 @@
         "margin_pct": 34.23639048734532
       },
       "159": {
-        "total_votes": 23923,
-        "dem_votes": 6334,
-        "rep_votes": 17589,
+        "total_votes": 24071,
+        "dem_votes": 6438,
+        "rep_votes": 17633,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.0467750700163
+        "margin_pct": 46.508246437622034
       },
       "160": {
-        "total_votes": 15950,
-        "dem_votes": 4600,
-        "rep_votes": 11350,
+        "total_votes": 16331,
+        "dem_votes": 4727,
+        "rep_votes": 11604,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.31974921630094
+        "margin_pct": 42.11009736084747
       },
       "161": {
-        "total_votes": 13317,
-        "dem_votes": 5199,
-        "rep_votes": 8117,
+        "total_votes": 16912,
+        "dem_votes": 7484,
+        "rep_votes": 9428,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.91184200645791
+        "margin_pct": 11.494796594134343
       },
       "162": {
-        "total_votes": 10209,
-        "dem_votes": 7197,
-        "rep_votes": 3011,
+        "total_votes": 18345,
+        "dem_votes": 12505,
+        "rep_votes": 5840,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.00303653638946
+        "margin_pct": -36.33142545652767
       },
       "163": {
-        "total_votes": 14318,
-        "dem_votes": 10296,
-        "rep_votes": 4023,
+        "total_votes": 25690,
+        "dem_votes": 17889,
+        "rep_votes": 7801,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.81198491409415
+        "margin_pct": -39.26819774231218
       },
       "164": {
-        "total_votes": 7839,
-        "dem_votes": 2436,
-        "rep_votes": 5403,
+        "total_votes": 10728,
+        "dem_votes": 3346,
+        "rep_votes": 7382,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.84921546115576
+        "margin_pct": 37.62117822520507
       },
       "165": {
-        "total_votes": 10998,
-        "dem_votes": 8129,
-        "rep_votes": 2869,
+        "total_votes": 19689,
+        "dem_votes": 14125,
+        "rep_votes": 5564,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -47.82687761411166
+        "margin_pct": -43.48113159632282
       },
       "166": {
-        "total_votes": 17637,
-        "dem_votes": 5048,
-        "rep_votes": 12589,
+        "total_votes": 29661,
+        "dem_votes": 8066,
+        "rep_votes": 21595,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.75670465498668
+        "margin_pct": 45.61208320690469
       },
       "167": {
-        "total_votes": 17250,
-        "dem_votes": 5246,
-        "rep_votes": 12004,
+        "total_votes": 18139,
+        "dem_votes": 5476,
+        "rep_votes": 12663,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.176811594202896
+        "margin_pct": 39.621809361045266
       },
       "168": {
-        "total_votes": 13756,
-        "dem_votes": 8392,
-        "rep_votes": 5364,
+        "total_votes": 14911,
+        "dem_votes": 9302,
+        "rep_votes": 5609,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.012212852573423
+        "margin_pct": -24.766950573402184
       },
       "169": {
         "total_votes": 18620,
@@ -1875,15 +1891,15 @@
         "margin_pct": 51.39634801288937
       },
       "170": {
-        "total_votes": 18311,
-        "dem_votes": 4590,
-        "rep_votes": 13721,
+        "total_votes": 19372,
+        "dem_votes": 4656,
+        "rep_votes": 14716,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.86620064442139
+        "margin_pct": 51.930621515589515
       },
       "171": {
         "total_votes": 19043,
@@ -1897,26 +1913,26 @@
         "margin_pct": 25.79950638029722
       },
       "172": {
-        "total_votes": 16594,
-        "dem_votes": 4180,
-        "rep_votes": 12414,
+        "total_votes": 17028,
+        "dem_votes": 4258,
+        "rep_votes": 12770,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.62034470290466
+        "margin_pct": 49.98825463941743
       },
       "173": {
-        "total_votes": 19570,
-        "dem_votes": 7564,
-        "rep_votes": 12006,
+        "total_votes": 20641,
+        "dem_votes": 7951,
+        "rep_votes": 12690,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.69800715380685
+        "margin_pct": 22.959158955476962
       },
       "174": {
         "total_votes": 19502,
@@ -1963,7 +1979,7 @@
         "margin_pct": -9.089236430542778
       },
       "178": {
-        "total_votes": 20573,
+        "total_votes": 20574,
         "dem_votes": 2985,
         "rep_votes": 17589,
         "other_votes": 0,
@@ -1971,29 +1987,29 @@
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.98624410635298
+        "margin_pct": 70.98279381743949
       },
       "179": {
-        "total_votes": 19091,
-        "dem_votes": 7302,
-        "rep_votes": 11789,
+        "total_votes": 21840,
+        "dem_votes": 8304,
+        "rep_votes": 13536,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.503221413231365
+        "margin_pct": 23.956043956043956
       },
       "180": {
-        "total_votes": 19717,
-        "dem_votes": 6394,
-        "rep_votes": 13323,
+        "total_votes": 20144,
+        "dem_votes": 6516,
+        "rep_votes": 13628,
         "other_votes": 0,
         "dem_candidate": "Otha E. Thornton, Jr..",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.14226302175788
+        "margin_pct": 35.30579825258142
       }
     }
   }

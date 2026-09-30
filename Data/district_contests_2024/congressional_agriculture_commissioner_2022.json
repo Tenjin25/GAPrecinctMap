@@ -4,170 +4,186 @@
     "contest_type": "agriculture_commissioner",
     "year": 2022,
     "district_lines_year": 2024,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:36.016243+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:50.399476+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3546509,
-    "matched_input_votes": 3546509,
+    "total_input_votes": 1480304,
+    "matched_input_votes": 1480304,
     "input_files": [
       "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Agriculture.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 924253,
+        "rep_votes": 126287,
+        "other_votes": 429764
+      },
+      "canonical_target": {
+        "dem_votes": 1751214,
+        "rep_votes": 2068892,
+        "other_votes": 85656
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 162767,
-        "dem_votes": 56845,
-        "rep_votes": 102622,
-        "other_votes": 3301,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 261441,
+        "dem_votes": 100789,
+        "rep_votes": 155151,
+        "other_votes": 5501,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.124251230286234
+        "margin_pct": 20.793219120183903
       },
       "2": {
-        "total_votes": 201502,
-        "dem_votes": 99038,
-        "rep_votes": 99389,
-        "other_votes": 3075,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 246612,
+        "dem_votes": 117820,
+        "rep_votes": 125023,
+        "other_votes": 3769,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.17419181943603537
+        "margin_pct": 2.920782443676707
       },
       "3": {
-        "total_votes": 289425,
-        "dem_votes": 86078,
-        "rep_votes": 197237,
-        "other_votes": 6111,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 294530,
+        "dem_votes": 92806,
+        "rep_votes": 195568,
+        "other_votes": 6156,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.40684115055714
+        "margin_pct": 34.890163990085895
       },
       "4": {
-        "total_votes": 240185,
-        "dem_votes": 179100,
-        "rep_votes": 55635,
-        "other_votes": 5451,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 249864,
+        "dem_votes": 183528,
+        "rep_votes": 60222,
+        "other_votes": 6114,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.40412598621895
+        "margin_pct": -49.34924598981846
       },
       "5": {
-        "total_votes": 264278,
-        "dem_votes": 217581,
-        "rep_votes": 40181,
-        "other_votes": 6516,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 305854,
+        "dem_votes": 222925,
+        "rep_votes": 74959,
+        "other_votes": 7970,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -67.1262836861184
+        "margin_pct": -48.37798426700321
       },
       "6": {
-        "total_votes": 278446,
-        "dem_votes": 195094,
-        "rep_votes": 77177,
-        "other_votes": 6174,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 338619,
+        "dem_votes": 207731,
+        "rep_votes": 123134,
+        "other_votes": 7754,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.34824705687997
+        "margin_pct": -24.982945434249114
       },
       "7": {
-        "total_votes": 293568,
-        "dem_votes": 95606,
-        "rep_votes": 190421,
-        "other_votes": 7541,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 271118,
+        "dem_votes": 102582,
+        "rep_votes": 162277,
+        "other_votes": 6259,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.297457488554606
+        "margin_pct": 22.018088064975398
       },
       "8": {
-        "total_votes": 236569,
-        "dem_votes": 70271,
-        "rep_votes": 162560,
-        "other_votes": 3738,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 256147,
+        "dem_votes": 82488,
+        "rep_votes": 169600,
+        "other_votes": 4059,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.011451204511154
+        "margin_pct": 34.00859662615608
       },
       "9": {
-        "total_votes": 274292,
-        "dem_votes": 75471,
-        "rep_votes": 192540,
-        "other_votes": 6281,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 272032,
+        "dem_votes": 78101,
+        "rep_votes": 187835,
+        "other_votes": 6096,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.68042815685474
+        "margin_pct": 40.338636630984595
       },
       "10": {
-        "total_votes": 278655,
-        "dem_votes": 98799,
-        "rep_votes": 173939,
-        "other_votes": 5918,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 289083,
+        "dem_votes": 104011,
+        "rep_votes": 178905,
+        "other_votes": 6167,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.965243760205272
+        "margin_pct": 25.907438348156063
       },
       "11": {
-        "total_votes": 308605,
-        "dem_votes": 100230,
-        "rep_votes": 199341,
-        "other_votes": 9034,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 302391,
+        "dem_votes": 95258,
+        "rep_votes": 198420,
+        "other_votes": 8713,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.11581147421461
+        "margin_pct": 34.11543332969566
       },
       "12": {
-        "total_votes": 240754,
-        "dem_votes": 94577,
-        "rep_votes": 141827,
-        "other_votes": 4350,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 265722,
+        "dem_votes": 103860,
+        "rep_votes": 157016,
+        "other_votes": 4846,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.625842145924885
+        "margin_pct": 20.00436546465855
       },
       "13": {
-        "total_votes": 257532,
-        "dem_votes": 175674,
-        "rep_votes": 76333,
-        "other_votes": 5524,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 290937,
+        "dem_votes": 182465,
+        "rep_votes": 102181,
+        "other_votes": 6291,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.57423543481975
+        "margin_pct": -27.594977606835847
       },
       "14": {
-        "total_votes": 219931,
-        "dem_votes": 55659,
-        "rep_votes": 159265,
-        "other_votes": 5007,
-        "dem_candidate": "Nakita Hemingway",
+        "total_votes": 261412,
+        "dem_votes": 76850,
+        "rep_votes": 178601,
+        "other_votes": 5961,
+        "dem_candidate": "",
         "rep_candidate": "Tyler Harper",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.10841127444517
+        "margin_pct": 38.923614830229674
       }
     }
   }

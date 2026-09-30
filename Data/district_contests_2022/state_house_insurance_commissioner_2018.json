@@ -4,38 +4,54 @@
     "contest_type": "insurance_commissioner",
     "year": 2018,
     "district_lines_year": 2022,
-    "source": "derived_vtd20",
-    "generated_at_utc": "2026-07-20T21:09:20.622596+00:00",
+    "source": "derived_vtd20_county_reconciled",
+    "generated_at_utc": "2026-09-30T07:19:43.988878+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3644031,
-    "matched_input_votes": 3644031,
+    "total_input_votes": 3652715,
+    "matched_input_votes": 3652715,
     "input_files": [
       "Data/derived_vtd20/2018/contests/vtd20/Commissioner_Of_Insurance.json"
-    ]
+    ],
+    "county_reconciliation": {
+      "method": "county_constrained_party_scaling",
+      "canonical_counties": 159,
+      "reconciled_counties": 159,
+      "unresolved_county_fips": [],
+      "mapped_before": {
+        "dem_votes": 1725303,
+        "rep_votes": 1830981,
+        "other_votes": 96431
+      },
+      "canonical_target": {
+        "dem_votes": 1814499,
+        "rep_votes": 1944963,
+        "other_votes": 102163
+      }
+    }
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 17503,
-        "dem_votes": 3417,
-        "rep_votes": 13534,
-        "other_votes": 552,
+        "total_votes": 21532,
+        "dem_votes": 4005,
+        "rep_votes": 16878,
+        "other_votes": 649,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.80151973947323
+        "margin_pct": 59.78543563068921
       },
       "2": {
-        "total_votes": 15864,
-        "dem_votes": 2773,
-        "rep_votes": 12708,
-        "other_votes": 383,
+        "total_votes": 17076,
+        "dem_votes": 2896,
+        "rep_votes": 13774,
+        "other_votes": 406,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.626071608673726
+        "margin_pct": 63.70344342937456
       },
       "3": {
         "total_votes": 20152,
@@ -49,7 +65,7 @@
         "margin_pct": 57.79078999603017
       },
       "4": {
-        "total_votes": 12094,
+        "total_votes": 12095,
         "dem_votes": 4145,
         "rep_votes": 7593,
         "other_votes": 357,
@@ -57,29 +73,29 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.510004961137753
+        "margin_pct": 28.50764778834229
       },
       "5": {
-        "total_votes": 18017,
-        "dem_votes": 3048,
-        "rep_votes": 14533,
-        "other_votes": 436,
+        "total_votes": 17995,
+        "dem_votes": 3044,
+        "rep_votes": 14516,
+        "other_votes": 435,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.74535161236609
+        "margin_pct": 63.751041956098916
       },
       "6": {
-        "total_votes": 17385,
-        "dem_votes": 2578,
-        "rep_votes": 14419,
+        "total_votes": 17383,
+        "dem_votes": 2577,
+        "rep_votes": 14418,
         "other_votes": 388,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.11044003451251
+        "margin_pct": 68.11827647701779
       },
       "7": {
         "total_votes": 24957,
@@ -93,59 +109,59 @@
         "margin_pct": 65.37244059782826
       },
       "8": {
-        "total_votes": 26768,
+        "total_votes": 26770,
         "dem_votes": 4392,
-        "rep_votes": 21852,
+        "rep_votes": 21854,
         "other_votes": 524,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.22713687985654
+        "margin_pct": 65.22973477773627
       },
       "9": {
-        "total_votes": 22303,
+        "total_votes": 22301,
         "dem_votes": 3239,
-        "rep_votes": 18369,
+        "rep_votes": 18367,
         "other_votes": 695,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.83840738914047
+        "margin_pct": 67.83552307071432
       },
       "10": {
-        "total_votes": 20644,
-        "dem_votes": 3320,
-        "rep_votes": 16824,
+        "total_votes": 20652,
+        "dem_votes": 3322,
+        "rep_votes": 16830,
         "other_votes": 500,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.41367951947296
+        "margin_pct": 65.40770869649428
       },
       "11": {
-        "total_votes": 23849,
+        "total_votes": 23850,
         "dem_votes": 3534,
-        "rep_votes": 19581,
+        "rep_votes": 19582,
         "other_votes": 734,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 67.28584007715209
+        "margin_pct": 67.28721174004193
       },
       "12": {
-        "total_votes": 17201,
-        "dem_votes": 3472,
-        "rep_votes": 13323,
-        "other_votes": 406,
+        "total_votes": 17408,
+        "dem_votes": 3529,
+        "rep_votes": 13468,
+        "other_votes": 411,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.269926167083305
+        "margin_pct": 57.09443933823529
       },
       "13": {
         "total_votes": 17750,
@@ -159,117 +175,117 @@
         "margin_pct": 32.32112676056338
       },
       "14": {
-        "total_votes": 21966,
-        "dem_votes": 3760,
-        "rep_votes": 17575,
+        "total_votes": 21985,
+        "dem_votes": 3763,
+        "rep_votes": 17591,
         "other_votes": 631,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.8926522807976
+        "margin_pct": 62.89743006595406
       },
       "15": {
-        "total_votes": 18751,
-        "dem_votes": 4920,
-        "rep_votes": 13236,
-        "other_votes": 595,
+        "total_votes": 18769,
+        "dem_votes": 4924,
+        "rep_votes": 13249,
+        "other_votes": 596,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.349634686150075
+        "margin_pct": 44.35505354574031
       },
       "16": {
-        "total_votes": 19409,
-        "dem_votes": 3987,
-        "rep_votes": 14980,
-        "other_votes": 442,
+        "total_votes": 20025,
+        "dem_votes": 4156,
+        "rep_votes": 15406,
+        "other_votes": 463,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.63867278066876
+        "margin_pct": 56.17977528089888
       },
       "17": {
-        "total_votes": 13572,
-        "dem_votes": 3866,
-        "rep_votes": 9293,
-        "other_votes": 413,
+        "total_votes": 14832,
+        "dem_votes": 4315,
+        "rep_votes": 10058,
+        "other_votes": 459,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.9867374005305
+        "margin_pct": 38.72033441208199
       },
       "18": {
-        "total_votes": 17610,
-        "dem_votes": 2451,
-        "rep_votes": 14727,
-        "other_votes": 432,
+        "total_votes": 23086,
+        "dem_votes": 3318,
+        "rep_votes": 19204,
+        "other_votes": 564,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.71039182282794
+        "margin_pct": 68.8122671749112
       },
       "19": {
-        "total_votes": 21891,
-        "dem_votes": 7472,
-        "rep_votes": 13803,
-        "other_votes": 616,
+        "total_votes": 23962,
+        "dem_votes": 8339,
+        "rep_votes": 14939,
+        "other_votes": 684,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.920560961125574
+        "margin_pct": 27.543610716968537
       },
       "20": {
-        "total_votes": 24904,
-        "dem_votes": 6764,
-        "rep_votes": 17240,
-        "other_votes": 900,
+        "total_votes": 24916,
+        "dem_votes": 6769,
+        "rep_votes": 17246,
+        "other_votes": 901,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.06553164150337
+        "margin_pct": 42.049285599614706
       },
       "21": {
-        "total_votes": 25440,
-        "dem_votes": 5557,
-        "rep_votes": 18913,
-        "other_votes": 970,
+        "total_votes": 25452,
+        "dem_votes": 5561,
+        "rep_votes": 18920,
+        "other_votes": 971,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.5
+        "margin_pct": 52.487034417727486
       },
       "22": {
-        "total_votes": 24504,
-        "dem_votes": 9561,
-        "rep_votes": 13879,
+        "total_votes": 24512,
+        "dem_votes": 9564,
+        "rep_votes": 13883,
         "other_votes": 1065,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.621612797910547
+        "margin_pct": 17.619941253263708
       },
       "23": {
-        "total_votes": 20560,
-        "dem_votes": 4240,
-        "rep_votes": 15621,
-        "other_votes": 699,
+        "total_votes": 20570,
+        "dem_votes": 4243,
+        "rep_votes": 15627,
+        "other_votes": 700,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.35505836575876
+        "margin_pct": 55.34273213417599
       },
       "24": {
-        "total_votes": 22297,
+        "total_votes": 22298,
         "dem_votes": 6781,
         "rep_votes": 14756,
         "other_votes": 761,
@@ -277,10 +293,10 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.76714356191416
+        "margin_pct": 35.76553951026998
       },
       "25": {
-        "total_votes": 22696,
+        "total_votes": 22695,
         "dem_votes": 8067,
         "rep_votes": 13919,
         "other_votes": 709,
@@ -288,7 +304,7 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.784279168135356
+        "margin_pct": 25.785415289711388
       },
       "26": {
         "total_votes": 22418,
@@ -302,139 +318,139 @@
         "margin_pct": 48.519047194218935
       },
       "27": {
-        "total_votes": 16105,
-        "dem_votes": 2278,
-        "rep_votes": 13388,
-        "other_votes": 439,
+        "total_votes": 19082,
+        "dem_votes": 2536,
+        "rep_votes": 16032,
+        "other_votes": 514,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.98478733312636
+        "margin_pct": 70.72633895818048
       },
       "28": {
-        "total_votes": 19208,
-        "dem_votes": 3763,
-        "rep_votes": 14805,
-        "other_votes": 640,
+        "total_votes": 19689,
+        "dem_votes": 3845,
+        "rep_votes": 15192,
+        "other_votes": 652,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.486463973344435
+        "margin_pct": 57.63116460968053
       },
       "29": {
-        "total_votes": 11935,
-        "dem_votes": 4875,
-        "rep_votes": 6665,
-        "other_votes": 395,
+        "total_votes": 13987,
+        "dem_votes": 5470,
+        "rep_votes": 8051,
+        "other_votes": 466,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.997905320485966
+        "margin_pct": 18.452849074140275
       },
       "30": {
-        "total_votes": 20792,
-        "dem_votes": 5098,
-        "rep_votes": 15080,
-        "other_votes": 614,
+        "total_votes": 24073,
+        "dem_votes": 5600,
+        "rep_votes": 17767,
+        "other_votes": 706,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.008849557522126
+        "margin_pct": 50.542101109126406
       },
       "31": {
-        "total_votes": 19334,
-        "dem_votes": 3870,
-        "rep_votes": 14926,
-        "other_votes": 538,
+        "total_votes": 19699,
+        "dem_votes": 4002,
+        "rep_votes": 15150,
+        "other_votes": 547,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.1842350263784
+        "margin_pct": 56.59170516269862
       },
       "32": {
-        "total_votes": 12049,
-        "dem_votes": 1552,
-        "rep_votes": 10232,
-        "other_votes": 265,
+        "total_votes": 20919,
+        "dem_votes": 3165,
+        "rep_votes": 17281,
+        "other_votes": 473,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 72.03917337538385
+        "margin_pct": 67.47932501553612
       },
       "33": {
-        "total_votes": 20031,
-        "dem_votes": 3632,
-        "rep_votes": 16013,
-        "other_votes": 386,
+        "total_votes": 21373,
+        "dem_votes": 3733,
+        "rep_votes": 17231,
+        "other_votes": 409,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 61.809195746592785
+        "margin_pct": 63.15444719973799
       },
       "34": {
-        "total_votes": 26025,
+        "total_votes": 26028,
         "dem_votes": 8911,
-        "rep_votes": 16172,
+        "rep_votes": 16174,
         "other_votes": 943,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.900096061479346
+        "margin_pct": 27.904564315352697
       },
       "35": {
-        "total_votes": 21010,
+        "total_votes": 21012,
         "dem_votes": 10553,
-        "rep_votes": 9667,
+        "rep_votes": 9669,
         "other_votes": 790,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.21703950499762
+        "margin_pct": -4.207119741100324
       },
       "36": {
-        "total_votes": 28522,
-        "dem_votes": 9574,
-        "rep_votes": 18077,
+        "total_votes": 28526,
+        "dem_votes": 9575,
+        "rep_votes": 18080,
         "other_votes": 871,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.812074889558936
+        "margin_pct": 29.8149057000631
       },
       "37": {
-        "total_votes": 20990,
-        "dem_votes": 11227,
-        "rep_votes": 9018,
+        "total_votes": 20992,
+        "dem_votes": 11228,
+        "rep_votes": 9019,
         "other_votes": 745,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.524059075750356
+        "margin_pct": -10.523056402439025
       },
       "38": {
-        "total_votes": 23038,
-        "dem_votes": 16053,
-        "rep_votes": 6404,
+        "total_votes": 23041,
+        "dem_votes": 16054,
+        "rep_votes": 6405,
         "other_votes": 582,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.88297595277368
+        "margin_pct": -41.877522676967146
       },
       "39": {
-        "total_votes": 18932,
+        "total_votes": 18933,
         "dem_votes": 14576,
         "rep_votes": 3836,
         "other_votes": 521,
@@ -442,109 +458,109 @@
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.72934713712233
+        "margin_pct": -56.7263508160355
       },
       "40": {
-        "total_votes": 25789,
-        "dem_votes": 15561,
-        "rep_votes": 9361,
+        "total_votes": 25791,
+        "dem_votes": 15562,
+        "rep_votes": 9362,
         "other_votes": 867,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.041257900655317
+        "margin_pct": -24.039393586910162
       },
       "41": {
-        "total_votes": 17772,
-        "dem_votes": 12144,
-        "rep_votes": 5047,
+        "total_votes": 17773,
+        "dem_votes": 12145,
+        "rep_votes": 5048,
         "other_votes": 580,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.93360342111186
+        "margin_pct": -39.931356552073375
       },
       "42": {
-        "total_votes": 21786,
-        "dem_votes": 14582,
-        "rep_votes": 6360,
+        "total_votes": 21788,
+        "dem_votes": 14583,
+        "rep_votes": 6361,
         "other_votes": 844,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.739832920223996
+        "margin_pct": -37.736368643289886
       },
       "43": {
-        "total_votes": 17436,
-        "dem_votes": 9824,
-        "rep_votes": 6900,
+        "total_votes": 17439,
+        "dem_votes": 9825,
+        "rep_votes": 6901,
         "other_votes": 713,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.769901353521448
+        "margin_pct": -16.767016457365674
       },
       "44": {
-        "total_votes": 25190,
-        "dem_votes": 9877,
-        "rep_votes": 14255,
+        "total_votes": 25196,
+        "dem_votes": 9880,
+        "rep_votes": 14258,
         "other_votes": 1058,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.37991266375546
+        "margin_pct": 17.375773932370215
       },
       "45": {
-        "total_votes": 33157,
-        "dem_votes": 12625,
-        "rep_votes": 19397,
+        "total_votes": 33161,
+        "dem_votes": 12626,
+        "rep_votes": 19400,
         "other_votes": 1135,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.42404318846699
+        "margin_pct": 20.427610747564913
       },
       "46": {
-        "total_votes": 27907,
-        "dem_votes": 10438,
-        "rep_votes": 16509,
+        "total_votes": 27913,
+        "dem_votes": 10440,
+        "rep_votes": 16513,
         "other_votes": 960,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.75439853800122
+        "margin_pct": 21.75688747178734
       },
       "47": {
-        "total_votes": 24007,
-        "dem_votes": 8802,
-        "rep_votes": 14398,
+        "total_votes": 24009,
+        "dem_votes": 8803,
+        "rep_votes": 14399,
         "other_votes": 807,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.30986795517974
+        "margin_pct": 23.307926194343786
       },
       "48": {
-        "total_votes": 29775,
-        "dem_votes": 13365,
-        "rep_votes": 15386,
+        "total_votes": 29787,
+        "dem_votes": 13371,
+        "rep_votes": 15391,
         "other_votes": 1025,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 6.787573467674224
+        "margin_pct": 6.781481854500285
       },
       "49": {
-        "total_votes": 24502,
+        "total_votes": 24503,
         "dem_votes": 9640,
         "rep_votes": 13987,
         "other_votes": 876,
@@ -552,7 +568,7 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.741408864582482
+        "margin_pct": 17.740684814104394
       },
       "50": {
         "total_votes": 21959,
@@ -577,26 +593,26 @@
         "margin_pct": -8.667180277349768
       },
       "52": {
-        "total_votes": 23987,
-        "dem_votes": 12904,
-        "rep_votes": 10269,
-        "other_votes": 814,
+        "total_votes": 24558,
+        "dem_votes": 13271,
+        "rep_votes": 10447,
+        "other_votes": 840,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.985116938341601
+        "margin_pct": -11.49930776121834
       },
       "53": {
-        "total_votes": 27533,
-        "dem_votes": 12315,
+        "total_votes": 27534,
+        "dem_votes": 12316,
         "rep_votes": 14255,
         "other_votes": 963,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.046090146369812
+        "margin_pct": 7.042202367981405
       },
       "54": {
         "total_votes": 21785,
@@ -610,7 +626,7 @@
         "margin_pct": -4.080789534083085
       },
       "55": {
-        "total_votes": 23312,
+        "total_votes": 23313,
         "dem_votes": 17555,
         "rep_votes": 4999,
         "other_votes": 759,
@@ -618,7 +634,7 @@
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.86067261496225
+        "margin_pct": -53.85836228713593
       },
       "56": {
         "total_votes": 18236,
@@ -643,48 +659,48 @@
         "margin_pct": -48.07692307692308
       },
       "58": {
-        "total_votes": 26738,
-        "dem_votes": 23679,
+        "total_votes": 26739,
+        "dem_votes": 23680,
         "rep_votes": 2144,
         "other_votes": 915,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.54080335103599
+        "margin_pct": -80.54153109689966
       },
       "59": {
         "total_votes": 21025,
-        "dem_votes": 19273,
+        "dem_votes": 19274,
         "rep_votes": 1109,
         "other_votes": 642,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -86.39239001189061
+        "margin_pct": -86.39714625445897
       },
       "60": {
-        "total_votes": 25780,
-        "dem_votes": 19813,
+        "total_votes": 25781,
+        "dem_votes": 19814,
         "rep_votes": 5296,
         "other_votes": 671,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.311093871218
+        "margin_pct": -56.31278848764594
       },
       "61": {
-        "total_votes": 22713,
-        "dem_votes": 18902,
-        "rep_votes": 3362,
-        "other_votes": 449,
+        "total_votes": 23230,
+        "dem_votes": 19046,
+        "rep_votes": 3720,
+        "other_votes": 464,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.41896711134594
+        "margin_pct": -65.97503228583727
       },
       "62": {
         "total_votes": 22504,
@@ -709,37 +725,37 @@
         "margin_pct": -80.81414033208357
       },
       "64": {
-        "total_votes": 20321,
-        "dem_votes": 8072,
-        "rep_votes": 11744,
-        "other_votes": 506,
+        "total_votes": 22077,
+        "dem_votes": 8582,
+        "rep_votes": 12948,
+        "other_votes": 547,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.069976871216966
+        "margin_pct": 19.776237713457444
       },
       "65": {
-        "total_votes": 26360,
-        "dem_votes": 18084,
-        "rep_votes": 7730,
-        "other_votes": 546,
+        "total_votes": 26760,
+        "dem_votes": 18216,
+        "rep_votes": 7987,
+        "other_votes": 557,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.27921092564491
+        "margin_pct": -38.22496263079223
       },
       "66": {
-        "total_votes": 21712,
-        "dem_votes": 13798,
-        "rep_votes": 7328,
-        "other_votes": 586,
+        "total_votes": 22910,
+        "dem_votes": 14099,
+        "rep_votes": 8190,
+        "other_votes": 621,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.799189388356666
+        "margin_pct": -25.79223046704496
       },
       "67": {
         "total_votes": 18816,
@@ -753,18 +769,18 @@
         "margin_pct": -22.433035714285715
       },
       "68": {
-        "total_votes": 26017,
-        "dem_votes": 16535,
+        "total_votes": 26018,
+        "dem_votes": 16536,
         "rep_votes": 8813,
         "other_votes": 669,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.680593458123532
+        "margin_pct": -29.683296179567993
       },
       "69": {
-        "total_votes": 26194,
+        "total_votes": 26195,
         "dem_votes": 18732,
         "rep_votes": 6889,
         "other_votes": 574,
@@ -772,469 +788,469 @@
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.21264411697336
+        "margin_pct": -45.21091811414392
       },
       "70": {
-        "total_votes": 18322,
-        "dem_votes": 7073,
+        "total_votes": 18319,
+        "dem_votes": 7070,
         "rep_votes": 10780,
         "other_votes": 469,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.232507368191246
+        "margin_pct": 20.252197172334736
       },
       "71": {
-        "total_votes": 10476,
-        "dem_votes": 3276,
-        "rep_votes": 6894,
-        "other_votes": 306,
+        "total_votes": 28456,
+        "dem_votes": 9061,
+        "rep_votes": 18576,
+        "other_votes": 819,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.5360824742268
+        "margin_pct": 33.43758785493393
       },
       "72": {
-        "total_votes": 9462,
-        "dem_votes": 2092,
-        "rep_votes": 7173,
-        "other_votes": 197,
+        "total_votes": 12431,
+        "dem_votes": 2851,
+        "rep_votes": 9306,
+        "other_votes": 274,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.699006552525894
+        "margin_pct": 51.92663502533988
       },
       "73": {
-        "total_votes": 26457,
-        "dem_votes": 7361,
+        "total_votes": 26456,
+        "dem_votes": 7360,
         "rep_votes": 18273,
         "other_votes": 823,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.24428317647503
+        "margin_pct": 41.249622013909885
       },
       "74": {
-        "total_votes": 25712,
-        "dem_votes": 8785,
-        "rep_votes": 16264,
-        "other_votes": 663,
+        "total_votes": 25942,
+        "dem_votes": 8965,
+        "rep_votes": 16310,
+        "other_votes": 667,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.087585563161173
+        "margin_pct": 28.313160126435893
       },
       "75": {
-        "total_votes": 17639,
-        "dem_votes": 15303,
-        "rep_votes": 1974,
+        "total_votes": 17623,
+        "dem_votes": 15292,
+        "rep_votes": 1969,
         "other_votes": 362,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.56550824876693
+        "margin_pct": -75.60006809283323
       },
       "76": {
-        "total_votes": 18238,
-        "dem_votes": 15659,
-        "rep_votes": 2188,
+        "total_votes": 18224,
+        "dem_votes": 15651,
+        "rep_votes": 2182,
         "other_votes": 391,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.86226559929817
+        "margin_pct": -73.90803336259877
       },
       "77": {
-        "total_votes": 17168,
-        "dem_votes": 15485,
-        "rep_votes": 1353,
-        "other_votes": 330,
+        "total_votes": 17154,
+        "dem_votes": 15475,
+        "rep_votes": 1350,
+        "other_votes": 329,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.31593662628146
+        "margin_pct": -82.34231083129299
       },
       "78": {
-        "total_votes": 23548,
-        "dem_votes": 18905,
-        "rep_votes": 4155,
+        "total_votes": 23611,
+        "dem_votes": 18974,
+        "rep_votes": 4148,
         "other_votes": 489,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.63801596738576
+        "margin_pct": -62.7927660836051
       },
       "79": {
-        "total_votes": 15143,
-        "dem_votes": 13431,
-        "rep_votes": 1387,
+        "total_votes": 15129,
+        "dem_votes": 13421,
+        "rep_votes": 1383,
         "other_votes": 325,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.53509872548372
+        "margin_pct": -79.56903959283495
       },
       "80": {
-        "total_votes": 19521,
-        "dem_votes": 10378,
-        "rep_votes": 8421,
-        "other_votes": 722,
+        "total_votes": 20392,
+        "dem_votes": 10948,
+        "rep_votes": 8682,
+        "other_votes": 762,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -10.02510117309564
+        "margin_pct": -11.112200863083563
       },
       "81": {
-        "total_votes": 23583,
-        "dem_votes": 15116,
-        "rep_votes": 7626,
-        "other_votes": 841,
+        "total_votes": 24697,
+        "dem_votes": 15946,
+        "rep_votes": 7863,
+        "other_votes": 888,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.76016622143069
+        "margin_pct": -32.728671498562576
       },
       "82": {
-        "total_votes": 24244,
-        "dem_votes": 17894,
-        "rep_votes": 5483,
-        "other_votes": 867,
+        "total_votes": 25445,
+        "dem_votes": 18876,
+        "rep_votes": 5653,
+        "other_votes": 916,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.1920475169114
+        "margin_pct": -51.96698762035763
       },
       "83": {
-        "total_votes": 17203,
-        "dem_votes": 9685,
-        "rep_votes": 6798,
-        "other_votes": 720,
+        "total_votes": 17986,
+        "dem_votes": 10217,
+        "rep_votes": 7009,
+        "other_votes": 760,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -16.781956635470557
+        "margin_pct": -17.83609474035361
       },
       "84": {
-        "total_votes": 23856,
-        "dem_votes": 21899,
-        "rep_votes": 1463,
-        "other_votes": 494,
+        "total_votes": 25130,
+        "dem_votes": 23100,
+        "rep_votes": 1508,
+        "other_votes": 522,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -85.66398390342053
+        "margin_pct": -85.92120970951055
       },
       "85": {
-        "total_votes": 16595,
-        "dem_votes": 14724,
-        "rep_votes": 1380,
-        "other_votes": 492,
+        "total_votes": 17473,
+        "dem_votes": 15531,
+        "rep_votes": 1423,
+        "other_votes": 519,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.40976197649896
+        "margin_pct": -80.74171579007611
       },
       "86": {
-        "total_votes": 17924,
-        "dem_votes": 15921,
-        "rep_votes": 1592,
-        "other_votes": 410,
+        "total_votes": 18870,
+        "dem_votes": 16795,
+        "rep_votes": 1642,
+        "other_votes": 433,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.94309305958491
+        "margin_pct": -80.30206677265501
       },
       "87": {
-        "total_votes": 21390,
-        "dem_votes": 18657,
-        "rep_votes": 2219,
-        "other_votes": 514,
+        "total_votes": 22511,
+        "dem_votes": 19681,
+        "rep_votes": 2287,
+        "other_votes": 543,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.84899485741
+        "margin_pct": -77.26889076451513
       },
       "88": {
-        "total_votes": 21835,
-        "dem_votes": 17523,
-        "rep_votes": 3764,
-        "other_votes": 547,
+        "total_votes": 22839,
+        "dem_votes": 18400,
+        "rep_votes": 3866,
+        "other_votes": 573,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.013510419051975
+        "margin_pct": -63.63676167958317
       },
       "89": {
-        "total_votes": 28182,
-        "dem_votes": 24964,
-        "rep_votes": 2526,
-        "other_votes": 692,
+        "total_votes": 29669,
+        "dem_votes": 26334,
+        "rep_votes": 2604,
+        "other_votes": 731,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.61819601163863
+        "margin_pct": -79.98247328861775
       },
       "90": {
-        "total_votes": 29195,
-        "dem_votes": 26465,
-        "rep_votes": 1795,
-        "other_votes": 935,
+        "total_votes": 30755,
+        "dem_votes": 27917,
+        "rep_votes": 1851,
+        "other_votes": 987,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -84.50077067991094
+        "margin_pct": -84.75369858559584
       },
       "91": {
-        "total_votes": 27675,
-        "dem_votes": 21679,
-        "rep_votes": 5421,
-        "other_votes": 575,
+        "total_votes": 28808,
+        "dem_votes": 22720,
+        "rep_votes": 5494,
+        "other_votes": 594,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -58.74616079494128
+        "margin_pct": -59.79589003054707
       },
       "92": {
-        "total_votes": 23288,
-        "dem_votes": 16343,
-        "rep_votes": 6465,
-        "other_votes": 481,
-        "dem_candidate": "Janice Laws",
-        "rep_candidate": "Jim Beck",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -42.4166952937135
-      },
-      "93": {
-        "total_votes": 19883,
-        "dem_votes": 14409,
-        "rep_votes": 5102,
-        "other_votes": 371,
-        "dem_candidate": "Janice Laws",
-        "rep_candidate": "Jim Beck",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -46.80883166524166
-      },
-      "94": {
-        "total_votes": 24870,
-        "dem_votes": 19748,
-        "rep_votes": 4558,
-        "other_votes": 564,
-        "dem_candidate": "Janice Laws",
-        "rep_candidate": "Jim Beck",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -61.077603538399686
-      },
-      "95": {
-        "total_votes": 23997,
-        "dem_votes": 18515,
-        "rep_votes": 4937,
-        "other_votes": 545,
-        "dem_candidate": "Janice Laws",
-        "rep_candidate": "Jim Beck",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -56.582072759094885
-      },
-      "96": {
-        "total_votes": 13551,
-        "dem_votes": 8606,
-        "rep_votes": 4462,
+        "total_votes": 23508,
+        "dem_votes": 16551,
+        "rep_votes": 6473,
         "other_votes": 484,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.580768946941184
+        "margin_pct": -42.87051216607112
+      },
+      "93": {
+        "total_votes": 20045,
+        "dem_votes": 14564,
+        "rep_votes": 5107,
+        "other_votes": 374,
+        "dem_candidate": "Janice Laws",
+        "rep_candidate": "Jim Beck",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -47.17884759291594
+      },
+      "94": {
+        "total_votes": 25608,
+        "dem_votes": 20456,
+        "rep_votes": 4577,
+        "other_votes": 575,
+        "dem_candidate": "Janice Laws",
+        "rep_candidate": "Jim Beck",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -62.007966260543576
+      },
+      "95": {
+        "total_votes": 24345,
+        "dem_votes": 18846,
+        "rep_votes": 4948,
+        "other_votes": 551,
+        "dem_candidate": "Janice Laws",
+        "rep_candidate": "Jim Beck",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -57.0876976791949
+      },
+      "96": {
+        "total_votes": 13569,
+        "dem_votes": 8618,
+        "rep_votes": 4467,
+        "other_votes": 484,
+        "dem_candidate": "Janice Laws",
+        "rep_candidate": "Jim Beck",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -30.591790109809125
       },
       "97": {
-        "total_votes": 18577,
-        "dem_votes": 11066,
-        "rep_votes": 6873,
+        "total_votes": 18600,
+        "dem_votes": 11081,
+        "rep_votes": 6881,
         "other_votes": 638,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.57092103138289
+        "margin_pct": -22.58064516129032
       },
       "98": {
-        "total_votes": 8977,
-        "dem_votes": 6827,
-        "rep_votes": 1846,
+        "total_votes": 8988,
+        "dem_votes": 6836,
+        "rep_votes": 1848,
         "other_votes": 304,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -55.48624262002896
+        "margin_pct": -55.49621717846017
       },
       "99": {
-        "total_votes": 21165,
-        "dem_votes": 9552,
-        "rep_votes": 10844,
-        "other_votes": 768,
+        "total_votes": 21192,
+        "dem_votes": 9565,
+        "rep_votes": 10858,
+        "other_votes": 769,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 6.104417670682731
+        "margin_pct": 6.1013590033975085
       },
       "100": {
-        "total_votes": 20031,
-        "dem_votes": 6396,
-        "rep_votes": 12982,
-        "other_votes": 653,
+        "total_votes": 20627,
+        "dem_votes": 6475,
+        "rep_votes": 13482,
+        "other_votes": 670,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.87903749188757
+        "margin_pct": 33.97003926891938
       },
       "101": {
-        "total_votes": 21072,
-        "dem_votes": 10851,
-        "rep_votes": 9416,
-        "other_votes": 805,
+        "total_votes": 21099,
+        "dem_votes": 10866,
+        "rep_votes": 9427,
+        "other_votes": 806,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.8099848139711465
+        "margin_pct": -6.820228446845822
       },
       "102": {
-        "total_votes": 18371,
-        "dem_votes": 11646,
-        "rep_votes": 6208,
+        "total_votes": 18394,
+        "dem_votes": 11662,
+        "rep_votes": 6215,
         "other_votes": 517,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.601001578574927
+        "margin_pct": -29.612917255626837
       },
       "103": {
-        "total_votes": 21041,
-        "dem_votes": 7970,
-        "rep_votes": 12380,
-        "other_votes": 691,
+        "total_votes": 21686,
+        "dem_votes": 8066,
+        "rep_votes": 12910,
+        "other_votes": 710,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.95907989164013
+        "margin_pct": 22.336991607488702
       },
       "104": {
-        "total_votes": 13157,
-        "dem_votes": 4302,
-        "rep_votes": 8409,
-        "other_votes": 446,
+        "total_votes": 20815,
+        "dem_votes": 6150,
+        "rep_votes": 13966,
+        "other_votes": 699,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.215322641939654
+        "margin_pct": 37.54984386259908
       },
       "105": {
-        "total_votes": 19743,
-        "dem_votes": 9397,
-        "rep_votes": 9731,
-        "other_votes": 615,
+        "total_votes": 19769,
+        "dem_votes": 9410,
+        "rep_votes": 9743,
+        "other_votes": 616,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 1.6917388441472927
+        "margin_pct": 1.6844554605695787
       },
       "106": {
-        "total_votes": 23728,
-        "dem_votes": 12361,
-        "rep_votes": 10636,
+        "total_votes": 23758,
+        "dem_votes": 12377,
+        "rep_votes": 10649,
         "other_votes": 732,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.269892110586648
+        "margin_pct": -7.273339506692482
       },
       "107": {
-        "total_votes": 14507,
-        "dem_votes": 9911,
-        "rep_votes": 4151,
+        "total_votes": 14526,
+        "dem_votes": 9925,
+        "rep_votes": 4156,
         "other_votes": 445,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.70497001447577
+        "margin_pct": -39.71499380421314
       },
       "108": {
-        "total_votes": 23183,
-        "dem_votes": 11308,
-        "rep_votes": 11015,
-        "other_votes": 861,
+        "total_votes": 23213,
+        "dem_votes": 11323,
+        "rep_votes": 11028,
+        "other_votes": 862,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.263857136694992
+        "margin_pct": -1.2708396157325637
       },
       "109": {
-        "total_votes": 12856,
-        "dem_votes": 9888,
-        "rep_votes": 2632,
+        "total_votes": 12872,
+        "dem_votes": 9901,
+        "rep_votes": 2635,
         "other_votes": 336,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.440572495332916
+        "margin_pct": -56.44810441267868
       },
       "110": {
-        "total_votes": 23755,
-        "dem_votes": 13764,
-        "rep_votes": 9399,
-        "other_votes": 592,
+        "total_votes": 23785,
+        "dem_votes": 13782,
+        "rep_votes": 9410,
+        "other_votes": 593,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -18.37507893075142
+        "margin_pct": -18.381332772755936
       },
       "111": {
-        "total_votes": 23979,
-        "dem_votes": 6905,
-        "rep_votes": 16411,
+        "total_votes": 23988,
+        "dem_votes": 6910,
+        "rep_votes": 16416,
         "other_votes": 662,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.643020976687936
+        "margin_pct": 39.62814740703685
       },
       "112": {
         "total_votes": 22415,
@@ -1248,246 +1264,246 @@
         "margin_pct": 53.745259870622355
       },
       "113": {
-        "total_votes": 20296,
-        "dem_votes": 13624,
-        "rep_votes": 6231,
+        "total_votes": 20286,
+        "dem_votes": 13615,
+        "rep_votes": 6230,
         "other_votes": 441,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.425896728419396
+        "margin_pct": -36.40441683919945
       },
       "114": {
-        "total_votes": 24873,
-        "dem_votes": 7124,
-        "rep_votes": 17181,
+        "total_votes": 24868,
+        "dem_votes": 7121,
+        "rep_votes": 17179,
         "other_votes": 568,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.43340168053713
+        "margin_pct": 40.4455525172913
       },
       "115": {
-        "total_votes": 24278,
-        "dem_votes": 13419,
-        "rep_votes": 10258,
-        "other_votes": 601,
+        "total_votes": 25097,
+        "dem_votes": 14061,
+        "rep_votes": 10420,
+        "other_votes": 616,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.020018123403904
+        "margin_pct": -14.5077100848707
       },
       "116": {
-        "total_votes": 19780,
-        "dem_votes": 12772,
-        "rep_votes": 6521,
-        "other_votes": 487,
+        "total_votes": 20461,
+        "dem_votes": 13340,
+        "rep_votes": 6622,
+        "other_votes": 499,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.60262891809909
+        "margin_pct": -32.83319485851132
       },
       "117": {
-        "total_votes": 25565,
-        "dem_votes": 10674,
-        "rep_votes": 14279,
-        "other_votes": 612,
+        "total_votes": 26239,
+        "dem_votes": 11136,
+        "rep_votes": 14477,
+        "other_votes": 626,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.101310385292393
+        "margin_pct": 12.732954761995503
       },
       "118": {
-        "total_votes": 13745,
-        "dem_votes": 3428,
-        "rep_votes": 10013,
-        "other_votes": 304,
+        "total_votes": 22538,
+        "dem_votes": 5822,
+        "rep_votes": 16250,
+        "other_votes": 466,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.908330301927975
+        "margin_pct": 46.268524270121574
       },
       "119": {
-        "total_votes": 874,
-        "dem_votes": 134,
-        "rep_votes": 715,
-        "other_votes": 26,
+        "total_votes": 17941,
+        "dem_votes": 4248,
+        "rep_votes": 13103,
+        "other_votes": 590,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 66.47597254004577
+        "margin_pct": 49.35622317596567
       },
       "120": {
-        "total_votes": 16833,
-        "dem_votes": 6382,
-        "rep_votes": 9950,
-        "other_votes": 501,
+        "total_votes": 24696,
+        "dem_votes": 10689,
+        "rep_votes": 13255,
+        "other_votes": 752,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.196459335828433
+        "margin_pct": 10.390346614836412
       },
       "121": {
-        "total_votes": 24367,
-        "dem_votes": 9732,
-        "rep_votes": 13765,
-        "other_votes": 870,
+        "total_votes": 31179,
+        "dem_votes": 14644,
+        "rep_votes": 15393,
+        "other_votes": 1142,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.551073172733616
+        "margin_pct": 2.4022579300169986
       },
       "122": {
-        "total_votes": 6008,
-        "dem_votes": 4104,
-        "rep_votes": 1689,
-        "other_votes": 216,
+        "total_votes": 10899,
+        "dem_votes": 7818,
+        "rep_votes": 2691,
+        "other_votes": 390,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.19640479360852
+        "margin_pct": -47.041012936966695
       },
       "123": {
-        "total_votes": 21654,
-        "dem_votes": 6120,
-        "rep_votes": 15121,
-        "other_votes": 413,
+        "total_votes": 23435,
+        "dem_votes": 6784,
+        "rep_votes": 16215,
+        "other_votes": 436,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.56737785166713
+        "margin_pct": 40.2432259441007
       },
       "124": {
-        "total_votes": 22769,
-        "dem_votes": 7706,
-        "rep_votes": 14600,
-        "other_votes": 463,
+        "total_votes": 24234,
+        "dem_votes": 8819,
+        "rep_votes": 14899,
+        "other_votes": 516,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.27800957442136
+        "margin_pct": 25.088718329619542
       },
       "125": {
-        "total_votes": 19509,
-        "dem_votes": 5995,
-        "rep_votes": 13013,
-        "other_votes": 501,
+        "total_votes": 21409,
+        "dem_votes": 6707,
+        "rep_votes": 14162,
+        "other_votes": 540,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.97314060177354
+        "margin_pct": 34.82180391424167
       },
       "126": {
-        "total_votes": 19614,
-        "dem_votes": 11414,
-        "rep_votes": 7895,
-        "other_votes": 305,
+        "total_votes": 20152,
+        "dem_votes": 11730,
+        "rep_votes": 8108,
+        "other_votes": 314,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.941266442337106
+        "margin_pct": -17.97340214370782
       },
       "127": {
-        "total_votes": 24662,
-        "dem_votes": 7806,
-        "rep_votes": 16204,
-        "other_votes": 652,
+        "total_votes": 26316,
+        "dem_votes": 8359,
+        "rep_votes": 17271,
+        "other_votes": 686,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.05238828967643
+        "margin_pct": 33.86532907736738
       },
       "128": {
-        "total_votes": 23870,
-        "dem_votes": 11476,
-        "rep_votes": 12074,
-        "other_votes": 320,
+        "total_votes": 24221,
+        "dem_votes": 11642,
+        "rep_votes": 12250,
+        "other_votes": 329,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 2.505236698785086
+        "margin_pct": 2.5102184055158747
       },
       "129": {
-        "total_votes": 21252,
-        "dem_votes": 14496,
+        "total_votes": 21256,
+        "dem_votes": 14500,
         "rep_votes": 6223,
         "other_votes": 533,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.92810088462262
+        "margin_pct": -38.939593526533685
       },
       "130": {
-        "total_votes": 19483,
-        "dem_votes": 13037,
-        "rep_votes": 6086,
+        "total_votes": 19488,
+        "dem_votes": 13041,
+        "rep_votes": 6087,
         "other_votes": 360,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.67725709592979
+        "margin_pct": -35.683497536945815
       },
       "131": {
-        "total_votes": 20959,
-        "dem_votes": 6294,
-        "rep_votes": 14044,
-        "other_votes": 621,
+        "total_votes": 23191,
+        "dem_votes": 7072,
+        "rep_votes": 15446,
+        "other_votes": 673,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.97695500739539
+        "margin_pct": 36.10883532404812
       },
       "132": {
-        "total_votes": 16485,
-        "dem_votes": 10835,
+        "total_votes": 16487,
+        "dem_votes": 10837,
         "rep_votes": 5374,
         "other_votes": 276,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -33.12708522899606
+        "margin_pct": -33.135197428276825
       },
       "133": {
-        "total_votes": 19135,
-        "dem_votes": 8160,
-        "rep_votes": 10644,
-        "other_votes": 331,
+        "total_votes": 20798,
+        "dem_votes": 9082,
+        "rep_votes": 11339,
+        "other_votes": 377,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.981447609093285
+        "margin_pct": 10.852005000480816
       },
       "134": {
-        "total_votes": 20578,
-        "dem_votes": 7074,
-        "rep_votes": 13047,
-        "other_votes": 456,
+        "total_votes": 20641,
+        "dem_votes": 7082,
+        "rep_votes": 13101,
+        "other_votes": 458,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.02614442608611
+        "margin_pct": 29.160408894917882
       },
       "135": {
         "total_votes": 23714,
@@ -1501,114 +1517,114 @@
         "margin_pct": 46.946951168086365
       },
       "136": {
-        "total_votes": 22068,
-        "dem_votes": 7513,
-        "rep_votes": 14050,
-        "other_votes": 505,
+        "total_votes": 23356,
+        "dem_votes": 7886,
+        "rep_votes": 14938,
+        "other_votes": 532,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.622077215878196
+        "margin_pct": 30.193526288748075
       },
       "137": {
-        "total_votes": 19704,
-        "dem_votes": 11757,
-        "rep_votes": 7572,
-        "other_votes": 375,
+        "total_votes": 20485,
+        "dem_votes": 12074,
+        "rep_votes": 8016,
+        "other_votes": 395,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.239342265529842
+        "margin_pct": -19.809616792775202
       },
       "138": {
-        "total_votes": 24936,
-        "dem_votes": 6496,
-        "rep_votes": 17983,
-        "other_votes": 457,
+        "total_votes": 25366,
+        "dem_votes": 6540,
+        "rep_votes": 18361,
+        "other_votes": 465,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.06592877767084
+        "margin_pct": 46.60175037451707
       },
       "139": {
-        "total_votes": 17833,
-        "dem_votes": 5909,
-        "rep_votes": 11471,
-        "other_votes": 454,
+        "total_votes": 18635,
+        "dem_votes": 6036,
+        "rep_votes": 12120,
+        "other_votes": 479,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.189368025570573
+        "margin_pct": 32.648242554333244
       },
       "140": {
-        "total_votes": 12839,
-        "dem_votes": 9691,
-        "rep_votes": 2844,
-        "other_votes": 304,
+        "total_votes": 13407,
+        "dem_votes": 9975,
+        "rep_votes": 3105,
+        "other_votes": 327,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.329698574655346
+        "margin_pct": -51.24188856567464
       },
       "141": {
-        "total_votes": 17668,
-        "dem_votes": 12461,
-        "rep_votes": 4866,
-        "other_votes": 341,
+        "total_votes": 18505,
+        "dem_votes": 12826,
+        "rep_votes": 5312,
+        "other_votes": 367,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.98732171156894
+        "margin_pct": -40.605241826533366
       },
       "142": {
-        "total_votes": 21838,
-        "dem_votes": 13390,
-        "rep_votes": 8015,
-        "other_votes": 433,
+        "total_votes": 21768,
+        "dem_votes": 13377,
+        "rep_votes": 7960,
+        "other_votes": 431,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.613059804011357
+        "margin_pct": -24.885152517456817
       },
       "143": {
-        "total_votes": 21795,
-        "dem_votes": 15505,
-        "rep_votes": 5878,
-        "other_votes": 412,
+        "total_votes": 21739,
+        "dem_votes": 15490,
+        "rep_votes": 5838,
+        "other_votes": 411,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.17068134893324
+        "margin_pct": -44.39946639679838
       },
       "144": {
-        "total_votes": 26098,
-        "dem_votes": 9045,
-        "rep_votes": 16541,
-        "other_votes": 512,
+        "total_votes": 26162,
+        "dem_votes": 9065,
+        "rep_votes": 16584,
+        "other_votes": 513,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.722507471836924
+        "margin_pct": 28.74015748031496
       },
       "145": {
         "total_votes": 20325,
-        "dem_votes": 7990,
-        "rep_votes": 11942,
+        "dem_votes": 7991,
+        "rep_votes": 11941,
         "other_votes": 393,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.444034440344403
+        "margin_pct": 19.43419434194342
       },
       "146": {
         "total_votes": 21872,
@@ -1644,84 +1660,84 @@
         "margin_pct": 38.911231808947306
       },
       "149": {
-        "total_votes": 20689,
-        "dem_votes": 6272,
-        "rep_votes": 14081,
-        "other_votes": 336,
+        "total_votes": 21619,
+        "dem_votes": 6847,
+        "rep_votes": 14425,
+        "other_votes": 347,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.74469524868287
+        "margin_pct": 35.05250011563902
       },
       "150": {
-        "total_votes": 16480,
-        "dem_votes": 9269,
-        "rep_votes": 6984,
-        "other_votes": 227,
+        "total_votes": 19680,
+        "dem_votes": 10401,
+        "rep_votes": 9001,
+        "other_votes": 278,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.865291262135923
+        "margin_pct": -7.113821138211382
       },
       "151": {
-        "total_votes": 19767,
-        "dem_votes": 9443,
-        "rep_votes": 10041,
-        "other_votes": 283,
+        "total_votes": 21863,
+        "dem_votes": 10268,
+        "rep_votes": 11270,
+        "other_votes": 325,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 3.025244093691506
+        "margin_pct": 4.583085578374423
       },
       "152": {
-        "total_votes": 20099,
-        "dem_votes": 5205,
-        "rep_votes": 14587,
-        "other_votes": 307,
+        "total_votes": 22085,
+        "dem_votes": 5830,
+        "rep_votes": 15905,
+        "other_votes": 350,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.67893925070899
+        "margin_pct": 45.619198551052754
       },
       "153": {
-        "total_votes": 17154,
-        "dem_votes": 11852,
-        "rep_votes": 5028,
-        "other_votes": 274,
+        "total_votes": 20388,
+        "dem_votes": 13586,
+        "rep_votes": 6479,
+        "other_votes": 323,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -39.7808091407252
+        "margin_pct": -34.858740435550324
       },
       "154": {
-        "total_votes": 21919,
-        "dem_votes": 11233,
-        "rep_votes": 10397,
-        "other_votes": 289,
+        "total_votes": 22697,
+        "dem_votes": 11821,
+        "rep_votes": 10576,
+        "other_votes": 300,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.8140426114330035
+        "margin_pct": -5.485306428162312
       },
       "155": {
-        "total_votes": 19232,
-        "dem_votes": 6163,
-        "rep_votes": 12838,
-        "other_votes": 231,
+        "total_votes": 21758,
+        "dem_votes": 6987,
+        "rep_votes": 14506,
+        "other_votes": 265,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.70777870216306
+        "margin_pct": 34.55740417317768
       },
       "156": {
-        "total_votes": 17965,
+        "total_votes": 17966,
         "dem_votes": 4958,
         "rep_votes": 12753,
         "other_votes": 255,
@@ -1729,7 +1745,7 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.38992485388255
+        "margin_pct": 43.38750974062117
       },
       "157": {
         "total_votes": 18439,
@@ -1754,136 +1770,136 @@
         "margin_pct": 32.487775061124694
       },
       "159": {
-        "total_votes": 23896,
-        "dem_votes": 6277,
-        "rep_votes": 17131,
-        "other_votes": 487,
+        "total_votes": 24042,
+        "dem_votes": 6377,
+        "rep_votes": 17176,
+        "other_votes": 489,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.42182792099096
+        "margin_pct": 44.917228184011314
       },
       "160": {
-        "total_votes": 15930,
-        "dem_votes": 4583,
-        "rep_votes": 10973,
-        "other_votes": 374,
+        "total_votes": 16310,
+        "dem_votes": 4708,
+        "rep_votes": 11218,
+        "other_votes": 384,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.11299435028249
+        "margin_pct": 39.91416309012876
       },
       "161": {
-        "total_votes": 13303,
-        "dem_votes": 5049,
-        "rep_votes": 7886,
-        "other_votes": 368,
+        "total_votes": 16902,
+        "dem_votes": 7238,
+        "rep_votes": 9179,
+        "other_votes": 485,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.326016687965122
+        "margin_pct": 11.483848065317714
       },
       "162": {
-        "total_votes": 10203,
-        "dem_votes": 7019,
-        "rep_votes": 2909,
-        "other_votes": 276,
+        "total_votes": 18347,
+        "dem_votes": 12188,
+        "rep_votes": 5649,
+        "other_votes": 510,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.28226992061158
+        "margin_pct": -35.640704202321906
       },
       "163": {
-        "total_votes": 14265,
-        "dem_votes": 10060,
-        "rep_votes": 3810,
-        "other_votes": 395,
+        "total_votes": 25597,
+        "dem_votes": 17469,
+        "rep_votes": 7398,
+        "other_votes": 730,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.813529617946024
+        "margin_pct": -39.344454428253314
       },
       "164": {
-        "total_votes": 7833,
-        "dem_votes": 2360,
-        "rep_votes": 5235,
-        "other_votes": 237,
+        "total_votes": 10720,
+        "dem_votes": 3232,
+        "rep_votes": 7164,
+        "other_votes": 324,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.70368951870292
+        "margin_pct": 36.67910447761194
       },
       "165": {
-        "total_votes": 10989,
-        "dem_votes": 8008,
-        "rep_votes": 2691,
-        "other_votes": 290,
+        "total_votes": 19668,
+        "dem_votes": 13906,
+        "rep_votes": 5226,
+        "other_votes": 536,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -48.384748384748384
+        "margin_pct": -44.132601179581044
       },
       "166": {
-        "total_votes": 17660,
-        "dem_votes": 5093,
-        "rep_votes": 12127,
-        "other_votes": 440,
+        "total_votes": 29686,
+        "dem_votes": 8151,
+        "rep_votes": 20827,
+        "other_votes": 708,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.83012457531144
+        "margin_pct": 42.7002627501179
       },
       "167": {
-        "total_votes": 17362,
-        "dem_votes": 5312,
-        "rep_votes": 11690,
-        "other_votes": 360,
+        "total_votes": 18250,
+        "dem_votes": 5533,
+        "rep_votes": 12339,
+        "other_votes": 378,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.73539914756365
+        "margin_pct": 37.29315068493151
       },
       "168": {
-        "total_votes": 13733,
-        "dem_votes": 8241,
-        "rep_votes": 5152,
-        "other_votes": 340,
+        "total_votes": 14888,
+        "dem_votes": 9136,
+        "rep_votes": 5385,
+        "other_votes": 367,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.49326439962135
+        "margin_pct": -25.1947877485223
       },
       "169": {
-        "total_votes": 18492,
-        "dem_votes": 4705,
+        "total_votes": 18493,
+        "dem_votes": 4706,
         "rep_votes": 13518,
         "other_votes": 269,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.65844689595501
+        "margin_pct": 47.65046233710052
       },
       "170": {
-        "total_votes": 18218,
-        "dem_votes": 4668,
-        "rep_votes": 13191,
-        "other_votes": 359,
+        "total_votes": 19282,
+        "dem_votes": 4739,
+        "rep_votes": 14172,
+        "other_votes": 371,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.783401031946426
+        "margin_pct": 48.921273726791824
       },
       "171": {
         "total_votes": 19007,
@@ -1897,26 +1913,26 @@
         "margin_pct": 24.19634871363182
       },
       "172": {
-        "total_votes": 16478,
-        "dem_votes": 4224,
-        "rep_votes": 11980,
-        "other_votes": 274,
+        "total_votes": 16911,
+        "dem_votes": 4302,
+        "rep_votes": 12326,
+        "other_votes": 283,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.06881903143586
+        "margin_pct": 47.44840636272249
       },
       "173": {
-        "total_votes": 19485,
-        "dem_votes": 7609,
-        "rep_votes": 11595,
-        "other_votes": 281,
+        "total_votes": 20540,
+        "dem_votes": 7990,
+        "rep_votes": 12257,
+        "other_votes": 293,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.45676161149602
+        "margin_pct": 20.774099318403117
       },
       "174": {
         "total_votes": 19386,
@@ -1930,7 +1946,7 @@
         "margin_pct": 58.49066336531518
       },
       "175": {
-        "total_votes": 23048,
+        "total_votes": 23047,
         "dem_votes": 8414,
         "rep_votes": 14199,
         "other_votes": 434,
@@ -1938,10 +1954,10 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.099791738979523
+        "margin_pct": 25.100880808782055
       },
       "176": {
-        "total_votes": 18820,
+        "total_votes": 18819,
         "dem_votes": 5560,
         "rep_votes": 12946,
         "other_votes": 313,
@@ -1949,10 +1965,10 @@
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.24548352816153
+        "margin_pct": 39.2475689462777
       },
       "177": {
-        "total_votes": 10845,
+        "total_votes": 10846,
         "dem_votes": 5917,
         "rep_votes": 4702,
         "other_votes": 227,
@@ -1960,7 +1976,7 @@
         "rep_candidate": "Jim Beck",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.20331950207469
+        "margin_pct": -11.202286557256132
       },
       "178": {
         "total_votes": 20520,
@@ -1974,26 +1990,26 @@
         "margin_pct": 69.74171539961014
       },
       "179": {
-        "total_votes": 19062,
-        "dem_votes": 7371,
-        "rep_votes": 11217,
-        "other_votes": 474,
+        "total_votes": 21792,
+        "dem_votes": 8359,
+        "rep_votes": 12897,
+        "other_votes": 536,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.17626691847655
+        "margin_pct": 20.824155653450806
       },
       "180": {
-        "total_votes": 19703,
-        "dem_votes": 6317,
-        "rep_votes": 12832,
-        "other_votes": 554,
+        "total_votes": 20129,
+        "dem_votes": 6437,
+        "rep_votes": 13129,
+        "other_votes": 563,
         "dem_candidate": "Janice Laws",
         "rep_candidate": "Jim Beck",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.06603055372278
+        "margin_pct": 33.24556609866362
       }
     }
   }
