@@ -395,6 +395,7 @@ def reallocate_contest(
     shares: dict[str, list[tuple[str, float]]],
     fuzzy_threshold: float,
     fallback_rekey: dict[str, str] | None,
+    prefer_direct_vtd20: bool = False,
     aliases: dict[str, dict[str, list[str]]] | None = None,
 ) -> tuple[dict[str, dict[str, object]], dict[str, Any]]:
     """
@@ -404,12 +405,14 @@ def reallocate_contest(
         "source_votes": int(sub["votes"].sum()),
         "matched_vtd10_votes": 0,
         "fallback_vtd20_votes": 0,
+        "direct_vtd20_votes": 0,
         "dropped_votes": 0,
         "precincts": 0,
         "matched_exact": 0,
         "matched_fuzzy": 0,
         "matched_alias": 0,
         "fallback": 0,
+        "direct_vtd20": 0,
         "dropped": 0,
         "vtd10_missing_shares": 0,
     }
@@ -427,6 +430,26 @@ def reallocate_contest(
         ]
         precinct_total = sum(v for _, _, v in rows)
         if precinct_total <= 0:
+            continue
+
+        # Election-day precincts from the 2020 cycle align with the VTD20
+        # geography.  Keep an available direct/alias match intact instead of
+        # first sending it through the older VTD10 crosswalk, which can smear
+        # votes across modern district boundaries inside split counties.
+        direct_geoid20 = ""
+        if prefer_direct_vtd20 and fallback_rekey:
+            direct_geoid20 = str(fallback_rekey.get(str(result_key), "")).strip()
+        if direct_geoid20:
+            stats["direct_vtd20"] += 1
+            stats["direct_vtd20_votes"] += precinct_total
+            for candidate, party_norm, votes in rows:
+                _add_precinct_row_to_vtd20(
+                    dest=dest_buckets,
+                    geoid20=direct_geoid20,
+                    votes=votes,
+                    party_norm=party_norm,
+                    candidate=candidate,
+                )
             continue
 
         vtd10, method, _score = match_precinct_to_vtd10(
@@ -647,6 +670,7 @@ def main() -> None:
         m = re.match(r"^(\d{4})", args.csv.name)
         year = m.group(1) if m else "unknown"
     out_dir = args.out or Path(f"Data/derived_vtd20_blockpath/{year}/contests")
+    prefer_direct_vtd20 = str(year) == "2020"
 
     for p in (args.csv, args.vtd10_zip, args.county_geojson, args.vtd10_to_vtd20):
         if not p.exists():
@@ -794,7 +818,11 @@ def main() -> None:
     manifest: dict[str, object] = {
         "csv": str(args.csv),
         "year": year,
-        "method": "vtd10_weighted_shares",
+        "method": (
+            "vtd20_direct_then_vtd10_weighted_shares"
+            if prefer_direct_vtd20
+            else "vtd10_weighted_shares"
+        ),
         "vtd10_to_vtd20": str(args.vtd10_to_vtd20),
         "fuzzy_threshold": args.fuzzy_threshold,
         "fallback": not args.no_fallback,
@@ -828,12 +856,14 @@ def main() -> None:
             shares=shares,
             fuzzy_threshold=args.fuzzy_threshold,
             fallback_rekey=None if args.no_fallback else fallback_rekey,
+            prefer_direct_vtd20=prefer_direct_vtd20,
             aliases=aliases,
         )
         print(
             f"- {office}|{district_raw} -> {contest_slug}: "
             f"src={stats['source_votes']} out={stats['output_votes']} "
-            f"vtd10={stats['matched_vtd10_votes']} fb={stats['fallback_vtd20_votes']} "
+            f"direct={stats['direct_vtd20_votes']} vtd10={stats['matched_vtd10_votes']} "
+            f"fb={stats['fallback_vtd20_votes']} "
             f"drop={stats['dropped_votes']} n_vtd20={stats['output_vtd20']}"
         )
 
@@ -857,12 +887,17 @@ def main() -> None:
             "district": district_raw,
             "level": "vtd20",
             "keys": (
-                "Join on VTD20 GEOID20. Built by precinct->VTD10 match + "
-                "vtd10_to_vtd20_crosswalk.csv share reallocation"
+                "Join on VTD20 GEOID20. Built by "
+                + ("direct VTD20 match, then " if prefer_direct_vtd20 else "")
+                + "precinct->VTD10 match + vtd10_to_vtd20_crosswalk.csv share reallocation"
                 + ("; unmatched precincts fall back to name/keymap VTD20" if not args.no_fallback else "")
                 + "."
             ),
-            "method": "vtd10_weighted_shares",
+            "method": (
+                "vtd20_direct_then_vtd10_weighted_shares"
+                if prefer_direct_vtd20
+                else "vtd10_weighted_shares"
+            ),
             "results": results,
         }
         (level_dir / f"{contest_slug}.json").write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
