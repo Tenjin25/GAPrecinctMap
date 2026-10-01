@@ -10868,8 +10868,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-09-30-unified-percentage-rounding-v1';
-    const APP_BUILD_ID = '2026-09-30-unified-percentage-rounding-v1';
+    const DATA_CACHE_BUSTER = '2026-09-30-unified-vote-total-v2';
+    const APP_BUILD_ID = '2026-09-30-unified-vote-total-v2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
@@ -15172,9 +15172,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .slice()
         .sort((a, b) => a.year - b.year);
       const signedTrendDisplayMarginPct = (trendItem) => {
-        const total = Number(trendItem?.total_votes || 0);
         const dem = Number(trendItem?.dem_votes || 0);
         const rep = Number(trendItem?.rep_votes || 0);
+        const other = Number(trendItem?.other_votes || 0);
+        const total = voteTotalFromBreakdown(dem, rep, other, trendItem?.total_votes);
         const rawSigned = Number.isFinite(Number(trendItem?.margin_pct))
           ? Number(trendItem.margin_pct)
           : signedMarginPctFromVotes(dem, rep, total);
@@ -15191,10 +15192,10 @@ document.addEventListener('DOMContentLoaded', function() {
       };
       const annotated = sortedSeries.map((item, idx) => {
         const prev = idx > 0 ? sortedSeries[idx - 1] : null;
-        const totalVotes = Number(item.total_votes || 0);
         const demVotes = Number(item.dem_votes || 0);
         const repVotes = Number(item.rep_votes || 0);
         const otherVotes = Number(item.other_votes || 0);
+        const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, otherVotes, item.total_votes);
         const demPct = totalVotes > 0 ? (demVotes / totalVotes) * 100 : 0;
         const repPct = totalVotes > 0 ? (repVotes / totalVotes) * 100 : 0;
         const otherPct = totalVotes > 0 ? (otherVotes / totalVotes) * 100 : 0;
@@ -21567,6 +21568,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return roundPct2((Number(votes || 0) / t) * 100.0);
     }
 
+    function voteTotalFromBreakdown(demVotes, repVotes, otherVotes = 0, reportedTotal = NaN) {
+      const breakdownTotal = Number(demVotes || 0) + Number(repVotes || 0) + Number(otherVotes || 0);
+      if (breakdownTotal > 0) return breakdownTotal;
+      const reported = Number(reportedTotal);
+      return Number.isFinite(reported) && reported > 0 ? reported : 0;
+    }
+
     function marginPctValue(repVotes, demVotes, totalVotes) {
       const t = Number(totalVotes) || 0;
       if (t <= 0) return 0;
@@ -23977,7 +23985,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         const repVotes = Number(row.rep_votes);
         const demVotes = Number(row.dem_votes);
-        const totalVotes = Number(row.total_votes);
+        const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, row.other_votes, row.total_votes);
         if (Number.isFinite(repVotes) && Number.isFinite(demVotes) && Number.isFinite(totalVotes) && totalVotes > 0) {
           return ((repVotes - demVotes) / totalVotes) * 100;
         }
@@ -23988,7 +23996,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!row) return 0;
         const repVotes = Number(row.rep_votes);
         const demVotes = Number(row.dem_votes);
-        const totalVotes = Number(row.total_votes);
+        const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, row.other_votes, row.total_votes);
         const rawSigned = getSignedMarginTowardGop(row);
         if (!(Number.isFinite(totalVotes) && totalVotes > 0)) return rawSigned;
         const useCounty = unitLower === 'county';
@@ -24723,7 +24731,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const label = winnerMarginCall(
             Number(s.rep_votes || 0),
             Number(s.dem_votes || 0),
-            Number(s.total_votes || 0),
+            voteTotalFromBreakdown(s.dem_votes, s.rep_votes, s.other_votes, s.total_votes),
             s.rep_candidate,
             s.dem_candidate,
             Number(s.margin_pct)
@@ -26730,7 +26738,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const demVotes = Number(row[`${contestType}_dem`] || 0);
       const repVotes = Number(row[`${contestType}_rep`] || 0);
       const otherVotes = Number(row[`${contestType}_other`] || 0);
-      const totalVotes = Number(row[`${contestType}_total`] || 0);
+      const totalVotes = voteTotalFromBreakdown(
+        demVotes,
+        repVotes,
+        otherVotes,
+        row[`${contestType}_total`]
+      );
       if (totalVotes <= 0) {
         const hoverTitle = buildTooltipTitleWithTier(`${countyDisplay} County`);
         const pinnedShell = !!(tooltipPinned || (forceTooltip && isTouchInteractionMode()));
@@ -27118,9 +27131,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const repVotes = Number(row[`${contestType}_rep`] || 0);
       const otherVotes = Number(row[`${contestType}_other`] || 0);
       const rowTotalVotes = Number(row[`${contestType}_total`]);
-      const totalVotes = Number.isFinite(rowTotalVotes) && rowTotalVotes > 0
-        ? rowTotalVotes
-        : (demVotes + repVotes + otherVotes);
+      const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, otherVotes, rowTotalVotes);
       const contestOffice = formatContestName(contestType, year);
       const subtitle = `${formatContestLabel(contestType, year)}`;
       const demCandidate = (row[`${contestType}_dem_candidate`] || getCandidateName(year, contestOffice, 'Democrat') || 'Democratic').toString().trim();
@@ -27388,9 +27399,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const repVotes = Number(row.rep_votes || 0);
       const otherVotes = Number(row.other_votes || 0);
       const totalVotesRaw = Number(row.total_votes);
-      const totalVotes = Number.isFinite(totalVotesRaw) && totalVotesRaw > 0
-        ? totalVotesRaw
-        : (demVotes + repVotes + otherVotes);
+      const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, otherVotes, totalVotesRaw);
       if (totalVotes <= 0) {
         const pinnedShell = !!(tooltipPinned || (forceTooltip && isTouchInteractionMode()));
         const copyText = `${districtLabel} ${districtNum} (Lines ${currentDistrictLinesYear})`;
@@ -29431,8 +29440,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const rVotes = Number(repVotes || 0);
       const oVotes = Number(otherVotes || 0);
       const reportedTotal = Number(totalVotes);
-      const total = Number.isFinite(reportedTotal) && reportedTotal > 0
-        ? reportedTotal : dVotes + rVotes + oVotes;
+      const total = voteTotalFromBreakdown(dVotes, rVotes, oVotes, reportedTotal);
       const safeTotal = total > 0 ? total : 0;
       const demPct = safeTotal > 0 ? (dVotes / safeTotal) * 100 : 0;
       const repPct = safeTotal > 0 ? (rVotes / safeTotal) * 100 : 0;
@@ -31991,7 +31999,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const demVotes = Number(row.dem_votes || 0);
       const repVotes = Number(row.rep_votes || 0);
       const otherVotes = Number(row.other_votes || 0);
-      const totalVotes = Number(row.total_votes || (demVotes + repVotes + otherVotes));
+      const totalVotes = voteTotalFromBreakdown(demVotes, repVotes, otherVotes, row.total_votes);
       if (totalVotes <= 0) return '<div style="color:#999;">No results for this district/contest.</div>';
 
       const demCandidate = pickDistrictCandidateName(row, 'dem', fallbackCandidates, contestType, year);
@@ -32073,7 +32081,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const label = winnerMarginCall(
             Number(s.rep_votes || 0),
             Number(s.dem_votes || 0),
-            Number(s.total_votes || 0),
+            voteTotalFromBreakdown(s.dem_votes, s.rep_votes, s.other_votes, s.total_votes),
             s.rep_candidate,
             s.dem_candidate,
             Number(s.margin_pct)
