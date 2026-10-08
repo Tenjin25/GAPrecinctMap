@@ -4,142 +4,127 @@
     "contest_type": "superintendent",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-10-08T20:07:52.165409+00:00",
+    "source": "2022 SOS precinct export allocated by direct district ballot buckets",
+    "generated_by": "scripts/repair_2022_district_buckets.py",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3524779,
-    "matched_input_votes": 3524779,
+    "total_input_votes": 3904399,
+    "matched_input_votes": 3904399,
     "input_files": [
-      "Data/derived_vtd20/2022/contests/vtd20/State_School_Superintendent.json"
-    ],
-    "county_reconciliation": {
-      "method": "county_constrained_party_scaling",
-      "canonical_counties": 159,
-      "reconciled_counties": 159,
-      "unresolved_county_fips": [],
-      "mapped_before": {
-        "dem_votes": 1625032,
-        "rep_votes": 1899747,
-        "other_votes": 0
-      },
-      "canonical_target": {
-        "dem_votes": 1788671,
-        "rep_votes": 2115728,
-        "other_votes": 0
-      }
-    }
+      "Data/20221108__ga__general__official__precinct.csv",
+      "Data/20221108__ga__general__precinct.csv"
+    ]
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 63368,
-        "dem_votes": 23883,
-        "rep_votes": 39485,
+        "total_votes": 70194,
+        "dem_votes": 27076,
+        "rep_votes": 43118,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.621259941926525
+        "margin_pct": 22.853805168532922
       },
       "2": {
-        "total_votes": 66012,
-        "dem_votes": 44992,
-        "rep_votes": 21020,
+        "total_votes": 57892,
+        "dem_votes": 40744,
+        "rep_votes": 17148,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.31460946494577
+        "margin_pct": -40.75865404546396
       },
       "3": {
-        "total_votes": 68169,
-        "dem_votes": 20078,
-        "rep_votes": 48091,
+        "total_votes": 67823,
+        "dem_votes": 20087,
+        "rep_votes": 47736,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.093458903607214
+        "margin_pct": 40.76640667620129
       },
       "4": {
-        "total_votes": 62690,
-        "dem_votes": 17522,
-        "rep_votes": 45168,
+        "total_votes": 63984,
+        "dem_votes": 18577,
+        "rep_votes": 45407,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.099537406284895
+        "margin_pct": 41.93235808952238
       },
       "5": {
-        "total_votes": 31050,
-        "dem_votes": 21761,
-        "rep_votes": 9289,
+        "total_votes": 31731,
+        "dem_votes": 22439,
+        "rep_votes": 9292,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.16747181964573
+        "margin_pct": -41.43266836847247
       },
       "6": {
-        "total_votes": 80300,
-        "dem_votes": 42956,
-        "rep_votes": 37344,
+        "total_votes": 80116,
+        "dem_votes": 42730,
+        "rep_votes": 37386,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.988792029887921
+        "margin_pct": -6.670328024364672
       },
       "7": {
-        "total_votes": 61983,
-        "dem_votes": 32377,
-        "rep_votes": 29606,
+        "total_votes": 62036,
+        "dem_votes": 32421,
+        "rep_votes": 29615,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.470580643079554
+        "margin_pct": -4.523180088980592
       },
       "8": {
-        "total_votes": 57161,
-        "dem_votes": 17151,
-        "rep_votes": 40010,
+        "total_votes": 57507,
+        "dem_votes": 17142,
+        "rep_votes": 40365,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.99055299942268
+        "margin_pct": 40.382909906620064
       },
       "9": {
-        "total_votes": 64241,
-        "dem_votes": 36119,
-        "rep_votes": 28122,
+        "total_votes": 64074,
+        "dem_votes": 35962,
+        "rep_votes": 28112,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.44843635684376
+        "margin_pct": -12.251459250241908
       },
       "10": {
-        "total_votes": 76184,
-        "dem_votes": 61117,
-        "rep_votes": 15067,
+        "total_votes": 77617,
+        "dem_votes": 62418,
+        "rep_votes": 15199,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.44576288984563
+        "margin_pct": -60.8358993519461
       },
       "11": {
         "total_votes": 60626,
@@ -164,488 +149,488 @@
         "margin_pct": -7.614751071652191
       },
       "13": {
-        "total_votes": 63337,
-        "dem_votes": 15948,
-        "rep_votes": 47389,
+        "total_votes": 63082,
+        "dem_votes": 15872,
+        "rep_votes": 47210,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.64081026887917
+        "margin_pct": 49.67819663295393
       },
       "14": {
-        "total_votes": 75687,
-        "dem_votes": 39329,
-        "rep_votes": 36358,
+        "total_votes": 75571,
+        "dem_votes": 39249,
+        "rep_votes": 36322,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.9253768811024354
+        "margin_pct": -3.873178864908497
       },
       "15": {
-        "total_votes": 48394,
-        "dem_votes": 30639,
-        "rep_votes": 17755,
+        "total_votes": 49595,
+        "dem_votes": 31895,
+        "rep_votes": 17700,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.623135099392485
+        "margin_pct": -28.62183687871761
       },
       "16": {
-        "total_votes": 85409,
-        "dem_votes": 27451,
-        "rep_votes": 57958,
+        "total_votes": 85414,
+        "dem_votes": 27453,
+        "rep_votes": 57961,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.71871816787458
+        "margin_pct": 35.71779801906011
       },
       "17": {
-        "total_votes": 75898,
-        "dem_votes": 29065,
-        "rep_votes": 46833,
+        "total_votes": 80510,
+        "dem_votes": 31075,
+        "rep_votes": 49435,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.41036654457298
+        "margin_pct": 22.8046205440318
       },
       "18": {
-        "total_votes": 76217,
-        "dem_votes": 27418,
-        "rep_votes": 48799,
+        "total_votes": 77638,
+        "dem_votes": 27623,
+        "rep_votes": 50015,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.0527966201766
+        "margin_pct": 28.841546665292768
       },
       "19": {
-        "total_votes": 57799,
-        "dem_votes": 12206,
-        "rep_votes": 45593,
+        "total_votes": 58054,
+        "dem_votes": 12282,
+        "rep_votes": 45772,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.7639751552795
+        "margin_pct": 57.68767010025149
       },
       "20": {
-        "total_votes": 74148,
-        "dem_votes": 23302,
-        "rep_votes": 50846,
+        "total_votes": 71400,
+        "dem_votes": 21738,
+        "rep_votes": 49662,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.14732696768625
+        "margin_pct": 39.10924369747899
       },
       "21": {
-        "total_votes": 87537,
-        "dem_votes": 23919,
-        "rep_votes": 63618,
+        "total_votes": 88223,
+        "dem_votes": 24212,
+        "rep_votes": 64011,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.3511086740464
+        "margin_pct": 45.11181891343527
       },
       "22": {
-        "total_votes": 57999,
-        "dem_votes": 39541,
-        "rep_votes": 18458,
+        "total_votes": 58009,
+        "dem_votes": 39597,
+        "rep_votes": 18412,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -36.35062673494371
+        "margin_pct": -36.52019514213312
       },
       "23": {
-        "total_votes": 64664,
-        "dem_votes": 24519,
-        "rep_votes": 40145,
+        "total_votes": 67900,
+        "dem_votes": 26138,
+        "rep_votes": 41762,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 24.16491401707287
+        "margin_pct": 23.010309278350515
       },
       "24": {
-        "total_votes": 89530,
-        "dem_votes": 25318,
-        "rep_votes": 64212,
+        "total_votes": 86283,
+        "dem_votes": 23642,
+        "rep_votes": 62641,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.44242153468112
+        "margin_pct": 45.19893837720061
       },
       "25": {
-        "total_votes": 75860,
-        "dem_votes": 28928,
-        "rep_votes": 46932,
+        "total_votes": 75078,
+        "dem_votes": 28575,
+        "rep_votes": 46503,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.733192723437913
+        "margin_pct": 23.87916566770559
       },
       "26": {
-        "total_votes": 56274,
-        "dem_votes": 34043,
-        "rep_votes": 22231,
+        "total_votes": 58306,
+        "dem_votes": 35729,
+        "rep_votes": 22577,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -20.990155311511533
+        "margin_pct": -22.556855212156552
       },
       "27": {
-        "total_votes": 78092,
-        "dem_votes": 19023,
-        "rep_votes": 59069,
+        "total_votes": 78780,
+        "dem_votes": 19596,
+        "rep_votes": 59184,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 51.28054090047635
+        "margin_pct": 50.251332825590254
       },
       "28": {
-        "total_votes": 79322,
-        "dem_votes": 23202,
-        "rep_votes": 56120,
+        "total_votes": 81287,
+        "dem_votes": 23705,
+        "rep_votes": 57582,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.49920576889136
+        "margin_pct": 41.67579071684279
       },
       "29": {
-        "total_votes": 74363,
-        "dem_votes": 25700,
-        "rep_votes": 48663,
+        "total_votes": 73162,
+        "dem_votes": 24444,
+        "rep_votes": 48718,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.8796041041916
+        "margin_pct": 33.178425958831085
       },
       "30": {
-        "total_votes": 69042,
-        "dem_votes": 19981,
-        "rep_votes": 49061,
+        "total_votes": 70134,
+        "dem_votes": 19754,
+        "rep_votes": 50380,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.119289707714145
+        "margin_pct": 43.6678358570736
       },
       "31": {
-        "total_votes": 75256,
-        "dem_votes": 23765,
-        "rep_votes": 51491,
+        "total_votes": 72406,
+        "dem_votes": 22945,
+        "rep_votes": 49461,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.842245136600404
+        "margin_pct": 36.62127448001547
       },
       "32": {
-        "total_votes": 78068,
-        "dem_votes": 30008,
-        "rep_votes": 48060,
+        "total_votes": 78294,
+        "dem_votes": 29841,
+        "rep_votes": 48453,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.12343085515192
+        "margin_pct": 23.771936546861827
       },
       "33": {
-        "total_votes": 59951,
-        "dem_votes": 40702,
-        "rep_votes": 19249,
+        "total_votes": 58304,
+        "dem_votes": 40312,
+        "rep_votes": 17992,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.784223782755916
+        "margin_pct": -38.282107574094404
       },
       "34": {
-        "total_votes": 55427,
-        "dem_votes": 45907,
-        "rep_votes": 9520,
+        "total_votes": 53722,
+        "dem_votes": 44396,
+        "rep_votes": 9326,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.64851065365255
+        "margin_pct": -65.28051822344663
       },
       "35": {
-        "total_votes": 68563,
-        "dem_votes": 55539,
-        "rep_votes": 13024,
+        "total_votes": 70256,
+        "dem_votes": 57873,
+        "rep_votes": 12383,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.008663564896516
+        "margin_pct": -64.74891824185835
       },
       "36": {
-        "total_votes": 75410,
-        "dem_votes": 65743,
-        "rep_votes": 9667,
+        "total_votes": 68700,
+        "dem_votes": 59444,
+        "rep_votes": 9256,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.36149051849887
+        "margin_pct": -73.05385735080058
       },
       "37": {
-        "total_votes": 87075,
-        "dem_votes": 34881,
-        "rep_votes": 52194,
+        "total_votes": 88487,
+        "dem_votes": 35502,
+        "rep_votes": 52985,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.88285960378984
+        "margin_pct": 19.75770452156814
       },
       "38": {
-        "total_votes": 73336,
-        "dem_votes": 58882,
-        "rep_votes": 14454,
+        "total_votes": 73044,
+        "dem_votes": 58974,
+        "rep_votes": 14070,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.58143340242172
+        "margin_pct": -61.475275176605884
       },
       "39": {
-        "total_votes": 62347,
-        "dem_votes": 51881,
-        "rep_votes": 10466,
+        "total_votes": 66409,
+        "dem_votes": 56060,
+        "rep_votes": 10349,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.42661234702551
+        "margin_pct": -68.83253775843635
       },
       "40": {
-        "total_votes": 67194,
-        "dem_votes": 38284,
-        "rep_votes": 28910,
+        "total_votes": 64670,
+        "dem_votes": 36582,
+        "rep_votes": 28088,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.95065035568652
+        "margin_pct": -13.134374516777486
       },
       "41": {
-        "total_votes": 66316,
-        "dem_votes": 53118,
-        "rep_votes": 13198,
+        "total_votes": 63171,
+        "dem_votes": 50409,
+        "rep_votes": 12762,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.196634296399054
+        "margin_pct": -59.59538395782875
       },
       "42": {
-        "total_votes": 80126,
-        "dem_votes": 63775,
-        "rep_votes": 16351,
+        "total_votes": 86852,
+        "dem_votes": 69364,
+        "rep_votes": 17488,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.18678082020817
+        "margin_pct": -59.72919449177911
       },
       "43": {
-        "total_votes": 74727,
-        "dem_votes": 54028,
-        "rep_votes": 20699,
+        "total_votes": 69076,
+        "dem_votes": 51007,
+        "rep_votes": 18069,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.601014358933185
+        "margin_pct": -47.68371069546586
       },
       "44": {
-        "total_votes": 65982,
-        "dem_votes": 57515,
-        "rep_votes": 8467,
+        "total_votes": 66701,
+        "dem_votes": 58096,
+        "rep_votes": 8605,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.33542481282774
+        "margin_pct": -74.1982878817409
       },
       "45": {
-        "total_votes": 68799,
-        "dem_votes": 25768,
-        "rep_votes": 43031,
+        "total_votes": 67688,
+        "dem_votes": 25497,
+        "rep_votes": 42191,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.0919344757918
+        "margin_pct": 24.663160382933462
       },
       "46": {
-        "total_votes": 75789,
-        "dem_votes": 26380,
-        "rep_votes": 49409,
+        "total_votes": 75805,
+        "dem_votes": 26167,
+        "rep_votes": 49638,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.385676021586246
+        "margin_pct": 30.962337576677
       },
       "47": {
-        "total_votes": 71911,
-        "dem_votes": 25771,
-        "rep_votes": 46140,
+        "total_votes": 72112,
+        "dem_votes": 25970,
+        "rep_votes": 46142,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.325290984689406
+        "margin_pct": 27.973152873308187
       },
       "48": {
-        "total_votes": 72239,
-        "dem_votes": 29641,
-        "rep_votes": 42598,
+        "total_votes": 73264,
+        "dem_votes": 29748,
+        "rep_votes": 43516,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 17.936294799208184
+        "margin_pct": 18.792312732037566
       },
       "49": {
-        "total_votes": 70193,
-        "dem_votes": 15646,
-        "rep_votes": 54547,
+        "total_votes": 69978,
+        "dem_votes": 15589,
+        "rep_votes": 54389,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.420056130953235
+        "margin_pct": 55.44599731344137
       },
       "50": {
-        "total_votes": 72659,
-        "dem_votes": 10904,
-        "rep_votes": 61755,
+        "total_votes": 73169,
+        "dem_votes": 11020,
+        "rep_votes": 62149,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.98582419246068
+        "margin_pct": 69.87795377823942
       },
       "51": {
-        "total_votes": 88586,
-        "dem_votes": 13096,
-        "rep_votes": 75490,
+        "total_votes": 88292,
+        "dem_votes": 13037,
+        "rep_votes": 75255,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.43325130381776
+        "margin_pct": 70.4684456122865
       },
       "52": {
-        "total_votes": 66653,
-        "dem_votes": 15022,
-        "rep_votes": 51631,
+        "total_votes": 66062,
+        "dem_votes": 14699,
+        "rep_votes": 51363,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.924759575713026
+        "margin_pct": 55.49937937089401
       },
       "53": {
-        "total_votes": 63039,
-        "dem_votes": 10923,
-        "rep_votes": 52116,
+        "total_votes": 63961,
+        "dem_votes": 11299,
+        "rep_votes": 52662,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 65.3452624565745
+        "margin_pct": 64.66909522990572
       },
       "54": {
-        "total_votes": 53816,
-        "dem_votes": 9747,
-        "rep_votes": 44069,
+        "total_votes": 53712,
+        "dem_votes": 9741,
+        "rep_votes": 43971,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.77657202319013
+        "margin_pct": 63.72877569258266
       },
       "55": {
-        "total_votes": 72932,
-        "dem_votes": 57400,
-        "rep_votes": 15532,
+        "total_votes": 71560,
+        "dem_votes": 56127,
+        "rep_votes": 15433,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.406899577688804
+        "margin_pct": -56.86696478479597
       },
       "56": {
-        "total_votes": 94362,
-        "dem_votes": 35091,
-        "rep_votes": 59271,
+        "total_votes": 94391,
+        "dem_votes": 35031,
+        "rep_votes": 59360,
         "other_votes": 0,
         "dem_candidate": "Alisha Thomas Searcy",
         "rep_candidate": "Richard Woods",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.624721815985247
+        "margin_pct": 25.774703096693543
       }
     }
   }

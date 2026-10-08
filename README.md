@@ -173,6 +173,7 @@ District overlays are weighted reallocations, not winner-take-all assignment.
 - The six `Data/13_GA_{CD118,CD119,SLDL22,SLDL24,SLDU22,SLDU24}.txt` Census block-equivalency files provide authoritative block-to-plan assignments. `--from-equivalencies` combines them with block-level `CVAP_TOT24` from `Data/ga_cvap_2024_2020_b_csv.zip`; it never uses land area as a proxy for voters.
 - County reconciliation uses integer largest-remainder allocation, so published district totals conserve the exact statewide Democratic, Republican, other, and total vote counts.
 - After a full district rebuild, run `scripts/repair_2024_state_house_president.py`. Its direct 2024 SOS House/Senate/Congressional district vote buckets supersede modeled crosswalk allocation for the 2024 presidential slices; it also maintains the corresponding 2022-lines remaps.
+- Then run `scripts/repair_2022_district_buckets.py`. It uses same-election SOS congressional, State House, and State Senate ballot buckets to repair every 2022 general-election statewide overlay in the 2022-lines archive. Older election buckets are not reused because their district labels refer to superseded maps.
 - In Georgia's multi-candidate 2020 U.S. Senate contests, the Democratic and Republican buckets represent the eventual runoff nominees; every other candidate is included in `other`.
 
 ### Modern-Line Reference

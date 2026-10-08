@@ -4,54 +4,39 @@
     "contest_type": "insurance_commissioner",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-10-08T20:07:46.782435+00:00",
+    "source": "2022 SOS precinct export allocated by direct district ballot buckets",
+    "generated_by": "scripts/repair_2022_district_buckets.py",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3516860,
-    "matched_input_votes": 3516860,
+    "total_input_votes": 3895524,
+    "matched_input_votes": 3895524,
     "input_files": [
-      "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Insurance.json"
-    ],
-    "county_reconciliation": {
-      "method": "county_constrained_party_scaling",
-      "canonical_counties": 159,
-      "reconciled_counties": 159,
-      "unresolved_county_fips": [],
-      "mapped_before": {
-        "dem_votes": 1624560,
-        "rep_votes": 1892300,
-        "other_votes": 0
-      },
-      "canonical_target": {
-        "dem_votes": 1788136,
-        "rep_votes": 2107388,
-        "other_votes": 0
-      }
-    }
+      "Data/20221108__ga__general__official__precinct.csv",
+      "Data/20221108__ga__general__precinct.csv"
+    ]
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 21572,
-        "dem_votes": 3873,
-        "rep_votes": 17699,
+        "total_votes": 18559,
+        "dem_votes": 3425,
+        "rep_votes": 15134,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.09234192471722
+        "margin_pct": 63.09068376528908
       },
       "2": {
-        "total_votes": 18870,
-        "dem_votes": 2883,
-        "rep_votes": 15987,
+        "total_votes": 21694,
+        "dem_votes": 3285,
+        "rep_votes": 18409,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.44356120826708
+        "margin_pct": 69.7151286069881
       },
       "3": {
         "total_votes": 20801,
@@ -65,37 +50,37 @@
         "margin_pct": 61.73260900918225
       },
       "4": {
-        "total_votes": 11629,
-        "dem_votes": 3433,
-        "rep_votes": 8196,
+        "total_votes": 11693,
+        "dem_votes": 3452,
+        "rep_votes": 8241,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.957949952704446
+        "margin_pct": 40.95612759770803
       },
       "5": {
-        "total_votes": 19254,
-        "dem_votes": 2934,
-        "rep_votes": 16320,
+        "total_votes": 19265,
+        "dem_votes": 2936,
+        "rep_votes": 16329,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.5232159551262
+        "margin_pct": 69.5198546587075
       },
       "6": {
-        "total_votes": 18193,
-        "dem_votes": 2332,
-        "rep_votes": 15861,
+        "total_votes": 18307,
+        "dem_votes": 2357,
+        "rep_votes": 15950,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 74.3637662837355
+        "margin_pct": 74.25028677555034
       },
       "7": {
         "total_votes": 28286,
@@ -109,1621 +94,1621 @@
         "margin_pct": 69.20738174361875
       },
       "8": {
-        "total_votes": 31361,
-        "dem_votes": 4763,
-        "rep_votes": 26598,
+        "total_votes": 31424,
+        "dem_votes": 4773,
+        "rep_votes": 26651,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.62469309014381
+        "margin_pct": 69.6219450101833
       },
       "9": {
-        "total_votes": 25291,
-        "dem_votes": 3627,
-        "rep_votes": 21664,
+        "total_votes": 25377,
+        "dem_votes": 3642,
+        "rep_votes": 21735,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 71.31786010833893
+        "margin_pct": 71.29684359853411
       },
       "10": {
-        "total_votes": 23858,
-        "dem_votes": 3695,
-        "rep_votes": 20163,
+        "total_votes": 23714,
+        "dem_votes": 3670,
+        "rep_votes": 20044,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 69.02506496772571
+        "margin_pct": 69.04781985325124
       },
       "11": {
-        "total_votes": 26825,
-        "dem_votes": 4242,
-        "rep_votes": 22583,
+        "total_votes": 27085,
+        "dem_votes": 4334,
+        "rep_votes": 22751,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.37278657968314
+        "margin_pct": 67.99704633561011
       },
       "12": {
-        "total_votes": 18229,
-        "dem_votes": 3208,
-        "rep_votes": 15021,
+        "total_votes": 19251,
+        "dem_votes": 3564,
+        "rep_votes": 15687,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.8033353447803
+        "margin_pct": 62.97335203366059
       },
       "13": {
-        "total_votes": 19060,
-        "dem_votes": 5714,
-        "rep_votes": 13346,
+        "total_votes": 18038,
+        "dem_votes": 5358,
+        "rep_votes": 12680,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.04197271773347
+        "margin_pct": 40.5920833795321
       },
       "14": {
-        "total_votes": 22842,
-        "dem_votes": 3632,
-        "rep_votes": 19210,
+        "total_votes": 23986,
+        "dem_votes": 3930,
+        "rep_votes": 20056,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.19893179231241
+        "margin_pct": 67.2308846827316
       },
       "15": {
-        "total_votes": 21735,
-        "dem_votes": 5386,
-        "rep_votes": 16349,
+        "total_votes": 20588,
+        "dem_votes": 5087,
+        "rep_votes": 15501,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 50.43938348286174
+        "margin_pct": 50.58286380415776
       },
       "16": {
-        "total_votes": 25571,
-        "dem_votes": 5435,
-        "rep_votes": 20136,
+        "total_votes": 20974,
+        "dem_votes": 4180,
+        "rep_votes": 16794,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.49090766884362
+        "margin_pct": 60.14112710975493
       },
       "17": {
-        "total_votes": 22201,
-        "dem_votes": 7734,
-        "rep_votes": 14467,
+        "total_votes": 22631,
+        "dem_votes": 7696,
+        "rep_votes": 14935,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 30.32746272690419
+        "margin_pct": 31.98709734435067
       },
       "18": {
-        "total_votes": 18854,
-        "dem_votes": 2289,
-        "rep_votes": 16565,
+        "total_votes": 23799,
+        "dem_votes": 3296,
+        "rep_votes": 20503,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 75.71868038612496
+        "margin_pct": 72.30135719988235
       },
       "19": {
-        "total_votes": 24230,
-        "dem_votes": 8560,
-        "rep_votes": 15670,
+        "total_votes": 22804,
+        "dem_votes": 8321,
+        "rep_votes": 14483,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 29.343788691704496
+        "margin_pct": 27.021575162252237
       },
       "20": {
-        "total_votes": 26122,
-        "dem_votes": 7295,
-        "rep_votes": 18827,
+        "total_votes": 25921,
+        "dem_votes": 7216,
+        "rep_votes": 18705,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.146696271342165
+        "margin_pct": 44.32313568149377
       },
       "21": {
-        "total_votes": 30055,
-        "dem_votes": 6910,
-        "rep_votes": 23145,
+        "total_votes": 29847,
+        "dem_votes": 6866,
+        "rep_votes": 22981,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 54.01763433704875
+        "margin_pct": 53.99202599926291
       },
       "22": {
-        "total_votes": 25116,
-        "dem_votes": 10087,
-        "rep_votes": 15029,
+        "total_votes": 23956,
+        "dem_votes": 9017,
+        "rep_votes": 14939,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.67670011148272
+        "margin_pct": 24.720320587744197
       },
       "23": {
-        "total_votes": 24580,
-        "dem_votes": 5213,
-        "rep_votes": 19367,
+        "total_votes": 24626,
+        "dem_votes": 5225,
+        "rep_votes": 19401,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.583401139137514
+        "margin_pct": 57.56517501827337
       },
       "24": {
-        "total_votes": 17721,
-        "dem_votes": 5421,
-        "rep_votes": 12300,
+        "total_votes": 23141,
+        "dem_votes": 6831,
+        "rep_votes": 16310,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.8183511088539
+        "margin_pct": 40.96192904368869
       },
       "25": {
-        "total_votes": 23542,
-        "dem_votes": 8947,
-        "rep_votes": 14595,
+        "total_votes": 23669,
+        "dem_votes": 8521,
+        "rep_votes": 15148,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.991164726871126
+        "margin_pct": 27.998648020617683
       },
       "26": {
-        "total_votes": 25318,
-        "dem_votes": 6717,
-        "rep_votes": 18601,
+        "total_votes": 23586,
+        "dem_votes": 6378,
+        "rep_votes": 17208,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 46.93893672485978
+        "margin_pct": 45.91706944797762
       },
       "27": {
-        "total_votes": 24915,
-        "dem_votes": 3675,
-        "rep_votes": 21240,
+        "total_votes": 24843,
+        "dem_votes": 3657,
+        "rep_votes": 21186,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 70.49969897652016
+        "margin_pct": 70.55911121845187
       },
       "28": {
-        "total_votes": 30151,
-        "dem_votes": 5912,
-        "rep_votes": 24239,
+        "total_votes": 25545,
+        "dem_votes": 4988,
+        "rep_votes": 20557,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.784053596895625
+        "margin_pct": 60.947347817576826
       },
       "29": {
-        "total_votes": 13433,
-        "dem_votes": 4798,
-        "rep_votes": 8635,
+        "total_votes": 13199,
+        "dem_votes": 4728,
+        "rep_votes": 8471,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.563984217970667
+        "margin_pct": 28.35820895522388
       },
       "30": {
-        "total_votes": 26240,
-        "dem_votes": 6205,
-        "rep_votes": 20035,
+        "total_votes": 25360,
+        "dem_votes": 5939,
+        "rep_votes": 19421,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.705792682926834
+        "margin_pct": 53.162460567823345
       },
       "31": {
-        "total_votes": 22037,
-        "dem_votes": 4305,
-        "rep_votes": 17732,
+        "total_votes": 22690,
+        "dem_votes": 4441,
+        "rep_votes": 18249,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 60.929346099741345
+        "margin_pct": 60.85500220361393
       },
       "32": {
-        "total_votes": 21529,
-        "dem_votes": 3020,
-        "rep_votes": 18509,
+        "total_votes": 21005,
+        "dem_votes": 2937,
+        "rep_votes": 18068,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 71.9448186167495
+        "margin_pct": 72.03522970721257
       },
       "33": {
-        "total_votes": 23358,
-        "dem_votes": 3626,
-        "rep_votes": 19732,
+        "total_votes": 23396,
+        "dem_votes": 3638,
+        "rep_votes": 19758,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.95282130319377
+        "margin_pct": 68.90066678064628
       },
       "34": {
-        "total_votes": 27526,
-        "dem_votes": 10056,
-        "rep_votes": 17470,
+        "total_votes": 30765,
+        "dem_votes": 11321,
+        "rep_votes": 19444,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.934534621812105
+        "margin_pct": 26.403380464813914
       },
       "35": {
-        "total_votes": 20396,
-        "dem_votes": 10386,
-        "rep_votes": 10010,
+        "total_votes": 19879,
+        "dem_votes": 10607,
+        "rep_votes": 9272,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.8434987252402433
+        "margin_pct": -6.715629558830926
       },
       "36": {
-        "total_votes": 30576,
-        "dem_votes": 10947,
-        "rep_votes": 19629,
+        "total_votes": 31237,
+        "dem_votes": 11253,
+        "rep_votes": 19984,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.394819466248038
+        "margin_pct": 27.95082754425841
       },
       "37": {
-        "total_votes": 20508,
-        "dem_votes": 10647,
-        "rep_votes": 9861,
+        "total_votes": 20626,
+        "dem_votes": 11194,
+        "rep_votes": 9432,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -3.8326506729081333
+        "margin_pct": -8.542616115582275
       },
       "38": {
-        "total_votes": 22448,
-        "dem_votes": 15995,
-        "rep_votes": 6453,
+        "total_votes": 21930,
+        "dem_votes": 15718,
+        "rep_votes": 6212,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.50712758374911
+        "margin_pct": -43.34701322389421
       },
       "39": {
-        "total_votes": 18903,
-        "dem_votes": 14609,
-        "rep_votes": 4294,
+        "total_votes": 20054,
+        "dem_votes": 15412,
+        "rep_votes": 4642,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.56805798021478
+        "margin_pct": -53.704996509424554
       },
       "40": {
-        "total_votes": 27052,
-        "dem_votes": 16554,
-        "rep_votes": 10498,
+        "total_votes": 27063,
+        "dem_votes": 16457,
+        "rep_votes": 10606,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.38651486026911
+        "margin_pct": -21.61992388131397
       },
       "41": {
-        "total_votes": 16403,
-        "dem_votes": 11118,
-        "rep_votes": 5285,
+        "total_votes": 16179,
+        "dem_votes": 11054,
+        "rep_votes": 5125,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -35.56056818874596
+        "margin_pct": -36.646269855986155
       },
       "42": {
-        "total_votes": 18903,
-        "dem_votes": 12329,
-        "rep_votes": 6574,
+        "total_votes": 17538,
+        "dem_votes": 11511,
+        "rep_votes": 6027,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.444902925461566
+        "margin_pct": -31.269243927471774
       },
       "43": {
-        "total_votes": 17557,
-        "dem_votes": 9827,
-        "rep_votes": 7730,
+        "total_votes": 18934,
+        "dem_votes": 10108,
+        "rep_votes": 8826,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -11.943953978470127
+        "margin_pct": -6.770888349001796
       },
       "44": {
-        "total_votes": 26566,
-        "dem_votes": 10698,
-        "rep_votes": 15868,
+        "total_votes": 25893,
+        "dem_votes": 10477,
+        "rep_votes": 15416,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 19.4609651434164
+        "margin_pct": 19.074653381222724
       },
       "45": {
-        "total_votes": 34341,
-        "dem_votes": 13350,
-        "rep_votes": 20991,
+        "total_votes": 31407,
+        "dem_votes": 12145,
+        "rep_votes": 19262,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.250371276316937
+        "margin_pct": 22.66055337981979
       },
       "46": {
-        "total_votes": 28809,
-        "dem_votes": 10973,
-        "rep_votes": 17836,
+        "total_votes": 29876,
+        "dem_votes": 11393,
+        "rep_votes": 18483,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.822416605921763
+        "margin_pct": 23.7314232159593
       },
       "47": {
-        "total_votes": 24991,
-        "dem_votes": 9010,
-        "rep_votes": 15981,
+        "total_votes": 24456,
+        "dem_votes": 8855,
+        "rep_votes": 15601,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.894041855067826
+        "margin_pct": 27.584232908079816
       },
       "48": {
-        "total_votes": 30423,
-        "dem_votes": 13547,
-        "rep_votes": 16876,
+        "total_votes": 26609,
+        "dem_votes": 11266,
+        "rep_votes": 15343,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 10.942379121059725
+        "margin_pct": 15.321883573227105
       },
       "49": {
-        "total_votes": 26741,
-        "dem_votes": 10595,
-        "rep_votes": 16146,
+        "total_votes": 29296,
+        "dem_votes": 11504,
+        "rep_votes": 17792,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 20.75838599902771
+        "margin_pct": 21.46368104860732
       },
       "50": {
-        "total_votes": 21796,
-        "dem_votes": 11052,
-        "rep_votes": 10744,
+        "total_votes": 22095,
+        "dem_votes": 11218,
+        "rep_votes": 10877,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.4131033217104056
+        "margin_pct": -1.5433355962887532
       },
       "51": {
-        "total_votes": 22107,
-        "dem_votes": 11632,
-        "rep_votes": 10475,
+        "total_votes": 22815,
+        "dem_votes": 12096,
+        "rep_votes": 10719,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -5.233636404758673
+        "margin_pct": -6.035502958579881
       },
       "52": {
-        "total_votes": 25163,
-        "dem_votes": 13779,
-        "rep_votes": 11384,
+        "total_votes": 23165,
+        "dem_votes": 12827,
+        "rep_votes": 10338,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.517943011564599
+        "margin_pct": -10.744657889056766
       },
       "53": {
-        "total_votes": 28158,
-        "dem_votes": 12296,
-        "rep_votes": 15862,
+        "total_votes": 28608,
+        "dem_votes": 12551,
+        "rep_votes": 16057,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.664251722423467
+        "margin_pct": 12.255313199105146
       },
       "54": {
-        "total_votes": 22658,
-        "dem_votes": 11874,
-        "rep_votes": 10784,
+        "total_votes": 23257,
+        "dem_votes": 12264,
+        "rep_votes": 10993,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.8106629005207875
+        "margin_pct": -5.4650212839145205
       },
       "55": {
-        "total_votes": 22806,
-        "dem_votes": 17176,
-        "rep_votes": 5630,
+        "total_votes": 22609,
+        "dem_votes": 17027,
+        "rep_votes": 5582,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -50.62702797509427
+        "margin_pct": -50.62143394223539
       },
       "56": {
-        "total_votes": 17984,
-        "dem_votes": 15705,
-        "rep_votes": 2279,
+        "total_votes": 17348,
+        "dem_votes": 15164,
+        "rep_votes": 2184,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.65524911032028
+        "margin_pct": -74.82130504957344
       },
       "57": {
-        "total_votes": 23078,
-        "dem_votes": 16601,
-        "rep_votes": 6477,
+        "total_votes": 26517,
+        "dem_votes": 19485,
+        "rep_votes": 7032,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.868619464424995
+        "margin_pct": -46.96232605498359
       },
       "58": {
-        "total_votes": 24658,
-        "dem_votes": 21818,
-        "rep_votes": 2840,
+        "total_votes": 20119,
+        "dem_votes": 18200,
+        "rep_votes": 1919,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.96487955227512
+        "margin_pct": -80.92350514439087
       },
       "59": {
-        "total_votes": 19930,
-        "dem_votes": 18286,
-        "rep_votes": 1644,
+        "total_votes": 20057,
+        "dem_votes": 18440,
+        "rep_votes": 1617,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -83.50225790265931
+        "margin_pct": -83.87595353243256
       },
       "60": {
-        "total_votes": 24882,
-        "dem_votes": 18885,
-        "rep_votes": 5997,
+        "total_votes": 24105,
+        "dem_votes": 18298,
+        "rep_votes": 5807,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -51.79647938268628
+        "margin_pct": -51.819124662933
       },
       "61": {
-        "total_votes": 19011,
-        "dem_votes": 15968,
-        "rep_votes": 3043,
+        "total_votes": 22576,
+        "dem_votes": 19284,
+        "rep_votes": 3292,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -67.9869549208353
+        "margin_pct": -70.83628632175761
       },
       "62": {
-        "total_votes": 21203,
-        "dem_votes": 19328,
-        "rep_votes": 1875,
+        "total_votes": 20659,
+        "dem_votes": 18779,
+        "rep_votes": 1880,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.31382351554025
+        "margin_pct": -81.79969988866837
       },
       "63": {
-        "total_votes": 19065,
-        "dem_votes": 17028,
-        "rep_votes": 2037,
+        "total_votes": 18568,
+        "dem_votes": 16606,
+        "rep_votes": 1962,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -78.63099921321793
+        "margin_pct": -78.86686772942697
       },
       "64": {
-        "total_votes": 21217,
-        "dem_votes": 9177,
-        "rep_votes": 12040,
+        "total_votes": 23557,
+        "dem_votes": 9978,
+        "rep_votes": 13579,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 13.493896403827119
+        "margin_pct": 15.286326781848283
       },
       "65": {
-        "total_votes": 27195,
-        "dem_votes": 17830,
-        "rep_votes": 9365,
+        "total_votes": 26546,
+        "dem_votes": 18171,
+        "rep_votes": 8375,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.127045412759696
+        "margin_pct": -36.90198146613426
       },
       "66": {
-        "total_votes": 23721,
-        "dem_votes": 16397,
-        "rep_votes": 7324,
+        "total_votes": 20667,
+        "dem_votes": 14333,
+        "rep_votes": 6334,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.24880907213018
+        "margin_pct": -38.70421444815406
       },
       "67": {
-        "total_votes": 21183,
-        "dem_votes": 12404,
-        "rep_votes": 8779,
+        "total_votes": 22788,
+        "dem_votes": 14748,
+        "rep_votes": 8040,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.11277911532833
+        "margin_pct": -29.43654555028963
       },
       "68": {
-        "total_votes": 27162,
-        "dem_votes": 17615,
-        "rep_votes": 9547,
+        "total_votes": 24214,
+        "dem_votes": 14943,
+        "rep_votes": 9271,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -29.703261910021357
+        "margin_pct": -23.424465185429916
       },
       "69": {
-        "total_votes": 25992,
-        "dem_votes": 19011,
-        "rep_votes": 6981,
+        "total_votes": 26018,
+        "dem_votes": 19029,
+        "rep_votes": 6989,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -46.28347183748846
+        "margin_pct": -46.27565531555077
       },
       "70": {
-        "total_votes": 20845,
-        "dem_votes": 7563,
-        "rep_votes": 13282,
+        "total_votes": 20468,
+        "dem_votes": 7061,
+        "rep_votes": 13407,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.43583593187815
+        "margin_pct": 31.004494821184288
       },
       "71": {
-        "total_votes": 21415,
-        "dem_votes": 6584,
-        "rep_votes": 14831,
+        "total_votes": 21513,
+        "dem_votes": 6631,
+        "rep_votes": 14882,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.51038991361195
+        "margin_pct": 38.353553665225675
       },
       "72": {
-        "total_votes": 21975,
-        "dem_votes": 5223,
-        "rep_votes": 16752,
+        "total_votes": 20994,
+        "dem_votes": 4882,
+        "rep_votes": 16112,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.4641638225256
+        "margin_pct": 53.491473754406016
       },
       "73": {
-        "total_votes": 23588,
-        "dem_votes": 7018,
-        "rep_votes": 16570,
+        "total_votes": 28903,
+        "dem_votes": 9087,
+        "rep_votes": 19816,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.49516703408513
+        "margin_pct": 37.12071411272186
       },
       "74": {
-        "total_votes": 25377,
-        "dem_votes": 9156,
-        "rep_votes": 16221,
+        "total_votes": 25711,
+        "dem_votes": 9353,
+        "rep_votes": 16358,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.84017023288805
+        "margin_pct": 27.2451479911322
       },
       "75": {
-        "total_votes": 19738,
-        "dem_votes": 17263,
-        "rep_votes": 2475,
+        "total_votes": 16950,
+        "dem_votes": 14782,
+        "rep_votes": 2168,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -74.92147127368528
+        "margin_pct": -74.41887905604719
       },
       "76": {
-        "total_votes": 17210,
-        "dem_votes": 14839,
-        "rep_votes": 2371,
+        "total_votes": 17033,
+        "dem_votes": 14681,
+        "rep_votes": 2352,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -72.44625217896572
+        "margin_pct": -72.38302119415253
       },
       "77": {
-        "total_votes": 14442,
-        "dem_votes": 12989,
-        "rep_votes": 1453,
+        "total_votes": 15245,
+        "dem_votes": 13720,
+        "rep_votes": 1525,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -79.87813322254536
+        "margin_pct": -79.993440472286
       },
       "78": {
-        "total_votes": 17405,
-        "dem_votes": 14007,
-        "rep_votes": 3398,
+        "total_votes": 21304,
+        "dem_votes": 17488,
+        "rep_votes": 3816,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.95374892272336
+        "margin_pct": -64.17574164476156
       },
       "79": {
-        "total_votes": 15265,
-        "dem_votes": 13534,
-        "rep_votes": 1731,
+        "total_votes": 12870,
+        "dem_votes": 11388,
+        "rep_votes": 1482,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -77.32066819521782
+        "margin_pct": -76.96969696969697
       },
       "80": {
-        "total_votes": 19732,
-        "dem_votes": 10497,
-        "rep_votes": 9235,
+        "total_votes": 21071,
+        "dem_votes": 11068,
+        "rep_votes": 10003,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -6.395702412325158
+        "margin_pct": -5.054340088272982
       },
       "81": {
-        "total_votes": 23493,
-        "dem_votes": 15313,
-        "rep_votes": 8180,
+        "total_votes": 22782,
+        "dem_votes": 14886,
+        "rep_votes": 7896,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -30.362235559528372
+        "margin_pct": -30.682117461153542
       },
       "82": {
-        "total_votes": 27303,
-        "dem_votes": 20972,
-        "rep_votes": 6331,
+        "total_votes": 27546,
+        "dem_votes": 21091,
+        "rep_votes": 6455,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.62414386697433
+        "margin_pct": -53.1329412618892
       },
       "83": {
-        "total_votes": 18042,
-        "dem_votes": 10212,
-        "rep_votes": 7830,
+        "total_votes": 17916,
+        "dem_votes": 10229,
+        "rep_votes": 7687,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.202527435982708
+        "margin_pct": -14.188434918508596
       },
       "84": {
-        "total_votes": 26592,
-        "dem_votes": 24307,
-        "rep_votes": 2285,
+        "total_votes": 28028,
+        "dem_votes": 25562,
+        "rep_votes": 2466,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -82.81438026474127
+        "margin_pct": -82.40331097473954
       },
       "85": {
-        "total_votes": 19951,
-        "dem_votes": 17993,
-        "rep_votes": 1958,
+        "total_votes": 17835,
+        "dem_votes": 15902,
+        "rep_votes": 1933,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -80.37191118239687
+        "margin_pct": -78.32352116624615
       },
       "86": {
-        "total_votes": 16445,
-        "dem_votes": 14432,
-        "rep_votes": 2013,
+        "total_votes": 18574,
+        "dem_votes": 16416,
+        "rep_votes": 2158,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.51839464882943
+        "margin_pct": -76.7632174006676
       },
       "87": {
-        "total_votes": 19676,
-        "dem_votes": 17062,
-        "rep_votes": 2614,
+        "total_votes": 19065,
+        "dem_votes": 16490,
+        "rep_votes": 2575,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -73.42955885342549
+        "margin_pct": -72.98714922633097
       },
       "88": {
-        "total_votes": 21270,
-        "dem_votes": 17228,
-        "rep_votes": 4042,
+        "total_votes": 20670,
+        "dem_votes": 16569,
+        "rep_votes": 4101,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.993417959567466
+        "margin_pct": -60.31930333817126
       },
       "89": {
-        "total_votes": 25174,
-        "dem_votes": 22077,
-        "rep_votes": 3097,
+        "total_votes": 27566,
+        "dem_votes": 24369,
+        "rep_votes": 3197,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -75.39524906649719
+        "margin_pct": -76.80475948632373
       },
       "90": {
-        "total_votes": 27282,
-        "dem_votes": 25233,
-        "rep_votes": 2049,
+        "total_votes": 29102,
+        "dem_votes": 26667,
+        "rep_votes": 2435,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -84.97910710358478
+        "margin_pct": -83.26575493093257
       },
       "91": {
-        "total_votes": 25719,
-        "dem_votes": 20592,
-        "rep_votes": 5127,
+        "total_votes": 24274,
+        "dem_votes": 19145,
+        "rep_votes": 5129,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.130642715502155
+        "margin_pct": -57.740792617615554
       },
       "92": {
-        "total_votes": 24255,
-        "dem_votes": 18723,
-        "rep_votes": 5532,
+        "total_votes": 24114,
+        "dem_votes": 18531,
+        "rep_votes": 5583,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -54.384662956091525
+        "margin_pct": -53.69494899228664
       },
       "93": {
-        "total_votes": 18588,
-        "dem_votes": 13178,
-        "rep_votes": 5410,
+        "total_votes": 18234,
+        "dem_votes": 13572,
+        "rep_votes": 4662,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.79040241015709
+        "margin_pct": -48.864758144126355
       },
       "94": {
-        "total_votes": 23823,
-        "dem_votes": 19341,
-        "rep_votes": 4482,
+        "total_votes": 22262,
+        "dem_votes": 17994,
+        "rep_votes": 4268,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.3724971666037
+        "margin_pct": -61.656634624023
       },
       "95": {
-        "total_votes": 21718,
-        "dem_votes": 16956,
-        "rep_votes": 4762,
+        "total_votes": 22940,
+        "dem_votes": 17954,
+        "rep_votes": 4986,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -56.14697485956349
+        "margin_pct": -56.53007846556234
       },
       "96": {
-        "total_votes": 11928,
-        "dem_votes": 7305,
-        "rep_votes": 4623,
+        "total_votes": 11201,
+        "dem_votes": 7004,
+        "rep_votes": 4197,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.484909456740443
+        "margin_pct": -25.060262476564592
       },
       "97": {
-        "total_votes": 17723,
-        "dem_votes": 10223,
-        "rep_votes": 7500,
+        "total_votes": 18241,
+        "dem_votes": 10509,
+        "rep_votes": 7732,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -15.36421599052079
+        "margin_pct": -15.223946055589058
       },
       "98": {
-        "total_votes": 7238,
-        "dem_votes": 5193,
-        "rep_votes": 2045,
+        "total_votes": 7306,
+        "dem_votes": 5251,
+        "rep_votes": 2055,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -43.492677535230726
+        "margin_pct": -43.744867232411714
       },
       "99": {
-        "total_votes": 21123,
-        "dem_votes": 9781,
-        "rep_votes": 11342,
+        "total_votes": 21001,
+        "dem_votes": 9721,
+        "rep_votes": 11280,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 7.390048762012971
+        "margin_pct": 7.423456025903528
       },
       "100": {
-        "total_votes": 21143,
-        "dem_votes": 7100,
-        "rep_votes": 14043,
+        "total_votes": 23113,
+        "dem_votes": 7795,
+        "rep_votes": 15318,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.83829163316464
+        "margin_pct": 32.54878207069615
       },
       "101": {
         "total_votes": 19325,
-        "dem_votes": 10131,
-        "rep_votes": 9194,
+        "dem_votes": 10130,
+        "rep_votes": 9195,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -4.848641655886158
+        "margin_pct": -4.838292367399742
       },
       "102": {
-        "total_votes": 16773,
-        "dem_votes": 10620,
-        "rep_votes": 6153,
+        "total_votes": 17024,
+        "dem_votes": 10576,
+        "rep_votes": 6448,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.63208728313361
+        "margin_pct": -24.24812030075188
       },
       "103": {
-        "total_votes": 21994,
-        "dem_votes": 8401,
-        "rep_votes": 13593,
+        "total_votes": 21653,
+        "dem_votes": 8224,
+        "rep_votes": 13429,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.606438119487134
+        "margin_pct": 24.038239504918486
       },
       "104": {
-        "total_votes": 19458,
-        "dem_votes": 6522,
-        "rep_votes": 12936,
+        "total_votes": 21679,
+        "dem_votes": 7258,
+        "rep_votes": 14421,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.96330558125193
+        "margin_pct": 33.041191936897455
       },
       "105": {
-        "total_votes": 19175,
-        "dem_votes": 9643,
-        "rep_votes": 9532,
+        "total_votes": 20322,
+        "dem_votes": 10485,
+        "rep_votes": 9837,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -0.5788787483702738
+        "margin_pct": -3.188662533215235
       },
       "106": {
-        "total_votes": 22350,
+        "total_votes": 22370,
         "dem_votes": 12724,
-        "rep_votes": 9626,
+        "rep_votes": 9646,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -13.86129753914989
+        "margin_pct": -13.759499329459096
       },
       "107": {
-        "total_votes": 12586,
-        "dem_votes": 8260,
-        "rep_votes": 4326,
+        "total_votes": 13976,
+        "dem_votes": 9164,
+        "rep_votes": 4812,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.25695216907675
+        "margin_pct": -31.13909559244419
       },
       "108": {
-        "total_votes": 21777,
-        "dem_votes": 11040,
-        "rep_votes": 10737,
+        "total_votes": 21347,
+        "dem_votes": 10727,
+        "rep_votes": 10620,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -1.3913762226201956
+        "margin_pct": -0.5012413922331007
       },
       "109": {
-        "total_votes": 10733,
-        "dem_votes": 7772,
-        "rep_votes": 2961,
+        "total_votes": 10615,
+        "dem_votes": 7699,
+        "rep_votes": 2916,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -44.8243734277462
+        "margin_pct": -45.05887894488931
       },
       "110": {
-        "total_votes": 24247,
-        "dem_votes": 15499,
-        "rep_votes": 8748,
+        "total_votes": 23039,
+        "dem_votes": 14797,
+        "rep_votes": 8242,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -27.84261970553058
+        "margin_pct": -28.451755718564176
       },
       "111": {
-        "total_votes": 25645,
-        "dem_votes": 8741,
-        "rep_votes": 16904,
+        "total_votes": 24730,
+        "dem_votes": 8393,
+        "rep_votes": 16337,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.830766231234158
+        "margin_pct": 32.122927618277394
       },
       "112": {
-        "total_votes": 25495,
-        "dem_votes": 5390,
-        "rep_votes": 20105,
+        "total_votes": 25819,
+        "dem_votes": 5448,
+        "rep_votes": 20371,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 57.71719945087273
+        "margin_pct": 57.798520469421746
       },
       "113": {
-        "total_votes": 23646,
-        "dem_votes": 16322,
-        "rep_votes": 7324,
+        "total_votes": 20749,
+        "dem_votes": 14670,
+        "rep_votes": 6079,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.05294764442189
+        "margin_pct": -41.404405031567784
       },
       "114": {
-        "total_votes": 23812,
-        "dem_votes": 6680,
-        "rep_votes": 17132,
+        "total_votes": 26533,
+        "dem_votes": 7514,
+        "rep_votes": 19019,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 43.89383504115572
+        "margin_pct": 43.36109750122489
       },
       "115": {
-        "total_votes": 23057,
-        "dem_votes": 14207,
-        "rep_votes": 8850,
+        "total_votes": 22930,
+        "dem_votes": 14095,
+        "rep_votes": 8835,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -23.233725116016828
+        "margin_pct": -22.939380723942435
       },
       "116": {
-        "total_votes": 22564,
-        "dem_votes": 16102,
-        "rep_votes": 6462,
+        "total_votes": 23034,
+        "dem_votes": 16534,
+        "rep_votes": 6500,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -42.722921467824854
+        "margin_pct": -43.56169141269427
       },
       "117": {
-        "total_votes": 26253,
-        "dem_votes": 13002,
-        "rep_votes": 13251,
+        "total_votes": 26255,
+        "dem_votes": 13035,
+        "rep_votes": 13220,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 0.9484630327962519
+        "margin_pct": 0.7046276899638164
       },
       "118": {
-        "total_votes": 24156,
-        "dem_votes": 6095,
-        "rep_votes": 18061,
+        "total_votes": 24215,
+        "dem_votes": 6111,
+        "rep_votes": 18104,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.53634707733068
+        "margin_pct": 49.52715259136898
       },
       "119": {
-        "total_votes": 25302,
-        "dem_votes": 6377,
-        "rep_votes": 18925,
+        "total_votes": 21021,
+        "dem_votes": 5160,
+        "rep_votes": 15861,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.59291755592443
+        "margin_pct": 50.906236620522336
       },
       "120": {
-        "total_votes": 19304,
-        "dem_votes": 8192,
-        "rep_votes": 11112,
+        "total_votes": 24673,
+        "dem_votes": 9762,
+        "rep_votes": 14911,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.12639867384998
+        "margin_pct": 20.86896607627771
       },
       "121": {
-        "total_votes": 28529,
-        "dem_votes": 10654,
-        "rep_votes": 17875,
+        "total_votes": 26194,
+        "dem_votes": 10090,
+        "rep_votes": 16104,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.31108696414175
+        "margin_pct": 22.959456364052837
       },
       "122": {
-        "total_votes": 14915,
-        "dem_votes": 11338,
-        "rep_votes": 3577,
+        "total_votes": 14136,
+        "dem_votes": 10837,
+        "rep_votes": 3299,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -52.034864230640295
+        "margin_pct": -53.32484436898698
       },
       "123": {
-        "total_votes": 24825,
-        "dem_votes": 6844,
-        "rep_votes": 17981,
+        "total_votes": 24528,
+        "dem_votes": 6750,
+        "rep_votes": 17778,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 44.86203423967775
+        "margin_pct": 44.96086105675147
       },
       "124": {
-        "total_votes": 28124,
-        "dem_votes": 9604,
-        "rep_votes": 18520,
+        "total_votes": 28278,
+        "dem_votes": 9694,
+        "rep_votes": 18584,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.702460531930026
+        "margin_pct": 31.437866892991018
       },
       "125": {
-        "total_votes": 19221,
-        "dem_votes": 6262,
-        "rep_votes": 12959,
+        "total_votes": 22693,
+        "dem_votes": 7652,
+        "rep_votes": 15041,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.84209978669164
+        "margin_pct": 32.560701537919186
       },
       "126": {
-        "total_votes": 20374,
-        "dem_votes": 11771,
-        "rep_votes": 8603,
+        "total_votes": 21192,
+        "dem_votes": 12487,
+        "rep_votes": 8705,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -15.549229410032394
+        "margin_pct": -17.84635711589279
       },
       "127": {
-        "total_votes": 25663,
-        "dem_votes": 8493,
-        "rep_votes": 17170,
+        "total_votes": 24857,
+        "dem_votes": 7809,
+        "rep_votes": 17048,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.811323695592876
+        "margin_pct": 37.168604417266764
       },
       "128": {
-        "total_votes": 22861,
-        "dem_votes": 10473,
-        "rep_votes": 12388,
+        "total_votes": 22687,
+        "dem_votes": 10502,
+        "rep_votes": 12185,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.376711429946196
+        "margin_pct": 7.4183453078855734
       },
       "129": {
-        "total_votes": 17517,
-        "dem_votes": 10880,
-        "rep_votes": 6637,
+        "total_votes": 16137,
+        "dem_votes": 10178,
+        "rep_votes": 5959,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -24.222184163955017
+        "margin_pct": -26.144884427093018
       },
       "130": {
-        "total_votes": 18026,
-        "dem_votes": 12742,
-        "rep_votes": 5284,
+        "total_votes": 17299,
+        "dem_votes": 11502,
+        "rep_votes": 5797,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.373571507822035
+        "margin_pct": -32.97878490086132
       },
       "131": {
-        "total_votes": 27314,
-        "dem_votes": 8656,
-        "rep_votes": 18658,
+        "total_votes": 25367,
+        "dem_votes": 8096,
+        "rep_votes": 17271,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 36.61858387640038
+        "margin_pct": 36.16903851460559
       },
       "132": {
-        "total_votes": 16375,
-        "dem_votes": 10729,
-        "rep_votes": 5646,
+        "total_votes": 17280,
+        "dem_votes": 11790,
+        "rep_votes": 5490,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -31.0412213740458
+        "margin_pct": -36.45833333333333
       },
       "133": {
-        "total_votes": 20495,
-        "dem_votes": 8540,
-        "rep_votes": 11955,
+        "total_votes": 20624,
+        "dem_votes": 8619,
+        "rep_votes": 12005,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 16.66260063430105
+        "margin_pct": 16.4177657098526
       },
       "134": {
-        "total_votes": 21486,
-        "dem_votes": 7285,
-        "rep_votes": 14201,
+        "total_votes": 21224,
+        "dem_votes": 7021,
+        "rep_votes": 14203,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.188401749976734
+        "margin_pct": 33.83905013192612
       },
       "135": {
-        "total_votes": 24436,
-        "dem_votes": 5435,
-        "rep_votes": 19001,
+        "total_votes": 24268,
+        "dem_votes": 5485,
+        "rep_votes": 18783,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 55.51645113766573
+        "margin_pct": 54.79643975605736
       },
       "136": {
-        "total_votes": 26368,
-        "dem_votes": 7976,
-        "rep_votes": 18392,
+        "total_votes": 24512,
+        "dem_votes": 7444,
+        "rep_votes": 17068,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.50242718446602
+        "margin_pct": 39.262402088772845
       },
       "137": {
-        "total_votes": 20875,
-        "dem_votes": 11331,
-        "rep_votes": 9544,
+        "total_votes": 20987,
+        "dem_votes": 11929,
+        "rep_votes": 9058,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -8.560479041916167
+        "margin_pct": -13.679897079144233
       },
       "138": {
-        "total_votes": 23610,
-        "dem_votes": 6000,
-        "rep_votes": 17610,
+        "total_votes": 25545,
+        "dem_votes": 6453,
+        "rep_votes": 19092,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.174078780177894
+        "margin_pct": 49.47739283617146
       },
       "139": {
-        "total_votes": 20816,
-        "dem_votes": 7559,
-        "rep_votes": 13257,
+        "total_votes": 22388,
+        "dem_votes": 7821,
+        "rep_votes": 14567,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.373174481168334
+        "margin_pct": 30.132213685903164
       },
       "140": {
-        "total_votes": 12036,
-        "dem_votes": 8359,
-        "rep_votes": 3677,
+        "total_votes": 10809,
+        "dem_votes": 8019,
+        "rep_votes": 2790,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -38.89996676636757
+        "margin_pct": -48.37635303913406
       },
       "141": {
-        "total_votes": 17888,
-        "dem_votes": 12284,
-        "rep_votes": 5604,
+        "total_votes": 15497,
+        "dem_votes": 11312,
+        "rep_votes": 4185,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.34347048300536
+        "margin_pct": -45.98954636381235
       },
       "142": {
-        "total_votes": 19703,
-        "dem_votes": 12034,
-        "rep_votes": 7669,
+        "total_votes": 19569,
+        "dem_votes": 12386,
+        "rep_votes": 7183,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.15398670253261
+        "margin_pct": -26.58797077009556
       },
       "143": {
-        "total_votes": 18747,
-        "dem_votes": 13214,
-        "rep_votes": 5533,
+        "total_votes": 17651,
+        "dem_votes": 12183,
+        "rep_votes": 5468,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -40.97188883554702
+        "margin_pct": -38.04317035861991
       },
       "144": {
-        "total_votes": 25397,
-        "dem_votes": 8577,
-        "rep_votes": 16820,
+        "total_votes": 26480,
+        "dem_votes": 9194,
+        "rep_votes": 17286,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 32.45658936094814
+        "margin_pct": 30.55891238670695
       },
       "145": {
-        "total_votes": 16456,
-        "dem_votes": 5494,
-        "rep_votes": 10962,
+        "total_votes": 36208,
+        "dem_votes": 13380,
+        "rep_votes": 22828,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 33.22800194457948
+        "margin_pct": 26.093680954485198
       },
       "146": {
-        "total_votes": 26492,
-        "dem_votes": 9895,
-        "rep_votes": 16597,
+        "total_votes": 9085,
+        "dem_votes": 3274,
+        "rep_votes": 5811,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 25.298203231164123
+        "margin_pct": 27.925151348376442
       },
       "147": {
-        "total_votes": 21831,
-        "dem_votes": 10025,
-        "rep_votes": 11806,
+        "total_votes": 20683,
+        "dem_votes": 9259,
+        "rep_votes": 11424,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 8.158123768952407
+        "margin_pct": 10.467533723347678
       },
       "148": {
-        "total_votes": 19435,
-        "dem_votes": 5680,
-        "rep_votes": 13755,
+        "total_votes": 19771,
+        "dem_votes": 5691,
+        "rep_votes": 14080,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 41.54875225109339
+        "margin_pct": 42.4308330382884
       },
       "149": {
-        "total_votes": 20967,
+        "total_votes": 20963,
         "dem_votes": 6242,
-        "rep_votes": 14725,
+        "rep_votes": 14721,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.45881623503601
+        "margin_pct": 40.447455039832086
       },
       "150": {
-        "total_votes": 17843,
-        "dem_votes": 9109,
-        "rep_votes": 8734,
+        "total_votes": 17860,
+        "dem_votes": 9088,
+        "rep_votes": 8772,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -2.101664518298492
+        "margin_pct": -1.769316909294513
       },
       "151": {
-        "total_votes": 19212,
-        "dem_votes": 8179,
-        "rep_votes": 11033,
+        "total_votes": 19973,
+        "dem_votes": 8913,
+        "rep_votes": 11060,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 14.855298771601083
+        "margin_pct": 10.749511840985331
       },
       "152": {
-        "total_votes": 22255,
-        "dem_votes": 6086,
-        "rep_votes": 16169,
+        "total_votes": 23000,
+        "dem_votes": 6420,
+        "rep_votes": 16580,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 45.3066726578297
+        "margin_pct": 44.173913043478265
       },
       "153": {
-        "total_votes": 17182,
-        "dem_votes": 11046,
-        "rep_votes": 6136,
+        "total_votes": 16614,
+        "dem_votes": 10795,
+        "rep_votes": 5819,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.576417180770576
+        "margin_pct": -29.950644035151075
       },
       "154": {
-        "total_votes": 21888,
-        "dem_votes": 11036,
-        "rep_votes": 10852,
+        "total_votes": 20943,
+        "dem_votes": 10244,
+        "rep_votes": 10699,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -0.8406432748538011
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 2.1725636250775917
       },
       "155": {
         "total_votes": 21578,
@@ -1737,169 +1722,169 @@
         "margin_pct": 37.84410047270368
       },
       "156": {
-        "total_votes": 19810,
-        "dem_votes": 5011,
-        "rep_votes": 14799,
+        "total_votes": 18456,
+        "dem_votes": 4561,
+        "rep_votes": 13895,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.40938919737506
+        "margin_pct": 50.57433896835717
       },
       "157": {
-        "total_votes": 18276,
-        "dem_votes": 3820,
-        "rep_votes": 14456,
+        "total_votes": 18118,
+        "dem_votes": 3799,
+        "rep_votes": 14319,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 58.19654191289122
+        "margin_pct": 58.063803951871066
       },
       "158": {
-        "total_votes": 19246,
-        "dem_votes": 5849,
-        "rep_votes": 13397,
+        "total_votes": 19758,
+        "dem_votes": 6087,
+        "rep_votes": 13671,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.2185389171776
+        "margin_pct": 38.38445186759793
       },
       "159": {
-        "total_votes": 24889,
-        "dem_votes": 6517,
-        "rep_votes": 18372,
+        "total_votes": 22300,
+        "dem_votes": 5809,
+        "rep_votes": 16491,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.631483788018805
+        "margin_pct": 47.90134529147982
       },
       "160": {
-        "total_votes": 16741,
-        "dem_votes": 4256,
-        "rep_votes": 12485,
+        "total_votes": 16170,
+        "dem_votes": 4174,
+        "rep_votes": 11996,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 49.1547697270175
+        "margin_pct": 48.37353123067409
       },
       "161": {
-        "total_votes": 18687,
-        "dem_votes": 7341,
-        "rep_votes": 11346,
+        "total_votes": 20423,
+        "dem_votes": 7968,
+        "rep_votes": 12455,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.432011558837694
+        "margin_pct": 21.97032757185526
       },
       "162": {
-        "total_votes": 21051,
-        "dem_votes": 12946,
-        "rep_votes": 8105,
+        "total_votes": 17586,
+        "dem_votes": 11462,
+        "rep_votes": 6124,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -22.996532231247922
+        "margin_pct": -30.35369043557375
       },
       "163": {
-        "total_votes": 22718,
-        "dem_votes": 15102,
-        "rep_votes": 7616,
+        "total_votes": 19407,
+        "dem_votes": 13545,
+        "rep_votes": 5862,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -32.95184435249582
+        "margin_pct": -39.5888081620034
       },
       "164": {
-        "total_votes": 17027,
-        "dem_votes": 6194,
-        "rep_votes": 10833,
+        "total_votes": 21555,
+        "dem_votes": 8801,
+        "rep_votes": 12754,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.24496388089505
+        "margin_pct": 18.339132451867314
       },
       "165": {
-        "total_votes": 18575,
-        "dem_votes": 14298,
-        "rep_votes": 4277,
+        "total_votes": 18769,
+        "dem_votes": 14001,
+        "rep_votes": 4768,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -53.94885598923283
+        "margin_pct": -49.192817944482925
       },
       "166": {
-        "total_votes": 29165,
-        "dem_votes": 8407,
-        "rep_votes": 20758,
+        "total_votes": 32133,
+        "dem_votes": 9065,
+        "rep_votes": 23068,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.3487056403223
+        "margin_pct": 43.57825288644073
       },
       "167": {
-        "total_votes": 18864,
-        "dem_votes": 5607,
-        "rep_votes": 13257,
+        "total_votes": 19952,
+        "dem_votes": 5880,
+        "rep_votes": 14072,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.55343511450381
+        "margin_pct": 41.05854049719326
       },
       "168": {
-        "total_votes": 15189,
-        "dem_votes": 9200,
-        "rep_votes": 5989,
+        "total_votes": 15105,
+        "dem_votes": 9143,
+        "rep_votes": 5962,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.14029890052011
+        "margin_pct": -21.059251903343267
       },
       "169": {
-        "total_votes": 18613,
-        "dem_votes": 4360,
-        "rep_votes": 14253,
+        "total_votes": 18672,
+        "dem_votes": 4387,
+        "rep_votes": 14285,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.15102347821416
+        "margin_pct": 53.00985432733505
       },
       "170": {
-        "total_votes": 18578,
-        "dem_votes": 4336,
-        "rep_votes": 14242,
+        "total_votes": 18261,
+        "dem_votes": 4313,
+        "rep_votes": 13948,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.32113252233825
+        "margin_pct": 52.76271836153551
       },
       "171": {
         "total_votes": 18707,
@@ -1913,103 +1898,103 @@
         "margin_pct": 30.763885176671835
       },
       "172": {
-        "total_votes": 16017,
-        "dem_votes": 3740,
-        "rep_votes": 12277,
+        "total_votes": 16980,
+        "dem_votes": 3888,
+        "rep_votes": 13092,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.299619154648184
+        "margin_pct": 54.20494699646643
       },
       "173": {
-        "total_votes": 21289,
-        "dem_votes": 7692,
-        "rep_votes": 13597,
+        "total_votes": 20672,
+        "dem_votes": 7571,
+        "rep_votes": 13101,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 27.737329137113065
+        "margin_pct": 26.751160990712076
       },
       "174": {
-        "total_votes": 17677,
-        "dem_votes": 3175,
-        "rep_votes": 14502,
+        "total_votes": 18493,
+        "dem_votes": 3763,
+        "rep_votes": 14730,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 64.07761497991741
+        "margin_pct": 59.30352025090575
       },
       "175": {
-        "total_votes": 18650,
-        "dem_votes": 6425,
-        "rep_votes": 12225,
+        "total_votes": 22037,
+        "dem_votes": 6883,
+        "rep_votes": 15154,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.099195710455763
+        "margin_pct": 37.532331987112585
       },
       "176": {
-        "total_votes": 16407,
-        "dem_votes": 4190,
-        "rep_votes": 12217,
+        "total_votes": 16518,
+        "dem_votes": 4188,
+        "rep_votes": 12330,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.9242396538063
+        "margin_pct": 49.291681801670904
       },
       "177": {
-        "total_votes": 17388,
-        "dem_votes": 7593,
-        "rep_votes": 9795,
+        "total_votes": 12988,
+        "dem_votes": 6519,
+        "rep_votes": 6469,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 12.663906142167011
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -0.384970742223591
       },
       "178": {
-        "total_votes": 20737,
-        "dem_votes": 2696,
-        "rep_votes": 18041,
+        "total_votes": 20923,
+        "dem_votes": 2723,
+        "rep_votes": 18200,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 73.9981675266432
+        "margin_pct": 73.97122783539646
       },
       "179": {
-        "total_votes": 23698,
-        "dem_votes": 8082,
-        "rep_votes": 15616,
+        "total_votes": 22547,
+        "dem_votes": 7888,
+        "rep_votes": 14659,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 31.791712380791626
+        "margin_pct": 30.03060274094114
       },
       "180": {
-        "total_votes": 19764,
-        "dem_votes": 5962,
-        "rep_votes": 13802,
+        "total_votes": 19883,
+        "dem_votes": 5934,
+        "rep_votes": 13949,
         "other_votes": 0,
         "dem_candidate": "Janice Laws Robinson",
         "rep_candidate": "John King",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.66808338393038
+        "margin_pct": 40.31081828697883
       }
     }
   }

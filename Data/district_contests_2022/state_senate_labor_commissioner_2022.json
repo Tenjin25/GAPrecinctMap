@@ -4,142 +4,127 @@
     "contest_type": "labor_commissioner",
     "year": 2022,
     "district_lines_year": 2022,
-    "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-10-08T20:07:50.787490+00:00",
+    "source": "2022 SOS precinct export allocated by direct district ballot buckets",
+    "generated_by": "scripts/repair_2022_district_buckets.py",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 3518979,
-    "matched_input_votes": 3518979,
+    "total_input_votes": 3898024,
+    "matched_input_votes": 3898024,
     "input_files": [
-      "Data/derived_vtd20/2022/contests/vtd20/Commissioner_of_Labor.json"
-    ],
-    "county_reconciliation": {
-      "method": "county_constrained_party_scaling",
-      "canonical_counties": 159,
-      "reconciled_counties": 159,
-      "unresolved_county_fips": [],
-      "mapped_before": {
-        "dem_votes": 1605574,
-        "rep_votes": 1822121,
-        "other_votes": 91284
-      },
-      "canonical_target": {
-        "dem_votes": 1766894,
-        "rep_votes": 2030170,
-        "other_votes": 100960
-      }
-    }
+      "Data/20221108__ga__general__official__precinct.csv",
+      "Data/20221108__ga__general__precinct.csv"
+    ]
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 63016,
-        "dem_votes": 23572,
-        "rep_votes": 37736,
-        "other_votes": 1708,
+        "total_votes": 70041,
+        "dem_votes": 26795,
+        "rep_votes": 41310,
+        "other_votes": 1936,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.476831280944523
+        "margin_pct": 20.72357619108808
       },
       "2": {
-        "total_votes": 66104,
-        "dem_votes": 44510,
-        "rep_votes": 19574,
-        "other_votes": 2020,
+        "total_votes": 57752,
+        "dem_votes": 40250,
+        "rep_votes": 15720,
+        "other_votes": 1782,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.722376860704344
+        "margin_pct": -42.4747194902341
       },
       "3": {
-        "total_votes": 68038,
-        "dem_votes": 19591,
-        "rep_votes": 46844,
-        "other_votes": 1603,
+        "total_votes": 67707,
+        "dem_votes": 19598,
+        "rep_votes": 46485,
+        "other_votes": 1624,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 40.055557188629884
+        "margin_pct": 39.71081276677448
       },
       "4": {
-        "total_votes": 62590,
-        "dem_votes": 17271,
-        "rep_votes": 43830,
-        "other_votes": 1489,
+        "total_votes": 63918,
+        "dem_votes": 18308,
+        "rep_votes": 44111,
+        "other_votes": 1499,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.433296053682696
+        "margin_pct": 40.36891016615038
       },
       "5": {
-        "total_votes": 31065,
-        "dem_votes": 21382,
-        "rep_votes": 8630,
-        "other_votes": 1053,
+        "total_votes": 31742,
+        "dem_votes": 22054,
+        "rep_votes": 8612,
+        "other_votes": 1076,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -41.04941252213102
+        "margin_pct": -42.3476781551257
       },
       "6": {
-        "total_votes": 79940,
-        "dem_votes": 42680,
-        "rep_votes": 34841,
-        "other_votes": 2419,
+        "total_votes": 79747,
+        "dem_votes": 42443,
+        "rep_votes": 34887,
+        "other_votes": 2417,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -9.806104578433827
+        "margin_pct": -9.474964575469924
       },
       "7": {
-        "total_votes": 61832,
-        "dem_votes": 32094,
-        "rep_votes": 27747,
-        "other_votes": 1991,
+        "total_votes": 61884,
+        "dem_votes": 32137,
+        "rep_votes": 27754,
+        "other_votes": 1993,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.030340276879286
+        "margin_pct": -7.0826061663758
       },
       "8": {
-        "total_votes": 57167,
-        "dem_votes": 17010,
-        "rep_votes": 39043,
-        "other_votes": 1114,
+        "total_votes": 57498,
+        "dem_votes": 17003,
+        "rep_votes": 39402,
+        "other_votes": 1093,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 38.54146623051761
+        "margin_pct": 38.95613760478626
       },
       "9": {
-        "total_votes": 64127,
-        "dem_votes": 36025,
-        "rep_votes": 26174,
-        "other_votes": 1928,
+        "total_votes": 63960,
+        "dem_votes": 35870,
+        "rep_votes": 26168,
+        "other_votes": 1922,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -15.36170411839007
+        "margin_pct": -15.168855534709195
       },
       "10": {
-        "total_votes": 76159,
-        "dem_votes": 60079,
-        "rep_votes": 14164,
-        "other_votes": 1916,
+        "total_votes": 77556,
+        "dem_votes": 61324,
+        "rep_votes": 14277,
+        "other_votes": 1955,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.28834412216547
+        "margin_pct": -60.66197328382073
       },
       "11": {
         "total_votes": 60537,
@@ -164,488 +149,488 @@
         "margin_pct": -9.13167877579888
       },
       "13": {
-        "total_votes": 63217,
-        "dem_votes": 16002,
-        "rep_votes": 46235,
-        "other_votes": 980,
+        "total_votes": 62963,
+        "dem_votes": 15927,
+        "rep_votes": 46060,
+        "other_votes": 976,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 47.824161222455984
+        "margin_pct": 47.858265965725906
       },
       "14": {
-        "total_votes": 75419,
-        "dem_votes": 39152,
-        "rep_votes": 33812,
-        "other_votes": 2455,
+        "total_votes": 75298,
+        "dem_votes": 39082,
+        "rep_votes": 33772,
+        "other_votes": 2444,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -7.0804439199671165
+        "margin_pct": -7.05198013227443
       },
       "15": {
-        "total_votes": 48286,
-        "dem_votes": 30150,
-        "rep_votes": 17139,
-        "other_votes": 997,
+        "total_votes": 49452,
+        "dem_votes": 31385,
+        "rep_votes": 17044,
+        "other_votes": 1023,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -26.94569854616245
+        "margin_pct": -28.99983822696757
       },
       "16": {
-        "total_votes": 85286,
-        "dem_votes": 26978,
-        "rep_votes": 56175,
+        "total_votes": 85291,
+        "dem_votes": 26980,
+        "rep_votes": 56178,
         "other_votes": 2133,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 34.23422367094248
+        "margin_pct": 34.23338922043357
       },
       "17": {
-        "total_votes": 75754,
-        "dem_votes": 28601,
-        "rep_votes": 45371,
-        "other_votes": 1782,
+        "total_votes": 80409,
+        "dem_votes": 30600,
+        "rep_votes": 47908,
+        "other_votes": 1901,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.137444887398686
+        "margin_pct": 21.524953674339937
       },
       "18": {
-        "total_votes": 76087,
-        "dem_votes": 27199,
-        "rep_votes": 47399,
-        "other_votes": 1489,
+        "total_votes": 77490,
+        "dem_votes": 27417,
+        "rep_votes": 48552,
+        "other_votes": 1521,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.548556257967853
+        "margin_pct": 27.274487030584595
       },
       "19": {
-        "total_votes": 57809,
-        "dem_votes": 12059,
-        "rep_votes": 44934,
-        "other_votes": 816,
+        "total_votes": 58063,
+        "dem_votes": 12134,
+        "rep_votes": 45109,
+        "other_votes": 820,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 56.868307702952826
+        "margin_pct": 56.79176067375092
       },
       "20": {
-        "total_votes": 74053,
-        "dem_votes": 23047,
-        "rep_votes": 49643,
-        "other_votes": 1363,
+        "total_votes": 71308,
+        "dem_votes": 21507,
+        "rep_votes": 48512,
+        "other_votes": 1289,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.91481776565433
+        "margin_pct": 37.87092612329612
       },
       "21": {
-        "total_votes": 87299,
-        "dem_votes": 23701,
-        "rep_votes": 61224,
-        "other_votes": 2374,
+        "total_votes": 88014,
+        "dem_votes": 23967,
+        "rep_votes": 61638,
+        "other_votes": 2409,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.98216474415514
+        "margin_pct": 42.801145272343035
       },
       "22": {
-        "total_votes": 57875,
-        "dem_votes": 38997,
-        "rep_votes": 17397,
+        "total_votes": 57883,
+        "dem_votes": 39052,
+        "rep_votes": 17350,
         "other_votes": 1481,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -37.32181425485961
+        "margin_pct": -37.492873555275295
       },
       "23": {
-        "total_votes": 64679,
-        "dem_votes": 24140,
-        "rep_votes": 39280,
-        "other_votes": 1259,
+        "total_votes": 67893,
+        "dem_votes": 25673,
+        "rep_votes": 40836,
+        "other_votes": 1384,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.407906739436292
+        "margin_pct": 22.333672101689423
       },
       "24": {
-        "total_votes": 89359,
-        "dem_votes": 24890,
-        "rep_votes": 62470,
-        "other_votes": 1999,
+        "total_votes": 86134,
+        "dem_votes": 23301,
+        "rep_votes": 60960,
+        "other_votes": 1873,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 42.055081189359775
+        "margin_pct": 43.72141082499362
       },
       "25": {
-        "total_votes": 75814,
-        "dem_votes": 28691,
-        "rep_votes": 45567,
-        "other_votes": 1556,
+        "total_votes": 75053,
+        "dem_votes": 28341,
+        "rep_votes": 45176,
+        "other_votes": 1536,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 22.259740944944205
+        "margin_pct": 22.43081555700638
       },
       "26": {
-        "total_votes": 56166,
-        "dem_votes": 33615,
-        "rep_votes": 21445,
-        "other_votes": 1106,
+        "total_votes": 58192,
+        "dem_votes": 35261,
+        "rep_votes": 21764,
+        "other_votes": 1167,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -21.667912972260797
+        "margin_pct": -23.193909815782238
       },
       "27": {
-        "total_votes": 77871,
-        "dem_votes": 18825,
-        "rep_votes": 56742,
-        "other_votes": 2304,
+        "total_votes": 78566,
+        "dem_votes": 19384,
+        "rep_votes": 56877,
+        "other_votes": 2305,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 48.692067650344804
+        "margin_pct": 47.721660769289514
       },
       "28": {
-        "total_votes": 79217,
-        "dem_votes": 22946,
-        "rep_votes": 54095,
-        "other_votes": 2176,
+        "total_votes": 81198,
+        "dem_votes": 23448,
+        "rep_votes": 55519,
+        "other_votes": 2231,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 39.32110531830289
+        "margin_pct": 39.497278258085174
       },
       "29": {
-        "total_votes": 74267,
-        "dem_votes": 25517,
-        "rep_votes": 47227,
-        "other_votes": 1523,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 29.232364307161994
-      },
-      "30": {
-        "total_votes": 68980,
-        "dem_votes": 19454,
-        "rep_votes": 47804,
-        "other_votes": 1722,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 41.098869237460136
-      },
-      "31": {
-        "total_votes": 75194,
-        "dem_votes": 22994,
-        "rep_votes": 50124,
-        "other_votes": 2076,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 36.08000638348805
-      },
-      "32": {
-        "total_votes": 77906,
-        "dem_votes": 29305,
-        "rep_votes": 45875,
-        "other_votes": 2726,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 21.269221882781814
-      },
-      "33": {
-        "total_votes": 59866,
-        "dem_votes": 39600,
-        "rep_votes": 18217,
-        "other_votes": 2049,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -35.71810376507534
-      },
-      "34": {
-        "total_votes": 55367,
-        "dem_votes": 45017,
-        "rep_votes": 8853,
+        "total_votes": 73101,
+        "dem_votes": 24282,
+        "rep_votes": 47322,
         "other_votes": 1497,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 31.518036688964585
+      },
+      "30": {
+        "total_votes": 70081,
+        "dem_votes": 19213,
+        "rep_votes": 49091,
+        "other_votes": 1777,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 42.633524065010484
+      },
+      "31": {
+        "total_votes": 72330,
+        "dem_votes": 22203,
+        "rep_votes": 48158,
+        "other_votes": 1969,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 35.88414212636527
+      },
+      "32": {
+        "total_votes": 78125,
+        "dem_votes": 29137,
+        "rep_votes": 46234,
+        "other_votes": 2754,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 21.88416
+      },
+      "33": {
+        "total_votes": 58224,
+        "dem_votes": 39218,
+        "rep_votes": 17024,
+        "other_votes": 1982,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -65.31688550941897
+        "margin_pct": -38.11830173124485
+      },
+      "34": {
+        "total_votes": 53668,
+        "dem_votes": 43533,
+        "rep_votes": 8688,
+        "other_votes": 1447,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -64.92695833643884
       },
       "35": {
-        "total_votes": 68550,
-        "dem_votes": 54755,
-        "rep_votes": 12149,
-        "other_votes": 1646,
+        "total_votes": 70212,
+        "dem_votes": 57012,
+        "rep_votes": 11496,
+        "other_votes": 1704,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -62.15317286652079
+        "margin_pct": -64.82652538027688
       },
       "36": {
-        "total_votes": 75288,
-        "dem_votes": 65105,
-        "rep_votes": 7859,
-        "other_votes": 2324,
+        "total_votes": 68583,
+        "dem_votes": 58891,
+        "rep_votes": 7512,
+        "other_votes": 2180,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -76.03602167676124
+        "margin_pct": -74.91506641587566
       },
       "37": {
-        "total_votes": 86857,
-        "dem_votes": 33976,
-        "rep_votes": 50042,
-        "other_votes": 2839,
+        "total_votes": 88273,
+        "dem_votes": 34584,
+        "rep_votes": 50813,
+        "other_votes": 2876,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 18.49706989649654
+        "margin_pct": 18.385010139000602
       },
       "38": {
-        "total_votes": 73199,
-        "dem_votes": 57643,
-        "rep_votes": 13292,
-        "other_votes": 2264,
+        "total_votes": 72914,
+        "dem_votes": 57772,
+        "rep_votes": 12908,
+        "other_votes": 2234,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -60.58962554133254
+        "margin_pct": -61.53002166936391
       },
       "39": {
-        "total_votes": 62205,
-        "dem_votes": 51487,
-        "rep_votes": 8970,
-        "other_votes": 1748,
+        "total_votes": 66275,
+        "dem_votes": 55629,
+        "rep_votes": 8831,
+        "other_votes": 1815,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -68.34981110843181
+        "margin_pct": -70.61184458694832
       },
       "40": {
-        "total_votes": 66837,
-        "dem_votes": 38275,
-        "rep_votes": 26352,
-        "other_votes": 2210,
+        "total_votes": 64389,
+        "dem_votes": 36565,
+        "rep_votes": 25696,
+        "other_votes": 2128,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -17.838921555425888
+        "margin_pct": -16.88021245864977
       },
       "41": {
-        "total_votes": 66292,
-        "dem_votes": 52543,
-        "rep_votes": 11746,
-        "other_votes": 2003,
+        "total_votes": 63167,
+        "dem_votes": 49847,
+        "rep_votes": 11398,
+        "other_votes": 1922,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -61.54136245700839
+        "margin_pct": -60.86880808016845
       },
       "42": {
-        "total_votes": 80116,
-        "dem_votes": 64307,
-        "rep_votes": 13416,
-        "other_votes": 2393,
+        "total_votes": 86841,
+        "dem_votes": 69954,
+        "rep_votes": 14310,
+        "other_votes": 2577,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -63.52164361675571
+        "margin_pct": -64.07572460013128
       },
       "43": {
-        "total_votes": 74694,
-        "dem_votes": 53310,
-        "rep_votes": 19556,
-        "other_votes": 1828,
+        "total_votes": 68992,
+        "dem_votes": 50307,
+        "rep_votes": 17001,
+        "other_votes": 1684,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -45.18970733927758
+        "margin_pct": -48.27516233766234
       },
       "44": {
-        "total_votes": 65959,
-        "dem_votes": 56470,
-        "rep_votes": 7617,
-        "other_votes": 1872,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Democratic",
-        "winner_party": "DEM",
-        "margin_pct": -74.06570748495277
-      },
-      "45": {
-        "total_votes": 68703,
-        "dem_votes": 25377,
-        "rep_votes": 41243,
-        "other_votes": 2083,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 23.093605810517737
-      },
-      "46": {
-        "total_votes": 75715,
-        "dem_votes": 26676,
-        "rep_votes": 47007,
-        "other_votes": 2032,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 26.85201083008651
-      },
-      "47": {
-        "total_votes": 71917,
-        "dem_votes": 25920,
-        "rep_votes": 43992,
-        "other_votes": 2005,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 25.128968116022637
-      },
-      "48": {
-        "total_votes": 71908,
-        "dem_votes": 29456,
-        "rep_votes": 40505,
-        "other_votes": 1947,
-        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
-        "rep_candidate": "Bruce Thompson",
-        "winner": "Republican",
-        "winner_party": "REP",
-        "margin_pct": 15.365466985592702
-      },
-      "49": {
-        "total_votes": 70152,
-        "dem_votes": 15344,
-        "rep_votes": 52920,
+        "total_votes": 66647,
+        "dem_votes": 57019,
+        "rep_votes": 7740,
         "other_votes": 1888,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -73.94031239215568
+      },
+      "45": {
+        "total_votes": 67599,
+        "dem_votes": 25126,
+        "rep_votes": 40440,
+        "other_votes": 2033,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 53.563690272551035
+        "margin_pct": 22.65418127487093
+      },
+      "46": {
+        "total_votes": 75723,
+        "dem_votes": 26443,
+        "rep_votes": 47242,
+        "other_votes": 2038,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 27.467216037399467
+      },
+      "47": {
+        "total_votes": 72122,
+        "dem_votes": 26127,
+        "rep_votes": 43982,
+        "other_votes": 2013,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 24.75666232217631
+      },
+      "48": {
+        "total_votes": 72917,
+        "dem_votes": 29568,
+        "rep_votes": 41334,
+        "other_votes": 2015,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 16.13615480614946
+      },
+      "49": {
+        "total_votes": 69932,
+        "dem_votes": 15288,
+        "rep_votes": 52762,
+        "other_votes": 1882,
+        "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
+        "rep_candidate": "Bruce Thompson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 53.58634101698792
       },
       "50": {
-        "total_votes": 72663,
-        "dem_votes": 10625,
-        "rep_votes": 60450,
-        "other_votes": 1588,
+        "total_votes": 73180,
+        "dem_votes": 10735,
+        "rep_votes": 60840,
+        "other_votes": 1605,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.56997371426998
+        "margin_pct": 68.46816069964471
       },
       "51": {
-        "total_votes": 88460,
-        "dem_votes": 12849,
-        "rep_votes": 73563,
-        "other_votes": 2048,
+        "total_votes": 88163,
+        "dem_votes": 12795,
+        "rep_votes": 73331,
+        "other_votes": 2037,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 68.63441103323537
+        "margin_pct": 68.66372514546919
       },
       "52": {
-        "total_votes": 66479,
-        "dem_votes": 14839,
-        "rep_votes": 49883,
-        "other_votes": 1757,
+        "total_votes": 65895,
+        "dem_votes": 14504,
+        "rep_votes": 49650,
+        "other_votes": 1741,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 52.7143910106951
+        "margin_pct": 53.336368464982165
       },
       "53": {
-        "total_votes": 62933,
-        "dem_votes": 10853,
-        "rep_votes": 50684,
-        "other_votes": 1396,
+        "total_votes": 63849,
+        "dem_votes": 11239,
+        "rep_votes": 51190,
+        "other_votes": 1420,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 63.29111912669029
+        "margin_pct": 62.57106610910116
       },
       "54": {
-        "total_votes": 53724,
-        "dem_votes": 9577,
-        "rep_votes": 43089,
+        "total_votes": 53622,
+        "dem_votes": 9572,
+        "rep_votes": 42992,
         "other_votes": 1058,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 62.37808055989874
+        "margin_pct": 62.32516504419827
       },
       "55": {
-        "total_votes": 72913,
-        "dem_votes": 56670,
-        "rep_votes": 14388,
-        "other_votes": 1855,
+        "total_votes": 71522,
+        "dem_votes": 55395,
+        "rep_votes": 14303,
+        "other_votes": 1824,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -57.989658908562255
+        "margin_pct": -57.45365062498252
       },
       "56": {
-        "total_votes": 93902,
-        "dem_votes": 34166,
-        "rep_votes": 56458,
-        "other_votes": 3278,
+        "total_votes": 93917,
+        "dem_votes": 34118,
+        "rep_votes": 56523,
+        "other_votes": 3276,
         "dem_candidate": "William \"\"Will\"\" Boddie, Jr..",
         "rep_candidate": "Bruce Thompson",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 23.73964345807331
+        "margin_pct": 23.85617087428261
       }
     }
   }
