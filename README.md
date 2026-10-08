@@ -172,6 +172,7 @@ District overlays are weighted reallocations, not winner-take-all assignment.
 - Production crosswalks use official block-equivalency assignments weighted by block-level CVAP; geometry overlap remains the builder's default fallback unless `--from-equivalencies` is requested.
 - The six `Data/13_GA_{CD118,CD119,SLDL22,SLDL24,SLDU22,SLDU24}.txt` Census block-equivalency files provide authoritative block-to-plan assignments. `--from-equivalencies` combines them with block-level `CVAP_TOT24` from `Data/ga_cvap_2024_2020_b_csv.zip`; it never uses land area as a proxy for voters.
 - County reconciliation uses integer largest-remainder allocation, so published district totals conserve the exact statewide Democratic, Republican, other, and total vote counts.
+- After a full district rebuild, run `scripts/repair_2024_state_house_president.py`. Its direct 2024 SOS House/Senate/Congressional district vote buckets supersede modeled crosswalk allocation for the 2024 presidential slices; it also maintains the corresponding 2022-lines remaps.
 - In Georgia's multi-candidate 2020 U.S. Senate contests, the Democratic and Republican buckets represent the eventual runoff nominees; every other candidate is included in `other`.
 
 ### Modern-Line Reference
