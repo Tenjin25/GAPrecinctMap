@@ -4,186 +4,170 @@
     "contest_type": "us_senate_special",
     "year": 2021,
     "district_lines_year": 2022,
-    "source": "derived_vtd20_county_reconciled",
-    "generated_at_utc": "2026-10-08T19:49:44.686392+00:00",
+    "source": "derived_vtd20",
+    "generated_at_utc": "2026-08-10T00:58:10.916932+00:00",
     "match_coverage_pct": 100.0,
-    "total_input_votes": 4106945,
-    "matched_input_votes": 4106945,
+    "total_input_votes": 4094282,
+    "matched_input_votes": 4094282,
     "input_files": [
       "Data/derived_vtd20/2021/contests/vtd20/U.S._Senate_Special.json"
-    ],
-    "county_reconciliation": {
-      "method": "county_constrained_party_scaling",
-      "canonical_counties": 159,
-      "reconciled_counties": 159,
-      "unresolved_county_fips": [],
-      "mapped_before": {
-        "dem_votes": 2106920,
-        "rep_votes": 2000025,
-        "other_votes": 0
-      },
-      "canonical_target": {
-        "dem_votes": 2289113,
-        "rep_votes": 2195841,
-        "other_votes": 0
-      }
-    }
+    ]
   },
   "general": {
     "results": {
       "1": {
-        "total_votes": 299767,
-        "dem_votes": 131481,
-        "rep_votes": 168286,
+        "total_votes": 236858,
+        "dem_votes": 101170,
+        "rep_votes": 135688,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 12.277869145035977
+        "margin_pct": 14.57328863707369
       },
       "2": {
-        "total_votes": 280520,
-        "dem_votes": 157821,
-        "rep_votes": 122699,
+        "total_votes": 246547,
+        "dem_votes": 141861,
+        "rep_votes": 104685,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -12.520319406815913
+        "margin_pct": -15.078666542281999
       },
       "3": {
-        "total_votes": 344077,
-        "dem_votes": 123574,
-        "rep_votes": 220503,
+        "total_votes": 334683,
+        "dem_votes": 120574,
+        "rep_votes": 214109,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 28.1707292263069
+        "margin_pct": 27.94734121541877
       },
       "4": {
-        "total_votes": 332250,
-        "dem_votes": 265498,
-        "rep_votes": 66752,
+        "total_votes": 292023,
+        "dem_votes": 233756,
+        "rep_votes": 58267,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -59.81820917983446
+        "margin_pct": -60.09423915239553
       },
       "5": {
-        "total_votes": 340911,
-        "dem_votes": 284077,
-        "rep_votes": 56834,
+        "total_votes": 332188,
+        "dem_votes": 274651,
+        "rep_votes": 57536,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -66.65757338425571
+        "margin_pct": -65.35907377749949
       },
       "6": {
-        "total_votes": 388299,
-        "dem_votes": 163092,
-        "rep_votes": 225207,
+        "total_votes": 362564,
+        "dem_votes": 151326,
+        "rep_votes": 211238,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.99669326987708
+        "margin_pct": 16.52453084145144
       },
       "7": {
-        "total_votes": 295166,
-        "dem_votes": 190059,
-        "rep_votes": 105107,
+        "total_votes": 295131,
+        "dem_votes": 189570,
+        "rep_votes": 105562,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -28.781092673275378
+        "margin_pct": -28.46464790211804
       },
       "8": {
-        "total_votes": 292211,
-        "dem_votes": 107115,
-        "rep_votes": 185096,
+        "total_votes": 279298,
+        "dem_votes": 100706,
+        "rep_votes": 178593,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 26.68653815222562
+        "margin_pct": 27.88670165915975
       },
       "9": {
-        "total_votes": 326868,
-        "dem_votes": 102231,
-        "rep_votes": 224637,
+        "total_votes": 316372,
+        "dem_votes": 100066,
+        "rep_votes": 216306,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 37.44814420500018
+        "margin_pct": 36.74155740710303
       },
       "10": {
-        "total_votes": 337116,
-        "dem_votes": 131585,
-        "rep_votes": 205531,
+        "total_votes": 278771,
+        "dem_votes": 113462,
+        "rep_votes": 165309,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 21.93488294830266
+        "margin_pct": 18.598419491267027
       },
       "11": {
-        "total_votes": 337573,
-        "dem_votes": 142316,
-        "rep_votes": 195257,
+        "total_votes": 328707,
+        "dem_votes": 138286,
+        "rep_votes": 190421,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 15.682830084159574
+        "margin_pct": 15.86062967931927
       },
       "12": {
-        "total_votes": 302727,
-        "dem_votes": 137018,
-        "rep_votes": 165709,
+        "total_votes": 274537,
+        "dem_votes": 125876,
+        "rep_votes": 148661,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 9.477516045810251
+        "margin_pct": 8.299427763835112
       },
       "13": {
-        "total_votes": 314691,
-        "dem_votes": 258818,
-        "rep_votes": 55873,
+        "total_votes": 293967,
+        "dem_votes": 240922,
+        "rep_votes": 53044,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Democratic",
         "winner_party": "DEM",
-        "margin_pct": -64.49024598733361
+        "margin_pct": -63.91125534498771
       },
       "14": {
-        "total_votes": 292778,
-        "dem_votes": 94428,
-        "rep_votes": 198350,
+        "total_votes": 222637,
+        "dem_votes": 71016,
+        "rep_votes": 151620,
         "other_votes": 0,
         "dem_candidate": "Raphael Warnock",
         "rep_candidate": "Kelly Loeffler*",
         "winner": "Republican",
         "winner_party": "REP",
-        "margin_pct": 35.49515332436181
+        "margin_pct": 36.20422481438395
       }
     }
   }

@@ -353,6 +353,14 @@ def main() -> None:
     ap.add_argument("--sldu22-equivalency", type=Path, default=Path("Data/13_GA_SLDU22.txt"))
     ap.add_argument("--sldu24-equivalency", type=Path, default=Path("Data/13_GA_SLDU24.txt"))
     ap.add_argument(
+        "--from-equivalencies",
+        action="store_true",
+        help=(
+            "EXPERIMENTAL: allocate precincts from exact block assignments using block land area. "
+            "Not recommended for production vote allocation because land area is not voter distribution."
+        ),
+    )
+    ap.add_argument(
         "--cd-from-blockassign",
         action="store_true",
         help="Build congressional crosswalk from BlockAssign CD file instead of CD118 geometry.",
@@ -380,7 +388,10 @@ def main() -> None:
         args.sldl22_equivalency, args.sldl24_equivalency,
         args.sldu22_equivalency, args.sldu24_equivalency,
     ]
-    use_equivalencies = all(path.exists() for path in equivalency_paths)
+    use_equivalencies = args.from_equivalencies
+    if use_equivalencies and not all(path.exists() for path in equivalency_paths):
+        missing = [str(path) for path in equivalency_paths if not path.exists()]
+        raise SystemExit(f"Missing block-equivalency files: {missing}")
     needs_blockassign = use_equivalencies or args.cd_from_blockassign or args.house_from_blockassign or args.senate_from_blockassign
     block_to_precinct: dict[str, str] | None = None
     if needs_blockassign:
