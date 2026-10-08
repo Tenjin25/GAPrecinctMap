@@ -44,12 +44,6 @@ try:
 except Exception:  # pragma: no cover - optional fallback dependency
     gpd = None
 
-try:
-    import shapefile
-except Exception:  # pragma: no cover - optional fallback dependency
-    shapefile = None
-
-
 STATE_FIPS = "13"
 
 
@@ -147,31 +141,32 @@ def build_weight_rows(
     return rows, stats
 
 
-def load_block_land_areas(tabblock_zip: Path) -> dict[str, int]:
-    """Load 2020 Census block land area without reading block geometries."""
-    if shapefile is None:
-        raise SystemExit("pyshp is required to weight block-equivalency files by land area.")
-    if not tabblock_zip.exists():
-        raise SystemExit(f"Missing tabulation-block shapefile: {tabblock_zip}")
-    areas: dict[str, int] = {}
-    reader = shapefile.Reader(str(tabblock_zip))
-    for record in reader.iterRecords():
-        values = record.as_dict()
-        geoid = str(values.get("GEOID20") or "").strip()
-        if geoid:
-            areas[geoid] = max(int(values.get("ALAND20") or 0), 1)
-    return areas
+def load_block_cvap(cvap_zip: Path, cvap_member: str) -> dict[str, int]:
+    """Load block-level citizen voting-age population from the RDH archive."""
+    if not cvap_zip.exists():
+        raise SystemExit(f"Missing block CVAP archive: {cvap_zip}")
+    weights: dict[str, int] = {}
+    with zipfile.ZipFile(cvap_zip) as archive:
+        if cvap_member not in archive.namelist():
+            raise SystemExit(f"Missing {cvap_member} in {cvap_zip}")
+        with archive.open(cvap_member) as raw:
+            reader = csv.DictReader(io.TextIOWrapper(raw, encoding="utf-8-sig", newline=""))
+            for row in reader:
+                geoid = str(row.get("GEOID20") or "").strip()
+                if geoid:
+                    weights[geoid] = max(int(float(row.get("CVAP_TOT24") or 0)), 0)
+    return weights
 
 
 def build_weight_rows_from_equivalency(
     equivalency_path: Path,
     *,
     block_to_precinct: dict[str, str],
-    block_land_areas: dict[str, int],
+    block_cvap: dict[str, int],
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
-    """Build exact-plan crosswalk rows, weighting assigned blocks by land area."""
-    pair_areas: dict[tuple[str, str], int] = defaultdict(int)
-    precinct_areas: dict[str, int] = defaultdict(int)
+    """Build exact-plan crosswalk rows, weighting assigned blocks by CVAP."""
+    pair_weights: dict[tuple[str, str], int] = defaultdict(int)
+    precinct_weights: dict[str, int] = defaultdict(int)
     pair_counts: dict[tuple[str, str], int] = defaultdict(int)
     precinct_counts: dict[str, int] = defaultdict(int)
     matched_blocks = 0
@@ -188,32 +183,37 @@ def build_weight_rows_from_equivalency(
             blockid = str(row.get("GEOID") or "").strip()
             district_num = normalize_district_number(str(row.get(district_field) or ""))
             precinct_key = block_to_precinct.get(blockid, "")
-            area = block_land_areas.get(blockid)
-            if not blockid or not precinct_key or not district_num or area is None:
+            cvap = block_cvap.get(blockid)
+            if not blockid or not precinct_key or not district_num or cvap is None:
                 skipped_blocks += 1
                 continue
             matched_blocks += 1
-            pair_areas[(precinct_key, district_num)] += area
-            precinct_areas[precinct_key] += area
+            pair_weights[(precinct_key, district_num)] += cvap
+            precinct_weights[precinct_key] += cvap
             pair_counts[(precinct_key, district_num)] += 1
             precinct_counts[precinct_key] += 1
 
     rows: list[dict[str, Any]] = []
-    for (precinct_key, district_num), area in pair_areas.items():
-        total_area = precinct_areas.get(precinct_key, 0)
-        if total_area <= 0:
+    for (precinct_key, district_num), cvap in pair_weights.items():
+        total_cvap = precinct_weights.get(precinct_key, 0)
+        # A handful of VTDs can have zero modeled CVAP. Preserve those using
+        # block count; otherwise zero-CVAP district pieces correctly get no vote share.
+        weight = (cvap / total_cvap) if total_cvap > 0 else (
+            pair_counts[(precinct_key, district_num)] / precinct_counts[precinct_key]
+        )
+        if weight <= 0:
             continue
         rows.append({
             "precinct_key": precinct_key,
             "district_num": district_num,
-            "area_weight": f"{area / total_area:.10f}",
+            "area_weight": f"{weight:.10f}",
             "block_count": str(pair_counts[(precinct_key, district_num)]),
             "precinct_block_count": str(precinct_counts[precinct_key]),
         })
 
     rows.sort(key=lambda r: (str(r["precinct_key"]), sort_district_key(str(r["district_num"]))))
     return rows, {
-        "precincts": len(precinct_areas), "rows": len(rows),
+        "precincts": len(precinct_counts), "rows": len(rows),
         "matched_blocks": matched_blocks, "skipped_blocks": skipped_blocks,
     }
 
@@ -345,7 +345,8 @@ def main() -> None:
     ap.add_argument("--sldu-geojson", type=Path, default=Path("Data/tl_2022_13_sldu.geojson"))
     ap.add_argument("--sldu-2024-geojson", type=Path, default=Path("Data/tl_2024_13_sldu.geojson"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/crosswalks"))
-    ap.add_argument("--tabblock-zip", type=Path, default=Path("Data/tl_2020_13_tabblock20.zip"))
+    ap.add_argument("--block-cvap-zip", type=Path, default=Path("Data/ga_cvap_2024_2020_b_csv.zip"))
+    ap.add_argument("--block-cvap-member", default="ga_cvap_2024_2020_b.csv")
     ap.add_argument("--cd118-equivalency", type=Path, default=Path("Data/13_GA_CD118.txt"))
     ap.add_argument("--cd119-equivalency", type=Path, default=Path("Data/13_GA_CD119.txt"))
     ap.add_argument("--sldl22-equivalency", type=Path, default=Path("Data/13_GA_SLDL22.txt"))
@@ -356,8 +357,7 @@ def main() -> None:
         "--from-equivalencies",
         action="store_true",
         help=(
-            "EXPERIMENTAL: allocate precincts from exact block assignments using block land area. "
-            "Not recommended for production vote allocation because land area is not voter distribution."
+            "Allocate precincts from exact block assignments using block-level CVAP weights."
         ),
     )
     ap.add_argument(
@@ -403,8 +403,8 @@ def main() -> None:
     if use_equivalencies:
         if block_to_precinct is None:
             raise SystemExit("Internal error: blockassign map was not initialized.")
-        block_land_areas = load_block_land_areas(args.tabblock_zip)
-        print(f"Loaded block land areas: {len(block_land_areas)} blocks")
+        block_cvap = load_block_cvap(args.block_cvap_zip, args.block_cvap_member)
+        print(f"Loaded block CVAP weights: {len(block_cvap)} blocks")
         outputs = [
             (args.cd118_equivalency, "precinct_to_cd118.csv"),
             (args.cd119_equivalency, "precinct_to_cd119.csv"),
@@ -415,7 +415,7 @@ def main() -> None:
         ]
         for source, filename in outputs:
             rows, stats = build_weight_rows_from_equivalency(
-                source, block_to_precinct=block_to_precinct, block_land_areas=block_land_areas,
+                source, block_to_precinct=block_to_precinct, block_cvap=block_cvap,
             )
             validate_weight_rows(rows, source=source)
             output = args.out_dir / filename
