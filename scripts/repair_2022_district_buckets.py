@@ -93,6 +93,8 @@ def canonical(contest_type: str) -> tuple[dict[str, int], str, str]:
         if row.get("rep_candidate"): names["rep_votes"][str(row["rep_candidate"])] += int(row.get("rep_votes") or 0)
     dem = max(names["dem_votes"], key=names["dem_votes"].get, default="Democratic")
     rep = max(names["rep_votes"], key=names["rep_votes"].get, default="Republican")
+    if rep.casefold() == "herschel junior walker":
+        rep = "Herschel J. Walker"
     return totals, dem, rep
 
 

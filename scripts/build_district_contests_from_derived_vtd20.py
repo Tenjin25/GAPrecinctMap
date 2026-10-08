@@ -245,6 +245,8 @@ def clean_candidate_label(raw: str) -> str:
         return ""
     # Drop trailing party tags sometimes present on winner labels: "Name (D)", "Name (R*)".
     name = re.sub(r"\s*\(\s*[A-Z]{1,3}\s*\*?\s*\)\s*$", "", name, flags=re.IGNORECASE)
+    if name.casefold() == "herschel junior walker":
+        return "Herschel J. Walker"
     return name.strip()
 
 
