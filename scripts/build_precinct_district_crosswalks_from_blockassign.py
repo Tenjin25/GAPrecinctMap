@@ -44,6 +44,11 @@ try:
 except Exception:  # pragma: no cover - optional fallback dependency
     gpd = None
 
+try:
+    import shapefile
+except Exception:  # pragma: no cover - optional fallback dependency
+    shapefile = None
+
 
 STATE_FIPS = "13"
 
@@ -142,6 +147,77 @@ def build_weight_rows(
     return rows, stats
 
 
+def load_block_land_areas(tabblock_zip: Path) -> dict[str, int]:
+    """Load 2020 Census block land area without reading block geometries."""
+    if shapefile is None:
+        raise SystemExit("pyshp is required to weight block-equivalency files by land area.")
+    if not tabblock_zip.exists():
+        raise SystemExit(f"Missing tabulation-block shapefile: {tabblock_zip}")
+    areas: dict[str, int] = {}
+    reader = shapefile.Reader(str(tabblock_zip))
+    for record in reader.iterRecords():
+        values = record.as_dict()
+        geoid = str(values.get("GEOID20") or "").strip()
+        if geoid:
+            areas[geoid] = max(int(values.get("ALAND20") or 0), 1)
+    return areas
+
+
+def build_weight_rows_from_equivalency(
+    equivalency_path: Path,
+    *,
+    block_to_precinct: dict[str, str],
+    block_land_areas: dict[str, int],
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    """Build exact-plan crosswalk rows, weighting assigned blocks by land area."""
+    pair_areas: dict[tuple[str, str], int] = defaultdict(int)
+    precinct_areas: dict[str, int] = defaultdict(int)
+    pair_counts: dict[tuple[str, str], int] = defaultdict(int)
+    precinct_counts: dict[str, int] = defaultdict(int)
+    matched_blocks = 0
+    skipped_blocks = 0
+
+    with equivalency_path.open("r", encoding="utf-8-sig", errors="replace", newline="") as fh:
+        reader = csv.DictReader(fh, skipinitialspace=True)
+        fields = {str(field or "").strip() for field in (reader.fieldnames or [])}
+        if "GEOID" not in fields or len(fields) < 2:
+            raise SystemExit(f"{equivalency_path} must contain GEOID and a district column")
+        district_field = next(field for field in fields if field != "GEOID")
+        for raw_row in reader:
+            row = {str(key or "").strip(): value for key, value in raw_row.items()}
+            blockid = str(row.get("GEOID") or "").strip()
+            district_num = normalize_district_number(str(row.get(district_field) or ""))
+            precinct_key = block_to_precinct.get(blockid, "")
+            area = block_land_areas.get(blockid)
+            if not blockid or not precinct_key or not district_num or area is None:
+                skipped_blocks += 1
+                continue
+            matched_blocks += 1
+            pair_areas[(precinct_key, district_num)] += area
+            precinct_areas[precinct_key] += area
+            pair_counts[(precinct_key, district_num)] += 1
+            precinct_counts[precinct_key] += 1
+
+    rows: list[dict[str, Any]] = []
+    for (precinct_key, district_num), area in pair_areas.items():
+        total_area = precinct_areas.get(precinct_key, 0)
+        if total_area <= 0:
+            continue
+        rows.append({
+            "precinct_key": precinct_key,
+            "district_num": district_num,
+            "area_weight": f"{area / total_area:.10f}",
+            "block_count": str(pair_counts[(precinct_key, district_num)]),
+            "precinct_block_count": str(precinct_counts[precinct_key]),
+        })
+
+    rows.sort(key=lambda r: (str(r["precinct_key"]), sort_district_key(str(r["district_num"]))))
+    return rows, {
+        "precincts": len(precinct_areas), "rows": len(rows),
+        "matched_blocks": matched_blocks, "skipped_blocks": skipped_blocks,
+    }
+
+
 def build_weight_rows_from_geometry(
     *,
     vtd20_geojson: Path,
@@ -235,6 +311,25 @@ def write_crosswalk_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def validate_weight_rows(rows: list[dict[str, Any]], *, source: Path) -> None:
+    """Fail fast if a generated crosswalk would lose or create vote share."""
+    totals: dict[str, float] = defaultdict(float)
+    districts: set[str] = set()
+    for row in rows:
+        precinct_key = str(row.get("precinct_key") or "")
+        district_num = str(row.get("district_num") or "")
+        weight = float(row.get("area_weight") or 0.0)
+        if not precinct_key or not district_num or not math.isfinite(weight) or weight <= 0:
+            raise SystemExit(f"Invalid crosswalk row generated from {source}: {row}")
+        totals[precinct_key] += weight
+        districts.add(district_num)
+    bad = {key: total for key, total in totals.items() if abs(total - 1.0) > 1e-8}
+    if bad:
+        examples = list(sorted(bad.items()))[:5]
+        raise SystemExit(f"Crosswalk weights from {source} do not sum to 1: {examples}")
+    print(f"  verified: {len(totals)} precinct weights sum to 1 across {len(districts)} districts")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--blockassign-zip", type=Path, default=Path("Data/BlockAssign_ST13_GA.zip"))
@@ -250,6 +345,13 @@ def main() -> None:
     ap.add_argument("--sldu-geojson", type=Path, default=Path("Data/tl_2022_13_sldu.geojson"))
     ap.add_argument("--sldu-2024-geojson", type=Path, default=Path("Data/tl_2024_13_sldu.geojson"))
     ap.add_argument("--out-dir", type=Path, default=Path("Data/crosswalks"))
+    ap.add_argument("--tabblock-zip", type=Path, default=Path("Data/tl_2020_13_tabblock20.zip"))
+    ap.add_argument("--cd118-equivalency", type=Path, default=Path("Data/13_GA_CD118.txt"))
+    ap.add_argument("--cd119-equivalency", type=Path, default=Path("Data/13_GA_CD119.txt"))
+    ap.add_argument("--sldl22-equivalency", type=Path, default=Path("Data/13_GA_SLDL22.txt"))
+    ap.add_argument("--sldl24-equivalency", type=Path, default=Path("Data/13_GA_SLDL24.txt"))
+    ap.add_argument("--sldu22-equivalency", type=Path, default=Path("Data/13_GA_SLDU22.txt"))
+    ap.add_argument("--sldu24-equivalency", type=Path, default=Path("Data/13_GA_SLDU24.txt"))
     ap.add_argument(
         "--cd-from-blockassign",
         action="store_true",
@@ -273,13 +375,46 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    needs_blockassign = args.cd_from_blockassign or args.house_from_blockassign or args.senate_from_blockassign
+    equivalency_paths = [
+        args.cd118_equivalency, args.cd119_equivalency,
+        args.sldl22_equivalency, args.sldl24_equivalency,
+        args.sldu22_equivalency, args.sldu24_equivalency,
+    ]
+    use_equivalencies = all(path.exists() for path in equivalency_paths)
+    needs_blockassign = use_equivalencies or args.cd_from_blockassign or args.house_from_blockassign or args.senate_from_blockassign
     block_to_precinct: dict[str, str] | None = None
     if needs_blockassign:
         if not args.blockassign_zip.exists():
             raise SystemExit(f"Missing block assignment zip: {args.blockassign_zip}")
         block_to_precinct = build_block_to_precinct_map(args.blockassign_zip, args.vtd_member)
         print(f"Loaded block->precinct map: {len(block_to_precinct)} blocks")
+
+    if use_equivalencies:
+        if block_to_precinct is None:
+            raise SystemExit("Internal error: blockassign map was not initialized.")
+        block_land_areas = load_block_land_areas(args.tabblock_zip)
+        print(f"Loaded block land areas: {len(block_land_areas)} blocks")
+        outputs = [
+            (args.cd118_equivalency, "precinct_to_cd118.csv"),
+            (args.cd119_equivalency, "precinct_to_cd119.csv"),
+            (args.sldl22_equivalency, "precinct_to_2022_state_house.csv"),
+            (args.sldl24_equivalency, "precinct_to_2024_state_house.csv"),
+            (args.sldu22_equivalency, "precinct_to_2022_state_senate.csv"),
+            (args.sldu24_equivalency, "precinct_to_2024_state_senate.csv"),
+        ]
+        for source, filename in outputs:
+            rows, stats = build_weight_rows_from_equivalency(
+                source, block_to_precinct=block_to_precinct, block_land_areas=block_land_areas,
+            )
+            validate_weight_rows(rows, source=source)
+            output = args.out_dir / filename
+            write_crosswalk_csv(output, rows)
+            print(
+                f"Wrote {output} from {source.name} ({stats['rows']} rows, "
+                f"{stats['precincts']} precincts, {stats['matched_blocks']} matched blocks, "
+                f"{stats['skipped_blocks']} skipped blocks)"
+            )
+        return
 
     if args.cd_from_blockassign:
         if block_to_precinct is None:

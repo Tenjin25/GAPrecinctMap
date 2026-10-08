@@ -309,7 +309,8 @@ class GroupEntry:
 
 
 def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    # Also accepts ordinary UTF-8; tolerates a BOM from spreadsheet exports.
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def normalize_county_name(raw: str) -> str:

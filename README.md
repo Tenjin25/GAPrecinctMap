@@ -170,6 +170,7 @@ District overlays are weighted reallocations, not winner-take-all assignment.
 - Crosswalk rows contain `precinct_key`, `district_num`, and `area_weight`.
 - A precinct can contribute votes fractionally to multiple districts.
 - Current default crosswalk generation is geometry-overlap based, with optional block-assignment inputs to improve edge cases.
+- When all six `Data/13_GA_{CD118,CD119,SLDL22,SLDL24,SLDU22,SLDU24}.txt` Census block-equivalency files are present, the builder uses their exact plan assignments by default and weights blocks by `ALAND20` from the 2020 tabulation-block shapefile. Geometry remains the fallback when that complete set is absent.
 - County reconciliation uses integer largest-remainder allocation, so published district totals conserve the exact statewide Democratic, Republican, other, and total vote counts.
 - In Georgia's multi-candidate 2020 U.S. Senate contests, the Democratic and Republican buckets represent the eventual runoff nominees; every other candidate is included in `other`.
 
