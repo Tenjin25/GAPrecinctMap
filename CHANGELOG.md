@@ -6,7 +6,8 @@
 - Preserve precinct identifiers in a dedicated lookup while keeping the results CSV in seven-column OpenElections format.
 - Add 2026 county aggregates for the statewide contests and label the source as preliminary pending certified results.
 - Add preliminary 2026 statewide-contest aggregates for all 14 congressional, 180 State House, and 56 State Senate districts using direct same-election precinct ballot buckets.
-- Add 2022-lines congressional, State House, and State Senate versions of the 2026 statewide contests using the repository's constrained old-lines remap weights; actual U.S. House election contests remain excluded.
+- Add 2022-lines congressional, State House, and State Senate versions of the 2026 statewide contests using the repository's constrained old-lines remap weights; actual U.S. House election contests remain excluded from that old-lines remap.
+- Add the directly reported 2026 U.S. House elections to the current-lines congressional layer and expose them in the congressional contest picker; keep them out of the 2022-lines remap.
 - Remove incumbent asterisks from generated candidate names; incumbency markers are treated as source metadata rather than part of the display name.
 
 ## 2026-10-06

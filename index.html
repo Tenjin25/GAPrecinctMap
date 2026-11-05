@@ -10868,7 +10868,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-05-general-results-v1';
+    const DATA_CACHE_BUSTER = '2026-11-05-general-results-v2';
     const APP_BUILD_ID = '2026-10-08-walker-label-v6';
 
     function withCacheBuster(path) {
@@ -20002,13 +20002,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	      sel.innerHTML = '<option value="">Select a contest...</option>';
 
 	      const contestYearPairs = {};
-        // Seat races / district-office contests must never appear in the contest picker.
-        // District overlays are statewide/top-ticket only (President, Gov, US Senate, executives),
-        // even when rolled up onto CD / state house / state senate geography.
+        // Legislative seat races stay out of the shared picker. U.S. House is
+        // allowed because directly reported congressional slices are available.
         const seatOrDistrictOfficeContestTypes = new Set([
           'state_house',
-          'state_senate',
-          'us_house'
+          'state_senate'
         ]);
         function isSeatOrDistrictOfficeContestType(contestType) {
           const key = String(contestType || '').trim().toLowerCase();
@@ -20066,6 +20064,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	      function groupLabelForContestType(contestType) {
 	        if (contestType === 'president') return 'US President';
 	        if (contestType === 'us_senate' || contestType === 'us_senate_special' || contestType === 'us_senate_runoff') return 'US Senate';
+	        if (contestType === 'us_house') return 'US House';
 	        if (contestType === 'governor') return 'Governor';
 	        if (contestType === 'lieutenant_governor') return 'Lieutenant Governor';
 	        if (contestType === 'attorney_general') return 'Attorney General';
@@ -20089,6 +20088,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	      const groupOrder = [
 	        'US President',
 	        'US Senate',
+	        'US House',
 	        'Governor',
 	        'Lieutenant Governor',
 	        'Attorney General',

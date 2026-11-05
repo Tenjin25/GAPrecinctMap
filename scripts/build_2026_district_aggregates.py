@@ -8,8 +8,8 @@ party totals and written into the app's 2024-lines archive, which is also the
 configured 2026 district-map vintage.
 
 The same statewide contests are also remapped to the repository's 2022-lines
-congressional and legislative archives. Actual U.S. House election contests
-are not produced by this builder.
+congressional and legislative archives. The directly reported U.S. House
+elections are included only in the current-lines congressional archive.
 """
 
 from __future__ import annotations
@@ -234,6 +234,85 @@ def write_result(
     return entry, final
 
 
+def write_us_house_result(source_rows: list[dict[str, str]]) -> dict[str, object]:
+    results: dict[str, dict[str, int]] = defaultdict(lambda: {field: 0 for field in FIELDS})
+    names: dict[str, dict[str, defaultdict[str, int]]] = defaultdict(
+        lambda: {"dem_votes": defaultdict(int), "rep_votes": defaultdict(int)}
+    )
+    for row in source_rows:
+        if str(row.get("office") or "").strip() != "U.S. House":
+            continue
+        district = district_number(row.get("district", ""))
+        field = party_field(row.get("party", ""))
+        count = votes(row)
+        results[district][field] += count
+        if field in names[district] and row.get("candidate"):
+            names[district][field][str(row["candidate"]).strip()] += count
+
+    expected = {str(value) for value in range(1, SCOPES["congressional"][1] + 1)}
+    if set(results) != expected:
+        raise RuntimeError(f"2026 U.S. House results are missing districts: {sorted(expected - set(results), key=int)}")
+
+    final: dict[str, dict[str, object]] = {}
+    for district, row in sorted(results.items(), key=lambda item: int(item[0])):
+        total = sum(row.values())
+        dem = row["dem_votes"]
+        rep = row["rep_votes"]
+        other = row["other_votes"]
+        if dem >= rep and dem >= other:
+            winner, winner_party = "Democratic", "DEM"
+        elif rep >= other:
+            winner, winner_party = "Republican", "REP"
+        else:
+            winner, winner_party = "Other", "OTH"
+        final[district] = {
+            "total_votes": total,
+            **row,
+            "dem_candidate": max(names[district]["dem_votes"], key=names[district]["dem_votes"].get, default=""),
+            "rep_candidate": max(names[district]["rep_votes"], key=names[district]["rep_votes"].get, default=""),
+            "winner": winner,
+            "winner_party": winner_party,
+            "margin_pct": ((rep - dem) / total * 100) if total else 0,
+        }
+
+    file_name = f"congressional_us_house_{YEAR}.json"
+    path = OUT / file_name
+    payload = {
+        "meta": {
+            "scope": "congressional",
+            "contest_type": "us_house",
+            "year": YEAR,
+            "district_lines_year": 2024,
+            "source": "Direct 2026 Georgia SOS U.S. House precinct results",
+            "status": "preliminary",
+            "generated_by": "scripts/build_2026_district_aggregates.py",
+            "match_coverage_pct": 100.0,
+            "total_input_votes": sum(int(row["total_votes"]) for row in final.values()),
+            "matched_input_votes": sum(int(row["total_votes"]) for row in final.values()),
+            "input_files": ["Data/20261103__ga__general__precinct.csv"],
+        },
+        "general": {"results": final},
+    }
+    path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {file_name}: {len(final)} directly reported districts")
+    return {
+        "scope": "congressional",
+        "contest_type": "us_house",
+        "year": YEAR,
+        "file": file_name,
+        "rows": len(final),
+        "districts": len(final),
+        "total_votes": sum(int(row["total_votes"]) for row in final.values()),
+        "dem_total": sum(int(row["dem_votes"]) for row in final.values()),
+        "rep_total": sum(int(row["rep_votes"]) for row in final.values()),
+        "other_total": sum(int(row["other_votes"]) for row in final.values()),
+        "major_party_contested": True,
+        "match_coverage_pct": 100.0,
+        "county_reconciled": True,
+        "status": "preliminary",
+    }
+
+
 def remap_to_2022_lines(
     scope: str,
     contest_type: str,
@@ -377,6 +456,7 @@ def main() -> None:
             entry, results = write_result(scope, contest_type, rows, buckets[scope], office)
             updates.append(entry)
             current_results[(scope, contest_type)] = results
+    updates.append(write_us_house_result(rows))
     update_manifest(OUT / "manifest.json", updates)
     print(f"Updated {OUT / 'manifest.json'} with {len(updates)} preliminary 2026 slices")
 

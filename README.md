@@ -269,8 +269,8 @@ For the preliminary 2026 general election, `scripts/convert_enhanced_voting_json
 converts the Georgia SOS Enhanced Voting export and preserves precinct IDs in a separate lookup.
 `scripts/build_2026_district_aggregates.py` allocates statewide contests to the directly reported
 2026 congressional and legislative districts, then produces 2022-lines congressional, State House,
-and State Senate versions using the repository's constrained old-lines remap weights. These are
-statewide-contest overlays; actual U.S. House election contests are not included.
+and State Senate versions using the repository's constrained old-lines remap weights. The directly
+reported 2026 U.S. House elections are included in the current-lines congressional archive only.
 
 ## Validation and QA Focus
 
