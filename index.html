@@ -10868,7 +10868,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-05-general-results-v2';
+    const DATA_CACHE_BUSTER = '2026-11-05-general-results-v3';
     const APP_BUILD_ID = '2026-10-08-walker-label-v6';
 
     function withCacheBuster(path) {
@@ -11738,6 +11738,18 @@ document.addEventListener('DOMContentLoaded', function() {
       return out;
     }
 
+    function getPreferredPreviousContestYear(contestType, year) {
+      const ct = String(contestType || '').trim();
+      const y = Number(year);
+      if (ct !== 'us_senate' || !Number.isFinite(y)) return null;
+      // Georgia's 2020 regular Senate election was decided in the January 5,
+      // 2021 runoff. Treat that runoff—not the November round or the other
+      // Senate class elected in 2022—as the predecessor to the 2026 election.
+      if (y === 2026) return 2021;
+      if (y === 2021) return 2014;
+      return y - 6;
+    }
+
     function getVoteDeltaPairsForTooltip(contestType, toYear, maxPairs = 2) {
       const ct = String(contestType || '').trim();
       const y = Number(toYear);
@@ -11752,7 +11764,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // the generic series contains elections every 2 years. For deltas, prefer same-class y-6
         // when available, otherwise fall back to the most recent earlier year.
         if (ct === 'us_senate') {
-          const preferred = y - 6;
+          const preferred = getPreferredPreviousContestYear(ct, y);
           if (years.includes(preferred)) prev = preferred;
         }
         if (!Number.isFinite(prev)) {
@@ -11768,7 +11780,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           let prevPrev = null;
           if (ct === 'us_senate') {
-            const preferredPrev = prev - 6;
+            const preferredPrev = getPreferredPreviousContestYear(ct, prev);
             if (years.includes(preferredPrev)) prevPrev = preferredPrev;
           }
           if (!Number.isFinite(prevPrev)) {
@@ -33131,7 +33143,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // US Senate: prefer the last time the *same seat* was up (typically y-6) when available.
         // If that slice doesn't exist, fall back to the nearest earlier available year.
         if (String(contestType || '').trim() !== 'us_senate') return base;
-        const preferred = [y - 6, y - 12].filter(v => v >= 2000);
+        const preferred = [getPreferredPreviousContestYear(contestType, y), y - 6, y - 12]
+          .filter((v, i, values) => Number.isFinite(v) && v >= 2000 && values.indexOf(v) === i);
         const rest = base.filter(v => !preferred.includes(v));
         return [...preferred, ...rest];
       })();
@@ -33365,7 +33378,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const candidates = (() => {
         const base = [y - 4, y - 6, y - 2, y - 8, y - 12].filter(v => v >= 2000);
         if (String(contestType || '').trim() !== 'us_senate') return base;
-        const preferred = [y - 6, y - 12].filter(v => v >= 2000);
+        const preferred = [getPreferredPreviousContestYear(contestType, y), y - 6, y - 12]
+          .filter((v, i, values) => Number.isFinite(v) && v >= 2000 && values.indexOf(v) === i);
         const rest = base.filter(v => !preferred.includes(v));
         return [...preferred, ...rest];
       })();
