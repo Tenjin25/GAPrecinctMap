@@ -70,6 +70,8 @@ ELECTION_FILES = [
     (2021, DATA_DIR / "20210105__ga__runoff__official__precinct.csv"),
     (2022, DATA_DIR / "20221108__ga__general__official__precinct.csv"),
     (2024, DATA_DIR / "20241105__ga__general__precinct-level.csv"),
+    # Preliminary Georgia SOS election-night export; see adjacent metadata JSON.
+    (2026, DATA_DIR / "20261103__ga__general__precinct.csv"),
 ]
 
 # County aggregates also from county-level files when available (more complete)
@@ -146,28 +148,23 @@ def normalize_candidate_case(raw: str) -> str:
 
 def decorate_candidate_label(candidate: str, party_short: str) -> str:
     """
-    Adjust candidate display labels for the UI.
+    Normalize candidate display labels without carrying incumbency markers into JSON.
 
-    OpenElections GA files sometimes mark incumbents as "(I)" in the candidate name.
-    For the map UI + JSON outputs, convert incumbent markers like "(I)" (and legacy "(R*)")
-    into a simple trailing "*" (e.g., "Jane Doe (I)" -> "Jane Doe*").
+    Party and incumbency annotations in source candidate names are metadata, not
+    part of the candidate's name. Historical "(R*)"/"(D*)" markers are removed
+    for the same reason.
     """
     name = normalize_candidate_case(candidate)
     if not name:
         return ""
-    incumbent = False
     if re.search(r"\(\s*I\s*\)", name, flags=re.IGNORECASE):
-        incumbent = True
         name = re.sub(r"\(\s*I\s*\)", "", name, flags=re.IGNORECASE)
 
     # Back-compat: some older builds wrote incumbency as "(R*)" / "(D*)".
     if re.search(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", name, flags=re.IGNORECASE):
-        incumbent = True
         name = re.sub(r"\(\s*[A-Z]{1,3}\s*\*\s*\)", "", name, flags=re.IGNORECASE)
 
     name = re.sub(r"\s+", " ", name).strip()
-    if incumbent and not name.endswith("*"):
-        name = f"{name}*"
     return name
 
 
@@ -452,6 +449,18 @@ def main():
             print(f"  Wrote {out}  ({len(rows)} rows)")
 
     manifest_path = CONTESTS_DIR / "manifest.json"
+    # Other builders add judicial and historical runoff slices to this shared
+    # manifest. Preserve entries that this statewide builder does not own.
+    if manifest_path.exists():
+        existing_manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
+        generated_keys = {
+            (entry["contest_type"], int(entry["year"])) for entry in manifest_entries
+        }
+        for entry in existing_manifest.get("files", []):
+            key = (entry.get("contest_type"), int(entry.get("year") or 0))
+            if key not in generated_keys and (CONTESTS_DIR / str(entry.get("file") or "")).exists():
+                manifest_entries.append(entry)
+        manifest_entries.sort(key=lambda entry: (entry["contest_type"], int(entry["year"])))
     manifest_path.write_text(
         json.dumps({"files": manifest_entries}, indent=2), encoding="utf-8"
     )

@@ -1,5 +1,14 @@
 # Change history
 
+## 2026-11-05
+
+- Add preliminary November 3, 2026 Georgia general and special election results from the Secretary of State election-night export.
+- Preserve precinct identifiers in a dedicated lookup while keeping the results CSV in seven-column OpenElections format.
+- Add 2026 county aggregates for the statewide contests and label the source as preliminary pending certified results.
+- Add preliminary 2026 statewide-contest aggregates for all 14 congressional, 180 State House, and 56 State Senate districts using direct same-election precinct ballot buckets.
+- Add 2022-lines State House and State Senate versions of the 2026 statewide contests using the repository's constrained old-lines remap weights; congressional results remain on the directly reported 2026 districts.
+- Remove incumbent asterisks from generated candidate names; incumbency markers are treated as source metadata rather than part of the display name.
+
 ## 2026-10-06
 
 - Unlock the contest selector as soon as its manifest is ready instead of waiting for optional district geometry and demographic files.

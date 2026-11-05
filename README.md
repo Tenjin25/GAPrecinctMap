@@ -1,4 +1,4 @@
-# Peach State Pulse (2000-2024)
+# Peach State Pulse (2000-2026)
 
 Interactive Georgia elections atlas focused on county, precinct, congressional, and legislative results with trend-aware summaries and weighted district overlays.
 
@@ -59,7 +59,7 @@ Supporting metadata:
 
 ## Election Coverage
 
-- Time window in app experience: 2000 through 2024 (contest-dependent coverage).
+- Time window in app experience: 2000 through 2026 (contest-dependent coverage).
 - County/statewide slices: generated from OpenElections-style GA CSV exports.
 - Precinct-keyed derived slices: VTD20-keyed outputs (modern join keys) for years where precinct-level source data is available.
 - District overlays: produced by reallocating precinct results into district lines using weighted crosswalks.
@@ -264,6 +264,13 @@ This keeps the county demographic panel self-contained and consistent with the o
 4. Precinct-to-district weighted crosswalk CSVs are produced in `Data/crosswalks`.
 5. District contest slices are aggregated into `Data/district_contests_2022` / `Data/district_contests_2024` from derived VTD20 outputs (by lines vintage).
 6. The front-end loads manifests and slices dynamically based on selected contest/year/view mode.
+
+For the preliminary 2026 general election, `scripts/convert_enhanced_voting_json_to_openelections.py`
+converts the Georgia SOS Enhanced Voting export and preserves precinct IDs in a separate lookup.
+`scripts/build_2026_district_aggregates.py` allocates statewide contests to the directly reported
+2026 congressional and legislative districts, then produces 2022-lines State House and State Senate
+versions using the repository's constrained old-lines remap weights. Congressional results are not
+remapped to the 2022 congressional plan.
 
 ## Validation and QA Focus
 

@@ -1,0 +1,21 @@
+{
+  "election_date": "2026-11-03",
+  "election_name": "November 3, 2026 - General & Special Elections",
+  "source_created_at": "2026-11-05T17:58:50.7424192Z",
+  "status": "preliminary",
+  "status_note": "The source export reports election-night completion and is not identified as certified. Replace or relabel this dataset when certified results are available.",
+  "source_file": "export-11032026GeneralAndSpecialElection.json",
+  "results_file": "20261103__ga__general__precinct.csv",
+  "precinct_lookup_file": "20261103__ga__general__precinct_lookup.csv",
+  "conversion_stats": {
+    "rows": 102256,
+    "counties": 159,
+    "precincts": 2582,
+    "missing_precinct_results": 0,
+    "empty_precinct_results": 0,
+    "local_total_mismatches": 42,
+    "local_residual_votes": 86,
+    "checked_statewide_options": 457,
+    "statewide_total_mismatches": 0
+  }
+}
