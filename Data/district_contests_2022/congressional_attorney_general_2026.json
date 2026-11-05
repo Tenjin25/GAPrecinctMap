@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "attorney_general",
+    "year": 2026,
+    "district_lines_year": 2022,
+    "source": "Complete 2026 SOS same-election district-bucket allocation remapped to 2022 legislative lines; unchanged districts retain their direct totals and redrawn districts use the repository's constrained map-overlap weights",
+    "status": "preliminary",
+    "generated_by": "scripts/build_2026_district_aggregates.py",
+    "remap_method": "Area overlay of NYT precinct geography with the 2024 and 2022 Georgia Congressional maps; party-specific weights are constrained to complete SOS 2024 Congressional district totals when applied",
+    "unchanged_geometry_districts": [
+      1,
+      2,
+      3,
+      8,
+      12
+    ],
+    "spatially_remapped_districts": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "match_coverage_pct": 100.0,
+    "input_files": [
+      "Data/district_contests_2024/congressional_attorney_general_2026.json",
+      "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "total_votes": 272956,
+        "dem_votes": 130681,
+        "rep_votes": 142275,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 4.247571037090227
+      },
+      "2": {
+        "total_votes": 243605,
+        "dem_votes": 143979,
+        "rep_votes": 99626,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -18.2069333552267
+      },
+      "3": {
+        "total_votes": 322450,
+        "dem_votes": 131994,
+        "rep_votes": 190456,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 18.130562877965577
+      },
+      "4": {
+        "total_votes": 303968,
+        "dem_votes": 253818,
+        "rep_votes": 50150,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -67.0031055900621
+      },
+      "5": {
+        "total_votes": 325357,
+        "dem_votes": 280872,
+        "rep_votes": 44485,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -72.6546531963351
+      },
+      "6": {
+        "total_votes": 346892,
+        "dem_votes": 161759,
+        "rep_votes": 185133,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 6.738120221855794
+      },
+      "7": {
+        "total_votes": 269188,
+        "dem_votes": 187372,
+        "rep_votes": 81816,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -39.21274351011189
+      },
+      "8": {
+        "total_votes": 265444,
+        "dem_votes": 106664,
+        "rep_votes": 158780,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 19.63351968776842
+      },
+      "9": {
+        "total_votes": 312303,
+        "dem_votes": 114402,
+        "rep_votes": 197901,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 26.73653471148212
+      },
+      "10": {
+        "total_votes": 329146,
+        "dem_votes": 147932,
+        "rep_votes": 181214,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 10.11162219805193
+      },
+      "11": {
+        "total_votes": 322853,
+        "dem_votes": 154296,
+        "rep_votes": 168557,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 4.417180574441
+      },
+      "12": {
+        "total_votes": 270359,
+        "dem_votes": 130595,
+        "rep_votes": 139764,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 3.391416597930899
+      },
+      "13": {
+        "total_votes": 308948,
+        "dem_votes": 263428,
+        "rep_votes": 45520,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -70.53225785569093
+      },
+      "14": {
+        "total_votes": 279301,
+        "dem_votes": 109126,
+        "rep_votes": 170175,
+        "other_votes": 0,
+        "dem_candidate": "Tanya Miller",
+        "rep_candidate": "Brian Strickland",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 21.85778067389662
+      }
+    }
+  }
+}

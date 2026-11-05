@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "governor",
+    "year": 2026,
+    "district_lines_year": 2022,
+    "source": "Complete 2026 SOS same-election district-bucket allocation remapped to 2022 legislative lines; unchanged districts retain their direct totals and redrawn districts use the repository's constrained map-overlap weights",
+    "status": "preliminary",
+    "generated_by": "scripts/build_2026_district_aggregates.py",
+    "remap_method": "Area overlay of NYT precinct geography with the 2024 and 2022 Georgia Congressional maps; party-specific weights are constrained to complete SOS 2024 Congressional district totals when applied",
+    "unchanged_geometry_districts": [
+      1,
+      2,
+      3,
+      8,
+      12
+    ],
+    "spatially_remapped_districts": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "match_coverage_pct": 100.0,
+    "input_files": [
+      "Data/district_contests_2024/congressional_governor_2026.json",
+      "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "total_votes": 273122,
+        "dem_votes": 128144,
+        "rep_votes": 144978,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 6.1635459611455685
+      },
+      "2": {
+        "total_votes": 244197,
+        "dem_votes": 142556,
+        "rep_votes": 101641,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -16.754915089046957
+      },
+      "3": {
+        "total_votes": 322664,
+        "dem_votes": 128874,
+        "rep_votes": 193790,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 20.11876131207696
+      },
+      "4": {
+        "total_votes": 304104,
+        "dem_votes": 250449,
+        "rep_votes": 53655,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -64.71272985557573
+      },
+      "5": {
+        "total_votes": 325097,
+        "dem_votes": 276930,
+        "rep_votes": 48167,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -70.36761335847454
+      },
+      "6": {
+        "total_votes": 346419,
+        "dem_votes": 154204,
+        "rep_votes": 192215,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 10.97255058180989
+      },
+      "7": {
+        "total_votes": 269773,
+        "dem_votes": 183885,
+        "rep_votes": 85888,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -36.32572570272043
+      },
+      "8": {
+        "total_votes": 266098,
+        "dem_votes": 105036,
+        "rep_votes": 161062,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 21.05464903907583
+      },
+      "9": {
+        "total_votes": 313400,
+        "dem_votes": 110321,
+        "rep_votes": 203079,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 29.59731971920868
+      },
+      "10": {
+        "total_votes": 329577,
+        "dem_votes": 145259,
+        "rep_votes": 184318,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 11.8512517560388
+      },
+      "11": {
+        "total_votes": 323118,
+        "dem_votes": 149180,
+        "rep_votes": 173938,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 7.662216280120575
+      },
+      "12": {
+        "total_votes": 271099,
+        "dem_votes": 128547,
+        "rep_votes": 142552,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 5.166009465176928
+      },
+      "13": {
+        "total_votes": 308079,
+        "dem_votes": 259493,
+        "rep_votes": 48586,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -68.45873947915958
+      },
+      "14": {
+        "total_votes": 280325,
+        "dem_votes": 105602,
+        "rep_votes": 174723,
+        "other_votes": 0,
+        "dem_candidate": "Keisha Lance Bottoms",
+        "rep_candidate": "Rick Jackson",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 24.65745117274592
+      }
+    }
+  }
+}

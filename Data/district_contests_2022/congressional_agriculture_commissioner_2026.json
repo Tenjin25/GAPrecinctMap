@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "agriculture_commissioner",
+    "year": 2026,
+    "district_lines_year": 2022,
+    "source": "Complete 2026 SOS same-election district-bucket allocation remapped to 2022 legislative lines; unchanged districts retain their direct totals and redrawn districts use the repository's constrained map-overlap weights",
+    "status": "preliminary",
+    "generated_by": "scripts/build_2026_district_aggregates.py",
+    "remap_method": "Area overlay of NYT precinct geography with the 2024 and 2022 Georgia Congressional maps; party-specific weights are constrained to complete SOS 2024 Congressional district totals when applied",
+    "unchanged_geometry_districts": [
+      1,
+      2,
+      3,
+      8,
+      12
+    ],
+    "spatially_remapped_districts": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "match_coverage_pct": 100.0,
+    "input_files": [
+      "Data/district_contests_2024/congressional_agriculture_commissioner_2026.json",
+      "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "total_votes": 272245,
+        "dem_votes": 126688,
+        "rep_votes": 145557,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 6.930889456188359
+      },
+      "2": {
+        "total_votes": 243132,
+        "dem_votes": 140841,
+        "rep_votes": 102291,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -15.855584620699867
+      },
+      "3": {
+        "total_votes": 321585,
+        "dem_votes": 127049,
+        "rep_votes": 194536,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 20.985742494208374
+      },
+      "4": {
+        "total_votes": 303006,
+        "dem_votes": 247662,
+        "rep_votes": 55344,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -63.47003029642977
+      },
+      "5": {
+        "total_votes": 322991,
+        "dem_votes": 272248,
+        "rep_votes": 50743,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -68.57931025941899
+      },
+      "6": {
+        "total_votes": 344584,
+        "dem_votes": 152453,
+        "rep_votes": 192131,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 11.514754022241311
+      },
+      "7": {
+        "total_votes": 268969,
+        "dem_votes": 182203,
+        "rep_votes": 86766,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -35.482527726243546
+      },
+      "8": {
+        "total_votes": 265062,
+        "dem_votes": 102780,
+        "rep_votes": 162282,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 22.448332842882042
+      },
+      "9": {
+        "total_votes": 312511,
+        "dem_votes": 109200,
+        "rep_votes": 203311,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 30.114459971009023
+      },
+      "10": {
+        "total_votes": 328434,
+        "dem_votes": 142426,
+        "rep_votes": 186008,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 13.26963712648508
+      },
+      "11": {
+        "total_votes": 322070,
+        "dem_votes": 147009,
+        "rep_votes": 175061,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 8.709907784022107
+      },
+      "12": {
+        "total_votes": 269731,
+        "dem_votes": 127114,
+        "rep_votes": 142617,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 5.747578142668066
+      },
+      "13": {
+        "total_votes": 306335,
+        "dem_votes": 256291,
+        "rep_votes": 50044,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -67.32727243050908
+      },
+      "14": {
+        "total_votes": 279430,
+        "dem_votes": 105044,
+        "rep_votes": 174386,
+        "other_votes": 0,
+        "dem_candidate": "Katherine E. Juhan-Arnold",
+        "rep_candidate": "Tyler Harper",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 24.815517303081272
+      }
+    }
+  }
+}

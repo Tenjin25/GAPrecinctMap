@@ -6,6 +6,10 @@ therefore provide same-election allocation weights for precincts that contain
 more than one district.  Each output is reconciled to the canonical statewide
 party totals and written into the app's 2024-lines archive, which is also the
 configured 2026 district-map vintage.
+
+The same statewide contests are also remapped to the repository's 2022-lines
+congressional and legislative archives. Actual U.S. House election contests
+are not produced by this builder.
 """
 
 from __future__ import annotations
@@ -31,6 +35,7 @@ SCOPES = {
 }
 
 REMAPS_2022 = {
+    "congressional": ROOT / "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json",
     "state_house": ROOT / "Data/crosswalks/state_house_2024_to_2022_president_2024_weights.json",
     "state_senate": ROOT / "Data/crosswalks/state_senate_2024_to_2022_president_2024_weights.json",
 }

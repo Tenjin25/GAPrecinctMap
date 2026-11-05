@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "scope": "congressional",
+    "contest_type": "us_senate",
+    "year": 2026,
+    "district_lines_year": 2022,
+    "source": "Complete 2026 SOS same-election district-bucket allocation remapped to 2022 legislative lines; unchanged districts retain their direct totals and redrawn districts use the repository's constrained map-overlap weights",
+    "status": "preliminary",
+    "generated_by": "scripts/build_2026_district_aggregates.py",
+    "remap_method": "Area overlay of NYT precinct geography with the 2024 and 2022 Georgia Congressional maps; party-specific weights are constrained to complete SOS 2024 Congressional district totals when applied",
+    "unchanged_geometry_districts": [
+      1,
+      2,
+      3,
+      8,
+      12
+    ],
+    "spatially_remapped_districts": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "match_coverage_pct": 100.0,
+    "input_files": [
+      "Data/district_contests_2024/congressional_us_senate_2026.json",
+      "Data/crosswalks/congressional_2024_to_2022_president_2024_weights.json"
+    ]
+  },
+  "general": {
+    "results": {
+      "1": {
+        "total_votes": 273429,
+        "dem_votes": 139548,
+        "rep_votes": 133881,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -2.072567284377297
+      },
+      "2": {
+        "total_votes": 243869,
+        "dem_votes": 149929,
+        "rep_votes": 93940,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -22.958637629218966
+      },
+      "3": {
+        "total_votes": 322074,
+        "dem_votes": 143447,
+        "rep_votes": 178627,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 10.922955594056024
+      },
+      "4": {
+        "total_votes": 304691,
+        "dem_votes": 262540,
+        "rep_votes": 42151,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -72.33196910968817
+      },
+      "5": {
+        "total_votes": 327529,
+        "dem_votes": 291324,
+        "rep_votes": 36205,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -77.89203398783009
+      },
+      "6": {
+        "total_votes": 348933,
+        "dem_votes": 180679,
+        "rep_votes": 168254,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -3.5608555224068805
+      },
+      "7": {
+        "total_votes": 268703,
+        "dem_votes": 196288,
+        "rep_votes": 72415,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -46.10034126898472
+      },
+      "8": {
+        "total_votes": 265584,
+        "dem_votes": 115322,
+        "rep_votes": 150262,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 13.15591300680764
+      },
+      "9": {
+        "total_votes": 309543,
+        "dem_votes": 125828,
+        "rep_votes": 183715,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 18.700794396901237
+      },
+      "10": {
+        "total_votes": 328272,
+        "dem_votes": 159542,
+        "rep_votes": 168730,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 2.7988984744358336
+      },
+      "11": {
+        "total_votes": 322558,
+        "dem_votes": 168332,
+        "rep_votes": 154226,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -4.373166996323142
+      },
+      "12": {
+        "total_votes": 270833,
+        "dem_votes": 138967,
+        "rep_votes": 131866,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -2.6219109192749777
+      },
+      "13": {
+        "total_votes": 311712,
+        "dem_votes": 272906,
+        "rep_votes": 38806,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Democratic",
+        "winner_party": "DEM",
+        "margin_pct": -75.10137562878555
+      },
+      "14": {
+        "total_votes": 277068,
+        "dem_votes": 118510,
+        "rep_votes": 158558,
+        "other_votes": 0,
+        "dem_candidate": "Jon Ossoff",
+        "rep_candidate": "Mike Collins",
+        "winner": "Republican",
+        "winner_party": "REP",
+        "margin_pct": 14.454213406095255
+      }
+    }
+  }
+}
