@@ -4370,8 +4370,8 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--ga-gold-soft) 0%, var(--ga-gold) 100%);
-    box-shadow: 0 0 0 4px rgba(248, 250, 252, 0.12);
+    background: linear-gradient(135deg, #38bdf8 0%, #bfdbfe 100%);
+    box-shadow: 0 0 0 4px rgba(191, 219, 254, 0.12);
     flex: 0 0 auto;
   }
 
@@ -9906,184 +9906,65 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     }
   }
 
-  /* Neutral panel surfaces; keep the existing layout and election color encoding. */
-  .main-controls,
-  .legend,
-  .vote-counter,
-  .desktop-statewide-panel {
-    background: #fffefa !important;
-    border-color: #dce4e5 !important;
-  }
-  #main-controls .controls-header,
-  .legend-header,
-  .desktop-statewide-head,
-  .vote-counter-context,
-  .vote-counter-meta {
-    background: #f3f6f5 !important;
-    border-color: #dce4e5 !important;
-  }
-  .main-controls .control-group,
-  .statewide-card,
-  .finding-card,
-  .vote-counter .focus-card,
-  .vote-counter .focus-trend-plot {
-    background: #ffffff !important;
-    border-color: #dce4e5 !important;
-  }
-  .control-summary-pill,
-  .legend-context-chip,
-  .focus-trend-chip,
-  .meta-chip,
-  .legend-chip,
-  .vote-counter .focus-pill,
-  .vote-counter .focus-census-pill {
-    background: #f5f7f6 !important;
-    border-color: #dce4e5 !important;
-  }
-  .vote-counter .focus-glance,
-  .vote-counter .focus-glance.tone-rep,
-  .vote-counter .focus-glance.tone-dem,
-  .vote-counter .focus-glance.tone-neutral {
-    background: #ffffff !important;
-    border-color: #dce4e5 !important;
-  }
-  .vote-counter .focus-watch {
-    background: #f3f6f5 !important;
-    border-color: #dce4e5 !important;
-  }
-  .vote-counter .focus-watch-kicker { color: #526777; }
-  .vote-counter .focus-watch-copy { color: #294556; }
 </style>
-<style id="georgia-panel-polish">
-  /* The official-results layout, with a quieter Georgia frame for its two
-     primary desktop panels. Election fills and hover cards stay untouched. */
-  :root {
-    --ga-panel-ink: #182e43;
-    --ga-panel-red: #982f3f;
-    --ga-panel-blue: #315f91;
-    --ga-panel-paper: #fffdf9;
-    --ga-panel-line: #e7e0da;
-  }
-
-  #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
-    display: none !important;
-  }
-
-  @media (min-width: 1100px) {
-    :root {
-      --desktop-left-w: 420px;
-      --desktop-right-w: 372px;
-    }
-  }
-
-  @media (min-width: 769px) and (max-width: 1099px) {
-    :root {
-      --desktop-left-w: 344px;
-      --desktop-right-w: 304px;
-    }
-  }
-
+<style id="ga-official-panel-theme">
+  /* Georgia framing for the two primary panels on the official-results index. */
   #main-controls,
   #vote-counter {
-    background: var(--ga-panel-paper) !important;
-    border: 1px solid rgba(38, 59, 79, .2) !important;
-    box-shadow: 0 18px 48px rgba(21, 38, 55, .18), 0 3px 10px rgba(21, 38, 55, .08) !important;
+    background: #fffdfa !important;
+    border-color: rgba(33, 58, 77, .2) !important;
+    box-shadow: 0 16px 40px rgba(21, 41, 55, .18), 0 3px 10px rgba(21, 41, 55, .07) !important;
   }
 
-  #main-controls .controls-header {
-    background: linear-gradient(125deg, #122d43 0%, #234b66 72%, #713a44 100%) !important;
-    border-color: rgba(255, 219, 194, .24) !important;
-    border-radius: 15px;
-    padding: 14px;
-    color: #fffaf6;
-  }
-
+  #main-controls .controls-header,
   #vote-counter .vote-counter-context {
     background: linear-gradient(125deg, #122d43 0%, #234b66 72%, #713a44 100%) !important;
     border: 1px solid rgba(255, 219, 194, .24) !important;
-    border-radius: 12px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-  }
-
-  #main-controls .controls-header {
-    border-bottom: 1px solid rgba(255, 219, 194, .24) !important;
-  }
-
-  #main-controls .controls-heading {
-    gap: 5px;
-  }
-
-  #main-controls .controls-header {
-    padding-bottom: 12px;
-  }
-
-  #main-controls .controls-kicker,
-  #main-controls .control-summary-kicker {
-    color: #8b4550 !important;
+    border-radius: 14px;
+    color: #fffaf6;
   }
 
   #main-controls .controls-kicker {
-    padding: 0;
     background: transparent !important;
     color: #efbe9f !important;
   }
 
   #main-controls .controls-title-pill,
   #main-controls .controls-collapsed-label {
-    color: #fffaf6 !important;
     background: transparent !important;
     border-color: transparent !important;
     box-shadow: none !important;
-    padding: 0;
-    font-size: 18px;
+    color: #fffaf6 !important;
   }
 
-  #main-controls .controls-subtitle,
-  #vote-counter .focus-trend-caption {
-    color: #5e7080 !important;
+  #main-controls .controls-title-pill::before {
+    background: #e7aa77;
+    box-shadow: 0 0 0 4px rgba(231, 170, 119, .14);
   }
 
   #main-controls .controls-subtitle {
-    color: #d8e3e8 !important;
-    margin-top: 3px;
-    font-size: 11px;
-    line-height: 1.35;
+    color: #dce7eb !important;
+  }
+
+  #vote-counter .context-title {
+    color: #fffaf6 !important;
+  }
+
+  #vote-counter .context-sub {
+    color: #fff1e4 !important;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .01em;
   }
 
   #main-controls #help-btn,
-  #main-controls #controls-minimize-btn {
-    background: rgba(255, 255, 255, .1) !important;
-    border: 1px solid rgba(255, 255, 255, .3) !important;
-    color: #fffaf6 !important;
-    box-shadow: none !important;
-  }
-
+  #main-controls #controls-minimize-btn,
   #vote-counter .context-clear,
   #vote-counter .context-minimize {
-    background: rgba(255, 255, 255, .1) !important;
-    border: 1px solid rgba(255, 255, 255, .3) !important;
+    background: rgba(255, 255, 255, .11) !important;
+    border-color: rgba(255, 255, 255, .32) !important;
     color: #fffaf6 !important;
     box-shadow: none !important;
-  }
-
-  #main-controls #help-btn:hover,
-  #main-controls #controls-minimize-btn:hover {
-    background: rgba(255, 255, 255, .2) !important;
-  }
-
-  #vote-counter .context-clear:hover,
-  #vote-counter .context-minimize:hover {
-    background: rgba(255, 255, 255, .2) !important;
-  }
-
-  #main-controls .controls-content {
-    gap: 10px;
-  }
-
-  #main-controls .control-group {
-    padding: 11px 12px;
-    border-radius: 15px;
   }
 
   #main-controls .control-group,
@@ -10091,12 +9972,19 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   #main-controls .desktop-statewide-panel,
   #vote-counter .focus-card {
     background: #ffffff !important;
-    border-color: var(--ga-panel-line) !important;
-    box-shadow: 0 2px 9px rgba(29, 48, 66, .045) !important;
+    border-color: #e6dfd8 !important;
   }
 
   #main-controls .control-group-primary {
-    border-left: 3px solid var(--ga-panel-red) !important;
+    border-left: 3px solid #a44850 !important;
+  }
+
+  #vote-counter .vote-counter-meta,
+  #vote-counter .focus-pill,
+  #vote-counter .focus-glance,
+  #vote-counter .focus-trend-plot {
+    background: #f9f6f1 !important;
+    border-color: #e6dfd8 !important;
   }
 
   #main-controls #precinct-toggle[aria-pressed="false"] {
@@ -10111,106 +9999,39 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     background: linear-gradient(145deg, #315f8a 0%, #173a59 100%) !important;
     border-color: #b87868 !important;
     color: #ffffff !important;
-    box-shadow: 0 7px 16px rgba(24, 58, 89, .18) !important;
   }
 
-  #main-controls .control-summary {
-    background: linear-gradient(125deg, #fff8f3 0%, #fff 62%, #f3f7fb 100%) !important;
-    border-left: 3px solid var(--ga-panel-blue) !important;
-  }
-
-  #main-controls .desktop-statewide-head,
-  #vote-counter .vote-counter-meta {
-    background: #f8f5f1 !important;
-    border-color: var(--ga-panel-line) !important;
-  }
-
-  #vote-counter .vote-counter-meta {
-    margin-bottom: 8px;
-    padding: 8px 10px;
-    border-radius: 12px;
-  }
-
-  #main-controls .section-kicker,
-  #main-controls .desktop-statewide-kicker {
-    color: var(--ga-panel-red) !important;
-  }
-
-  #vote-counter .context-title {
-    color: #fffaf6 !important;
-    font-size: 12px;
-    letter-spacing: .05em;
-  }
-
-  #vote-counter .context-sub {
-    color: #efbe9f !important;
-    font-size: 13px;
-    font-weight: 750;
-    line-height: 1.25;
-  }
-
-  #vote-counter .focus-summary {
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  #vote-counter .focus-pill,
-  #vote-counter .focus-glance,
-  #vote-counter .focus-trend-plot {
-    background: #fffdf9 !important;
-    border-color: var(--ga-panel-line) !important;
-  }
-
-  #vote-counter .focus-pill {
-    padding: 9px 10px;
-    border-radius: 12px;
-  }
-
-  #vote-counter .focus-pill-total {
-    background: #f7f3ee !important;
-  }
-
-  #vote-counter .focus-bar-panel {
-    padding: 8px 0 10px;
-    border-top: 1px solid var(--ga-panel-line);
-    border-bottom: 1px solid var(--ga-panel-line);
-  }
-
-  #vote-counter .focus-pill-label,
-  #vote-counter .focus-trend-title {
-    color: #7e4a50 !important;
-  }
-
-  #main-controls .view-toggle-btn.active,
-  .desktop-ui-right .viz-mode-btn.active {
-    background: linear-gradient(160deg, #355f8d 0%, #1c416e 100%) !important;
-    border-color: #c87f70 !important;
-    box-shadow: 0 6px 14px rgba(29, 65, 110, .2) !important;
-  }
-
-  #main-controls :is(button, input, select, summary):focus-visible,
-  #vote-counter button:focus-visible,
-  .desktop-ui-right .viz-mode-btn:focus-visible {
-    outline: 2px solid var(--ga-panel-red) !important;
-    outline-offset: 2px;
+  #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
+    display: none !important;
   }
 
   @media (max-width: 768px) {
-    #main-controls,
-    #vote-counter {
-      box-shadow: 0 8px 24px rgba(21, 38, 55, .15) !important;
+    #main-controls .controls-header {
+      position: relative !important;
+      padding-right: 108px !important;
+    }
+
+    #main-controls .controls-header #help-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    #main-controls .controls-header #controls-minimize-btn {
+      left: auto !important;
+      right: 60px !important;
+    }
+
+    #main-controls.minimized .controls-header #controls-minimize-btn {
+      right: 8px !important;
     }
 
     #vote-counter .vote-counter-context {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
-      gap: 6px;
-      padding: 9px 11px;
-    }
-
-    #vote-counter {
-      padding: 12px !important;
+      gap: 8px;
+      padding: 10px 12px;
     }
 
     #vote-counter .context-left {
@@ -10666,7 +10487,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="controls-heading">
               <span class="controls-kicker">Atlas controls</span>
               <h3 class="controls-title-pill">Peach State Pulse</h3>
-              <p class="controls-subtitle">Explore Georgia elections by contest, place, and map layer.</p>
+              <p class="controls-subtitle">Switch layers, jump to major regions, and compare contests without leaving the map.</p>
             </div>
             <div class="controls-actions">
               <span class="controls-collapsed-label">Peach State Pulse</span>
@@ -10738,7 +10559,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   </details>
                 </div>
                 <div class="controls-panel-note">
-                  Click a county or district for details. Shortcuts: P precincts · L basemap · C copy link.
+                  Start here: pick a contest, then click a county or district for the full story. Shortcuts: `P` precincts, `L` basemap, `C` copy link.
                 </div>
             </div>
             <div class="control-summary" id="control-summary">
@@ -11189,8 +11010,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-ui-v3';
-    const APP_BUILD_ID = '2026-11-23-official-results-ui-v3';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-theme-v4';
+    const APP_BUILD_ID = '2026-11-23-official-results-theme-v4';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
