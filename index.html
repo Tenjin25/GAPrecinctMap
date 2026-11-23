@@ -9926,6 +9926,37 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     font-size: 14px;
     font-weight: 800;
   }
+  @media (min-width: 769px) {
+    #vote-counter.minimized {
+      padding: 8px 10px;
+      border-radius: 18px;
+    }
+    #vote-counter.minimized .vote-counter-context {
+      box-sizing: border-box;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      padding: 9px 12px;
+      border: 1px solid rgba(245, 220, 198, 0.38);
+      border-color: rgba(245, 220, 198, 0.38) !important;
+      border-radius: 12px;
+      background: linear-gradient(125deg, #18384b 0%, #315d70 72%, #a6533a 100%) !important;
+    }
+    #vote-counter.minimized .context-title { color: #f8f5ee; }
+    #vote-counter.minimized .context-sub { color: #f3c7a2; }
+    #vote-counter.minimized .context-actions {
+      grid-column: 2;
+      width: auto;
+      align-self: center;
+      justify-self: end;
+    }
+    #vote-counter.minimized .context-minimize {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #fffaf6;
+    }
+  }
   .desktop-statewide-kicker,
   .desktop-statewide-tag,
   .desktop-statewide-title,
@@ -10885,8 +10916,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v2';
-    const APP_BUILD_ID = '2026-11-23-official-results-polish-v2';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v3';
+    const APP_BUILD_ID = '2026-11-23-official-results-polish-v3';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
