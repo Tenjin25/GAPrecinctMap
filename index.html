@@ -9953,6 +9953,9 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   }
   .vote-counter .focus-watch-kicker { color: #526777; }
   .vote-counter .focus-watch-copy { color: #294556; }
+  .main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
+    display: none !important;
+  }
   #hover-tooltip[data-context="votehub-results"] {
     background: #132f40 !important;
     border-color: #496675 !important;
@@ -10921,8 +10924,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-ui-v1';
-    const APP_BUILD_ID = '2026-11-23-official-results-ui-v1';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-ui-v2';
+    const APP_BUILD_ID = '2026-11-23-official-results-ui-v2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
