@@ -9929,12 +9929,19 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     color: #efbe9f !important;
   }
 
-  #main-controls .controls-title-pill,
   #main-controls .controls-collapsed-label {
     background: transparent !important;
     border-color: transparent !important;
     box-shadow: none !important;
     color: #fffaf6 !important;
+  }
+
+  #main-controls .controls-title-pill {
+    background: rgba(255, 255, 255, .12) !important;
+    border: 1px solid rgba(255, 219, 194, .45) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 4px 10px rgba(11, 29, 43, .12) !important;
+    color: #fffaf6 !important;
+    padding: 0 14px;
   }
 
   #main-controls .controls-title-pill::before {
@@ -9955,6 +9962,19 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     font-size: 14px;
     font-weight: 800;
     letter-spacing: .01em;
+  }
+
+  @media (min-width: 769px) {
+    #vote-counter .vote-counter-context {
+      box-sizing: border-box;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+    }
+
+    #vote-counter .context-actions {
+      align-self: center;
+    }
   }
 
   #main-controls #help-btn,
@@ -11010,8 +11030,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-theme-v5';
-    const APP_BUILD_ID = '2026-11-23-official-results-theme-v5';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-theme-v7';
+    const APP_BUILD_ID = '2026-11-23-official-results-theme-v7';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
