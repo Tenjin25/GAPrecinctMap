@@ -9907,170 +9907,22 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   }
 
 </style>
-<style id="ga-official-panel-theme">
-  /* Georgia framing for the two primary panels on the official-results index. */
-  #main-controls,
-  #vote-counter {
-    background: #fffdfa !important;
-    border-color: rgba(33, 58, 77, .2) !important;
-    box-shadow: 0 16px 40px rgba(21, 41, 55, .18), 0 3px 10px rgba(21, 41, 55, .07) !important;
-  }
-
-  #main-controls .controls-header,
-  #vote-counter .vote-counter-context {
-    background: linear-gradient(125deg, #122d43 0%, #234b66 72%, #713a44 100%) !important;
-    border: 1px solid rgba(255, 219, 194, .24) !important;
-    border-radius: 14px;
-    color: #fffaf6;
-  }
-
-  #main-controls .controls-kicker {
-    background: transparent !important;
-    color: #efbe9f !important;
-  }
-
-  #main-controls .controls-collapsed-label {
-    background: transparent !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-    color: #fffaf6 !important;
-  }
-
-  #main-controls .controls-title-pill {
-    background: rgba(255, 255, 255, .12) !important;
-    border: 1px solid rgba(255, 219, 194, .45) !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 4px 10px rgba(11, 29, 43, .12) !important;
-    color: #fffaf6 !important;
-    padding: 0 14px;
-  }
-
-  #main-controls .controls-title-pill::before {
-    background: #e7aa77;
-    box-shadow: 0 0 0 4px rgba(231, 170, 119, .14);
-  }
-
-  #main-controls .controls-subtitle {
-    color: #dce7eb !important;
-  }
-
-  #vote-counter .context-title {
-    color: #fffaf6 !important;
-  }
-
-  #vote-counter .context-sub {
-    color: #efbe9f !important;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: .01em;
-  }
-
-  @media (min-width: 769px) {
-    #vote-counter .vote-counter-context {
-      box-sizing: border-box;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-    }
-
-    #vote-counter .context-actions {
-      align-self: center;
-    }
-  }
-
-  #main-controls #help-btn,
-  #main-controls #controls-minimize-btn,
-  #vote-counter .context-clear,
-  #vote-counter .context-minimize {
-    background: rgba(255, 255, 255, .11) !important;
-    border-color: rgba(255, 255, 255, .32) !important;
-    color: #fffaf6 !important;
-    box-shadow: none !important;
-  }
-
-  #main-controls .control-group,
-  #main-controls .control-summary,
-  #main-controls .desktop-statewide-panel,
-  #vote-counter .focus-card {
-    background: #ffffff !important;
-    border-color: #e6dfd8 !important;
-  }
-
-  #main-controls .control-group-primary {
-    border-left: 3px solid #a44850 !important;
-  }
-
-  #vote-counter .vote-counter-meta,
-  #vote-counter .focus-pill,
-  #vote-counter .focus-glance,
-  #vote-counter .focus-trend-plot {
-    background: #f9f6f1 !important;
-    border-color: #e6dfd8 !important;
-  }
-
-  #main-controls #precinct-toggle[aria-pressed="false"] {
-    background: #f2eee8 !important;
-    border-color: #d9ccc1 !important;
-    color: #24465e !important;
-    box-shadow: none !important;
-  }
-
-  #main-controls #precinct-toggle[aria-pressed="true"],
-  #main-controls #desktop-fly-submit {
-    background: linear-gradient(145deg, #315f8a 0%, #173a59 100%) !important;
-    border-color: #b87868 !important;
-    color: #ffffff !important;
-  }
-
-  #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
-    display: none !important;
-  }
-
-  @media (max-width: 768px) {
-    #main-controls .controls-header {
-      position: relative !important;
-      padding-right: 108px !important;
-    }
-
-    #main-controls .controls-header #help-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-    }
-
-    #main-controls .controls-header #controls-minimize-btn {
-      left: auto !important;
-      right: 60px !important;
-    }
-
-    #main-controls.minimized .controls-header #controls-minimize-btn {
-      right: 8px !important;
-    }
-
-    #vote-counter .vote-counter-context {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-    }
-
-    #vote-counter .context-left {
-      grid-column: 1;
-    }
-
-    #vote-counter .context-actions {
-      grid-column: 2;
-      width: auto;
-      justify-self: end;
-    }
-
-    #vote-counter .focus-summary {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-</style>
 <style id="selected-panel-type-scale">
   #focus-card .focus-pill-value { font-size: 16.5px; }
+  @media (min-width: 769px) {
+    #vote-counter:not(.minimized) .vote-counter-context {
+      box-sizing: border-box;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid rgba(28, 56, 73, 0.11);
+      border-radius: 14px;
+    }
+  }
+  #vote-counter .context-sub {
+    color: #18384b;
+    font-size: 14px;
+    font-weight: 800;
+  }
   .desktop-statewide-kicker,
   .desktop-statewide-tag,
   .desktop-statewide-title,
@@ -11030,8 +10882,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-theme-v7';
-    const APP_BUILD_ID = '2026-11-23-official-results-theme-v7';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v1';
+    const APP_BUILD_ID = '2026-11-23-official-results-polish-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
