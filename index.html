@@ -9909,6 +9909,9 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 </style>
 <style id="selected-panel-type-scale">
   #focus-card .focus-pill-value { font-size: 16.5px; }
+  #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
+    display: none !important;
+  }
   @media (min-width: 769px) {
     #vote-counter:not(.minimized) .vote-counter-context {
       box-sizing: border-box;
@@ -10882,8 +10885,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v1';
-    const APP_BUILD_ID = '2026-11-23-official-results-polish-v1';
+    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v2';
+    const APP_BUILD_ID = '2026-11-23-official-results-polish-v2';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
