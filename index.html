@@ -4370,8 +4370,8 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #38bdf8 0%, #bfdbfe 100%);
-    box-shadow: 0 0 0 4px rgba(191, 219, 254, 0.12);
+    background: linear-gradient(135deg, var(--ga-gold-soft) 0%, var(--ga-gold) 100%);
+    box-shadow: 0 0 0 4px rgba(248, 250, 252, 0.12);
     flex: 0 0 auto;
   }
 
@@ -9906,6 +9906,200 @@ body.focus-active #hover-tooltip[data-context="preview"] {
     }
   }
 
+
+/* ================================================================
+   Peach State Pulse | UI refinement v2
+   Neutral surfaces and consistent controls; no election-color changes.
+   ================================================================ */
+:root {
+  --ui-bg: #fffdf9;
+  --ui-border: rgba(30, 56, 71, .17);
+  --ui-text: #183446;
+  --ui-muted: #526777;
+  --ui-shadow: 0 14px 42px rgba(17, 40, 53, .13), 0 2px 8px rgba(17, 40, 53, .06);
+  --panel-surface: #fffdfa;
+  --panel-header: #f4f6f4;
+  --panel-inner: #faf9f5;
+  --panel-line: #dce3e4;
+  --panel-navy: #20465b;
+  --panel-navy-hover: #315f73;
+  --panel-peach: #b65d3b;
+  --panel-peach-soft: #f8ebe4;
+}
+/* An unobtrusive panel frame with high-contrast headings. */
+.main-controls, .legend, .vote-counter, .viz-modes,
+.desktop-statewide-panel, #status-panel, .status-panel {
+  color: var(--ui-text) !important;
+  background: var(--panel-surface) !important;
+  border: 1px solid var(--ui-border) !important;
+  border-radius: 16px;
+  box-shadow: var(--ui-shadow) !important;
+}
+#main-controls .controls-header, .legend-header,
+.vote-counter-context, .desktop-statewide-head {
+  background: var(--panel-header) !important;
+  border-color: var(--panel-line) !important;
+}
+#main-controls .controls-header { border-radius: 10px; }
+.main-controls .control-group, .statewide-card, .focus-card,
+.finding-card, .focus-trend-plot, .statewide-stat {
+  background: var(--panel-inner) !important;
+  border-color: var(--panel-line) !important;
+  box-shadow: inset 0 1px 0 #ffffff !important;
+}
+.main-controls .control-group { border-radius: 12px; }
+.controls-header h3, .legend-header h4, .desktop-statewide-title,
+.vote-counter .context-title { color: #19384b !important; }
+.controls-subtitle, .legend-subtitle, .control-group label,
+.vote-counter .context-sub { color: var(--ui-muted) !important; }
+.section-kicker, .legend-kicker, .focus-census-kicker,
+.focus-pill-label, .desktop-statewide-kicker { color: #99492f !important; }
+/* The section's title, not every decoration, should be the visual focal point. */
+.panel-eyebrow, .legend-kicker, .section-kicker {
+  letter-spacing: .08em;
+}
+.legend-context-chip, .focus-trend-chip, .legend-chip {
+  background: #f1f4f3 !important;
+  border-color: var(--panel-line) !important;
+}
+/* The current-map card is dark; its pills need a dark-surface treatment. */
+.control-summary-pill {
+  background: rgba(255, 255, 255, .12) !important;
+  border-color: rgba(255, 255, 255, .12) !important;
+  color: #f5f8f7 !important;
+}
+.control-summary-pill-muted { color: #d3e0e4 !important; }
+/* Unified active/inactive semantics without introducing party-colored buttons. */
+.view-toggle-btn.active, .viz-mode-btn.active, .mode-toggle.active {
+  background: #214b61 !important;
+  border-color: #214b61 !important;
+  color: #fff !important;
+  box-shadow: 0 3px 9px rgba(32, 70, 91, .19) !important;
+}
+.view-toggle-btn:not(.active), .viz-mode-btn:not(.active),
+.region-jump-btn, .tool-chip-btn, .desktop-fly-chip, .context-clear {
+  background: #fffefa !important;
+  border-color: #d3dee0 !important;
+  color: #25485b !important;
+  box-shadow: none !important;
+}
+.view-toggle-btn:not(.active):hover, .viz-mode-btn:not(.active):hover,
+.region-jump-btn:hover, .tool-chip-btn:hover, .desktop-fly-chip:hover,
+.context-clear:hover { background: var(--panel-peach-soft) !important; border-color: #cbad9e !important; }
+.main-controls input[type="search"], .main-controls input[type="text"],
+.main-controls select, .tool-chip-select, .contest-toolbar select {
+  background: #fff !important;
+  border: 1px solid #cbd8dc !important;
+  border-radius: 10px;
+  color: #183446 !important;
+  box-shadow: 0 1px 2px rgba(25, 58, 76, .035) !important;
+}
+.main-controls input::placeholder { color: #617581; opacity: 1; }
+.main-controls :is(input,select):focus-visible,
+:is(button,input,select,summary,a):focus-visible {
+  outline: 2px solid #ac6247 !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(223, 138, 101, .15) !important;
+}
+.fly-search-submit, #main-controls .controls-header #controls-minimize-btn,
+#legend-minimize-btn {
+  background: #214b61 !important;
+  border: 1px solid #214b61 !important;
+  color: #fff !important;
+  box-shadow: 0 3px 9px rgba(27, 64, 84, .18) !important;
+}
+.fly-search-submit:hover, #main-controls .controls-header #controls-minimize-btn:hover,
+#legend-minimize-btn:hover { background: #31647a !important; }
+#hover-tooltip[data-context="votehub-results"] {
+  background: #132f40 !important;
+  border: 1px solid rgba(232, 179, 139, .42) !important;
+  border-radius: 13px;
+  box-shadow: 0 14px 36px rgba(6, 24, 36, .34) !important;
+}
+/* Keep the legend itself neutral; the color strip is already vivid. */
+.legend-spectrum { border-radius: 9px; }
+.legend-tier-row, .legend-item { border-radius: 8px; }
+/* Keep the section labels quiet while preserving the atlas and title pills. */
+.legend-kicker, .desktop-statewide-kicker {
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: 0;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.controls-kicker {
+  background: #f8ebe4 !important;
+  color: #99492f !important;
+  border: 1px solid #edd4c8;
+}
+.controls-header .controls-title-pill { color: #fffaf4 !important; }
+.controls-heading { gap: 5px; }
+.controls-subtitle { line-height: 1.45; }
+.main-controls .control-group-primary {
+  border-color: #c9d6d9 !important;
+  box-shadow: 0 3px 12px rgba(19, 52, 68, .07) !important;
+}
+.contest-select-wrap-primary #contestSelect {
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+  border-color: #91aab4 !important;
+}
+.control-summary {
+  background: #193b4d !important;
+  box-shadow: 0 8px 20px rgba(16, 45, 60, .14) !important;
+}
+.control-summary-kicker, .control-summary-mode {
+  background: rgba(255,255,255,.11) !important;
+  color: #e2edf0 !important;
+}
+.control-summary-title { font-size: 17px; letter-spacing: -.015em; }
+.desktop-statewide-tag {
+  background: #eaf1f0 !important;
+  color: #305468 !important;
+  border: 1px solid #d5e0df;
+}
+@media (min-width: 769px) {
+  .map-topbar {
+    background: #163648 !important;
+    box-shadow: 0 12px 32px rgba(15, 39, 53, .24) !important;
+  }
+  .map-topbar-copy strong { font-size: 13px; }
+  .map-topbar-copy span { color: #c9d9de; }
+  .main-controls, .legend { box-shadow: 0 10px 28px rgba(17, 40, 53, .12) !important; }
+}
+/* Compact mobile sheets: consistent presentation, readable controls and dock. */
+@media (max-width: 768px) {
+  .main-controls, .legend, .vote-counter {
+    box-shadow: 0 10px 30px rgba(18, 43, 58, .16) !important;
+  }
+  .main-controls.mobile-sheet-panel, .legend.mobile-sheet-panel,
+  .map-topbar.mobile-sheet-panel { border-radius: 18px !important; }
+  .legend.mobile-sheet-panel .legend-header,
+  #main-controls .controls-header { background: var(--panel-header) !important; }
+  .mobile-dock {
+    background: rgba(255, 253, 249, .97) !important;
+    border: 1px solid #d5dfe1 !important;
+    box-shadow: 0 8px 24px rgba(16, 44, 60, .16) !important;
+  }
+  .mobile-dock-btn {
+    background: #f6f7f6 !important;
+    border-color: #d5dfe1 !important;
+    color: #24465a !important;
+    box-shadow: none !important;
+  }
+  .mobile-dock-btn[aria-pressed="true"] {
+    color: #fff !important;
+    background: #214b61 !important;
+    border-color: #214b61 !important;
+    box-shadow: 0 3px 9px rgba(27,64,84,.16) !important;
+  }
+  .mobile-sheet-grab::before { background: #9babb2 !important; }
+  .mobile-sheet-scrim { background: rgba(12, 30, 42, .28) !important; }
+  .legend-header { padding-right: 65px !important; }
+  .legend-content { padding: 14px 16px !important; }
+}
+
 </style>
 <style id="selected-panel-type-scale">
   #focus-card .focus-pill-value { font-size: 16.5px; }
@@ -10868,8 +11062,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-20-general-results-v4';
-    const APP_BUILD_ID = '2026-10-08-walker-label-v6';
+    const DATA_CACHE_BUSTER = '2026-11-22-ui-polish-v1';
+    const APP_BUILD_ID = '2026-11-22-ui-polish-v1';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
