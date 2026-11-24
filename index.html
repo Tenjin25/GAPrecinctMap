@@ -9912,21 +9912,9 @@ body.focus-active #hover-tooltip[data-context="preview"] {
   #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
     display: none !important;
   }
-  @media (min-width: 769px) {
-    #vote-counter .vote-counter-context {
-      box-sizing: border-box;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      padding: 12px 14px;
-      border: 1px solid rgba(28, 56, 73, 0.11);
-      border-radius: 14px;
-    }
-    #vote-counter .context-actions {
-      grid-column: 2;
-      width: auto;
-      align-self: center;
-      justify-self: end;
-    }
+  #vote-counter .context-title {
+    color: #18384b;
+    font-size: 12px;
   }
   #vote-counter .context-sub {
     color: #18384b;
@@ -10892,8 +10880,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-23-official-results-polish-v4';
-    const APP_BUILD_ID = '2026-11-23-official-results-polish-v4';
+    const DATA_CACHE_BUSTER = '2026-11-24-official-header-v5';
+    const APP_BUILD_ID = '2026-11-24-official-header-v5';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
