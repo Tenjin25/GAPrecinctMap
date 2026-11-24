@@ -9909,6 +9909,21 @@ body.focus-active #hover-tooltip[data-context="preview"] {
 </style>
 <style id="selected-panel-type-scale">
   #focus-card .focus-pill-value { font-size: 16.5px; }
+  /* Keep the official panel geometry while using one surface palette. */
+  #vote-counter .vote-counter-context,
+  #main-controls .controls-header {
+    background: transparent !important;
+  }
+  #vote-counter .vote-counter-meta,
+  #vote-counter .focus-pill {
+    background: #f8f5ee !important;
+    border-color: rgba(28, 56, 73, 0.14) !important;
+  }
+  #main-controls .contest-onboard-hint,
+  #main-controls .contest-loading-indicator {
+    background: #f8f5ee !important;
+    border-color: rgba(28, 56, 73, 0.14) !important;
+  }
   #main-controls :is(.contest-onboard-hint, .contest-loading-indicator, .smart-insights-inline)[hidden] {
     display: none !important;
   }
@@ -10880,8 +10895,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cache destroyer token for static data requests.
     // Bump this value when you want browsers/CDNs to fetch fresh files immediately.
-    const DATA_CACHE_BUSTER = '2026-11-24-official-header-v5';
-    const APP_BUILD_ID = '2026-11-24-official-header-v5';
+    const DATA_CACHE_BUSTER = '2026-11-24-official-header-v6';
+    const APP_BUILD_ID = '2026-11-24-official-header-v6';
 
     function withCacheBuster(path) {
       const p = (path || '').toString().trim();
